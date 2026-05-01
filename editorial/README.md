@@ -9,7 +9,8 @@
 | 상황 | 먼저 읽을 문서 |
 | --- | --- |
 | 모든 블로그 작업 | `source-policy.md`, `voice.md` |
-| 새 글 작성/톤 점검 | `voice.md`, `edit-patterns.md` |
+| 새 글 작성/초안 다듬기 | `writing-partners.md`, `voice.md`, `edit-patterns.md` |
+| 톤 점검 | `voice.md`, `edit-patterns.md` |
 | 기술 구현/복기 글 | `voice.md`의 Technical Case Study 기준 |
 | 회사 프로젝트 글 | `source-policy.md`, `voice.md`의 Technical Case Study 기준 |
 | 제품/아키텍처 글 | `source-policy.md`, `voice.md`의 Technical Case Study 기준 |
@@ -20,9 +21,20 @@
 ## 강제 규칙과 참고 기준
 
 - 강제 규칙: `source-policy.md`의 공개 경계, `prepublish-check.md`의 발행 전 필수 항목
-- 참고 기준: `voice.md`, `edit-patterns.md`, `series-pilab.md`
+- 참고 기준: `writing-partners.md`, `voice.md`, `edit-patterns.md`, `series-pilab.md`
 
 참고 기준은 글을 틀에 끼우기 위한 것이 아니라, 초안이 의도한 목소리와 구조에서 벗어나는지 확인하기 위한 점검 거울이다.
+
+## 단계별 파트너
+
+글을 다듬을 때는 검사 기준을 한 번에 적용하지 않는다.
+
+- `blog-material-partner`: 글감, 장면, 실패, 오해, 판단 변화, 차분한 호기심의 출발점을 찾는다.
+- `blog-shaping-editor`: 중심 질문, 탐구 동력, 흐름, 단락 기능, 보강/삭제/이동 후보를 본다.
+- `blog-texture-keeper`: polish 과정에서 살아 있는 문장, 발견, 리듬, 질감이 깎이지 않는지 본다.
+- `blog-evidence-checker`와 prepublish guard: 발행 직전 사실 정합성과 공개 경계를 본다.
+
+자세한 흐름은 `writing-partners.md`를 따른다.
 
 ## 글 유형
 
