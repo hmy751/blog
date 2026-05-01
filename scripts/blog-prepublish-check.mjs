@@ -63,7 +63,10 @@ for (const filePath of walk(publishDir)) {
   if (dateMatch && !path.basename(filePath).startsWith(`${dateMatch[1]}-`)) {
     errors.push(`${file}: filename date does not match frontmatter date`)
   }
-  if (!/^description:\s*.+/m.test(fm)) warnings.push(`${file}: missing description`)
+  if (!/^author:\s*.+/m.test(fm)) errors.push(`${file}: missing author`)
+  if (!/^readTime:\s*.+/m.test(fm)) errors.push(`${file}: missing readTime`)
+  if (!/^platform:\s*.+/m.test(fm)) errors.push(`${file}: missing platform`)
+  if (!/^tags:\s*$/m.test(fm)) errors.push(`${file}: missing tags`)
   if (/^status:\s*(draft|blog-ready)\s*$/m.test(fm)) {
     warnings.push(`${file}: status looks like workflow metadata`)
   }

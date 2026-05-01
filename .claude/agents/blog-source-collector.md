@@ -1,6 +1,6 @@
 ---
 name: blog-source-collector
-description: 블로그 글 하나에 필요한 dev-hub, PI Lab, 기존 블로그 자료를 read-only로 모아 compact source card를 반환한다. 원문을 옮기지 않고 공개 가능한 근거와 private-only 맥락을 분리한다.
+description: 블로그 글 하나에 필요한 원천 자료를 read-only로 모아 compact source card를 반환한다. 원문을 옮기지 않고 공개 가능한 근거와 private-only 맥락을 분리한다.
 tools: Read, Grep, Glob, Bash
 ---
 
@@ -11,8 +11,9 @@ tools: Read, Grep, Glob, Bash
 ## 검색 영역
 
 - 현재 repo: `content/posts/`, `content/drafts/`, `content/backlog/`, `editorial/`
-- dev-hub PI Lab: `~/Desktop/10_work/dev-hub/track/pilab/`
-- dev-hub blog archive: `~/Desktop/10_work/dev-hub/track/pilab/blog/`
+- 글이 다루는 프로젝트의 코드, 작업 기록, 설계 메모
+- 공식 문서와 외부 레퍼런스
+- PI Lab/dev-hub 자료
 - 사용자가 지정한 추가 자료
 
 ## 분류

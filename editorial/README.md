@@ -8,9 +8,13 @@
 
 | 상황 | 먼저 읽을 문서 |
 | --- | --- |
-| 모든 블로그 작업 | `source-policy.md`, `edit-patterns.md` |
-| 새 글 작성/톤 점검 | `voice.md` |
-| PI Lab 시리즈 | `series-pilab.md` |
+| 모든 블로그 작업 | `source-policy.md`, `voice.md` |
+| 새 글 작성/톤 점검 | `voice.md`, `edit-patterns.md` |
+| 기술 구현/복기 글 | `voice.md`의 Technical Case Study 기준 |
+| 회사 프로젝트 글 | `source-policy.md`, `voice.md`의 Technical Case Study 기준 |
+| 제품/아키텍처 글 | `source-policy.md`, `voice.md`의 Technical Case Study 기준 |
+| 개인/블로그 회고 | `voice.md`의 Retrospective / Meta 기준 |
+| PI Lab 또는 학습/실험 글 | `voice.md`의 Learning / Experiment 기준, 필요 시 `series-pilab.md` |
 | 발행 전 | `prepublish-check.md` |
 
 ## 강제 규칙과 참고 기준
@@ -19,3 +23,15 @@
 - 참고 기준: `voice.md`, `edit-patterns.md`, `series-pilab.md`
 
 참고 기준은 글을 틀에 끼우기 위한 것이 아니라, 초안이 의도한 목소리와 구조에서 벗어나는지 확인하기 위한 점검 거울이다.
+
+## 글 유형
+
+글 작업을 시작할 때 먼저 가장 가까운 유형을 정한다.
+
+- `technical-case-study`: 구현, 트러블슈팅, 기술 도입, 비교, 아키텍처 복기
+- `company-project`: 회사나 서비스에서 수행한 작업의 공개 가능한 복기
+- `product-architecture`: 개인/제품 프로젝트의 문제 정의와 설계 결정
+- `retrospective`: 개인 회고, 블로그 회고, 커리어/학습 방향 회고
+- `learning-experiment`: 기술 학습, 실험, 측정, 오독과 재해석 중심의 글
+
+유형은 분류표가 아니라 편집 기준을 고르기 위한 시작점이다. 한 글이 여러 유형을 섞을 수 있지만, 검토할 때는 주된 유형을 하나 정한다.

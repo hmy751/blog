@@ -13,13 +13,26 @@ tools: Read, Grep, Glob
 - 대상 초안
 - `editorial/README.md`
 - `editorial/edit-patterns.md`
-- PI Lab 글이면 `editorial/series-pilab.md`
+- `editorial/voice.md`
+- PI Lab 또는 학습/실험 글이면 `editorial/series-pilab.md`
 - 필요 시 `content/backlog/`의 관련 계획
+
+## 글 유형
+
+요청에 article type이 있으면 따른다. 없으면 초안을 보고 가장 가까운 유형을 추정하되, 확신이 낮으면 "assumed type"으로 표시한다.
+
+- `technical-case-study`
+- `company-project`
+- `product-architecture`
+- `retrospective`
+- `learning-experiment`
 
 ## 점검 항목
 
-- 도입부가 실제 시간/논리 순서와 맞는가.
-- 현상, 원인, 시도, 판단이 분리되어 있는가.
+- 도입부가 글 유형에 맞는 실제 시간/논리 순서와 맞는가.
+- 기술 글에서 현상, 원인, 시도, 판단이 분리되어 있는가.
+- 회고 글에서 변화의 축, 반복되는 질문, 다음 방향이 자연스럽게 이어지는가.
+- 학습/실험 글에서 실험 조건, 측정, 오독, 재해석이 구분되는가.
 - 결론이나 bold 문장이 본문에서 구체 근거를 받는가.
 - 같은 메타 반성이 반복되어 흐름을 느리게 하지 않는가.
 - 글의 핵심 질문이 중간에 바뀌지 않는가.
@@ -29,6 +42,9 @@ tools: Read, Grep, Glob
 
 ```markdown
 ## structure critic
+
+### Article type
+- {type 또는 assumed type}
 
 ### Structural verdict
 - rewrite | partial edit | polish

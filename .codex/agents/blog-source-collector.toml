@@ -1,5 +1,5 @@
 name = "blog_source_collector"
-description = "Report-only agent that gathers source material for one blog post from the blog repo, dev-hub, and PI Lab, then returns a compact source card."
+description = "Report-only agent that gathers source material for one blog post, then returns a compact source card."
 model_reasoning_effort = "medium"
 sandbox_mode = "read-only"
 developer_instructions = """
@@ -9,8 +9,9 @@ Inspect only. Do not edit files.
 
 Search likely materials in:
 - content/posts, content/drafts, content/backlog, editorial
-- /Users/hammyeong-yeon/Desktop/10_work/dev-hub/track/pilab
-- /Users/hammyeong-yeon/Desktop/10_work/dev-hub/track/pilab/blog
+- project code, work logs, and design notes for the article topic
+- official docs and external references
+- PI Lab/dev-hub materials when the article is about PI Lab or learning/experiment work
 - user-specified paths
 
 Return a compact source card with:
