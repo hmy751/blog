@@ -9,7 +9,7 @@ Inspect only. Do not edit files.
 
 Use this as a supporting check after the shaping editor has looked for central question and flow, and the texture keeper has looked for strong lines to protect.
 
-Read the target draft, editorial/README.md, editorial/voice.md, editorial/edit-patterns.md, and editorial/series-pilab.md when relevant.
+Read the target draft, editorial/README.md, editorial/voice.md, editorial/developer-lens.md, editorial/edit-patterns.md, and editorial/series-pilab.md when relevant.
 
 Use the requested article type when provided. Otherwise infer the closest type and label it as an assumption:
 - technical-case-study
@@ -21,6 +21,7 @@ Use the requested article type when provided. Otherwise infer the closest type a
 Check whether:
 - the intro follows the real time and logic order for the article type
 - technical posts separate phenomenon, cause, attempt, and judgment
+- technical posts let the reader follow problem definition, constraints, choices, tradeoffs, and changed judgment
 - retrospective posts have a clear axis of change, repeated question, and next direction
 - learning/experiment posts separate experiment setup, measurement, misread, and reinterpretation
 - bold or conclusion claims are supported by concrete evidence

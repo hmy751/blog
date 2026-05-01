@@ -12,13 +12,13 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 | 상황 | 읽을 자료 |
 | --- | --- |
 | 모든 글 | `CLAUDE.md`, `editorial/README.md`, `editorial/source-policy.md`, `editorial/voice.md` |
-| 새 글 작성/초안 다듬기 | `editorial/writing-partners.md`, `editorial/voice.md`, 필요 시 `editorial/edit-patterns.md` |
+| 새 글 작성/초안 다듬기 | `editorial/writing-partners.md`, `editorial/voice.md`, `editorial/developer-lens.md`, 필요 시 `editorial/edit-patterns.md` |
 | 목소리 점검 | `editorial/voice.md`, 필요 시 `editorial/edit-patterns.md` |
-| 기술 구현/복기 | `editorial/voice.md`의 Technical Case Study 기준 |
-| 회사 프로젝트 | `editorial/source-policy.md`, `editorial/voice.md`의 Technical Case Study 기준 |
-| 제품/아키텍처 | `editorial/source-policy.md`, `editorial/voice.md`의 Technical Case Study 기준 |
+| 기술 구현/복기 | `editorial/voice.md`의 Technical Case Study 기준, `editorial/developer-lens.md` |
+| 회사 프로젝트 | `editorial/source-policy.md`, `editorial/voice.md`의 Technical Case Study 기준, `editorial/developer-lens.md` |
+| 제품/아키텍처 | `editorial/source-policy.md`, `editorial/voice.md`의 Technical Case Study 기준, `editorial/developer-lens.md` |
 | 개인/블로그 회고 | `editorial/voice.md`의 Retrospective / Meta 기준 |
-| PI Lab 또는 학습/실험 | `editorial/voice.md`의 Learning / Experiment 기준, 필요 시 `editorial/series-pilab.md`, `content/backlog/pilab-publishing-plan.md` |
+| PI Lab 또는 학습/실험 | `editorial/voice.md`의 Learning / Experiment 기준, `editorial/developer-lens.md`, 필요 시 `editorial/series-pilab.md`, `content/backlog/pilab-publishing-plan.md` |
 | 발행 준비 | `editorial/prepublish-check.md` |
 
 ## 작업 모드
@@ -54,7 +54,7 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 2. 글 유형 결정
 3. `editorial/README.md` 확인 후 작업에 맞는 editorial 문서 로드
 4. 원천 자료 카드 수집
-5. blog-material-partner로 글감, 장면, 실패, 오해, 판단 변화, 탐구 동력 후보 확인
+5. blog-material-partner로 글감, 장면, 실패, 오해, 판단 변화, 탐구 동력, 개발자 관점 후보 확인
 6. 글의 각도/구조 후보 2-3개 제안
 7. 사용자 선택 후 v1 작성 또는 편집
 8. blog-shaping-editor로 중심 질문, 흐름, 보강/삭제/이동 후보 확인
@@ -84,11 +84,13 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 - `editorial/`은 공식 런타임 폴더가 아니라 이 블로그의 편집 기준 자료실이다. 이 skill이 필요한 문서를 명시적으로 읽는다.
 - `editorial/voice.md`는 강제 문체 템플릿이 아니라 점검 거울이다.
 - `editorial/writing-partners.md`는 글을 키우는 단계와 공개 전 점검 단계를 분리한다.
+- `editorial/developer-lens.md`는 새 단계가 아니라 기존 파트너들이 공통으로 읽는 개발자 관점 렌즈다.
 - `editorial/series-pilab.md`의 구조는 PI Lab 학습/실험 글의 후보이며 전역 법칙이 아니다.
 - 담백함은 압축이 아니다. 구체 장면과 사실 범위를 살린다.
 - 회고 글에는 했다체와 자기 관찰이 자연스러울 수 있다. 기술 글의 금기를 그대로 적용하지 않는다.
 - 개인적 문장과 감각 표현은 요구사항이 아니지만, 글의 판단과 독자 이해에 기여하면 보호한다.
 - 좋은 글의 축은 톤만이 아니다. 글감, 중심 질문, 발견, 차분한 호기심으로 생기는 탐구 동력, 구조와 독자 흐름, 목소리와 리듬을 함께 본다.
+- 기술 글에서는 개발자로서 무엇을 문제로 봤고, 어떤 제약과 선택 기준으로 판단했는지가 보이면 글이 강해진다. 단, 이를 자기소개서 문체나 강제 서사로 만들지 않는다.
 - 발행 결정, 매체 선택, 최종 톤은 사용자 결정이다.
 
 ## 파일 위치

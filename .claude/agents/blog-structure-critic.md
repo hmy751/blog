@@ -16,6 +16,7 @@ tools: Read, Grep, Glob
 - `editorial/README.md`
 - `editorial/edit-patterns.md`
 - `editorial/voice.md`
+- `editorial/developer-lens.md`
 - PI Lab 또는 학습/실험 글이면 `editorial/series-pilab.md`
 - 필요 시 `content/backlog/`의 관련 계획
 
@@ -33,6 +34,7 @@ tools: Read, Grep, Glob
 
 - 도입부가 글 유형에 맞는 실제 시간/논리 순서와 맞는가.
 - 기술 글에서 현상, 원인, 시도, 판단이 분리되어 있는가.
+- 기술 글에서 문제 정의, 제약, 선택, 트레이드오프, 판단 변화가 구조상 따라 읽히는가.
 - 회고 글에서 변화의 축, 반복되는 질문, 다음 방향이 자연스럽게 이어지는가.
 - 학습/실험 글에서 실험 조건, 측정, 오독, 재해석이 구분되는가.
 - 결론이나 bold 문장이 본문에서 구체 근거를 받는가.

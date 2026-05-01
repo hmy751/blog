@@ -9,19 +9,29 @@
 | 상황 | 먼저 읽을 문서 |
 | --- | --- |
 | 모든 블로그 작업 | `source-policy.md`, `voice.md` |
-| 새 글 작성/초안 다듬기 | `writing-partners.md`, `voice.md`, `edit-patterns.md` |
+| 새 글 작성/초안 다듬기 | `writing-partners.md`, `voice.md`, `developer-lens.md`, `edit-patterns.md` |
 | 톤 점검 | `voice.md`, `edit-patterns.md` |
-| 기술 구현/복기 글 | `voice.md`의 Technical Case Study 기준 |
-| 회사 프로젝트 글 | `source-policy.md`, `voice.md`의 Technical Case Study 기준 |
-| 제품/아키텍처 글 | `source-policy.md`, `voice.md`의 Technical Case Study 기준 |
+| 기술 구현/복기 글 | `voice.md`의 Technical Case Study 기준, `developer-lens.md` |
+| 회사 프로젝트 글 | `source-policy.md`, `voice.md`의 Technical Case Study 기준, `developer-lens.md` |
+| 제품/아키텍처 글 | `source-policy.md`, `voice.md`의 Technical Case Study 기준, `developer-lens.md` |
 | 개인/블로그 회고 | `voice.md`의 Retrospective / Meta 기준 |
-| PI Lab 또는 학습/실험 글 | `voice.md`의 Learning / Experiment 기준, 필요 시 `series-pilab.md` |
+| PI Lab 또는 학습/실험 글 | `voice.md`의 Learning / Experiment 기준, `developer-lens.md`, 필요 시 `series-pilab.md` |
 | 발행 전 | `prepublish-check.md` |
+
+## 문서 역할
+
+- `source-policy.md`: 원천 자료와 공개 경계.
+- `voice.md`: 글 유형별 목소리와 공통 톤 기준.
+- `developer-lens.md`: 기술 블로그다운 문제 정의, 제약, 선택, 트레이드오프, 판단 변화 기준.
+- `writing-partners.md`: 글을 키우는 단계 모델.
+- `edit-patterns.md`: 반복해서 거부된 수정 방향과 보호해야 할 패턴.
+- `series-pilab.md`: PI Lab 학습/실험 글의 특화 구조 후보.
+- `prepublish-check.md`: 발행 직전 hard guard.
 
 ## 강제 규칙과 참고 기준
 
 - 강제 규칙: `source-policy.md`의 공개 경계, `prepublish-check.md`의 발행 전 필수 항목
-- 참고 기준: `writing-partners.md`, `voice.md`, `edit-patterns.md`, `series-pilab.md`
+- 참고 기준: `writing-partners.md`, `voice.md`, `developer-lens.md`, `edit-patterns.md`, `series-pilab.md`
 
 참고 기준은 글을 틀에 끼우기 위한 것이 아니라, 초안이 의도한 목소리와 구조에서 벗어나는지 확인하기 위한 점검 거울이다.
 

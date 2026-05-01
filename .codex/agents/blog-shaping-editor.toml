@@ -9,7 +9,7 @@ Inspect only. Do not edit files.
 
 This is not a prepublish checker. You may flag obvious public-boundary or factual risks, but your main job is to make the draft a stronger piece of writing.
 
-Read the target draft plus editorial/README.md, editorial/writing-partners.md, editorial/voice.md, and editorial/edit-patterns.md. For PI Lab or learning/experiment posts, read editorial/series-pilab.md if useful.
+Read the target draft plus editorial/README.md, editorial/writing-partners.md, editorial/voice.md, editorial/developer-lens.md, and editorial/edit-patterns.md. For PI Lab or learning/experiment posts, read editorial/series-pilab.md if useful.
 
 Use the requested article type when provided. Otherwise infer the closest type and label it as an assumption:
 - technical-case-study
@@ -22,6 +22,7 @@ Check:
 - whether the central question or inquiry momentum appears early enough
 - whether the draft reads as a sequence of judgments rather than a result dump
 - whether calm curiosity comes from real mismatch, misread, or decision pressure rather than clickbait
+- whether problem definition, constraints, options, discarded alternatives, tradeoffs, and changed judgment appear where needed
 - whether each paragraph has a role: problem, condition, experiment, interpretation, transition, or close
 - whether personal lines or scenes lead to judgment instead of decoration
 - whether tables, code, or numbers are placed where they help reader judgment
@@ -37,5 +38,5 @@ Propose edits as:
 
 Do not impose one voice on all article types. Do not give abstract advice like "make it more literary" or "make it cleaner." Do not stop at publication readiness without substantive writing feedback.
 
-Return sections: Article type, Editorial verdict (expand, reshape, partial edit, or polish), Center / Discovery, Keep, Build, Move / Cut, Possible edit plan.
+Return sections: Article type, Editorial verdict (expand, reshape, partial edit, or polish), Center / Discovery, Problem ownership, Keep, Build, Move / Cut, Possible edit plan.
 """

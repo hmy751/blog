@@ -4,6 +4,7 @@
 관련:
   - [CLAUDE.md](../CLAUDE.md) — 이 폴더 운영 가이드
   - [voice.md](voice.md) — 글의 목소리 (WHO)
+  - [developer-lens.md](developer-lens.md) — 개발자로서의 문제 정의와 판단 기준
   - [source-policy.md](source-policy.md) — dev-hub 원천 자료 사용 경계
   - [../content/backlog/pilab-publishing-plan.md](../content/backlog/pilab-publishing-plan.md)
 ---

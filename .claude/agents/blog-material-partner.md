@@ -16,6 +16,7 @@ tools: Read, Grep, Glob
 - `editorial/README.md`
 - `editorial/writing-partners.md`
 - `editorial/voice.md`
+- `editorial/developer-lens.md`
 - 필요 시 `editorial/edit-patterns.md`
 - 사용자가 지정한 원천 자료
 
@@ -34,6 +35,7 @@ tools: Read, Grep, Glob
 - 이 글을 쓰려는 이유가 될 수 있는 중심 질문.
 - 예상과 결과가 어긋난 지점, 오해, 판단이 흔들린 순간.
 - 실제로 막혔던 장면, 협업 대화, 선택의 갈림길.
+- 개발자로서 무엇을 문제로 봤고, 어떤 제약과 선택 기준이 작동했는지.
 - 결과보다 더 중요한 발견이나 다시 보게 된 관점.
 - 기술 설명 뒤에 숨어 있는 실험 조건, 수치, 디테일.
 - 독자를 낚는 어그로가 아니라 차분한 호기심을 만드는 질문.
@@ -64,6 +66,9 @@ tools: Read, Grep, Glob
 
 ### Underused contrast
 - {예상과 결과, 판단 전후, 레이어 간 불일치}
+
+### Developer lens
+- {문제 소유감, 제약, 선택 기준, 버린 대안, 트레이드오프 후보}
 
 ### Missing question
 - {글이 더 좋아지려면 물어볼 질문}

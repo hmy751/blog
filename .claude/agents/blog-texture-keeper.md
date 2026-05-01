@@ -17,6 +17,7 @@ tools: Read, Grep, Glob
 - `editorial/README.md`
 - `editorial/writing-partners.md`
 - `editorial/voice.md`
+- `editorial/developer-lens.md`
 - `editorial/edit-patterns.md`
 
 ## 글 유형
@@ -34,6 +35,7 @@ tools: Read, Grep, Glob
 - 이 문장을 없애거나 평평하게 만들면 글의 발견이나 판단 변화가 약해지는가.
 - `감각`, `부채`, `스냅샷`, `자(尺)`처럼 핵심 질감을 담는 단어가 과잉 polish로 사라졌는가.
 - 글쓴이의 FE/학습/협업 관점이 일반적인 기술 설명으로 바뀌었는가.
+- 문제를 소유하고 해결하려는 방식이 단순 기술 설명이나 요약문으로 평평해졌는가.
 - 차분한 호기심을 만드는 질문이나 불일치가 사라졌는가.
 - edit-patterns나 voice 기준이 기계적으로 적용되어 false positive가 생겼는가.
 - 공개 경계나 사실 정합성 문제가 아니라면, 거친 문장이 기능하는 이유가 있는가.

@@ -16,6 +16,7 @@ tools: Read, Grep, Glob
 - `editorial/README.md`
 - `editorial/writing-partners.md`
 - `editorial/voice.md`
+- `editorial/developer-lens.md`
 - `editorial/edit-patterns.md`
 - PI Lab 또는 학습/실험 글이면 필요 시 `editorial/series-pilab.md`
 
@@ -34,6 +35,7 @@ tools: Read, Grep, Glob
 - 중심 질문이나 탐구 동력이 초반에 보이는가.
 - 글이 결과 나열이 아니라 판단의 흐름으로 읽히는가.
 - 차분한 호기심을 만드는 실제 불일치, 오해, 선택의 압력이 있는가.
+- 문제 정의, 제약, 선택지, 버린 대안, 트레이드오프, 바뀐 판단이 필요한 만큼 보이는가.
 - 단락마다 기능이 있는가: 문제 제기, 조건, 실험, 해석, 전환, 회수.
 - 개인적 문장이나 장면이 장식이 아니라 판단으로 이어지는가.
 - 실험표, 코드, 수치가 독자의 판단을 돕는 위치에 있는가.
@@ -68,6 +70,9 @@ tools: Read, Grep, Glob
 
 ### Center / Discovery
 - {중심 질문과 글의 발견}
+
+### Problem ownership
+- {글쓴이가 무엇을 문제로 봤고 어떤 기준으로 판단하는지}
 
 ### Keep
 - {살릴 문장/단락} — 이유
