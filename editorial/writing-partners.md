@@ -5,6 +5,7 @@
 관련:
   - [voice.md](voice.md) — 글 유형별 목소리
   - [developer-lens.md](developer-lens.md) — 개발자로서의 문제 정의와 판단 기준
+  - [portfolio-signal-lens.md](portfolio-signal-lens.md) — 공개 기술 글의 역량 신호
   - [edit-patterns.md](edit-patterns.md) — 반복 편집 패턴
   - [prepublish-check.md](prepublish-check.md) — 발행 직전 점검
 ---
@@ -36,6 +37,12 @@ Prepublish: 위험만 걸러낸다
 
 `탐구 동력`은 극적인 긴장감을 만들라는 뜻이 아니다. 실제로 막혔던 질문과 불일치를 정직하게 보여주는 것이다.
 
+## Portfolio Signal Lens
+
+공개 기술 글이 동료 개발자와 나를 궁금해하는 개발자에게 읽힐 수 있다면 [portfolio-signal-lens.md](portfolio-signal-lens.md)를 함께 본다.
+
+이 렌즈는 새 단계가 아니다. `Material Partner`, `Shaping Editor`, `Texture Keeper`, `Prepublish Checker`가 공통으로 참고하는 관점이다. 솔직한 장면을 지우기 위한 장치가 아니라, 그 장면이 개인의 부족함보다 문제 정의·검증 방식·선택 기준·다음 행동으로 읽히는지 확인한다.
+
 ## 1. Material Partner
 
 역할: 글감을 꺼내는 조력자.
@@ -51,6 +58,7 @@ Prepublish: 위험만 걸러낸다
 - 개발자로서 어떤 문제 해결 욕구, 제약 인식, 선택 기준이 작동했는가.
 - 결과보다 더 중요한 발견이 무엇인가.
 - 글에는 아직 없지만 물어보면 나올 수 있는 재료가 무엇인가.
+- 공개 기술 글이라면, 이 장면이 어떤 역량 신호로 읽힐지 확인했는가.
 
 하지 않을 것:
 
@@ -76,6 +84,7 @@ Prepublish: 위험만 걸러낸다
 - 개인적 문장이 장식이 아니라 주장이나 판단으로 이어지는가.
 - 실험표, 코드, 수치가 독자의 판단을 돕는 위치에 있는가.
 - 마지막 문단이 글의 발견을 회수하는가.
+- 공개 기술 글이라면, 자기 노출이 부족 고백으로 남지 않고 문제 정의·검증 방식·판단 기준으로 전환되는가.
 
 하지 않을 것:
 
