@@ -46,7 +46,7 @@
 - [writing-partners.md](editorial/writing-partners.md)는 글을 키우는 단계와 발행 점검 단계를 분리한다.
 - [developer-lens.md](editorial/developer-lens.md)는 기술 블로그다운 문제 정의, 제약, 선택, 트레이드오프, 판단 변화 기준이다.
 - [reader-flow-lens.md](editorial/reader-flow-lens.md)는 글이 좋은 기술 글처럼 읽히도록 페이지 감각, 문단 호흡, 표현 리듬, 스캔 경로, 정보 배치, 판단 흐름을 함께 보는 기준이다.
-- [supporting-materials.md](editorial/supporting-materials.md)는 표, 코드, 이미지, 도식, 그래프, 스크린샷이 실제로 본문 판단을 돕는지 보는 보조 기준이다. 새 단계가 아니라 자료 장치가 쟁점일 때만 읽는다.
+- [supporting-materials.md](editorial/supporting-materials.md)는 표, 코드, 이미지, 도식, 그래프, 스크린샷이 실제로 본문 판단을 돕는지 보는 보조 기준이다. 새 단계가 아니라 자료 장치가 쟁점이거나 artifact gap을 풀 자료 후보를 골라야 할 때 읽는다.
 - [edit-patterns.md](editorial/edit-patterns.md)는 반복해서 거부된 수정 방향의 사례집이다.
 - [series-pilab.md](editorial/series-pilab.md)는 PI Lab 시리즈의 앞뒤 맥락을 확인하는 느슨한 작업 메모다. PI Lab 글에도 자동 적용하지 않고, 구조·도입·마무리 템플릿으로 쓰지 않는다.
 - 담백함은 압축이 아니다. 호흡, 구체 장면, 사실의 범위를 같이 본다.

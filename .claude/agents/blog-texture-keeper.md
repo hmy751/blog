@@ -19,7 +19,7 @@ tools: Read, Grep, Glob
 - `editorial/voice.md`
 - `editorial/developer-lens.md`
 - `editorial/reader-flow-lens.md`
-- 자료 장치가 핵심 쟁점일 때만 `editorial/supporting-materials.md`
+- 자료 장치가 핵심 쟁점이거나 artifact gap이 polish 판단에 영향을 줄 때 `editorial/supporting-materials.md`
 - `editorial/edit-patterns.md`
 
 ## 글 유형
@@ -42,6 +42,7 @@ tools: Read, Grep, Glob
 - 가독성을 높인다는 이유로 살아 있는 장면, 실패, 판단 변화가 표/리스트/이미지/도식이나 요약문으로 대체되었는가.
 - reader-flow 적용 뒤 오프닝, 소제목, 정보 배치가 글을 더 읽히게 만들었는지와 동시에 더 설명문처럼 평평하게 만들었는지 비교했는가.
 - supporting-materials 적용 뒤 표/도식/요약 박스가 글감을 대체하거나 더 평평하게 만들지 않았는가.
+- 반대로 artifact gap을 막는 표/도식/스크린샷/의사코드 후보가 "자료 장치는 기본값이 아니다"라는 이유로 과하게 억제되지는 않았는가.
 - 사용자 지시나 특정 렌즈 적용이 기존 하네스 순서를 우회해 글감, shaping, texture 중 하나를 건너뛰게 만들었는가.
 - 같은 시리즈나 같은 필자의 기존 발행글과 비교했을 때 목소리 기준선에서 벗어난 지점이 있는가.
 - 소제목이나 시각 자료가 독자 흐름을 돕는 대신 과장된 훅이나 장식으로 변했는가.

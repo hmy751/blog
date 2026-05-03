@@ -9,7 +9,7 @@ Inspect only. Do not edit files.
 
 This is not a prepublish checker. You may flag obvious public-boundary or factual risks, but your main job is to make the draft a stronger piece of writing.
 
-Read the target draft plus editorial/README.md, editorial/writing-partners.md, editorial/voice.md, editorial/developer-lens.md, editorial/reader-flow-lens.md, and editorial/edit-patterns.md. Read editorial/supporting-materials.md only when tables, code examples, images, diagrams, graphs, screenshots, or summary boxes are a live editing concern. For PI Lab posts, read editorial/series-pilab.md only when series continuity, publication order, or repeated question axes are unclear.
+Read the target draft plus editorial/README.md, editorial/writing-partners.md, editorial/voice.md, editorial/developer-lens.md, editorial/reader-flow-lens.md, and editorial/edit-patterns.md. Read editorial/supporting-materials.md when tables, code examples, images, diagrams, graphs, screenshots, or summary boxes are a live editing concern, or when the draft has an artifact gap: a technical judgment depends on traces, logs, UI state, execution results, config, prompts, code structure, or numeric comparison but gives readers only prose. For PI Lab posts, read editorial/series-pilab.md only when series continuity, publication order, or repeated question axes are unclear.
 
 Use the requested article type when provided. Otherwise infer the closest type and label it as an assumption:
 - technical-case-study
@@ -25,6 +25,7 @@ Check:
 - whether problem definition, constraints, options, discarded alternatives, tradeoffs, and changed judgment appear where needed
 - whether a series voice baseline is clear when the draft belongs to a series or has nearby published posts
 - whether strong lines and changed-judgment moments are marked before proposing supporting materials such as tables, lists, diagrams, or summary boxes
+- whether technical judgments depend on traces, logs, UI state, execution results, config, prompts, code structure, or numeric comparison but lack reader-visible artifacts
 - whether a direct user request for a lens, artifact, or structure template would bypass the existing Material -> Shaping -> Texture -> Prepublish flow
 - whether a series memo or planning note is being applied as a structure template over the current draft's actual question
 - whether each paragraph has a role: problem, condition, experiment, interpretation, transition, or close
@@ -33,7 +34,7 @@ Check:
 - whether repeated experiments or comparisons use a consistent rhythm so readers can compare them
 - whether personal lines or scenes lead to judgment instead of decoration
 - whether tables, code, or numbers are placed where they help reader judgment
-- whether a table, list, image, diagram, graph, or screenshot would help reader judgment better than dense prose, using editorial/supporting-materials.md when this becomes a real recommendation
+- whether a table, list, image, diagram, graph, or screenshot would help reader judgment better than dense prose, using editorial/supporting-materials.md when this becomes a real recommendation or when there is an artifact gap
 - whether the draft jumps from event/result to conclusion, or lets readers follow the writer's understanding, assumptions, comparisons, and decision criteria
 - whether conceptual explanations or personal insights work as lenses for later experiment/implementation judgment rather than floating as general commentary
 - whether the ending recovers the article's discovery
@@ -46,7 +47,7 @@ Propose edits as:
 - cut: repetition or weak-function lines
 - rewrite: only where a paragraph role needs to change
 
-Do not impose one voice on all article types. Do not use reader-flow as a reason to rewrite the opening into generic explanatory prose or to propose supporting materials as a default. Do not use a direct user request as a reason to skip the existing harness layer responsibilities or apply a new protocol where a local edit move would do. Do not force editorial/series-pilab.md as a five-part structure, intro template, or closing template. Do not give abstract advice like "make it more literary" or "make it cleaner." Do not stop at publication readiness without substantive writing feedback.
+Do not impose one voice on all article types. Do not use reader-flow as a reason to rewrite the opening into generic explanatory prose or to propose supporting materials as a default. Do not leave an artifact gap untouched merely because supporting materials are not a default. Do not use a direct user request as a reason to skip the existing harness layer responsibilities or apply a new protocol where a local edit move would do. Do not force editorial/series-pilab.md as a five-part structure, intro template, or closing template. Do not give abstract advice like "make it more literary" or "make it cleaner." Do not stop at publication readiness without substantive writing feedback.
 
-Return sections: Article type, Editorial verdict (expand, reshape, partial edit, or polish), Center / Discovery, Problem ownership, Thought to judgment, Keep, Build, Move / Cut, Possible edit plan.
+Return sections: Article type, Editorial verdict (expand, reshape, partial edit, or polish), Center / Discovery, Problem ownership, Thought to judgment, Reader / Artifact gap, Keep, Build, Move / Cut, Possible edit plan.
 """

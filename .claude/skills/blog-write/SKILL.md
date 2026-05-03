@@ -14,7 +14,7 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 | 모든 글 | `CLAUDE.md`, `editorial/README.md`, `editorial/source-policy.md`, `editorial/voice.md` |
 | 새 글 작성/초안 다듬기 | `editorial/writing-partners.md`, `editorial/voice.md`, `editorial/developer-lens.md`, 필요 시 `editorial/edit-patterns.md` |
 | 가독성/독자 흐름 점검 | `editorial/reader-flow-lens.md`, `editorial/writing-partners.md`, 필요 시 `editorial/developer-lens.md` |
-| 표/코드/이미지/도식/그래프/스크린샷 판단 | `editorial/supporting-materials.md`, `editorial/reader-flow-lens.md`, `editorial/source-policy.md` |
+| 표/코드/이미지/도식/그래프/스크린샷 판단 또는 artifact gap | `editorial/supporting-materials.md`, `editorial/reader-flow-lens.md`, `editorial/source-policy.md` |
 | 목소리 점검 | `editorial/voice.md`, 필요 시 `editorial/edit-patterns.md` |
 | 기술 구현/복기 | `editorial/voice.md`의 Technical Case Study 기준, `editorial/developer-lens.md` |
 | 회사 프로젝트 | `editorial/source-policy.md`, `editorial/voice.md`의 Technical Case Study 기준, `editorial/developer-lens.md` |
@@ -75,9 +75,9 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 
 `다듬어줘` 요청은 기본적으로 shaping 작업이다. 곧장 prepublish 검사만 하지 말고, 글이 더 좋아질 여지가 있는지 먼저 본다. 사용자가 "발행 준비만"이라고 명시하면 material/shaping/texture 단계를 건너뛴다.
 
-`가독성`, `읽기 좋게`, `스캔하기 쉽게` 같은 요청은 `reader-flow-lens`를 함께 적용한다. 이때 목표는 문장을 무조건 짧게 만들거나 자료 장치를 넣는 것이 아니라, 글이 좋은 기술 글처럼 읽히는지 보는 것이다. 첫 화면의 밀도, 문단 호흡, 표현 리듬, 소제목, 섹션 층위, 문단 첫 문장, 정보 배치, 숫자 배치를 함께 점검한다. 다만 reader-flow는 글의 목소리를 다시 쓰는 단계가 아니다. PI Lab처럼 기존 발행글이 있는 시리즈에서는 가까운 발행글의 strong lines와 판단 변화 문장을 확인할 수 있지만, `series-pilab.md`를 구조 템플릿처럼 적용하지 않는다.
+`가독성`, `읽기 좋게`, `스캔하기 쉽게` 같은 요청은 `reader-flow-lens`를 함께 적용한다. 이때 목표는 문장을 무조건 짧게 만들거나 자료 장치를 넣는 것이 아니라, 글이 좋은 기술 글처럼 읽히는지 보는 것이다. 첫 화면의 밀도, 문단 호흡, 표현 리듬, 소제목, 섹션 층위, 문단 첫 문장, 정보 배치, 숫자 배치, artifact gap을 함께 점검한다. 다만 reader-flow는 글의 목소리를 다시 쓰는 단계가 아니다. PI Lab처럼 기존 발행글이 있는 시리즈에서는 가까운 발행글의 strong lines와 판단 변화 문장을 확인할 수 있지만, `series-pilab.md`를 구조 템플릿처럼 적용하지 않는다.
 
-`표`, `이미지`, `도식`, `코드 예시`, `스크린샷`처럼 자료 장치 자체가 요청되거나 실제 막힘 지점이면 `supporting-materials.md`를 추가로 읽는다. 바로 만들 수 있는 Markdown 표, 리스트, 짧은 코드 예시, 의사코드, 텍스트 도식, 요약 박스도 기본값으로 삽입하지 않는다. 독자 막힘이 분명하고, 그 장치가 글의 핵심 판단을 돕고, `Texture Keeper` 관점에서 글감이나 발견을 평평하게 만들지 않을 때만 초안에 직접 넣는다. 목소리나 자료 배치 판단이 남아 있으면 먼저 후보로 제안하거나 주석 슬롯으로 남긴다.
+`표`, `이미지`, `도식`, `코드 예시`, `스크린샷`처럼 자료 장치 자체가 요청되거나 실제 막힘 지점이면 `supporting-materials.md`를 추가로 읽는다. 기술 글에서 핵심 판단이 trace, 로그, UI 상태, 실행 결과, config, prompt, 코드 구조, 수치 비교에 기대고 있는데 본문이 산문만으로 이어질 때는 artifact gap으로 본다. artifact gap은 Shaping/Reader Flow/Texture가 함께 보는 cross-stage 신호이고, `supporting-materials.md`는 gap이 확인된 뒤 어떤 자료로 풀지 고르는 처방 문서다. 바로 만들 수 있는 Markdown 표, 리스트, 짧은 코드 예시, 의사코드, 텍스트 도식, 요약 박스도 기본값으로 삽입하지 않는다. 다만 artifact gap이 보이면 "자료 장치는 기본값이 아니다"라는 이유로 넘기지 말고, 공개 가능한 도식/표/의사코드/sanitized screenshot 후보를 만든다. 독자 막힘이 분명하고, 그 장치가 글의 핵심 판단을 돕고, `Texture Keeper` 관점에서 글감이나 발견을 평평하게 만들지 않을 때는 초안에 직접 넣는다. 목소리나 자료 배치 판단이 남아 있으면 먼저 후보로 제안하거나 주석 슬롯으로 남긴다.
 
 `리듬`, `호흡`, `뭔가 이상함`, `막힘`, `단조로움` 같은 요청은 곧바로 문체나 소제목을 전역 변경하지 않는다. 먼저 문제가 구조, 문단, 전환, 소제목, 문장 끝, 자료 배치 중 어디에 있는지 분리하고, 글의 기본 말투와 핵심 판단 문장은 유지한 채 필요한 범위만 고친다. 리듬 문제를 장치 부족으로만 보지 말고, 장치를 추가한 뒤에는 `Texture Keeper` 관점으로 글이 더 하네스 출력처럼 평평해지지 않았는지 다시 본다.
 
@@ -100,7 +100,7 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 - `editorial/writing-partners.md`는 글을 키우는 단계와 공개 전 점검 단계를 분리한다.
 - `editorial/developer-lens.md`는 새 단계가 아니라 기존 파트너들이 공통으로 읽는 개발자 관점 렌즈다.
 - `editorial/reader-flow-lens.md`는 새 단계가 아니라 shaping/texture가 함께 참고하는 독자 흐름 렌즈다. 좋은 글처럼 읽히는 표면감, 오프닝 약속, 섹션 층위, 표현 호흡, 읽기 리듬, 정보 배치를 본다.
-- `editorial/supporting-materials.md`는 새 단계가 아니라 자료 장치 판단이 실제 쟁점일 때만 여는 보조 기준이다. 표, 코드, 이미지, 도식, 그래프, 스크린샷은 장식이 아니라 독자의 판단과 읽힘을 돕는 장치일 때만 쓴다.
+- `editorial/supporting-materials.md`는 새 단계가 아니라 자료 장치 판단이 실제 쟁점이거나 artifact gap을 풀 자료 후보를 골라야 할 때 여는 보조 기준이다. 표, 코드, 이미지, 도식, 그래프, 스크린샷은 장식이 아니라 독자의 판단과 읽힘을 돕는 장치일 때만 쓴다.
 - `editorial/series-pilab.md`는 PI Lab 시리즈 배경 메모다. 구조 후보나 편집 렌즈가 아니며, 시리즈 연결이 필요할 때만 참고한다.
 - 새 렌즈, 새 축, agent/skill 역할 변경처럼 이후 글쓰기 방식에 영향을 주는 하네스 변경은 `editorial/decisions/`에 배경과 결정 맥락을 남긴다.
 - 사용자가 하네스 변경을 요청해도 기존 하네스 구조와 역할 경계를 먼저 확인한다. 사용자의 문제의식은 반영하되, 한 대화의 표현을 그대로 영구 규칙으로 만들지 않는다.

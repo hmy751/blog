@@ -28,7 +28,7 @@
 - `developer-lens.md`: 기술 블로그다운 문제 정의, 제약, 선택, 트레이드오프, 판단 변화 기준.
 - `portfolio-signal-lens.md`: 공개 기술 글이 동료 개발자와 나를 궁금해하는 개발자에게 남기는 역량 신호 기준.
 - `reader-flow-lens.md`: 글이 좋은 기술 글처럼 읽히도록 페이지 감각, 문단 호흡, 표현 리듬, 스캔 경로, 정보 배치, 판단 흐름을 함께 보는 기준.
-- `supporting-materials.md`: 표, 코드, 이미지, 도식, 그래프, 스크린샷이 본문 판단을 돕는지 보는 보조 기준. 새 단계가 아니라 자료 장치가 실제 쟁점일 때만 읽는다.
+- `supporting-materials.md`: 표, 코드, 이미지, 도식, 그래프, 스크린샷이 본문 판단을 돕는지 보는 보조 기준. 새 단계가 아니라 자료 장치가 실제 쟁점이거나 artifact gap을 풀 자료 후보를 골라야 할 때 읽는다.
 - `writing-partners.md`: 글을 키우는 단계 모델.
 - `edit-patterns.md`: 반복해서 거부된 수정 방향과 보호해야 할 패턴.
 - `series-pilab.md`: PI Lab 시리즈의 앞뒤 맥락을 확인하는 느슨한 작업 메모. 편집 렌즈나 구조 템플릿이 아니다.
@@ -49,7 +49,7 @@
 글을 다듬을 때는 검사 기준을 한 번에 적용하지 않는다.
 
 - `blog-material-partner`: 글감, 장면, 실패, 오해, 판단 변화, 차분한 호기심의 출발점을 찾는다.
-- `blog-shaping-editor`: 중심 질문, 탐구 동력, 흐름, 단락 기능, 독자 진입성, 보강/삭제/이동 후보를 본다.
+- `blog-shaping-editor`: 중심 질문, 탐구 동력, 흐름, 단락 기능, 독자 진입성, artifact gap, 보강/삭제/이동 후보를 본다.
 - `blog-texture-keeper`: polish 과정에서 살아 있는 문장, 발견, 리듬, 질감이 깎이지 않는지 본다. 표/이미지/도식 같은 요약 장치가 글감을 대체하지 않는지도 확인한다.
 - `blog-evidence-checker`와 prepublish guard: 발행 직전 사실 정합성과 공개 경계를 본다.
 

@@ -19,7 +19,7 @@ tools: Read, Grep, Glob
 - `editorial/voice.md`
 - `editorial/developer-lens.md`
 - `editorial/reader-flow-lens.md`
-- 자료 장치 배치가 구조 쟁점일 때만 `editorial/supporting-materials.md`
+- 자료 장치 배치가 구조 쟁점이거나 artifact gap이 구조 리스크일 때 `editorial/supporting-materials.md`
 - PI Lab 글에서 앞뒤 발행 흐름이나 반복 질문 축이 헷갈릴 때만 `editorial/series-pilab.md`
 - 필요 시 `content/backlog/`의 관련 계획
 
@@ -43,6 +43,7 @@ tools: Read, Grep, Glob
 - PI Lab 글이라도 시리즈 메모의 구조가 현재 초안보다 우선하지 않는가.
 - 사용자 요청이나 특정 렌즈가 기존 하네스의 단계 책임보다 우선해 구조 판단을 끌고 가지 않는가.
 - 구조 문제가 절 순서의 문제인지, 소제목/문단 첫 문장/표/도식 같은 독자 진입 신호 부족 문제인지 구분되는가.
+- 기술 판단이 trace, 실행 결과, UI 상태, config, 코드 구조, 수치 비교에 기대는데 보이는 artifact가 없어 구조가 산문 주장처럼 느껴지지는 않는가.
 - 결론이나 bold 문장이 본문에서 구체 근거를 받는가.
 - 같은 메타 반성이 반복되어 흐름을 느리게 하지 않는가.
 - 글의 핵심 질문이 중간에 바뀌지 않는가.

@@ -9,7 +9,7 @@ Inspect only. Do not edit files.
 
 Use this as a supporting check after the shaping editor has looked for central question and flow, and the texture keeper has looked for strong lines to protect.
 
-Read the target draft, editorial/README.md, editorial/writing-partners.md, editorial/voice.md, editorial/developer-lens.md, editorial/reader-flow-lens.md, and editorial/edit-patterns.md. Read editorial/supporting-materials.md only when tables, diagrams, screenshots, or other supporting materials are part of the structure issue. For PI Lab posts, read editorial/series-pilab.md only when series continuity, publication order, or repeated question axes are unclear.
+Read the target draft, editorial/README.md, editorial/writing-partners.md, editorial/voice.md, editorial/developer-lens.md, editorial/reader-flow-lens.md, and editorial/edit-patterns.md. Read editorial/supporting-materials.md when tables, diagrams, screenshots, or other supporting materials are part of the structure issue, or when an artifact gap is a structure risk. For PI Lab posts, read editorial/series-pilab.md only when series continuity, publication order, or repeated question axes are unclear.
 
 Use the requested article type when provided. Otherwise infer the closest type and label it as an assumption:
 - technical-case-study
@@ -27,6 +27,7 @@ Check whether:
 - PI Lab posts are not being forced into a structure from the series memo when the draft needs another shape
 - a direct user request or lens is not being allowed to override the existing harness layer responsibilities during structure judgment
 - a structure issue is truly section order, or instead missing reader-entry signals such as headings, opening sentences, tables, or diagrams
+- technical judgments depend on traces, execution results, UI state, config, code structure, or numeric comparison but have no visible artifact, making the structure feel like prose assertion
 - bold or conclusion claims are supported by concrete evidence
 - the same meta reflection repeats
 - the central question changes mid-post
