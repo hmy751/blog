@@ -6,7 +6,7 @@
 
 - `title`이 독자가 보는 제목과 일치한다.
 - `date`가 실제 발행일이며 `TBD`가 아니다.
-- `author`, `readTime`, `platform`, `tags`가 있다.
+- `author`, `readTime`, `platform`, `tags`가 있고, `platform` 값은 `Blog`다.
 - 글의 맥락에 따라 `project`, `company`/`service`, `category` 중 필요한 필드가 있다.
 - 임시 상태값, 작업 메모, 내부 태그가 남아 있지 않다.
 

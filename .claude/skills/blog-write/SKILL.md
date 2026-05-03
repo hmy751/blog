@@ -113,3 +113,4 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 - 편집 기준: `editorial/`
 
 `content/posts/`로 승격할 때는 파일명을 `YYYY-MM-DD-slug.md` 형식으로 바꾸고, 파일명 날짜와 frontmatter `date`를 일치시킨다.
+직접 블로그에 올리는 공개 원고의 frontmatter `platform` 값은 `Blog`로 둔다.

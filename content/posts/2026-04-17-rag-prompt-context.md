@@ -3,7 +3,7 @@ title: "프롬프트로 환각을 잡으려다 Context를 다시 보게 됐다"
 author: "myeongyeon ham"
 date: 2026-04-17
 readTime: "9 min read"
-platform: Medium
+platform: Blog
 project: PI Lab
 sprint: 2
 tags:

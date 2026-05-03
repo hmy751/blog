@@ -3,7 +3,7 @@ title: "개발 블로그 1년 회고 - \"척\"에서 시작해서"
 author: "myeongyeon ham"
 date: 2026-02-03
 readTime: "5 min read"
-platform: Medium
+platform: Blog
 category: Retrospective
 tags:
   - 회고

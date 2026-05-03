@@ -33,6 +33,10 @@ function frontmatter(text) {
   return match ? match[1] : ""
 }
 
+function cleanScalar(value) {
+  return value.trim().replace(/^['"]|['"]$/g, "")
+}
+
 const errors = []
 const warnings = []
 
@@ -65,7 +69,12 @@ for (const filePath of walk(publishDir)) {
   }
   if (!/^author:\s*.+/m.test(fm)) errors.push(`${file}: missing author`)
   if (!/^readTime:\s*.+/m.test(fm)) errors.push(`${file}: missing readTime`)
-  if (!/^platform:\s*.+/m.test(fm)) errors.push(`${file}: missing platform`)
+  const platformMatch = fm.match(/^platform:\s*(.+?)\s*$/m)
+  if (!platformMatch) {
+    errors.push(`${file}: missing platform`)
+  } else if (cleanScalar(platformMatch[1]) !== "Blog") {
+    errors.push(`${file}: platform must be Blog`)
+  }
   if (!/^tags:\s*$/m.test(fm)) errors.push(`${file}: missing tags`)
   if (/^status:\s*(draft|blog-ready)\s*$/m.test(fm)) {
     warnings.push(`${file}: status looks like workflow metadata`)
@@ -75,6 +84,10 @@ for (const filePath of walk(publishDir)) {
 for (const filePath of walk(draftDir)) {
   const text = fs.readFileSync(filePath, "utf8")
   const fm = frontmatter(text)
+  const platformMatch = fm.match(/^platform:\s*(.+?)\s*$/m)
+  if (platformMatch && cleanScalar(platformMatch[1]) !== "Blog") {
+    errors.push(`${rel(filePath)}: platform must be Blog`)
+  }
   if (/^date:\s*TBD\s*$/m.test(fm)) {
     warnings.push(`${rel(filePath)}: draft date is still TBD`)
   }

@@ -3,7 +3,7 @@ title: "예측 가능한 UI를 위한 선택, XState 상태 머신 도입 후기
 author: "myeongyeon ham"
 date: 2025-09-19
 readTime: "21 min read"
-platform: Medium
+platform: Blog
 project: InterPersona
 tags:
   - XState

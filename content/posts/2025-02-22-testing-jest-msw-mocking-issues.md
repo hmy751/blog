@@ -3,7 +3,7 @@ title: "테스트 환경 개선기: Jest/MSW 목킹 이슈와 해결법"
 author: "myeongyeon ham"
 date: 2025-02-22
 readTime: "9 min read"
-platform: Medium
+platform: Blog
 project: InterPersona
 tags:
   - Jest

@@ -3,7 +3,7 @@ title: "프론트엔드 상태 관리 아키텍처 개선기"
 author: "myeongyeon ham"
 date: 2025-06-18
 readTime: "17 min read"
-platform: Medium
+platform: Blog
 company: 위블링 (Weebling)
 service: 오라운드 (Oround)
 tags:

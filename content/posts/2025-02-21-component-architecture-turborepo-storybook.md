@@ -3,7 +3,7 @@ title: "컴포넌트 아키텍처 설계: Turborepo와 Storybook 활용기"
 author: "myeongyeon ham"
 date: 2025-02-21
 readTime: "10 min read"
-platform: Medium
+platform: Blog
 project: InterPersona
 tags:
   - Component Architecture

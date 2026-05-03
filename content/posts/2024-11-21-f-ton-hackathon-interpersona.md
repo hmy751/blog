@@ -3,7 +3,7 @@ title: "F-TON 해커톤 후기, InterPersona 프로젝트 개발기"
 author: "myeongyeon ham"
 date: 2024-11-21
 readTime: "12 min read"
-platform: Medium
+platform: Blog
 tags:
   - Hackathon
   - Next.js

@@ -3,7 +3,7 @@ title: "Turborepo로 모노레포 적용하기"
 author: "myeongyeon ham"
 date: 2025-04-30
 readTime: "8 min read"
-platform: Medium
+platform: Blog
 project: InterPersona
 tags:
   - Turborepo

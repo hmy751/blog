@@ -1,12 +1,12 @@
 # Blog Project Guide
 
-이 repo는 공개 블로그의 콘텐츠 원고와 글쓰기 운영 기준의 본거지다. 블로그 플랫폼 구현은 아직 두지 않는다.
+이 repo는 직접 운영하는 공개 블로그의 콘텐츠 원고와 글쓰기 운영 기준의 본거지다. 외부 발행 플랫폼명을 frontmatter에 남기지 않고, 공개 원고의 기본 발행면은 `Blog`로 둔다.
 
 ## 역할 경계
 
 | 영역 | 역할 |
 | --- | --- |
-| `content/posts/` | 실제 발행 중인 글 소스와 앞으로 공개할 글 원고. 플랫폼이 생기면 여기서 읽게 한다. |
+| `content/posts/` | 직접 블로그에 올릴 공개 원고의 source. frontmatter `platform`은 `Blog`로 둔다. |
 | `content/drafts/` | 공개 전 초안. 원천 자료에서 가져온 글도 먼저 여기에 둔다. |
 | `content/backlog/` | 발행 계획, 시리즈 후보, 글감 목록. |
 | `editorial/` | 글쓰기 판단 기준. 목소리, 편집 패턴, 출처 정책, 발행 전 검사. |
@@ -60,7 +60,7 @@
 
 `content/posts/`에 들어가는 글은 다음을 만족해야 한다.
 
-- `title`, `date`, `author`, `readTime`, `platform`, `tags` frontmatter가 있다.
+- `title`, `date`, `author`, `readTime`, `platform`, `tags` frontmatter가 있고, `platform` 값은 `Blog`다.
 - 발행 예정 글의 `date`는 `TBD`가 아니라 실제 날짜다.
 - 파일명은 `YYYY-MM-DD-slug.md` 형식이고, 앞의 날짜가 frontmatter `date`와 일치한다.
 - 내부 로컬 경로와 private source 문장이 없다.

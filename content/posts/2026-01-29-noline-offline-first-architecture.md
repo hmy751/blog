@@ -3,7 +3,7 @@ title: "네트워크가 끊겨도 멈추지 않는 앱을 만들기까지 — No
 author: "myeongyeon ham"
 date: 2026-01-29
 readTime: "15 min read"
-platform: Medium
+platform: Blog
 project: Noline
 tags:
   - Offline-First

@@ -3,7 +3,7 @@ title: "2025년 중간 개발 회고"
 author: "myeongyeon ham"
 date: 2025-06-03
 readTime: "4 min read"
-platform: Medium
+platform: Blog
 category: Retrospective
 tags:
   - 회고

@@ -3,7 +3,7 @@ title: "자연스러운 사용자 경험을 제공하기 위한 인터뷰 프로
 author: "myeongyeon ham"
 date: 2025-02-19
 readTime: "12 min read"
-platform: Medium
+platform: Blog
 project: InterPersona
 tags:
   - Error Handling
