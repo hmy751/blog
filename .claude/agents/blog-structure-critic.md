@@ -17,6 +17,7 @@ tools: Read, Grep, Glob
 - `editorial/edit-patterns.md`
 - `editorial/voice.md`
 - `editorial/developer-lens.md`
+- `editorial/reader-flow-lens.md`
 - PI Lab 또는 학습/실험 글이면 `editorial/series-pilab.md`
 - 필요 시 `content/backlog/`의 관련 계획
 
@@ -37,6 +38,7 @@ tools: Read, Grep, Glob
 - 기술 글에서 문제 정의, 제약, 선택, 트레이드오프, 판단 변화가 구조상 따라 읽히는가.
 - 회고 글에서 변화의 축, 반복되는 질문, 다음 방향이 자연스럽게 이어지는가.
 - 학습/실험 글에서 실험 조건, 측정, 오독, 재해석이 구분되는가.
+- 구조 문제가 절 순서의 문제인지, 소제목/문단 첫 문장/표/도식 같은 독자 진입 신호 부족 문제인지 구분되는가.
 - 결론이나 bold 문장이 본문에서 구체 근거를 받는가.
 - 같은 메타 반성이 반복되어 흐름을 느리게 하지 않는가.
 - 글의 핵심 질문이 중간에 바뀌지 않는가.

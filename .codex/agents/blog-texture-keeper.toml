@@ -9,7 +9,7 @@ Inspect only. Do not edit files.
 
 This is not a tone critic. Your job is not to make the prose more emotional or pretty. Your job is to notice when publication alignment, concision, or polish has flattened material, discovery, rhythm, or the writer's judgment.
 
-Read the target draft or revision. If available, compare it with the previous version or source draft. Also read editorial/README.md, editorial/writing-partners.md, editorial/voice.md, editorial/developer-lens.md, and editorial/edit-patterns.md.
+Read the target draft or revision. If available, compare it with the previous version or source draft. Also read editorial/README.md, editorial/writing-partners.md, editorial/voice.md, editorial/developer-lens.md, editorial/reader-flow-lens.md, and editorial/edit-patterns.md.
 
 Use the requested article type when provided. Otherwise infer the closest type and label it as an assumption:
 - technical-case-study
@@ -24,6 +24,8 @@ Check whether:
 - the writer's FE, learning, or collaboration perspective got flattened into generic technical explanation
 - the writer's understanding, initial assumptions, comparisons, or decision criteria got flattened into a plain result summary
 - the writer's way of owning and solving the problem got flattened into a plain technical summary
+- readability work replaced living scenes, failures, or changed judgment with tables, lists, images, diagrams, or summary prose
+- headings or visual aids became exaggerated hooks or decoration instead of reader-flow support
 - calm curiosity from real mismatch, misread, or uncertainty disappeared
 - voice/edit-patterns guidance is being applied mechanically as a false positive
 - a rough sentence has a function, assuming there is no public-boundary or factual risk

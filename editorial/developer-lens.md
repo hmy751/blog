@@ -5,6 +5,7 @@
 관련:
   - [voice.md](voice.md) — 글 유형별 목소리
   - [writing-partners.md](writing-partners.md) — 글을 키우는 단계
+  - [reader-flow-lens.md](reader-flow-lens.md) — 독자 진입성과 스캔 가능한 흐름
   - [edit-patterns.md](edit-patterns.md) — 반복 편집 패턴
   - [series-pilab.md](series-pilab.md) — PI Lab 학습/실험 글 구조
 ---

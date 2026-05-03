@@ -13,6 +13,7 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 | --- | --- |
 | 모든 글 | `CLAUDE.md`, `editorial/README.md`, `editorial/source-policy.md`, `editorial/voice.md` |
 | 새 글 작성/초안 다듬기 | `editorial/writing-partners.md`, `editorial/voice.md`, `editorial/developer-lens.md`, 필요 시 `editorial/edit-patterns.md` |
+| 가독성/독자 흐름 점검 | `editorial/reader-flow-lens.md`, `editorial/writing-partners.md`, 필요 시 `editorial/developer-lens.md` |
 | 목소리 점검 | `editorial/voice.md`, 필요 시 `editorial/edit-patterns.md` |
 | 기술 구현/복기 | `editorial/voice.md`의 Technical Case Study 기준, `editorial/developer-lens.md` |
 | 회사 프로젝트 | `editorial/source-policy.md`, `editorial/voice.md`의 Technical Case Study 기준, `editorial/developer-lens.md` |
@@ -57,8 +58,8 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 5. blog-material-partner로 글감, 장면, 실패, 오해, 판단 변화, 탐구 동력, 개발자 관점, 이해와 판단의 연결 후보 확인
 6. 글의 각도/구조 후보 2-3개 제안
 7. 사용자 선택 후 v1 작성 또는 편집
-8. blog-shaping-editor로 중심 질문, 흐름, 보강/삭제/이동 후보 확인
-9. blog-texture-keeper로 polish 과정에서 살아 있는 문장, 발견, 리듬이 깎이지 않는지 확인
+8. blog-shaping-editor로 중심 질문, 흐름, 독자 진입성, 보강/삭제/이동 후보 확인
+9. blog-texture-keeper로 polish 과정에서 살아 있는 문장, 발견, 리듬이 깎이지 않는지 확인. 표/이미지/도식 같은 요약 장치가 글감을 대체하지 않는지도 확인
 10. 필요한 경우 보조 critic 검토
    - blog-tone-critic
    - blog-structure-critic
@@ -73,6 +74,8 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 
 `다듬어줘` 요청은 기본적으로 shaping 작업이다. 곧장 prepublish 검사만 하지 말고, 글이 더 좋아질 여지가 있는지 먼저 본다. 사용자가 "발행 준비만"이라고 명시하면 material/shaping/texture 단계를 건너뛴다.
 
+`가독성`, `읽기 좋게`, `표`, `이미지`, `도식`, `스캔하기 쉽게` 같은 요청은 `reader-flow-lens`를 함께 적용한다. 이때 목표는 문장을 무조건 짧게 만드는 것이 아니라, 독자가 글의 판단 흐름을 놓치지 않도록 소제목, 문단 첫 문장, 표/리스트/이미지/도식, 숫자 배치를 조정하는 것이다.
+
 편집 요청이 모호하면 아래 모드를 구분한다.
 
 - `sync`: frontmatter, 링크, 파일명, 참조 표현 같은 운영 정합성만 맞춘다.
@@ -85,6 +88,7 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 - `editorial/voice.md`는 강제 문체 템플릿이 아니라 점검 거울이다.
 - `editorial/writing-partners.md`는 글을 키우는 단계와 공개 전 점검 단계를 분리한다.
 - `editorial/developer-lens.md`는 새 단계가 아니라 기존 파트너들이 공통으로 읽는 개발자 관점 렌즈다.
+- `editorial/reader-flow-lens.md`는 새 단계가 아니라 shaping/texture가 함께 참고하는 독자 흐름 렌즈다. 표, 이미지, 도식은 장식이 아니라 독자의 판단을 돕는 장치일 때만 쓴다.
 - `editorial/series-pilab.md`의 구조는 PI Lab 학습/실험 글의 후보이며 전역 법칙이 아니다.
 - 새 렌즈, 새 축, agent/skill 역할 변경처럼 이후 글쓰기 방식에 영향을 주는 하네스 변경은 `editorial/decisions/`에 배경과 결정 맥락을 남긴다.
 - 담백함은 압축이 아니다. 구체 장면과 사실 범위를 살린다.

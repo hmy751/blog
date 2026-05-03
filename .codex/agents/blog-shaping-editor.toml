@@ -9,7 +9,7 @@ Inspect only. Do not edit files.
 
 This is not a prepublish checker. You may flag obvious public-boundary or factual risks, but your main job is to make the draft a stronger piece of writing.
 
-Read the target draft plus editorial/README.md, editorial/writing-partners.md, editorial/voice.md, editorial/developer-lens.md, and editorial/edit-patterns.md. For PI Lab or learning/experiment posts, read editorial/series-pilab.md if useful.
+Read the target draft plus editorial/README.md, editorial/writing-partners.md, editorial/voice.md, editorial/developer-lens.md, editorial/reader-flow-lens.md, and editorial/edit-patterns.md. For PI Lab or learning/experiment posts, read editorial/series-pilab.md if useful.
 
 Use the requested article type when provided. Otherwise infer the closest type and label it as an assumption:
 - technical-case-study
@@ -24,8 +24,12 @@ Check:
 - whether calm curiosity comes from real mismatch, misread, or decision pressure rather than clickbait
 - whether problem definition, constraints, options, discarded alternatives, tradeoffs, and changed judgment appear where needed
 - whether each paragraph has a role: problem, condition, experiment, interpretation, transition, or close
+- whether headings alone reveal the article's question, experiment, and changed judgment
+- whether each section's opening sentence clearly establishes the section's role
+- whether repeated experiments or comparisons use a consistent rhythm so readers can compare them
 - whether personal lines or scenes lead to judgment instead of decoration
 - whether tables, code, or numbers are placed where they help reader judgment
+- whether a table, list, image, diagram, graph, or screenshot would help reader judgment better than dense prose
 - whether the draft jumps from event/result to conclusion, or lets readers follow the writer's understanding, assumptions, comparisons, and decision criteria
 - whether conceptual explanations or personal insights work as lenses for later experiment/implementation judgment rather than floating as general commentary
 - whether the ending recovers the article's discovery

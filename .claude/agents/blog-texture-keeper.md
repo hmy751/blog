@@ -18,6 +18,7 @@ tools: Read, Grep, Glob
 - `editorial/writing-partners.md`
 - `editorial/voice.md`
 - `editorial/developer-lens.md`
+- `editorial/reader-flow-lens.md`
 - `editorial/edit-patterns.md`
 
 ## 글 유형
@@ -37,6 +38,8 @@ tools: Read, Grep, Glob
 - 글쓴이의 FE/학습/협업 관점이 일반적인 기술 설명으로 바뀌었는가.
 - 글쓴이의 이해, 초기 가정, 비교, 선택 기준이 단순 결과 요약으로 사라졌는가.
 - 문제를 소유하고 해결하려는 방식이 단순 기술 설명이나 요약문으로 평평해졌는가.
+- 가독성을 높인다는 이유로 살아 있는 장면, 실패, 판단 변화가 표/리스트/이미지/도식이나 요약문으로 대체되었는가.
+- 소제목이나 시각 자료가 독자 흐름을 돕는 대신 과장된 훅이나 장식으로 변했는가.
 - 차분한 호기심을 만드는 질문이나 불일치가 사라졌는가.
 - edit-patterns나 voice 기준이 기계적으로 적용되어 false positive가 생겼는가.
 - 공개 경계나 사실 정합성 문제가 아니라면, 거친 문장이 기능하는 이유가 있는가.

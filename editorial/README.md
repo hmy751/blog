@@ -10,6 +10,7 @@
 | --- | --- |
 | 모든 블로그 작업 | `source-policy.md`, `voice.md` |
 | 새 글 작성/초안 다듬기 | `writing-partners.md`, `voice.md`, `developer-lens.md`, `edit-patterns.md` |
+| 가독성/독자 흐름 점검 | `reader-flow-lens.md`, `writing-partners.md`, 필요 시 `developer-lens.md` |
 | 공개 기술 글의 포트폴리오 신호 점검 | `portfolio-signal-lens.md`, `developer-lens.md`, `writing-partners.md` |
 | 톤 점검 | `voice.md`, `edit-patterns.md` |
 | 기술 구현/복기 글 | `voice.md`의 Technical Case Study 기준, `developer-lens.md` |
@@ -25,6 +26,7 @@
 - `voice.md`: 글 유형별 목소리와 공통 톤 기준.
 - `developer-lens.md`: 기술 블로그다운 문제 정의, 제약, 선택, 트레이드오프, 판단 변화 기준.
 - `portfolio-signal-lens.md`: 공개 기술 글이 동료 개발자와 나를 궁금해하는 개발자에게 남기는 역량 신호 기준.
+- `reader-flow-lens.md`: 독자가 글의 판단 흐름을 놓치지 않게 하는 소제목, 문단 첫 문장, 표, 이미지, 도식, 숫자 배치 기준.
 - `writing-partners.md`: 글을 키우는 단계 모델.
 - `edit-patterns.md`: 반복해서 거부된 수정 방향과 보호해야 할 패턴.
 - `series-pilab.md`: PI Lab 학습/실험 글의 특화 구조 후보.
@@ -35,7 +37,7 @@
 ## 강제 규칙과 참고 기준
 
 - 강제 규칙: `source-policy.md`의 공개 경계, `prepublish-check.md`의 발행 전 필수 항목
-- 참고 기준: `writing-partners.md`, `voice.md`, `developer-lens.md`, `portfolio-signal-lens.md`, `edit-patterns.md`, `series-pilab.md`
+- 참고 기준: `writing-partners.md`, `voice.md`, `developer-lens.md`, `portfolio-signal-lens.md`, `reader-flow-lens.md`, `edit-patterns.md`, `series-pilab.md`
 
 참고 기준은 글을 틀에 끼우기 위한 것이 아니라, 초안이 의도한 목소리와 구조에서 벗어나는지 확인하기 위한 점검 거울이다.
 
@@ -44,8 +46,8 @@
 글을 다듬을 때는 검사 기준을 한 번에 적용하지 않는다.
 
 - `blog-material-partner`: 글감, 장면, 실패, 오해, 판단 변화, 차분한 호기심의 출발점을 찾는다.
-- `blog-shaping-editor`: 중심 질문, 탐구 동력, 흐름, 단락 기능, 보강/삭제/이동 후보를 본다.
-- `blog-texture-keeper`: polish 과정에서 살아 있는 문장, 발견, 리듬, 질감이 깎이지 않는지 본다.
+- `blog-shaping-editor`: 중심 질문, 탐구 동력, 흐름, 단락 기능, 독자 진입성, 보강/삭제/이동 후보를 본다.
+- `blog-texture-keeper`: polish 과정에서 살아 있는 문장, 발견, 리듬, 질감이 깎이지 않는지 본다. 표/이미지/도식 같은 요약 장치가 글감을 대체하지 않는지도 확인한다.
 - `blog-evidence-checker`와 prepublish guard: 발행 직전 사실 정합성과 공개 경계를 본다.
 
 자세한 흐름은 `writing-partners.md`를 따른다.

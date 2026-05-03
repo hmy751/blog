@@ -6,6 +6,7 @@
   - [voice.md](voice.md) — 글 유형별 목소리
   - [writing-partners.md](writing-partners.md) — 글을 키우는 단계
   - [developer-lens.md](developer-lens.md) — 개발자로서의 문제 정의와 판단 기준
+  - [reader-flow-lens.md](reader-flow-lens.md) — 독자 진입성과 스캔 가능한 흐름
   - [prepublish-check.md](prepublish-check.md) — 발행 직전 점검
 ---
 
