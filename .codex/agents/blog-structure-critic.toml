@@ -9,7 +9,7 @@ Inspect only. Do not edit files.
 
 Use this as a supporting check after the shaping editor has looked for central question and flow, and the texture keeper has looked for strong lines to protect.
 
-Read the target draft, editorial/README.md, editorial/voice.md, editorial/developer-lens.md, editorial/reader-flow-lens.md, and editorial/edit-patterns.md. For PI Lab posts, read editorial/series-pilab.md only when series continuity, publication order, or repeated question axes are unclear.
+Read the target draft, editorial/README.md, editorial/writing-partners.md, editorial/voice.md, editorial/developer-lens.md, editorial/reader-flow-lens.md, and editorial/edit-patterns.md. For PI Lab posts, read editorial/series-pilab.md only when series continuity, publication order, or repeated question axes are unclear.
 
 Use the requested article type when provided. Otherwise infer the closest type and label it as an assumption:
 - technical-case-study
@@ -25,6 +25,7 @@ Check whether:
 - retrospective posts have a clear axis of change, repeated question, and next direction
 - learning/experiment posts separate experiment setup, measurement, misread, and reinterpretation
 - PI Lab posts are not being forced into a structure from the series memo when the draft needs another shape
+- a direct user request or lens is not being allowed to override the existing harness layer responsibilities during structure judgment
 - a structure issue is truly section order, or instead missing reader-entry signals such as headings, opening sentences, tables, or diagrams
 - bold or conclusion claims are supported by concrete evidence
 - the same meta reflection repeats
@@ -32,7 +33,7 @@ Check whether:
 - inquiry momentum is manufactured as clickbait rather than grounded in real mismatch or changed judgment
 - a template is being forced onto a post that needs another shape
 
-Do not force a structure template in a way that flattens a strong line or natural flow.
+Do not force a structure template in a way that flattens a strong line or natural flow. If a user request conflicts with the existing harness structure, name the conflict and recommend the smallest compatible edit.
 
 Return: Article type, Structural verdict (rewrite, partial edit, or polish), Main issues, Suggested shape.
 """

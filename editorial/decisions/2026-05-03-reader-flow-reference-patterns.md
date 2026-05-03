@@ -1,7 +1,11 @@
 # 독자 흐름 렌즈에 레퍼런스 패턴 보강
 
 작성일: 2026-05-03
-상태: accepted
+상태: partially superseded by [2026-05-04-reader-flow-page-feel-and-harness-guard.md](2026-05-04-reader-flow-page-feel-and-harness-guard.md)
+
+## 2026-05-04 정정
+
+이 기록에서 언급한 루트 캡처와 참고 자료는 당시 Reader Flow의 문제를 설명하기 위한 임시 예시였다. 반복 실행되는 active guide는 해당 파일이나 특정 레퍼런스에 의존하지 않는다. 이후 기준은 "레퍼런스 패턴 복제"가 아니라 좋은 글처럼 읽히는 표면감, 문단 호흡, 표현 리듬, 스캔 경로, 정보 배치, 판단 흐름을 현재 글에 맞는 가장 작은 edit move로 옮기는 방향으로 정리한다.
 
 ## 배경
 
