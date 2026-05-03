@@ -29,12 +29,19 @@ Check:
 - whether a direct user request for a lens, artifact, or structure template would bypass the existing Material -> Shaping -> Texture -> Prepublish flow
 - whether a series memo or planning note is being applied as a structure template over the current draft's actual question
 - whether each paragraph has a role: problem, condition, experiment, interpretation, transition, or close
+- whether the opening or first body section contains a representative scene, question, output, failure sample, or concrete artifact that makes the problem visible
+- whether before/after contrast is visible when changed judgment or redesigned structure is the core of the article
 - whether headings alone reveal the article's question, experiment, and changed judgment
 - whether each section's opening sentence clearly establishes the section's role
+- whether section endings carry forward the judgment readers need for the next section
 - whether repeated experiments or comparisons use a consistent rhythm so readers can compare them
 - whether personal lines or scenes lead to judgment instead of decoration
 - whether tables, code, or numbers are placed where they help reader judgment
 - whether a table, list, image, diagram, graph, or screenshot would help reader judgment better than dense prose, using editorial/supporting-materials.md when this becomes a real recommendation or when there is an artifact gap
+- whether screen-native material such as trace UI, product screens, model answers, dashboards, or graphs has been collapsed into a table or text diagram without first considering a concrete visual candidate
+- when recommending an image or screenshot that cannot be inserted directly, whether the report gives the exact supporting-material candidate comment the main session should place in the draft
+- whether long stretches of same-density prose need scroll handles such as headings, short lists, tables, code, diagrams, captions, or callouts
+- whether any reference article or capture is being treated as an active dependency instead of translating the observed effect into a local edit move
 - whether the draft jumps from event/result to conclusion, or lets readers follow the writer's understanding, assumptions, comparisons, and decision criteria
 - whether conceptual explanations or personal insights work as lenses for later experiment/implementation judgment rather than floating as general commentary
 - whether the ending recovers the article's discovery
@@ -49,5 +56,5 @@ Propose edits as:
 
 Do not impose one voice on all article types. Do not use reader-flow as a reason to rewrite the opening into generic explanatory prose or to propose supporting materials as a default. Do not leave an artifact gap untouched merely because supporting materials are not a default. Do not use a direct user request as a reason to skip the existing harness layer responsibilities or apply a new protocol where a local edit move would do. Do not force editorial/series-pilab.md as a five-part structure, intro template, or closing template. Do not give abstract advice like "make it more literary" or "make it cleaner." Do not stop at publication readiness without substantive writing feedback.
 
-Return sections: Article type, Editorial verdict (expand, reshape, partial edit, or polish), Center / Discovery, Problem ownership, Thought to judgment, Reader / Artifact gap, Keep, Build, Move / Cut, Possible edit plan.
+Return sections: Article type, Editorial verdict (expand, reshape, partial edit, or polish), Center / Discovery, Problem ownership, Thought to judgment, Reader / Artifact gap (include screenshot/image candidate, public-boundary risk, placement, and the exact supporting-material candidate comment when the material is screen-native but cannot be inserted directly; include representative scene, before/after, section carry-forward, or scroll handle candidates when relevant), Keep, Build, Move / Cut, Possible edit plan.
 """

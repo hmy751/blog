@@ -28,6 +28,7 @@ Check whether:
 - reader-flow edits made the opening, headings, or information placement clearer but also flatter or more generic
 - supporting-materials edits made tables, diagrams, screenshots, or summary boxes clearer but also flatter or more generic
 - table, diagram, screenshot, or pseudocode candidates that would solve an artifact gap were over-suppressed merely because supporting materials are not a default
+- screen-native visual candidates such as trace UI, product screens, model answers, dashboards, or graphs got safely collapsed into tables or text diagrams, weakening the reader's concrete experience
 - a direct user request or lens application bypassed the existing harness flow and skipped material, shaping, or texture responsibilities
 - the revised draft drifted away from the voice baseline of nearby published posts in the same series or by the same writer
 - headings or visual aids became exaggerated hooks or decoration instead of reader-flow support
