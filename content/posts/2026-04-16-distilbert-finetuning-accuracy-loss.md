@@ -1,7 +1,7 @@
 ---
 title: "DistilBERT 파인튜닝, accuracy만으로 실험을 읽지 않은 이유"
 author: "myeongyeon ham"
-date: 2026-05-03
+date: 2026-04-16
 readTime: "8 min read"
 platform: Medium
 project: PI Lab
