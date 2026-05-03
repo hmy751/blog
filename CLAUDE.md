@@ -85,5 +85,6 @@
 
 - 새 렌즈, 새 축, 새 단계, agent/skill 역할 변경처럼 이후 글쓰기 방식에 영향을 주는 하네스 변경은 [editorial/decisions](editorial/decisions)에 decision record를 남긴다.
 - 기록에는 배경, 기존 하네스가 놓친 문제, 결정, 적용 범위, 비목표, 근거, 후속 점검을 담는다.
+- 하네스 관련 수정 뒤 구조 드리프트가 의심되면 `blog-harness-observer`를 report-only로 호출해 제3자 관찰을 받는다. 이 agent는 normal writing flow에 끼지 않고, 하네스 내용을 자기 안에 누적하지 않는다.
 - 커밋 메시지는 변경 요약과 짧은 의도를 남기고, decision record는 나중에 왜 그 기준이 생겼는지 복원하는 자료로 쓴다.
 - 오타, 링크, 이미 합의된 기준의 작은 polish는 decision record를 생략할 수 있다.

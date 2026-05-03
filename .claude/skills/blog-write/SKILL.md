@@ -85,6 +85,8 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 
 하네스 관련 요청에서는 사용자의 즉시 지시를 그대로 새 규칙이나 새 단계로 승격하지 않는다. 먼저 기존 `Material -> Shaping -> Texture -> Prepublish` 구조에서 어느 층위의 문제인지 확인한다. 특정 렌즈, 자료 장치, agent, 프로토콜을 추가하라는 요청처럼 보여도 기존 단계의 책임을 우회하거나 중복하지 않는지 확인하고, 가능하면 기존 문서/agent 안의 좁은 guard로 보강한다. 충돌이 보이면 조용히 맞춰 쓰지 말고 "사용자 요청 / 기존 하네스 구조 / 최소 수정안"을 분리해 판단한다.
 
+하네스 파일을 실제로 수정한 뒤 구조 드리프트, 렌즈/단계 혼동, Claude/Codex agent 불일치가 의심되면 `blog-harness-observer`를 report-only로 호출한다. 이 observer는 제3자 관찰자일 뿐이며, normal writing flow에 넣거나 하네스 내용을 그 안에 누적하지 않는다. observer 자체가 비대해질 것 같으면 기존 decision record나 소유 문서에 남기고 observer에는 점검 질문만 둔다.
+
 편집 요청이 모호하면 아래 모드를 구분한다.
 
 - `sync`: frontmatter, 링크, 파일명, 참조 표현 같은 운영 정합성만 맞춘다.
