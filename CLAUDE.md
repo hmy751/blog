@@ -45,7 +45,7 @@
 - [voice.md](editorial/voice.md)는 강제 틀이 아니라 점검 거울이다.
 - [writing-partners.md](editorial/writing-partners.md)는 글을 키우는 단계와 발행 점검 단계를 분리한다.
 - [developer-lens.md](editorial/developer-lens.md)는 기술 블로그다운 문제 정의, 제약, 선택, 트레이드오프, 판단 변화 기준이다.
-- [reader-flow-lens.md](editorial/reader-flow-lens.md)는 독자가 글의 판단 흐름을 놓치지 않도록 소제목, 문단 첫 문장, 표, 이미지, 도식, 숫자 배치를 점검하는 기준이다.
+- [reader-flow-lens.md](editorial/reader-flow-lens.md)는 독자가 글의 판단 흐름을 놓치지 않도록 오프닝 약속, 섹션 층위, 소제목, 문단 첫 문장, 표, 이미지, 도식, 자료 앞뒤 문장, 숫자 배치를 점검하는 기준이다.
 - [edit-patterns.md](editorial/edit-patterns.md)는 반복해서 거부된 수정 방향의 사례집이다.
 - [series-pilab.md](editorial/series-pilab.md)는 PI Lab 학습/실험 글에만 우선 적용한다. 다른 글의 전역 구조 법칙으로 쓰지 않는다.
 - 담백함은 압축이 아니다. 호흡, 구체 장면, 사실의 범위를 같이 본다.
