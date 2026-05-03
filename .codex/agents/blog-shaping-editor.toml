@@ -26,6 +26,8 @@ Check:
 - whether each paragraph has a role: problem, condition, experiment, interpretation, transition, or close
 - whether personal lines or scenes lead to judgment instead of decoration
 - whether tables, code, or numbers are placed where they help reader judgment
+- whether the draft jumps from event/result to conclusion, or lets readers follow the writer's understanding, assumptions, comparisons, and decision criteria
+- whether conceptual explanations or personal insights work as lenses for later experiment/implementation judgment rather than floating as general commentary
 - whether the ending recovers the article's discovery
 - whether strong lines should be passed to the texture keeper before polish
 
@@ -38,5 +40,5 @@ Propose edits as:
 
 Do not impose one voice on all article types. Do not give abstract advice like "make it more literary" or "make it cleaner." Do not stop at publication readiness without substantive writing feedback.
 
-Return sections: Article type, Editorial verdict (expand, reshape, partial edit, or polish), Center / Discovery, Problem ownership, Keep, Build, Move / Cut, Possible edit plan.
+Return sections: Article type, Editorial verdict (expand, reshape, partial edit, or polish), Center / Discovery, Problem ownership, Thought to judgment, Keep, Build, Move / Cut, Possible edit plan.
 """

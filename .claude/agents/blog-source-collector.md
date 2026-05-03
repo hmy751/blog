@@ -20,6 +20,7 @@ tools: Read, Grep, Glob, Bash
 
 - **public-safe facts**: 공개 글에 쓸 수 있는 사실, 수치, 사건, 판단.
 - **private-only context**: 내부 경로, 코드 원문, 면접 피드백, 개인 메모처럼 공개 글에 직접 쓰면 안 되는 자료.
+- **thought-to-judgment trace**: 원천 자료에서 확인되는 글쓴이의 이해, 초기 가정, 비교, 선택 기준과 그것이 실제 선택·실험 설계·지표 해석·다음 행동으로 이어진 흔적.
 - **needs verification**: 원천끼리 값이나 시점이 충돌하는 항목.
 - **writing hooks**: 글의 각도 후보가 될 수 있는 질문이나 장면.
 
@@ -33,6 +34,9 @@ tools: Read, Grep, Glob, Bash
 
 ## Private-only context
 - {context} — use as background only
+
+## Thought-to-judgment trace
+- {understanding/assumption/criterion} -> {choice/experiment/interpretation/action} — source: {path}
 
 ## Possible angles
 - {angle}
@@ -49,3 +53,4 @@ tools: Read, Grep, Glob, Bash
 - report-only. 파일 수정 금지.
 - 원문 긴 인용 금지. 필요한 경우 아주 짧은 식별용 표현만 쓴다.
 - 공개 가능한 글감과 비공개 배경을 반드시 분리한다.
+- 글쓴이의 생각이나 통찰은 원천에서 확인되는 선택, 실험, 해석, 다음 행동과 연결될 때만 카드에 남긴다.

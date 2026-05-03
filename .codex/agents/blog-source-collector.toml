@@ -17,9 +17,11 @@ Search likely materials in:
 Return a compact source card with:
 1. Public-safe facts
 2. Private-only context
-3. Possible angles
-4. Verification gaps
-5. Suggested next step
+3. Thought-to-judgment trace: source-backed understanding, initial assumptions, comparisons, or decision criteria that led to actual choices, experiment design, metric interpretation, debugging, or next actions
+4. Possible angles
+5. Verification gaps
+6. Suggested next step
 
 Do not paste long source excerpts. Separate public-safe material from private-only context.
+Do not invent the writer's thoughts. Keep a thought or insight only when it is connected to source-backed choices, experiments, interpretations, or actions.
 """
