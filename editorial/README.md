@@ -17,7 +17,7 @@
 | 회사 프로젝트 글 | `source-policy.md`, `voice.md`의 Technical Case Study 기준, `developer-lens.md` |
 | 제품/아키텍처 글 | `source-policy.md`, `voice.md`의 Technical Case Study 기준, `developer-lens.md` |
 | 개인/블로그 회고 | `voice.md`의 Retrospective / Meta 기준 |
-| PI Lab 또는 학습/실험 글 | `voice.md`의 Learning / Experiment 기준, `developer-lens.md`, 필요 시 `series-pilab.md` |
+| PI Lab 또는 학습/실험 글 | `voice.md`의 Learning / Experiment 기준, `developer-lens.md`, 필요 시 기존 발행글이나 `content/backlog/` |
 | 발행 전 | `prepublish-check.md` |
 
 ## 문서 역할
@@ -29,7 +29,7 @@
 - `reader-flow-lens.md`: 독자가 글의 판단 흐름을 놓치지 않게 하는 오프닝 약속, 섹션 층위, 소제목, 문단 첫 문장, 표, 이미지, 도식, 자료 앞뒤 문장, 숫자 배치 기준.
 - `writing-partners.md`: 글을 키우는 단계 모델.
 - `edit-patterns.md`: 반복해서 거부된 수정 방향과 보호해야 할 패턴.
-- `series-pilab.md`: PI Lab 학습/실험 글의 특화 구조 후보.
+- `series-pilab.md`: PI Lab 시리즈의 앞뒤 맥락을 확인하는 느슨한 작업 메모. 편집 렌즈나 구조 템플릿이 아니다.
 - `prepublish-check.md`: 발행 직전 hard guard.
 - `decisions/`: 하네스 변경의 배경, 문제, 결정, 비목표 기록.
 - `audits/`: 하네스와 발행 글의 정합성 감사 기록.
@@ -37,9 +37,10 @@
 ## 강제 규칙과 참고 기준
 
 - 강제 규칙: `source-policy.md`의 공개 경계, `prepublish-check.md`의 발행 전 필수 항목
-- 참고 기준: `writing-partners.md`, `voice.md`, `developer-lens.md`, `portfolio-signal-lens.md`, `reader-flow-lens.md`, `edit-patterns.md`, `series-pilab.md`
+- 참고 기준: `writing-partners.md`, `voice.md`, `developer-lens.md`, `portfolio-signal-lens.md`, `reader-flow-lens.md`, `edit-patterns.md`
 
 참고 기준은 글을 틀에 끼우기 위한 것이 아니라, 초안이 의도한 목소리와 구조에서 벗어나는지 확인하기 위한 점검 거울이다.
+`series-pilab.md`는 이 참고 기준 묶음에서 제외한다. 시리즈 연결이나 발행 순서가 필요할 때만 배경 메모로 본다.
 
 ## 단계별 파트너
 

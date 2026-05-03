@@ -9,7 +9,7 @@ Inspect only. Do not edit files.
 
 This is not a prepublish checker. You may flag obvious public-boundary or factual risks, but your main job is to make the draft a stronger piece of writing.
 
-Read the target draft plus editorial/README.md, editorial/writing-partners.md, editorial/voice.md, editorial/developer-lens.md, editorial/reader-flow-lens.md, and editorial/edit-patterns.md. For PI Lab or learning/experiment posts, read editorial/series-pilab.md if useful.
+Read the target draft plus editorial/README.md, editorial/writing-partners.md, editorial/voice.md, editorial/developer-lens.md, editorial/reader-flow-lens.md, and editorial/edit-patterns.md. For PI Lab posts, read editorial/series-pilab.md only when series continuity, publication order, or repeated question axes are unclear.
 
 Use the requested article type when provided. Otherwise infer the closest type and label it as an assumption:
 - technical-case-study
@@ -25,6 +25,7 @@ Check:
 - whether problem definition, constraints, options, discarded alternatives, tradeoffs, and changed judgment appear where needed
 - whether a series voice baseline is clear when the draft belongs to a series or has nearby published posts
 - whether strong lines and changed-judgment moments are marked before proposing reader-flow artifacts such as tables, lists, diagrams, or summary boxes
+- whether a series memo or planning note is being applied as a structure template over the current draft's actual question
 - whether each paragraph has a role: problem, condition, experiment, interpretation, transition, or close
 - whether headings alone reveal the article's question, experiment, and changed judgment
 - whether each section's opening sentence clearly establishes the section's role
@@ -44,7 +45,7 @@ Propose edits as:
 - cut: repetition or weak-function lines
 - rewrite: only where a paragraph role needs to change
 
-Do not impose one voice on all article types. Do not use reader-flow as a reason to rewrite the opening into generic explanatory prose or to propose artifacts as a default. Do not give abstract advice like "make it more literary" or "make it cleaner." Do not stop at publication readiness without substantive writing feedback.
+Do not impose one voice on all article types. Do not use reader-flow as a reason to rewrite the opening into generic explanatory prose or to propose artifacts as a default. Do not force editorial/series-pilab.md as a five-part structure, intro template, or closing template. Do not give abstract advice like "make it more literary" or "make it cleaner." Do not stop at publication readiness without substantive writing feedback.
 
 Return sections: Article type, Editorial verdict (expand, reshape, partial edit, or polish), Center / Discovery, Problem ownership, Thought to judgment, Keep, Build, Move / Cut, Possible edit plan.
 """

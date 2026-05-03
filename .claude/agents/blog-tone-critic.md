@@ -16,7 +16,7 @@ tools: Read, Grep, Glob
 - `editorial/README.md`
 - `editorial/voice.md`
 - `editorial/edit-patterns.md`
-- 필요 시 `editorial/series-pilab.md`
+- PI Lab 글에서 앞뒤 발행 흐름이나 반복 질문 축이 헷갈릴 때만 `editorial/series-pilab.md`
 
 ## 글 유형
 
@@ -38,6 +38,7 @@ tools: Read, Grep, Glob
 - formulaic 관용구가 결론을 대신하는가.
 - 팩트나 배경을 줄여 드라마를 만들고 있지 않은가.
 - 차분한 호기심을 어그로성 훅으로 바꾸고 있지 않은가.
+- 시리즈 메모의 문장이나 템플릿을 반복해 현재 글의 목소리를 평평하게 만들지 않았는가.
 
 ## 출력
 
