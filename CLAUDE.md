@@ -14,6 +14,7 @@
 | `.agents/skills/` | Codex가 읽을 수 있는 skill 브릿지. 원천은 `.claude/skills/`. |
 | `.claude/agents/` | Claude Code용 report-only agents. Material/shaping/texture 파트너와 발행 전 checker를 분리한다. |
 | `.codex/agents/` | Codex용 report-only agents. Claude agent와 의미를 맞추되 포맷은 따로 둔다. |
+| `editorial/decisions/` | 하네스 변경의 배경, 문제, 결정, 비목표를 남기는 decision record. |
 
 ## 원천 자료 정책
 
@@ -76,3 +77,10 @@
 - 단순 발행일 보정처럼 맥락이 자명한 작업은 제목만으로 충분하다.
 - `harness:`와 `meta:`처럼 이후 작업 방식에 영향을 주는 커밋은 본문에 배경과 의도를 1~3줄로 남긴다.
 - 예: `post: DistilBERT 파인튜닝 실험 글 발행`, `harness: 포트폴리오 신호 글쓰기 하네스 보강`.
+
+## 하네스 변경 기록
+
+- 새 렌즈, 새 축, 새 단계, agent/skill 역할 변경처럼 이후 글쓰기 방식에 영향을 주는 하네스 변경은 [editorial/decisions](editorial/decisions)에 decision record를 남긴다.
+- 기록에는 배경, 기존 하네스가 놓친 문제, 결정, 적용 범위, 비목표, 근거, 후속 점검을 담는다.
+- 커밋 메시지는 변경 요약과 짧은 의도를 남기고, decision record는 나중에 왜 그 기준이 생겼는지 복원하는 자료로 쓴다.
+- 오타, 링크, 이미 합의된 기준의 작은 polish는 decision record를 생략할 수 있다.

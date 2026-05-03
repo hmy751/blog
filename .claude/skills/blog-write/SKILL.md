@@ -86,6 +86,7 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 - `editorial/writing-partners.md`는 글을 키우는 단계와 공개 전 점검 단계를 분리한다.
 - `editorial/developer-lens.md`는 새 단계가 아니라 기존 파트너들이 공통으로 읽는 개발자 관점 렌즈다.
 - `editorial/series-pilab.md`의 구조는 PI Lab 학습/실험 글의 후보이며 전역 법칙이 아니다.
+- 새 렌즈, 새 축, agent/skill 역할 변경처럼 이후 글쓰기 방식에 영향을 주는 하네스 변경은 `editorial/decisions/`에 배경과 결정 맥락을 남긴다.
 - 담백함은 압축이 아니다. 구체 장면과 사실 범위를 살린다.
 - 회고 글에는 했다체와 자기 관찰이 자연스러울 수 있다. 기술 글의 금기를 그대로 적용하지 않는다.
 - 개인적 문장과 감각 표현은 요구사항이 아니지만, 글의 판단과 독자 이해에 기여하면 보호한다.

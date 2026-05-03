@@ -29,6 +29,8 @@
 - `edit-patterns.md`: 반복해서 거부된 수정 방향과 보호해야 할 패턴.
 - `series-pilab.md`: PI Lab 학습/실험 글의 특화 구조 후보.
 - `prepublish-check.md`: 발행 직전 hard guard.
+- `decisions/`: 하네스 변경의 배경, 문제, 결정, 비목표 기록.
+- `audits/`: 하네스와 발행 글의 정합성 감사 기록.
 
 ## 강제 규칙과 참고 기준
 
@@ -47,6 +49,12 @@
 - `blog-evidence-checker`와 prepublish guard: 발행 직전 사실 정합성과 공개 경계를 본다.
 
 자세한 흐름은 `writing-partners.md`를 따른다.
+
+## 하네스 변경 기록
+
+새 렌즈, 새 축, agent/skill 역할 변경처럼 이후 글쓰기 방식에 영향을 주는 하네스 변경은 `decisions/`에 decision record를 남긴다. 커밋 메시지는 요약과 짧은 의도를 담고, decision record는 왜 그 기준이 생겼는지, 무엇을 막으려는지, 어디까지 적용할지 남긴다.
+
+오타 수정, 링크 정리, 이미 합의된 기준의 표현 polish처럼 맥락이 자명한 변경은 기록하지 않아도 된다.
 
 ## 글 유형
 

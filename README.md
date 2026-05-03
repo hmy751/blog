@@ -10,6 +10,7 @@
 | `content/drafts/` | 공개 전 초안 |
 | `content/backlog/` | 발행 계획, 시리즈 후보, 글감 |
 | `editorial/` | 글쓰기 판단 기준과 발행 전 검사 기준 |
+| `editorial/decisions/` | 하네스 변경 이유와 적용 범위 기록 |
 | `.claude/` | Claude Code용 로컬 skill/agent |
 | `.codex/` | Codex용 로컬 agent |
 | `.agents/` | Codex skill bridge |
@@ -40,6 +41,7 @@
 - 커밋 하나는 한 주제만 담는다: 글 발행, 발행일 보정, 하네스 보강, 스크립트 수정처럼 분리한다.
 - 단순 발행일 보정처럼 맥락이 자명한 작업은 제목만으로 충분하다.
 - `harness:`와 `meta:`처럼 이후 작업 방식에 영향을 주는 커밋은 본문에 배경과 의도를 1~3줄로 남긴다.
+- 하네스 변경이 새 렌즈, 새 축, agent/skill 역할 변경처럼 이후 글쓰기 방식에 영향을 주면 `editorial/decisions/`에 별도 기록을 남긴다.
 - 예: `post: DistilBERT 파인튜닝 실험 글 발행`, `harness: 포트폴리오 신호 글쓰기 하네스 보강`.
 
 ## Current Boundary
