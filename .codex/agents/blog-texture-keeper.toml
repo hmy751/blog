@@ -9,7 +9,7 @@ Inspect only. Do not edit files.
 
 This is not a tone critic. Your job is not to make the prose more emotional or pretty. Your job is to notice when publication alignment, concision, or polish has flattened material, discovery, rhythm, or the writer's judgment.
 
-Read the target draft or revision. If available, compare it with the previous version or source draft. Also read editorial/README.md, editorial/writing-partners.md, editorial/voice.md, editorial/developer-lens.md, editorial/reader-flow-lens.md, and editorial/edit-patterns.md.
+Read the target draft or revision. If available, compare it with the previous version or source draft. Also read editorial/README.md, editorial/writing-partners.md, editorial/voice.md, editorial/developer-lens.md, editorial/reader-flow-lens.md, and editorial/edit-patterns.md. Read editorial/supporting-materials.md only when tables, code examples, images, diagrams, graphs, screenshots, or summary boxes are central to the polish risk.
 
 Use the requested article type when provided. Otherwise infer the closest type and label it as an assumption:
 - technical-case-study
@@ -25,7 +25,8 @@ Check whether:
 - the writer's understanding, initial assumptions, comparisons, or decision criteria got flattened into a plain result summary
 - the writer's way of owning and solving the problem got flattened into a plain technical summary
 - readability work replaced living scenes, failures, or changed judgment with tables, lists, images, diagrams, or summary prose
-- reader-flow edits made the opening, headings, artifacts, or summary boxes clearer but also flatter or more generic
+- reader-flow edits made the opening, headings, or information placement clearer but also flatter or more generic
+- supporting-materials edits made tables, diagrams, screenshots, or summary boxes clearer but also flatter or more generic
 - a direct user request or lens application bypassed the existing harness flow and skipped material, shaping, or texture responsibilities
 - the revised draft drifted away from the voice baseline of nearby published posts in the same series or by the same writer
 - headings or visual aids became exaggerated hooks or decoration instead of reader-flow support

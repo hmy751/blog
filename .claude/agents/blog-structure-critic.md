@@ -19,6 +19,7 @@ tools: Read, Grep, Glob
 - `editorial/voice.md`
 - `editorial/developer-lens.md`
 - `editorial/reader-flow-lens.md`
+- 자료 장치 배치가 구조 쟁점일 때만 `editorial/supporting-materials.md`
 - PI Lab 글에서 앞뒤 발행 흐름이나 반복 질문 축이 헷갈릴 때만 `editorial/series-pilab.md`
 - 필요 시 `content/backlog/`의 관련 계획
 

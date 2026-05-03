@@ -2,7 +2,11 @@
 
 작성일: 2026-05-03
 관련 커밋: 766283b harness: 독자 흐름 렌즈 추가
-상태: accepted
+상태: partially superseded by [2026-05-04-reader-flow-supporting-materials-split.md](2026-05-04-reader-flow-supporting-materials-split.md)
+
+## 2026-05-04 정정
+
+이 기록에서 `reader-flow-lens.md`에 함께 두었던 표, 코드, 이미지, 도식, 그래프, 스크린샷 기준과 `reader-flow candidate` 주석 형식은 이후 [supporting-materials.md](../supporting-materials.md)로 분리했다. 현재 active guide에서 Reader Flow는 좋은 글처럼 읽히는 페이지 감각, 문단 호흡, 스캔 경로, 정보 배치, 판단 흐름에 집중하고, 자료 장치 판단은 실제 쟁점일 때만 별도 보조 문서로 본다.
 
 ## 배경
 

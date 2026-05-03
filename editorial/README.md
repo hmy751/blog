@@ -11,6 +11,7 @@
 | 모든 블로그 작업 | `source-policy.md`, `voice.md` |
 | 새 글 작성/초안 다듬기 | `writing-partners.md`, `voice.md`, `developer-lens.md`, `edit-patterns.md` |
 | 가독성/독자 흐름 점검 | `reader-flow-lens.md`, `writing-partners.md`, 필요 시 `developer-lens.md` |
+| 표/코드/이미지/도식/그래프/스크린샷 판단 | `supporting-materials.md`, `reader-flow-lens.md`, `source-policy.md` |
 | 공개 기술 글의 포트폴리오 신호 점검 | `portfolio-signal-lens.md`, `developer-lens.md`, `writing-partners.md` |
 | 톤 점검 | `voice.md`, `edit-patterns.md` |
 | 기술 구현/복기 글 | `voice.md`의 Technical Case Study 기준, `developer-lens.md` |
@@ -27,6 +28,7 @@
 - `developer-lens.md`: 기술 블로그다운 문제 정의, 제약, 선택, 트레이드오프, 판단 변화 기준.
 - `portfolio-signal-lens.md`: 공개 기술 글이 동료 개발자와 나를 궁금해하는 개발자에게 남기는 역량 신호 기준.
 - `reader-flow-lens.md`: 글이 좋은 기술 글처럼 읽히도록 페이지 감각, 문단 호흡, 표현 리듬, 스캔 경로, 정보 배치, 판단 흐름을 함께 보는 기준.
+- `supporting-materials.md`: 표, 코드, 이미지, 도식, 그래프, 스크린샷이 본문 판단을 돕는지 보는 보조 기준. 새 단계가 아니라 자료 장치가 실제 쟁점일 때만 읽는다.
 - `writing-partners.md`: 글을 키우는 단계 모델.
 - `edit-patterns.md`: 반복해서 거부된 수정 방향과 보호해야 할 패턴.
 - `series-pilab.md`: PI Lab 시리즈의 앞뒤 맥락을 확인하는 느슨한 작업 메모. 편집 렌즈나 구조 템플릿이 아니다.
@@ -37,7 +39,7 @@
 ## 강제 규칙과 참고 기준
 
 - 강제 규칙: `source-policy.md`의 공개 경계, `prepublish-check.md`의 발행 전 필수 항목
-- 참고 기준: `writing-partners.md`, `voice.md`, `developer-lens.md`, `portfolio-signal-lens.md`, `reader-flow-lens.md`, `edit-patterns.md`
+- 참고 기준: `writing-partners.md`, `voice.md`, `developer-lens.md`, `portfolio-signal-lens.md`, `reader-flow-lens.md`, `supporting-materials.md`, `edit-patterns.md`
 
 참고 기준은 글을 틀에 끼우기 위한 것이 아니라, 초안이 의도한 목소리와 구조에서 벗어나는지 확인하기 위한 점검 거울이다.
 `series-pilab.md`는 이 참고 기준 묶음에서 제외한다. 시리즈 연결이나 발행 순서가 필요할 때만 배경 메모로 본다.
