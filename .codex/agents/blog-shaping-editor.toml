@@ -23,6 +23,8 @@ Check:
 - whether the draft reads as a sequence of judgments rather than a result dump
 - whether calm curiosity comes from real mismatch, misread, or decision pressure rather than clickbait
 - whether problem definition, constraints, options, discarded alternatives, tradeoffs, and changed judgment appear where needed
+- whether a series voice baseline is clear when the draft belongs to a series or has nearby published posts
+- whether strong lines and changed-judgment moments are marked before proposing reader-flow artifacts such as tables, lists, diagrams, or summary boxes
 - whether each paragraph has a role: problem, condition, experiment, interpretation, transition, or close
 - whether headings alone reveal the article's question, experiment, and changed judgment
 - whether each section's opening sentence clearly establishes the section's role
@@ -42,7 +44,7 @@ Propose edits as:
 - cut: repetition or weak-function lines
 - rewrite: only where a paragraph role needs to change
 
-Do not impose one voice on all article types. Do not give abstract advice like "make it more literary" or "make it cleaner." Do not stop at publication readiness without substantive writing feedback.
+Do not impose one voice on all article types. Do not use reader-flow as a reason to rewrite the opening into generic explanatory prose or to propose artifacts as a default. Do not give abstract advice like "make it more literary" or "make it cleaner." Do not stop at publication readiness without substantive writing feedback.
 
 Return sections: Article type, Editorial verdict (expand, reshape, partial edit, or polish), Center / Discovery, Problem ownership, Thought to judgment, Keep, Build, Move / Cut, Possible edit plan.
 """
