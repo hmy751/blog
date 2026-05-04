@@ -1,6 +1,8 @@
 # Blog
 
-공개 블로그 글쓰기와 발행 준비를 위한 작업 공간이다. 플랫폼 구현은 아직 두지 않는다.
+공개 블로그 원고, 글쓰기/발행 하네스, 격리된 커스텀 블로그 사이트 구현을 함께 관리하는 작업 공간이다.
+
+콘텐츠와 글쓰기 기준은 root `content/`와 `editorial/`이 소유하고, 사이트 앱 구현은 `site/` 안에만 둔다.
 
 ## Structure
 
@@ -15,9 +17,12 @@
 | `editorial/reference-profiles/` | 레퍼런스에서 추출한 재사용 가능한 페이지 패턴 |
 | `editorial/context/` | 특정 시리즈나 프로젝트 배경 메모 |
 | `editorial/decisions/` | 하네스 변경 이유와 적용 범위 기록 |
-| `.claude/` | Claude Code용 로컬 skill/agent |
-| `.codex/` | Codex용 로컬 agent |
-| `.agents/` | Codex skill bridge |
+| `site/` | 커스텀 블로그 사이트 앱의 격리된 구현 루트 |
+| `site/docs/` | 사이트 구현 경계, content/design contract |
+| `site/decisions/` | 사이트 구현과 사이트 전용 하네스 변경 기록 |
+| `.claude/` | Claude Code용 writing skill/agent |
+| `.codex/` | Codex용 writing agent |
+| `.agents/` | Codex writing skill bridge |
 | `scripts/` | 글쓰기 운영 보조 스크립트 |
 
 기존 Gatsby 프로젝트와 그 안의 과거 글은 `../blog-archive-2026-05-01-gatsby/`에 보존했다. Gatsby 프로젝트의 글은 새 blog로 가져오지 않고, 실제 발행 중인 글 소스만 `content/posts/`로 가져왔다.
@@ -45,13 +50,18 @@
 - 커밋 하나는 한 주제만 담는다: 글 발행, 발행일 보정, 하네스 보강, 스크립트 수정처럼 분리한다.
 - 단순 발행일 보정처럼 맥락이 자명한 작업은 제목만으로 충분하다.
 - `harness:`와 `meta:`처럼 이후 작업 방식에 영향을 주는 커밋은 본문에 배경과 의도를 1~3줄로 남긴다.
-- 하네스 변경이 새 렌즈, 새 축, agent/skill 역할 변경처럼 이후 글쓰기 방식에 영향을 주면 `editorial/decisions/`에 별도 기록을 남긴다.
+- writing 하네스 변경이 새 렌즈, 새 축, agent/skill 역할 변경처럼 이후 글쓰기 방식에 영향을 주면 `editorial/decisions/`에 별도 기록을 남긴다.
+- 사이트 구현과 사이트 전용 하네스 변경은 `site/decisions/`에 기록한다.
 - 예: `post: DistilBERT 파인튜닝 실험 글 발행`, `harness: 포트폴리오 신호 글쓰기 하네스 보강`.
 
 ## Current Boundary
 
-- 이 repo는 지금 플랫폼이 아니라 콘텐츠와 글쓰기 운영 기준의 본거지다.
+- 이 repo의 root는 콘텐츠와 글쓰기 운영 기준의 본거지다.
+- 사이트 앱 코드는 `site/` 아래에만 둔다.
 - `editorial/`은 공식 Claude/Codex 폴더가 아니라, skill과 agents가 참조하는 편집 기준 자료실이다.
+- root `.claude/`, `.codex/`, `.agents/`는 글쓰기/발행 하네스 전용이다.
+- 사이트 전용 agent/skill이 필요하면 `site/.claude/`, `site/.codex/`, `site/.agents/` 아래에 둔다.
 - `dev-hub`와 `pilab` 자료는 read-only source로 참조한다.
 - 공개 글에는 내부 경로, 코드 원문, 면접 피드백 원문을 옮기지 않는다.
-- 플랫폼을 만들 때는 이 구조 위에 별도 앱을 얹는다.
+- 사이트는 `content/posts`를 읽을 수 있지만 원고를 직접 rewrite하지 않는다.
+- 사이트 구현 경계는 `site/docs/platform-boundary.md`를 따른다.

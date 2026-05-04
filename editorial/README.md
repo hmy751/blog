@@ -4,6 +4,8 @@
 
 이 폴더는 Claude/Codex 공식 실행 구조가 아니라, 이 블로그의 편집 기준 자료실이다. `CLAUDE.md`, `blog-write` skill, blog agents가 필요할 때 이 문서들을 참조한다.
 
+커스텀 블로그 사이트 구현 기준은 이 폴더가 아니라 `../site/`가 소유한다. 사이트 경계와 content/design contract는 `../site/docs/`를 따른다.
+
 ## Layers
 
 | 층위 | 역할 |
@@ -71,9 +73,11 @@
 
 ## 하네스 변경 기록
 
-새 렌즈, 새 축, agent/skill 역할 변경처럼 이후 글쓰기 방식에 영향을 주는 하네스 변경은 `decisions/`에 decision record를 남긴다.
+새 렌즈, 새 축, writing agent/skill 역할 변경처럼 이후 글쓰기 방식에 영향을 주는 하네스 변경은 `decisions/`에 decision record를 남긴다.
 
-하네스 관련 수정 뒤에는 필요할 때 `blog-harness-observer`를 report-only로 호출해 구조 드리프트를 본다. 이 observer는 글쓰기 단계가 아니며, 새 규칙을 저장하는 장소도 아니다.
+사이트 구현과 사이트 전용 agent/skill 변경은 `../site/decisions/`에 기록한다. `editorial/decisions/`는 글쓰기 하네스의 결정 기록으로 유지한다.
+
+writing 하네스 관련 수정 뒤에는 필요할 때 `blog-harness-observer`를 report-only로 호출해 구조 드리프트를 본다. 이 observer는 글쓰기 단계가 아니며, 새 규칙을 저장하는 장소도 아니다.
 
 오타 수정, 링크 정리, 이미 합의된 기준의 표현 polish처럼 맥락이 자명한 변경은 기록하지 않아도 된다.
 

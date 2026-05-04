@@ -1,6 +1,6 @@
 # Blog Project Guide
 
-이 repo는 직접 운영하는 공개 블로그의 콘텐츠 원고와 글쓰기 운영 기준의 본거지다. 외부 발행 플랫폼명을 frontmatter에 남기지 않고, 공개 원고의 기본 발행면은 `Blog`로 둔다.
+이 repo는 직접 운영하는 공개 블로그의 콘텐츠 원고, 글쓰기 운영 기준, 격리된 커스텀 사이트 구현 루트의 본거지다. 외부 발행 플랫폼명을 frontmatter에 남기지 않고, 공개 원고의 기본 발행면은 `Blog`로 둔다.
 
 ## 역할 경계
 
@@ -10,11 +10,25 @@
 | `content/drafts/` | 공개 전 초안. 원천 자료에서 가져온 글도 먼저 여기에 둔다. |
 | `content/backlog/` | 발행 계획, 시리즈 후보, 글감 목록. |
 | `editorial/` | 글쓰기 판단 기준. `core/`, `lenses/`, `guards/`, `reference-profiles/`, `context/`, `decisions/`, `audits/`로 책임을 나눈다. |
-| `.claude/skills/` | Claude Code용 로컬 skill 원천. |
-| `.agents/skills/` | Codex가 읽을 수 있는 skill 브릿지. 원천은 `.claude/skills/`. |
-| `.claude/agents/` | Claude Code용 report-only agents. Material/shaping/texture 파트너와 발행 전 checker를 분리한다. |
-| `.codex/agents/` | Codex용 report-only agents. Claude agent와 의미를 맞추되 포맷은 따로 둔다. |
-| `editorial/decisions/` | 하네스 변경의 배경, 문제, 결정, 비목표를 남기는 decision record. |
+| `site/` | 커스텀 블로그 사이트 앱의 격리된 구현 루트. 앱 코드, 라우팅, Markdown renderer, RSS/sitemap, 사이트 검증을 둔다. |
+| `site/docs/` | 사이트 구현 경계, content/design contract. |
+| `site/decisions/` | 사이트 구현과 사이트 전용 하네스 변경의 decision record. |
+| `.claude/skills/` | Claude Code용 writing skill 원천. |
+| `.agents/skills/` | Codex가 읽을 수 있는 writing skill 브릿지. 원천은 `.claude/skills/`. |
+| `.claude/agents/` | Claude Code용 writing report-only agents. Material/shaping/texture 파트너와 발행 전 checker를 분리한다. |
+| `.codex/agents/` | Codex용 writing report-only agents. Claude agent와 의미를 맞추되 포맷은 따로 둔다. |
+| `editorial/decisions/` | 글쓰기 하네스 변경의 배경, 문제, 결정, 비목표를 남기는 decision record. |
+
+## 사이트 구현 경계
+
+커스텀 블로그 사이트는 이 repo 안의 `site/`에 둔다. 같은 repo에 있어도 root `content/`/`editorial/`과 `site/`는 다른 레이어다.
+
+- `site/`는 앱 코드, UI 컴포넌트, Markdown renderer, RSS/sitemap, metadata, 배포/검증 스크립트를 소유한다.
+- `editorial/`은 글쓰기 판단 기준에 집중하고, 사이트 디자인 토큰이나 구현 계약을 소유하지 않는다.
+- 사이트 구현 문서는 [site/docs/platform-boundary.md](site/docs/platform-boundary.md), [site/docs/CONTENT_CONTRACT.md](site/docs/CONTENT_CONTRACT.md), [site/docs/DESIGN_CONTRACT.md](site/docs/DESIGN_CONTRACT.md)를 따른다.
+- root `.claude/`, `.codex/`, `.agents/`는 writing/publishing 하네스 전용이다.
+- 사이트 전용 agent/skill이 필요하면 `site/.claude/`, `site/.codex/`, `site/.agents/` 아래에 둔다.
+- 사이트는 `content/posts`를 source로 읽을 수 있지만 원고를 직접 rewrite하지 않는다. 원고 수정은 root `content/`와 editorial guard 기준으로 처리한다.
 
 ## 원천 자료 정책
 
@@ -88,8 +102,9 @@
 
 ## 하네스 변경 기록
 
-- 새 렌즈, 새 축, 새 단계, agent/skill 역할 변경처럼 이후 글쓰기 방식에 영향을 주는 하네스 변경은 [editorial/decisions](editorial/decisions)에 decision record를 남긴다.
+- 새 렌즈, 새 축, 새 단계, writing agent/skill 역할 변경처럼 이후 글쓰기 방식에 영향을 주는 하네스 변경은 [editorial/decisions](editorial/decisions)에 decision record를 남긴다.
+- 사이트 구현과 사이트 전용 agent/skill 변경은 [site/decisions](site/decisions)에 decision record를 남긴다.
 - 기록에는 배경, 기존 하네스가 놓친 문제, 결정, 적용 범위, 비목표, 근거, 후속 점검을 담는다.
-- 하네스 관련 수정 뒤 구조 드리프트가 의심되면 `blog-harness-observer`를 report-only로 호출해 제3자 관찰을 받는다. 이 agent는 normal writing flow에 끼지 않고, 하네스 내용을 자기 안에 누적하지 않는다.
+- writing 하네스 관련 수정 뒤 구조 드리프트가 의심되면 `blog-harness-observer`를 report-only로 호출해 제3자 관찰을 받는다. 이 agent는 normal writing flow에 끼지 않고, 하네스 내용을 자기 안에 누적하지 않는다.
 - 커밋 메시지는 변경 요약과 짧은 의도를 남기고, decision record는 나중에 왜 그 기준이 생겼는지 복원하는 자료로 쓴다.
 - 오타, 링크, 이미 합의된 기준의 작은 polish는 decision record를 생략할 수 있다.

@@ -7,6 +7,8 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 
 이 skill은 `~/Desktop/10_work/blog`의 글쓰기와 발행 준비에 적용한다. 기준 본문은 `editorial/`이 소유하고, 이 skill은 작업 모드에 맞는 문서를 고르는 dispatcher 역할을 한다.
 
+커스텀 블로그 사이트 구현은 이 skill의 책임이 아니다. 사이트 앱, Markdown renderer, 디자인 계약, 빌드/검증 작업은 `site/CLAUDE.md`와 `site/docs/`를 먼저 따른다. 원고 수정이 필요할 때만 root `content/`와 `editorial/` 기준으로 돌아온다.
+
 ## 먼저 로드할 자료
 
 | 상황 | 읽을 자료 |
@@ -101,6 +103,7 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 ## 중요한 판단
 
 - `editorial/`은 공식 런타임 폴더가 아니라 이 블로그의 편집 기준 자료실이다.
+- `site/`는 커스텀 블로그 앱 구현 레이어다. `blog-write`를 사이트 구현 dispatcher로 확장하지 않는다.
 - Lens는 판단을 돕고, output contract는 작업 결과물을 정하고, guard는 공개 안전을 막는다.
 - `editorial/context/series-pilab.md`는 PI Lab 시리즈 배경 메모다. 구조 후보나 편집 렌즈가 아니며, 시리즈 연결이 필요할 때만 참고한다.
 - 담백함은 압축이 아니다. 구체 장면과 사실 범위를 살린다.
@@ -113,5 +116,6 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 - 공개 전 초안: `content/drafts/`
 - 발행 계획/글감: `content/backlog/`
 - 편집 기준: `editorial/`
+- 사이트 앱 구현: `site/`
 
 `content/posts/`로 승격할 때는 파일명을 `YYYY-MM-DD-slug.md` 형식으로 바꾸고, 파일명 날짜와 frontmatter `date`를 일치시킨다. 직접 블로그에 올리는 공개 원고의 frontmatter `platform` 값은 `Blog`로 둔다.
