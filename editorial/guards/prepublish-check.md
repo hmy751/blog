@@ -2,6 +2,15 @@
 
 발행 전 마지막 확인 목록이다. `content/posts/`로 승격하기 전에 적용한다.
 
+## Draft -> Post 승격 기준
+
+- `content/drafts/`의 초안은 발행 후보일 뿐이며, `content/posts/`로 옮길 때 이 문서를 적용한다.
+- 파일명을 `YYYY-MM-DD-slug.md` 형식으로 바꾸고, frontmatter `date`와 일치시킨다.
+- `date: TBD`는 실제 발행일로 바꾼다.
+- `title`, `date`, `author`, `readTime`, `platform`, `tags`를 확인한다.
+- 편집 중 남긴 `supporting-material candidate` 슬롯은 실제 자료로 바꾸거나 제거한다.
+- 최종 발행 여부, 발행일, 매체 선택, 최종 톤은 사용자 결정이다.
+
 ## Frontmatter
 
 - `title`이 독자가 보는 제목과 일치한다.

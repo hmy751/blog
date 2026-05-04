@@ -30,7 +30,7 @@
 ## 글쓰기 흐름
 
 1. 작업 모드를 먼저 정한다: 새 글, 기존 글 편집, review-only, 발행 준비.
-2. 글 유형을 정한다: technical-case-study, company-project, product-architecture, retrospective, learning-experiment.
+2. 글 유형을 정하고 [core/article-types.md](editorial/core/article-types.md)의 material signature를 확인한다: technical-case-study, company-project, product-architecture, retrospective, learning-experiment.
 3. [editorial/README.md](editorial/README.md)를 보고 작업에 맞는 editorial 문서를 먼저 읽는다.
 4. 필요한 경우 `blog-source-collector`로 원천 자료를 카드 형태로 모은다.
 5. 초안 전후의 글감 확장에는 `blog-material-partner`를 먼저 쓴다. 이 단계는 비판이 아니라 질문, 장면, 실패, 판단 변화, 이해와 판단의 연결 발굴이다.
@@ -43,6 +43,7 @@
 ## 목소리와 구조
 
 - [core/workflow.md](editorial/core/workflow.md)는 `Material -> Shaping -> Texture -> Prepublish` 단계와 각 단계 책임을 정의한다.
+- [core/article-types.md](editorial/core/article-types.md)는 글 유형별로 좋은 글감이 어떤 형태를 가져야 하는지 정의한다.
 - [core/output-contracts.md](editorial/core/output-contracts.md)는 review-only, edit, reader-flow, artifact gap, reference-guided 작업이 남겨야 할 산출물을 정의한다.
 - [core/reference-use.md](editorial/core/reference-use.md)는 레퍼런스를 표면 규칙으로 하드코딩하지 않고 패턴으로 번역하는 원칙이다.
 - [voice.md](editorial/lenses/voice.md)는 강제 틀이 아니라 점검 거울이다.

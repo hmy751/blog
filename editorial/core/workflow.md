@@ -4,6 +4,7 @@
 목적: 블로그 글쓰기의 기본 단계와 각 단계의 책임을 정의한다.
 사용 방식: 새 글 작성, 기존 초안 편집, review-only, 발행 준비 작업을 시작할 때 읽는다.
 관련:
+  - [article-types.md](article-types.md) — 글 유형별 material signature
   - [output-contracts.md](output-contracts.md) — 작업 모드별 산출물 계약
   - [reference-use.md](reference-use.md) — 레퍼런스를 패턴으로 번역하는 원칙
   - [../lenses/voice.md](../lenses/voice.md) — 글 유형별 목소리
@@ -15,7 +16,7 @@
 
 # Core Workflow
 
-이 문서는 블로그 하네스의 중심축만 소유한다. 세부 렌즈, 자료 장치 기준, 레퍼런스 사용 원칙, 발행 guard는 각 소유 문서에 둔다.
+이 문서는 블로그 하네스의 중심축만 소유한다. 글 유형별 material signature, 세부 렌즈, 자료 장치 기준, 레퍼런스 사용 원칙, 발행 guard는 각 소유 문서에 둔다.
 
 ```text
 Material -> Shaping -> Texture -> Prepublish
@@ -26,6 +27,8 @@ Material -> Shaping -> Texture -> Prepublish
 역할: 글감을 꺼내는 단계.
 
 이 단계는 비판하거나 고치지 않는다. 질문, 장면, 실패, 오해, 판단 변화, 이상한 디테일을 찾아 다음 초안의 재료로 만든다.
+
+글 유형이 정해졌다면 [article-types.md](article-types.md)의 material signature를 먼저 확인한다.
 
 확인할 것:
 

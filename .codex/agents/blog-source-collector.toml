@@ -9,6 +9,7 @@ Inspect only. Do not edit files.
 
 Search likely materials in:
 - content/posts, content/drafts, content/backlog, editorial
+- editorial/core/article-types.md when an article type is provided
 - project code, work logs, and design notes for the article topic
 - official docs and external references
 - PI Lab/dev-hub materials when the article is about PI Lab or learning/experiment work

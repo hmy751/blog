@@ -8,7 +8,7 @@
 
 | 층위 | 역할 |
 | --- | --- |
-| `core/` | 글쓰기 흐름, 작업 모드별 산출물 계약, 레퍼런스 사용 원칙 |
+| `core/` | 글쓰기 흐름, 글 유형별 글감 모델, 작업 모드별 산출물 계약, 레퍼런스 사용 원칙 |
 | `lenses/` | 글을 볼 때 켜는 판단 렌즈. 단계가 아니다 |
 | `guards/` | 공개 경계와 발행 전 hard guard |
 | `reference-profiles/` | 레퍼런스에서 추출한 재사용 가능한 패턴 |
@@ -20,23 +20,24 @@
 
 | 상황 | 먼저 읽을 문서 |
 | --- | --- |
-| 모든 블로그 작업 | `core/workflow.md`, `guards/source-policy.md`, `lenses/voice.md` |
-| 새 글 작성/초안 다듬기 | `core/workflow.md`, `core/output-contracts.md`, `lenses/voice.md`, `lenses/developer.md`, 필요 시 `lenses/edit-patterns.md` |
+| 모든 블로그 작업 | `core/workflow.md`, `core/article-types.md`, `guards/source-policy.md`, `lenses/voice.md` |
+| 새 글 작성/초안 다듬기 | `core/workflow.md`, `core/article-types.md`, `core/output-contracts.md`, `lenses/voice.md`, `lenses/developer.md`, 필요 시 `lenses/edit-patterns.md` |
 | 가독성/독자 흐름 점검 | `lenses/reader-flow.md`, `core/output-contracts.md`, 필요 시 `lenses/developer.md` |
 | 표/코드/이미지/도식/그래프/스크린샷 판단 | `lenses/supporting-materials.md`, `core/output-contracts.md`, `guards/source-policy.md` |
 | 레퍼런스 기반 하네스/글 편집 | `core/reference-use.md`, 필요 시 `reference-profiles/technical-blog-page-cadence.md` |
 | 공개 기술 글의 포트폴리오 신호 점검 | `lenses/portfolio-signal.md`, `lenses/developer.md`, `core/workflow.md` |
 | 톤 점검 | `lenses/voice.md`, 필요 시 `lenses/edit-patterns.md` |
-| 기술 구현/복기 글 | `lenses/voice.md`의 Technical Case Study 기준, `lenses/developer.md` |
-| 회사 프로젝트 글 | `guards/source-policy.md`, `lenses/voice.md`의 Technical Case Study 기준, `lenses/developer.md` |
-| 제품/아키텍처 글 | `guards/source-policy.md`, `lenses/voice.md`의 Technical Case Study 기준, `lenses/developer.md` |
-| 개인/블로그 회고 | `lenses/voice.md`의 Retrospective / Meta 기준 |
-| PI Lab 또는 학습/실험 글 | `lenses/voice.md`의 Learning / Experiment 기준, `lenses/developer.md`, 필요 시 기존 발행글이나 `context/series-pilab.md` |
+| 기술 구현/복기 글 | `core/article-types.md`의 Technical Case Study material signature, `lenses/voice.md`, `lenses/developer.md` |
+| 회사 프로젝트 글 | `core/article-types.md`, `guards/source-policy.md`, `lenses/voice.md`, `lenses/developer.md` |
+| 제품/아키텍처 글 | `core/article-types.md`, `guards/source-policy.md`, `lenses/voice.md`, `lenses/developer.md` |
+| 개인/블로그 회고 | `core/article-types.md`의 Retrospective material signature, `lenses/voice.md` |
+| PI Lab 또는 학습/실험 글 | `core/article-types.md`의 Learning / Experiment material signature, `lenses/voice.md`, `lenses/developer.md`, 필요 시 기존 발행글이나 `context/series-pilab.md` |
 | 발행 전 | `guards/prepublish-check.md`, `core/output-contracts.md`의 candidate slot 기준 |
 
 ## 문서 역할
 
 - `core/workflow.md`: `Material -> Shaping -> Texture -> Prepublish` 단계와 각 단계 책임.
+- `core/article-types.md`: 글 유형별로 좋은 글감이 어떤 형태를 가져야 하는지 정의하는 material signature.
 - `core/output-contracts.md`: review-only, edit, reader-flow, artifact gap, reference-guided, publish-ready 모드별 산출물 계약.
 - `core/reference-use.md`: 레퍼런스를 표면 규칙으로 하드코딩하지 않고 패턴으로 번역하는 원칙.
 - `lenses/voice.md`: 글 유형별 목소리와 공통 톤 기준.
@@ -53,7 +54,7 @@
 ## 강제 규칙과 참고 기준
 
 - 강제 규칙: `guards/source-policy.md`의 공개 경계, `guards/prepublish-check.md`의 발행 전 필수 항목, `core/output-contracts.md`의 발행 원고 후보 슬롯 제거.
-- 참고 기준: `core/workflow.md`, `lenses/voice.md`, `lenses/developer.md`, `lenses/portfolio-signal.md`, `lenses/reader-flow.md`, `lenses/supporting-materials.md`, `lenses/edit-patterns.md`.
+- 참고 기준: `core/workflow.md`, `core/article-types.md`, `lenses/voice.md`, `lenses/developer.md`, `lenses/portfolio-signal.md`, `lenses/reader-flow.md`, `lenses/supporting-materials.md`, `lenses/edit-patterns.md`.
 
 참고 기준은 글을 틀에 끼우기 위한 것이 아니라, 초안이 의도한 목소리와 구조에서 벗어나는지 확인하기 위한 점검 거울이다. `context/series-pilab.md`는 이 참고 기준 묶음에서 제외한다. 시리즈 연결이나 발행 순서가 필요할 때만 배경 메모로 본다.
 
@@ -78,7 +79,7 @@
 
 ## 글 유형
 
-글 작업을 시작할 때 먼저 가장 가까운 유형을 정한다.
+글 작업을 시작할 때 먼저 가장 가까운 유형을 정한다. 각 유형에서 어떤 글감을 찾아야 하는지는 `core/article-types.md`를 따른다.
 
 - `technical-case-study`: 구현, 트러블슈팅, 기술 도입, 비교, 아키텍처 복기
 - `company-project`: 회사나 서비스에서 수행한 작업의 공개 가능한 복기

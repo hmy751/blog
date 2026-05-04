@@ -16,6 +16,7 @@ tools: Read, Grep, Glob
 - 가능하면 이전 버전이나 draft 원문
 - `editorial/README.md`
 - `editorial/core/workflow.md`
+- `editorial/core/article-types.md`
 - `editorial/core/output-contracts.md`
 - `editorial/lenses/voice.md`
 - `editorial/lenses/developer.md`

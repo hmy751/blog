@@ -15,6 +15,7 @@ tools: Read, Grep, Glob
 - 대상 초안
 - `editorial/README.md`
 - `editorial/core/workflow.md`
+- `editorial/core/article-types.md`
 - `editorial/core/output-contracts.md`
 - `editorial/lenses/voice.md`
 - `editorial/lenses/developer.md`

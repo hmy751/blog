@@ -11,6 +11,7 @@ tools: Read, Grep, Glob, Bash
 ## 검색 영역
 
 - 현재 repo: `content/posts/`, `content/drafts/`, `content/backlog/`, `editorial/`
+- 글 유형이 주어졌다면 `editorial/core/article-types.md`의 material signature
 - 글이 다루는 프로젝트의 코드, 작업 기록, 설계 메모
 - 공식 문서와 외부 레퍼런스
 - PI Lab/dev-hub 자료

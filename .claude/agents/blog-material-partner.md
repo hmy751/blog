@@ -15,6 +15,7 @@ tools: Read, Grep, Glob
 - 대상 초안 또는 사용자가 준 글감
 - `editorial/README.md`
 - `editorial/core/workflow.md`
+- `editorial/core/article-types.md`
 - `editorial/lenses/voice.md`
 - `editorial/lenses/developer.md`
 - 필요 시 `editorial/lenses/edit-patterns.md`
@@ -22,13 +23,7 @@ tools: Read, Grep, Glob
 
 ## 글 유형
 
-요청에 article type이 있으면 따른다. 없으면 초안을 보고 가장 가까운 유형을 추정하되, 확신이 낮으면 "assumed type"으로 표시한다.
-
-- `technical-case-study`
-- `company-project`
-- `product-architecture`
-- `retrospective`
-- `learning-experiment`
+요청에 article type이 있으면 따른다. 없으면 `editorial/core/article-types.md`를 기준으로 가장 가까운 유형을 추정하되, 확신이 낮으면 "assumed type"으로 표시한다.
 
 ## 찾을 것
 

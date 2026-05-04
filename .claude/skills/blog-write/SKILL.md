@@ -11,14 +11,14 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 
 | 상황 | 읽을 자료 |
 | --- | --- |
-| 모든 글 | `CLAUDE.md`, `editorial/README.md`, `editorial/core/workflow.md`, `editorial/guards/source-policy.md`, `editorial/lenses/voice.md` |
-| 새 글 작성/초안 다듬기 | `editorial/core/workflow.md`, `editorial/core/output-contracts.md`, `editorial/lenses/developer.md`, 필요 시 `editorial/lenses/edit-patterns.md` |
+| 모든 글 | `CLAUDE.md`, `editorial/README.md`, `editorial/core/workflow.md`, `editorial/core/article-types.md`, `editorial/guards/source-policy.md`, `editorial/lenses/voice.md` |
+| 새 글 작성/초안 다듬기 | `editorial/core/workflow.md`, `editorial/core/article-types.md`, `editorial/core/output-contracts.md`, `editorial/lenses/developer.md`, 필요 시 `editorial/lenses/edit-patterns.md` |
 | 가독성/독자 흐름 점검 | `editorial/lenses/reader-flow.md`, `editorial/core/output-contracts.md`, 필요 시 `editorial/lenses/developer.md` |
 | 표/코드/이미지/도식/그래프/스크린샷 판단 또는 artifact gap | `editorial/lenses/supporting-materials.md`, `editorial/core/output-contracts.md`, `editorial/guards/source-policy.md` |
 | 레퍼런스 기반 글/하네스 작업 | `editorial/core/reference-use.md`, 필요 시 `editorial/reference-profiles/technical-blog-page-cadence.md` |
 | 목소리 점검 | `editorial/lenses/voice.md`, 필요 시 `editorial/lenses/edit-patterns.md` |
 | 공개 기술 글의 역량 신호 점검 | `editorial/lenses/portfolio-signal.md`, `editorial/lenses/developer.md` |
-| PI Lab 또는 학습/실험 | `editorial/lenses/voice.md`의 Learning / Experiment 기준, `editorial/lenses/developer.md`, 필요 시 기존 발행글이나 `editorial/context/series-pilab.md` |
+| PI Lab 또는 학습/실험 | `editorial/core/article-types.md`의 Learning / Experiment material signature, `editorial/lenses/voice.md`, `editorial/lenses/developer.md`, 필요 시 기존 발행글이나 `editorial/context/series-pilab.md` |
 | 발행 준비 | `editorial/guards/prepublish-check.md`, `node scripts/blog-prepublish-check.mjs` |
 
 ## 작업 모드
@@ -32,7 +32,7 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 
 ## 글 유형
 
-작업 초기에 가장 가까운 유형을 하나 정한다.
+작업 초기에 가장 가까운 유형을 하나 정한다. 각 유형의 material signature는 `editorial/core/article-types.md`를 따른다.
 
 - `technical-case-study`: 구현, 트러블슈팅, 기술 도입, 비교, 아키텍처 복기
 - `company-project`: 회사나 서비스에서 수행한 작업의 공개 가능한 복기
@@ -53,7 +53,7 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 
 ```text
 1. 작업 모드 결정
-2. 글 유형 결정
+2. 글 유형 결정 및 material signature 확인
 3. editorial/README.md 확인 후 작업에 맞는 core/lens/guard 문서 로드
 4. 원천 자료 카드 수집
 5. blog-material-partner로 글감, 장면, 실패, 오해, 판단 변화, 탐구 동력 후보 확인

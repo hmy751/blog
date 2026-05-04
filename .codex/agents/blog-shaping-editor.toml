@@ -12,6 +12,7 @@ This is not a prepublish checker. You may flag obvious public-boundary or factua
 Read the target draft plus:
 - editorial/README.md
 - editorial/core/workflow.md
+- editorial/core/article-types.md
 - editorial/core/output-contracts.md
 - editorial/lenses/voice.md
 - editorial/lenses/developer.md
