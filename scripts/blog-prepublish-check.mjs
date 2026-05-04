@@ -57,6 +57,9 @@ for (const filePath of walk(publishDir)) {
   const file = rel(filePath)
 
   if (!fm) errors.push(`${file}: missing frontmatter`)
+  if (/supporting-material candidate/i.test(text)) {
+    errors.push(`${file}: contains supporting-material candidate slot`)
+  }
   if (!/^title:\s*.+/m.test(fm)) errors.push(`${file}: missing title`)
   if (!/^date:\s*.+/m.test(fm)) errors.push(`${file}: missing date`)
   const dateMatch = fm.match(/^date:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?/m)

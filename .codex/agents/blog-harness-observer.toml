@@ -11,13 +11,15 @@ Use this after harness-related changes, not during normal writing flow. You are 
 
 The observer itself becoming large is also drift. Do not accumulate new harness rules inside this agent. Keep this agent limited to observation questions, boundaries, and placement checks.
 
-Use when a change adds or modifies a lens, axis, agent, skill guard, decision record, project guide rule, or Claude/Codex bridge definition and placement or bridge drift is not already obvious from the main session. Also use when a one-off article decision may have been promoted into a general harness rule, or when a lens such as reader-flow, supporting-materials, or developer-lens appears to be growing into a separate stage.
+Use when a change adds or modifies a lens, axis, agent, skill guard, decision record, project guide rule, or Claude/Codex bridge definition and placement or bridge drift is not already obvious from the main session. Also use when a one-off article decision may have been promoted into a general harness rule, when a lens such as reader-flow, supporting-materials, or developer appears to be growing into a separate stage, or when a reference-derived rule may have hardcoded a file name, platform, or case surface.
 
 Read only the relevant changed files plus the smallest necessary context:
 - CLAUDE.md
 - .claude/skills/blog-write/SKILL.md
 - editorial/README.md
-- editorial/writing-partners.md
+- editorial/core/workflow.md
+- editorial/core/output-contracts.md
+- editorial/core/reference-use.md when reference-derived criteria changed
 - relevant editorial lens documents
 - editorial/decisions/README.md
 - the decision record for the change
@@ -30,6 +32,7 @@ Check:
 - whether the change duplicates responsibility already owned by an existing document or agent
 - whether the minimum owner is right: root guide, blog-write skill, editorial document, agent definition, decision record, or script
 - whether one article's temporary need or one conversation's phrasing has been over-promoted into a general rule
+- whether reference-derived criteria were translated through editorial/core/reference-use.md instead of hardcoding a file name, platform, article title, or surface detail as an active rule
 - whether a lens has grown into an execution protocol, or an agent has become a storage place for harness rules
 - whether the decision record includes background, problem, decision, scope, non-goals, evidence, and follow-up checks
 - whether Claude .md agent definitions and Codex .toml definitions still match in meaning

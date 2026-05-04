@@ -9,7 +9,7 @@
 | `content/posts/` | 직접 블로그에 올릴 공개 원고의 source. frontmatter `platform`은 `Blog`로 둔다. |
 | `content/drafts/` | 공개 전 초안. 원천 자료에서 가져온 글도 먼저 여기에 둔다. |
 | `content/backlog/` | 발행 계획, 시리즈 후보, 글감 목록. |
-| `editorial/` | 글쓰기 판단 기준. 목소리, 편집 패턴, 출처 정책, 발행 전 검사. |
+| `editorial/` | 글쓰기 판단 기준. `core/`, `lenses/`, `guards/`, `reference-profiles/`, `context/`, `decisions/`, `audits/`로 책임을 나눈다. |
 | `.claude/skills/` | Claude Code용 로컬 skill 원천. |
 | `.agents/skills/` | Codex가 읽을 수 있는 skill 브릿지. 원천은 `.claude/skills/`. |
 | `.claude/agents/` | Claude Code용 report-only agents. Material/shaping/texture 파트너와 발행 전 checker를 분리한다. |
@@ -25,7 +25,7 @@
 - sprint 자료, 회고 메모, 작업 로그는 재료다. 문장을 그대로 붙이지 않고 블로그 문맥으로 다시 쓴다.
 - `dev-hub` 쪽 파일은 사용자가 요청하지 않는 한 수정하지 않는다.
 
-자세한 기준은 [source-policy.md](editorial/source-policy.md)를 따른다.
+자세한 기준은 [source-policy.md](editorial/guards/source-policy.md)를 따른다.
 
 ## 글쓰기 흐름
 
@@ -38,17 +38,20 @@
 7. polish 전에는 `blog-texture-keeper`로 살아 있는 문장, 글감, 발견, 리듬이 깎이지 않는지 본다.
 8. tone/structure critic은 shaping/texture 이후에만 보조 점검으로 사용한다. 초안 단계에서 글의 목소리를 먼저 깎지 않는다.
 9. 구조 문제가 크면 v2 전 재작성/부분수정 결정을 사용자에게 묻는다.
-10. 발행 직전에는 `blog-evidence-checker`, `blog-source-collector` 필요 항목, `node scripts/blog-prepublish-check.mjs`, [prepublish-check.md](editorial/prepublish-check.md)를 기준으로 확인한다.
+10. 발행 직전에는 `blog-evidence-checker`, `blog-source-collector` 필요 항목, `node scripts/blog-prepublish-check.mjs`, [prepublish-check.md](editorial/guards/prepublish-check.md)를 기준으로 확인한다.
 
 ## 목소리와 구조
 
-- [voice.md](editorial/voice.md)는 강제 틀이 아니라 점검 거울이다.
-- [writing-partners.md](editorial/writing-partners.md)는 글을 키우는 단계와 발행 점검 단계를 분리한다.
-- [developer-lens.md](editorial/developer-lens.md)는 기술 블로그다운 문제 정의, 제약, 선택, 트레이드오프, 판단 변화 기준이다.
-- [reader-flow-lens.md](editorial/reader-flow-lens.md)는 글이 좋은 기술 글처럼 읽히도록 페이지 감각, 문단 호흡, 표현 리듬, 스캔 경로, 정보 배치, 판단 흐름을 함께 보는 기준이다.
-- [supporting-materials.md](editorial/supporting-materials.md)는 표, 코드, 이미지, 도식, 그래프, 스크린샷이 실제로 본문 판단을 돕는지 보는 보조 기준이다. 새 단계가 아니라 자료 장치가 쟁점이거나 artifact gap을 풀 자료 후보를 골라야 할 때 읽는다.
-- [edit-patterns.md](editorial/edit-patterns.md)는 반복해서 거부된 수정 방향의 사례집이다.
-- [series-pilab.md](editorial/series-pilab.md)는 PI Lab 시리즈의 앞뒤 맥락을 확인하는 느슨한 작업 메모다. PI Lab 글에도 자동 적용하지 않고, 구조·도입·마무리 템플릿으로 쓰지 않는다.
+- [core/workflow.md](editorial/core/workflow.md)는 `Material -> Shaping -> Texture -> Prepublish` 단계와 각 단계 책임을 정의한다.
+- [core/output-contracts.md](editorial/core/output-contracts.md)는 review-only, edit, reader-flow, artifact gap, reference-guided 작업이 남겨야 할 산출물을 정의한다.
+- [core/reference-use.md](editorial/core/reference-use.md)는 레퍼런스를 표면 규칙으로 하드코딩하지 않고 패턴으로 번역하는 원칙이다.
+- [voice.md](editorial/lenses/voice.md)는 강제 틀이 아니라 점검 거울이다.
+- [developer.md](editorial/lenses/developer.md)는 기술 블로그다운 문제 정의, 제약, 선택, 트레이드오프, 판단 변화 기준이다.
+- [reader-flow.md](editorial/lenses/reader-flow.md)는 글이 좋은 기술 글처럼 읽히도록 페이지 감각, 문단 호흡, 스캔 경로, 정보 배치, 판단 흐름을 보는 렌즈다.
+- [supporting-materials.md](editorial/lenses/supporting-materials.md)는 artifact gap이 확인된 뒤 표, 코드, 이미지, 도식, 그래프, 스크린샷 중 어떤 자료로 풀지 고르는 처방 기준이다.
+- [edit-patterns.md](editorial/lenses/edit-patterns.md)는 반복해서 거부된 수정 방향의 사례집이다.
+- [technical-blog-page-cadence.md](editorial/reference-profiles/technical-blog-page-cadence.md)는 좋은 기술 글의 페이지 리듬 패턴을 특정 레퍼런스에 의존하지 않는 형태로 보존한다.
+- [series-pilab.md](editorial/context/series-pilab.md)는 PI Lab 시리즈의 앞뒤 맥락을 확인하는 느슨한 작업 메모다. PI Lab 글에도 자동 적용하지 않고, 구조·도입·마무리 템플릿으로 쓰지 않는다.
 - 담백함은 압축이 아니다. 호흡, 구체 장면, 사실의 범위를 같이 본다.
 - 회고 글은 했다체와 자기 관찰을 허용한다. 기술 글의 금기를 회고 글에 그대로 적용하지 않는다.
 - 개인적 문장, 감각, 망설임, 장면은 요구사항이 아니라 허용 구역이다. 글의 판단과 독자 이해에 기여하면 보호한다.
@@ -66,6 +69,7 @@
 - 파일명은 `YYYY-MM-DD-slug.md` 형식이고, 앞의 날짜가 frontmatter `date`와 일치한다.
 - 내부 로컬 경로와 private source 문장이 없다.
 - Claude/Codex 생성 흔적이 없다.
+- 편집 중 남긴 `supporting-material candidate` 주석이 없다.
 - 글 안의 수치, 시점, 사람, 기술 용어가 원천 자료와 충돌하지 않는다.
 
 발행 결정, 매체 선택, 최종 톤은 사용자 결정 영역이다.

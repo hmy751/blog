@@ -4,11 +4,11 @@
 목적: PI Lab 글을 틀에 맞추기 위한 기준이 아니라, 이미 발행했거나 쓰고 있는 글의 시리즈 맥락을 잃지 않기 위한 느슨한 작업 메모.
 사용 방식: 글의 구조나 목소리를 결정하는 문서가 아니다. 시리즈의 앞뒤 맥락, 이미 쓴 글의 질문 축, 발행 계획을 확인해야 할 때만 참고한다.
 관련:
-  - [CLAUDE.md](../CLAUDE.md) — 이 폴더 운영 가이드
-  - [voice.md](voice.md) — 글 유형별 목소리
-  - [developer-lens.md](developer-lens.md) — 기술 블로그다운 문제 정의와 판단 기준
-  - [source-policy.md](source-policy.md) — dev-hub 원천 자료 사용 경계
-  - [../content/backlog/pilab-publishing-plan.md](../content/backlog/pilab-publishing-plan.md)
+  - [CLAUDE.md](../../CLAUDE.md) — 이 폴더 운영 가이드
+  - [voice.md](../lenses/voice.md) — 글 유형별 목소리
+  - [developer.md](../lenses/developer.md) — 기술 블로그다운 문제 정의와 판단 기준
+  - [source-policy.md](../guards/source-policy.md) — dev-hub 원천 자료 사용 경계
+  - [pilab-publishing-plan.md](../../content/backlog/pilab-publishing-plan.md)
 ---
 
 # PI Lab 시리즈 작업 메모
@@ -34,7 +34,7 @@
 - 시리즈 전체에서 각 글이 맡은 질문 축을 빠르게 복원해야 할 때.
 - 사용자가 "PI Lab 시리즈 흐름", "앞 글과 연결", "발행 순서"를 직접 물었을 때.
 
-그 외의 일반 편집에서는 `voice.md`, `writing-partners.md`, `developer-lens.md`, `reader-flow-lens.md`를 우선한다.
+그 외의 일반 편집에서는 `lenses/voice.md`, `core/workflow.md`, `lenses/developer.md`, `lenses/reader-flow.md`를 우선한다.
 
 ## 시리즈의 느슨한 배경
 

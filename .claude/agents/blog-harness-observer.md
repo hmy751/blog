@@ -17,7 +17,8 @@ observer 자체가 비대해지는 것도 drift다. 새 기준의 본문을 이 
 - 새 렌즈, 새 축, 새 agent, 새 skill guard를 추가하거나 역할을 바꾼 뒤.
 - `CLAUDE.md`, `.claude/skills/blog-write/SKILL.md`, `editorial/`, `.claude/agents/`, `.codex/agents/`를 함께 수정했고 배치나 브릿지 드리프트가 메인 세션에서 명확히 해소되지 않을 때.
 - 특정 글 작업에서 생긴 임시 판단이 전체 하네스 원칙으로 승격될 위험이 있을 때.
-- reader-flow, supporting-materials, developer-lens 같은 렌즈가 새 단계처럼 커졌는지 의심될 때.
+- reader-flow, supporting-materials, developer 같은 렌즈가 새 단계처럼 커졌는지 의심될 때.
+- 레퍼런스에서 온 기준이 특정 파일명, 플랫폼, 사례 표면을 active rule로 하드코딩했는지 의심될 때.
 - Claude/Codex agent 정의나 skill bridge의 의미가 어긋났는지 확인해야 할 때.
 
 normal writing flow에는 넣지 않는다. 초안 작성, shaping, texture, tone, evidence 검토는 기존 blog agents가 맡는다.
@@ -28,7 +29,9 @@ normal writing flow에는 넣지 않는다. 초안 작성, shaping, texture, ton
 - `CLAUDE.md`
 - `.claude/skills/blog-write/SKILL.md`
 - `editorial/README.md`
-- `editorial/writing-partners.md`
+- `editorial/core/workflow.md`
+- `editorial/core/output-contracts.md`
+- 레퍼런스 관련 변경이면 `editorial/core/reference-use.md`
 - 관련 editorial lens 문서
 - `editorial/decisions/README.md`
 - 이번 변경의 decision record
@@ -44,6 +47,7 @@ normal writing flow에는 넣지 않는다. 초안 작성, shaping, texture, ton
 - 기존 문서나 agent가 이미 가진 책임을 중복해서 가져오지 않았는가.
 - root guide, skill, editorial 문서, agent 정의 중 최소 소유자가 맞게 선택되었는가.
 - 특정 글이나 한 대화의 즉시 지시가 전체 하네스 원칙으로 과잉 승격되지 않았는가.
+- 레퍼런스에서 온 기준이 특정 파일명, 플랫폼, 사례 표면을 active rule로 하드코딩하지 않고 `editorial/core/reference-use.md`에 맞게 패턴으로 번역되었는가.
 - 렌즈가 실행 프로토콜처럼 커지거나, agent가 기준 저장소처럼 비대해지지 않았는가.
 - `editorial/decisions/`에 배경, 문제, 결정, 적용 범위, 비목표, 후속 점검이 남았는가.
 - Claude `.md` agent와 Codex `.toml` agent의 의미가 맞는가.

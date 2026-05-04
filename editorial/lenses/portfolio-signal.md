@@ -1,13 +1,13 @@
 ---
 작성일: 2026-05-02
 목적: 공개 기술 글이 동료 개발자와 나를 궁금해하는 개발자에게 어떤 역량 신호를 남기는지 점검한다.
-사용 방식: 새 글 작성, 초안 다듬기, polish, 발행 전 점검에서 필요할 때 `developer-lens.md`와 함께 읽는다.
+사용 방식: 새 글 작성, 초안 다듬기, polish, 발행 전 점검에서 필요할 때 `developer.md`와 함께 읽는다.
 관련:
   - [voice.md](voice.md) — 글 유형별 목소리
-  - [writing-partners.md](writing-partners.md) — 글을 키우는 단계
-  - [developer-lens.md](developer-lens.md) — 개발자로서의 문제 정의와 판단 기준
-  - [reader-flow-lens.md](reader-flow-lens.md) — 독자 진입성과 스캔 가능한 흐름
-  - [prepublish-check.md](prepublish-check.md) — 발행 직전 점검
+  - [../core/workflow.md](../core/workflow.md) — 글을 키우는 단계
+  - [developer.md](developer.md) — 개발자로서의 문제 정의와 판단 기준
+  - [reader-flow.md](reader-flow.md) — 독자 진입성과 스캔 가능한 흐름
+  - [../guards/prepublish-check.md](../guards/prepublish-check.md) — 발행 직전 점검
 ---
 
 # Portfolio Signal Lens

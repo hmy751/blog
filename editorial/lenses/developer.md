@@ -4,10 +4,10 @@
 사용 방식: 새 글 작성, 초안 다듬기, PI Lab/프로젝트/회사 작업 글을 shaping할 때 공통 렌즈로 읽는다.
 관련:
   - [voice.md](voice.md) — 글 유형별 목소리
-  - [writing-partners.md](writing-partners.md) — 글을 키우는 단계
-  - [reader-flow-lens.md](reader-flow-lens.md) — 독자 진입성과 스캔 가능한 흐름
+  - [../core/workflow.md](../core/workflow.md) — 글을 키우는 단계
+  - [reader-flow.md](reader-flow.md) — 독자 진입성과 스캔 가능한 흐름
   - [edit-patterns.md](edit-patterns.md) — 반복 편집 패턴
-  - [series-pilab.md](series-pilab.md) — PI Lab 시리즈 배경 메모
+  - [../context/series-pilab.md](../context/series-pilab.md) — PI Lab 시리즈 배경 메모
 ---
 
 # Developer Lens

@@ -28,7 +28,7 @@ PDF는 이미지 캡처 형태라 텍스트 추출이 거의 되지 않았고, P
 
 ## 결정
 
-`editorial/reader-flow-lens.md`를 보강한다.
+`editorial/lenses/reader-flow.md`를 보강한다.
 
 추가한 축:
 
@@ -39,7 +39,7 @@ PDF는 이미지 캡처 형태라 텍스트 추출이 거의 되지 않았고, P
 - **직접 삽입 우선**: 바로 작성 가능한 Markdown 표, 리스트, 짧은 코드 예시, 의사코드, 텍스트 도식, 요약 박스는 주석으로 미루지 않고 초안에 직접 넣는다. 자료나 공개 경계 판단이 남아 있을 때만 후보 주석을 쓴다.
 - **Medium 제약**: 모바일에서 읽기 어려운 긴 표나 넓은 자료는 리스트, 짧은 표, 이미지화된 도식, 본문 분할 중 하나로 조정한다.
 
-`editorial/writing-partners.md`, `editorial/README.md`, `.claude/skills/blog-write/SKILL.md`에는 이 기준이 실제 편집 단계에서 호출되도록 짧게 연결한다.
+`editorial/core/workflow.md`, `editorial/README.md`, `.claude/skills/blog-write/SKILL.md`에는 이 기준이 실제 편집 단계에서 호출되도록 짧게 연결한다.
 
 ## 비목표
 

@@ -4,45 +4,58 @@
 
 이 폴더는 Claude/Codex 공식 실행 구조가 아니라, 이 블로그의 편집 기준 자료실이다. `CLAUDE.md`, `blog-write` skill, blog agents가 필요할 때 이 문서들을 참조한다.
 
+## Layers
+
+| 층위 | 역할 |
+| --- | --- |
+| `core/` | 글쓰기 흐름, 작업 모드별 산출물 계약, 레퍼런스 사용 원칙 |
+| `lenses/` | 글을 볼 때 켜는 판단 렌즈. 단계가 아니다 |
+| `guards/` | 공개 경계와 발행 전 hard guard |
+| `reference-profiles/` | 레퍼런스에서 추출한 재사용 가능한 패턴 |
+| `context/` | 특정 시리즈나 프로젝트 배경 메모 |
+| `decisions/` | 하네스 변경의 배경, 문제, 결정, 비목표 기록 |
+| `audits/` | 하네스와 발행 글의 정합성 감사 기록 |
+
 ## When To Read
 
 | 상황 | 먼저 읽을 문서 |
 | --- | --- |
-| 모든 블로그 작업 | `source-policy.md`, `voice.md` |
-| 새 글 작성/초안 다듬기 | `writing-partners.md`, `voice.md`, `developer-lens.md`, `edit-patterns.md` |
-| 가독성/독자 흐름 점검 | `reader-flow-lens.md`, `writing-partners.md`, 필요 시 `developer-lens.md` |
-| 표/코드/이미지/도식/그래프/스크린샷 판단 | `supporting-materials.md`, `reader-flow-lens.md`, `source-policy.md` |
-| 공개 기술 글의 포트폴리오 신호 점검 | `portfolio-signal-lens.md`, `developer-lens.md`, `writing-partners.md` |
-| 톤 점검 | `voice.md`, `edit-patterns.md` |
-| 기술 구현/복기 글 | `voice.md`의 Technical Case Study 기준, `developer-lens.md` |
-| 회사 프로젝트 글 | `source-policy.md`, `voice.md`의 Technical Case Study 기준, `developer-lens.md` |
-| 제품/아키텍처 글 | `source-policy.md`, `voice.md`의 Technical Case Study 기준, `developer-lens.md` |
-| 개인/블로그 회고 | `voice.md`의 Retrospective / Meta 기준 |
-| PI Lab 또는 학습/실험 글 | `voice.md`의 Learning / Experiment 기준, `developer-lens.md`, 필요 시 기존 발행글이나 `content/backlog/` |
-| 발행 전 | `prepublish-check.md` |
+| 모든 블로그 작업 | `core/workflow.md`, `guards/source-policy.md`, `lenses/voice.md` |
+| 새 글 작성/초안 다듬기 | `core/workflow.md`, `core/output-contracts.md`, `lenses/voice.md`, `lenses/developer.md`, 필요 시 `lenses/edit-patterns.md` |
+| 가독성/독자 흐름 점검 | `lenses/reader-flow.md`, `core/output-contracts.md`, 필요 시 `lenses/developer.md` |
+| 표/코드/이미지/도식/그래프/스크린샷 판단 | `lenses/supporting-materials.md`, `core/output-contracts.md`, `guards/source-policy.md` |
+| 레퍼런스 기반 하네스/글 편집 | `core/reference-use.md`, 필요 시 `reference-profiles/technical-blog-page-cadence.md` |
+| 공개 기술 글의 포트폴리오 신호 점검 | `lenses/portfolio-signal.md`, `lenses/developer.md`, `core/workflow.md` |
+| 톤 점검 | `lenses/voice.md`, 필요 시 `lenses/edit-patterns.md` |
+| 기술 구현/복기 글 | `lenses/voice.md`의 Technical Case Study 기준, `lenses/developer.md` |
+| 회사 프로젝트 글 | `guards/source-policy.md`, `lenses/voice.md`의 Technical Case Study 기준, `lenses/developer.md` |
+| 제품/아키텍처 글 | `guards/source-policy.md`, `lenses/voice.md`의 Technical Case Study 기준, `lenses/developer.md` |
+| 개인/블로그 회고 | `lenses/voice.md`의 Retrospective / Meta 기준 |
+| PI Lab 또는 학습/실험 글 | `lenses/voice.md`의 Learning / Experiment 기준, `lenses/developer.md`, 필요 시 기존 발행글이나 `context/series-pilab.md` |
+| 발행 전 | `guards/prepublish-check.md`, `core/output-contracts.md`의 candidate slot 기준 |
 
 ## 문서 역할
 
-- `source-policy.md`: 원천 자료와 공개 경계.
-- `voice.md`: 글 유형별 목소리와 공통 톤 기준.
-- `developer-lens.md`: 기술 블로그다운 문제 정의, 제약, 선택, 트레이드오프, 판단 변화 기준.
-- `portfolio-signal-lens.md`: 공개 기술 글이 동료 개발자와 나를 궁금해하는 개발자에게 남기는 역량 신호 기준.
-- `reader-flow-lens.md`: 글이 좋은 기술 글처럼 읽히도록 페이지 감각, 문단 호흡, 표현 리듬, 스캔 경로, 정보 배치, 판단 흐름을 함께 보는 기준.
-- `supporting-materials.md`: 표, 코드, 이미지, 도식, 그래프, 스크린샷이 본문 판단을 돕는지 보는 보조 기준. 새 단계가 아니라 자료 장치가 실제 쟁점이거나 artifact gap을 풀 자료 후보를 골라야 할 때 읽는다.
-- `writing-partners.md`: 글을 키우는 단계 모델.
-- `edit-patterns.md`: 반복해서 거부된 수정 방향과 보호해야 할 패턴.
-- `series-pilab.md`: PI Lab 시리즈의 앞뒤 맥락을 확인하는 느슨한 작업 메모. 편집 렌즈나 구조 템플릿이 아니다.
-- `prepublish-check.md`: 발행 직전 hard guard.
-- `decisions/`: 하네스 변경의 배경, 문제, 결정, 비목표 기록.
-- `audits/`: 하네스와 발행 글의 정합성 감사 기록.
+- `core/workflow.md`: `Material -> Shaping -> Texture -> Prepublish` 단계와 각 단계 책임.
+- `core/output-contracts.md`: review-only, edit, reader-flow, artifact gap, reference-guided, publish-ready 모드별 산출물 계약.
+- `core/reference-use.md`: 레퍼런스를 표면 규칙으로 하드코딩하지 않고 패턴으로 번역하는 원칙.
+- `lenses/voice.md`: 글 유형별 목소리와 공통 톤 기준.
+- `lenses/developer.md`: 기술 블로그다운 문제 정의, 제약, 선택, 트레이드오프, 판단 변화 기준.
+- `lenses/portfolio-signal.md`: 공개 기술 글이 동료 개발자와 나를 궁금해하는 개발자에게 남기는 역량 신호 기준.
+- `lenses/reader-flow.md`: 좋은 기술 글처럼 읽히는 페이지 감각, 문단 호흡, 스캔 경로, 정보 배치, 판단 흐름.
+- `lenses/supporting-materials.md`: artifact gap이 확인된 뒤 표, 코드, 이미지, 도식, 그래프, 스크린샷 중 어떤 자료로 풀지 고르는 처방 기준.
+- `lenses/edit-patterns.md`: 반복해서 거부된 수정 방향과 보호해야 할 패턴.
+- `guards/source-policy.md`: 원천 자료와 공개 경계.
+- `guards/prepublish-check.md`: 발행 직전 hard guard.
+- `reference-profiles/technical-blog-page-cadence.md`: 좋은 기술 글의 페이지 단위 리듬 패턴.
+- `context/series-pilab.md`: PI Lab 시리즈의 앞뒤 맥락을 확인하는 느슨한 작업 메모. 편집 렌즈나 구조 템플릿이 아니다.
 
 ## 강제 규칙과 참고 기준
 
-- 강제 규칙: `source-policy.md`의 공개 경계, `prepublish-check.md`의 발행 전 필수 항목
-- 참고 기준: `writing-partners.md`, `voice.md`, `developer-lens.md`, `portfolio-signal-lens.md`, `reader-flow-lens.md`, `supporting-materials.md`, `edit-patterns.md`
+- 강제 규칙: `guards/source-policy.md`의 공개 경계, `guards/prepublish-check.md`의 발행 전 필수 항목, `core/output-contracts.md`의 발행 원고 후보 슬롯 제거.
+- 참고 기준: `core/workflow.md`, `lenses/voice.md`, `lenses/developer.md`, `lenses/portfolio-signal.md`, `lenses/reader-flow.md`, `lenses/supporting-materials.md`, `lenses/edit-patterns.md`.
 
-참고 기준은 글을 틀에 끼우기 위한 것이 아니라, 초안이 의도한 목소리와 구조에서 벗어나는지 확인하기 위한 점검 거울이다.
-`series-pilab.md`는 이 참고 기준 묶음에서 제외한다. 시리즈 연결이나 발행 순서가 필요할 때만 배경 메모로 본다.
+참고 기준은 글을 틀에 끼우기 위한 것이 아니라, 초안이 의도한 목소리와 구조에서 벗어나는지 확인하기 위한 점검 거울이다. `context/series-pilab.md`는 이 참고 기준 묶음에서 제외한다. 시리즈 연결이나 발행 순서가 필요할 때만 배경 메모로 본다.
 
 ## 단계별 파트너
 
@@ -50,16 +63,16 @@
 
 - `blog-material-partner`: 글감, 장면, 실패, 오해, 판단 변화, 차분한 호기심의 출발점을 찾는다.
 - `blog-shaping-editor`: 중심 질문, 탐구 동력, 흐름, 단락 기능, 독자 진입성, artifact gap, 보강/삭제/이동 후보를 본다.
-- `blog-texture-keeper`: polish 과정에서 살아 있는 문장, 발견, 리듬, 질감이 깎이지 않는지 본다. 표/이미지/도식 같은 요약 장치가 글감을 대체하지 않는지도 확인한다.
+- `blog-texture-keeper`: polish 과정에서 살아 있는 문장, 발견, 리듬, 질감이 깎이지 않는지 본다.
 - `blog-evidence-checker`와 prepublish guard: 발행 직전 사실 정합성과 공개 경계를 본다.
 
-자세한 흐름은 `writing-partners.md`를 따른다.
+자세한 흐름은 `core/workflow.md`를 따른다. 작업 모드별 결과물은 `core/output-contracts.md`를 따른다.
 
 ## 하네스 변경 기록
 
-새 렌즈, 새 축, agent/skill 역할 변경처럼 이후 글쓰기 방식에 영향을 주는 하네스 변경은 `decisions/`에 decision record를 남긴다. 커밋 메시지는 요약과 짧은 의도를 담고, decision record는 왜 그 기준이 생겼는지, 무엇을 막으려는지, 어디까지 적용할지 남긴다.
+새 렌즈, 새 축, agent/skill 역할 변경처럼 이후 글쓰기 방식에 영향을 주는 하네스 변경은 `decisions/`에 decision record를 남긴다.
 
-하네스 관련 수정 뒤에는 필요할 때 `blog-harness-observer`를 report-only로 호출해 구조 드리프트를 본다. 이 observer는 글쓰기 단계가 아니며, 새 규칙을 저장하는 장소도 아니다. 기존 문서와 agent의 책임 경계가 유지되는지만 제3자로 관찰한다.
+하네스 관련 수정 뒤에는 필요할 때 `blog-harness-observer`를 report-only로 호출해 구조 드리프트를 본다. 이 observer는 글쓰기 단계가 아니며, 새 규칙을 저장하는 장소도 아니다.
 
 오타 수정, 링크 정리, 이미 합의된 기준의 표현 polish처럼 맥락이 자명한 변경은 기록하지 않아도 된다.
 

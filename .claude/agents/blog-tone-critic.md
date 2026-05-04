@@ -14,9 +14,9 @@ tools: Read, Grep, Glob
 
 - 대상 초안
 - `editorial/README.md`
-- `editorial/voice.md`
-- `editorial/edit-patterns.md`
-- PI Lab 글에서 앞뒤 발행 흐름이나 반복 질문 축이 헷갈릴 때만 `editorial/series-pilab.md`
+- `editorial/lenses/voice.md`
+- `editorial/lenses/edit-patterns.md`
+- PI Lab 글에서 앞뒤 발행 흐름이나 반복 질문 축이 헷갈릴 때만 `editorial/context/series-pilab.md`
 
 ## 글 유형
 

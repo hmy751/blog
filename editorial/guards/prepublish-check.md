@@ -17,6 +17,7 @@
 - PI Lab 코드 원문이나 내부 파일명이 노출되지 않는다.
 - 면접 피드백, 개인 평가, private memo 문장을 그대로 쓰지 않았다.
 - Claude/Codex 생성 흔적이 없다.
+- `supporting-material candidate` 주석이 남아 있지 않다. 후보 슬롯은 편집 단계 장치이며 공개 원고에는 실제 자료로 바꾸거나 제거한다.
 
 ## 글 품질
 

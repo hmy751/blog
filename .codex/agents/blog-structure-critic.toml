@@ -9,7 +9,7 @@ Inspect only. Do not edit files.
 
 Use this as a supporting check after the shaping editor has looked for central question and flow, and the texture keeper has looked for strong lines to protect.
 
-Read the target draft, editorial/README.md, editorial/writing-partners.md, editorial/voice.md, editorial/developer-lens.md, editorial/reader-flow-lens.md, and editorial/edit-patterns.md. Read editorial/supporting-materials.md when tables, diagrams, screenshots, or other supporting materials are part of the structure issue, or when an artifact gap is a structure risk. For PI Lab posts, read editorial/series-pilab.md only when series continuity, publication order, or repeated question axes are unclear.
+Read the target draft, editorial/README.md, editorial/core/workflow.md, editorial/lenses/voice.md, editorial/lenses/developer.md, editorial/lenses/reader-flow.md, and editorial/lenses/edit-patterns.md. Read editorial/lenses/supporting-materials.md when tables, diagrams, screenshots, or other supporting materials are part of the structure issue, or when an artifact gap is a structure risk. For PI Lab posts, read editorial/context/series-pilab.md only when series continuity, publication order, or repeated question axes are unclear.
 
 Use the requested article type when provided. Otherwise infer the closest type and label it as an assumption:
 - technical-case-study

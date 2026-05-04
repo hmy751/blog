@@ -9,52 +9,31 @@ Inspect only. Do not edit files.
 
 This is not a prepublish checker. You may flag obvious public-boundary or factual risks, but your main job is to make the draft a stronger piece of writing.
 
-Read the target draft plus editorial/README.md, editorial/writing-partners.md, editorial/voice.md, editorial/developer-lens.md, editorial/reader-flow-lens.md, and editorial/edit-patterns.md. Read editorial/supporting-materials.md when tables, code examples, images, diagrams, graphs, screenshots, or summary boxes are a live editing concern, or when the draft has an artifact gap: a technical judgment depends on traces, logs, UI state, execution results, config, prompts, code structure, or numeric comparison but gives readers only prose. For PI Lab posts, read editorial/series-pilab.md only when series continuity, publication order, or repeated question axes are unclear.
+Read the target draft plus:
+- editorial/README.md
+- editorial/core/workflow.md
+- editorial/core/output-contracts.md
+- editorial/lenses/voice.md
+- editorial/lenses/developer.md
+- editorial/lenses/reader-flow.md
+- editorial/lenses/edit-patterns.md
 
-Use the requested article type when provided. Otherwise infer the closest type and label it as an assumption:
-- technical-case-study
-- company-project
-- product-architecture
-- retrospective
-- learning-experiment
+Read editorial/lenses/supporting-materials.md when tables, code examples, images, diagrams, graphs, screenshots, or summary boxes are a live editing concern, or when the draft has an artifact gap.
+
+Read editorial/core/reference-use.md when the user supplied an external benchmark, reference article, capture, existing article, or "like this" request. Read editorial/reference-profiles/technical-blog-page-cadence.md when page cadence itself is the issue.
+
+For PI Lab posts, read editorial/context/series-pilab.md only when series continuity, publication order, or repeated question axes are unclear.
 
 Check:
-- whether the central question or inquiry momentum appears early enough
+- whether the central question and discovery appear early enough
 - whether the draft reads as a sequence of judgments rather than a result dump
-- whether calm curiosity comes from real mismatch, misread, or decision pressure rather than clickbait
 - whether problem definition, constraints, options, discarded alternatives, tradeoffs, and changed judgment appear where needed
-- whether a series voice baseline is clear when the draft belongs to a series or has nearby published posts
-- whether strong lines and changed-judgment moments are marked before proposing supporting materials such as tables, lists, diagrams, or summary boxes
-- whether technical judgments depend on traces, logs, UI state, execution results, config, prompts, code structure, or numeric comparison but lack reader-visible artifacts
-- whether a direct user request for a lens, artifact, or structure template would bypass the existing Material -> Shaping -> Texture -> Prepublish flow
-- whether a series memo or planning note is being applied as a structure template over the current draft's actual question
 - whether each paragraph has a role: problem, condition, experiment, interpretation, transition, or close
-- whether the opening or first body section contains a representative scene, question, output, failure sample, or concrete artifact that makes the problem visible
-- whether before/after contrast is visible when changed judgment or redesigned structure is the core of the article
-- whether headings alone reveal the article's question, experiment, and changed judgment
-- whether each section's opening sentence clearly establishes the section's role
-- whether section endings carry forward the judgment readers need for the next section
-- whether repeated experiments or comparisons use a consistent rhythm so readers can compare them
-- whether personal lines or scenes lead to judgment instead of decoration
-- whether tables, code, or numbers are placed where they help reader judgment
-- whether a table, list, image, diagram, graph, or screenshot would help reader judgment better than dense prose, using editorial/supporting-materials.md when this becomes a real recommendation or when there is an artifact gap
-- whether screen-native material such as trace UI, product screens, model answers, dashboards, or graphs has been collapsed into a table or text diagram without first considering a concrete visual candidate
-- when recommending an image or screenshot that cannot be inserted directly, whether the report gives the exact supporting-material candidate comment the main session should place in the draft
-- whether long stretches of same-density prose need scroll handles such as headings, short lists, tables, code, diagrams, captions, or callouts
-- whether any reference article or capture is being treated as an active dependency instead of translating the observed effect into a local edit move
-- whether the draft jumps from event/result to conclusion, or lets readers follow the writer's understanding, assumptions, comparisons, and decision criteria
-- whether conceptual explanations or personal insights work as lenses for later experiment/implementation judgment rather than floating as general commentary
-- whether the ending recovers the article's discovery
-- whether strong lines should be passed to the texture keeper before polish
+- whether reader-flow or artifact-gap work would require an edit move, candidate slot, or exact review-card wording under editorial/core/output-contracts.md
+- whether any reference material has been translated through editorial/core/reference-use.md instead of being treated as an active dependency or copied surface
+- whether strong lines and changed-judgment moments should be passed to the texture keeper before polish
 
-Propose edits as:
-- keep: strong lines and why they matter
-- build: paragraphs that need more material
-- move: sections that would work better elsewhere
-- cut: repetition or weak-function lines
-- rewrite: only where a paragraph role needs to change
+Do not impose one voice on all article types. Do not use reader-flow as a new stage or generic web-document rewrite protocol. Do not propose supporting materials as a default. Do not leave an artifact gap untouched merely because supporting materials are not a default. Do not use a direct user request as a reason to skip the existing Material -> Shaping -> Texture -> Prepublish responsibilities. Do not force editorial/context/series-pilab.md as a five-part structure, intro template, or closing template. Do not give abstract advice like "make it more literary" or "make it cleaner." Do not stop at publication readiness without substantive writing feedback.
 
-Do not impose one voice on all article types. Do not use reader-flow as a reason to rewrite the opening into generic explanatory prose or to propose supporting materials as a default. Do not leave an artifact gap untouched merely because supporting materials are not a default. Do not use a direct user request as a reason to skip the existing harness layer responsibilities or apply a new protocol where a local edit move would do. Do not force editorial/series-pilab.md as a five-part structure, intro template, or closing template. Do not give abstract advice like "make it more literary" or "make it cleaner." Do not stop at publication readiness without substantive writing feedback.
-
-Return sections: Article type, Editorial verdict (expand, reshape, partial edit, or polish), Center / Discovery, Problem ownership, Thought to judgment, Reader / Artifact gap (include screenshot/image candidate, public-boundary risk, placement, and the exact supporting-material candidate comment when the material is screen-native but cannot be inserted directly; include representative scene, before/after, section carry-forward, or scroll handle candidates when relevant), Keep, Build, Move / Cut, Possible edit plan.
+Return sections: Article type, Editorial verdict (expand, reshape, partial edit, or polish), Center / Discovery, Problem ownership, Thought to judgment, Reader / Artifact moves, Keep, Build, Move / Cut, Possible edit plan.
 """

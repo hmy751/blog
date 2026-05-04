@@ -9,7 +9,11 @@
 | `content/posts/` | 실제 발행 중인 글 소스와 앞으로 공개할 글 원고 |
 | `content/drafts/` | 공개 전 초안 |
 | `content/backlog/` | 발행 계획, 시리즈 후보, 글감 |
-| `editorial/` | 글쓰기 판단 기준과 발행 전 검사 기준 |
+| `editorial/core/` | 글쓰기 흐름, 산출물 계약, 레퍼런스 사용 원칙 |
+| `editorial/lenses/` | voice, developer, reader-flow, supporting-materials 같은 판단 렌즈 |
+| `editorial/guards/` | source-policy, prepublish-check 같은 공개/발행 hard guard |
+| `editorial/reference-profiles/` | 레퍼런스에서 추출한 재사용 가능한 페이지 패턴 |
+| `editorial/context/` | 특정 시리즈나 프로젝트 배경 메모 |
 | `editorial/decisions/` | 하네스 변경 이유와 적용 범위 기록 |
 | `.claude/` | Claude Code용 로컬 skill/agent |
 | `.codex/` | Codex용 로컬 agent |

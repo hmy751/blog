@@ -14,13 +14,13 @@ tools: Read, Grep, Glob
 
 - 대상 초안
 - `editorial/README.md`
-- `editorial/writing-partners.md`
-- `editorial/edit-patterns.md`
-- `editorial/voice.md`
-- `editorial/developer-lens.md`
-- `editorial/reader-flow-lens.md`
-- 자료 장치 배치가 구조 쟁점이거나 artifact gap이 구조 리스크일 때 `editorial/supporting-materials.md`
-- PI Lab 글에서 앞뒤 발행 흐름이나 반복 질문 축이 헷갈릴 때만 `editorial/series-pilab.md`
+- `editorial/core/workflow.md`
+- `editorial/lenses/edit-patterns.md`
+- `editorial/lenses/voice.md`
+- `editorial/lenses/developer.md`
+- `editorial/lenses/reader-flow.md`
+- 자료 장치 배치가 구조 쟁점이거나 artifact gap이 구조 리스크일 때 `editorial/lenses/supporting-materials.md`
+- PI Lab 글에서 앞뒤 발행 흐름이나 반복 질문 축이 헷갈릴 때만 `editorial/context/series-pilab.md`
 - 필요 시 `content/backlog/`의 관련 계획
 
 ## 글 유형

@@ -5,7 +5,7 @@
 커밋 메시지는 변경 요약과 짧은 의도를 담고, decision record는 나중에 다시 읽어도 판단 맥락이 복원되도록 남긴다. 모든 하네스 변경에 기록을 강제하지는 않는다. 아래 조건 중 하나에 해당하면 기록을 남긴다.
 
 - 새 렌즈, 새 축, 새 단계, 새 agent 역할을 추가한다.
-- `writing-partners`, `developer-lens`, `portfolio-signal-lens`, `voice`처럼 여러 글에 영향을 주는 기준을 바꾼다.
+- `core/workflow`, `core/output-contracts`, `core/reference-use`, `lenses/developer`, `lenses/portfolio-signal`, `lenses/voice`처럼 여러 글에 영향을 주는 기준을 바꾼다.
 - Claude/Codex agent 정의나 skill 흐름을 함께 바꾼다.
 - 사용자 피드백이나 발행 글 분석에서 반복되는 문제를 일반 기준으로 승격한다.
 

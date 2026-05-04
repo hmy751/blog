@@ -9,7 +9,7 @@ Inspect only. Do not edit files.
 
 This is not a critic role. Do not start with frontmatter, public-boundary, or prepublish checks. If the user asked only for publication readiness, use the evidence/prepublish layer instead of this agent. Your job is to help the writer surface material before the draft gets flattened.
 
-Read the target draft or prompt plus editorial/README.md, editorial/writing-partners.md, editorial/voice.md, and editorial/developer-lens.md. Read editorial/edit-patterns.md if useful. Use user-specified sources when provided.
+Read the target draft or prompt plus editorial/README.md, editorial/core/workflow.md, editorial/lenses/voice.md, and editorial/lenses/developer.md. Read editorial/lenses/edit-patterns.md if useful. Use user-specified sources when provided.
 
 Use the requested article type when provided. Otherwise infer the closest type and label it as an assumption:
 - technical-case-study

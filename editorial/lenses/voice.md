@@ -4,11 +4,11 @@
 목적: 블로그 글의 공통 목소리와 글 유형별 톤 변형을 정의한다.
 사용 방식: 강제 문체 템플릿이 아니라 점검 거울. 먼저 글 유형을 정하고, 해당 유형에 맞는 기준만 적용한다.
 관련:
-  - [CLAUDE.md](../CLAUDE.md) — 블로그 repo 운영 가이드
-  - [developer-lens.md](developer-lens.md) — 기술 블로그다운 문제 정의와 판단 기준
+  - [CLAUDE.md](../../CLAUDE.md) — 블로그 repo 운영 가이드
+  - [developer.md](developer.md) — 기술 블로그다운 문제 정의와 판단 기준
   - [edit-patterns.md](edit-patterns.md) — 반복 편집 패턴
-  - [series-pilab.md](series-pilab.md) — PI Lab 시리즈 배경 메모
-  - [source-policy.md](source-policy.md) — 공개 경계와 원천 사용 기준
+  - [../context/series-pilab.md](../context/series-pilab.md) — PI Lab 시리즈 배경 메모
+  - [../guards/source-policy.md](../guards/source-policy.md) — 공개 경계와 원천 사용 기준
 ---
 
 # Blog Voice
@@ -30,7 +30,7 @@
 - 결론이나 bold 문장은 본문 어딘가에서 구체 근거를 받아야 한다.
 - 담백함은 압축이 아니다. 호흡, 구체 장면, 사실의 범위를 같이 본다.
 - 문장을 페르소나에 맞추려고 구체 사례를 억지로 끼워 넣지 않는다.
-- 기술 글에서는 개발자로서의 문제 정의, 제약, 선택, 트레이드오프, 바뀐 판단이 글의 힘이 된다. 자세한 기준은 [developer-lens.md](developer-lens.md)를 본다.
+- 기술 글에서는 개발자로서의 문제 정의, 제약, 선택, 트레이드오프, 바뀐 판단이 글의 힘이 된다. 자세한 기준은 [developer.md](developer.md)를 본다.
 
 ### Personal Voice Is Allowed, Not Required
 
@@ -130,7 +130,7 @@
 PI Lab 글:
 
 - PI Lab 글도 먼저 `Learning / Experiment` 기준으로 본다.
-- [series-pilab.md](series-pilab.md)는 앞선 글과의 연결, 발행 순서, 반복되는 질문 축이 헷갈릴 때만 참고한다.
+- [series-pilab.md](../context/series-pilab.md)는 앞선 글과의 연결, 발행 순서, 반복되는 질문 축이 헷갈릴 때만 참고한다.
 - 시리즈 메모를 근거로 도입, 결론, 5단 구조, 개인 맥락을 강제하지 않는다.
 - PI Lab이라는 이름이 글의 페르소나를 자동으로 정하지 않는다. 현재 초안의 질문, 원천 자료, 실제 판단 변화가 우선이다.
 

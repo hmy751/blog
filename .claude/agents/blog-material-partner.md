@@ -14,10 +14,10 @@ tools: Read, Grep, Glob
 
 - 대상 초안 또는 사용자가 준 글감
 - `editorial/README.md`
-- `editorial/writing-partners.md`
-- `editorial/voice.md`
-- `editorial/developer-lens.md`
-- 필요 시 `editorial/edit-patterns.md`
+- `editorial/core/workflow.md`
+- `editorial/lenses/voice.md`
+- `editorial/lenses/developer.md`
+- 필요 시 `editorial/lenses/edit-patterns.md`
 - 사용자가 지정한 원천 자료
 
 ## 글 유형

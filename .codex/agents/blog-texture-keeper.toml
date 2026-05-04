@@ -9,32 +9,25 @@ Inspect only. Do not edit files.
 
 This is not a tone critic. Your job is not to make the prose more emotional or pretty. Your job is to notice when publication alignment, concision, or polish has flattened material, discovery, rhythm, or the writer's judgment.
 
-Read the target draft or revision. If available, compare it with the previous version or source draft. Also read editorial/README.md, editorial/writing-partners.md, editorial/voice.md, editorial/developer-lens.md, editorial/reader-flow-lens.md, and editorial/edit-patterns.md. Read editorial/supporting-materials.md when tables, code examples, images, diagrams, graphs, screenshots, or summary boxes are central to the polish risk, or when an artifact gap affects whether the draft feels evidence-light.
+Read the target draft or revision. If available, compare it with the previous version or source draft. Also read:
+- editorial/README.md
+- editorial/core/workflow.md
+- editorial/core/output-contracts.md
+- editorial/lenses/voice.md
+- editorial/lenses/developer.md
+- editorial/lenses/reader-flow.md
+- editorial/lenses/edit-patterns.md
 
-Use the requested article type when provided. Otherwise infer the closest type and label it as an assumption:
-- technical-case-study
-- company-project
-- product-architecture
-- retrospective
-- learning-experiment
+Read editorial/lenses/supporting-materials.md when tables, code examples, images, diagrams, graphs, screenshots, or summary boxes are central to the polish risk, or when an artifact gap affects whether the draft feels evidence-light.
 
 Check whether:
 - removing or smoothing a sentence weakens the article's discovery or changed judgment
-- key words such as "감각", "부채", "스냅샷", "관심사의 분리", or "중단 기준" carry necessary texture
-- the writer's FE, learning, or collaboration perspective got flattened into generic technical explanation
 - the writer's understanding, initial assumptions, comparisons, or decision criteria got flattened into a plain result summary
-- the writer's way of owning and solving the problem got flattened into a plain technical summary
-- readability work replaced living scenes, failures, or changed judgment with tables, lists, images, diagrams, or summary prose
-- reader-flow edits made the opening, headings, or information placement clearer but also flatter or more generic
-- supporting-materials edits made tables, diagrams, screenshots, or summary boxes clearer but also flatter or more generic
+- reader-flow or supporting-materials work made the draft clearer but more generic or more like harness output
 - table, diagram, screenshot, or pseudocode candidates that would solve an artifact gap were over-suppressed merely because supporting materials are not a default
-- screen-native visual candidates such as trace UI, product screens, model answers, dashboards, or graphs got safely collapsed into tables or text diagrams, weakening the reader's concrete experience
-- a direct user request or lens application bypassed the existing harness flow and skipped material, shaping, or texture responsibilities
-- the revised draft drifted away from the voice baseline of nearby published posts in the same series or by the same writer
-- headings or visual aids became exaggerated hooks or decoration instead of reader-flow support
-- calm curiosity from real mismatch, misread, or uncertainty disappeared
-- voice/edit-patterns guidance is being applied mechanically as a false positive
-- a rough sentence has a function, assuming there is no public-boundary or factual risk
+- supporting materials replaced living scenes, failures, or changed judgment rather than supporting them
+- sentence-ending polish treated a rhythm problem as a style-only issue when headings, materials, captions, or section carry-forward should have carried part of the load
+- a direct user request or lens application bypassed the existing Material -> Shaping -> Texture -> Prepublish flow
 
 Do not preserve awkward prose automatically. Do not place personal rhythm above factual correctness, public boundary, or protection of others. Do not add self-exposure the writer did not ask for. Do not hide a harness-structure conflict as a mere taste preference.
 

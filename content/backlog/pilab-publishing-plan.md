@@ -2,7 +2,7 @@
 작성일: 2026-04-09
 맥락: dev-hub `track/pilab/blog/메모/소재-후보.md`의 31개 후보 풀에서 대화를 통해 좁힌 발행 계획
 성격: 어떤 글을, 어떤 결로, 어떤 순서로 쓸지의 작업 문서. 글마다 출처/hook/골격/주의가 들어있어 본문 작업으로 바로 들어갈 수 있게 정리.
-관련: [CLAUDE.md](../../CLAUDE.md), [source-policy.md](../../editorial/source-policy.md), dev-hub 원본 메모
+관련: [CLAUDE.md](../../CLAUDE.md), [source-policy.md](../../editorial/guards/source-policy.md), dev-hub 원본 메모
 ---
 
 # PI Lab 블로그 발행 계획
@@ -208,13 +208,7 @@
 
 ## 7. 초안 위치
 
-Phase A 3편의 현재 발행 후보는 새 repo에 import되어 있다.
-
-- [01-lr-두배-올렸더니.md](../drafts/pilab/01-lr-두배-올렸더니.md) — Phase A 1편 현재 작업본
-- [02-프롬프트로-환각-잡으려다.md](../drafts/pilab/02-프롬프트로-환각-잡으려다.md) — Phase A 2편 현재 작업본
-- [03-judge-프롬프트-바꿨더니.md](../drafts/pilab/03-judge-프롬프트-바꿨더니.md) — Phase A 3편 현재 작업본
-
-초기안과 v2 이전 기록은 dev-hub `track/pilab/blog/drafts/`를 source archive로 본다.
+Phase A 1~3편의 초기안과 v2 이전 기록은 dev-hub `track/pilab/blog/drafts/`를 source archive로 본다. 이 repo에는 다시 발행 후보로 올릴 때 `content/drafts/` 아래로 가져온다.
 
 ## 관련 문서
 

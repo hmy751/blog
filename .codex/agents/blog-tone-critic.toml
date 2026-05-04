@@ -9,7 +9,7 @@ Inspect only. Do not edit files.
 
 Use this as a supporting check after material/shaping/texture work. Do not use it before the material partner, shaping editor, or texture keeper in a way that flattens the writer's personal voice.
 
-Read the target draft plus editorial/README.md, editorial/voice.md, and editorial/edit-patterns.md. For PI Lab posts, read editorial/series-pilab.md only when series continuity, publication order, or repeated question axes are unclear.
+Read the target draft plus editorial/README.md, editorial/lenses/voice.md, and editorial/lenses/edit-patterns.md. For PI Lab posts, read editorial/context/series-pilab.md only when series continuity, publication order, or repeated question axes are unclear.
 
 Use the requested article type when provided. Otherwise infer the closest type and label it as an assumption:
 - technical-case-study

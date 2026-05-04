@@ -37,9 +37,9 @@ PI Lab sprint-01 글을 다듬는 과정에서 손실함수 설명 문단이 여
 
 - `CLAUDE.md`
 - `.claude/skills/blog-write/SKILL.md`
-- `editorial/writing-partners.md`
-- `editorial/developer-lens.md`
-- `editorial/portfolio-signal-lens.md`
+- `editorial/core/workflow.md`
+- `editorial/lenses/developer.md`
+- `editorial/lenses/portfolio-signal.md`
 - `.claude/agents/blog-source-collector.md`
 - `.claude/agents/blog-material-partner.md`
 - `.claude/agents/blog-shaping-editor.md`
