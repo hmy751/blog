@@ -7,6 +7,7 @@
 | 영역 | 역할 |
 | --- | --- |
 | `content/posts/` | 직접 블로그에 올릴 공개 원고의 source. frontmatter `platform`은 `Blog`로 둔다. |
+| `content/notes/` | 공개할 짧은 노트 source. 없으면 사이트 Note 화면은 빈 상태로 둔다. |
 | `content/drafts/` | 공개 전 초안. 원천 자료에서 가져온 글도 먼저 여기에 둔다. |
 | `content/backlog/` | 발행 계획, 시리즈 후보, 글감 목록. |
 | `editorial/` | 글쓰기 판단 기준. `core/`, `lenses/`, `guards/`, `reference-profiles/`, `context/`, `decisions/`, `audits/`로 책임을 나눈다. |

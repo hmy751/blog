@@ -5,6 +5,7 @@
 ## Source
 
 - 기본 source: `../../content/posts/*.md`
+- Note source: `../../content/notes/*.md`. 디렉토리가 없으면 빈 목록으로 본다.
 - 초안 preview가 필요할 때만 `../../content/drafts/*.md`를 별도 dev-only 경로로 읽는다.
 - `content/backlog/`는 사이트 데이터 source가 아니다.
 
@@ -31,13 +32,20 @@
 
 optional 필드를 필요로 한다는 이유로 기존 원고를 대량 수정하지 않는다. 필요하면 root `content/`에서 별도 editorial 작업으로 고친다.
 
-`featured` field 자체는 없을 때 `false`지만, 홈 화면은 featured 글이 하나도 없을 경우 최신 글 3개를 임시 featured section에 배치할 수 있다. 이 fallback은 site display rule이며 원고 metadata를 바꾸지 않는다.
+홈의 `Featured` section은 `featured: true`인 글이 있을 때만 보여준다. 강조 글이 없으면 `Recent`가 최신 글 목록을 바로 보여준다.
 
 ## Slug And Date
 
 - slug는 파일명 `YYYY-MM-DD-slug.md`의 `slug` 부분에서 만든다.
 - 파일명 날짜와 frontmatter `date`가 다르면 build/check에서 실패시킨다.
 - `date: TBD`인 글은 public route로 내보내지 않는다.
+- 오늘보다 미래 날짜인 글은 public route와 목록에 내보내지 않는다. 로컬 검증에서 특정 기준일이 필요하면 `SITE_PUBLISH_CUTOFF_DATE=YYYY-MM-DD`로 override한다.
+
+## Notes
+
+- Note는 `content/notes/*.md`가 생기면 같은 `YYYY-MM-DD-slug.md` 규칙으로 읽는다.
+- `title`, `date`, `description`은 optional이다. `description`이 없으면 첫 본문 paragraph를 목록 문장으로 쓴다.
+- 아직 공개 note source가 없으면 내부 구현 문구 없이 조용한 empty state만 보여준다.
 
 ## Markdown Rendering
 

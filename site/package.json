@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "preview": "vite preview --host 127.0.0.1 --port 4173 --outDir out",
+    "preview": "node scripts/preview.mjs",
     "dev:next": "next dev",
     "build:next": "next build",
     "check": "tsc --noEmit && tsc -p system-preview/tsconfig.json --noEmit",

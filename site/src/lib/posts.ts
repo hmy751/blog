@@ -40,9 +40,10 @@ export async function getPosts(): Promise<Post[]> {
     .filter((file) => file !== "README.md");
 
   const posts = await Promise.all(markdownFiles.map(readPostFile));
+  const cutoffDate = getPublicationCutoffDate();
 
   return posts
-    .filter((post) => post.date !== "TBD")
+    .filter((post) => isPublishedBy(post.date, cutoffDate))
     .sort((a, b) => b.date.localeCompare(a.date));
 }
 
@@ -52,8 +53,7 @@ export async function getPostBySlug(slug: string): Promise<Post | undefined> {
 }
 
 export function getFeaturedPosts(posts: Post[]): Post[] {
-  const featured = posts.filter((post) => post.featured).slice(0, 3);
-  return featured.length ? featured : posts.slice(0, 3);
+  return posts.filter((post) => post.featured).slice(0, 3);
 }
 
 export function getRecentPosts(posts: Post[], featuredPosts: Post[]): Post[] {
@@ -132,6 +132,16 @@ function normalizeDate(value: unknown): string {
   const date = String(value).trim();
   if (date === "TBD") return date;
   return date.slice(0, 10);
+}
+
+function getPublicationCutoffDate(): string {
+  const override = process.env.SITE_PUBLISH_CUTOFF_DATE?.trim();
+  if (override) return normalizeDate(override);
+  return new Date().toISOString().slice(0, 10);
+}
+
+function isPublishedBy(date: string, cutoffDate: string): boolean {
+  return date !== "TBD" && date <= cutoffDate;
 }
 
 function stringValue(value: unknown): string {

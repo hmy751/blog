@@ -23,7 +23,7 @@ export const ShellFrame: Story = {
     <Shell current="articles">
       <main className="view">
         <h1 className="page-title">Shell</h1>
-        <p className="page-sub">Brand, primary nav, footer, archive link, and motion wrapper.</p>
+        <p className="page-sub">Brand, primary nav, footer, and motion wrapper.</p>
       </main>
     </Shell>
   )

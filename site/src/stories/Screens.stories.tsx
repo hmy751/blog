@@ -114,9 +114,9 @@ export const NoteEmpty: Story = {
     <Shell current="note">
       <main className="view">
         <h1 className="page-title">Note</h1>
-        <p className="page-sub">짧은 메모 source가 붙으면 이 화면에 시간순으로 들어옵니다.</p>
+        <p className="page-sub">짧은 관찰과 작업 메모를 따로 모읍니다.</p>
         <div className="notes">
-          <div className="note">
+          <div className="note note-empty">
             <div className="when">{noteItems[1].when}</div>
             <div className="body">{noteItems[1].body}</div>
           </div>

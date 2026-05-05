@@ -1,4 +1,5 @@
 import { Shell } from "@/components/shell/Shell";
+import { getNotes } from "@/lib/notes";
 import "../page-common.module.css";
 import "../note-about.module.css";
 
@@ -6,17 +7,34 @@ export const metadata = {
   title: "Note"
 };
 
-export default function NotePage() {
+export default async function NotePage() {
+  const notes = await getNotes();
+
   return (
     <Shell current="note">
       <main className="view">
         <h1 className="page-title">Note</h1>
-        <p className="page-sub">짧은 메모 source가 붙으면 이 화면에 시간순으로 들어옵니다.</p>
+        <p className="page-sub">짧은 관찰과 작업 메모를 따로 모읍니다.</p>
         <div className="notes">
-          <div className="note">
-            <div className="when">empty</div>
-            <div className="body">아직 site 전용 note source는 연결하지 않았습니다.</div>
-          </div>
+          {notes.length ? (
+            notes.map((note) => (
+              <div className="note" key={note.slug}>
+                <time className="when" dateTime={note.date}>
+                  {note.dateText}
+                </time>
+                <div className="body">
+                  {note.title ? <strong>{note.title}</strong> : null}
+                  {note.title && note.body ? " " : null}
+                  {note.body || (note.title ? null : "메모를 정리 중입니다.")}
+                </div>
+              </div>
+            ))
+          ) : (
+            <div className="note note-empty">
+              <div className="when">준비 중</div>
+              <div className="body">아직 공개한 노트가 없습니다.</div>
+            </div>
+          )}
         </div>
       </main>
     </Shell>

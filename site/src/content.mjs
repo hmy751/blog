@@ -24,9 +24,10 @@ export async function getPosts() {
     .filter((file) => file !== "README.md");
 
   const posts = await Promise.all(markdownFiles.map(readPostFile));
+  const cutoffDate = getPublicationCutoffDate();
 
   return posts
-    .filter((post) => post.date !== "TBD")
+    .filter((post) => post.date !== "TBD" && post.date <= cutoffDate)
     .sort((a, b) => b.date.localeCompare(a.date));
 }
 
@@ -165,6 +166,12 @@ function normalizeDate(value) {
     return value.toISOString().slice(0, 10);
   }
   return String(value).slice(0, 10);
+}
+
+function getPublicationCutoffDate() {
+  const override = process.env.SITE_PUBLISH_CUTOFF_DATE?.trim();
+  if (override) return normalizeDate(override);
+  return new Date().toISOString().slice(0, 10);
 }
 
 function slugFromFilename(file) {

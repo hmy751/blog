@@ -79,9 +79,6 @@ function htmlShell({ title, description = siteConfig.description, current, body 
       ${body}
       <footer class="foot">
         <span>Blog / ${new Date().getFullYear()}</span>
-        <span class="links">
-          <a href="/articles/">Archive</a>
-        </span>
       </footer>
     </div>
   </body>
@@ -90,9 +87,16 @@ function htmlShell({ title, description = siteConfig.description, current, body 
 
 function homePage(posts) {
   const featured = posts.filter((post) => post.featured).slice(0, 3);
-  const visibleFeatured = featured.length ? featured : posts.slice(0, 3);
-  const featuredSlugs = new Set(visibleFeatured.map((post) => post.slug));
+  const featuredSlugs = new Set(featured.map((post) => post.slug));
   const recent = posts.filter((post) => !featuredSlugs.has(post.slug)).slice(0, 6);
+  const featuredSection = featured.length
+    ? `<section class="featured" aria-labelledby="featured-title">
+      <div class="section-label" id="featured-title">Featured</div>
+      <div class="article-list" data-thumb="aside">
+        ${featured.map((post) => articleRow(post)).join("\n")}
+      </div>
+    </section>`
+    : "";
 
   return `<main class="view">
     <p class="home-intro">
@@ -101,12 +105,7 @@ function homePage(posts) {
       <span class="muted">${escapeHtml(siteConfig.intro[2])}</span>
     </p>
 
-    <section class="featured" aria-labelledby="featured-title">
-      <div class="section-label" id="featured-title">Featured</div>
-      <div class="article-list" data-thumb="aside">
-        ${visibleFeatured.map((post) => articleRow(post)).join("\n")}
-      </div>
-    </section>
+    ${featuredSection}
 
     <section aria-labelledby="recent-title">
       <div class="section-label" id="recent-title">Recent</div>
@@ -170,11 +169,11 @@ function postPage(post, posts, options = {}) {
 function notePage() {
   return `<main class="view">
     <h1 class="page-title">Note</h1>
-    <p class="page-sub">짧은 메모 source가 붙으면 이 화면에 시간순으로 들어옵니다.</p>
+    <p class="page-sub">짧은 관찰과 작업 메모를 따로 모읍니다.</p>
     <div class="notes">
-      <div class="note">
-        <div class="when">empty</div>
-        <div class="body">아직 site 전용 note source는 연결하지 않았습니다.</div>
+      <div class="note note-empty">
+        <div class="when">준비 중</div>
+        <div class="body">아직 공개한 노트가 없습니다.</div>
       </div>
     </div>
   </main>`;

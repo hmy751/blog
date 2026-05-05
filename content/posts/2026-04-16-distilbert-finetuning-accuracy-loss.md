@@ -6,6 +6,7 @@ readTime: "8 min read"
 platform: Blog
 project: PI Lab
 sprint: 1
+featured: true
 tags:
   - AI/ML
   - 부트캠프

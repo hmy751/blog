@@ -100,7 +100,8 @@ Adapter rules:
 
 - `primaryTag`: first `tags[]`, fallback `project`, fallback `category`, fallback `Blog`.
 - `description`: frontmatter `description`, fallback first normal paragraph excerpt.
-- `featured`: frontmatter `featured`; if no featured posts exist, home uses latest 3 as display fallback without mutating metadata.
+- `featured`: frontmatter `featured`; if no featured posts exist, home hides the featured section instead of inventing one.
+- future-dated posts: hidden from production lists/routes until the build cutoff date reaches the post date. Use `SITE_PUBLISH_CUTOFF_DATE=YYYY-MM-DD` for deterministic verification.
 - `cover`: frontmatter `cover`; no-cover state is valid.
 - `readTime`: use existing frontmatter string first. Later, a check can compare computed reading time.
 
@@ -110,8 +111,8 @@ Adapter rules:
 
 - shell + top nav
 - `home-intro` from `src/config/site.ts`
-- `Featured`: 3 posts
-- `Recent`: 6 posts excluding display featured where possible
+- `Featured`: up to 3 explicitly featured posts
+- `Recent`: 6 latest public posts excluding explicit featured where possible
 - link to `/articles`
 
 ### `/articles`
@@ -135,7 +136,7 @@ Adapter rules:
 
 - keep the route, but do not fake content from prototype.
 - render configured notes if a source exists.
-- otherwise show a quiet empty state using the same `note` layout.
+- otherwise show a quiet public-facing empty state using the same `note` layout.
 
 ### Dormant About
 

@@ -136,7 +136,7 @@ export const noteItems = [
     body: "Storybook은 컴포넌트 상태를 고립해서 보고, system-preview는 실제 route 결합을 확인한다."
   },
   {
-    when: "empty",
-    body: "아직 site 전용 note source는 연결하지 않았습니다."
+    when: "준비 중",
+    body: "아직 공개한 노트가 없습니다."
   }
 ];

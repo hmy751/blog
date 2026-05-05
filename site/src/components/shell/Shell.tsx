@@ -37,10 +37,7 @@ export function Shell({ children, current = "home", footerExtra, shellClassName 
       {children}
       <footer className="foot">
         <span>Blog / {year}</span>
-        <span className="links">
-          {footerExtra}
-          <Link href="/articles/">Archive</Link>
-        </span>
+        {footerExtra ? <span className="links">{footerExtra}</span> : null}
       </footer>
     </div>
   );

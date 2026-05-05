@@ -20,12 +20,14 @@ export default async function HomePage() {
           <span className="muted">{siteConfig.intro[2]}</span>
         </p>
 
-        <section className="featured" aria-labelledby="featured-title">
-          <div className="section-label" id="featured-title">
-            Featured
-          </div>
-          <ArticleList posts={featured} />
-        </section>
+        {featured.length ? (
+          <section className="featured" aria-labelledby="featured-title">
+            <div className="section-label" id="featured-title">
+              Featured
+            </div>
+            <ArticleList posts={featured} />
+          </section>
+        ) : null}
 
         <section aria-labelledby="recent-title">
           <div className="section-label" id="recent-title">

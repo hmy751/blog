@@ -23,7 +23,7 @@
 | Path | Role |
 | --- | --- |
 | `docs/platform-boundary.md` | content/editorial/design/site/harness 책임 경계 |
-| `docs/CONTENT_CONTRACT.md` | `../content/posts/*.md`를 사이트가 읽는 방식 |
+| `docs/CONTENT_CONTRACT.md` | `../content/posts/*.md`, optional `../content/notes/*.md`를 사이트가 읽는 방식 |
 | `docs/DESIGN_CONTRACT.md` | 현재 production CSS/component/Storybook 기준의 디자인 계약 |
 | `docs/MARKDOWN_CONTRACT.md` | 상세 글 Markdown 렌더링 변환 계약 |
 | `docs/BLOG_IMPLEMENTATION_PLAN.md` | 실제 블로그 앱 구현 계획 |
@@ -47,17 +47,20 @@
 
 ## Dev Stack
 
-현재 스택은 Next.js App Router + TypeScript 기반 static export다. `../content/posts`를 build time에 읽고, `npm run build`가 `out/` 정적 산출물을 만든다.
+현재 스택은 Next.js App Router + TypeScript 기반 static export다. `../content/posts`를 build time에 읽고, `../content/notes`가 있으면 Note 목록도 읽는다. `npm run build`가 `out/` 정적 산출물을 만든다.
 
 ```bash
 npm run dev
 npm run build
+npm run preview
 npm run verify
 ```
 
 기존 Node renderer 파일은 보존하지만 package scripts에는 노출하지 않는다. 새 구현 판단의 기준은 아니며, 과거 이력 확인이 필요할 때만 파일을 직접 읽는다.
 
 production App Router 라우트는 `/`, `/articles/`, `/articles/{slug}/`, `/note/`만 등록한다. About 화면은 `src/components/about/AboutPage.tsx`에 보존하지만 아직 route로 공개하지 않는다.
+
+`date: TBD`와 오늘보다 미래 날짜인 글은 production route/list에서 제외한다. 로컬에서 특정 기준일로 확인해야 하면 `SITE_PUBLISH_CUTOFF_DATE=YYYY-MM-DD npm run build`처럼 실행한다.
 
 `/system/`과 `/system/example-article/`은 배포 라우트가 아니라 디자인/Markdown QA용 local-only preview다. `site/system-preview`의 별도 Next app으로 실행하되, production `src/components`, `src/lib/markdown.ts`, `src/styles`를 import해서 연결성을 유지한다.
 
@@ -84,6 +87,8 @@ Cloudflare Pages 기준:
 - output directory: `out`
 
 배포 전 로컬 preflight는 `npm run verify`로 확인한다. 이 명령은 type check와 production build를 순서대로 실행하고, `out/`에 `/system`, `/about`, archive fixture asset/link가 새지 않았는지 검사한다.
+
+`npm run preview`는 이미 만들어진 `out/`을 로컬에서 서빙한다. 없는 route는 404로 응답하므로 배포 산출물의 route 상태를 확인할 때 쓴다.
 
 server-only Next 기능은 쓰지 않는다. Markdown body 이미지는 우선 plain `<img>`로 렌더링한다. 디자인 시스템 fixture asset은 production `public/`에 두지 않고 `dev:system`/`build:system` 실행 시 local-only preview public folder로 동기화한다.
 
