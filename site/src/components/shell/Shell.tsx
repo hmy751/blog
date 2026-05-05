@@ -2,12 +2,11 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import styles from "./Shell.module.css";
 
-export type NavKey = "home" | "articles" | "note" | "about" | "system";
+export type NavKey = "home" | "articles" | "note" | "about";
 
 type ShellProps = Readonly<{
   children: ReactNode;
   current?: NavKey;
-  system?: boolean;
 }>;
 
 const navItems: Array<{ href: string; label: string; key: NavKey }> = [
@@ -16,11 +15,11 @@ const navItems: Array<{ href: string; label: string; key: NavKey }> = [
   { href: "/about/", label: "About", key: "about" }
 ];
 
-export function Shell({ children, current = "home", system = false }: ShellProps) {
+export function Shell({ children, current = "home" }: ShellProps) {
   const year = new Date().getFullYear();
 
   return (
-    <div className={`shell${system ? ` ${styles.systemShell}` : ""}`}>
+    <div className="shell">
       <header className="top">
         <Link className="brand" href="/" aria-label="myeongyeon ham home">
           <span className="dot" aria-hidden="true" />
@@ -38,7 +37,6 @@ export function Shell({ children, current = "home", system = false }: ShellProps
       <footer className="foot">
         <span>Blog / {year}</span>
         <span className="links">
-          <Link href="/system/">System</Link>
           <Link href="/articles/">Archive</Link>
         </span>
       </footer>

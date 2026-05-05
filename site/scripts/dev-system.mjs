@@ -3,22 +3,38 @@ import { stat } from "node:fs/promises";
 import http from "node:http";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { renderUrl } from "../src/render.mjs";
+import { renderSystemUrl } from "../src/render.mjs";
 
 const siteRoot = fileURLToPath(new URL("..", import.meta.url));
 const host = valueAfter("--host") || process.env.HOST || "127.0.0.1";
-const port = Number(valueAfter("--port") || process.env.PORT || 4321);
+const port = Number(valueAfter("--port") || process.env.PORT || 4322);
+const systemRoutes = new Set(["/system/", "/system/example-article/"]);
 
 const server = http.createServer(async (request, response) => {
   try {
     const url = new URL(request.url || "/", `http://${request.headers.host}`);
 
-    if (url.pathname.startsWith("/design-system/styles/")) {
+    if (url.pathname === "/") {
+      response.writeHead(302, { location: "/system/" });
+      response.end();
+      return;
+    }
+
+    if (
+      url.pathname.startsWith("/design-system/styles/") ||
+      url.pathname.startsWith("/design-system/fixtures/")
+    ) {
       await serveFile(path.join(siteRoot, url.pathname), response);
       return;
     }
 
-    const html = await renderUrl(url.pathname);
+    if (!systemRoutes.has(normalizePath(url.pathname))) {
+      response.writeHead(404, { "content-type": "text/html; charset=utf-8" });
+      response.end("<h1>System preview only</h1>");
+      return;
+    }
+
+    const html = await renderSystemUrl(url.pathname);
     if (!html) {
       response.writeHead(404, { "content-type": "text/html; charset=utf-8" });
       response.end("<h1>404</h1>");
@@ -37,8 +53,9 @@ const server = http.createServer(async (request, response) => {
 });
 
 server.listen(port, host, () => {
-  console.log(`custom-blog-site dev server`);
-  console.log(`http://${host}:${port}/`);
+  console.log("custom-blog-site system preview");
+  console.log(`http://${host}:${port}/system/`);
+  console.log(`http://${host}:${port}/system/example-article/`);
 });
 
 async function serveFile(filePath, response) {
@@ -61,6 +78,11 @@ function contentType(filePath) {
   if (filePath.endsWith(".js")) return "text/javascript; charset=utf-8";
   if (filePath.endsWith(".svg")) return "image/svg+xml";
   return "application/octet-stream";
+}
+
+function normalizePath(pathname) {
+  if (!pathname || pathname === "/") return "/";
+  return pathname.endsWith("/") ? pathname : `${pathname}/`;
 }
 
 function valueAfter(flag) {

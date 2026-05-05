@@ -20,10 +20,10 @@ Core references:
 
 - [ ] Keep `content/posts/*.md` as the source of truth.
 - [ ] Do not silently rewrite posts or frontmatter.
-- [ ] Preserve current public route contract.
+- [ ] Preserve current public route contract, excluding local-only system preview from deployment.
 - [ ] Preserve design class contract until screenshot QA exists.
 - [ ] Do not adopt Tailwind in phase 1.
-- [ ] Do not let system-preview CSS leak into production routes.
+- [x] Do not let system-preview CSS leak into production routes.
 - [ ] Treat `Blog v2.html` as live UI reference, `System.html` as system/prose reference, `Blog.html` as archive only.
 
 ## 1. Planning And Docs
@@ -73,8 +73,9 @@ Core references:
 - [x] `src/app/articles/[slug]/page.tsx`
 - [x] `src/app/note/page.tsx`
 - [x] `src/app/about/page.tsx`
-- [x] `src/app/system/page.tsx`
-- [x] `src/app/system/example-article/page.tsx`
+- [x] Production App Router excludes `/system` and `/system/example-article`.
+- [x] Local-only system preview runs through `npm run dev:system`.
+- [x] Local-only system static preview builds through `npm run build:system`.
 - [x] `generateStaticParams()` covers all public posts.
 
 ## 6. Components And CSS Ownership
@@ -84,7 +85,7 @@ Core references:
 - [x] Move post meta/hero/footer to `components/post`.
 - [x] Keep `tokens.css`, `base.css`, `prose.css` global.
 - [x] Move production component styles into CSS Modules.
-- [x] Move `system-page.css` into route-local or system-only CSS.
+- [x] Keep `system-page.css` in the system-only preview layer, outside production App Router imports.
 - [x] Keep only `aside` in production `ArticleRow`.
 - [x] Archive or quarantine `leading`, `inline`, `magazine`, `peek`.
 
@@ -126,7 +127,7 @@ Core references:
 - [x] Image + caption checked.
 - [x] Callout info/warn checked.
 - [x] Footnotes checked.
-- [x] System page checked.
+- [x] Local-only system preview checked.
 - [x] No obvious overlap, viewport overflow, or broken nav/footer layout.
 
 ## 10. Cutover

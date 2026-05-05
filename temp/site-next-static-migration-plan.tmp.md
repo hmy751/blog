@@ -12,6 +12,13 @@ Date: 2026-05-05
 - re-entry: migrate `site/` to Next.js App Router + TypeScript, read existing `../content/posts/*.md` at build time, keep Markdown source unchanged, and preserve the current design class contract.
 - insight: candidate
 
+## 2026-05-05 Update: System Preview Is Local-Only
+
+- Do not register `/system` or `/system/example-article` under Next App Router.
+- Production routes are `/`, `/articles/`, `/articles/{slug}/`, `/note/`, and `/about/`.
+- Keep the design/prose QA surface as a separate layer through `npm run dev:system` and `npm run build:system`.
+- Do not copy system fixture assets into production `public/` or the default static export.
+
 ## Current State
 
 The current site is a zero-dependency Node ESM static renderer.
@@ -74,10 +81,6 @@ site/
         page.tsx
       about/
         page.tsx
-      system/
-        page.tsx
-        example-article/
-          page.tsx
     components/
       shell/
         Shell.tsx
@@ -103,6 +106,8 @@ site/
       site-config.ts
       images.ts
     scripts/
+      dev-system.mjs
+      build-system.mjs
       copy-content-assets.mjs
     styles/
       globals.css
@@ -118,15 +123,18 @@ CSS ownership convention:
 - colocate component CSS as `Component.module.css` beside the component when the selector targets known component DOM.
 - keep `src/styles/globals.css` as the root import for true global CSS only.
 - keep `src/styles/prose.css` global because Markdown output is generated HTML and not component-scoped.
-- keep system preview styles route-local under `src/app/system/` or colocated under `components/system/`, not in the production global bundle.
+- keep system preview styles in the local-only system preview layer, not in the production global bundle.
 
-Keep current URL contract:
+Keep current production URL contract:
 
 - `/`
 - `/articles`
 - `/articles/[slug]`
 - `/note`
 - `/about`
+
+Local-only preview URLs, served only by `dev:system`/`build:system`:
+
 - `/system`
 - `/system/example-article`
 
@@ -312,7 +320,7 @@ Split component styles after the first migration works:
 - article row/list styles -> `ArticleRow.module.css` or `styles/components/article-row.css`
 - post meta/hero/footer/title -> post component CSS
 - note/about styles -> their page/component CSS
-- system preview styles -> `system.module.css` or a system route stylesheet
+- system preview styles -> `design-system/styles/system-page.css` loaded only by the system preview scripts
 
 Do not redesign during migration.
 
@@ -407,15 +415,15 @@ src/components/
   post/PostHero.tsx
   post/Post.module.css
 
-src/app/system/
-  system.module.css     # system preview styles only
+scripts/dev-system.mjs
+scripts/build-system.mjs # system preview only; not production App Router
 ```
 
 Important rule:
 
 - Keep global CSS only where selectors must target unknown Markdown output or true document shell.
 - Component CSS should move beside the component that owns the DOM.
-- System preview CSS should be imported only by the system route/layout if possible.
+- System preview CSS should be loaded only by `dev:system`/`build:system`, not by production App Router.
 - Prototype variants can stay in a `reference` or `experimental` stylesheet, but they should not be loaded by production routes unless intentionally revived.
 
 Tailwind decision:
@@ -443,15 +451,15 @@ Old-to-new ownership map:
 | `site/src/render.mjs` `articlesPage()` | `src/app/articles/page.tsx` | Group by year in page or small route helper. |
 | `site/src/render.mjs` `postPage()` | `src/app/articles/[slug]/page.tsx` + post components | Keep post sequence from `DESIGN_CONTRACT.md`. |
 | `site/src/render.mjs` `articleRow()` | `src/components/article-row/ArticleRow.tsx` | Live default is `aside`; prototype variants should not ship in the production module. |
-| `site/src/render.mjs` system sections | `src/app/system/page.tsx` + system components | System route owns demo content and specimen styles. |
+| `site/src/render.mjs` system sections | `renderSystemUrl()` + `scripts/dev-system.mjs`/`scripts/build-system.mjs` | System preview is local-only and not a production route. |
 | `site/src/content.mjs` | `src/lib/posts.ts` | Keep adapter rules; add schema/build checks later. |
 | `site/src/markdown.mjs` | `src/lib/markdown.ts` | Replace hand-written parser with remark/rehype transforms. |
 | `site/design-system/styles/tokens.css` | `src/styles/tokens.css` | Foundation token source. |
 | `site/design-system/styles/base.css` | `src/styles/base.css` + shell module CSS | Reset/global remains global; shell-specific selectors can move with shell. |
 | `site/design-system/styles/prose.css` | `src/styles/prose.css` | Global because it targets generated Markdown HTML. |
 | `site/design-system/styles/blog-components.css` | component/page CSS modules | Split production components from prototype variants. |
-| `site/design-system/styles/system-page.css` | route-local system CSS | System preview only. |
-| `site/design-system/fixtures/*` | keep under `site/design-system/fixtures` or move to `src/app/system/fixtures` later | Preserve until system route is stable. |
+| `site/design-system/styles/system-page.css` | system preview script layer | System preview only. |
+| `site/design-system/fixtures/*` | keep under `site/design-system/fixtures` | Served only by local-only system preview scripts. |
 
 Prototype variant handling:
 
@@ -480,13 +488,13 @@ Reference comparison pass:
    - post meta/hero/title/subtitle/body/footer sequence
    - note/about layouts
    - motion/reduced-motion behavior
-2. Compare Markdown/system surfaces against `System.html`:
+2. Compare Markdown/local system preview surfaces against `System.html`:
    - token names and values
    - typography samples
    - prose primitives
    - code filename DOM order
    - callout/table/figure/footnote specimens
-   - system page spacing and specimen layout
+   - local system preview spacing and specimen layout
 3. Check `Blog.html` only if something looks like a regression with unclear origin.
 4. Record any intentional differences in `site/docs/DESIGN_CONTRACT.md` or a `site/decisions/` record.
 
@@ -503,14 +511,14 @@ Design QA checklist:
 - Markdown image + caption
 - callout info/warn
 - footnotes
-- system page specimens
+- local system preview specimens
 
 Open design questions:
 
 - Should prototype article row variants be deleted from live CSS, moved to `reference`, or kept as experimental specimens?
-- Should `/system` import its CSS route-locally or remain part of the global bundle until migration stabilizes?
+- Decided: `/system` CSS is loaded only by the local-only system preview scripts.
 - Should post cover stay as CSS background or become semantic image markup?
-- Should the system page remain deployable or be local-only?
+- Decided: the system page remains local-only.
 
 ## Deployment Plan
 
@@ -557,12 +565,13 @@ Treat the migration as four coordinated workstreams, not one giant rewrite.
 Goal:
 
 - make URL ownership obvious through `src/app/**`.
-- preserve current route contract.
+- preserve current production route contract and keep system preview outside production routes.
 
 Tasks:
 
 - create `src/app/layout.tsx`.
-- create `src/app/page.tsx`, `articles/page.tsx`, `articles/[slug]/page.tsx`, `note/page.tsx`, `about/page.tsx`, `system/page.tsx`, `system/example-article/page.tsx`.
+- create `src/app/page.tsx`, `articles/page.tsx`, `articles/[slug]/page.tsx`, `note/page.tsx`, `about/page.tsx`.
+- create `scripts/dev-system.mjs` and `scripts/build-system.mjs` for local-only system preview.
 - move shell/nav/footer into components.
 - keep `trailingSlash` behavior consistent with current generated `/route/index.html` shape.
 
@@ -577,7 +586,7 @@ Tasks:
 - port `content.mjs` behavior into `src/lib/posts.ts`.
 - add frontmatter/date/slug validation without rewriting posts.
 - port Markdown behavior into `src/lib/markdown.ts`.
-- compare fixture output against current `/system/example-article/`.
+- compare fixture output against the local-only `/system/example-article/` preview.
 
 ### 3. Design Ownership
 
@@ -633,27 +642,26 @@ Dependency order:
    - `PostMeta`
    - `PostHero`
    - `Prose`
-11. Implement routes:
+11. Implement production routes:
    - `/`
    - `/articles`
    - `/articles/[slug]`
    - `/note`
    - `/about`
-   - `/system`
-   - `/system/example-article`
-12. Split component/page CSS ownership while porting each component.
-13. Add `prebuild` image copy script if `content/assets` is adopted.
-14. Run `npm run build`.
-15. Start local preview and compare:
+12. Implement `dev:system` and `build:system` as local-only system preview scripts.
+13. Split component/page CSS ownership while porting each component.
+14. Add `prebuild` image copy script if `content/assets` is adopted.
+15. Run `npm run build`.
+16. Start local preview and compare:
     - home desktop/mobile
     - articles archive
     - post detail with no cover
     - post detail with cover
     - post detail with code/table/image/callout/footnote
-    - system page
-16. Run the reference reconciliation pass against `Blog v2.html` and `System.html`.
-17. Add screenshot QA after first stable migration.
-18. Remove or archive old `src/*.mjs` and `scripts/*.mjs` only after the Next build reproduces the route contract.
+    - local-only system preview page
+17. Run the reference reconciliation pass against `Blog v2.html` and `System.html`.
+18. Add screenshot QA after first stable migration.
+19. Remove or archive old production `src/*.mjs` and `scripts/*.mjs` only after the Next build reproduces the route contract; keep system preview scripts if they remain useful.
 
 ## Definition Of Done
 
@@ -662,7 +670,7 @@ The migration is not done just because Next builds.
 Functional done:
 
 - `npm run build` creates a static export.
-- all existing public routes are generated.
+- all existing production routes are generated.
 - `content/posts/*.md` remains in root content and is not copied or rewritten as source.
 - `date: TBD` posts are excluded from public article routes.
 - filename date and frontmatter date mismatch fails a check or is clearly reported.
@@ -686,7 +694,7 @@ Design done:
 - production `ArticleRow` module contains only the live `aside` behavior unless another variant is explicitly chosen.
 - prototype variants are archived, not mixed into production component CSS.
 - `.prose` remains globally styled and matches fixture needs.
-- `system` route still shows token/prose/component specimens.
+- local-only system preview still shows token/prose/component specimens.
 - reference reconciliation has been run against `Blog v2.html` and `System.html`.
 - intentional differences from the references are documented.
 - desktop/mobile checks have no obvious overlap, overflow, or broken nav/footer layout.
@@ -710,7 +718,7 @@ Cutover cleanup:
 
 ## Open Decisions
 
-- Should `/system` ship publicly, be hidden, or be omitted from production export?
+- Decided: `/system` is omitted from production export and kept as local-only preview scripts.
 - Should `content/assets` be introduced now, or should images initially live directly under `site/public/images`?
 - Should post cover use background image to preserve current design exactly, or semantic `<img>` for accessibility/LCP?
 - Should Markdown allow raw HTML? Default recommendation: no, except explicit safe transforms like `kbd`.

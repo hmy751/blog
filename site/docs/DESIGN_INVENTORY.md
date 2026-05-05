@@ -12,10 +12,10 @@
 | `design-system/styles/base.css` | base + shell global | `src/styles/base.css`, `components/shell` | Reset/link/body stays global. Shell-specific selectors can move later. |
 | `design-system/styles/prose.css` | Markdown/prose primitive | `src/styles/prose.css` | Global by necessity because Markdown output is generated HTML. |
 | `design-system/styles/blog-components.css` | mixed production pages/components | CSS Modules under `components/**` and route modules | Split home/articles/post/note/about from prototype variants. |
-| `design-system/styles/system-page.css` | system-preview only | `app/system/system.module.css` or `components/system` | Must not be imported by production routes. |
+| `design-system/styles/system-page.css` | system-preview only | `scripts/dev-system.mjs`, `scripts/build-system.mjs` | Local-only preview CSS. Must not be imported by production routes. |
 | `src/render.mjs` shell helpers | production shell | `components/shell/Shell.tsx` | Keep `.shell`, `.top`, `.brand`, `.dot`, `.nav`, `.foot`. |
 | `src/render.mjs` page helpers | production routes | `src/app/**/page.tsx` | Route ownership becomes file-system visible. |
-| `src/render.mjs` system helpers | system-preview only | `src/app/system/**` | Demo data belongs to the system route. |
+| `src/render.mjs` system helpers | system-preview only | `renderSystemUrl()` used by `dev:system`/`build:system` | Demo data belongs to local-only preview scripts, not App Router. |
 | `src/render.mjs` `articleRow()` | production component | `components/article-row/ArticleRow.tsx` | Ship only live `aside` variant. |
 | `src/content.mjs` | content adapter | `src/lib/posts.ts` | Reads `../content/posts`, never rewrites. |
 | `src/markdown.mjs` | Markdown renderer | `src/lib/markdown.ts` | Replace with unified pipeline and custom transforms. |
@@ -42,9 +42,9 @@ These selectors should not move into production CSS Modules unless a later decis
 - `data-thumb="peek"`
 - `tweaks-panel.jsx` runtime controls
 
-## Route-Local Or System-Only
+## Local System Preview Only
 
-The following are system preview surface and should be route-local:
+The following are system preview surface and should stay out of production App Router routes:
 
 - `.shell-system`
 - `.sys-page`

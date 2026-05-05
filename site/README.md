@@ -29,7 +29,7 @@
 | `design-system/` | 디자인 fixture에서 가져온 구현용 CSS와 Markdown QA fixture |
 | `design-system/reference/blog-design/` | Claude Design 원본 HTML/JSX archive와 source map |
 | `src/` | Next App Router app, components, content adapter, Markdown renderer |
-| `scripts/` | legacy local dev/build scripts kept until route parity cleanup |
+| `scripts/` | legacy local dev/build scripts and local-only system preview scripts |
 | `decisions/` | 사이트 구현과 사이트 하네스 변경의 결정 기록 |
 | `.claude/skills/` | Claude Code용 사이트 개발 skill 자리 |
 | `.claude/agents/` | Claude Code용 사이트 개발 agent 자리 |
@@ -52,7 +52,16 @@ npm run dev:legacy
 npm run build:legacy
 ```
 
-라우트는 `/`, `/articles/`, `/articles/{slug}/`, `/note/`, `/about/`, `/system/`, `/system/example-article/`을 유지한다. `/system/`은 Markdown 요소와 디자인 시스템 표면을 확인하는 QA 페이지다.
+production App Router 라우트는 `/`, `/articles/`, `/articles/{slug}/`, `/note/`, `/about/`만 등록한다.
+
+`/system/`과 `/system/example-article/`은 배포 라우트가 아니라 디자인/Markdown QA용 local-only preview다. 별도 스크립트로만 확인한다.
+
+```bash
+npm run dev:system
+npm run build:system
+```
+
+`dev:system`은 기본적으로 `http://127.0.0.1:4322/system/`을 연다. `build:system` 산출물은 `system-dist/`에 만들며 배포 대상이 아니다.
 
 ## Deployment
 
@@ -62,7 +71,7 @@ Cloudflare Pages 기준:
 - build command: `npm run build`
 - output directory: `out`
 
-server-only Next 기능은 쓰지 않는다. Markdown body 이미지는 우선 plain `<img>`로 렌더링하고, fixture asset은 `public/design-system/fixtures`에 둔다.
+server-only Next 기능은 쓰지 않는다. Markdown body 이미지는 우선 plain `<img>`로 렌더링한다. 디자인 시스템 fixture asset은 production `public/`에 두지 않고 local-only system preview 스크립트에서 `design-system/fixtures`를 직접 서빙한다.
 
 ## Working Rule
 

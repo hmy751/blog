@@ -23,8 +23,8 @@
 
 - `next.config.mjs`는 `output: "export"`와 `trailingSlash: true`를 사용한다.
 - `npm run build`는 Next static export를 생성한다.
-- 기존 Node renderer는 `dev:legacy`, `build:legacy`로 보존한다.
 - 기존 Node renderer는 route parity와 visual QA가 끝날 때까지 `dev:legacy`, `build:legacy`로 보존한다.
+- `/system`과 `/system/example-article`은 production App Router에 등록하지 않는다. 디자인/Markdown QA가 필요하면 `dev:system`, `build:system`으로 별도 local-only preview를 실행한다.
 - `content/posts/*.md`는 build time에만 읽고, site code가 원고를 수정하지 않는다.
 - Markdown은 `gray-matter` + `unified`/`remark`/`rehype` pipeline으로 옮긴다.
 - global CSS는 token/base/prose로 줄이고, production component 스타일은 CSS Module로 분리한다.
@@ -60,6 +60,6 @@
 
 - `generateStaticParams()`가 모든 public post slug를 포함하는지 확인한다.
 - `npm run build`가 `site/out`을 생성하는지 확인한다.
-- `/system` CSS가 production route에 새지 않도록 분리한다.
+- `/system` CSS와 fixture asset이 production route/static export에 새지 않는지 확인한다.
 - `Blog v2.html`과 `System.html` 기준으로 reference reconciliation을 수행한다.
 - Cloudflare Pages output directory를 `out`으로 문서화한다.

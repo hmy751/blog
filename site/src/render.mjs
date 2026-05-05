@@ -61,6 +61,12 @@ export async function renderUrl(pathname) {
     });
   }
 
+  return null;
+}
+
+export async function renderSystemUrl(pathname) {
+  const pathOnly = normalizePath(pathname);
+
   if (pathOnly === "/system/") {
     return htmlShell({
       title: `System | ${siteConfig.title}`,
@@ -87,8 +93,6 @@ export function routesForPosts(posts) {
     "/articles/",
     "/note/",
     "/about/",
-    "/system/",
-    "/system/example-article/",
     ...posts.map((post) => `/articles/${post.slug}/`)
   ];
 }
@@ -120,7 +124,7 @@ function htmlShell({ title, description = siteConfig.description, current, body,
       <footer class="foot">
         <span>Blog / ${new Date().getFullYear()}</span>
         <span class="links">
-          <a href="/system/">System</a>
+          ${current === "system" ? '<a href="/system/">System</a>' : ""}
           <a href="/articles/">Archive</a>
         </span>
       </footer>

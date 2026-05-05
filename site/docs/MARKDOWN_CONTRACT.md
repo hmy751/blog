@@ -128,7 +128,7 @@ If a paragraph immediately after an image starts with `그림 `, `Figure `, or i
 Renderer QA must render:
 
 - `../design-system/fixtures/post-markdown-fixture.md`
-- `/system/example-article/` from `../design-system/fixtures/example-article.md`
+- local-only `/system/example-article/` preview from `../design-system/fixtures/example-article.md`
 - `../design-system/fixtures/component-anatomy-placeholder.svg` for the fixture figure asset
 - `../design-system/fixtures/example-article-cover.svg` and `../design-system/fixtures/example-article-diagram.svg`
 - at least one real post without `description`, `cover`, or `featured`

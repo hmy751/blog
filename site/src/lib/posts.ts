@@ -5,9 +5,8 @@ import { siteConfig } from "./site-config";
 
 const repoRoot = path.resolve(process.cwd(), "..");
 const postsDir = path.join(repoRoot, "content", "posts");
-const fixturesDir = path.join(process.cwd(), "design-system", "fixtures");
 
-export type DescriptionSource = "frontmatter" | "excerpt" | "fixture";
+export type DescriptionSource = "frontmatter" | "excerpt";
 
 export type Post = {
   title: string;
@@ -49,12 +48,6 @@ export async function getPostBySlug(slug: string): Promise<Post | undefined> {
   return posts.find((post) => post.slug === slug);
 }
 
-export async function getExampleArticle(): Promise<Post> {
-  const file = "example-article.md";
-  const raw = await readFile(path.join(fixturesDir, file), "utf8");
-  return postFromRaw(raw, file, { source: "fixture", slug: "example-article" });
-}
-
 export function getFeaturedPosts(posts: Post[]): Post[] {
   const featured = posts.filter((post) => post.featured).slice(0, 3);
   return featured.length ? featured : posts.slice(0, 3);
@@ -85,22 +78,18 @@ export function getNextPost(post: Post, posts: Post[]): Post | undefined {
 
 async function readPostFile(file: string): Promise<Post> {
   const raw = await readFile(path.join(postsDir, file), "utf8");
-  return postFromRaw(raw, file, { source: "post" });
+  return postFromRaw(raw, file);
 }
 
-function postFromRaw(
-  raw: string,
-  file: string,
-  options: { source: "post" | "fixture"; slug?: string }
-): Post {
+function postFromRaw(raw: string, file: string): Post {
   const parsed = matter(raw);
   const data = parsed.data as Frontmatter;
   const title = stringValue(data.title) || titleFromSlug(file);
   const body = stripDuplicateTitle(parsed.content, title);
   const filenameDate = file.slice(0, 10);
-  const date = normalizeDate(data.date ?? (options.source === "post" ? filenameDate : "2026-05-05"));
+  const date = normalizeDate(data.date ?? filenameDate);
 
-  if (options.source === "post" && date !== "TBD" && filenameDate !== date) {
+  if (date !== "TBD" && filenameDate !== date) {
     throw new Error(`Post date mismatch in ${file}: filename ${filenameDate}, frontmatter ${date}`);
   }
 
@@ -108,9 +97,7 @@ function postFromRaw(
   const descriptionFromFrontmatter = stringValue(data.description);
   const descriptionSource: DescriptionSource = descriptionFromFrontmatter
     ? "frontmatter"
-    : options.source === "fixture"
-      ? "fixture"
-      : "excerpt";
+    : "excerpt";
   const description = descriptionFromFrontmatter || excerptFromMarkdown(body);
 
   return {
@@ -127,7 +114,7 @@ function postFromRaw(
     cover: stringValue(data.cover) || undefined,
     featured: data.featured === true,
     platform: stringValue(data.platform) || "Blog",
-    slug: options.slug || slugFromFilename(file),
+    slug: slugFromFilename(file),
     year: date === "TBD" ? "" : date.slice(0, 4),
     body,
     file

@@ -15,7 +15,7 @@
 
 | Path | Role |
 | --- | --- |
-| `styles/index.css` | 앱에서 import할 entrypoint |
+| `styles/index.css` | legacy/system preview entrypoint |
 | `styles/tokens.css` | color, type, spacing, radius, semantic CSS variables |
 | `styles/base.css` | reset, body, shell, top nav, footer |
 | `styles/prose.css` | post detail Markdown/prose rendering |
@@ -29,7 +29,7 @@
 
 ## Adoption Rule
 
-첫 site scaffold에서는 `styles/index.css`를 전역 stylesheet로 가져온다. framework font loader를 쓰는 경우 `index.css`의 font imports는 앱 레이아웃으로 옮겨도 된다.
+Next production 앱은 `src/styles/`와 CSS Modules를 쓴다. `styles/index.css`는 legacy renderer와 local-only system preview에서만 사용한다. framework font loader를 쓰는 경우 `index.css`의 font imports는 앱 레이아웃으로 옮겨도 된다.
 
 CSS class names는 prototype의 이름을 유지한다. 구현 중 컴포넌트 이름은 자유롭게 바꿀 수 있지만 DOM class contract는 screenshot regression이 생길 때까지 유지한다.
 
@@ -38,6 +38,6 @@ CSS class names는 prototype의 이름을 유지한다. 구현 중 컴포넌트 
 ## Non Goals
 
 - 디자인 fixture의 sample content를 실제 블로그 content로 쓰지 않는다.
-- `fixtures/example-article.md`는 `/system/example-article/` 확인용이며 `/articles` archive에 넣지 않는다.
+- `fixtures/example-article.md`는 local-only `/system/example-article/` 확인용이며 production App Router나 `/articles` archive에 넣지 않는다.
 - 원고를 디자인에 맞추기 위해 rewrite하지 않는다.
 - `tweaks-panel.jsx`를 앱 runtime에 넣지 않는다.

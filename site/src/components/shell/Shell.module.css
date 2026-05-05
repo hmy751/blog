@@ -4,10 +4,6 @@
   padding: 56px 48px 160px;
 }
 
-.systemShell {
-  max-width: calc(760px + 96px);
-}
-
 :global(.top) {
   display: flex;
   align-items: center;

@@ -19,20 +19,22 @@
 정적 생성 중심 블로그로 만든다.
 
 - content source: `../content/posts/*.md`
-- style source: `design-system/styles/index.css`
-- routes: home, articles, post detail, note, about, design-system preview
-- fixture routes: `/system/example-article/` for post-detail QA without touching real posts
+- production style source: `src/styles/globals.css`, `src/styles/tokens.css`, `src/styles/base.css`, `src/styles/prose.css`, plus component CSS Modules
+- production routes: home, articles, post detail, note, about
+- local-only system preview: `/system/`, `/system/example-article/` through `npm run dev:system` or `npm run build:system`
 - generated outputs: static HTML, RSS, sitemap, metadata
 
-현재 첫 구현은 zero-dependency Node ESM static renderer였고, 2026-05-05부터 Next.js App Router + static export로 전환했다. 기존 renderer는 비교용 legacy script로 보존한다.
+현재 첫 구현은 zero-dependency Node ESM static renderer였고, 2026-05-05부터 Next.js App Router + static export로 전환했다. 기존 renderer는 비교용 legacy script와 local-only system preview script에서만 보존한다.
 
 | File | Role |
 | --- | --- |
 | `src/content.mjs` | `content/posts` adapter, frontmatter parse, slug/date/tag/description fallback |
 | `src/markdown.mjs` | Markdown -> prose HTML transform |
-| `src/render.mjs` | route renderer for home/articles/post/note/about/system |
+| `src/render.mjs` | legacy renderer for home/articles/post/note/about and local-only system preview |
 | `scripts/dev.mjs` | local HTTP dev server |
 | `scripts/build.mjs` | static route generation to `dist/` |
+| `scripts/dev-system.mjs` | local-only system preview server |
+| `scripts/build-system.mjs` | local-only system preview static output to `system-dist/` |
 
 Migration target:
 
@@ -40,7 +42,7 @@ Migration target:
 | --- | --- |
 | `next.config.mjs` | Next static export config, `out/` output |
 | `src/app/**` | file-system route ownership |
-| `src/components/**` | shell/article/post/system components |
+| `src/components/**` | shell/article/post components |
 | `src/lib/posts.ts` | `content/posts` adapter |
 | `src/lib/markdown.ts` | unified/remark/rehype Markdown pipeline |
 | `src/styles/**` | global token/base/prose CSS only |
@@ -66,7 +68,7 @@ site/
   docs/
 ```
 
-The HTML shell imports:
+The legacy/system-preview HTML shell imports:
 
 ```html
 <link rel="stylesheet" href="/design-system/styles/index.css">
@@ -132,16 +134,17 @@ Adapter rules:
 - `prose` page using `about-grid`.
 - profile/contact values live in `src/config/site.ts`.
 
-### `/system`
+### System Preview (local-only, not App Router)
 
-- internal preview page.
-- imports `design-system/styles/system-page.css`.
+- not registered under `src/app`; not included in production static export.
+- served with `npm run dev:system` and built with `npm run build:system`.
+- imports `design-system/styles/system-page.css` through the legacy system preview shell.
 - renders `System.html`-level specimens: swatches, type samples, spacing/radius, prose primitives, article row, live aside row, post hero/meta, note, DL grid, principles.
 - renders the Markdown fixture output through the same prose CSS under `Markdown QA`.
 - uses `shell-system` width so the preview can follow `System.html`'s wider measure without changing live blog pages.
 - links to `/system/example-article/` for full post-detail flow QA.
 
-### `/system/example-article`
+### System Example Article (local-only, not App Router)
 
 - site-only example article route.
 - reads `design-system/fixtures/example-article.md`.
@@ -200,7 +203,7 @@ Desktop checks:
 - articles with grouped years
 - post detail with full Markdown fixture
 - post detail without cover/description
-- system preview page
+- local-only system preview page
 
 Mobile checks:
 
@@ -220,12 +223,12 @@ Regression must check that:
 ## Implementation Phases
 
 1. Preserve reference archive under `design-system/reference/blog-design`. Done.
-2. Import `design-system/styles/index.css`. Done.
+2. Import reference-derived CSS for the first renderer, then split production CSS into `src/styles` and component modules. Done.
 3. Build post adapter and route renderer. Done.
 4. Build home/articles/post with real content. Done.
 5. Implement Markdown renderer transforms for the current fixture surface. Done.
-6. Grow `/system` until it covers `System.html` specimens. Done for first pass.
-7. Add post-detail fixture route for Markdown/visual QA. Done for first pass.
+6. Grow the local-only system preview until it covers `System.html` specimens. Done for first pass.
+7. Add local-only post-detail fixture preview for Markdown/visual QA. Done for first pass.
 8. Start Next App Router static migration. Done.
 9. Port content adapter and Markdown renderer to TypeScript/unified. Done for first pass.
 10. Split production component CSS into route/component ownership. Done for first pass.
@@ -235,6 +238,6 @@ Regression must check that:
 ## Open Decisions
 
 - final site name/domain/contact values
-- whether `/system` ships publicly or stays local-only
+- system preview is local-only and must not be registered in App Router or deployed
 - whether cover images are author-provided only or generated by site tooling
 - whether to keep zero-dependency renderer or move to a Markdown-first framework after contracts stabilize

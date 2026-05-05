@@ -8,6 +8,8 @@
     "dev:next": "next dev",
     "build:next": "next build",
     "check": "tsc --noEmit",
+    "dev:system": "node scripts/dev-system.mjs",
+    "build:system": "node scripts/build-system.mjs",
     "dev:legacy": "node scripts/dev.mjs",
     "build:legacy": "node scripts/build.mjs"
   },
