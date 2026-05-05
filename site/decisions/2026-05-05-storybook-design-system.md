@@ -5,7 +5,7 @@ scope: site design system preview
 
 # Storybook Design System Surface
 
-2026-05-05 업데이트: 이 결정 이후 `design-system/`의 현재 역할은 `2026-05-05-design-system-legacy-boundary.md`에서 정리한다. Storybook과 production code가 현재 디자인 시스템 기준이고, `design-system/fixtures`는 아직 공유되는 local-only fixture asset bucket으로만 쓴다.
+2026-05-05 업데이트: 이 결정 이후 archived design-system 자료의 현재 역할은 `2026-05-05-design-system-legacy-boundary.md`에서 정리한다. Storybook과 production code가 현재 디자인 시스템 기준이고, `archive/design-system/fixtures`는 아직 공유되는 local-only fixture asset bucket으로만 쓴다.
 
 ## Background
 
@@ -27,7 +27,7 @@ Add Storybook as the design system catalog for the site.
 - Use `@storybook/nextjs-vite`.
 - Import production `src/styles/globals.css` in Storybook preview.
 - Add a Storybook Vite virtual CSS contract that reads production global-selector CSS Modules and strips CSS Module `:global(...)` wrappers for Storybook preview.
-- Serve `design-system/fixtures` as Storybook static assets.
+- Serve `archive/design-system/fixtures` as Storybook static assets.
 - Keep stories under `src/stories`.
 - Use fixture `Post` data instead of reading or rewriting `content/posts`.
 - Keep `system-preview` as local-only route and Markdown integration QA.

@@ -3,8 +3,8 @@ import { siteConfig } from "@/lib/site-config";
 
 type FixturePostInput = Partial<Post> & Pick<Post, "title" | "date" | "slug">;
 
-export const fixtureCover = "/design-system/fixtures/example-article-cover.svg";
-export const fixtureDiagram = "/design-system/fixtures/example-article-diagram.svg";
+export const fixtureCover = "/archive/design-system/fixtures/example-article-cover.svg";
+export const fixtureDiagram = "/archive/design-system/fixtures/example-article-diagram.svg";
 
 export function makePost(input: FixturePostInput): Post {
   const tags = input.tags ?? ["Design"];
@@ -121,7 +121,7 @@ export const markdownFixture = [
   "| Storybook | isolated states | fixture drift |",
   "| System preview | route integration | slower iteration |",
   "",
-  "![component anatomy](/design-system/fixtures/component-anatomy-placeholder.svg)",
+  "![component anatomy](/archive/design-system/fixtures/component-anatomy-placeholder.svg)",
   "",
   "그림 1. 컴포넌트 anatomy placeholder.",
   "",

@@ -13,7 +13,7 @@ const server = http.createServer(async (request, response) => {
   try {
     const url = new URL(request.url || "/", `http://${request.headers.host}`);
 
-    if (url.pathname.startsWith("/design-system/styles/")) {
+    if (url.pathname.startsWith("/archive/design-system/styles/")) {
       await serveFile(path.join(siteRoot, url.pathname), response);
       return;
     }

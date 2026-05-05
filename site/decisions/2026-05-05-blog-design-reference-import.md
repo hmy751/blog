@@ -1,6 +1,6 @@
 # Blog Design Reference Import
 
-2026-05-05 업데이트: 이 결정은 Claude Design 원본을 repo 안에 보존한 이력이다. Next App Router와 Storybook 이관 이후 현재 운영 기준은 `2026-05-05-design-system-legacy-boundary.md`가 우선한다. `design-system/reference/blog-design/`는 original design evidence archive이며 current production source가 아니다.
+2026-05-05 업데이트: 이 결정은 Claude Design 원본을 repo 안에 보존한 이력이다. Next App Router와 Storybook 이관 이후 현재 운영 기준은 `2026-05-05-design-system-legacy-boundary.md`가 우선한다. `archive/design-system/reference/blog-design/`는 original design evidence archive이며 current production source가 아니다.
 
 ## Background
 
@@ -8,7 +8,7 @@
 
 ## Decision
 
-`site/design-system/reference/blog-design/`에 Claude Design 원본 산출물을 repo 내부 reference archive로 보존한다.
+`site/archive/design-system/reference/blog-design/`에 Claude Design 원본 산출물을 repo 내부 reference archive로 보존한다.
 
 - `source/Blog v2.html`: canonical live prototype.
 - `source/System.html`: token/prose/component primitive QA.
@@ -19,7 +19,7 @@
 
 ## Scope
 
-이 archive는 source evidence layer다. 당시 실제 구현 계약은 `site/docs/DESIGN_CONTRACT.md`, `site/docs/MARKDOWN_CONTRACT.md`, `site/design-system/styles/`가 소유했다. 현재 운영 기준은 위 업데이트와 `2026-05-05-design-system-legacy-boundary.md`를 따른다.
+이 archive는 source evidence layer다. 당시 실제 구현 계약은 `site/docs/DESIGN_CONTRACT.md`, `site/docs/MARKDOWN_CONTRACT.md`, `site/archive/design-system/styles/`가 소유했다. 현재 운영 기준은 위 업데이트와 `2026-05-05-design-system-legacy-boundary.md`를 따른다.
 
 ## Non Goals
 

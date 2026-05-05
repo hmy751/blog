@@ -61,7 +61,7 @@
 - root writing agent/skill을 사이트 구현 agent/skill로 확장하지 않는다.
 - 디자인 토큰 상세값을 root `editorial/`에 두지 않는다.
 - 기존 글의 frontmatter를 즉시 대량 수정하지 않는다.
-- `site/design-system/reference/blog-design`의 모든 prototype variant를 구현 요구사항으로 승격하지 않는다.
+- `site/archive/design-system/reference/blog-design`의 모든 prototype variant를 구현 요구사항으로 승격하지 않는다.
 
 ## 근거
 

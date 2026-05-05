@@ -7,11 +7,11 @@ platform: Blog
 tags:
   - Fixture
   - Markdown
-cover: /design-system/fixtures/example-article-cover.svg
+cover: /archive/design-system/fixtures/example-article-cover.svg
 description: "실제 원고와 분리해 글 상세 페이지의 이미지, 표, 코드, 콜아웃, 각주, 리스트를 한 번에 확인하는 site 전용 예시 글."
 ---
 
-이 글은 실제 발행 원고가 아니라 `site/design-system/fixtures`에 둔 렌더링 확인용 예시다. 상세 페이지의 표면은 실제 글과 같게 두되, 내용은 디자인 시스템을 검수하기 위한 더미 문장으로만 구성한다.
+이 글은 실제 발행 원고가 아니라 `site/archive/design-system/fixtures`에 둔 렌더링 확인용 예시다. 상세 페이지의 표면은 실제 글과 같게 두되, 내용은 디자인 시스템을 검수하기 위한 더미 문장으로만 구성한다.
 
 본문 안에서는 **굵은 글씨**, *기울임*, ==강조 표시==, [링크](https://example.com), `inline code`, <kbd>Command</kbd>+<kbd>K</kbd> 같은 인라인 요소가 자연스럽게 섞인다. 인라인 각주도 이렇게 붙는다.[^inline]
 
@@ -46,7 +46,7 @@ description: "실제 원고와 분리해 글 상세 페이지의 이미지, 표,
 
 ## 이미지와 캡션
 
-![Markdown renderer flow](/design-system/fixtures/example-article-diagram.svg)
+![Markdown renderer flow](/archive/design-system/fixtures/example-article-diagram.svg)
 
 그림 1. Markdown source가 renderer와 prose CSS를 지나 상세 페이지가 되는 흐름.
 

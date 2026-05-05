@@ -62,7 +62,7 @@ function htmlShell({ title, description = siteConfig.description, current, body 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="${escapeHtml(description)}">
     <title>${escapeHtml(title)}</title>
-    <link rel="stylesheet" href="/design-system/styles/index.css">
+    <link rel="stylesheet" href="/archive/design-system/styles/index.css">
   </head>
   <body data-motion="on" data-body-font="sans">
     <div class="shell">

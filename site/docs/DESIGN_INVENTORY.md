@@ -4,17 +4,17 @@
 
 이 문서는 Next static migration 동안 디자인 source와 CSS ownership을 헷갈리지 않기 위해 만든 이관 기록이다. 현재 운영 기준은 `DESIGN_CONTRACT.md`와 `decisions/2026-05-05-design-system-legacy-boundary.md`를 따른다.
 
-요약: `src/styles/`, component CSS Modules, `.storybook/`, `src/stories/`, `system-preview/`가 현재 기준이다. `design-system/`은 삭제하지 않는 legacy/reference bucket이다.
+요약: `src/styles/`, component CSS Modules, `.storybook/`, `src/stories/`, `system-preview/`가 현재 기준이다. `archive/design-system/`은 삭제하지 않는 legacy/reference bucket이다.
 
 ## Ownership Table
 
 | Current source | Classification | Next target | Notes |
 | --- | --- | --- | --- |
-| `design-system/styles/tokens.css` | legacy token/foundation snapshot | `src/styles/tokens.css` | Current global source is in `src/styles`. |
-| `design-system/styles/base.css` | legacy base + shell global snapshot | `src/styles/base.css`, `components/shell` | Current reset/body source is global; Shell selectors live with components. |
-| `design-system/styles/prose.css` | legacy Markdown/prose primitive snapshot | `src/styles/prose.css` | Current prose source is `src/styles/prose.css`. |
-| `design-system/styles/blog-components.css` | legacy mixed production pages/components snapshot | CSS Modules under `components/**` and route modules | Current component source is CSS Modules and route modules. |
-| `design-system/styles/system-page.css` | archived system-preview source | `system-preview/app/system/system.module.css` | Keep as reference-derived source; production routes do not import it. |
+| `archive/design-system/styles/tokens.css` | legacy token/foundation snapshot | `src/styles/tokens.css` | Current global source is in `src/styles`. |
+| `archive/design-system/styles/base.css` | legacy base + shell global snapshot | `src/styles/base.css`, `components/shell` | Current reset/body source is global; Shell selectors live with components. |
+| `archive/design-system/styles/prose.css` | legacy Markdown/prose primitive snapshot | `src/styles/prose.css` | Current prose source is `src/styles/prose.css`. |
+| `archive/design-system/styles/blog-components.css` | legacy mixed production pages/components snapshot | CSS Modules under `components/**` and route modules | Current component source is CSS Modules and route modules. |
+| `archive/design-system/styles/system-page.css` | archived system-preview source | `system-preview/app/system/system.module.css` | Keep as reference-derived source; production routes do not import it. |
 | `src/render.mjs` shell helpers | production shell | `components/shell/Shell.tsx` | Keep `.shell`, `.top`, `.brand`, `.dot`, `.nav`, `.foot`. |
 | `src/render.mjs` page helpers | production routes | `src/app/**/page.tsx` | Route ownership becomes file-system visible. |
 | `system-preview/app/**` | system-preview only | local-only Next app | Imports production components/lib/styles without registering production `/system`. |
@@ -22,9 +22,9 @@
 | `src/render.mjs` `articleRow()` | production component | `components/article-row/ArticleRow.tsx` | Ship only live `aside` variant. |
 | `src/content.mjs` | content adapter | `src/lib/posts.ts` | Reads `../content/posts`, never rewrites. |
 | `src/markdown.mjs` | Markdown renderer | `src/lib/markdown.ts` | Replace with unified pipeline and custom transforms. |
-| `design-system/reference/blog-design/source/Blog v2.html` | live UI reference | read-only | Canonical visual reference. |
-| `design-system/reference/blog-design/source/System.html` | system/prose reference | read-only | Token/prose/component primitive reference. |
-| `design-system/reference/blog-design/source/Blog.html` | prototype archive | read-only | Historical reference only. |
+| `archive/design-system/reference/blog-design/source/Blog v2.html` | live UI reference | read-only | Canonical visual reference. |
+| `archive/design-system/reference/blog-design/source/System.html` | system/prose reference | read-only | Token/prose/component primitive reference. |
+| `archive/design-system/reference/blog-design/source/Blog.html` | prototype archive | read-only | Historical reference only. |
 
 ## Production Component Buckets
 

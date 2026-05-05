@@ -27,16 +27,17 @@
 | `docs/DESIGN_CONTRACT.md` | 현재 production CSS/component/Storybook 기준의 디자인 계약 |
 | `docs/MARKDOWN_CONTRACT.md` | 상세 글 Markdown 렌더링 변환 계약 |
 | `docs/BLOG_IMPLEMENTATION_PLAN.md` | 실제 블로그 앱 구현 계획 |
-| `decisions/2026-05-05-design-system-legacy-boundary.md` | `design-system/` 보존/legacy 경계 결정 |
+| `decisions/2026-05-05-design-system-legacy-boundary.md` | archived design-system 자료의 보존/legacy 경계 결정 |
 | `src/` | Next App Router app, components, content adapter, Markdown renderer |
 | `src/styles/` | production token/base/prose CSS source |
 | `src/stories/` | Storybook 디자인 시스템 stories와 browser-safe fixture data |
 | `.storybook/` | Storybook 설정. production CSS contract와 local-only fixture assets를 연결한다. |
 | `system-preview/` | 배포 앱과 분리된 local-only Next system preview app |
-| `design-system/` | 삭제하지 않는 legacy/reference bucket. 현재 구현 기준으로 직접 쓰지 않는다. |
-| `design-system/reference/blog-design/` | Claude Design 원본 HTML/JSX archive와 source map |
-| `design-system/styles/` | legacy Node renderer CSS snapshot |
-| `design-system/fixtures/` | Storybook/system-preview가 공유하는 local-only QA asset bucket |
+| `archive/` | 현재 구현 기준과 분리해 보존하는 site archive root |
+| `archive/design-system/` | 삭제하지 않는 legacy/reference bucket. 현재 구현 기준으로 직접 쓰지 않는다. |
+| `archive/design-system/reference/blog-design/` | Claude Design 원본 HTML/JSX archive와 source map |
+| `archive/design-system/styles/` | legacy Node renderer CSS snapshot |
+| `archive/design-system/fixtures/` | Storybook/system-preview가 공유하는 local-only QA asset bucket |
 | `scripts/` | Next, Storybook, system-preview, legacy local dev/build wrappers |
 | `decisions/` | 사이트 구현과 사이트 하네스 변경의 결정 기록 |
 | `.claude/skills/` | Claude Code용 사이트 개발 skill 자리 |
@@ -82,7 +83,7 @@ Cloudflare Pages 기준:
 - build command: `npm run build`
 - output directory: `out`
 
-배포 전 로컬 preflight는 `npm run verify`로 확인한다. 이 명령은 type check와 production build를 순서대로 실행하고, `out/`에 `/system`, `/about`, design-system fixture asset/link가 새지 않았는지 검사한다.
+배포 전 로컬 preflight는 `npm run verify`로 확인한다. 이 명령은 type check와 production build를 순서대로 실행하고, `out/`에 `/system`, `/about`, archive fixture asset/link가 새지 않았는지 검사한다.
 
 server-only Next 기능은 쓰지 않는다. Markdown body 이미지는 우선 plain `<img>`로 렌더링한다. 디자인 시스템 fixture asset은 production `public/`에 두지 않고 `dev:system`/`build:system` 실행 시 local-only preview public folder로 동기화한다.
 
@@ -90,6 +91,6 @@ server-only Next 기능은 쓰지 않는다. Markdown body 이미지는 우선 p
 
 사이트는 `../content/posts`를 읽을 수 있지만 원고를 조용히 고치지 않는다. 원고 수정이 필요하면 root repo의 `content/`와 글쓰기 guard로 돌아간다.
 
-현재 UI/스타일 판단은 production code와 Storybook에서 한다. `design-system/reference/blog-design`는 원형 판단을 복원할 때만 read-only evidence로 참고하고, `design-system/styles`를 production CSS로 다시 복사하지 않는다.
+현재 UI/스타일 판단은 production code와 Storybook에서 한다. `archive/design-system/reference/blog-design`는 원형 판단을 복원할 때만 read-only evidence로 참고하고, `archive/design-system/styles`를 production CSS로 다시 복사하지 않는다.
 
 사이트 전용 agent/skill이 필요해지면 이 폴더 안에 둔다. root `.claude/`, `.codex/`, `.agents/`는 글쓰기/발행 하네스 전용으로 유지한다.

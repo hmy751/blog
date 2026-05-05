@@ -16,7 +16,7 @@ tools: Read, Grep, Glob, Bash
 - Storybook story와 실제 App Router 화면이 같은 컴포넌트/스타일 계약을 따르는지 확인해야 할 때.
 - `prose.css`, Markdown renderer, post detail DOM을 바꾸는 작업처럼 한 수정이 본문, Storybook, system-preview, 실제 글 화면으로 번질 때.
 - token, spacing, typography, article row, shell, post parts, note/about, mobile fallback 중 하나를 바꿨고 파생 영향이 넓을 때.
-- `design-system/reference/blog-design`의 의도를 현재 구현으로 다시 번역해야 하지만, legacy CSS를 그대로 복사할 위험이 있을 때.
+- `archive/design-system/reference/blog-design`의 의도를 현재 구현으로 다시 번역해야 하지만, legacy CSS를 그대로 복사할 위험이 있을 때.
 - 디자인 정합성 작업 뒤에 어떤 검증을 돌려야 할지, 어떤 화면을 육안 확인해야 할지 정리해야 할 때.
 
 작은 오타, 단일 class 이름 수정, 단순 문서 링크 보정에는 호출하지 않아도 된다.
@@ -43,7 +43,7 @@ tools: Read, Grep, Glob, Bash
    - `site/.storybook/*`
    - `site/system-preview/**`
 
-원형 판단 복원이 필요할 때만 `site/design-system/reference/blog-design/manifest.json`, `notes/source-map.md`, `source/Blog v2.html`, `source/System.html`을 읽는다. `site/design-system/styles`는 current source가 아니라 legacy snapshot으로만 본다.
+원형 판단 복원이 필요할 때만 `site/archive/design-system/reference/blog-design/manifest.json`, `notes/source-map.md`, `source/Blog v2.html`, `source/System.html`을 읽는다. `site/archive/design-system/styles`는 current source가 아니라 legacy snapshot으로만 본다.
 
 ## 점검 항목
 
@@ -74,7 +74,7 @@ Bash는 조사와 검증에만 쓴다. 파일 편집, 생성, 삭제, formatting
 ## 하지 않을 것
 
 - 소스 파일을 직접 수정하지 않는다.
-- `design-system/styles`나 prototype HTML을 production CSS처럼 복사하라고 지시하지 않는다.
+- `archive/design-system/styles`나 prototype HTML을 production CSS처럼 복사하라고 지시하지 않는다.
 - prototype-only thumbnail variants, tweak panel runtime, sample content를 production 요구사항으로 되살리지 않는다.
 - root `editorial/`, root writing agents, source policy, prepublish 기준을 사이트 agent 안으로 복사하지 않는다.
 - 디자인을 맞추려고 `content/posts` 원고를 rewrite하라고 제안하지 않는다.

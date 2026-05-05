@@ -5,7 +5,7 @@
 관련:
   - [CONTENT_CONTRACT.md](CONTENT_CONTRACT.md) — 사이트가 원고를 읽는 방식
   - [DESIGN_CONTRACT.md](DESIGN_CONTRACT.md) — current production CSS/component/Storybook 기준의 디자인 계약
-  - [../decisions/2026-05-05-design-system-legacy-boundary.md](../decisions/2026-05-05-design-system-legacy-boundary.md) — `design-system/` 보존/legacy 경계
+  - [../decisions/2026-05-05-design-system-legacy-boundary.md](../decisions/2026-05-05-design-system-legacy-boundary.md) — archived design-system 보존/legacy 경계
   - [../../editorial/guards/source-policy.md](../../editorial/guards/source-policy.md) — 공개 원고 source guard
   - [../../editorial/guards/prepublish-check.md](../../editorial/guards/prepublish-check.md) — 발행 전 hard guard
 ---
@@ -34,7 +34,7 @@ content source -> editorial writing harness
 | Site implementation | `../src`, `../src/styles`, `../src/components`, `../src/app`, `../src/lib` | 앱 코드, 라우팅, production CSS/component, Markdown renderer, RSS/sitemap, metadata, 사이트 검증 스크립트 | 원고의 editorial 판단, private source 해석, 글쓰기 workflow |
 | Storybook catalog | `../.storybook`, `../src/stories` | 현재 디자인 시스템 카탈로그, isolated component state, screen composition, production CSS contract 확인 | production route 등록, 실제 원고 수정 |
 | System preview | `../system-preview` | local-only route-level Markdown/rendering 결합 QA | production App Router route, 디자인 source of truth 단독 소유 |
-| Legacy design archive | `../design-system/reference/blog-design`, `../design-system/styles`, `../design-system/fixtures` | Claude Design 원본 evidence, legacy renderer CSS snapshot, local-only QA fixture asset bucket | 현재 production CSS source, 실제 글 데이터 원천, 배포 앱, 글쓰기 하네스 |
+| Legacy design archive | `../archive/design-system/reference/blog-design`, `../archive/design-system/styles`, `../archive/design-system/fixtures` | Claude Design 원본 evidence, legacy renderer CSS snapshot, local-only QA fixture asset bucket | 현재 production CSS source, 실제 글 데이터 원천, 배포 앱, 글쓰기 하네스 |
 | Site harness | `../.claude/`, `../.codex/`, `../.agents/` | 사이트 개발 보조 agent/skill, 구현 점검, 디자인/콘텐츠 계약 확인 | 글쓰기 기준 본문, source policy 재정의, prepublish 판단 |
 
 ## Design Source
@@ -45,7 +45,7 @@ content source -> editorial writing harness
 - design catalog: `../src/stories/`와 `../.storybook/`.
 - route integration QA: `../system-preview/`.
 
-`../design-system/`은 삭제하지 않는 legacy/reference bucket으로 다룬다.
+`../archive/design-system/`은 삭제하지 않는 legacy/reference bucket으로 다룬다.
 
 - `reference/blog-design/source/Blog v2.html`: live prototype evidence다. 홈, 글 목록, 글 상세, Note, About, footer, thumbnail variant를 포함한다.
 - `reference/blog-design/source/System.html`: token, prose, component primitive evidence다. 다만 current production과 충돌하면 current code와 Storybook을 먼저 확인한다.
@@ -69,7 +69,7 @@ content source -> editorial writing harness
 - `src/stories/`와 `.storybook/`: current design system catalog.
 - `system-preview/`: local-only route-level integration QA.
 - build/check scripts: Markdown 렌더링, frontmatter schema, route generation, RSS/sitemap, screenshot regression.
-- legacy reference: `design-system/`는 보존 자료로 읽고 runtime import 대상으로 쓰지 않는다. 예외적으로 Storybook/system-preview fixture asset은 local-only로 사용할 수 있다.
+- legacy reference: `archive/design-system/`는 보존 자료로 읽고 runtime import 대상으로 쓰지 않는다. 예외적으로 Storybook/system-preview fixture asset은 local-only로 사용할 수 있다.
 
 앱은 `../../content/posts`를 source로 읽을 수 있지만, 원고를 직접 고치지 않는다. 원고 수정은 root repo에서 한다.
 
@@ -113,7 +113,7 @@ local agent/skill 역할을 바꾸면 Claude 정의와 Codex 정의의 의미를
 
 1. 이 문서로 경계를 확인한다.
 2. current production code, Storybook story, system-preview 결합 상태를 먼저 확인한다.
-3. 원형 판단 복원이 필요할 때만 `../design-system/reference/blog-design/manifest.json`과 `notes/source-map.md`를 읽는다.
+3. 원형 판단 복원이 필요할 때만 `../archive/design-system/reference/blog-design/manifest.json`과 `notes/source-map.md`를 읽는다.
 4. `DESIGN_CONTRACT.md`와 `CONTENT_CONTRACT.md`를 확정한다.
 5. framework scaffold와 package scripts를 `site/` 안에만 만든다.
 6. Markdown renderer와 post detail page를 먼저 구현한다.
@@ -128,5 +128,5 @@ local agent/skill 역할을 바꾸면 Claude 정의와 Codex 정의의 의미를
 - 사이트 앱이 원고를 조용히 rewrite하거나 frontmatter 기준을 독자적으로 바꾼다.
 - agent 파일이 자기 레이어 밖의 기준 본문을 소유하기 시작한다.
 - Markdown renderer 문제를 원고 HTML 증가로 해결한다.
-- `design-system/styles`나 prototype HTML을 current production source처럼 복사한다.
+- `archive/design-system/styles`나 prototype HTML을 current production source처럼 복사한다.
 - `System.html`, `Blog v2.html`, Storybook, production CSS의 충돌을 해결하지 않고 모두 기준처럼 적용한다.

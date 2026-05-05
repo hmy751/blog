@@ -1,8 +1,8 @@
 # Design Contract
 
-이 문서는 현재 production CSS/component와 Storybook 카탈로그를 기준으로 사이트 디자인 계약을 설명한다. `../design-system/reference/blog-design` archive는 원형 판단을 복원하기 위한 read-only evidence이고, 현재 구현 기준 자체가 아니다.
+이 문서는 현재 production CSS/component와 Storybook 카탈로그를 기준으로 사이트 디자인 계약을 설명한다. `../archive/design-system/reference/blog-design` archive는 원형 판단을 복원하기 위한 read-only evidence이고, 현재 구현 기준 자체가 아니다.
 
-production CSS source는 `../src/styles/`와 component CSS Modules에 둔다. `../design-system/styles/`는 reference-derived legacy/archive source로 유지하되, production App Router 전역 stylesheet로 import하지 않는다. local-only system preview는 `../system-preview`에서 production CSS와 components를 다시 import한다.
+production CSS source는 `../src/styles/`와 component CSS Modules에 둔다. `../archive/design-system/styles/`는 reference-derived legacy/archive source로 유지하되, production App Router 전역 stylesheet로 import하지 않는다. local-only system preview는 `../system-preview`에서 production CSS와 components를 다시 import한다.
 
 ## Source Reading
 
@@ -11,25 +11,25 @@ production CSS source는 `../src/styles/`와 component CSS Modules에 둔다. `.
 1. `../src/styles/`와 component CSS Modules — production CSS source.
 2. `../src/stories/`와 `../.storybook/` — current design system catalog.
 3. `../system-preview/` — local-only route-level integration QA.
-4. `../design-system/reference/blog-design` — original design evidence.
+4. `../archive/design-system/reference/blog-design` — original design evidence.
 
 원본 archive:
 
-1. `../design-system/reference/blog-design/manifest.json` — 보존된 원본 목록, 우선순위, checksum.
-2. `../design-system/reference/blog-design/notes/source-map.md` — line-level source map.
-3. `../design-system/reference/blog-design/source/*.html` — Claude Design 원본.
+1. `../archive/design-system/reference/blog-design/manifest.json` — 보존된 원본 목록, 우선순위, checksum.
+2. `../archive/design-system/reference/blog-design/notes/source-map.md` — line-level source map.
+3. `../archive/design-system/reference/blog-design/source/*.html` — Claude Design 원본.
 
 우선순위:
 
-1. `../design-system/reference/blog-design/source/Blog v2.html` — live prototype evidence.
-2. `../design-system/reference/blog-design/source/System.html` — token, typography, prose primitive evidence.
-3. `../design-system/reference/blog-design/source/tweaks-panel.jsx` — prototype parameter space 복원용. production runtime에는 넣지 않는다.
-4. `../design-system/reference/blog-design/uploads/draw-*.png` — 피드백/주석 이미지. production asset으로 쓰지 않는다.
-5. `../design-system/reference/blog-design/source/Blog.html` — v1 prototype. 새 구현 기준으로 쓰지 않는다.
+1. `../archive/design-system/reference/blog-design/source/Blog v2.html` — live prototype evidence.
+2. `../archive/design-system/reference/blog-design/source/System.html` — token, typography, prose primitive evidence.
+3. `../archive/design-system/reference/blog-design/source/tweaks-panel.jsx` — prototype parameter space 복원용. production runtime에는 넣지 않는다.
+4. `../archive/design-system/reference/blog-design/uploads/draw-*.png` — 피드백/주석 이미지. production asset으로 쓰지 않는다.
+5. `../archive/design-system/reference/blog-design/source/Blog.html` — v1 prototype. 새 구현 기준으로 쓰지 않는다.
 
 원본 archive 안에서 충돌하면 `Blog v2.html`을 우선한다. `System.html`은 live 화면이 아니라 디자인 시스템 문서라서 component demo 값이 더 크거나 넓을 수 있다. current production과 archive가 충돌하면 production code와 Storybook을 먼저 확인한다.
 
-`screenshots/` snapshot은 archive에 가져오지 않는다. 이전 `home.png`, `home2.png`는 상단부만 남은 stale image라 기준으로 쓰지 않는다. `../design-system/styles/`도 현재 CSS source가 아니라 legacy renderer snapshot으로 본다.
+`screenshots/` snapshot은 archive에 가져오지 않는다. 이전 `home.png`, `home2.png`는 상단부만 남은 stale image라 기준으로 쓰지 않는다. `../archive/design-system/styles/`도 현재 CSS source가 아니라 legacy renderer snapshot으로 본다.
 
 ## Product Shape
 

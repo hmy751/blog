@@ -77,8 +77,8 @@ const config: StorybookConfig = {
   },
   staticDirs: [
     {
-      from: "../design-system/fixtures",
-      to: "/design-system/fixtures"
+      from: "../archive/design-system/fixtures",
+      to: "/archive/design-system/fixtures"
     }
   ],
   viteFinal: async (config) => {

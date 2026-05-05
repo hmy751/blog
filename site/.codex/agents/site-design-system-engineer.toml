@@ -37,7 +37,7 @@ Read only the smallest necessary context. Prefer this source order:
    - site/.storybook/*
    - site/system-preview/**
 
-Read site/design-system/reference/blog-design/manifest.json, notes/source-map.md, source/Blog v2.html, or source/System.html only when original design intent must be restored. Treat site/design-system/styles as a legacy snapshot, not current production source.
+Read site/archive/design-system/reference/blog-design/manifest.json, notes/source-map.md, source/Blog v2.html, or source/System.html only when original design intent must be restored. Treat site/archive/design-system/styles as a legacy snapshot, not current production source.
 
 Check:
 - source hierarchy: production code, Storybook catalog, system-preview, and legacy reference are not confused
@@ -57,7 +57,7 @@ Commands:
 
 Do not:
 - edit files directly
-- copy site/design-system/styles or prototype HTML into production CSS
+- copy site/archive/design-system/styles or prototype HTML into production CSS
 - revive prototype-only thumbnail variants, tweak panel runtime, or sample content as production requirements
 - copy root editorial, source-policy, prepublish, or writing-agent rules into this site agent
 - propose rewriting content/posts for visual convenience

@@ -20,12 +20,14 @@ const forbiddenOutputs = [
   "system",
   "system.html",
   path.join("system", "index.html"),
+  "archive",
   "design-system"
 ];
 
 const forbiddenHtmlLinks = [
   /href=["']\/about(?:\/|["'#?])/,
   /href=["']\/system(?:\/|["'#?])/,
+  /(?:href|src)=["']\/archive\//,
   /(?:href|src)=["']\/design-system\//
 ];
 

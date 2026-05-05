@@ -10,8 +10,8 @@ const outDir = path.join(siteRoot, "dist");
 await rm(outDir, { recursive: true, force: true });
 await mkdir(outDir, { recursive: true });
 await cp(
-  path.join(siteRoot, "design-system", "styles"),
-  path.join(outDir, "design-system", "styles"),
+  path.join(siteRoot, "archive", "design-system", "styles"),
+  path.join(outDir, "archive", "design-system", "styles"),
   { recursive: true }
 );
 

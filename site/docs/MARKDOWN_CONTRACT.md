@@ -2,7 +2,7 @@
 
 이 문서는 `content/posts/*.md`를 site 상세 글 화면으로 렌더링할 때 필요한 변환 계약이다. 현재 렌더링 구현은 `../src/lib/markdown.ts`가 소유하고, 시각 기준은 `../src/styles/prose.css`와 Storybook Prose stories가 소유한다.
 
-`../design-system/fixtures`는 아직 Storybook과 system-preview가 공유하는 local-only fixture asset bucket이다. fixture Markdown과 SVG는 QA 자산이며 production content나 current design source가 아니다.
+`../archive/design-system/fixtures`는 아직 Storybook과 system-preview가 공유하는 local-only fixture asset bucket이다. fixture Markdown과 SVG는 QA 자산이며 production content나 current design source가 아니다.
 
 ## Goals
 
@@ -151,8 +151,8 @@ Renderer QA must render:
 - Storybook `Design System/Prose` Markdown fixture from `../src/stories/story-fixtures.ts`
 - Storybook `Design System/Screens/PostDetail`
 - local-only `/system/` and `/system/example-article/` preview
-- shared local-only assets in `../design-system/fixtures`
+- shared local-only assets in `../archive/design-system/fixtures`
 - at least one real post without `description`, `cover`, or `featured`
 - at least one long technical post with code/table/list sections
 
-Before shipping, compare Storybook, system-preview, and at least one real article route. Use `../design-system/reference/blog-design/source/*.html` only when the original design intent needs to be recovered.
+Before shipping, compare Storybook, system-preview, and at least one real article route. Use `../archive/design-system/reference/blog-design/source/*.html` only when the original design intent needs to be recovered.

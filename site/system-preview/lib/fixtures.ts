@@ -6,7 +6,7 @@ import type { Post } from "@/lib/posts";
 const siteRoot = path.basename(process.cwd()) === "system-preview"
   ? path.resolve(process.cwd(), "..")
   : process.cwd();
-const fixturesDir = path.join(siteRoot, "design-system", "fixtures");
+const fixturesDir = path.join(siteRoot, "archive", "design-system", "fixtures");
 
 type Frontmatter = Record<string, unknown>;
 

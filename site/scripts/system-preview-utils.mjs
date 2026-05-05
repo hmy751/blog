@@ -11,10 +11,12 @@ export const systemExportDir = path.join(siteRoot, ".next-system-build");
 export const systemOutDir = path.join(siteRoot, "system-dist");
 
 export async function syncSystemPreviewAssets() {
-  const sourceDir = path.join(siteRoot, "design-system", "fixtures");
-  const targetDir = path.join(previewRoot, "public", "design-system", "fixtures");
+  const sourceDir = path.join(siteRoot, "archive", "design-system", "fixtures");
+  const targetDir = path.join(previewRoot, "public", "archive", "design-system", "fixtures");
+  const legacyTargetDir = path.join(previewRoot, "public", "design-system");
   const staticExtensions = new Set([".avif", ".gif", ".jpg", ".jpeg", ".png", ".svg", ".webp"]);
 
+  await rm(legacyTargetDir, { recursive: true, force: true });
   await rm(targetDir, { recursive: true, force: true });
   await mkdir(targetDir, { recursive: true });
 

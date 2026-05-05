@@ -85,7 +85,7 @@ flowchart LR
 
 ## 5. 이미지와 캡션
 
-![component anatomy diagram](/design-system/fixtures/component-anatomy-placeholder.svg)
+![component anatomy diagram](/archive/design-system/fixtures/component-anatomy-placeholder.svg)
 
 그림 1. 컴포넌트의 외부 인터페이스와 내부 책임의 경계.
 

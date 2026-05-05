@@ -1,6 +1,6 @@
 # Legacy Design System Archive
 
-이 폴더는 삭제하지 않는 legacy/reference bucket이다. 현재 production UI/스타일 판단의 source of truth는 `../src/`, `../src/styles/`, component CSS Modules, `../src/stories/`, `../.storybook/`에 있다.
+이 폴더는 삭제하지 않는 legacy/reference bucket이다. 현재 production UI/스타일 판단의 source of truth는 `../../src/`, `../../src/styles/`, component CSS Modules, `../../src/stories/`, `../../.storybook/`에 있다.
 
 `reference/blog-design/`는 Claude Design 원본 archive다. 원형 판단을 복원해야 할 때는 외부 `../blog-design` 폴더보다 이 archive의 `manifest.json`, `notes/source-map.md`, `source/*.html`을 먼저 읽는다. 단, archive는 evidence layer이고 현재 구현 계약 자체가 아니다.
 
@@ -27,7 +27,7 @@
 
 ## Current Adoption Rule
 
-Next production 앱은 `../src/styles/`와 CSS Modules를 쓴다. `styles/index.css`는 legacy renderer에서만 사용한다. local-only system preview는 `../system-preview/`에서 production `src/styles`와 `src/components`를 다시 import한다. Storybook은 `../.storybook/`과 `../src/stories/`에서 production CSS/component contract를 확인한다.
+Next production 앱은 `../../src/styles/`와 CSS Modules를 쓴다. `styles/index.css`는 legacy renderer에서만 사용한다. local-only system preview는 `../../system-preview/`에서 production `src/styles`와 `src/components`를 다시 import한다. Storybook은 `../../.storybook/`과 `../../src/stories/`에서 production CSS/component contract를 확인한다.
 
 새 UI/스타일 작업에서는 이 폴더의 CSS를 production으로 복사하지 않는다. 필요한 판단은 현재 `src/styles`, component CSS Modules, Storybook story에서 먼저 확인하고, 원형 의도를 복원해야 할 때만 `reference/blog-design`를 evidence로 읽는다.
 

@@ -34,7 +34,7 @@ site 디자인 정합성 작업은 단순 token 정리가 아니라 production U
 - verification plan
 - keep/adjust/split/defer recommendation
 
-이 agent는 `src/styles`, component CSS Modules, `src/app`, `src/components`, `src/lib/markdown.ts`, Storybook, `system-preview`를 함께 본다. 원형 판단 복원이 필요할 때만 `design-system/reference/blog-design`를 evidence로 읽고, `design-system/styles`는 legacy snapshot으로만 취급한다.
+이 agent는 `src/styles`, component CSS Modules, `src/app`, `src/components`, `src/lib/markdown.ts`, Storybook, `system-preview`를 함께 본다. 원형 판단 복원이 필요할 때만 `archive/design-system/reference/blog-design`를 evidence로 읽고, `archive/design-system/styles`는 legacy snapshot으로만 취급한다.
 
 ## 적용 범위
 
@@ -59,7 +59,7 @@ site 디자인 정합성 작업은 단순 token 정리가 아니라 production U
 - Storybook이나 system-preview를 대체하지 않는다.
 - 디자인 계약 본문을 agent 안에 누적하지 않는다.
 - root `editorial/`, writing agents, source policy, prepublish 기준을 site agent로 복사하지 않는다.
-- `design-system/styles`나 prototype HTML을 production source로 되살리지 않는다.
+- `archive/design-system/styles`나 prototype HTML을 production source로 되살리지 않는다.
 - 디자인을 맞추기 위해 `content/posts`를 rewrite하지 않는다.
 
 ## 근거
@@ -67,7 +67,7 @@ site 디자인 정합성 작업은 단순 token 정리가 아니라 production U
 - `site/docs/platform-boundary.md`는 site agent/skill을 `site/.claude`, `site/.codex`, `site/.agents` 아래에 두라고 정의한다.
 - `site/docs/DESIGN_CONTRACT.md`는 current production CSS/component/Storybook을 현재 디자인 판단 기준으로 둔다.
 - `site/docs/DESIGN_INVENTORY.md`는 CSS ownership과 Storybook/system-preview 역할을 분리한다.
-- `site/decisions/2026-05-05-design-system-legacy-boundary.md`는 `design-system/`을 legacy/reference bucket으로 고정한다.
+- `site/decisions/2026-05-05-design-system-legacy-boundary.md`는 `archive/design-system/`을 legacy/reference bucket으로 고정한다.
 - `site/decisions/2026-05-05-storybook-design-system.md`는 Storybook을 디자인 시스템 catalog로 추가하고, system-preview를 route-level integration QA로 유지한다.
 
 ## 후속 점검

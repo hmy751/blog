@@ -4,13 +4,13 @@
 관련 커밋: 89f9d3d
 상태: accepted
 
-2026-05-05 업데이트: 이 결정은 `design-system/`을 처음 구현 layer로 반입한 이력이다. Next App Router와 Storybook 이관 이후 현재 운영 기준은 `2026-05-05-design-system-legacy-boundary.md`가 우선한다. `design-system/`은 삭제하지 않는 legacy/reference bucket으로 보존하되 current production source로 쓰지 않는다.
+2026-05-05 업데이트: 이 결정은 `design-system/`을 처음 구현 layer로 반입한 이력이다. Next App Router와 Storybook 이관 이후 현재 운영 기준은 `2026-05-05-design-system-legacy-boundary.md`가 우선한다. 해당 자료는 현재 `archive/design-system/`으로 이동했으며 current production source로 쓰지 않는다.
 
 ## 배경
 
 `../blog-design`에는 `Blog v2.html`과 `System.html` 형태로 커스텀 블로그의 디자인 시안과 상세 글 Markdown/prose 요소가 이미 들어 있었다. 사이트 앱을 만들기 전에 이 기준을 단순 참고 문서가 아니라 `site/` 안의 구현 가능한 design system layer로 가져올 필요가 있었다.
 
-2026-05-05에 원본 Claude Design 산출물은 `site/design-system/reference/blog-design/`에도 보존했다. 이 decision은 구현 CSS layer 반입 결정이고, 원본 보존 결정은 `2026-05-05-blog-design-reference-import.md`가 소유한다.
+2026-05-05에 원본 Claude Design 산출물은 `site/archive/design-system/reference/blog-design/`에도 보존했다. 이 decision은 구현 CSS layer 반입 결정이고, 원본 보존 결정은 `2026-05-05-blog-design-reference-import.md`가 소유한다.
 
 ## 문제
 
@@ -24,7 +24,7 @@ HTML 시안을 그대로 보며 구현하면 아래 문제가 생길 수 있다.
 
 ## 결정
 
-`site/design-system/`을 추가한다.
+`site/archive/design-system/`을 추가한다.
 
 - `styles/index.css`: 앱에서 import할 design system entrypoint.
 - `styles/tokens.css`: color/type/spacing/radius token.
@@ -48,7 +48,7 @@ HTML 시안을 그대로 보며 구현하면 아래 문제가 생길 수 있다.
 
 영향받은 파일:
 
-- `site/design-system/`
+- `site/archive/design-system/`
 - `site/docs/DESIGN_CONTRACT.md`
 - `site/docs/CONTENT_CONTRACT.md`
 - `site/docs/MARKDOWN_CONTRACT.md`
@@ -74,7 +74,7 @@ HTML 시안을 그대로 보며 구현하면 아래 문제가 생길 수 있다.
 
 ## 후속 점검
 
-- 실제 scaffold가 `design-system/styles/index.css`를 import하는가.
+- 실제 scaffold가 `archive/design-system/styles/index.css`를 import하는가.
 - Markdown fixture가 실제 renderer로 깨지지 않고 렌더링되는가.
 - no-cover/no-description 실제 글이 home/articles/post에서 자연스럽게 보이는가.
 - `/system` preview page가 live CSS와 같은 source를 쓰는가.

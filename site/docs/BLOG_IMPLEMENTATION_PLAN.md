@@ -1,17 +1,17 @@
 # Blog Implementation Plan
 
-이 문서는 `site/design-system/reference/blog-design/source`의 Claude Design 원본을 실제 블로그 앱으로 옮기기 위해 작성한 구현 계획이다. 현재는 Next App Router와 Storybook 이관이 끝났으므로, 운영 기준은 `DESIGN_CONTRACT.md`와 `decisions/2026-05-05-design-system-legacy-boundary.md`를 따른다.
+이 문서는 `site/archive/design-system/reference/blog-design/source`의 Claude Design 원본을 실제 블로그 앱으로 옮기기 위해 작성한 구현 계획이다. 현재는 Next App Router와 Storybook 이관이 끝났으므로, 운영 기준은 `DESIGN_CONTRACT.md`와 `decisions/2026-05-05-design-system-legacy-boundary.md`를 따른다.
 
-요약: production source는 `src/`와 `src/styles/`, 현재 디자인 시스템 카탈로그는 Storybook, route-level QA는 `system-preview/`다. `design-system/`은 삭제하지 않는 legacy/reference bucket이다.
+요약: production source는 `src/`와 `src/styles/`, 현재 디자인 시스템 카탈로그는 Storybook, route-level QA는 `system-preview/`다. `archive/design-system/`은 삭제하지 않는 legacy/reference bucket이다.
 
 ## Source Hierarchy
 
 구현 판단은 아래 순서로 확인한다.
 
-1. `design-system/reference/blog-design/manifest.json`
-2. `design-system/reference/blog-design/notes/source-map.md`
-3. `design-system/reference/blog-design/source/Blog v2.html`
-4. `design-system/reference/blog-design/source/System.html`
+1. `archive/design-system/reference/blog-design/manifest.json`
+2. `archive/design-system/reference/blog-design/notes/source-map.md`
+3. `archive/design-system/reference/blog-design/source/Blog v2.html`
+4. `archive/design-system/reference/blog-design/source/System.html`
 5. `docs/DESIGN_CONTRACT.md`, `docs/MARKDOWN_CONTRACT.md`
 
 `Blog v2.html`은 live UI source이고, `System.html`은 token/prose/component primitive QA source다. `Blog.html`은 v1 archive로만 본다.
@@ -68,20 +68,21 @@ site/
     content.mjs
     markdown.mjs
     render.mjs
-  design-system/
-    reference/blog-design/
-    styles/
-    fixtures/
+  archive/
+    design-system/
+      reference/blog-design/
+      styles/
+      fixtures/
   docs/
 ```
 
 The legacy HTML shell imports:
 
 ```html
-<link rel="stylesheet" href="/design-system/styles/index.css">
+<link rel="stylesheet" href="/archive/design-system/styles/index.css">
 ```
 
-If the chosen framework has a font loader, move the font loading from `design-system/styles/index.css` into the framework layout and keep the CSS variables unchanged.
+If the chosen framework has a font loader, move the font loading from `archive/design-system/styles/index.css` into the framework layout and keep the CSS variables unchanged.
 
 ## Data Flow
 
@@ -157,7 +158,7 @@ Adapter rules:
 ### System Example Article (local-only separate Next app)
 
 - site-only example article route.
-- reads `design-system/fixtures/example-article.md`.
+- reads `archive/design-system/fixtures/example-article.md`.
 - uses the same post detail DOM, cover image, Markdown renderer, and prose CSS as production posts.
 - does not read from or write to `content/posts`.
 
@@ -166,7 +167,7 @@ Adapter rules:
 - not registered under production `src/app`; not a deployed blog route.
 - imports production `src/styles/globals.css`.
 - reads production global-selector CSS Modules through `.storybook/main.ts` virtual CSS contract so Shell, rows, post parts, page headers, Note, and dormant About match the app.
-- serves `design-system/fixtures` as static Storybook assets.
+- serves `archive/design-system/fixtures` as static Storybook assets.
 - uses browser-safe fixture `Post` data instead of reading `content/posts`.
 - covers foundations, prose primitives, component states, and full screen compositions.
 - keeps `system-preview` responsible for route-level integration and static export QA.
@@ -215,7 +216,7 @@ The code filename DOM must preserve the original order from `Blog v2.html` and `
 
 ## Visual QA
 
-Use `design-system/reference/blog-design/source` as acceptance criteria, not as runtime code.
+Use `archive/design-system/reference/blog-design/source` as acceptance criteria, not as runtime code.
 
 Desktop checks:
 
@@ -242,7 +243,7 @@ Regression must check that:
 
 ## Implementation Phases
 
-1. Preserve reference archive under `design-system/reference/blog-design`. Done.
+1. Preserve reference archive under `archive/design-system/reference/blog-design`. Done.
 2. Import reference-derived CSS for the first renderer, then split production CSS into `src/styles` and component modules. Done.
 3. Build post adapter and route renderer. Done.
 4. Build home/articles/post with real content. Done.
