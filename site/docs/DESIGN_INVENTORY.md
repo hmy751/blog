@@ -16,6 +16,7 @@
 | `src/render.mjs` shell helpers | production shell | `components/shell/Shell.tsx` | Keep `.shell`, `.top`, `.brand`, `.dot`, `.nav`, `.foot`. |
 | `src/render.mjs` page helpers | production routes | `src/app/**/page.tsx` | Route ownership becomes file-system visible. |
 | `system-preview/app/**` | system-preview only | local-only Next app | Imports production components/lib/styles without registering production `/system`. |
+| `.storybook/**`, `src/stories/**` | Storybook only | design system catalog | Uses production CSS/components with browser-safe fixtures. Does not read or rewrite `content/posts`. |
 | `src/render.mjs` `articleRow()` | production component | `components/article-row/ArticleRow.tsx` | Ship only live `aside` variant. |
 | `src/content.mjs` | content adapter | `src/lib/posts.ts` | Reads `../content/posts`, never rewrites. |
 | `src/markdown.mjs` | Markdown renderer | `src/lib/markdown.ts` | Replace with unified pipeline and custom transforms. |
@@ -32,6 +33,15 @@
 - Note: `.notes`, `.note`, `.when`, `.body`.
 - Dormant About: `.about-grid`.
 - Motion: `.view`, row/note stagger animation, reduced motion guard.
+
+## Storybook Catalog Buckets
+
+- Foundations: color tokens, dark token state, typography, spacing.
+- Prose: inline elements, callout states, Markdown fixture through `markdownToHtml`.
+- Components: Shell, article rows, post parts, note rows, about grid.
+- Screens: Home, mobile Home, Articles, Post detail, Note empty, dormant About.
+- System Page: parity story that imports `system-preview/app/system/system.module.css` directly.
+- CSS parity: `.storybook/main.ts` exposes production global-selector CSS Modules through `virtual:production-contract.css`.
 
 ## Prototype Or Archive Only
 

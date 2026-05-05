@@ -8,6 +8,8 @@
     "dev:next": "next dev",
     "build:next": "next build",
     "check": "tsc --noEmit && tsc -p system-preview/tsconfig.json --noEmit",
+    "storybook": "storybook dev -p 6006 --host 127.0.0.1",
+    "build:storybook": "storybook build",
     "dev:system": "node scripts/dev-system.mjs",
     "build:system": "node scripts/build-system.mjs",
     "dev:legacy": "node scripts/dev.mjs",
@@ -30,10 +32,15 @@
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^10.3.6",
+    "@storybook/addon-docs": "^10.3.6",
+    "@storybook/nextjs-vite": "^10.3.6",
     "@types/node": "^25.6.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "typescript": "^6.0.3"
+    "storybook": "^10.3.6",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.10"
   },
   "overrides": {
     "postcss": "^8.5.10"

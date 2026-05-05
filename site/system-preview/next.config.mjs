@@ -1,6 +1,6 @@
 /** @type {import("next").NextConfig} */
 const nextConfig = {
-  distDir: "../.next-system",
+  distDir: process.env.SYSTEM_PREVIEW_DIST_DIR || "../.next-system",
   output: "export",
   trailingSlash: true,
   images: {

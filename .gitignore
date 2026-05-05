@@ -3,8 +3,11 @@ node_modules/
 .cache/
 .next/
 .next-system/
+.next-system-build/
+.next-system-dev/
 out/
 system-dist/
+storybook-static/
 /public/
 site/system-preview/out/
 site/system-preview/public/design-system/fixtures/

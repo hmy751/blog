@@ -23,6 +23,7 @@
 - production routes: home, articles, post detail, note
 - dormant route component: About is preserved under `src/components/about/AboutPage.tsx` but not registered in App Router yet
 - local-only Next system preview: `/system/`, `/system/example-article/` through `npm run dev:system` or `npm run build:system`
+- Storybook design system catalog: tokens, typography, prose, components, and screen compositions through `npm run storybook`
 - generated outputs: static HTML, RSS, sitemap, metadata
 
 현재 첫 구현은 zero-dependency Node ESM static renderer였고, 2026-05-05부터 Next.js App Router + static export로 전환했다. 기존 renderer는 비교용 legacy script로만 보존하고, system preview는 별도 Next app인 `system-preview/`에서 production components/lib/styles를 import한다.
@@ -37,6 +38,8 @@
 | `system-preview/` | local-only Next system preview app |
 | `scripts/dev-system.mjs` | starts `system-preview/` with Next dev |
 | `scripts/build-system.mjs` | builds `system-preview/` to `system-dist/` |
+| `.storybook/` | Storybook config for design-system catalog |
+| `src/stories/` | Storybook fixture data and stories |
 
 Migration target:
 
@@ -156,6 +159,16 @@ Adapter rules:
 - uses the same post detail DOM, cover image, Markdown renderer, and prose CSS as production posts.
 - does not read from or write to `content/posts`.
 
+### Storybook (design system catalog)
+
+- not registered under production `src/app`; not a deployed blog route.
+- imports production `src/styles/globals.css`.
+- reads production global-selector CSS Modules through `.storybook/main.ts` virtual CSS contract so Shell, rows, post parts, page headers, Note, and dormant About match the app.
+- serves `design-system/fixtures` as static Storybook assets.
+- uses browser-safe fixture `Post` data instead of reading `content/posts`.
+- covers foundations, prose primitives, component states, and full screen compositions.
+- keeps `system-preview` responsible for route-level integration and static export QA.
+
 ## Component Contract
 
 | Component | Design class contract |
@@ -237,8 +250,9 @@ Regression must check that:
 8. Start Next App Router static migration. Done.
 9. Port content adapter and Markdown renderer to TypeScript/unified. Done for first pass.
 10. Split production component CSS into route/component ownership. Done for first pass.
-11. Add RSS/sitemap/metadata.
-12. Add screenshot QA automation.
+11. Add Storybook design system catalog. Done for first pass.
+12. Add RSS/sitemap/metadata.
+13. Add screenshot QA automation.
 
 ## Open Decisions
 

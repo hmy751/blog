@@ -5,7 +5,9 @@ import { fileURLToPath } from "node:url";
 
 export const siteRoot = fileURLToPath(new URL("..", import.meta.url));
 export const previewRoot = path.join(siteRoot, "system-preview");
-export const systemExportDir = path.join(siteRoot, ".next-system");
+export const systemBuildDistDirName = "../.next-system-build";
+export const systemDevDistDirName = "../.next-system-dev";
+export const systemExportDir = path.join(siteRoot, ".next-system-build");
 export const systemOutDir = path.join(siteRoot, "system-dist");
 
 export async function syncSystemPreviewAssets() {
@@ -37,6 +39,10 @@ export function runNode(args, options = {}) {
   return new Promise((resolve, reject) => {
     const child = spawn(process.execPath, args, {
       cwd: options.cwd || siteRoot,
+      env: {
+        ...process.env,
+        ...(options.env || {})
+      },
       stdio: "inherit"
     });
 

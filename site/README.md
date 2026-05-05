@@ -29,6 +29,8 @@
 | `design-system/` | 디자인 fixture에서 가져온 구현용 CSS와 Markdown QA fixture |
 | `design-system/reference/blog-design/` | Claude Design 원본 HTML/JSX archive와 source map |
 | `src/` | Next App Router app, components, content adapter, Markdown renderer |
+| `src/stories/` | Storybook 디자인 시스템 stories와 browser-safe fixture data |
+| `.storybook/` | Storybook 설정. production CSS contract와 fixture assets를 연결한다. |
 | `system-preview/` | 배포 앱과 분리된 local-only Next system preview app |
 | `scripts/` | legacy local dev/build scripts and preview/build wrappers |
 | `decisions/` | 사이트 구현과 사이트 하네스 변경의 결정 기록 |
@@ -63,6 +65,13 @@ npm run build:system
 ```
 
 `dev:system`은 기본적으로 `http://127.0.0.1:4322/system/`을 연다. `build:system` 산출물은 `system-dist/`에 만들며 배포 대상이 아니다.
+
+Storybook은 디자인 시스템 카탈로그로 쓴다. 토큰, typography, prose, component state, screen composition을 fixture data로 확인하고, `system-preview`는 실제 Next route와 Markdown renderer 결합 QA로 유지한다. Storybook preview는 production 전역 CSS를 import하고, 전역 selector만 가진 CSS Modules는 `.storybook/main.ts`의 virtual CSS contract로 읽어 같은 선택자에 적용한다.
+
+```bash
+npm run storybook
+npm run build:storybook
+```
 
 ## Deployment
 

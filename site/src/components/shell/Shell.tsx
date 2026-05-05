@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import styles from "./Shell.module.css";
+import "./Shell.module.css";
 
 export type NavKey = "home" | "articles" | "note" | "about";
 

@@ -5,13 +5,20 @@ import {
   previewRoot,
   runNode,
   siteRoot,
+  systemBuildDistDirName,
   systemExportDir,
   syncSystemPreviewAssets,
   systemOutDir
 } from "./system-preview-utils.mjs";
 
 await syncSystemPreviewAssets();
-await runNode(nextArgs("build"), { cwd: previewRoot });
+await rm(systemExportDir, { recursive: true, force: true });
+await runNode(nextArgs("build"), {
+  cwd: previewRoot,
+  env: {
+    SYSTEM_PREVIEW_DIST_DIR: systemBuildDistDirName
+  }
+});
 await rm(systemOutDir, { recursive: true, force: true });
 await cp(systemExportDir, systemOutDir, { recursive: true });
 
