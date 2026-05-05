@@ -41,7 +41,7 @@ Core references:
 - [x] Create Next App Router scaffold inside `site/`.
 - [x] Add `next.config.mjs` with static export settings.
 - [x] Add TypeScript config.
-- [ ] Replace old build script only when Next route parity is ready.
+- [x] Replace old build script only when Next route parity is ready.
 - [x] Keep old Node renderer files until Next output is verified.
 
 ## 3. Content Adapter
@@ -114,7 +114,7 @@ Core references:
 
 ## 9. Build And Visual QA
 
-- [ ] `npm run build` creates static output.
+- [x] `npm run build` creates static output.
 - [ ] Home desktop/mobile checked.
 - [ ] Articles desktop/mobile checked.
 - [ ] Article row with cover checked.
@@ -133,7 +133,7 @@ Core references:
 
 - [ ] Old `site/src/*.mjs` no longer needed.
 - [ ] Old `site/scripts/*.mjs` no longer needed.
-- [ ] `npm run build` points to the Next build/export path.
-- [ ] Deployment output directory is updated from `dist` to `out` if needed.
+- [x] `npm run build` points to the Next build/export path.
+- [x] Deployment output directory is updated from `dist` to `out` if needed.
 - [ ] `site/dist` is removed or ignored after Next export is adopted.
 - [ ] Cloudflare Pages build settings are documented.

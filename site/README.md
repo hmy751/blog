@@ -38,21 +38,31 @@
 
 ## Dev Stack
 
-현재 migration target은 Next.js App Router + TypeScript 기반 static export다. `../content/posts`를 build time에 읽고, route parity가 끝나면 `npm run build`가 `out/` 정적 산출물을 만들도록 전환한다.
-
-```bash
-npm run dev:next
-npm run build:next
-```
-
-기존 Node renderer는 route parity가 끝날 때까지 기본 script로 남겨둔다.
+현재 스택은 Next.js App Router + TypeScript 기반 static export다. `../content/posts`를 build time에 읽고, `npm run build`가 `out/` 정적 산출물을 만든다.
 
 ```bash
 npm run dev
 npm run build
 ```
 
+기존 Node renderer는 전환 검증과 비교를 위해 legacy script로 남겨둔다.
+
+```bash
+npm run dev:legacy
+npm run build:legacy
+```
+
 라우트는 `/`, `/articles/`, `/articles/{slug}/`, `/note/`, `/about/`, `/system/`, `/system/example-article/`을 유지한다. `/system/`은 Markdown 요소와 디자인 시스템 표면을 확인하는 QA 페이지다.
+
+## Deployment
+
+Cloudflare Pages 기준:
+
+- project root: `site`
+- build command: `npm run build`
+- output directory: `out`
+
+server-only Next 기능은 쓰지 않는다. Markdown body 이미지는 우선 plain `<img>`로 렌더링하고, fixture asset은 `public/design-system/fixtures`에 둔다.
 
 ## Working Rule
 

@@ -22,8 +22,8 @@
 `site/`를 Next.js App Router + TypeScript 기반 정적 사이트로 옮긴다.
 
 - `next.config.mjs`는 `output: "export"`와 `trailingSlash: true`를 사용한다.
-- 전환 중에는 `npm run build:next`가 Next static export를 생성한다.
-- route parity와 visual QA가 끝난 뒤 `npm run build`를 Next build로 전환한다.
+- `npm run build`는 Next static export를 생성한다.
+- 기존 Node renderer는 `dev:legacy`, `build:legacy`로 보존한다.
 - 기존 Node renderer는 route parity와 visual QA가 끝날 때까지 `dev:legacy`, `build:legacy`로 보존한다.
 - `content/posts/*.md`는 build time에만 읽고, site code가 원고를 수정하지 않는다.
 - Markdown은 `gray-matter` + `unified`/`remark`/`rehype` pipeline으로 옮긴다.

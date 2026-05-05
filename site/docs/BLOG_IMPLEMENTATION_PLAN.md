@@ -24,7 +24,7 @@
 - fixture routes: `/system/example-article/` for post-detail QA without touching real posts
 - generated outputs: static HTML, RSS, sitemap, metadata
 
-현재 첫 구현은 zero-dependency Node ESM static renderer였고, 2026-05-05부터 Next.js App Router + static export migration을 시작했다. 기존 renderer는 parity 확인 전까지 legacy script로 보존한다.
+현재 첫 구현은 zero-dependency Node ESM static renderer였고, 2026-05-05부터 Next.js App Router + static export로 전환했다. 기존 renderer는 비교용 legacy script로 보존한다.
 
 | File | Role |
 | --- | --- |
@@ -226,9 +226,9 @@ Regression must check that:
 5. Implement Markdown renderer transforms for the current fixture surface. Done.
 6. Grow `/system` until it covers `System.html` specimens. Done for first pass.
 7. Add post-detail fixture route for Markdown/visual QA. Done for first pass.
-8. Start Next App Router static migration. In progress.
-9. Port content adapter and Markdown renderer to TypeScript/unified.
-10. Split production component CSS into route/component ownership.
+8. Start Next App Router static migration. Done.
+9. Port content adapter and Markdown renderer to TypeScript/unified. Done for first pass.
+10. Split production component CSS into route/component ownership. Done for first pass.
 11. Add RSS/sitemap/metadata.
 12. Add screenshot QA automation.
 
