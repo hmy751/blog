@@ -380,6 +380,17 @@
   font-size: 13.5px;
 }
 
+.prose .sr-only {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
 .prose .footnotes ol > li {
   padding-left: 2em;
 }

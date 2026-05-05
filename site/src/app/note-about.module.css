@@ -1,0 +1,87 @@
+:global(.about-grid) {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  align-items: start;
+  gap: 16px 28px;
+  margin-top: 40px;
+}
+
+:global(.about-grid dt) {
+  color: var(--ink-4);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  line-height: 26.25px;
+  text-transform: uppercase;
+}
+
+:global(.about-grid dd) {
+  margin: 0;
+  padding-bottom: 14px;
+  border-bottom: .5px solid var(--rule-soft);
+  color: var(--ink-2);
+  font-size: 15px;
+}
+
+:global(.about-grid dd:last-of-type) {
+  border-bottom: 0;
+}
+
+:global(.about-grid dd .yr) {
+  margin-right: 10px;
+  color: var(--ink-4);
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+:global(.notes) {
+  display: flex;
+  flex-direction: column;
+}
+
+:global(.note) {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  align-items: start;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: .5px solid var(--rule-soft);
+}
+
+:global(.note .when) {
+  color: var(--ink-4);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  line-height: 26.25px;
+}
+
+:global(.note .body) {
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+:global(.note .body strong) {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+:global(.note .body code) {
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: var(--surface);
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+@media (max-width: 560px) {
+  :global(.note),
+  :global(.about-grid) {
+    grid-template-columns: 1fr;
+  }
+
+  :global(.note) {
+    gap: 8px;
+  }
+}

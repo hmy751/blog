@@ -42,58 +42,58 @@ Core references:
 - [x] Add `next.config.mjs` with static export settings.
 - [x] Add TypeScript config.
 - [ ] Replace old build script only when Next route parity is ready.
-- [ ] Keep old Node renderer files until Next output is verified.
+- [x] Keep old Node renderer files until Next output is verified.
 
 ## 3. Content Adapter
 
-- [ ] Port `site/src/content.mjs` behavior to `src/lib/posts.ts`.
-- [ ] Read from `../content/posts`.
-- [ ] Derive slug from `YYYY-MM-DD-slug.md`.
-- [ ] Exclude `date: TBD` from public routes.
-- [ ] Preserve `primaryTag`, `description`, `featured`, `cover`, `readTime` fallback rules.
-- [ ] Add or plan filename date vs frontmatter date validation.
+- [x] Port `site/src/content.mjs` behavior to `src/lib/posts.ts`.
+- [x] Read from `../content/posts`.
+- [x] Derive slug from `YYYY-MM-DD-slug.md`.
+- [x] Exclude `date: TBD` from public routes.
+- [x] Preserve `primaryTag`, `description`, `featured`, `cover`, `readTime` fallback rules.
+- [x] Add or plan filename date vs frontmatter date validation.
 
 ## 4. Markdown Pipeline
 
-- [ ] Replace hand-written parser with `gray-matter` + `unified`/`remark`/`rehype`.
-- [ ] Support GFM tables, task lists, and footnotes.
-- [ ] Support callouts from `> [!NOTE]` and `> [!WARNING]`.
-- [ ] Support code fence language.
-- [ ] Support code fence title/filename DOM.
-- [ ] Support image + caption figure convention.
-- [ ] Support `==mark==`.
-- [ ] Escape or reject raw HTML by default, except explicit safe transforms.
-- [ ] Compare fixture rendering with current system/example article.
+- [x] Replace hand-written parser with `gray-matter` + `unified`/`remark`/`rehype`.
+- [x] Support GFM tables, task lists, and footnotes.
+- [x] Support callouts from `> [!NOTE]` and `> [!WARNING]`.
+- [x] Support code fence language.
+- [x] Support code fence title/filename DOM.
+- [x] Support image + caption figure convention.
+- [x] Support `==mark==`.
+- [x] Escape or reject raw HTML by default, except explicit safe transforms.
+- [x] Compare fixture rendering with current system/example article.
 
 ## 5. Routes
 
-- [ ] `src/app/layout.tsx`
-- [ ] `src/app/page.tsx`
-- [ ] `src/app/articles/page.tsx`
-- [ ] `src/app/articles/[slug]/page.tsx`
-- [ ] `src/app/note/page.tsx`
-- [ ] `src/app/about/page.tsx`
-- [ ] `src/app/system/page.tsx`
-- [ ] `src/app/system/example-article/page.tsx`
-- [ ] `generateStaticParams()` covers all public posts.
+- [x] `src/app/layout.tsx`
+- [x] `src/app/page.tsx`
+- [x] `src/app/articles/page.tsx`
+- [x] `src/app/articles/[slug]/page.tsx`
+- [x] `src/app/note/page.tsx`
+- [x] `src/app/about/page.tsx`
+- [x] `src/app/system/page.tsx`
+- [x] `src/app/system/example-article/page.tsx`
+- [x] `generateStaticParams()` covers all public posts.
 
 ## 6. Components And CSS Ownership
 
-- [ ] Move shell/nav/footer to `components/shell`.
-- [ ] Move article list/row to `components/article-row`.
-- [ ] Move post meta/hero/footer to `components/post`.
-- [ ] Keep `tokens.css`, `base.css`, `prose.css` global.
-- [ ] Move production component styles into CSS Modules.
-- [ ] Move `system-page.css` into route-local or system-only CSS.
-- [ ] Keep only `aside` in production `ArticleRow`.
-- [ ] Archive or quarantine `leading`, `inline`, `magazine`, `peek`.
+- [x] Move shell/nav/footer to `components/shell`.
+- [x] Move article list/row to `components/article-row`.
+- [x] Move post meta/hero/footer to `components/post`.
+- [x] Keep `tokens.css`, `base.css`, `prose.css` global.
+- [x] Move production component styles into CSS Modules.
+- [x] Move `system-page.css` into route-local or system-only CSS.
+- [x] Keep only `aside` in production `ArticleRow`.
+- [x] Archive or quarantine `leading`, `inline`, `magazine`, `peek`.
 
 ## 7. Images And Assets
 
 - [ ] Decide whether to introduce `content/assets`.
 - [ ] If yes, add prebuild copy to `site/public/images`.
-- [ ] Render Markdown images as plain `<img>` initially.
-- [ ] Render cover images through the current post hero design.
+- [x] Render Markdown images as plain `<img>` initially.
+- [x] Render cover images through the current post hero design.
 - [ ] Keep image filenames ASCII.
 - [ ] Keep image files compressed for Cloudflare Pages.
 
