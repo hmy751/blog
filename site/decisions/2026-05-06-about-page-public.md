@@ -20,7 +20,8 @@ Before deployment, the site needs a real About page, but the prototype Work hist
 
 ## Non-Goals
 
-- Do not add RSS, X, or email rows until real public values exist.
+- Do not add RSS or X rows until real public values exist.
+- Do not publish phone/address-level personal data on the public About page.
 - Do not expose `/system` or legacy archive routes.
 - Do not copy prototype HTML or legacy CSS into production source.
 
