@@ -13,6 +13,7 @@
 }
 
 :global(.article-list a.row > :first-child) {
+  min-width: 0;
   transition: transform .15s ease;
 }
 
@@ -46,6 +47,8 @@
   font-size: 13.5px;
   font-weight: 400;
   letter-spacing: 0;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 
 :global(.article-list .meta) {
@@ -99,7 +102,14 @@
 
 @media (max-width: 560px) {
   :global(.article-list[data-thumb="aside"] a.row) {
-    grid-template-columns: 1fr 64px;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  :global(.article-list[data-thumb="aside"] a.row .meta) {
+    justify-self: start;
+    min-width: 0;
+    text-align: left;
   }
 
   :global(.article-list[data-thumb="aside"] .cv),
