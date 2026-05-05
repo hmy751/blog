@@ -28,19 +28,19 @@ Core references:
 
 ## 1. Planning And Docs
 
-- [ ] Add a `site/decisions/` record for Next static migration and style ownership split.
-- [ ] Draft or add `site/docs/DESIGN_INVENTORY.md`.
-- [ ] Update `site/docs/BLOG_IMPLEMENTATION_PLAN.md` once Next migration starts.
-- [ ] Update `site/README.md` after build scripts and stack are changed.
+- [x] Add a `site/decisions/` record for Next static migration and style ownership split.
+- [x] Draft or add `site/docs/DESIGN_INVENTORY.md`.
+- [x] Update `site/docs/BLOG_IMPLEMENTATION_PLAN.md` once Next migration starts.
+- [x] Update `site/README.md` after build scripts and stack are changed.
 - [ ] Revisit `CONTENT_CONTRACT.md` if `content/assets` is introduced.
 - [ ] Revisit `MARKDOWN_CONTRACT.md` if Markdown conventions change.
 - [ ] Revisit `DESIGN_CONTRACT.md` for intentional reference differences.
 
 ## 2. Next Static Scaffold
 
-- [ ] Create Next App Router scaffold inside `site/`.
-- [ ] Add `next.config.mjs` with static export settings.
-- [ ] Add TypeScript config.
+- [x] Create Next App Router scaffold inside `site/`.
+- [x] Add `next.config.mjs` with static export settings.
+- [x] Add TypeScript config.
 - [ ] Replace old build script only when Next route parity is ready.
 - [ ] Keep old Node renderer files until Next output is verified.
 

@@ -24,7 +24,7 @@
 - fixture routes: `/system/example-article/` for post-detail QA without touching real posts
 - generated outputs: static HTML, RSS, sitemap, metadata
 
-현재 첫 구현은 zero-dependency Node ESM static renderer다.
+현재 첫 구현은 zero-dependency Node ESM static renderer였고, 2026-05-05부터 Next.js App Router + static export migration을 시작했다. 기존 renderer는 parity 확인 전까지 legacy script로 보존한다.
 
 | File | Role |
 | --- | --- |
@@ -33,6 +33,17 @@
 | `src/render.mjs` | route renderer for home/articles/post/note/about/system |
 | `scripts/dev.mjs` | local HTTP dev server |
 | `scripts/build.mjs` | static route generation to `dist/` |
+
+Migration target:
+
+| File | Role |
+| --- | --- |
+| `next.config.mjs` | Next static export config, `out/` output |
+| `src/app/**` | file-system route ownership |
+| `src/components/**` | shell/article/post/system components |
+| `src/lib/posts.ts` | `content/posts` adapter |
+| `src/lib/markdown.ts` | unified/remark/rehype Markdown pipeline |
+| `src/styles/**` | global token/base/prose CSS only |
 
 Astro 같은 Markdown-first static framework로 갈 수는 있지만, 지금 기준선은 이미 들어온 Node renderer다. 프레임워크를 바꾸더라도 아래 contracts와 class names를 먼저 유지한다.
 
@@ -215,8 +226,11 @@ Regression must check that:
 5. Implement Markdown renderer transforms for the current fixture surface. Done.
 6. Grow `/system` until it covers `System.html` specimens. Done for first pass.
 7. Add post-detail fixture route for Markdown/visual QA. Done for first pass.
-8. Add RSS/sitemap/metadata.
-9. Add screenshot QA automation.
+8. Start Next App Router static migration. In progress.
+9. Port content adapter and Markdown renderer to TypeScript/unified.
+10. Split production component CSS into route/component ownership.
+11. Add RSS/sitemap/metadata.
+12. Add screenshot QA automation.
 
 ## Open Decisions
 
