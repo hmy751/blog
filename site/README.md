@@ -27,11 +27,24 @@
 | `docs/MARKDOWN_CONTRACT.md` | 상세 글 Markdown 렌더링 변환 계약 |
 | `docs/BLOG_IMPLEMENTATION_PLAN.md` | 실제 블로그 앱 구현 계획 |
 | `design-system/` | 디자인 fixture에서 가져온 구현용 CSS와 Markdown QA fixture |
+| `src/` | zero-dependency static renderer, content adapter, Markdown renderer |
+| `scripts/` | local dev server와 static build entrypoint |
 | `decisions/` | 사이트 구현과 사이트 하네스 변경의 결정 기록 |
 | `.claude/skills/` | Claude Code용 사이트 개발 skill 자리 |
 | `.claude/agents/` | Claude Code용 사이트 개발 agent 자리 |
 | `.codex/agents/` | Codex용 사이트 개발 agent 자리 |
 | `.agents/skills/` | Codex skill bridge 자리 |
+
+## Dev Stack
+
+현재 실행 가능한 첫 스택은 Node ESM 기반 zero-dependency static renderer다. 외부 패키지 설치 없이 `../content/posts`를 읽고, `design-system/styles/index.css`를 전역 stylesheet로 사용한다.
+
+```bash
+npm run dev
+npm run build
+```
+
+라우트는 `/`, `/articles/`, `/articles/{slug}/`, `/note/`, `/about/`, `/system/`으로 시작한다. `/system/`은 Markdown 요소와 디자인 시스템 표면을 확인하는 QA 페이지다.
 
 ## Working Rule
 

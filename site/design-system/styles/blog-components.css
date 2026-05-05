@@ -30,6 +30,30 @@
   margin-bottom: 72px;
 }
 
+.page-title {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.page-sub {
+  max-width: 560px;
+  margin: 0 0 56px;
+  color: var(--ink-3);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.more-link {
+  margin: 24px 0 0;
+  font-size: 15px;
+}
+
 .featured .row {
   padding: 12px 0;
 }
