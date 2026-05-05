@@ -174,7 +174,7 @@ Markdown 본문은 `Blog v2.html`의 prose CSS를 기준으로 하고, `System.h
 필수 지원:
 
 - paragraph, lead paragraph
-- h1/h2/h3
+- h1/h2/h3, plus compact h4 for existing post compatibility
 - unordered/ordered list
 - task list
 - blockquote

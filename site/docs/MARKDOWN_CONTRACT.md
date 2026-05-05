@@ -36,6 +36,7 @@
 | paragraph | `.prose p` |
 | first lead paragraph | `.prose p.lead` |
 | `##`, `###` | `.prose h2`, `.prose h3` |
+| `####` | compact `.prose h4` for existing post compatibility |
 | `*em*`, `**strong**` | normal inline emphasis |
 | inline code | `.prose code` |
 | link | `a.link` or prose link equivalent |
@@ -48,12 +49,17 @@
 | fenced code with filename | `.code-block > .filename + pre` |
 | image | `figure > img` |
 | image caption | `figcaption` |
-| footnote | `.footnotes`, `sup.footnote-ref` |
+| footnote | `.footnotes`, `sup.fn-ref` or `sup.footnote-ref` |
 | horizontal rule | `.prose hr` |
 | `<kbd>` | `.prose kbd` |
 | `mark` extension | `.prose mark` |
 
 ## Extensions
+
+Source-import compatibility:
+
+- Escaped backticks from imported posts, such as `\`` and `\`\`\``, are normalized by the renderer before Markdown parsing.
+- The site does not rewrite the source post file for this compatibility step.
 
 Callout:
 
@@ -122,6 +128,7 @@ If a paragraph immediately after an image starts with `그림 `, `Figure `, or i
 Renderer QA must render:
 
 - `../design-system/fixtures/post-markdown-fixture.md`
+- `../design-system/fixtures/component-anatomy-placeholder.svg` for the fixture figure asset
 - at least one real post without `description`, `cover`, or `featured`
 - at least one long technical post with code/table/list sections
 

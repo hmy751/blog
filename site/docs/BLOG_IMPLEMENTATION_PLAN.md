@@ -124,8 +124,9 @@ Adapter rules:
 
 - internal preview page.
 - imports `design-system/styles/system-page.css`.
-- renders the Markdown fixture output through the same prose CSS.
-- should grow toward the `System.html` specimens: swatches, type samples, article row variants, post meta, note, DL grid.
+- renders `System.html`-level specimens: swatches, type samples, spacing/radius, prose primitives, article row, live aside row, post hero/meta, note, DL grid, principles.
+- renders the Markdown fixture output through the same prose CSS under `Markdown QA`.
+- uses `shell-system` width so the preview can follow `System.html`'s wider measure without changing live blog pages.
 
 ## Component Contract
 
@@ -156,6 +157,9 @@ Minimum transforms:
 - code meta parser for filename
 - callout blockquote transform
 - mark transform for `==text==`
+- safe `<kbd>` inline preservation
+- image + caption figure transform
+- nested unordered list rendering
 - table wrapper transform
 - first H1 removal
 - excerpt extraction
@@ -199,8 +203,8 @@ Regression must check that:
 2. Import `design-system/styles/index.css`. Done.
 3. Build post adapter and route renderer. Done.
 4. Build home/articles/post with real content. Done.
-5. Implement Markdown renderer transforms. In progress.
-6. Grow `/system` until it covers `System.html` specimens.
+5. Implement Markdown renderer transforms for the current fixture surface. Done.
+6. Grow `/system` until it covers `System.html` specimens. Done for first pass.
 7. Add RSS/sitemap/metadata.
 8. Add screenshot QA and Markdown fixture route.
 

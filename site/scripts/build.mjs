@@ -1,4 +1,4 @@
-import { mkdir, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { getPosts } from "../src/content.mjs";
@@ -9,6 +9,16 @@ const outDir = path.join(siteRoot, "dist");
 
 await rm(outDir, { recursive: true, force: true });
 await mkdir(outDir, { recursive: true });
+await cp(
+  path.join(siteRoot, "design-system", "styles"),
+  path.join(outDir, "design-system", "styles"),
+  { recursive: true }
+);
+await mkdir(path.join(outDir, "design-system", "fixtures"), { recursive: true });
+await cp(
+  path.join(siteRoot, "design-system", "fixtures", "component-anatomy-placeholder.svg"),
+  path.join(outDir, "design-system", "fixtures", "component-anatomy-placeholder.svg")
+);
 
 const posts = await getPosts();
 const routes = routesForPosts(posts);

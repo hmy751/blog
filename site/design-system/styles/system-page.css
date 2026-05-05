@@ -1,3 +1,7 @@
+.shell-system {
+  max-width: calc(760px + 96px);
+}
+
 .sys-hero {
   max-width: 720px;
   margin-bottom: 96px;
@@ -287,6 +291,53 @@
   font-weight: 500;
 }
 
+.sys-page .article-list[data-thumb="system-demo"] a.row {
+  grid-template-columns: 1fr 88px;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+}
+
+.sys-page .article-list[data-thumb="system-demo"] a.row.no-thumb {
+  grid-template-columns: 1fr 72px;
+  align-items: baseline;
+  padding: 14px 0;
+}
+
+.sys-page .article-list[data-thumb="system-demo"] a.row:last-child {
+  border-bottom: 0;
+}
+
+.sys-page .article-list[data-thumb="system-demo"] .meta-col {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sys-page .article-list[data-thumb="system-demo"] .cv {
+  width: 88px;
+  height: 66px;
+  border-radius: 5px;
+}
+
+.sys-page .article-list[data-thumb="system-demo"] a.row.no-thumb .meta {
+  line-height: inherit;
+}
+
+.sys-page .sys-spec-body > .post-meta {
+  margin-bottom: 0;
+}
+
+.sys-post-title-demo {
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
 @media (max-width: 720px) {
   .sys-grid-4,
   .sys-grid-3 {
@@ -296,5 +347,20 @@
   .sys-spec {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+}
+
+@media (max-width: 560px) {
+  .sys-page .article-list[data-thumb="system-demo"] a.row,
+  .sys-page .article-list[data-thumb="system-demo"] a.row.no-thumb {
+    grid-template-columns: 1fr 64px;
+  }
+
+  .sys-page .article-list[data-thumb="system-demo"] .cv {
+    display: none;
+  }
+
+  .sys-page .article-list[data-thumb="system-demo"] .meta-col {
+    justify-content: center;
   }
 }

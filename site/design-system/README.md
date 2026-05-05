@@ -22,6 +22,7 @@
 | `styles/blog-components.css` | home/articles/post/note/about components |
 | `styles/system-page.css` | 디자인 시스템 문서/preview page 전용 styles |
 | `fixtures/post-markdown-fixture.md` | Markdown renderer QA fixture |
+| `fixtures/component-anatomy-placeholder.svg` | fixture figure가 dev/build에서 깨지지 않도록 쓰는 placeholder asset |
 
 ## Adoption Rule
 
