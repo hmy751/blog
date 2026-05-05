@@ -4,6 +4,23 @@ import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
+import { createHighlighterCore } from "shiki/core";
+import { createJavaScriptRegexEngine } from "shiki/engine/javascript";
+import bash from "shiki/langs/bash.mjs";
+import css from "shiki/langs/css.mjs";
+import diff from "shiki/langs/diff.mjs";
+import html from "shiki/langs/html.mjs";
+import javascript from "shiki/langs/javascript.mjs";
+import json from "shiki/langs/json.mjs";
+import jsx from "shiki/langs/jsx.mjs";
+import markdownLang from "shiki/langs/markdown.mjs";
+import python from "shiki/langs/python.mjs";
+import scss from "shiki/langs/scss.mjs";
+import shellscript from "shiki/langs/shellscript.mjs";
+import sql from "shiki/langs/sql.mjs";
+import tsx from "shiki/langs/tsx.mjs";
+import typescript from "shiki/langs/typescript.mjs";
+import yaml from "shiki/langs/yaml.mjs";
 import { visit } from "unist-util-visit";
 
 type MarkdownOptions = {
@@ -20,6 +37,79 @@ type AnyNode = {
   properties?: Record<string, unknown>;
   children?: AnyNode[];
 };
+
+type HighlightToken = {
+  content: string;
+  color?: string;
+};
+
+type ShikiHighlighter = Awaited<ReturnType<typeof createHighlighterCore>>;
+
+const shikiTheme = {
+  name: "blog-prose",
+  type: "light" as const,
+  fg: "#3A3833",
+  bg: "#F3F0E8",
+  colors: {
+    "editor.background": "#F3F0E8",
+    "editor.foreground": "#3A3833"
+  },
+  settings: [
+    { settings: { foreground: "#3A3833", background: "#F3F0E8" } },
+    { scope: ["comment", "punctuation.definition.comment"], settings: { foreground: "#9A978C", fontStyle: "italic" } },
+    { scope: ["string", "constant.character.escape", "markup.inline.raw"], settings: { foreground: "#2F7A32" } },
+    { scope: ["constant.numeric", "constant.language.boolean", "constant.language.null", "constant.language.undefined"], settings: { foreground: "#B45309" } },
+    { scope: ["entity.name.function", "support.function", "variable.function"], settings: { foreground: "#A16207" } },
+    { scope: ["entity.name.type", "entity.name.class", "entity.name.tag", "support.type", "support.class"], settings: { foreground: "#2563EB" } },
+    { scope: ["keyword", "storage.type", "storage.modifier"], settings: { foreground: "#7C3AED" } },
+    { scope: ["variable.object.property", "meta.object-literal.key", "support.variable.property"], settings: { foreground: "#A16207" } }
+  ]
+};
+
+const shikiLanguages = [
+  "bash",
+  "css",
+  "diff",
+  "html",
+  "javascript",
+  "json",
+  "jsx",
+  "markdown",
+  "python",
+  "scss",
+  "shellscript",
+  "sql",
+  "tsx",
+  "typescript",
+  "yaml"
+] as const;
+
+type ShikiLanguage = (typeof shikiLanguages)[number];
+
+const shikiLanguageSet = new Set<string>(shikiLanguages);
+const languageAliases: Record<string, ShikiLanguage> = {
+  cjs: "javascript",
+  js: "javascript",
+  md: "markdown",
+  mjs: "javascript",
+  py: "python",
+  sh: "shellscript",
+  shell: "shellscript",
+  ts: "typescript",
+  yml: "yaml",
+  zsh: "shellscript"
+};
+
+const tokenClassByColor: Record<string, string> = {
+  "#2563EB": "tk-t",
+  "#2F7A32": "tk-s",
+  "#7C3AED": "tk-k",
+  "#9A978C": "tk-c",
+  "#A16207": "tk-f",
+  "#B45309": "tk-n"
+};
+
+let highlighterPromise: Promise<ShikiHighlighter> | undefined;
 
 export async function markdownToHtml(markdown: string, options: MarkdownOptions = {}): Promise<string> {
   const normalized = normalizeMarkdown(markdown);
@@ -206,28 +296,49 @@ function rehypeFigures() {
 }
 
 function rehypeCodeBlocks() {
-  return (tree: AnyNode) => {
+  return async (tree: AnyNode) => {
+    const codeBlocks: Array<{ node: AnyNode; code: AnyNode; siblings: AnyNode[]; index: number }> = [];
+
     visit(tree, "element", (node: AnyNode, index: number | undefined, parent: AnyNode | undefined) => {
       if (node.tagName !== "pre" || !parent?.children || index === undefined) return;
       const code = node.children?.find((child) => child.tagName === "code");
       if (!code) return;
 
+      codeBlocks.push({ node, code, siblings: parent.children, index });
+    });
+
+    let mermaidIndex = 0;
+
+    for (const block of codeBlocks) {
+      const { node, code, siblings, index } = block;
       const lang = codeLanguage(code);
       const filename = stringProperty(code, "dataFilename");
       const label = filename || lang;
+      const source = textContent(code);
 
       delete code.properties?.dataMeta;
       delete code.properties?.dataFilename;
 
-      if (!label) return;
+      if (isMermaidLanguage(lang)) {
+        mermaidIndex += 1;
+        siblings[index] = mermaidBlock(source, filename, mermaidIndex);
+        continue;
+      }
 
-      parent.children[index] = {
+      const normalizedLanguage = normalizeCodeLanguage(lang);
+      if (normalizedLanguage) {
+        code.children = await highlightCode(source, normalizedLanguage);
+      }
+
+      if (!label) continue;
+
+      siblings[index] = {
         type: "element",
         tagName: "div",
         properties: { className: ["code-block"] },
         children: [filenameBar(lang, filename || label), node]
       };
-    });
+    }
   };
 }
 
@@ -296,8 +407,86 @@ function hasVisibleText(node: AnyNode): boolean {
   return Boolean(textContent(node).trim());
 }
 
+async function highlightCode(source: string, lang: ShikiLanguage): Promise<AnyNode[]> {
+  const highlighter = await getHighlighter();
+  const result = highlighter.codeToTokens(source, { lang, theme: shikiTheme.name });
+  const children: AnyNode[] = [];
+
+  result.tokens.forEach((line, lineIndex) => {
+    line.forEach((token) => {
+      const className = tokenClass(token);
+      children.push(className ? inlineSpan(className, token.content) : { type: "text", value: token.content });
+    });
+
+    if (lineIndex < result.tokens.length - 1) {
+      children.push({ type: "text", value: "\n" });
+    }
+  });
+
+  return children.length ? children : [{ type: "text", value: source }];
+}
+
+function getHighlighter(): Promise<ShikiHighlighter> {
+  highlighterPromise ??= createHighlighterCore({
+    engine: createJavaScriptRegexEngine(),
+    langs: [bash, css, diff, html, javascript, json, jsx, markdownLang, python, scss, shellscript, sql, tsx, typescript, yaml].flat(),
+    themes: [shikiTheme]
+  });
+
+  return highlighterPromise;
+}
+
+function tokenClass(token: HighlightToken): string {
+  if (!token.content.trim() || isNeutralSyntax(token.content)) return "";
+  const color = token.color?.toUpperCase();
+  return color ? tokenClassByColor[color] ?? "" : "";
+}
+
+function isNeutralSyntax(value: string): boolean {
+  return /^[{}()[\].,;:=<>/?|&!+\-*%^~`\\\s]+$/.test(value);
+}
+
+function inlineSpan(className: string, value: string): AnyNode {
+  return {
+    type: "element",
+    tagName: "span",
+    properties: { className: [className] },
+    children: [{ type: "text", value }]
+  };
+}
+
 function parseCodeFilename(meta: string): string {
   return meta.match(/(?:title|filename)="([^"]+)"/)?.[1] || "";
+}
+
+function mermaidBlock(source: string, filename: string, index: number): AnyNode {
+  return {
+    type: "element",
+    tagName: "div",
+    properties: { className: ["mermaid-block"], dataMermaidId: `diagram-${index}` },
+    children: [
+      filenameBar("mermaid", filename || "diagram"),
+      {
+        type: "element",
+        tagName: "div",
+        properties: { className: ["mermaid-render"], role: "img" },
+        children: []
+      },
+      {
+        type: "element",
+        tagName: "pre",
+        properties: { className: ["mermaid-source"] },
+        children: [
+          {
+            type: "element",
+            tagName: "code",
+            properties: { className: ["language-mermaid"] },
+            children: [{ type: "text", value: source }]
+          }
+        ]
+      }
+    ]
+  };
 }
 
 function filenameBar(lang: string, label: string): AnyNode {
@@ -332,6 +521,15 @@ function codeLanguage(code: AnyNode): string {
   const classes = Array.isArray(className) ? className : [];
   const languageClass = classes.find((value) => typeof value === "string" && value.startsWith("language-"));
   return typeof languageClass === "string" ? languageClass.replace(/^language-/, "") : "";
+}
+
+function normalizeCodeLanguage(lang: string): ShikiLanguage | "" {
+  const normalized = languageAliases[lang.toLowerCase()] ?? lang.toLowerCase();
+  return shikiLanguageSet.has(normalized) ? normalized as ShikiLanguage : "";
+}
+
+function isMermaidLanguage(lang: string): boolean {
+  return lang.toLowerCase() === "mermaid";
 }
 
 function stringProperty(node: AnyNode, key: string): string {

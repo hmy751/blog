@@ -4,6 +4,12 @@
   color: var(--ink);
 }
 
+html,
+body,
+#storybook-root {
+  min-width: 0;
+}
+
 .story-theme-root {
   min-height: 100vh;
   background: var(--bg);
@@ -17,6 +23,8 @@ body:has(.story-theme-root),
 }
 
 .story-canvas {
+  box-sizing: border-box;
+  width: 100%;
   max-width: calc(var(--measure) + 96px);
   margin: 0 auto;
   padding: 56px 48px 120px;

@@ -47,6 +47,7 @@
 | table | wrapped with `.table-scroll` |
 | fenced code | `.prose pre code` |
 | fenced code with filename | `.code-block > .filename + pre` |
+| fenced `mermaid` diagram | `.mermaid-block > .filename + .mermaid-render + .mermaid-source` |
 | image | `figure > img` |
 | image caption | `figcaption` |
 | footnote | `.footnotes`, `sup.fn-ref` or `sup.footnote-ref` |
@@ -104,6 +105,24 @@ renders to:
 ```
 
 The language chip comes first because both `Blog v2.html` and `System.html` use that DOM order.
+
+Syntax highlight:
+
+- Code fences with supported language names are highlighted at render time with Shiki.
+- Supported language aliases include `ts`/`typescript`, `tsx`, `js`/`javascript`, `jsx`, `json`, `css`, `scss`, `bash`/`sh`/`zsh`, `html`, `md`, `yaml`, `diff`, `sql`, and `python`.
+- Highlight output uses the site token classes `.tk-c`, `.tk-k`, `.tk-s`, `.tk-n`, `.tk-t`, and `.tk-f` rather than inline colors.
+
+Mermaid diagram:
+
+````md
+```mermaid
+flowchart LR
+  Markdown --> Renderer
+  Renderer --> Page
+```
+````
+
+renders to a `.mermaid-block`. The original source is kept in `.mermaid-source` as a fallback, and the client runtime renders the diagram into `.mermaid-render`.
 
 Mark:
 

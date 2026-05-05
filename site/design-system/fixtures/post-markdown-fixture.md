@@ -29,6 +29,7 @@ featured: false
 ### 코드 파일명
 
 ```tsx title="components/Button.tsx"
+// 변경에 약한 신호가 보인다
 type ButtonProps = {
   tone?: "neutral" | "accent" | "danger";
   children: ReactNode;
@@ -40,6 +41,15 @@ export function Button({ tone = "neutral", children }: ButtonProps) {
 ```
 
 `children`으로 받게 두면 사용자가 더 많은 자유를 얻는다. 단축키 표기는 <kbd>Command</kbd>+<kbd>K</kbd>처럼 렌더링한다.
+
+### Mermaid 다이어그램
+
+```mermaid
+flowchart LR
+  Source[Markdown source] --> Transform[markdownToHtml]
+  Transform --> Prose[Prose CSS]
+  Prose --> Page[Post page]
+```
 
 ## 2. 리스트
 

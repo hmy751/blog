@@ -17,7 +17,7 @@ export const InlineAndCallout: Story = {
   render: () => (
     <main className="story-canvas">
       <h1 className="story-heading">Prose Primitives</h1>
-      <p className="story-sub">Inline elements and callout DOM as rendered by the production prose CSS.</p>
+      <p className="story-sub">Inline elements, plain quotes, links inside quotes, and callout DOM as rendered by the production prose CSS.</p>
       <section className="story-section">
         <div className="story-spec-row">
           <div className="story-spec-label">inline</div>
@@ -28,6 +28,19 @@ export const InlineAndCallout: Story = {
                 <a className="link" href="https://example.com">link</a>, <mark>mark</mark>,{" "}
                 <kbd>Command</kbd>+<kbd>K</kbd>가 섞인다.
               </p>
+            </div>
+          </div>
+        </div>
+        <div className="story-spec-row">
+          <div className="story-spec-label">quote</div>
+          <div className="story-spec-body">
+            <div className="prose">
+              <blockquote>
+                <p>"조림으로 사랑받았지만, 사실은 조림을 잘하는 척 해왔다."</p>
+              </blockquote>
+              <blockquote>
+                <p><a className="link" href="https://example.com">Noline 앱 - App Store</a></p>
+              </blockquote>
             </div>
           </div>
         </div>

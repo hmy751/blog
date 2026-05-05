@@ -65,6 +65,7 @@ description: "실제 원고와 분리해 글 상세 페이지의 이미지, 표,
 ## 코드 블록
 
 ```tsx title="components/ExampleArticle.tsx"
+// 상세 글에서 무거운 요소가 같은 호흡으로 들어오는지 확인한다.
 type ProseElement =
   | "paragraph"
   | "figure"
@@ -84,6 +85,15 @@ export function ExampleArticle({ elements }: { elements: ProseElement[] }) {
 ```
 
 코드 블록은 `pre`만 단독으로 보일 수도 있고, 위처럼 언어와 파일명이 붙을 수도 있다. 원본 디자인 기준은 filename 내부 DOM 순서가 `<span class="lang">tsx</span><span>components/ExampleArticle.tsx</span>` 형태라는 점이다.
+
+## Mermaid 다이어그램
+
+```mermaid
+flowchart TD
+  Content[content/posts] --> Parser[Markdown parser]
+  Parser --> Renderer[Prose renderer]
+  Renderer --> Article[Article page]
+```
 
 > [!WARNING]
 > 이 fixture에 새 요소를 추가할 때는 renderer가 지원하는 Markdown 문법인지 먼저 확인한다.

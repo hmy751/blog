@@ -129,6 +129,16 @@ function ProseSection({ fixtureHtml }: Readonly<{ fixtureHtml: string }>) {
           </p>
         </div>
       </Spec>
+      <Spec label="Quote">
+        <div className="prose">
+          <blockquote>
+            <p>"조림으로 사랑받았지만, 사실은 조림을 잘하는 척 해왔다."</p>
+          </blockquote>
+          <blockquote>
+            <p><a className="link" href="#">Noline 앱 - App Store</a></p>
+          </blockquote>
+        </div>
+      </Spec>
       <Spec label="Callout">
         <div className="prose">
           <div className="callout">
