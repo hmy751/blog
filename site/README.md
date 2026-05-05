@@ -24,6 +24,9 @@
 | `docs/platform-boundary.md` | content/editorial/design/site/harness 책임 경계 |
 | `docs/CONTENT_CONTRACT.md` | `../content/posts/*.md`를 사이트가 읽는 방식 |
 | `docs/DESIGN_CONTRACT.md` | `../../blog-design` fixture에서 확정한 구현 기준 |
+| `docs/MARKDOWN_CONTRACT.md` | 상세 글 Markdown 렌더링 변환 계약 |
+| `docs/BLOG_IMPLEMENTATION_PLAN.md` | 실제 블로그 앱 구현 계획 |
+| `design-system/` | 디자인 fixture에서 가져온 구현용 CSS와 Markdown QA fixture |
 | `decisions/` | 사이트 구현과 사이트 하네스 변경의 결정 기록 |
 | `.claude/skills/` | Claude Code용 사이트 개발 skill 자리 |
 | `.claude/agents/` | Claude Code용 사이트 개발 agent 자리 |

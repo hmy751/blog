@@ -30,6 +30,7 @@ content source -> editorial writing harness
 | Editorial writing harness | `../../editorial/`, `../../.claude/`, `../../.codex/`, `../../.agents/` | 글쓰기 판단 기준, 공개 경계, 발행 준비, writing agent/skill dispatcher | 디자인 토큰 본문, 사이트 컴포넌트 구현, 프레임워크 설정 |
 | Design fixture | `../../../blog-design` | 시각 기준, 화면 시안, 디자인 시스템 fixture | 실제 글 데이터 원천, 배포 앱, 글쓰기 하네스 |
 | Site implementation | `../` | 앱 코드, 라우팅, Markdown renderer, RSS/sitemap, metadata, 사이트 검증 스크립트 | 원고의 editorial 판단, private source 해석, 글쓰기 workflow |
+| Site design system | `../design-system` | 구현용 CSS token/prose/component styles, Markdown QA fixture | 원천 디자인 시안, 글쓰기 기준, 실제 원고 데이터 |
 | Site harness | `../.claude/`, `../.codex/`, `../.agents/` | 사이트 개발 보조 agent/skill, 구현 점검, 디자인/콘텐츠 계약 확인 | 글쓰기 기준 본문, source policy 재정의, prepublish 판단 |
 
 ## Design Source
@@ -50,6 +51,8 @@ content source -> editorial writing harness
 
 - `DESIGN_CONTRACT.md`: `Blog v2.html`과 `System.html`에서 확정한 token, layout, prose, article row, post page, mobile exception.
 - `CONTENT_CONTRACT.md`: `content/posts/*.md`를 어떻게 읽는지, slug/date/tag/readTime/description/cover/featured fallback.
+- `MARKDOWN_CONTRACT.md`: 상세 글 Markdown AST를 prose DOM으로 변환하는 규칙.
+- `design-system/styles/`: 구현용 CSS source.
 - build/check scripts: Markdown 렌더링, frontmatter schema, route generation, RSS/sitemap, screenshot regression.
 
 앱은 `../../content/posts`를 source로 읽을 수 있지만, 원고를 직접 고치지 않는다. 원고 수정은 root repo에서 한다.

@@ -8,6 +8,9 @@
 - `docs/platform-boundary.md`
 - `docs/CONTENT_CONTRACT.md`
 - `docs/DESIGN_CONTRACT.md`
+- `docs/MARKDOWN_CONTRACT.md`
+- `docs/BLOG_IMPLEMENTATION_PLAN.md`
+- `design-system/README.md`
 
 ## 책임 경계
 
@@ -15,6 +18,7 @@
 - `content/` 원고를 직접 rewrite하지 않는다. 글 수정은 root의 글쓰기 하네스를 통해 처리한다.
 - `editorial/`은 글쓰기 판단 기준이며, 사이트 디자인 토큰이나 구현 계약을 저장하지 않는다.
 - `../../blog-design`는 read-only 디자인 fixture다. 구현 기준은 `docs/DESIGN_CONTRACT.md`로 번역한 뒤 적용한다.
+- 구현용 디자인 시스템 CSS와 Markdown QA fixture는 `design-system/`이 소유한다.
 
 ## 하네스 경계
 
