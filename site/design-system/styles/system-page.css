@@ -295,13 +295,13 @@
   grid-template-columns: 1fr 88px;
   align-items: center;
   gap: 20px;
-  padding: 16px 0;
+  padding-block: 16px;
 }
 
 .sys-page .article-list[data-thumb="system-demo"] a.row.no-thumb {
   grid-template-columns: 1fr 72px;
   align-items: baseline;
-  padding: 14px 0;
+  padding-block: 14px;
 }
 
 .sys-page .article-list[data-thumb="system-demo"] a.row:last-child {

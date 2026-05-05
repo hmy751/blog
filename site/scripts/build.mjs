@@ -1,4 +1,4 @@
-import { cp, mkdir, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { getPosts } from "../src/content.mjs";
@@ -14,11 +14,7 @@ await cp(
   path.join(outDir, "design-system", "styles"),
   { recursive: true }
 );
-await mkdir(path.join(outDir, "design-system", "fixtures"), { recursive: true });
-await cp(
-  path.join(siteRoot, "design-system", "fixtures", "component-anatomy-placeholder.svg"),
-  path.join(outDir, "design-system", "fixtures", "component-anatomy-placeholder.svg")
-);
+await copyFixtureAssets();
 
 const posts = await getPosts();
 const routes = routesForPosts(posts);
@@ -34,3 +30,19 @@ for (const route of routes) {
 }
 
 console.log(`Built ${routes.length} routes to ${outDir}`);
+
+async function copyFixtureAssets() {
+  const sourceDir = path.join(siteRoot, "design-system", "fixtures");
+  const targetDir = path.join(outDir, "design-system", "fixtures");
+  const staticExtensions = new Set([".avif", ".gif", ".jpg", ".jpeg", ".png", ".svg", ".webp"]);
+
+  await mkdir(targetDir, { recursive: true });
+
+  for (const entry of await readdir(sourceDir, { withFileTypes: true })) {
+    if (!entry.isFile() || !staticExtensions.has(path.extname(entry.name))) {
+      continue;
+    }
+
+    await cp(path.join(sourceDir, entry.name), path.join(targetDir, entry.name));
+  }
+}

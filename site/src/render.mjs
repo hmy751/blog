@@ -1,11 +1,12 @@
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
-import { getPostBySlug, getPosts, siteConfig } from "./content.mjs";
+import { getPostBySlug, getPosts, parseFrontmatter, siteConfig } from "./content.mjs";
 import { escapeHtml, markdownToHtml } from "./markdown.mjs";
 
 const siteRoot = fileURLToPath(new URL("..", import.meta.url));
 const fixturePath = path.join(siteRoot, "design-system", "fixtures", "post-markdown-fixture.md");
+const exampleArticlePath = path.join(siteRoot, "design-system", "fixtures", "example-article.md");
 const demoCovers = {
   olive: svgData(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200"><rect width="320" height="200" fill="#eae5d4"/><rect x="0" y="0" width="160" height="200" fill="#7a8a4a" opacity=".5"/><rect x="200" y="40" width="80" height="120" fill="#4a5a2a" opacity=".8"/></svg>`),
   wave: svgData(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200"><rect width="320" height="200" fill="#dde2ec"/><path d="M0,160 Q160,40 320,160" fill="none" stroke="#4a6da0" stroke-width="14" opacity=".7"/><path d="M0,180 Q160,80 320,180" fill="none" stroke="#2a3a60" stroke-width="6" opacity=".6"/></svg>`)
@@ -69,6 +70,14 @@ export async function renderUrl(pathname) {
     });
   }
 
+  if (pathOnly === "/system/example-article/") {
+    return htmlShell({
+      title: `Example Article | System | ${siteConfig.title}`,
+      current: "system",
+      body: await systemExampleArticlePage()
+    });
+  }
+
   return null;
 }
 
@@ -79,6 +88,7 @@ export function routesForPosts(posts) {
     "/note/",
     "/about/",
     "/system/",
+    "/system/example-article/",
     ...posts.map((post) => `/articles/${post.slug}/`)
   ];
 }
@@ -165,9 +175,13 @@ function articlesPage(posts) {
   </main>`;
 }
 
-function postPage(post, posts) {
+function postPage(post, posts, options = {}) {
   const currentIndex = posts.findIndex((item) => item.slug === post.slug);
-  const next = posts[currentIndex + 1] || posts[0];
+  const next = Object.hasOwn(options, "next")
+    ? options.next
+    : posts[currentIndex + 1] || posts[0];
+  const backHref = options.backHref || "/articles/";
+  const backLabel = options.backLabel || "← Articles";
   const subtitle = post.descriptionSource === "frontmatter" && post.description
     ? `<p class="post-sub">${escapeHtml(post.description)}</p>`
     : "";
@@ -187,11 +201,42 @@ function postPage(post, posts) {
         ${markdownToHtml(post.body, { leadFirstParagraph: true })}
       </div>
       <footer class="post-footer">
-        <a class="link" href="/articles/">← Articles</a>
+        <a class="link" href="${escapeAttribute(backHref)}">${escapeHtml(backLabel)}</a>
         ${next ? `<a class="next" href="/articles/${escapeAttribute(next.slug)}/"><span>${escapeHtml(next.title)}</span><span aria-hidden="true">→</span></a>` : ""}
       </footer>
     </article>
   </main>`;
+}
+
+async function systemExampleArticlePage() {
+  const raw = await readFile(exampleArticlePath, "utf8");
+  const { data, body } = parseFrontmatter(raw);
+  const date = String(data.date || "2026-05-05").slice(0, 10);
+  const tags = Array.isArray(data.tags) ? data.tags : [];
+  const post = {
+    title: String(data.title || "Markdown 요소 확인용 예시 글"),
+    author: data.author || "Design Fixture",
+    date,
+    dateText: date.replaceAll("-", "."),
+    dateShort: date.slice(5).replace("-", "."),
+    readTime: data.readTime || "",
+    tags,
+    primaryTag: tags[0] || "Fixture",
+    description: data.description || "",
+    descriptionSource: data.description ? "frontmatter" : "fixture",
+    cover: data.cover,
+    featured: false,
+    platform: data.platform || "Blog",
+    slug: "example-article",
+    year: date.slice(0, 4),
+    body
+  };
+
+  return postPage(post, [], {
+    backHref: "/system/",
+    backLabel: "← System",
+    next: null
+  });
 }
 
 function notePage() {
@@ -256,6 +301,7 @@ function systemHero() {
       <a href="#prose"><span class="n">04</span> Prose</a>
       <a href="#components"><span class="n">05</span> Components</a>
       <a href="#principles"><span class="n">06</span> Principles</a>
+      <a href="/system/example-article/"><span class="n">View</span> Example Article</a>
     </nav>
   </section>`;
 }

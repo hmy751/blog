@@ -21,6 +21,7 @@
 - content source: `../content/posts/*.md`
 - style source: `design-system/styles/index.css`
 - routes: home, articles, post detail, note, about, design-system preview
+- fixture routes: `/system/example-article/` for post-detail QA without touching real posts
 - generated outputs: static HTML, RSS, sitemap, metadata
 
 현재 첫 구현은 zero-dependency Node ESM static renderer다.
@@ -127,6 +128,14 @@ Adapter rules:
 - renders `System.html`-level specimens: swatches, type samples, spacing/radius, prose primitives, article row, live aside row, post hero/meta, note, DL grid, principles.
 - renders the Markdown fixture output through the same prose CSS under `Markdown QA`.
 - uses `shell-system` width so the preview can follow `System.html`'s wider measure without changing live blog pages.
+- links to `/system/example-article/` for full post-detail flow QA.
+
+### `/system/example-article`
+
+- site-only example article route.
+- reads `design-system/fixtures/example-article.md`.
+- uses the same post detail DOM, cover image, Markdown renderer, and prose CSS as production posts.
+- does not read from or write to `content/posts`.
 
 ## Component Contract
 
@@ -205,8 +214,9 @@ Regression must check that:
 4. Build home/articles/post with real content. Done.
 5. Implement Markdown renderer transforms for the current fixture surface. Done.
 6. Grow `/system` until it covers `System.html` specimens. Done for first pass.
-7. Add RSS/sitemap/metadata.
-8. Add screenshot QA and Markdown fixture route.
+7. Add post-detail fixture route for Markdown/visual QA. Done for first pass.
+8. Add RSS/sitemap/metadata.
+9. Add screenshot QA automation.
 
 ## Open Decisions
 

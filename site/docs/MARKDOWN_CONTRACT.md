@@ -1,6 +1,6 @@
 # Markdown Contract
 
-이 문서는 `content/posts/*.md`를 site 상세 글 화면으로 렌더링할 때 필요한 변환 계약이다. 기준 fixture는 `../design-system/fixtures/post-markdown-fixture.md`이며, 시각 기준은 `../design-system/styles/prose.css`다.
+이 문서는 `content/posts/*.md`를 site 상세 글 화면으로 렌더링할 때 필요한 변환 계약이다. compact fixture는 `../design-system/fixtures/post-markdown-fixture.md`, full post-detail fixture는 `../design-system/fixtures/example-article.md`이며, 시각 기준은 `../design-system/styles/prose.css`다.
 
 ## Goals
 
@@ -128,7 +128,9 @@ If a paragraph immediately after an image starts with `그림 `, `Figure `, or i
 Renderer QA must render:
 
 - `../design-system/fixtures/post-markdown-fixture.md`
+- `/system/example-article/` from `../design-system/fixtures/example-article.md`
 - `../design-system/fixtures/component-anatomy-placeholder.svg` for the fixture figure asset
+- `../design-system/fixtures/example-article-cover.svg` and `../design-system/fixtures/example-article-diagram.svg`
 - at least one real post without `description`, `cover`, or `featured`
 - at least one long technical post with code/table/list sections
 

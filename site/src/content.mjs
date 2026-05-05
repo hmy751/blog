@@ -66,7 +66,7 @@ async function readPostFile(file) {
   };
 }
 
-function parseFrontmatter(raw) {
+export function parseFrontmatter(raw) {
   const match = raw.match(/^---\n([\s\S]*?)\n---\n?/);
   if (!match) {
     return { data: {}, body: raw };

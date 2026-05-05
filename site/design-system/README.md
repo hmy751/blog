@@ -23,6 +23,9 @@
 | `styles/system-page.css` | 디자인 시스템 문서/preview page 전용 styles |
 | `fixtures/post-markdown-fixture.md` | Markdown renderer QA fixture |
 | `fixtures/component-anatomy-placeholder.svg` | fixture figure가 dev/build에서 깨지지 않도록 쓰는 placeholder asset |
+| `fixtures/example-article.md` | 실제 원고와 분리된 글 상세 페이지 QA fixture |
+| `fixtures/example-article-cover.svg` | 예시 글 cover image fixture |
+| `fixtures/example-article-diagram.svg` | 예시 글 figure image fixture |
 
 ## Adoption Rule
 
@@ -35,5 +38,6 @@ CSS class names는 prototype의 이름을 유지한다. 구현 중 컴포넌트 
 ## Non Goals
 
 - 디자인 fixture의 sample content를 실제 블로그 content로 쓰지 않는다.
+- `fixtures/example-article.md`는 `/system/example-article/` 확인용이며 `/articles` archive에 넣지 않는다.
 - 원고를 디자인에 맞추기 위해 rewrite하지 않는다.
 - `tweaks-panel.jsx`를 앱 runtime에 넣지 않는다.

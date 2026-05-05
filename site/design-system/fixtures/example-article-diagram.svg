@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Markdown rendering flow diagram</title>
+  <desc id="desc">A diagram showing Markdown source moving through renderer, prose CSS, and the final article page.</desc>
+  <rect width="960" height="540" fill="#f7f4eb"/>
+  <g fill="none" stroke="#d7cfba" stroke-width="1">
+    <path d="M80 116H880"/>
+    <path d="M80 270H880"/>
+    <path d="M80 424H880"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="80" y="150" width="190" height="116" rx="10" fill="#ede7d6" stroke="#cfc6ae"/>
+    <text x="112" y="198" fill="#20231d" font-size="22" font-weight="700">Markdown</text>
+    <text x="112" y="230" fill="#6f6a5c" font-size="15">source fixture</text>
+    <rect x="386" y="150" width="190" height="116" rx="10" fill="#dbe2cf" stroke="#b7c39c"/>
+    <text x="418" y="198" fill="#20231d" font-size="22" font-weight="700">Renderer</text>
+    <text x="418" y="230" fill="#596348" font-size="15">HTML transform</text>
+    <rect x="692" y="150" width="190" height="116" rx="10" fill="#ede7d6" stroke="#cfc6ae"/>
+    <text x="724" y="198" fill="#20231d" font-size="22" font-weight="700">Prose CSS</text>
+    <text x="724" y="230" fill="#6f6a5c" font-size="15">visual contract</text>
+    <rect x="260" y="338" width="440" height="86" rx="10" fill="#20231d"/>
+    <text x="332" y="390" fill="#f7f4eb" font-size="24" font-weight="700">Article detail page</text>
+  </g>
+  <g fill="none" stroke="#7f8f4e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M282 208H374"/>
+    <path d="M364 194l16 14-16 14"/>
+    <path d="M588 208H680"/>
+    <path d="M670 194l16 14-16 14"/>
+    <path d="M785 276C760 340 676 362 704 386"/>
+    <path d="M696 366l9 22 22-8"/>
+    <path d="M175 276C214 348 250 358 270 382"/>
+    <path d="M248 376l24 8-8-24"/>
+  </g>
+  <g font-family="JetBrains Mono, monospace" font-size="13" fill="#7a7669">
+    <text x="82" y="102">frontmatter + markdown</text>
+    <text x="386" y="102">markdownToHtml()</text>
+    <text x="692" y="102">.prose</text>
+    <text x="336" y="462">same surface as production posts</text>
+  </g>
+</svg>

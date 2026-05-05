@@ -90,11 +90,18 @@
   gap: 16px;
   padding: 14px 0;
   border-bottom: .5px solid var(--rule-soft);
-  transition: padding .15s;
+}
+
+.article-list a.row > :first-child {
+  transition: transform .15s ease;
 }
 
 .article-list a.row:hover {
-  padding-left: 8px;
+  padding-left: 0;
+}
+
+.article-list:not([data-thumb="magazine"]) a.row:hover > :first-child {
+  transform: translateX(6px);
 }
 
 .article-list a.row:hover .article-title {
@@ -145,7 +152,7 @@
   align-items: center;
   gap: 20px;
   min-height: 56px;
-  padding: 14px 0;
+  padding-block: 14px;
 }
 
 .article-list[data-thumb="aside"] a.row .meta {
@@ -266,7 +273,7 @@
   grid-template-columns: 1fr 72px 6px;
   align-items: stretch;
   gap: 16px;
-  padding: 16px 0;
+  padding-block: 16px;
 }
 
 .article-list[data-thumb="peek"] .peek-strip {
