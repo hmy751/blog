@@ -115,19 +115,19 @@ Core references:
 ## 9. Build And Visual QA
 
 - [x] `npm run build` creates static output.
-- [ ] Home desktop/mobile checked.
-- [ ] Articles desktop/mobile checked.
+- [x] Home desktop/mobile checked.
+- [x] Articles desktop/mobile checked.
 - [ ] Article row with cover checked.
-- [ ] Article row without cover checked.
-- [ ] Post without cover checked.
-- [ ] Post with cover checked.
-- [ ] Code block with filename checked.
-- [ ] Table overflow checked.
-- [ ] Image + caption checked.
-- [ ] Callout info/warn checked.
-- [ ] Footnotes checked.
-- [ ] System page checked.
-- [ ] No obvious overlap, viewport overflow, or broken nav/footer layout.
+- [x] Article row without cover checked.
+- [x] Post without cover checked.
+- [x] Post with cover checked.
+- [x] Code block with filename checked.
+- [x] Table overflow checked.
+- [x] Image + caption checked.
+- [x] Callout info/warn checked.
+- [x] Footnotes checked.
+- [x] System page checked.
+- [x] No obvious overlap, viewport overflow, or broken nav/footer layout.
 
 ## 10. Cutover
 
