@@ -1,7 +1,9 @@
+import { Fragment } from "react";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { ArticleList } from "@/components/article-row/ArticleList";
 import { PostFooter, PostHero, PostMeta } from "@/components/post/PostParts";
 import { Shell } from "@/components/shell/Shell";
+import { siteConfig } from "@/lib/site-config";
 import { fixtureCover, fixturePosts, makePost, noteItems } from "./story-fixtures";
 import "@/app/page-common.module.css";
 import "@/app/note-about.module.css";
@@ -104,7 +106,7 @@ export const NoteAndAboutPrimitives: Story = {
   render: () => (
     <main className="story-canvas">
       <h1 className="story-heading">Note / About</h1>
-      <p className="story-sub">Dormant About route and Note empty-state primitives share `note-about.module.css`.</p>
+      <p className="story-sub">Note rows and public About copy/contact primitives share `note-about.module.css`.</p>
       <section className="story-section">
         <div className="story-section-head">
           <h2 className="story-section-title">Note Rows</h2>
@@ -121,19 +123,31 @@ export const NoteAndAboutPrimitives: Story = {
       </section>
       <section className="story-section">
         <div className="story-section-head">
-          <h2 className="story-section-title">About Grid</h2>
-          <span className="story-section-kicker">dormant</span>
+          <h2 className="story-section-title">About Copy</h2>
+          <span className="story-section-kicker">public</span>
+        </div>
+        <div className="about-copy">
+          {siteConfig.about.paragraphs.map((paragraph, index) => (
+            <p className={index === 0 ? "lead" : undefined} key={paragraph}>
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </section>
+      <section className="story-section">
+        <div className="story-section-head">
+          <h2 className="story-section-title">Elsewhere Grid</h2>
+          <span className="story-section-kicker">about</span>
         </div>
         <dl className="about-grid">
-          <dt>Writer</dt>
-          <dd>myeongyeon ham</dd>
-          <dt>Focus</dt>
-          <dd>AI, Frontend, Architecture, Product</dd>
-          <dt>Archive</dt>
-          <dd>
-            <span className="yr">2024-2026</span>
-            14 posts
-          </dd>
+          {siteConfig.about.links.map((link) => (
+            <Fragment key={link.label}>
+              <dt>{link.label}</dt>
+              <dd>
+                <a className="link" href={link.href}>{link.text}</a>
+              </dd>
+            </Fragment>
+          ))}
         </dl>
       </section>
     </main>

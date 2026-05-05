@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { ArticleList } from "@/components/article-row/ArticleList";
+import AboutPage from "@/components/about/AboutPage";
 import { PostFooter, PostHero, PostMeta } from "@/components/post/PostParts";
 import { Prose } from "@/components/prose/Prose";
 import { Shell } from "@/components/shell/Shell";
@@ -126,24 +127,6 @@ export const NoteEmpty: Story = {
   )
 };
 
-export const AboutDormant: Story = {
-  render: () => (
-    <Shell current="about">
-      <main className="view">
-        <h1 className="page-title">About</h1>
-        <p className="page-sub">구현과 글쓰기 사이에서 생긴 판단을 차분히 기록합니다.</p>
-        <dl className="about-grid">
-          <dt>Writer</dt>
-          <dd>{siteConfig.author}</dd>
-          <dt>Focus</dt>
-          <dd>AI, RAG, Frontend, Architecture</dd>
-          <dt>Archive</dt>
-          <dd>
-            <span className="yr">2024-2026</span>
-            14 posts
-          </dd>
-        </dl>
-      </main>
-    </Shell>
-  )
+export const About: Story = {
+  render: () => <AboutPage />
 };

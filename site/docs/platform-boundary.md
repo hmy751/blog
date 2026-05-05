@@ -117,7 +117,7 @@ local agent/skill 역할을 바꾸면 Claude 정의와 Codex 정의의 의미를
 4. `DESIGN_CONTRACT.md`와 `CONTENT_CONTRACT.md`를 확정한다.
 5. framework scaffold와 package scripts를 `site/` 안에만 만든다.
 6. Markdown renderer와 post detail page를 먼저 구현한다.
-7. home/articles를 실제 post 콘텐츠와 연결하고, note는 optional `content/notes` source에 연결한다. About은 component로 보존하되 route 공개 전까지 App Router에 등록하지 않는다.
+7. home/articles를 실제 post 콘텐츠와 연결하고, note는 optional `content/notes` source에 연결한다. About은 site config의 공개 프로필 데이터로 `/about/` route에 등록한다.
 8. RSS, sitemap, metadata, responsive screenshot check를 붙인다.
 9. 원고 수정이 필요하면 root repo로 돌아와 `content/`와 editorial guard를 기준으로 고친다.
 

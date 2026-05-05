@@ -33,7 +33,7 @@
 - Article list: `.article-list`, `a.row`, `.article-title`, `.article-desc`, `.meta`, `.cv`, `.cv-spacer`.
 - Post: `.post-meta`, `.post-hero`, `.post-title`, `.post-sub`, `.post-footer`.
 - Note: `.notes`, `.note`, `.when`, `.body`.
-- Dormant About: `.about-grid`.
+- About: `.about-page`, `.about-title`, `.about-copy`, `.about-section`, `.about-grid`.
 - Motion: `.view`, row/note stagger animation, reduced motion guard.
 
 ## Storybook Catalog Buckets
@@ -41,7 +41,7 @@
 - Foundations: color tokens, dark token state, typography, spacing.
 - Prose: inline elements, callout states, Markdown fixture through `markdownToHtml`.
 - Components: Shell, article rows, post parts, note rows, about grid.
-- Screens: Home, mobile Home, Articles, Post detail, Note empty, dormant About.
+- Screens: Home, mobile Home, Articles, Post detail, Note empty, About.
 - System Page: parity story that imports `system-preview/app/system/system.module.css` directly.
 - CSS parity: `.storybook/main.ts` exposes production global-selector CSS Modules through `virtual:production-contract.css`.
 

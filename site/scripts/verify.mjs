@@ -10,13 +10,11 @@ const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
 const requiredFiles = [
   "index.html",
   path.join("articles", "index.html"),
-  path.join("note", "index.html")
+  path.join("note", "index.html"),
+  path.join("about", "index.html")
 ];
 
 const forbiddenOutputs = [
-  "about",
-  "about.html",
-  path.join("about", "index.html"),
   "system",
   "system.html",
   path.join("system", "index.html"),
@@ -25,7 +23,6 @@ const forbiddenOutputs = [
 ];
 
 const forbiddenHtmlLinks = [
-  /href=["']\/about(?:\/|["'#?])/,
   /href=["']\/system(?:\/|["'#?])/,
   /(?:href|src)=["']\/archive\//,
   /(?:href|src)=["']\/design-system\//

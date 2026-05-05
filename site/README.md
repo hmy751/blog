@@ -58,7 +58,7 @@ npm run verify
 
 기존 Node renderer 파일은 보존하지만 package scripts에는 노출하지 않는다. 새 구현 판단의 기준은 아니며, 과거 이력 확인이 필요할 때만 파일을 직접 읽는다.
 
-production App Router 라우트는 `/`, `/articles/`, `/articles/{slug}/`, `/note/`만 등록한다. About 화면은 `src/components/about/AboutPage.tsx`에 보존하지만 아직 route로 공개하지 않는다.
+production App Router 라우트는 `/`, `/articles/`, `/articles/{slug}/`, `/note/`, `/about/`을 등록한다. About 화면은 `src/components/about/AboutPage.tsx`가 렌더링하고, 공개 프로필 문장과 contact 값은 `src/lib/site-config.ts`에서 관리한다.
 
 `date: TBD`와 오늘보다 미래 날짜인 글은 production route/list에서 제외한다. 로컬에서 특정 기준일로 확인해야 하면 `SITE_PUBLISH_CUTOFF_DATE=YYYY-MM-DD npm run build`처럼 실행한다.
 
@@ -86,7 +86,7 @@ Cloudflare Pages 기준:
 - build command: `npm run build`
 - output directory: `out`
 
-배포 전 로컬 preflight는 `npm run verify`로 확인한다. 이 명령은 type check와 production build를 순서대로 실행하고, `out/`에 `/system`, `/about`, archive fixture asset/link가 새지 않았는지 검사한다.
+배포 전 로컬 preflight는 `npm run verify`로 확인한다. 이 명령은 type check와 production build를 순서대로 실행하고, `out/`에 `/about/`이 생성되었는지와 `/system`, archive fixture asset/link가 새지 않았는지 검사한다.
 
 `npm run preview`는 이미 만들어진 `out/`을 로컬에서 서빙한다. 없는 route는 404로 응답하므로 배포 산출물의 route 상태를 확인할 때 쓴다.
 

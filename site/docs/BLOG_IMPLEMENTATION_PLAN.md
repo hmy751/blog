@@ -22,8 +22,8 @@
 
 - content source: `../content/posts/*.md`
 - production style source: `src/styles/globals.css`, `src/styles/tokens.css`, `src/styles/base.css`, `src/styles/prose.css`, plus component CSS Modules
-- production routes: home, articles, post detail, note
-- dormant route component: About is preserved under `src/components/about/AboutPage.tsx` but not registered in App Router yet
+- production routes: home, articles, post detail, note, about
+- profile page: About is rendered through `src/components/about/AboutPage.tsx` and configured by `src/lib/site-config.ts`
 - local-only Next system preview: `/system/`, `/system/example-article/` through `npm run dev:system` or `npm run build:system`
 - Storybook design system catalog: tokens, typography, prose, components, and screen compositions through `npm run storybook`
 - generated outputs: static HTML, RSS, sitemap, metadata
@@ -138,11 +138,12 @@ Adapter rules:
 - render configured notes if a source exists.
 - otherwise show a quiet public-facing empty state using the same `note` layout.
 
-### Dormant About
+### About
 
-- preserved component using `about-grid`.
-- not registered as a production route yet.
-- profile/contact values live in `src/config/site.ts`.
+- registered as `/about/`.
+- uses the old prototype's prose and `about-grid` contact pattern.
+- does not render Work history rows.
+- profile/contact values live in `src/lib/site-config.ts`.
 
 ### System Preview (local-only separate Next app)
 
@@ -167,7 +168,7 @@ Adapter rules:
 
 - not registered under production `src/app`; not a deployed blog route.
 - imports production `src/styles/globals.css`.
-- reads production global-selector CSS Modules through `.storybook/main.ts` virtual CSS contract so Shell, rows, post parts, page headers, Note, and dormant About match the app.
+- reads production global-selector CSS Modules through `.storybook/main.ts` virtual CSS contract so Shell, rows, post parts, page headers, Note, and About match the app.
 - serves `archive/design-system/fixtures` as static Storybook assets.
 - uses browser-safe fixture `Post` data instead of reading `content/posts`.
 - covers foundations, prose primitives, component states, and full screen compositions.
@@ -185,7 +186,7 @@ Adapter rules:
 | `PostHero` | `.post-hero` |
 | `Prose` | `.prose` |
 | `NoteItem` | `.note`, `.when`, `.body` |
-| `AboutGrid` | `.about-grid` |
+| `AboutPage` | `.about-page`, `.about-title`, `.about-copy`, `.about-section`, `.about-grid` |
 
 Keep DOM class names stable until screenshot regression exists.
 
@@ -232,7 +233,7 @@ Mobile checks:
 - 390px width home
 - article rows with no-cover fallback
 - post detail code/table horizontal scroll
-- note grid collapse and dormant about grid collapse before About is exposed
+- note grid collapse and about grid/copy collapse
 
 Regression must check that:
 
