@@ -72,7 +72,7 @@ Core references:
 - [x] `src/app/articles/page.tsx`
 - [x] `src/app/articles/[slug]/page.tsx`
 - [x] `src/app/note/page.tsx`
-- [x] `src/app/about/page.tsx`
+- [x] About component preserved outside production App Router route.
 - [x] Production App Router excludes `/system` and `/system/example-article`.
 - [x] Local-only system preview runs as a separate Next app through `npm run dev:system`.
 - [x] Local-only system static preview builds as a separate Next app through `npm run build:system`.
@@ -105,7 +105,7 @@ Core references:
 - [ ] Compare article row `aside` with `Blog v2.html`.
 - [ ] Compare articles year grouping with `Blog v2.html`.
 - [ ] Compare post sequence with `Blog v2.html`.
-- [ ] Compare note/about layouts with `Blog v2.html`.
+- [ ] Compare note layout and dormant about component with `Blog v2.html` before exposing About.
 - [ ] Compare tokens with `System.html`.
 - [ ] Compare prose primitives with `System.html`.
 - [ ] Compare code filename DOM order with `System.html`.

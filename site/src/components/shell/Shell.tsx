@@ -13,8 +13,7 @@ type ShellProps = Readonly<{
 
 const navItems: Array<{ href: string; label: string; key: NavKey }> = [
   { href: "/articles/", label: "Articles", key: "articles" },
-  { href: "/note/", label: "Note", key: "note" },
-  { href: "/about/", label: "About", key: "about" }
+  { href: "/note/", label: "Note", key: "note" }
 ];
 
 export function Shell({ children, current = "home", footerExtra, shellClassName }: ShellProps) {

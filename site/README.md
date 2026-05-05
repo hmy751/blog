@@ -53,7 +53,7 @@ npm run dev:legacy
 npm run build:legacy
 ```
 
-production App Router 라우트는 `/`, `/articles/`, `/articles/{slug}/`, `/note/`, `/about/`만 등록한다.
+production App Router 라우트는 `/`, `/articles/`, `/articles/{slug}/`, `/note/`만 등록한다. About 화면은 `src/components/about/AboutPage.tsx`에 보존하지만 아직 route로 공개하지 않는다.
 
 `/system/`과 `/system/example-article/`은 배포 라우트가 아니라 디자인/Markdown QA용 local-only preview다. `site/system-preview`의 별도 Next app으로 실행하되, production `src/components`, `src/lib/markdown.ts`, `src/styles`를 import해서 연결성을 유지한다.
 

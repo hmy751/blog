@@ -20,7 +20,8 @@
 
 - content source: `../content/posts/*.md`
 - production style source: `src/styles/globals.css`, `src/styles/tokens.css`, `src/styles/base.css`, `src/styles/prose.css`, plus component CSS Modules
-- production routes: home, articles, post detail, note, about
+- production routes: home, articles, post detail, note
+- dormant route component: About is preserved under `src/components/about/AboutPage.tsx` but not registered in App Router yet
 - local-only Next system preview: `/system/`, `/system/example-article/` through `npm run dev:system` or `npm run build:system`
 - generated outputs: static HTML, RSS, sitemap, metadata
 
@@ -30,7 +31,7 @@
 | --- | --- |
 | `src/content.mjs` | `content/posts` adapter, frontmatter parse, slug/date/tag/description fallback |
 | `src/markdown.mjs` | Markdown -> prose HTML transform |
-| `src/render.mjs` | legacy renderer for home/articles/post/note/about comparison |
+| `src/render.mjs` | legacy renderer for home/articles/post/note comparison |
 | `scripts/dev.mjs` | local HTTP dev server |
 | `scripts/build.mjs` | static route generation to `dist/` |
 | `system-preview/` | local-only Next system preview app |
@@ -130,9 +131,10 @@ Adapter rules:
 - render configured notes if a source exists.
 - otherwise show a quiet empty state using the same `note` layout.
 
-### `/about`
+### Dormant About
 
-- `prose` page using `about-grid`.
+- preserved component using `about-grid`.
+- not registered as a production route yet.
 - profile/contact values live in `src/config/site.ts`.
 
 ### System Preview (local-only separate Next app)
@@ -213,7 +215,7 @@ Mobile checks:
 - 390px width home
 - article rows with no-cover fallback
 - post detail code/table horizontal scroll
-- note/about grid collapse
+- note grid collapse and dormant about grid collapse before About is exposed
 
 Regression must check that:
 

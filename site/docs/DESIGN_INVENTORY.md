@@ -11,7 +11,7 @@
 | `design-system/styles/tokens.css` | token/foundation | `src/styles/tokens.css` | Global source. Color, type, spacing, radius tokens. |
 | `design-system/styles/base.css` | base + shell global | `src/styles/base.css`, `components/shell` | Reset/link/body stays global. Shell-specific selectors can move later. |
 | `design-system/styles/prose.css` | Markdown/prose primitive | `src/styles/prose.css` | Global by necessity because Markdown output is generated HTML. |
-| `design-system/styles/blog-components.css` | mixed production pages/components | CSS Modules under `components/**` and route modules | Split home/articles/post/note/about from prototype variants. |
+| `design-system/styles/blog-components.css` | mixed production pages/components | CSS Modules under `components/**` and route modules | Split home/articles/post/note from prototype variants; About remains dormant. |
 | `design-system/styles/system-page.css` | archived system-preview source | `system-preview/app/system/system.module.css` | Keep as reference-derived source; production routes do not import it. |
 | `src/render.mjs` shell helpers | production shell | `components/shell/Shell.tsx` | Keep `.shell`, `.top`, `.brand`, `.dot`, `.nav`, `.foot`. |
 | `src/render.mjs` page helpers | production routes | `src/app/**/page.tsx` | Route ownership becomes file-system visible. |
@@ -29,7 +29,8 @@
 - Home: `.home-intro`, `.featured`, `.section-label`, `.more-link`.
 - Article list: `.article-list`, `a.row`, `.article-title`, `.article-desc`, `.meta`, `.cv`, `.cv-spacer`.
 - Post: `.post-meta`, `.post-hero`, `.post-title`, `.post-sub`, `.post-footer`.
-- Note/About: `.notes`, `.note`, `.when`, `.body`, `.about-grid`.
+- Note: `.notes`, `.note`, `.when`, `.body`.
+- Dormant About: `.about-grid`.
 - Motion: `.view`, row/note stagger animation, reduced motion guard.
 
 ## Prototype Or Archive Only

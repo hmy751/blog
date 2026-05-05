@@ -1,12 +1,8 @@
 import { Shell } from "@/components/shell/Shell";
 import { getPosts } from "@/lib/posts";
 import { siteConfig } from "@/lib/site-config";
-import "../page-common.module.css";
-import "../note-about.module.css";
-
-export const metadata = {
-  title: "About"
-};
+import "@/app/page-common.module.css";
+import "@/app/note-about.module.css";
 
 export default async function AboutPage() {
   const posts = await getPosts();

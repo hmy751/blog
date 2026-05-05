@@ -15,7 +15,7 @@ Date: 2026-05-05
 ## 2026-05-05 Update: System Preview Is Local-Only
 
 - Do not register `/system` or `/system/example-article` under Next App Router.
-- Production routes are `/`, `/articles/`, `/articles/{slug}/`, `/note/`, and `/about/`.
+- Production routes are `/`, `/articles/`, `/articles/{slug}/`, and `/note/`. About is preserved as a dormant component outside App Router.
 - Keep the design/prose QA surface as a separate Next app under `site/system-preview`, run through `npm run dev:system` and `npm run build:system`.
 - Do not copy system fixture assets into production `public/` or the default static export.
 
@@ -79,8 +79,6 @@ site/
           page.tsx
       note/
         page.tsx
-      about/
-        page.tsx
     components/
       shell/
         Shell.tsx
@@ -137,7 +135,10 @@ Keep current production URL contract:
 - `/articles`
 - `/articles/[slug]`
 - `/note`
-- `/about`
+
+Dormant component, not a production route:
+
+- About
 
 Local-only preview URLs, served only by `dev:system`/`build:system`:
 
@@ -325,7 +326,8 @@ Split component styles after the first migration works:
 
 - article row/list styles -> `ArticleRow.module.css` or `styles/components/article-row.css`
 - post meta/hero/footer/title -> post component CSS
-- note/about styles -> their page/component CSS
+- note styles -> page/component CSS
+- dormant about styles -> preserved with the dormant component
 - system preview styles -> `system-preview/app/system/system.module.css`, with production tokens/base/prose imported from `src/styles`
 
 Do not redesign during migration.
@@ -396,11 +398,11 @@ Initial classification from current files:
 - `tokens.css`: foundation, global
 - `base.css`: production shell/global reset
 - `prose.css`: Markdown/prose primitive, global by necessity
-- `blog-components.css`: mixed production pages/components, motion, note/about, plus prototype article row variants
+- `blog-components.css`: mixed production pages/components, motion, note/dormant-about, plus prototype article row variants
 - `system-page.css`: system-preview only
 - `reference/blog-design/source/*.html`: read-only design source/archive
 - `render.mjs` system sections: system-preview only
-- `render.mjs` `homePage`, `articlesPage`, `postPage`, `notePage`, `aboutPage`: production pages
+- `render.mjs` `homePage`, `articlesPage`, `postPage`, `notePage`: production pages
 - `render.mjs` `articleRow`, `navLink`, shell helpers: production components
 
 Refactor target:
@@ -492,7 +494,7 @@ Reference comparison pass:
    - article row `aside` layout
    - articles year grouping
    - post meta/hero/title/subtitle/body/footer sequence
-   - note/about layouts
+   - note layout and dormant about component
    - motion/reduced-motion behavior
 2. Compare Markdown/local system preview surfaces against `System.html`:
    - token names and values
@@ -576,7 +578,8 @@ Goal:
 Tasks:
 
 - create `src/app/layout.tsx`.
-- create `src/app/page.tsx`, `articles/page.tsx`, `articles/[slug]/page.tsx`, `note/page.tsx`, `about/page.tsx`.
+- create `src/app/page.tsx`, `articles/page.tsx`, `articles/[slug]/page.tsx`, `note/page.tsx`.
+- preserve About as a dormant component outside production App Router.
 - create `system-preview/app/**`, plus `scripts/dev-system.mjs` and `scripts/build-system.mjs`, for local-only Next system preview.
 - move shell/nav/footer into components.
 - keep `trailingSlash` behavior consistent with current generated `/route/index.html` shape.
@@ -653,7 +656,6 @@ Dependency order:
    - `/articles`
    - `/articles/[slug]`
    - `/note`
-   - `/about`
 12. Implement `system-preview/` as a local-only Next app and wrap it with `dev:system`/`build:system`.
 13. Split component/page CSS ownership while porting each component.
 14. Add `prebuild` image copy script if `content/assets` is adopted.

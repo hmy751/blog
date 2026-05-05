@@ -42,14 +42,6 @@ export async function renderUrl(pathname) {
     });
   }
 
-  if (pathOnly === "/about/") {
-    return htmlShell({
-      title: `About | ${siteConfig.title}`,
-      current: "about",
-      body: aboutPage(posts)
-    });
-  }
-
   return null;
 }
 
@@ -58,7 +50,6 @@ export function routesForPosts(posts) {
     "/",
     "/articles/",
     "/note/",
-    "/about/",
     ...posts.map((post) => `/articles/${post.slug}/`)
   ];
 }
@@ -83,7 +74,6 @@ function htmlShell({ title, description = siteConfig.description, current, body 
         <nav class="nav" aria-label="Primary navigation">
           ${navLink("/articles/", "Articles", current === "articles")}
           ${navLink("/note/", "Note", current === "note")}
-          ${navLink("/about/", "About", current === "about")}
         </nav>
       </header>
       ${body}
@@ -187,24 +177,6 @@ function notePage() {
         <div class="body">아직 site 전용 note source는 연결하지 않았습니다.</div>
       </div>
     </div>
-  </main>`;
-}
-
-function aboutPage(posts) {
-  const years = [...new Set(posts.map((post) => post.year))].sort();
-  const tags = [...new Set(posts.flatMap((post) => post.tags.slice(0, 2)))].slice(0, 8);
-
-  return `<main class="view">
-    <h1 class="page-title">About</h1>
-    <p class="page-sub">구현과 글쓰기 사이에서 생긴 판단을 차분히 기록합니다.</p>
-    <dl class="about-grid">
-      <dt>Writer</dt>
-      <dd>${escapeHtml(siteConfig.author)}</dd>
-      <dt>Focus</dt>
-      <dd>${tags.map(escapeHtml).join(", ")}</dd>
-      <dt>Archive</dt>
-      <dd><span class="yr">${escapeHtml(years[0] || "")}-${escapeHtml(years.at(-1) || "")}</span>${posts.length} posts</dd>
-    </dl>
   </main>`;
 }
 
