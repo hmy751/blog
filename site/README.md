@@ -8,7 +8,8 @@
 
 - 사이트 앱 코드, 라우팅, 컴포넌트, 스타일, Markdown renderer
 - RSS, sitemap, metadata, image/asset 처리
-- 디자인 fixture를 실제 구현 계약으로 번역한 문서
+- production CSS/component/source와 Storybook 디자인 시스템 카탈로그
+- 보존된 디자인 reference/legacy 자료를 현재 구현 기준과 구분하는 문서
 - 사이트 개발에 필요한 로컬 agent/skill 자리
 
 `site/`가 소유하지 않는다:
@@ -23,16 +24,20 @@
 | --- | --- |
 | `docs/platform-boundary.md` | content/editorial/design/site/harness 책임 경계 |
 | `docs/CONTENT_CONTRACT.md` | `../content/posts/*.md`를 사이트가 읽는 방식 |
-| `docs/DESIGN_CONTRACT.md` | `design-system/reference/blog-design` archive에서 확정한 구현 기준 |
+| `docs/DESIGN_CONTRACT.md` | 현재 production CSS/component/Storybook 기준의 디자인 계약 |
 | `docs/MARKDOWN_CONTRACT.md` | 상세 글 Markdown 렌더링 변환 계약 |
 | `docs/BLOG_IMPLEMENTATION_PLAN.md` | 실제 블로그 앱 구현 계획 |
-| `design-system/` | 디자인 fixture에서 가져온 구현용 CSS와 Markdown QA fixture |
-| `design-system/reference/blog-design/` | Claude Design 원본 HTML/JSX archive와 source map |
+| `decisions/2026-05-05-design-system-legacy-boundary.md` | `design-system/` 보존/legacy 경계 결정 |
 | `src/` | Next App Router app, components, content adapter, Markdown renderer |
+| `src/styles/` | production token/base/prose CSS source |
 | `src/stories/` | Storybook 디자인 시스템 stories와 browser-safe fixture data |
-| `.storybook/` | Storybook 설정. production CSS contract와 fixture assets를 연결한다. |
+| `.storybook/` | Storybook 설정. production CSS contract와 local-only fixture assets를 연결한다. |
 | `system-preview/` | 배포 앱과 분리된 local-only Next system preview app |
-| `scripts/` | legacy local dev/build scripts and preview/build wrappers |
+| `design-system/` | 삭제하지 않는 legacy/reference bucket. 현재 구현 기준으로 직접 쓰지 않는다. |
+| `design-system/reference/blog-design/` | Claude Design 원본 HTML/JSX archive와 source map |
+| `design-system/styles/` | legacy Node renderer CSS snapshot |
+| `design-system/fixtures/` | Storybook/system-preview가 공유하는 local-only QA asset bucket |
+| `scripts/` | Next, Storybook, system-preview, legacy local dev/build wrappers |
 | `decisions/` | 사이트 구현과 사이트 하네스 변경의 결정 기록 |
 | `.claude/skills/` | Claude Code용 사이트 개발 skill 자리 |
 | `.claude/agents/` | Claude Code용 사이트 개발 agent 자리 |
@@ -49,12 +54,7 @@ npm run build
 npm run verify
 ```
 
-기존 Node renderer는 전환 검증과 비교를 위해 legacy script로 남겨둔다.
-
-```bash
-npm run dev:legacy
-npm run build:legacy
-```
+기존 Node renderer 파일은 보존하지만 package scripts에는 노출하지 않는다. 새 구현 판단의 기준은 아니며, 과거 이력 확인이 필요할 때만 파일을 직접 읽는다.
 
 production App Router 라우트는 `/`, `/articles/`, `/articles/{slug}/`, `/note/`만 등록한다. About 화면은 `src/components/about/AboutPage.tsx`에 보존하지만 아직 route로 공개하지 않는다.
 
@@ -67,7 +67,7 @@ npm run build:system
 
 `dev:system`은 기본적으로 `http://127.0.0.1:4322/system/`을 연다. `build:system` 산출물은 `system-dist/`에 만들며 배포 대상이 아니다.
 
-Storybook은 디자인 시스템 카탈로그로 쓴다. 토큰, typography, prose, component state, screen composition을 fixture data로 확인하고, `system-preview`는 실제 Next route와 Markdown renderer 결합 QA로 유지한다. Storybook preview는 production 전역 CSS를 import하고, 전역 selector만 가진 CSS Modules는 `.storybook/main.ts`의 virtual CSS contract로 읽어 같은 선택자에 적용한다.
+Storybook은 현재 디자인 시스템 카탈로그로 쓴다. 토큰, typography, prose, component state, screen composition을 fixture data로 확인하고, `system-preview`는 실제 Next route와 Markdown renderer 결합 QA로 유지한다. Storybook preview는 production 전역 CSS를 import하고, 전역 selector만 가진 CSS Modules는 `.storybook/main.ts`의 virtual CSS contract로 읽어 같은 선택자에 적용한다.
 
 ```bash
 npm run storybook
@@ -90,6 +90,6 @@ server-only Next 기능은 쓰지 않는다. Markdown body 이미지는 우선 p
 
 사이트는 `../content/posts`를 읽을 수 있지만 원고를 조용히 고치지 않는다. 원고 수정이 필요하면 root repo의 `content/`와 글쓰기 guard로 돌아간다.
 
-디자인 reference archive는 `design-system/reference/blog-design`를 read-only로 참고한다. 색, spacing, 컴포넌트 상세값은 `docs/DESIGN_CONTRACT.md`에 확정된 뒤 구현한다.
+현재 UI/스타일 판단은 production code와 Storybook에서 한다. `design-system/reference/blog-design`는 원형 판단을 복원할 때만 read-only evidence로 참고하고, `design-system/styles`를 production CSS로 다시 복사하지 않는다.
 
 사이트 전용 agent/skill이 필요해지면 이 폴더 안에 둔다. root `.claude/`, `.codex/`, `.agents/`는 글쓰기/발행 하네스 전용으로 유지한다.

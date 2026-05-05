@@ -5,6 +5,8 @@ scope: site design system preview
 
 # Storybook Design System Surface
 
+2026-05-05 업데이트: 이 결정 이후 `design-system/`의 현재 역할은 `2026-05-05-design-system-legacy-boundary.md`에서 정리한다. Storybook과 production code가 현재 디자인 시스템 기준이고, `design-system/fixtures`는 아직 공유되는 local-only fixture asset bucket으로만 쓴다.
+
 ## Background
 
 The site already has a local-only `system-preview` Next app for checking design tokens, prose primitives, article rows, and example post rendering. As the production site grows, the preview page is becoming a combined demo and route integration surface.

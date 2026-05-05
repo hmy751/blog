@@ -3,6 +3,8 @@
 작성일: 2026-05-05
 상태: accepted
 
+2026-05-05 업데이트: legacy Node renderer 파일은 보존하지만 `package.json` scripts에서는 제거했다. 현재 실행 진입점은 Next/Storybook/system-preview scripts만 노출한다.
+
 ## 배경
 
 현재 `site/`는 zero-dependency Node ESM renderer로 정적 HTML을 만든다. 배포 전까지는 빠르게 움직이기 좋았지만, route map, shell, page composition, Markdown renderer, CSS ownership이 `src/render.mjs`와 전역 CSS에 섞여 있어 유지보수 경계가 흐려졌다.
@@ -23,7 +25,7 @@
 
 - `next.config.mjs`는 `output: "export"`와 `trailingSlash: true`를 사용한다.
 - `npm run build`는 Next static export를 생성한다.
-- 기존 Node renderer는 route parity와 visual QA가 끝날 때까지 `dev:legacy`, `build:legacy`로 보존한다.
+- 기존 Node renderer 파일은 route parity와 visual QA 이력으로 보존한다. 현재 package scripts에는 노출하지 않는다.
 - `/system`과 `/system/example-article`은 production App Router에 등록하지 않는다. 디자인/Markdown QA가 필요하면 `system-preview/` 별도 Next app을 `dev:system`, `build:system`으로 실행한다.
 - `content/posts/*.md`는 build time에만 읽고, site code가 원고를 수정하지 않는다.
 - Markdown은 `gray-matter` + `unified`/`remark`/`rehype` pipeline으로 옮긴다.

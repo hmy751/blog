@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173 --outDir out",
     "dev:next": "next dev",
     "build:next": "next build",
     "check": "tsc --noEmit && tsc -p system-preview/tsconfig.json --noEmit",
@@ -13,9 +14,7 @@
     "storybook": "storybook dev -p 6006 --host 127.0.0.1",
     "build:storybook": "storybook build",
     "dev:system": "node scripts/dev-system.mjs",
-    "build:system": "node scripts/build-system.mjs",
-    "dev:legacy": "node scripts/dev.mjs",
-    "build:legacy": "node scripts/build.mjs"
+    "build:system": "node scripts/build-system.mjs"
   },
   "engines": {
     "node": ">=20"

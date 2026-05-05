@@ -4,6 +4,8 @@
 관련 커밋: 89f9d3d
 상태: accepted
 
+2026-05-05 업데이트: 이 결정은 `design-system/`을 처음 구현 layer로 반입한 이력이다. Next App Router와 Storybook 이관 이후 현재 운영 기준은 `2026-05-05-design-system-legacy-boundary.md`가 우선한다. `design-system/`은 삭제하지 않는 legacy/reference bucket으로 보존하되 current production source로 쓰지 않는다.
+
 ## 배경
 
 `../blog-design`에는 `Blog v2.html`과 `System.html` 형태로 커스텀 블로그의 디자인 시안과 상세 글 Markdown/prose 요소가 이미 들어 있었다. 사이트 앱을 만들기 전에 이 기준을 단순 참고 문서가 아니라 `site/` 안의 구현 가능한 design system layer로 가져올 필요가 있었다.

@@ -9,6 +9,7 @@
 - `docs/CONTENT_CONTRACT.md`
 - `docs/DESIGN_CONTRACT.md`
 - `docs/MARKDOWN_CONTRACT.md`
+- `decisions/2026-05-05-design-system-legacy-boundary.md`
 - `docs/BLOG_IMPLEMENTATION_PLAN.md`
 - `design-system/README.md`
 
@@ -17,8 +18,9 @@
 - `site/`는 앱 코드, 라우팅, UI 컴포넌트, Markdown renderer, RSS/sitemap, metadata, 배포/검증 스크립트를 소유한다.
 - `content/` 원고를 직접 rewrite하지 않는다. 글 수정은 root의 글쓰기 하네스를 통해 처리한다.
 - `editorial/`은 글쓰기 판단 기준이며, 사이트 디자인 토큰이나 구현 계약을 저장하지 않는다.
-- `../../blog-design`는 read-only 디자인 fixture다. 구현 기준은 `docs/DESIGN_CONTRACT.md`로 번역한 뒤 적용한다.
-- 구현용 디자인 시스템 CSS와 Markdown QA fixture는 `design-system/`이 소유한다.
+- 현재 UI/스타일 구현 기준은 `src/`, `src/styles/`, component CSS Modules, `src/stories/`, `.storybook/`이 소유한다.
+- `system-preview/`는 production components/styles/Markdown renderer를 묶어 보는 local-only 결합 QA surface다.
+- `design-system/`은 삭제하지 않는 legacy/reference bucket이다. `reference/blog-design`는 Claude Design 원본 archive, `styles/`는 legacy renderer CSS snapshot, `fixtures/`는 local-only QA asset bucket으로만 본다.
 
 ## 하네스 경계
 
@@ -31,5 +33,6 @@
 
 - 사이트 코드가 root `editorial/` 안에 들어간다.
 - 사이트 구현 문제를 원고 HTML 증가로 해결한다.
+- `design-system/styles`나 prototype HTML을 current production source처럼 복사한다.
 - 사이트 하네스가 글쓰기 workflow나 voice 기준을 자기 파일에 누적한다.
 - 앱이 `content/posts`를 자동 수정한다.

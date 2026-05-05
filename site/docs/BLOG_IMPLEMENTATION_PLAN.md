@@ -1,6 +1,8 @@
 # Blog Implementation Plan
 
-이 문서는 `site/design-system/reference/blog-design/source`의 Claude Design 원본을 실제 블로그 앱으로 옮기는 구현 계획이다. 현재 결정은 앱 코드를 `site/` 아래에만 두고, 원본 reference archive와 구현 CSS/renderer를 분리한다는 것이다.
+이 문서는 `site/design-system/reference/blog-design/source`의 Claude Design 원본을 실제 블로그 앱으로 옮기기 위해 작성한 구현 계획이다. 현재는 Next App Router와 Storybook 이관이 끝났으므로, 운영 기준은 `DESIGN_CONTRACT.md`와 `decisions/2026-05-05-design-system-legacy-boundary.md`를 따른다.
+
+요약: production source는 `src/`와 `src/styles/`, 현재 디자인 시스템 카탈로그는 Storybook, route-level QA는 `system-preview/`다. `design-system/`은 삭제하지 않는 legacy/reference bucket이다.
 
 ## Source Hierarchy
 
@@ -26,7 +28,7 @@
 - Storybook design system catalog: tokens, typography, prose, components, and screen compositions through `npm run storybook`
 - generated outputs: static HTML, RSS, sitemap, metadata
 
-현재 첫 구현은 zero-dependency Node ESM static renderer였고, 2026-05-05부터 Next.js App Router + static export로 전환했다. 기존 renderer는 비교용 legacy script로만 보존하고, system preview는 별도 Next app인 `system-preview/`에서 production components/lib/styles를 import한다.
+현재 첫 구현은 zero-dependency Node ESM static renderer였고, 2026-05-05부터 Next.js App Router + static export로 전환했다. 기존 renderer 파일은 legacy 이력으로 보존하되 package scripts에는 노출하지 않는다. system preview는 별도 Next app인 `system-preview/`에서 production components/lib/styles를 import한다.
 
 | File | Role |
 | --- | --- |

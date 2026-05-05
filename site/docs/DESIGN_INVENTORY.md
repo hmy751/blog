@@ -2,16 +2,18 @@
 
 작성일: 2026-05-05
 
-이 문서는 Next static migration 동안 디자인 source와 CSS ownership을 헷갈리지 않기 위한 작업용 목록이다. 구현 기준은 `DESIGN_CONTRACT.md`가 소유하고, 이 파일은 어느 스타일이 어느 레이어에 속하는지 보여준다.
+이 문서는 Next static migration 동안 디자인 source와 CSS ownership을 헷갈리지 않기 위해 만든 이관 기록이다. 현재 운영 기준은 `DESIGN_CONTRACT.md`와 `decisions/2026-05-05-design-system-legacy-boundary.md`를 따른다.
+
+요약: `src/styles/`, component CSS Modules, `.storybook/`, `src/stories/`, `system-preview/`가 현재 기준이다. `design-system/`은 삭제하지 않는 legacy/reference bucket이다.
 
 ## Ownership Table
 
 | Current source | Classification | Next target | Notes |
 | --- | --- | --- | --- |
-| `design-system/styles/tokens.css` | token/foundation | `src/styles/tokens.css` | Global source. Color, type, spacing, radius tokens. |
-| `design-system/styles/base.css` | base + shell global | `src/styles/base.css`, `components/shell` | Reset/link/body stays global. Shell-specific selectors can move later. |
-| `design-system/styles/prose.css` | Markdown/prose primitive | `src/styles/prose.css` | Global by necessity because Markdown output is generated HTML. |
-| `design-system/styles/blog-components.css` | mixed production pages/components | CSS Modules under `components/**` and route modules | Split home/articles/post/note from prototype variants; About remains dormant. |
+| `design-system/styles/tokens.css` | legacy token/foundation snapshot | `src/styles/tokens.css` | Current global source is in `src/styles`. |
+| `design-system/styles/base.css` | legacy base + shell global snapshot | `src/styles/base.css`, `components/shell` | Current reset/body source is global; Shell selectors live with components. |
+| `design-system/styles/prose.css` | legacy Markdown/prose primitive snapshot | `src/styles/prose.css` | Current prose source is `src/styles/prose.css`. |
+| `design-system/styles/blog-components.css` | legacy mixed production pages/components snapshot | CSS Modules under `components/**` and route modules | Current component source is CSS Modules and route modules. |
 | `design-system/styles/system-page.css` | archived system-preview source | `system-preview/app/system/system.module.css` | Keep as reference-derived source; production routes do not import it. |
 | `src/render.mjs` shell helpers | production shell | `components/shell/Shell.tsx` | Keep `.shell`, `.top`, `.brand`, `.dot`, `.nav`, `.foot`. |
 | `src/render.mjs` page helpers | production routes | `src/app/**/page.tsx` | Route ownership becomes file-system visible. |

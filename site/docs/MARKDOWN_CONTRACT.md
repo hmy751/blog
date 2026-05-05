@@ -1,6 +1,8 @@
 # Markdown Contract
 
-이 문서는 `content/posts/*.md`를 site 상세 글 화면으로 렌더링할 때 필요한 변환 계약이다. compact fixture는 `../design-system/fixtures/post-markdown-fixture.md`, full post-detail fixture는 `../design-system/fixtures/example-article.md`이며, 시각 기준은 `../design-system/styles/prose.css`다.
+이 문서는 `content/posts/*.md`를 site 상세 글 화면으로 렌더링할 때 필요한 변환 계약이다. 현재 렌더링 구현은 `../src/lib/markdown.ts`가 소유하고, 시각 기준은 `../src/styles/prose.css`와 Storybook Prose stories가 소유한다.
+
+`../design-system/fixtures`는 아직 Storybook과 system-preview가 공유하는 local-only fixture asset bucket이다. fixture Markdown과 SVG는 QA 자산이며 production content나 current design source가 아니다.
 
 ## Goals
 
@@ -146,11 +148,11 @@ If a paragraph immediately after an image starts with `그림 `, `Figure `, or i
 
 Renderer QA must render:
 
-- `../design-system/fixtures/post-markdown-fixture.md`
-- local-only `/system/example-article/` preview from `../design-system/fixtures/example-article.md`
-- `../design-system/fixtures/component-anatomy-placeholder.svg` for the fixture figure asset
-- `../design-system/fixtures/example-article-cover.svg` and `../design-system/fixtures/example-article-diagram.svg`
+- Storybook `Design System/Prose` Markdown fixture from `../src/stories/story-fixtures.ts`
+- Storybook `Design System/Screens/PostDetail`
+- local-only `/system/` and `/system/example-article/` preview
+- shared local-only assets in `../design-system/fixtures`
 - at least one real post without `description`, `cover`, or `featured`
 - at least one long technical post with code/table/list sections
 
-Before shipping, compare these against the visual patterns in `../design-system/reference/blog-design/source/Blog v2.html` and `../design-system/reference/blog-design/source/System.html`.
+Before shipping, compare Storybook, system-preview, and at least one real article route. Use `../design-system/reference/blog-design/source/*.html` only when the original design intent needs to be recovered.
