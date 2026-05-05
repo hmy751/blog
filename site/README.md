@@ -46,6 +46,7 @@
 ```bash
 npm run dev
 npm run build
+npm run verify
 ```
 
 기존 Node renderer는 전환 검증과 비교를 위해 legacy script로 남겨둔다.
@@ -80,6 +81,8 @@ Cloudflare Pages 기준:
 - project root: `site`
 - build command: `npm run build`
 - output directory: `out`
+
+배포 전 로컬 preflight는 `npm run verify`로 확인한다. 이 명령은 type check와 production build를 순서대로 실행하고, `out/`에 `/system`, `/about`, design-system fixture asset/link가 새지 않았는지 검사한다.
 
 server-only Next 기능은 쓰지 않는다. Markdown body 이미지는 우선 plain `<img>`로 렌더링한다. 디자인 시스템 fixture asset은 production `public/`에 두지 않고 `dev:system`/`build:system` 실행 시 local-only preview public folder로 동기화한다.
 

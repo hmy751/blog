@@ -251,8 +251,9 @@ Regression must check that:
 9. Port content adapter and Markdown renderer to TypeScript/unified. Done for first pass.
 10. Split production component CSS into route/component ownership. Done for first pass.
 11. Add Storybook design system catalog. Done for first pass.
-12. Add RSS/sitemap/metadata.
-13. Add screenshot QA automation.
+12. Add production export preflight verification for type/build and local-only route leak checks. Done.
+13. Add RSS/sitemap/metadata.
+14. Add screenshot QA automation.
 
 ## Open Decisions
 
