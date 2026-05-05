@@ -23,7 +23,9 @@
   font-weight: 600;
   letter-spacing: -0.028em;
   line-height: 1.15;
+  overflow-wrap: anywhere;
   text-wrap: balance;
+  word-break: keep-all;
 }
 
 .sys-lead {
@@ -59,6 +61,8 @@
 }
 
 .sys-toc a:last-child {
+  flex-basis: 100%;
+  margin-top: 6px;
   margin-right: 0;
   border-right: 0;
 }
@@ -144,6 +148,18 @@
   border-radius: 6px;
 }
 
+.sys-sw-chip-rule {
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+.sys-sw-chip-rule::before {
+  content: "";
+  width: 100%;
+  border-top: .5px solid var(--sys-rule-swatch);
+}
+
 .sys-sw-meta {
   display: flex;
   flex-direction: column;
@@ -190,6 +206,8 @@
 
 .sys-type-sample {
   color: var(--ink);
+  overflow-wrap: anywhere;
+  word-break: keep-all;
 }
 
 .sys-spacing {
@@ -347,6 +365,16 @@
   .sys-spec {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+
+  .sys-type-meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .sys-type-spec {
+    white-space: normal;
   }
 }
 

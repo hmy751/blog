@@ -676,8 +676,10 @@ function systemPrinciplesSection() {
 }
 
 function systemSwatch(name, value) {
+  const isRule = name === "--rule" || name === "--rule-soft";
+
   return `<div class="sys-sw">
-    <div class="sys-sw-chip" style="background:var(${escapeAttribute(name)});"></div>
+    <div class="sys-sw-chip${isRule ? " sys-sw-chip-rule" : ""}" style="${isRule ? `--sys-rule-swatch:var(${escapeAttribute(name)});` : `background:var(${escapeAttribute(name)});`}"></div>
     <div class="sys-sw-meta">
       <div class="sys-sw-name">${escapeHtml(name)}</div>
       <div class="sys-sw-val">${escapeHtml(value)}</div>

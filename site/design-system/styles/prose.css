@@ -21,6 +21,8 @@
   font-family: var(--sans);
   font-weight: 600;
   letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
 }
 
 .prose h1 {
@@ -69,6 +71,7 @@
 }
 
 .prose code {
+  overflow-wrap: anywhere;
   padding: 2px 6px;
   border-radius: 4px;
   background: var(--surface);
@@ -91,6 +94,7 @@
 }
 
 .prose pre code {
+  overflow-wrap: normal;
   padding: 0;
   background: transparent;
   font-size: inherit;
@@ -109,10 +113,17 @@
   color: var(--ink-2);
 }
 
+.prose ul + ol,
+.prose ol + ul,
+.prose ul + ul,
+.prose ol + ol {
+  margin-top: -.72em;
+}
+
 .prose ul li,
 .prose ol li {
-  margin: .35em 0;
-  padding-left: .25em;
+  margin: .32em 0;
+  padding-left: 0;
 }
 
 .prose ul {
@@ -121,15 +132,15 @@
 
 .prose ul > li {
   position: relative;
-  padding-left: 1.4em;
+  padding-left: 1.35em;
 }
 
 .prose ul > li::before {
   content: "";
   position: absolute;
-  left: .35em;
-  top: .82em;
-  width: 5px;
+  left: .1em;
+  top: .86em;
+  width: 6px;
   height: 1px;
   background: var(--ink-4);
 }
@@ -141,7 +152,7 @@
 
 .prose ol > li {
   position: relative;
-  padding-left: 2.2em;
+  padding-left: 1.48em;
   counter-increment: ol;
 }
 
@@ -149,18 +160,19 @@
   content: counter(ol) ".";
   position: absolute;
   left: 0;
-  top: 0;
-  width: 1.7em;
+  top: .04em;
+  width: .95em;
   color: var(--ink-4);
   font-family: var(--mono);
-  font-size: .85em;
+  font-size: .82em;
   font-variant-numeric: tabular-nums;
+  line-height: inherit;
   text-align: right;
 }
 
 .prose li > ul,
 .prose li > ol {
-  margin: .4em 0 .2em;
+  margin: .35em 0 .15em;
 }
 
 .prose ul.task,
@@ -170,8 +182,11 @@
 
 .prose ul.task > li,
 .prose li.task-list-item {
+  --task-box-size: 13px;
+  --task-box-center: .875em;
+
   position: relative;
-  padding-left: 1.8em;
+  padding-left: 1.48em;
   list-style: none;
 }
 
@@ -179,13 +194,14 @@
 .prose li.task-list-item::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: .5em;
-  width: 13px;
-  height: 13px;
+  left: .04em;
+  top: var(--task-box-center);
+  width: var(--task-box-size);
+  height: var(--task-box-size);
   border: .5px solid var(--rule);
   border-radius: 3px;
   background: transparent;
+  transform: translateY(-50%);
 }
 
 .prose ul.task > li.done::before,
@@ -198,13 +214,13 @@
 .prose li.task-list-item.checked::after {
   content: "";
   position: absolute;
-  left: 3px;
-  top: .82em;
+  left: calc(.04em + 3px);
+  top: calc(var(--task-box-center) - 1px);
   width: 7px;
   height: 4px;
   border-left: 1.5px solid var(--bg);
   border-bottom: 1.5px solid var(--bg);
-  transform: rotate(-45deg);
+  transform: translateY(-50%) rotate(-45deg);
 }
 
 .prose ul.task > li.done,

@@ -152,6 +152,7 @@ footer.foot .links {
 @media (max-width: 520px) {
   .top {
     align-items: flex-start;
+    flex-direction: column;
     gap: 28px;
   }
 

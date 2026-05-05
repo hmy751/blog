@@ -38,6 +38,8 @@
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.25;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
 }
 
 .page-sub {
@@ -114,7 +116,9 @@
   font-size: 16.5px;
   font-weight: 500;
   letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
   transition: color .15s;
+  word-break: keep-all;
 }
 
 .article-desc {
@@ -341,7 +345,9 @@
   font-weight: 600;
   letter-spacing: -0.028em;
   line-height: 1.2;
+  overflow-wrap: anywhere;
   text-wrap: balance;
+  word-break: keep-all;
 }
 
 .post-sub {
