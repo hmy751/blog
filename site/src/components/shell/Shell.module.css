@@ -99,6 +99,7 @@
 
 :global(footer.foot .links) {
   display: flex;
+  flex-wrap: wrap;
   gap: 18px;
 }
 

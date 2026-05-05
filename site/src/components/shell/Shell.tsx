@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { siteConfig } from "@/lib/site-config";
 import "./Shell.module.css";
 
 export type NavKey = "home" | "articles" | "note" | "about";
@@ -17,8 +18,28 @@ const navItems: Array<{ href: string; label: string; key: NavKey }> = [
   { href: "/about/", label: "About", key: "about" }
 ];
 
+const footerLinks = siteConfig.about.links;
+
 export function Shell({ children, current = "home", footerExtra, shellClassName }: ShellProps) {
   const year = new Date().getFullYear();
+  const footerContent = footerExtra ?? (
+    <>
+      {footerLinks.map((link) => {
+        const isExternal = link.href.startsWith("http");
+
+        return (
+          <a
+            href={link.href}
+            key={link.label}
+            rel={isExternal ? "noreferrer" : undefined}
+            target={isExternal ? "_blank" : undefined}
+          >
+            {link.label}
+          </a>
+        );
+      })}
+    </>
+  );
 
   return (
     <div className={`shell${shellClassName ? ` ${shellClassName}` : ""}`}>
@@ -38,7 +59,7 @@ export function Shell({ children, current = "home", footerExtra, shellClassName 
       {children}
       <footer className="foot">
         <span>Blog / {year}</span>
-        {footerExtra ? <span className="links">{footerExtra}</span> : null}
+        <span className="links">{footerContent}</span>
       </footer>
     </div>
   );

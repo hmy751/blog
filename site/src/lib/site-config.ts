@@ -23,11 +23,6 @@ export const siteConfig = {
         label: "Email",
         text: "hmy751.dev@gmail.com",
         href: "mailto:hmy751.dev@gmail.com"
-      },
-      {
-        label: "Medium",
-        text: "@hmy751",
-        href: "https://medium.com/@hmy751"
       }
     ]
   }

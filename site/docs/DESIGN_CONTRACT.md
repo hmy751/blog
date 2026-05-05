@@ -39,6 +39,7 @@ production CSS source는 `../src/styles/`와 component CSS Modules에 둔다. `.
 - 큰 hero, floating card, 장식 gradient, 두꺼운 shadow를 쓰지 않는다.
 - 얇은 rule, 넓은 여백, 좁은 measure, prose 품질이 시각 정체성이다.
 - nav는 현재 `Articles`, `Note`, `About`을 노출한다. `About`은 profile page이고, 글 목록/Archive 통계가 아니라 공개 가능한 소개 문장과 contact link만 보여준다.
+- production footer 오른쪽에는 `siteConfig.about.links`의 public contact link를 짧은 label로 보여준다. 현재는 `GitHub`, `Email`만 둔다.
 
 ## Reference Invariants
 
