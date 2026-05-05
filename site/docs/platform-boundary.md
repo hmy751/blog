@@ -28,22 +28,23 @@ content source -> editorial writing harness
 | --- | --- | --- | --- |
 | Content source | `../../content/posts/`, `../../content/drafts/`, `../../content/backlog/` | 공개 원고, 초안, 글감, frontmatter의 발행 기준 | 라우팅, 빌드, UI 컴포넌트, RSS 생성 구현 |
 | Editorial writing harness | `../../editorial/`, `../../.claude/`, `../../.codex/`, `../../.agents/` | 글쓰기 판단 기준, 공개 경계, 발행 준비, writing agent/skill dispatcher | 디자인 토큰 본문, 사이트 컴포넌트 구현, 프레임워크 설정 |
-| Design fixture | `../../../blog-design` | 시각 기준, 화면 시안, 디자인 시스템 fixture | 실제 글 데이터 원천, 배포 앱, 글쓰기 하네스 |
+| Design reference archive | `../design-system/reference/blog-design` | Claude Design 원본 HTML/JSX, 시각 기준, 디자인 시스템 fixture | 실제 글 데이터 원천, 배포 앱, 글쓰기 하네스 |
 | Site implementation | `../` | 앱 코드, 라우팅, Markdown renderer, RSS/sitemap, metadata, 사이트 검증 스크립트 | 원고의 editorial 판단, private source 해석, 글쓰기 workflow |
-| Site design system | `../design-system` | 구현용 CSS token/prose/component styles, Markdown QA fixture | 원천 디자인 시안, 글쓰기 기준, 실제 원고 데이터 |
+| Site design system | `../design-system/styles`, `../design-system/fixtures` | 구현용 CSS token/prose/component styles, Markdown QA fixture | 글쓰기 기준, 실제 원고 데이터 |
 | Site harness | `../.claude/`, `../.codex/`, `../.agents/` | 사이트 개발 보조 agent/skill, 구현 점검, 디자인/콘텐츠 계약 확인 | 글쓰기 기준 본문, source policy 재정의, prepublish 판단 |
 
 ## Design Source
 
-`../../../blog-design`는 read-only 디자인 fixture로 다룬다.
+`../design-system/reference/blog-design`는 read-only 디자인 reference archive로 다룬다.
 
-- `Blog v2.html`: 현재 블로그 화면 시안의 기준이다. 홈, 글 목록, 글 상세, Note, About, footer, thumbnail variant를 포함한다.
-- `System.html`: 토큰, prose, 컴포넌트 표준을 문서화한 기준이다. 다만 `Blog v2.html`과 충돌하는 부분은 구현 전에 동기화한다.
-- `Blog.html`: v1/prototype로 본다. 새 구현 기준은 아니다.
-- `screenshots/`: 스냅샷 참고 자료다. 현재 HTML 렌더와 다르면 HTML을 우선한다.
-- `tweaks-panel.jsx`: 디자인 조정용 프로토타입 도구다. 배포 앱의 런타임 계약으로 가져오지 않는다.
+- `source/Blog v2.html`: 현재 블로그 화면 시안의 기준이다. 홈, 글 목록, 글 상세, Note, About, footer, thumbnail variant를 포함한다.
+- `source/System.html`: 토큰, prose, 컴포넌트 표준을 문서화한 기준이다. 다만 `Blog v2.html`과 충돌하는 부분은 구현 전에 동기화한다.
+- `source/Blog.html`: v1/prototype로 본다. 새 구현 기준은 아니다.
+- `source/tweaks-panel.jsx`: 디자인 조정용 프로토타입 도구다. 배포 앱의 런타임 계약으로 가져오지 않는다.
+- `uploads/`: 피드백/주석 자료로 취급한다. production asset으로 쓰지 않는다.
+- `screenshots/`: 가져오지 않는다. stale top-only snapshot이 기준처럼 오해되는 것을 막는다.
 
-디자인 fixture를 `editorial/`의 글쓰기 원칙으로 승격하지 않는다. 색, spacing, thumbnail variant 같은 구현 기준은 `DESIGN_CONTRACT.md`가 소유한다.
+디자인 reference archive를 `editorial/`의 글쓰기 원칙으로 승격하지 않는다. 색, spacing, thumbnail variant 같은 구현 기준은 `DESIGN_CONTRACT.md`가 소유한다. Archive는 보존된 원본이고, `styles/`는 구현된 해석이다.
 
 ## Site Implementation Contract
 
@@ -54,6 +55,7 @@ content source -> editorial writing harness
 - `MARKDOWN_CONTRACT.md`: 상세 글 Markdown AST를 prose DOM으로 변환하는 규칙.
 - `design-system/styles/`: 구현용 CSS source.
 - build/check scripts: Markdown 렌더링, frontmatter schema, route generation, RSS/sitemap, screenshot regression.
+- reference archive: `design-system/reference/blog-design`는 비교 기준으로 읽고 runtime import 대상으로 쓰지 않는다.
 
 앱은 `../../content/posts`를 source로 읽을 수 있지만, 원고를 직접 고치지 않는다. 원고 수정은 root repo에서 한다.
 
@@ -96,7 +98,7 @@ local agent/skill 역할을 바꾸면 Claude 정의와 Codex 정의의 의미를
 구현을 시작할 때의 권장 순서:
 
 1. 이 문서로 경계를 확인한다.
-2. `../../../blog-design/Blog v2.html`과 `../../../blog-design/System.html`에서 실제로 채택할 디자인 기준을 고른다.
+2. `../design-system/reference/blog-design/manifest.json`과 `notes/source-map.md`를 읽고, `source/Blog v2.html`과 `source/System.html`에서 실제로 채택할 디자인 기준을 고른다.
 3. `DESIGN_CONTRACT.md`와 `CONTENT_CONTRACT.md`를 확정한다.
 4. framework scaffold와 package scripts를 `site/` 안에만 만든다.
 5. Markdown renderer와 post detail page를 먼저 구현한다.

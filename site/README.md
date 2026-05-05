@@ -23,10 +23,11 @@
 | --- | --- |
 | `docs/platform-boundary.md` | content/editorial/design/site/harness 책임 경계 |
 | `docs/CONTENT_CONTRACT.md` | `../content/posts/*.md`를 사이트가 읽는 방식 |
-| `docs/DESIGN_CONTRACT.md` | `../../blog-design` fixture에서 확정한 구현 기준 |
+| `docs/DESIGN_CONTRACT.md` | `design-system/reference/blog-design` archive에서 확정한 구현 기준 |
 | `docs/MARKDOWN_CONTRACT.md` | 상세 글 Markdown 렌더링 변환 계약 |
 | `docs/BLOG_IMPLEMENTATION_PLAN.md` | 실제 블로그 앱 구현 계획 |
 | `design-system/` | 디자인 fixture에서 가져온 구현용 CSS와 Markdown QA fixture |
+| `design-system/reference/blog-design/` | Claude Design 원본 HTML/JSX archive와 source map |
 | `src/` | zero-dependency static renderer, content adapter, Markdown renderer |
 | `scripts/` | local dev server와 static build entrypoint |
 | `decisions/` | 사이트 구현과 사이트 하네스 변경의 결정 기록 |
@@ -50,6 +51,6 @@ npm run build
 
 사이트는 `../content/posts`를 읽을 수 있지만 원고를 조용히 고치지 않는다. 원고 수정이 필요하면 root repo의 `content/`와 글쓰기 guard로 돌아간다.
 
-디자인 fixture는 `../../blog-design`를 read-only로 참고한다. 색, spacing, 컴포넌트 상세값은 `docs/DESIGN_CONTRACT.md`에 확정된 뒤 구현한다.
+디자인 reference archive는 `design-system/reference/blog-design`를 read-only로 참고한다. 색, spacing, 컴포넌트 상세값은 `docs/DESIGN_CONTRACT.md`에 확정된 뒤 구현한다.
 
 사이트 전용 agent/skill이 필요해지면 이 폴더 안에 둔다. root `.claude/`, `.codex/`, `.agents/`는 글쓰기/발행 하네스 전용으로 유지한다.

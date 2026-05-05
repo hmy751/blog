@@ -1,13 +1,15 @@
 # Site Design System
 
-이 폴더는 `../../../blog-design/Blog v2.html`과 `../../../blog-design/System.html`에서 추출한 실제 구현용 디자인 시스템이다.
+이 폴더는 `reference/blog-design/source/Blog v2.html`과 `reference/blog-design/source/System.html`에서 추출한 실제 구현용 디자인 시스템이다.
+
+`reference/blog-design/`는 Claude Design 원본 archive다. 다음 세션에서 디자인 판단을 다시 확인할 때는 외부 `../blog-design` 폴더보다 이 archive의 `manifest.json`, `notes/source-map.md`, `source/*.html`을 먼저 읽는다.
 
 ## Source
 
-- `Blog v2.html`: live blog UI 기준.
-- `System.html`: token, typography, prose, component QA 기준.
-- `Blog.html`: v1 prototype. 여기에 반영하지 않는다.
-- `tweaks-panel.jsx`: prototype control surface. production runtime에 포함하지 않는다.
+- `reference/blog-design/source/Blog v2.html`: live blog UI 기준.
+- `reference/blog-design/source/System.html`: token, typography, prose, component QA 기준.
+- `reference/blog-design/source/Blog.html`: v1 prototype. 여기에 반영하지 않는다.
+- `reference/blog-design/source/tweaks-panel.jsx`: prototype control surface. production runtime에 포함하지 않는다.
 
 ## Files
 
@@ -26,6 +28,8 @@
 첫 site scaffold에서는 `styles/index.css`를 전역 stylesheet로 가져온다. framework font loader를 쓰는 경우 `index.css`의 font imports는 앱 레이아웃으로 옮겨도 된다.
 
 CSS class names는 prototype의 이름을 유지한다. 구현 중 컴포넌트 이름은 자유롭게 바꿀 수 있지만 DOM class contract는 screenshot regression이 생길 때까지 유지한다.
+
+원본과 CSS가 충돌하면 `reference/blog-design/notes/source-map.md`로 line range를 찾고, `source/*.html` 원본을 다시 확인한 뒤 `docs/DESIGN_CONTRACT.md`에 결정 이유를 남긴다.
 
 ## Non Goals
 

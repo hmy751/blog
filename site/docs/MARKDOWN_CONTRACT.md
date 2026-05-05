@@ -97,6 +97,8 @@ renders to:
 </div>
 ```
 
+The language chip comes first because both `Blog v2.html` and `System.html` use that DOM order.
+
 Mark:
 
 ```md
@@ -123,4 +125,4 @@ Renderer QA must render:
 - at least one real post without `description`, `cover`, or `featured`
 - at least one long technical post with code/table/list sections
 
-Before shipping, compare these against the visual patterns in `../../../blog-design/Blog v2.html` and `../../../blog-design/System.html`.
+Before shipping, compare these against the visual patterns in `../design-system/reference/blog-design/source/Blog v2.html` and `../design-system/reference/blog-design/source/System.html`.

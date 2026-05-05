@@ -1,8 +1,20 @@
 # Blog Implementation Plan
 
-이 문서는 디자인 시안을 실제 블로그 앱으로 옮기는 구현 계획이다. 현재 결정은 앱 코드를 `site/` 아래에만 둔다는 것이다.
+이 문서는 `site/design-system/reference/blog-design/source`의 Claude Design 원본을 실제 블로그 앱으로 옮기는 구현 계획이다. 현재 결정은 앱 코드를 `site/` 아래에만 두고, 원본 reference archive와 구현 CSS/renderer를 분리한다는 것이다.
 
-## Recommended Shape
+## Source Hierarchy
+
+구현 판단은 아래 순서로 확인한다.
+
+1. `design-system/reference/blog-design/manifest.json`
+2. `design-system/reference/blog-design/notes/source-map.md`
+3. `design-system/reference/blog-design/source/Blog v2.html`
+4. `design-system/reference/blog-design/source/System.html`
+5. `docs/DESIGN_CONTRACT.md`, `docs/MARKDOWN_CONTRACT.md`
+
+`Blog v2.html`은 live UI source이고, `System.html`은 token/prose/component primitive QA source다. `Blog.html`은 v1 archive로만 본다.
+
+## Current Shape
 
 정적 생성 중심 블로그로 만든다.
 
@@ -11,43 +23,41 @@
 - routes: home, articles, post detail, note, about, design-system preview
 - generated outputs: static HTML, RSS, sitemap, metadata
 
-Astro 같은 Markdown-first static framework가 가장 자연스럽다. Next 기반으로 가도 되지만, 첫 구현에서는 client state가 거의 없으므로 React SPA처럼 만들 필요가 없다. `Blog v2.html`은 React prototype일 뿐, production architecture는 content build pipeline이 중심이다.
+현재 첫 구현은 zero-dependency Node ESM static renderer다.
 
-## Proposed App Structure
+| File | Role |
+| --- | --- |
+| `src/content.mjs` | `content/posts` adapter, frontmatter parse, slug/date/tag/description fallback |
+| `src/markdown.mjs` | Markdown -> prose HTML transform |
+| `src/render.mjs` | route renderer for home/articles/post/note/about/system |
+| `scripts/dev.mjs` | local HTTP dev server |
+| `scripts/build.mjs` | static route generation to `dist/` |
+
+Astro 같은 Markdown-first static framework로 갈 수는 있지만, 지금 기준선은 이미 들어온 Node renderer다. 프레임워크를 바꾸더라도 아래 contracts와 class names를 먼저 유지한다.
+
+## Current App Structure
 
 ```text
 site/
   package.json
+  scripts/
+    dev.mjs
+    build.mjs
   src/
-    app.css
-    config/site.ts
-    content/posts.ts
-    lib/posts.ts
-    lib/markdown.ts
-    components/
-      ArticleRow.*
-      Footer.*
-      PostMeta.*
-      Prose.*
-      Shell.*
-      TopNav.*
-    pages/
-      index.*
-      articles/index.*
-      articles/[slug].*
-      note/index.*
-      about.*
-      system.*
+    content.mjs
+    markdown.mjs
+    render.mjs
   design-system/
+    reference/blog-design/
     styles/
     fixtures/
   docs/
 ```
 
-`src/app.css` should import:
+The HTML shell imports:
 
-```css
-@import "../design-system/styles/index.css";
+```html
+<link rel="stylesheet" href="/design-system/styles/index.css">
 ```
 
 If the chosen framework has a font loader, move the font loading from `design-system/styles/index.css` into the framework layout and keep the CSS variables unchanged.
@@ -112,9 +122,10 @@ Adapter rules:
 
 ### `/system`
 
-- optional internal preview page.
+- internal preview page.
 - imports `design-system/styles/system-page.css`.
-- renders swatches, type samples, article row variants, post meta, note, DL grid, and Markdown fixture output.
+- renders the Markdown fixture output through the same prose CSS.
+- should grow toward the `System.html` specimens: swatches, type samples, article row variants, post meta, note, DL grid.
 
 ## Component Contract
 
@@ -136,12 +147,12 @@ Keep DOM class names stable until screenshot regression exists.
 
 The Markdown renderer must follow `MARKDOWN_CONTRACT.md`.
 
-Minimum plugins or transforms:
+Minimum transforms:
 
 - frontmatter parser
-- GFM: tables, task lists, strikethrough if needed
+- tables
+- task lists
 - footnotes
-- code highlighting
 - code meta parser for filename
 - callout blockquote transform
 - mark transform for `==text==`
@@ -149,9 +160,15 @@ Minimum plugins or transforms:
 - first H1 removal
 - excerpt extraction
 
+The code filename DOM must preserve the original order from `Blog v2.html` and `System.html`:
+
+```html
+<div class="filename"><span class="lang">tsx</span><span>components/Button.tsx</span></div>
+```
+
 ## Visual QA
 
-Use the design fixture as acceptance criteria, not as runtime code.
+Use `design-system/reference/blog-design/source` as acceptance criteria, not as runtime code.
 
 Desktop checks:
 
@@ -178,18 +195,18 @@ Regression must check that:
 
 ## Implementation Phases
 
-1. Scaffold static site under `site/`.
-2. Import `design-system/styles/index.css`.
-3. Build post adapter and schema validation.
-4. Build home/articles/post with real content.
-5. Implement Markdown renderer transforms.
-6. Add note/about from config.
+1. Preserve reference archive under `design-system/reference/blog-design`. Done.
+2. Import `design-system/styles/index.css`. Done.
+3. Build post adapter and route renderer. Done.
+4. Build home/articles/post with real content. Done.
+5. Implement Markdown renderer transforms. In progress.
+6. Grow `/system` until it covers `System.html` specimens.
 7. Add RSS/sitemap/metadata.
 8. Add screenshot QA and Markdown fixture route.
 
 ## Open Decisions
 
-- exact framework and package manager
 - final site name/domain/contact values
 - whether `/system` ships publicly or stays local-only
 - whether cover images are author-provided only or generated by site tooling
+- whether to keep zero-dependency renderer or move to a Markdown-first framework after contracts stabilize

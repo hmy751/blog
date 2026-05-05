@@ -1,7 +1,7 @@
 # 사이트 구현 격리 경계
 
 작성일: 2026-05-04
-관련 커밋: pending
+관련 커밋: 7e82d65
 상태: accepted
 
 ## 배경
@@ -34,7 +34,7 @@
 적용 범위:
 
 - 커스텀 블로그 사이트 구축.
-- 디자인 fixture 반영.
+- 디자인 reference archive와 구현 CSS 반영.
 - Markdown renderer와 content ingestion 설계.
 - 사이트 전용 agent/skill 추가.
 - root 글쓰기 하네스와 site 개발 하네스 사이의 경계 판단.
@@ -56,12 +56,12 @@
 
 ## 비목표
 
-- 지금 framework를 Astro/Next 등으로 고정하지 않는다.
-- 사이트 앱을 즉시 scaffold하지 않는다.
+- 이 결정 자체에서는 framework를 Astro/Next 등으로 고정하지 않는다.
+- 이 결정 자체에서는 사이트 앱을 즉시 scaffold하지 않는다.
 - root writing agent/skill을 사이트 구현 agent/skill로 확장하지 않는다.
 - 디자인 토큰 상세값을 root `editorial/`에 두지 않는다.
 - 기존 글의 frontmatter를 즉시 대량 수정하지 않는다.
-- `../../../blog-design`의 모든 prototype variant를 구현 요구사항으로 승격하지 않는다.
+- `site/design-system/reference/blog-design`의 모든 prototype variant를 구현 요구사항으로 승격하지 않는다.
 
 ## 근거
 
@@ -73,6 +73,6 @@
 
 - 실제 scaffold가 `site/` 안에만 생겼는가.
 - 사이트 앱이 `content/posts`를 읽되 원고를 직접 rewrite하지 않는가.
-- `DESIGN_CONTRACT.md`가 `Blog v2.html`과 `System.html`의 충돌을 구현 전에 정리했는가.
+- `DESIGN_CONTRACT.md`가 `source/Blog v2.html`과 `source/System.html`의 충돌을 구현 전에 정리했는가.
 - Markdown renderer가 첫 H1 중복 제거, lead paragraph, table/code horizontal scroll을 처리하는가.
 - 사이트 agent/skill이 root writing harness 기준을 복사해 자기 파일 안에 누적하지 않는가.

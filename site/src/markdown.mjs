@@ -176,10 +176,12 @@ function codeBlock(code, lang, meta) {
   }
 
   const label = title || lang;
-  const langBadge = title && lang ? `<span class="lang">${escapeHtml(lang)}</span>` : "";
+  const filename = title && lang
+    ? `<span class="lang">${escapeHtml(lang)}</span><span>${escapeHtml(title)}</span>`
+    : `<span>${escapeHtml(label)}</span>`;
   return [
     "<div class=\"code-block\">",
-    `<div class="filename"><span>${escapeHtml(label)}</span>${langBadge}</div>`,
+    `<div class="filename">${filename}</div>`,
     `<pre><code>${escapedCode}</code></pre>`,
     "</div>"
   ].join("\n");

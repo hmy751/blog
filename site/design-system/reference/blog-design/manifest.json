@@ -1,0 +1,75 @@
+{
+  "name": "blog-design",
+  "importedAt": "2026-05-05",
+  "sourceKind": "Claude Design export",
+  "externalOrigin": "../blog-design",
+  "canonicalSource": "source/Blog v2.html",
+  "notes": [
+    "This archive preserves the original design fixture inside the blog repo to avoid lossy re-analysis across sessions.",
+    "Screenshots were intentionally excluded because the prior home.png/home2.png files were stale top-only snapshots.",
+    "Implementation contracts live in site/docs; this folder is the preserved source evidence."
+  ],
+  "files": [
+    {
+      "path": "source/Blog v2.html",
+      "role": "canonical live blog prototype",
+      "priority": 1,
+      "lines": 1324,
+      "sha256": "a22a04363423d7a739c12e5a7a5abee71b4e75b2feddeae010b7d8ad426a3c63",
+      "contains": [
+        "foundation tokens",
+        "shell/top/nav/footer",
+        "prose CSS",
+        "article row variants",
+        "home/articles/post/about/note React views",
+        "tweak defaults"
+      ]
+    },
+    {
+      "path": "source/System.html",
+      "role": "design-system and prose primitive reference",
+      "priority": 2,
+      "lines": 950,
+      "sha256": "bfaff917c1b8e631a6b40726d50d9d7ca08d63d8090a093d93806f605d716902",
+      "contains": [
+        "token specimens",
+        "typography specimens",
+        "spacing/radius specimens",
+        "prose elements",
+        "article row/post hero/post meta specimens"
+      ]
+    },
+    {
+      "path": "source/Blog.html",
+      "role": "v1 prototype archive",
+      "priority": 5,
+      "lines": 997,
+      "sha256": "7d1f4986e2faecda566dac0c622921e8edb16252ffa7a0f9a5c5de70cd78d707",
+      "contains": [
+        "older blog prototype",
+        "historical comparison"
+      ]
+    },
+    {
+      "path": "source/tweaks-panel.jsx",
+      "role": "Claude Design tweak panel helper",
+      "priority": 4,
+      "lines": 425,
+      "sha256": "ea982af775f053999f1f8841b7078ae20b37bdb3c20432fe293e3b4572c0c454",
+      "contains": [
+        "useTweaks",
+        "TweaksPanel",
+        "tweak controls"
+      ]
+    },
+    {
+      "path": "uploads/draw-068da35b-8755-4088-9589-07f279249cae.png",
+      "role": "annotation image from design process",
+      "priority": 6,
+      "sha256": "09a151e38e091891ffdffd3c4a3518d78c6947a3675b181d0f297af84f260a7b",
+      "contains": [
+        "visual feedback annotation"
+      ]
+    }
+  ]
+}
