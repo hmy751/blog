@@ -7,6 +7,8 @@ export type NavKey = "home" | "articles" | "note" | "about";
 type ShellProps = Readonly<{
   children: ReactNode;
   current?: NavKey;
+  footerExtra?: ReactNode;
+  shellClassName?: string;
 }>;
 
 const navItems: Array<{ href: string; label: string; key: NavKey }> = [
@@ -15,11 +17,11 @@ const navItems: Array<{ href: string; label: string; key: NavKey }> = [
   { href: "/about/", label: "About", key: "about" }
 ];
 
-export function Shell({ children, current = "home" }: ShellProps) {
+export function Shell({ children, current = "home", footerExtra, shellClassName }: ShellProps) {
   const year = new Date().getFullYear();
 
   return (
-    <div className="shell">
+    <div className={`shell${shellClassName ? ` ${shellClassName}` : ""}`}>
       <header className="top">
         <Link className="brand" href="/" aria-label="myeongyeon ham home">
           <span className="dot" aria-hidden="true" />
@@ -37,6 +39,7 @@ export function Shell({ children, current = "home" }: ShellProps) {
       <footer className="foot">
         <span>Blog / {year}</span>
         <span className="links">
+          {footerExtra}
           <Link href="/articles/">Archive</Link>
         </span>
       </footer>

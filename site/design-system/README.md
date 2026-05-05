@@ -15,7 +15,7 @@
 
 | Path | Role |
 | --- | --- |
-| `styles/index.css` | legacy/system preview entrypoint |
+| `styles/index.css` | legacy renderer entrypoint |
 | `styles/tokens.css` | color, type, spacing, radius, semantic CSS variables |
 | `styles/base.css` | reset, body, shell, top nav, footer |
 | `styles/prose.css` | post detail Markdown/prose rendering |
@@ -29,7 +29,7 @@
 
 ## Adoption Rule
 
-Next production 앱은 `src/styles/`와 CSS Modules를 쓴다. `styles/index.css`는 legacy renderer와 local-only system preview에서만 사용한다. framework font loader를 쓰는 경우 `index.css`의 font imports는 앱 레이아웃으로 옮겨도 된다.
+Next production 앱은 `src/styles/`와 CSS Modules를 쓴다. `styles/index.css`는 legacy renderer에서만 사용한다. local-only system preview는 `system-preview/`에서 production `src/styles`와 `src/components`를 다시 import한다. framework font loader를 쓰는 경우 `index.css`의 font imports는 앱 레이아웃으로 옮겨도 된다.
 
 CSS class names는 prototype의 이름을 유지한다. 구현 중 컴포넌트 이름은 자유롭게 바꿀 수 있지만 DOM class contract는 screenshot regression이 생길 때까지 유지한다.
 

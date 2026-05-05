@@ -16,7 +16,7 @@ Date: 2026-05-05
 
 - Do not register `/system` or `/system/example-article` under Next App Router.
 - Production routes are `/`, `/articles/`, `/articles/{slug}/`, `/note/`, and `/about/`.
-- Keep the design/prose QA surface as a separate layer through `npm run dev:system` and `npm run build:system`.
+- Keep the design/prose QA surface as a separate Next app under `site/system-preview`, run through `npm run dev:system` and `npm run build:system`.
 - Do not copy system fixture assets into production `public/` or the default static export.
 
 ## Current State
@@ -25,7 +25,7 @@ The current site is a zero-dependency Node ESM static renderer.
 
 - `site/src/content.mjs`: reads `../content/posts/*.md`, parses frontmatter, derives slug/date/tag/description.
 - `site/src/markdown.mjs`: hand-written Markdown renderer supporting code fences, tables, task lists, footnotes, callouts, figures, and inline transforms.
-- `site/src/render.mjs`: owns URL routing, HTML shell, page rendering, component-like HTML helpers, system preview, and fixture rendering in one large file.
+- `site/src/render.mjs`: originally owned URL routing, HTML shell, page rendering, component-like HTML helpers, system preview, and fixture rendering in one large file.
 - `site/design-system/styles/index.css`: imports `tokens.css`, `base.css`, `prose.css`, `blog-components.css`, `system-page.css`.
 - `site/scripts/build.mjs`: emits static HTML to `site/dist`.
 
@@ -105,6 +105,12 @@ site/
       markdown.ts
       site-config.ts
       images.ts
+    system-preview/
+      app/
+        system/
+          page.tsx
+          example-article/
+            page.tsx
     scripts/
       dev-system.mjs
       build-system.mjs
@@ -320,7 +326,7 @@ Split component styles after the first migration works:
 - article row/list styles -> `ArticleRow.module.css` or `styles/components/article-row.css`
 - post meta/hero/footer/title -> post component CSS
 - note/about styles -> their page/component CSS
-- system preview styles -> `design-system/styles/system-page.css` loaded only by the system preview scripts
+- system preview styles -> `system-preview/app/system/system.module.css`, with production tokens/base/prose imported from `src/styles`
 
 Do not redesign during migration.
 
@@ -415,15 +421,15 @@ src/components/
   post/PostHero.tsx
   post/Post.module.css
 
-scripts/dev-system.mjs
-scripts/build-system.mjs # system preview only; not production App Router
+system-preview/app/system/
+  system.module.css     # system preview only; not production App Router
 ```
 
 Important rule:
 
 - Keep global CSS only where selectors must target unknown Markdown output or true document shell.
 - Component CSS should move beside the component that owns the DOM.
-- System preview CSS should be loaded only by `dev:system`/`build:system`, not by production App Router.
+- System preview CSS should live only under `system-preview/`, not under production App Router.
 - Prototype variants can stay in a `reference` or `experimental` stylesheet, but they should not be loaded by production routes unless intentionally revived.
 
 Tailwind decision:
@@ -451,15 +457,15 @@ Old-to-new ownership map:
 | `site/src/render.mjs` `articlesPage()` | `src/app/articles/page.tsx` | Group by year in page or small route helper. |
 | `site/src/render.mjs` `postPage()` | `src/app/articles/[slug]/page.tsx` + post components | Keep post sequence from `DESIGN_CONTRACT.md`. |
 | `site/src/render.mjs` `articleRow()` | `src/components/article-row/ArticleRow.tsx` | Live default is `aside`; prototype variants should not ship in the production module. |
-| `site/src/render.mjs` system sections | `renderSystemUrl()` + `scripts/dev-system.mjs`/`scripts/build-system.mjs` | System preview is local-only and not a production route. |
+| `site/src/render.mjs` system sections | `system-preview/app/system/page.tsx` | System preview is local-only, Next-based, and not a production route. |
 | `site/src/content.mjs` | `src/lib/posts.ts` | Keep adapter rules; add schema/build checks later. |
 | `site/src/markdown.mjs` | `src/lib/markdown.ts` | Replace hand-written parser with remark/rehype transforms. |
 | `site/design-system/styles/tokens.css` | `src/styles/tokens.css` | Foundation token source. |
 | `site/design-system/styles/base.css` | `src/styles/base.css` + shell module CSS | Reset/global remains global; shell-specific selectors can move with shell. |
 | `site/design-system/styles/prose.css` | `src/styles/prose.css` | Global because it targets generated Markdown HTML. |
 | `site/design-system/styles/blog-components.css` | component/page CSS modules | Split production components from prototype variants. |
-| `site/design-system/styles/system-page.css` | system preview script layer | System preview only. |
-| `site/design-system/fixtures/*` | keep under `site/design-system/fixtures` | Served only by local-only system preview scripts. |
+| `site/design-system/styles/system-page.css` | `system-preview/app/system/system.module.css` reference source | System preview only. |
+| `site/design-system/fixtures/*` | keep under `site/design-system/fixtures` | Synced into local-only `system-preview/public` before dev/build. |
 
 Prototype variant handling:
 
@@ -516,7 +522,7 @@ Design QA checklist:
 Open design questions:
 
 - Should prototype article row variants be deleted from live CSS, moved to `reference`, or kept as experimental specimens?
-- Decided: `/system` CSS is loaded only by the local-only system preview scripts.
+- Decided: `/system` CSS lives under the local-only Next `system-preview/` app.
 - Should post cover stay as CSS background or become semantic image markup?
 - Decided: the system page remains local-only.
 
@@ -571,7 +577,7 @@ Tasks:
 
 - create `src/app/layout.tsx`.
 - create `src/app/page.tsx`, `articles/page.tsx`, `articles/[slug]/page.tsx`, `note/page.tsx`, `about/page.tsx`.
-- create `scripts/dev-system.mjs` and `scripts/build-system.mjs` for local-only system preview.
+- create `system-preview/app/**`, plus `scripts/dev-system.mjs` and `scripts/build-system.mjs`, for local-only Next system preview.
 - move shell/nav/footer into components.
 - keep `trailingSlash` behavior consistent with current generated `/route/index.html` shape.
 
@@ -648,7 +654,7 @@ Dependency order:
    - `/articles/[slug]`
    - `/note`
    - `/about`
-12. Implement `dev:system` and `build:system` as local-only system preview scripts.
+12. Implement `system-preview/` as a local-only Next app and wrap it with `dev:system`/`build:system`.
 13. Split component/page CSS ownership while porting each component.
 14. Add `prebuild` image copy script if `content/assets` is adopted.
 15. Run `npm run build`.

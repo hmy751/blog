@@ -24,7 +24,7 @@
 - `next.config.mjs`는 `output: "export"`와 `trailingSlash: true`를 사용한다.
 - `npm run build`는 Next static export를 생성한다.
 - 기존 Node renderer는 route parity와 visual QA가 끝날 때까지 `dev:legacy`, `build:legacy`로 보존한다.
-- `/system`과 `/system/example-article`은 production App Router에 등록하지 않는다. 디자인/Markdown QA가 필요하면 `dev:system`, `build:system`으로 별도 local-only preview를 실행한다.
+- `/system`과 `/system/example-article`은 production App Router에 등록하지 않는다. 디자인/Markdown QA가 필요하면 `system-preview/` 별도 Next app을 `dev:system`, `build:system`으로 실행한다.
 - `content/posts/*.md`는 build time에만 읽고, site code가 원고를 수정하지 않는다.
 - Markdown은 `gray-matter` + `unified`/`remark`/`rehype` pipeline으로 옮긴다.
 - global CSS는 token/base/prose로 줄이고, production component 스타일은 CSS Module로 분리한다.

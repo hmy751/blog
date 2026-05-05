@@ -7,7 +7,7 @@
     "build": "next build",
     "dev:next": "next dev",
     "build:next": "next build",
-    "check": "tsc --noEmit",
+    "check": "tsc --noEmit && tsc -p system-preview/tsconfig.json --noEmit",
     "dev:system": "node scripts/dev-system.mjs",
     "build:system": "node scripts/build-system.mjs",
     "dev:legacy": "node scripts/dev.mjs",

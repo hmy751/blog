@@ -21,20 +21,21 @@
 - content source: `../content/posts/*.md`
 - production style source: `src/styles/globals.css`, `src/styles/tokens.css`, `src/styles/base.css`, `src/styles/prose.css`, plus component CSS Modules
 - production routes: home, articles, post detail, note, about
-- local-only system preview: `/system/`, `/system/example-article/` through `npm run dev:system` or `npm run build:system`
+- local-only Next system preview: `/system/`, `/system/example-article/` through `npm run dev:system` or `npm run build:system`
 - generated outputs: static HTML, RSS, sitemap, metadata
 
-현재 첫 구현은 zero-dependency Node ESM static renderer였고, 2026-05-05부터 Next.js App Router + static export로 전환했다. 기존 renderer는 비교용 legacy script와 local-only system preview script에서만 보존한다.
+현재 첫 구현은 zero-dependency Node ESM static renderer였고, 2026-05-05부터 Next.js App Router + static export로 전환했다. 기존 renderer는 비교용 legacy script로만 보존하고, system preview는 별도 Next app인 `system-preview/`에서 production components/lib/styles를 import한다.
 
 | File | Role |
 | --- | --- |
 | `src/content.mjs` | `content/posts` adapter, frontmatter parse, slug/date/tag/description fallback |
 | `src/markdown.mjs` | Markdown -> prose HTML transform |
-| `src/render.mjs` | legacy renderer for home/articles/post/note/about and local-only system preview |
+| `src/render.mjs` | legacy renderer for home/articles/post/note/about comparison |
 | `scripts/dev.mjs` | local HTTP dev server |
 | `scripts/build.mjs` | static route generation to `dist/` |
-| `scripts/dev-system.mjs` | local-only system preview server |
-| `scripts/build-system.mjs` | local-only system preview static output to `system-dist/` |
+| `system-preview/` | local-only Next system preview app |
+| `scripts/dev-system.mjs` | starts `system-preview/` with Next dev |
+| `scripts/build-system.mjs` | builds `system-preview/` to `system-dist/` |
 
 Migration target:
 
@@ -68,7 +69,7 @@ site/
   docs/
 ```
 
-The legacy/system-preview HTML shell imports:
+The legacy HTML shell imports:
 
 ```html
 <link rel="stylesheet" href="/design-system/styles/index.css">
@@ -134,17 +135,19 @@ Adapter rules:
 - `prose` page using `about-grid`.
 - profile/contact values live in `src/config/site.ts`.
 
-### System Preview (local-only, not App Router)
+### System Preview (local-only separate Next app)
 
-- not registered under `src/app`; not included in production static export.
+- not registered under production `src/app`; not included in production static export.
+- lives under `system-preview/app/system`.
 - served with `npm run dev:system` and built with `npm run build:system`.
-- imports `design-system/styles/system-page.css` through the legacy system preview shell.
+- imports production `src/styles/globals.css`, `src/components/**`, and `src/lib/markdown.ts`.
+- uses preview-only CSS Modules under `system-preview/app/system`.
 - renders `System.html`-level specimens: swatches, type samples, spacing/radius, prose primitives, article row, live aside row, post hero/meta, note, DL grid, principles.
 - renders the Markdown fixture output through the same prose CSS under `Markdown QA`.
 - uses `shell-system` width so the preview can follow `System.html`'s wider measure without changing live blog pages.
 - links to `/system/example-article/` for full post-detail flow QA.
 
-### System Example Article (local-only, not App Router)
+### System Example Article (local-only separate Next app)
 
 - site-only example article route.
 - reads `design-system/fixtures/example-article.md`.

@@ -74,8 +74,8 @@ Core references:
 - [x] `src/app/note/page.tsx`
 - [x] `src/app/about/page.tsx`
 - [x] Production App Router excludes `/system` and `/system/example-article`.
-- [x] Local-only system preview runs through `npm run dev:system`.
-- [x] Local-only system static preview builds through `npm run build:system`.
+- [x] Local-only system preview runs as a separate Next app through `npm run dev:system`.
+- [x] Local-only system static preview builds as a separate Next app through `npm run build:system`.
 - [x] `generateStaticParams()` covers all public posts.
 
 ## 6. Components And CSS Ownership
@@ -85,7 +85,7 @@ Core references:
 - [x] Move post meta/hero/footer to `components/post`.
 - [x] Keep `tokens.css`, `base.css`, `prose.css` global.
 - [x] Move production component styles into CSS Modules.
-- [x] Keep `system-page.css` in the system-only preview layer, outside production App Router imports.
+- [x] Keep system preview CSS in `system-preview/`, outside production App Router imports.
 - [x] Keep only `aside` in production `ArticleRow`.
 - [x] Archive or quarantine `leading`, `inline`, `magazine`, `peek`.
 

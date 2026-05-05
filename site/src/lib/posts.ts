@@ -3,7 +3,10 @@ import path from "node:path";
 import matter from "gray-matter";
 import { siteConfig } from "./site-config";
 
-const repoRoot = path.resolve(process.cwd(), "..");
+const siteRoot = path.basename(process.cwd()) === "system-preview"
+  ? path.resolve(process.cwd(), "..")
+  : process.cwd();
+const repoRoot = path.resolve(siteRoot, "..");
 const postsDir = path.join(repoRoot, "content", "posts");
 
 export type DescriptionSource = "frontmatter" | "excerpt";

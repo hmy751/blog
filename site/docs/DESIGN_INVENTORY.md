@@ -12,10 +12,10 @@
 | `design-system/styles/base.css` | base + shell global | `src/styles/base.css`, `components/shell` | Reset/link/body stays global. Shell-specific selectors can move later. |
 | `design-system/styles/prose.css` | Markdown/prose primitive | `src/styles/prose.css` | Global by necessity because Markdown output is generated HTML. |
 | `design-system/styles/blog-components.css` | mixed production pages/components | CSS Modules under `components/**` and route modules | Split home/articles/post/note/about from prototype variants. |
-| `design-system/styles/system-page.css` | system-preview only | `scripts/dev-system.mjs`, `scripts/build-system.mjs` | Local-only preview CSS. Must not be imported by production routes. |
+| `design-system/styles/system-page.css` | archived system-preview source | `system-preview/app/system/system.module.css` | Keep as reference-derived source; production routes do not import it. |
 | `src/render.mjs` shell helpers | production shell | `components/shell/Shell.tsx` | Keep `.shell`, `.top`, `.brand`, `.dot`, `.nav`, `.foot`. |
 | `src/render.mjs` page helpers | production routes | `src/app/**/page.tsx` | Route ownership becomes file-system visible. |
-| `src/render.mjs` system helpers | system-preview only | `renderSystemUrl()` used by `dev:system`/`build:system` | Demo data belongs to local-only preview scripts, not App Router. |
+| `system-preview/app/**` | system-preview only | local-only Next app | Imports production components/lib/styles without registering production `/system`. |
 | `src/render.mjs` `articleRow()` | production component | `components/article-row/ArticleRow.tsx` | Ship only live `aside` variant. |
 | `src/content.mjs` | content adapter | `src/lib/posts.ts` | Reads `../content/posts`, never rewrites. |
 | `src/markdown.mjs` | Markdown renderer | `src/lib/markdown.ts` | Replace with unified pipeline and custom transforms. |

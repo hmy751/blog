@@ -29,7 +29,8 @@
 | `design-system/` | 디자인 fixture에서 가져온 구현용 CSS와 Markdown QA fixture |
 | `design-system/reference/blog-design/` | Claude Design 원본 HTML/JSX archive와 source map |
 | `src/` | Next App Router app, components, content adapter, Markdown renderer |
-| `scripts/` | legacy local dev/build scripts and local-only system preview scripts |
+| `system-preview/` | 배포 앱과 분리된 local-only Next system preview app |
+| `scripts/` | legacy local dev/build scripts and preview/build wrappers |
 | `decisions/` | 사이트 구현과 사이트 하네스 변경의 결정 기록 |
 | `.claude/skills/` | Claude Code용 사이트 개발 skill 자리 |
 | `.claude/agents/` | Claude Code용 사이트 개발 agent 자리 |
@@ -54,7 +55,7 @@ npm run build:legacy
 
 production App Router 라우트는 `/`, `/articles/`, `/articles/{slug}/`, `/note/`, `/about/`만 등록한다.
 
-`/system/`과 `/system/example-article/`은 배포 라우트가 아니라 디자인/Markdown QA용 local-only preview다. 별도 스크립트로만 확인한다.
+`/system/`과 `/system/example-article/`은 배포 라우트가 아니라 디자인/Markdown QA용 local-only preview다. `site/system-preview`의 별도 Next app으로 실행하되, production `src/components`, `src/lib/markdown.ts`, `src/styles`를 import해서 연결성을 유지한다.
 
 ```bash
 npm run dev:system
@@ -71,7 +72,7 @@ Cloudflare Pages 기준:
 - build command: `npm run build`
 - output directory: `out`
 
-server-only Next 기능은 쓰지 않는다. Markdown body 이미지는 우선 plain `<img>`로 렌더링한다. 디자인 시스템 fixture asset은 production `public/`에 두지 않고 local-only system preview 스크립트에서 `design-system/fixtures`를 직접 서빙한다.
+server-only Next 기능은 쓰지 않는다. Markdown body 이미지는 우선 plain `<img>`로 렌더링한다. 디자인 시스템 fixture asset은 production `public/`에 두지 않고 `dev:system`/`build:system` 실행 시 local-only preview public folder로 동기화한다.
 
 ## Working Rule
 
