@@ -21,7 +21,7 @@
   font-family: var(--sans);
   font-size: 40px;
   font-weight: 600;
-  letter-spacing: -0.028em;
+  letter-spacing: 0;
   line-height: 1.15;
   overflow-wrap: anywhere;
   text-wrap: balance;
@@ -96,7 +96,7 @@
   font-family: var(--sans);
   font-size: 22px;
   font-weight: 600;
-  letter-spacing: -0.022em;
+  letter-spacing: 0;
 }
 
 .sysH3 {
@@ -220,7 +220,7 @@
   font-family: var(--sans);
   font-size: 32px;
   font-weight: 600;
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
   line-height: 1.2;
 }
 

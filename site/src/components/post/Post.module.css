@@ -1,7 +1,9 @@
 :global(.post-meta) {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 14px;
+  row-gap: 6px;
   margin-bottom: 32px;
   color: var(--ink-4);
   font-family: var(--mono);
@@ -34,7 +36,7 @@
   font-family: var(--sans);
   font-size: 36px;
   font-weight: 600;
-  letter-spacing: -0.028em;
+  letter-spacing: 0;
   line-height: 1.2;
   overflow-wrap: anywhere;
   text-wrap: balance;
@@ -65,7 +67,28 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  justify-content: flex-end;
+  max-width: min(440px, 70%);
   color: var(--ink-2);
+  text-align: right;
+}
+
+:global(.post-footer > a) {
+  min-width: 0;
+}
+
+:global(.post-footer .link) {
+  white-space: nowrap;
+}
+
+:global(.post-footer .next span:first-child) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
+:global(.post-footer .next span[aria-hidden="true"]) {
+  flex: 0 0 auto;
 }
 
 :global(.post-footer .next:hover) {
@@ -81,5 +104,11 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 16px;
+  }
+
+  :global(.post-footer .next) {
+    justify-content: flex-start;
+    max-width: 100%;
+    text-align: left;
   }
 }

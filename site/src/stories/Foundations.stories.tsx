@@ -73,7 +73,7 @@ export const ColorTokens: Story = {
 
 export const DarkTokens: Story = {
   render: () => (
-    <div data-theme="dark">
+    <div data-theme="dark" className="story-theme-root">
       <main className="story-canvas story-canvas-wide">
         <h1 className="story-heading">Dark Tokens</h1>
         <p className="story-sub">Dark variables exist in the foundation, even though the live UI has no theme toggle yet.</p>

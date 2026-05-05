@@ -20,7 +20,7 @@
   color: var(--ink);
   font-family: var(--sans);
   font-weight: 600;
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
   overflow-wrap: anywhere;
   word-break: keep-all;
 }

@@ -4,10 +4,23 @@
   color: var(--ink);
 }
 
+.story-theme-root {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+html:has(.story-theme-root),
+body:has(.story-theme-root),
+.story-root:has(.story-theme-root) {
+  background: #14140f;
+}
+
 .story-canvas {
   max-width: calc(var(--measure) + 96px);
   margin: 0 auto;
   padding: 56px 48px 120px;
+  overflow-x: hidden;
 }
 
 .story-canvas-wide {
@@ -20,7 +33,7 @@
   font-family: var(--sans);
   font-size: 30px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   line-height: 1.2;
 }
 
@@ -56,7 +69,7 @@
   font-family: var(--sans);
   font-size: 18px;
   font-weight: 600;
-  letter-spacing: -0.018em;
+  letter-spacing: 0;
 }
 
 .story-section-kicker,
@@ -140,7 +153,7 @@
   font-family: var(--sans);
   font-size: 36px;
   font-weight: 600;
-  letter-spacing: -0.028em;
+  letter-spacing: 0;
   line-height: 1.2;
   word-break: keep-all;
 }
@@ -168,9 +181,10 @@
 }
 
 .story-space-bar {
-  height: 10px;
+  min-width: 4px;
+  height: 12px;
   border-radius: 2px;
-  background: var(--accent-soft);
+  background: color-mix(in srgb, var(--accent) 34%, transparent);
 }
 
 .story-spec-row {
@@ -187,6 +201,8 @@
   width: min(390px, 100%);
   min-height: 720px;
   margin: 0 auto;
+  overflow-x: hidden;
+  background: var(--bg);
   border-left: .5px solid var(--rule-soft);
   border-right: .5px solid var(--rule-soft);
 }
@@ -196,9 +212,59 @@
   padding-left: 22px;
 }
 
+.story-mobile-frame .top {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.story-mobile-frame nav.nav {
+  gap: 18px;
+}
+
+.story-mobile-frame footer.foot {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.story-mobile-frame .article-list[data-thumb="aside"] a.row {
+  grid-template-columns: 1fr 64px;
+}
+
+.story-mobile-frame .article-list[data-thumb="aside"] .cv,
+.story-mobile-frame .article-list[data-thumb="aside"] .cv-spacer {
+  display: none;
+}
+
+.story-mobile-frame .post-title {
+  font-size: 32px;
+}
+
+.story-mobile-frame .post-footer {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.story-mobile-frame .note,
+.story-mobile-frame .about-grid {
+  grid-template-columns: 1fr;
+}
+
+.story-mobile-frame .note {
+  gap: 8px;
+}
+
 @media (max-width: 720px) {
   .story-canvas {
     padding: 40px 22px 96px;
+  }
+
+  .story-section-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
   }
 
   .story-grid-4,

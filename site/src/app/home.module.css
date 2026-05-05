@@ -4,7 +4,7 @@
   color: var(--ink);
   font-family: var(--sans);
   font-size: 19px;
-  letter-spacing: -0.012em;
+  letter-spacing: 0;
   line-height: 1.7;
 }
 
