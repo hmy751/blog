@@ -161,6 +161,15 @@
   padding-left: 0;
 }
 
+.prose li > p {
+  margin: 0;
+}
+
+.prose li > p + ul,
+.prose li > p + ol {
+  margin-top: .2em;
+}
+
 .prose ul > li {
   position: relative;
   padding-left: 1.35em;
@@ -205,7 +214,12 @@
 
 .prose li > ul,
 .prose li > ol {
-  margin: .35em 0 .15em;
+  margin: .18em 0 .08em;
+}
+
+.prose li > ul li,
+.prose li > ol li {
+  margin: .18em 0;
 }
 
 .prose ul.task,
@@ -391,6 +405,28 @@
 .prose figure img {
   display: block;
   height: auto;
+}
+
+.prose figure.phone-figure {
+  width: min(280px, 100%);
+  margin-inline: auto;
+}
+
+.prose figure.phone-figure img {
+  width: 100%;
+}
+
+.prose .phone-figure-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 280px));
+  justify-content: center;
+  gap: 22px;
+  margin: 32px 0;
+}
+
+.prose .phone-figure-row figure.phone-figure {
+  width: 100%;
+  margin: 0;
 }
 
 .prose figure .img-ph {

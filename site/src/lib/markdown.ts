@@ -124,6 +124,7 @@ export async function markdownToHtml(markdown: string, options: MarkdownOptions 
     .use(rehypeCallouts)
     .use(rehypeTaskItems)
     .use(rehypeFigures)
+    .use(rehypePhoneFigures)
     .use(rehypeCodeBlocks)
     .use(rehypeTableScroll)
     .use(rehypeFootnotes)
@@ -279,7 +280,7 @@ function rehypeFigures() {
             type: "element",
             tagName: "figcaption",
             properties: {},
-            children: caption.children ?? []
+            children: stripCaptionMarker(caption.children ?? [])
           });
           deleteCount = captionIndex - index + 1;
         }
@@ -290,6 +291,49 @@ function rehypeFigures() {
           properties: {},
           children: figureChildren
         });
+      }
+    });
+  };
+}
+
+function rehypePhoneFigures() {
+  return (tree: AnyNode) => {
+    visit(tree, (node: AnyNode) => {
+      if (!node.children || hasClass(node, "phone-figure-row")) return;
+
+      for (let index = 0; index < node.children.length; index += 1) {
+        const child = node.children[index];
+        if (!isPhoneFigure(child)) continue;
+
+        const run: AnyNode[] = [];
+        let deleteCount = 0;
+        let cursor = index;
+        while (cursor < node.children.length) {
+          const current = node.children[cursor];
+          if (isWhitespaceText(current)) {
+            cursor += 1;
+            deleteCount += 1;
+            continue;
+          }
+
+          if (!isPhoneFigure(current)) break;
+
+          addClass(current, "phone-figure");
+          run.push(current);
+          cursor += 1;
+          deleteCount += 1;
+        }
+
+        if (run.length > 1) {
+          node.children.splice(index, deleteCount, {
+            type: "element",
+            tagName: "div",
+            properties: { className: ["phone-figure-row"] },
+            children: run
+          });
+        }
+
+        index += run.length - 1;
       }
     });
   };
@@ -553,6 +597,24 @@ function addClass(node: AnyNode, className: string): void {
   node.properties.className = classes;
 }
 
+function hasClass(node: AnyNode, className: string): boolean {
+  const current = node.properties?.className;
+  if (Array.isArray(current)) return current.includes(className);
+  if (typeof current === "string") return current.split(/\s+/).includes(className);
+  return false;
+}
+
+function isPhoneFigure(node: AnyNode): boolean {
+  if (node.tagName !== "figure" || !node.children) return false;
+  const image = node.children.find((child) => child.tagName === "img");
+  const src = image?.properties?.src;
+  return typeof src === "string" && src.includes("-phone-");
+}
+
+function isWhitespaceText(node: AnyNode): boolean {
+  return node.type === "text" && !node.value?.trim();
+}
+
 function isImageParagraph(node: AnyNode): boolean {
   if (node.tagName !== "p" || !node.children) return false;
   const meaningfulChildren = node.children.filter((child) => child.type !== "text" || child.value?.trim());
@@ -570,6 +632,14 @@ function nextMeaningfulIndex(children: AnyNode[], startIndex: number): number {
 
 function isFigureCaption(value: string): boolean {
   return /^(그림\s*\d*\.|Figure\s*\d*\.|Fig\.\s*\d*\.|Caption:)/i.test(value.trim());
+}
+
+function stripCaptionMarker(children: AnyNode[]): AnyNode[] {
+  const [first, ...rest] = children;
+  if (first?.type !== "text" || !first.value) return children;
+
+  const value = first.value.replace(/^Caption:\s*/i, "");
+  return [{ ...first, value }, ...rest];
 }
 
 function textContent(node: AnyNode): string {
