@@ -87,8 +87,7 @@ function htmlShell({ title, description = siteConfig.description, current, body 
 
 function homePage(posts) {
   const featured = posts.filter((post) => post.featured).slice(0, 3);
-  const featuredSlugs = new Set(featured.map((post) => post.slug));
-  const recent = posts.filter((post) => !featuredSlugs.has(post.slug)).slice(0, 6);
+  const recent = posts.slice(0, 6);
   const featuredSection = featured.length
     ? `<section class="featured" aria-labelledby="featured-title">
       <div class="section-label" id="featured-title">Featured</div>

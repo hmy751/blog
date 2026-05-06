@@ -7,7 +7,7 @@ import "./home.module.css";
 export default async function HomePage() {
   const posts = await getPosts();
   const featured = getFeaturedPosts(posts);
-  const recent = getRecentPosts(posts, featured);
+  const recent = getRecentPosts(posts);
 
   return (
     <Shell current="home">

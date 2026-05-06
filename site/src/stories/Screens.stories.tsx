@@ -73,7 +73,7 @@ function HomeScreen() {
 
         <section aria-labelledby="recent-title">
           <div className="section-label" id="recent-title">Recent</div>
-          <ArticleList posts={fixturePosts.slice(1)} compact />
+          <ArticleList posts={fixturePosts.slice(0, 6)} compact />
           <p className="more-link">
             <a className="link" href="/articles/">모든 글 보기 →</a>
           </p>

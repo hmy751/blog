@@ -112,7 +112,7 @@ Adapter rules:
 - shell + top nav
 - `home-intro` from `src/config/site.ts`
 - `Featured`: up to 3 explicitly featured posts
-- `Recent`: 6 latest public posts excluding explicit featured where possible
+- `Recent`: 6 latest public posts by date, independent of `featured`
 - link to `/articles`
 
 ### `/articles`

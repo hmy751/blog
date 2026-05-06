@@ -56,9 +56,8 @@ export function getFeaturedPosts(posts: Post[]): Post[] {
   return posts.filter((post) => post.featured).slice(0, 3);
 }
 
-export function getRecentPosts(posts: Post[], featuredPosts: Post[]): Post[] {
-  const featuredSlugs = new Set(featuredPosts.map((post) => post.slug));
-  return posts.filter((post) => !featuredSlugs.has(post.slug)).slice(0, 6);
+export function getRecentPosts(posts: Post[]): Post[] {
+  return posts.slice(0, 6);
 }
 
 export function groupPostsByYear(posts: Post[]): Array<[string, Post[]]> {
