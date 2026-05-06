@@ -80,6 +80,8 @@ renders to:
 </div>
 ```
 
+짧은 데이터 흐름이나 핵심 규칙 요약처럼 실행 가능한 code가 아닌 내용은 fenced `text` code block보다 callout을 우선 후보로 둔다.
+
 Warning:
 
 ```md
@@ -142,7 +144,25 @@ Figure caption:
 그림 1. 설명.
 ```
 
-If a paragraph immediately after an image starts with `그림 `, `Figure `, or is explicitly marked as caption by the renderer convention, wrap image and caption in one `figure`.
+If a paragraph immediately after an image starts with `그림 `, `Figure `, `Fig.`, or is explicitly marked with `Caption:`, wrap image and caption in one `figure`.
+
+`Caption:` is a source-only marker. The renderer removes the marker from visible `figcaption` text.
+
+```md
+![alt](image.png)
+
+Caption: Medium에서 가져온 캡션.
+```
+
+renders as a figure caption with visible text `Medium에서 가져온 캡션.`.
+
+Phone figures:
+
+- If an image `src` contains `-phone-`, the renderer adds `phone-figure`.
+- Consecutive phone figures are wrapped in `.phone-figure-row`.
+- CSS constrains phone screenshots to a narrow width and lays consecutive screenshots out horizontally when space allows.
+- Authors should use descriptive alt text and site asset filenames such as `09-phone-trip-card-online-only.png`.
+- Authors should not add inline HTML to resize phone screenshots.
 
 ## QA Fixture
 
