@@ -6,6 +6,7 @@ readTime: "21 min read"
 platform: Blog
 project: InterPersona
 description: "useState와 useEffect로 시작했던 녹음 기능을 XState 상태 머신으로 리팩토링하며 얻은 예측 가능성과 한계를 정리합니다."
+cover: /images/posts/xstate-state-machine/01-xstate.png
 tags:
   - XState
   - State Machine
@@ -18,10 +19,6 @@ tags:
 ---
 
 # 예측 가능한 UI를 위한 선택, XState 상태 머신 도입 후기
-
-![XState](/images/posts/xstate-state-machine/01-xstate.png)
-
-Caption: XState
 
 프론트엔드 개발을 하다 보면, 상태 관리는 언제나 마주하게 되는 고민거리입니다. 서버 상태와 전역 상태를 어떻게 다룰지, 또 상태의 범위를 어디까지로 한정해야 할지 같은 문제들은 늘 어려운 과제였습니다.
 
