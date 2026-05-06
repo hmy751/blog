@@ -5,6 +5,7 @@ date: 2026-02-03
 readTime: "5 min read"
 platform: Blog
 category: Retrospective
+cover: /images/posts/blog-1year/01-netflix-season2.png
 tags:
   - 회고
   - 블로그
