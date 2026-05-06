@@ -100,13 +100,15 @@ session replay는 기본 off 또는 보류 상태로 둔다.
 provider가 heatmap과 replay를 같은 스크립트로 묶는 경우:
 
 - public privacy page에 고지한다.
-- provider dashboard에서 가장 강한 masking을 적용한다.
+- provider dashboard에서 masking mode를 확인한다.
+- 공개 블로그 본문은 replay 문맥 확인을 위해 마스킹하지 않을 수 있다.
 - 입력 요소는 항상 mask 상태로 둔다.
+- 검색, 댓글, 구독, 문의 form처럼 독자 입력 surface가 생기면 해당 영역에 `data-clarity-mask="true"`를 둔다.
 - replay를 읽을 때는 UI 문제 재현 목적의 짧은 샘플만 본다.
 - replay를 글쓰기 평가나 독자 성향 판단에 쓰지 않는다.
 - 필요성이 사라지면 provider를 제거하거나 provider 설정에서 replay 기능을 끈다.
 
-Microsoft Clarity를 임시 provider로 쓸 경우 `data-clarity-mask="true"`를 layout에 둔다. Clarity project 설정에서도 Strict masking, cookie/consent, retention, IP blocking 옵션을 별도로 확인한다.
+Microsoft Clarity를 임시 provider로 쓸 경우 body 전체에 `data-clarity-mask="true"`를 두지 않는다. 현재 사이트는 로그인, 검색, 댓글, 문의 form이 없는 공개 블로그이므로 본문 텍스트를 replay에서 볼 수 있게 둔다. Clarity project 설정에서는 Balanced 또는 필요 시 Relaxed masking, cookie/consent, retention, IP blocking 옵션을 별도로 확인한다.
 
 ## Runtime Contract
 
@@ -127,9 +129,9 @@ runtime hook은 `site/src/components/analytics/ReaderAnalytics.tsx`가 소유한
 
 1. Clarity project를 만든다.
 2. 배포 환경변수에 `NEXT_PUBLIC_READER_ANALYTICS_PROVIDER=clarity`, `NEXT_PUBLIC_CLARITY_PROJECT_ID={project id}`를 넣는다.
-3. Clarity dashboard에서 masking을 가장 강하게 두고, cookie/consent mode, retention, 광고 연결 여부를 확인한다.
-4. build output에서 `reader-analytics-clarity`, `clarity.ms/tag`, `data-clarity-mask="true"`가 있는지 확인한다.
-5. custom identifier, email, user id, 원고 본문 텍스트를 Clarity API로 보내지 않는다.
+3. Clarity dashboard에서 Balanced 또는 Relaxed masking, cookie/consent mode, retention, 광고 연결 여부를 확인한다.
+4. build output에서 `reader-analytics-clarity`, `clarity.ms/tag`가 있고 body-level `data-clarity-mask="true"`가 없는지 확인한다.
+5. custom identifier, email, user id, 원고 본문 텍스트를 custom event/tag/identify property로 보내지 않는다.
 
 ## Local Data Export
 

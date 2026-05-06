@@ -30,7 +30,7 @@
 - Claude와 Codex agent 정의는 의미를 맞추고, root writing agents와 섞지 않는다.
 - analytics runtime hook은 env가 없으면 off다.
 - Microsoft Clarity는 heatmap 후보 provider로 열어두되 `NEXT_PUBLIC_READER_ANALYTICS_PROVIDER=clarity`와 project id가 있을 때만 script를 주입한다.
-- Clarity를 쓸 경우 layout에 `data-clarity-mask="true"`를 둬 repo 쪽 기본값을 보수적으로 둔다. Dashboard의 masking/consent/retention 설정은 별도 확인 대상이다.
+- 초기에는 Clarity를 쓸 경우 layout에 `data-clarity-mask="true"`를 둬 repo 쪽 기본값을 보수적으로 두기로 했다. 이후 공개 블로그 본문 replay 문맥 확인을 위해 `2026-05-06-clarity-body-mask-remove.md`에서 body-level masking을 제거했다. Dashboard의 masking/consent/retention 설정은 별도 확인 대상이다.
 - SEO는 Next Metadata helpers, sitemap, robots, article JSON-LD로 구현한다.
 - 실제 canonical domain은 `NEXT_PUBLIC_SITE_URL`로만 받는다. 임시 도메인을 코드에 하드코딩하지 않는다.
 

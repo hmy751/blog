@@ -102,7 +102,7 @@ NEXT_PUBLIC_READER_ANALYTICS_PROVIDER=clarity
 NEXT_PUBLIC_CLARITY_PROJECT_ID={project-id}
 ```
 
-연결 확인은 실제 id나 더미 id로 production build를 만든 뒤 `out/index.html`에 `reader-analytics-clarity`와 `clarity.ms/tag`가 들어갔는지 보면 된다. Clarity dashboard에서는 masking을 강하게 두고, cookie/consent, retention, 광고 연결 여부를 따로 확인한다.
+연결 확인은 실제 id나 더미 id로 production build를 만든 뒤 `out/index.html`에 `reader-analytics-clarity`와 `clarity.ms/tag`가 들어갔는지 보면 된다. 공개 블로그 본문 replay 문맥을 보기 위해 body 전체 마스킹은 두지 않는다. Clarity dashboard에서는 Balanced 또는 필요 시 Relaxed masking, cookie/consent, retention, 광고 연결 여부를 따로 확인한다.
 
 Clarity 집계 데이터를 로컬에 저장하려면 Clarity dashboard의 `Settings -> Data Export`에서 API token을 만들고 `site/.env.local`에 아래 값을 추가한다.
 

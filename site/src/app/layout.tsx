@@ -9,7 +9,7 @@ export const metadata: Metadata = createBaseMetadata();
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="ko">
-      <body data-motion="on" data-body-font="sans" data-clarity-mask="true">
+      <body data-motion="on" data-body-font="sans">
         <ReaderAnalytics />
         {children}
       </body>
