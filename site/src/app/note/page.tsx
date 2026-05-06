@@ -1,11 +1,14 @@
 import { Shell } from "@/components/shell/Shell";
 import { getNotes } from "@/lib/notes";
+import { createPageMetadata } from "@/lib/seo";
 import "../page-common.module.css";
 import "../note-about.module.css";
 
-export const metadata = {
-  title: "Note"
-};
+export const metadata = createPageMetadata({
+  title: "Note",
+  description: "짧은 공개 노트를 모아두는 공간입니다.",
+  path: "/note/"
+});
 
 export default async function NotePage() {
   const notes = await getNotes();

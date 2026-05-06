@@ -9,9 +9,12 @@ const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
 
 const requiredFiles = [
   "index.html",
+  "robots.txt",
+  "sitemap.xml",
   path.join("articles", "index.html"),
   path.join("note", "index.html"),
-  path.join("about", "index.html")
+  path.join("about", "index.html"),
+  path.join("privacy", "index.html")
 ];
 
 const forbiddenOutputs = [

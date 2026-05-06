@@ -5,6 +5,7 @@ import { Prose } from "@/components/prose/Prose";
 import { Shell } from "@/components/shell/Shell";
 import { getNextPost, getPostBySlug, getPosts } from "@/lib/posts";
 import { markdownToHtml } from "@/lib/markdown";
+import { createArticleJsonLd, createPostMetadata } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -25,10 +26,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
     return {};
   }
 
-  return {
-    title: post.title,
-    description: post.description
-  };
+  return createPostMetadata(post);
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
@@ -43,11 +41,15 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const html = await markdownToHtml(post.body, { leadFirstParagraph: true });
   const subtitle = post.descriptionSource === "frontmatter" && post.description ? post.description : "";
   const next = getNextPost(post, posts);
+  const jsonLd = createArticleJsonLd(post);
 
   return (
     <Shell current="articles">
       <main className="view">
         <article>
+          {jsonLd ? (
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+          ) : null}
           <PostMeta post={post} />
           <PostHero cover={post.cover} />
           <h1 className="post-title">{post.title}</h1>

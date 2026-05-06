@@ -46,6 +46,7 @@ export default function AboutPage() {
             </dl>
           </section>
         ) : null}
+
       </main>
     </Shell>
   );

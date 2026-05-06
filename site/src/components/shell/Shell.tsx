@@ -44,9 +44,9 @@ export function Shell({ children, current = "home", footerExtra, shellClassName 
   return (
     <div className={`shell${shellClassName ? ` ${shellClassName}` : ""}`}>
       <header className="top">
-        <Link className="brand" href="/" aria-label="myeongyeon ham home">
+        <Link className="brand" href="/" aria-label={`${siteConfig.title} home`}>
           <span className="dot" aria-hidden="true" />
-          <span>myeongyeon ham</span>
+          <span>{siteConfig.title}</span>
         </Link>
         <nav className="nav" aria-label="Primary navigation">
           {navItems.map((item) => (

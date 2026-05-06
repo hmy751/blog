@@ -18,3 +18,5 @@ doc/
 *.log
 *.tsbuildinfo
 .env*
+!.env.example
+!site/.env.example

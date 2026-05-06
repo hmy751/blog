@@ -1,7 +1,16 @@
 export const siteConfig = {
-  title: "myeongyeon ham",
+  title: "myeongyeon.ham",
   description: "기술을 만들며 바뀐 생각을 기록합니다.",
   author: "myeongyeon ham",
+  keywords: [
+    "프론트엔드",
+    "React",
+    "TypeScript",
+    "AI",
+    "RAG",
+    "기술 블로그",
+    "제품 개발"
+  ],
   intro: [
     "기술을 만들며 바뀐 생각을 기록합니다.",
     "실험, 구조, 판단, 실패가 어떻게 다음 선택으로 이어지는지 씁니다.",

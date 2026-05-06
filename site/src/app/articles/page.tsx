@@ -1,11 +1,14 @@
 import { ArticleList } from "@/components/article-row/ArticleList";
 import { Shell } from "@/components/shell/Shell";
 import { getPosts, groupPostsByYear } from "@/lib/posts";
+import { createPageMetadata } from "@/lib/seo";
 import "../page-common.module.css";
 
-export const metadata = {
-  title: "Articles"
-};
+export const metadata = createPageMetadata({
+  title: "Articles",
+  description: "기술을 만들며 바뀐 생각과 구현 기록을 모아둔 글 목록입니다.",
+  path: "/articles/"
+});
 
 export default async function ArticlesPage() {
   const posts = await getPosts();

@@ -5,6 +5,8 @@
 관련:
   - [CONTENT_CONTRACT.md](CONTENT_CONTRACT.md) — 사이트가 원고를 읽는 방식
   - [DESIGN_CONTRACT.md](DESIGN_CONTRACT.md) — current production CSS/component/Storybook 기준의 디자인 계약
+  - [READER_BEHAVIOR_CONTRACT.md](READER_BEHAVIOR_CONTRACT.md) — reader behavior/heatmap/privacy boundary 구현 계약
+  - [SEO_CONTRACT.md](SEO_CONTRACT.md) — metadata, sitemap/robots, structured data 구현 계약
   - [../decisions/2026-05-05-design-system-legacy-boundary.md](../decisions/2026-05-05-design-system-legacy-boundary.md) — archived design-system 보존/legacy 경계
   - [../../editorial/guards/source-policy.md](../../editorial/guards/source-policy.md) — 공개 원고 source guard
   - [../../editorial/guards/prepublish-check.md](../../editorial/guards/prepublish-check.md) — 발행 전 hard guard
@@ -65,6 +67,8 @@ content source -> editorial writing harness
 - `DESIGN_CONTRACT.md`: current production CSS/component/Storybook 기준으로 확정한 token, layout, prose, article row, post page, mobile exception.
 - `CONTENT_CONTRACT.md`: `content/posts/*.md`를 어떻게 읽는지, slug/date/tag/readTime/description/cover/featured fallback.
 - `MARKDOWN_CONTRACT.md`: 상세 글 Markdown AST를 prose DOM으로 변환하는 규칙.
+- `READER_BEHAVIOR_CONTRACT.md`: 독서 행동 분석, 히트맵, session replay 보류 조건, privacy page, provider hook의 수집 경계.
+- `SEO_CONTRACT.md`: Next metadata, canonical URL, sitemap/robots, article JSON-LD, 배포 도메인 설정 규칙.
 - `src/styles/`와 component CSS Modules: production CSS source.
 - `src/stories/`와 `.storybook/`: current design system catalog.
 - `system-preview/`: local-only route-level integration QA.

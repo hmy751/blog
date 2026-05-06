@@ -26,6 +26,8 @@
 | `docs/CONTENT_CONTRACT.md` | `../content/posts/*.md`, optional `../content/notes/*.md`를 사이트가 읽는 방식 |
 | `docs/DESIGN_CONTRACT.md` | 현재 production CSS/component/Storybook 기준의 디자인 계약 |
 | `docs/MARKDOWN_CONTRACT.md` | 상세 글 Markdown 렌더링 변환 계약 |
+| `docs/READER_BEHAVIOR_CONTRACT.md` | 독서 행동 분석, 히트맵, privacy boundary 구현 계약 |
+| `docs/SEO_CONTRACT.md` | metadata, canonical, sitemap/robots, article JSON-LD 구현 계약 |
 | `docs/BLOG_IMPLEMENTATION_PLAN.md` | 실제 블로그 앱 구현 계획 |
 | `decisions/2026-05-05-design-system-legacy-boundary.md` | archived design-system 자료의 보존/legacy 경계 결정 |
 | `src/` | Next App Router app, components, content adapter, Markdown renderer |
@@ -60,6 +62,8 @@ npm run verify
 
 production App Router 라우트는 `/`, `/articles/`, `/articles/{slug}/`, `/note/`, `/about/`을 등록한다. About 화면은 `src/components/about/AboutPage.tsx`가 렌더링하고, 공개 프로필 문장과 contact 값은 `src/lib/site-config.ts`에서 관리한다.
 
+Privacy route는 `/privacy/`로 등록한다. 독서 행동 분석과 히트맵은 `docs/READER_BEHAVIOR_CONTRACT.md`를 따르고, analytics provider env가 없으면 runtime script를 넣지 않는다.
+
 `date: TBD`와 오늘보다 미래 날짜인 글은 production route/list에서 제외한다. 로컬에서 특정 기준일로 확인해야 하면 `SITE_PUBLISH_CUTOFF_DATE=YYYY-MM-DD npm run build`처럼 실행한다.
 
 `/system/`과 `/system/example-article/`은 배포 라우트가 아니라 디자인/Markdown QA용 local-only preview다. `site/system-preview`의 별도 Next app으로 실행하되, production `src/components`, `src/lib/markdown.ts`, `src/styles`를 import해서 연결성을 유지한다.
@@ -87,6 +91,17 @@ Cloudflare Pages 기준:
 - output directory: `out`
 
 배포 전 로컬 preflight는 `npm run verify`로 확인한다. 이 명령은 type check와 production build를 순서대로 실행하고, `out/`에 `/about/`이 생성되었는지와 `/system`, archive fixture asset/link가 새지 않았는지 검사한다.
+
+canonical, sitemap, robots, article JSON-LD는 `docs/SEO_CONTRACT.md`를 따른다. 실제 배포 도메인은 `NEXT_PUBLIC_SITE_URL=https://{actual-domain}`로 주입한다.
+
+Clarity를 실제로 켤 때는 배포 환경변수에만 아래 값을 둔다. 코드에 project id를 하드코딩하지 않는다.
+
+```bash
+NEXT_PUBLIC_READER_ANALYTICS_PROVIDER=clarity
+NEXT_PUBLIC_CLARITY_PROJECT_ID={project-id}
+```
+
+연결 확인은 실제 id나 더미 id로 production build를 만든 뒤 `out/index.html`에 `reader-analytics-clarity`와 `clarity.ms/tag`가 들어갔는지 보면 된다. Clarity dashboard에서는 masking을 강하게 두고, cookie/consent, retention, 광고 연결 여부를 따로 확인한다.
 
 `npm run preview`는 이미 만들어진 `out/`을 로컬에서 서빙한다. 없는 route는 404로 응답하므로 배포 산출물의 route 상태를 확인할 때 쓴다.
 
