@@ -31,6 +31,7 @@
 - root `.claude/`, `.codex/`, `.agents/`는 글쓰기/발행 하네스 전용이다.
 - 사이트 전용 skill/agent가 필요하면 `site/.claude/`, `site/.codex/`, `site/.agents/` 아래에 둔다.
 - 사이트 agent/skill은 디자인 토큰, 콘텐츠 schema, 빌드 검증처럼 앱 구현을 돕는 역할만 맡는다.
+- Clarity 로컬 데이터 수집/집계 반복 절차는 `site/.claude/skills/site-reader-data-collector`가 맡는다.
 - 공개 원고의 목소리, 구조, source policy, prepublish 판단은 site agent/skill에 복사하지 말고 root `editorial/`을 참조한다.
 
 ## 멈춤 신호
