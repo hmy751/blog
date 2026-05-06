@@ -91,6 +91,16 @@ Warning:
 
 renders to `.callout.warn` with `!` icon.
 
+Reference links:
+
+```md
+참고: [SWR 이해하기](https://swr.vercel.app/ko)
+```
+
+Use a plain paragraph for reference links, source links, and CTA-style links that are not actual quotations. Do not use blockquote syntax just to visually separate a `참고:` link.
+
+If several reference links appear together, use separate plain `참고:` paragraphs or a normal list. Reserve blockquotes for quoted text and the explicit callout syntax above.
+
 Code filename:
 
 ````md
@@ -155,6 +165,13 @@ Caption: Medium에서 가져온 캡션.
 ```
 
 renders as a figure caption with visible text `Medium에서 가져온 캡션.`.
+
+Imported table images:
+
+- If an external platform used an image only because native tables were awkward or unavailable, convert the content to a GFM table in `content/posts` instead of preserving it as a body figure.
+- Preserve the visible labels and values from the image, including inline code terms, but do not add new claims while transcribing.
+- Keep the image as a body figure only when the visual layout itself is evidence, the screenshot cannot be faithfully represented as Markdown, or the exact UI/diagram is what the reader needs to inspect.
+- After converting a production image to Markdown table/list/code, remove the unreferenced production asset. Temporary migration source copies can remain in `temp/` for comparison history.
 
 Phone figures:
 

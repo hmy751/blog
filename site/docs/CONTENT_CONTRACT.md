@@ -32,7 +32,7 @@
 
 optional 필드를 필요로 한다는 이유로 기존 원고를 대량 수정하지 않는다. 필요하면 root `content/`에서 별도 editorial 작업으로 고친다.
 
-외부 발행본을 이관하면서 thumbnail/대표 이미지가 확인되면, 본문 첫 figure로 중복하기보다 `cover` 후보로 먼저 본다. 이미지 자체가 본문 판단 근거이거나 캡션과 함께 읽혀야 할 때만 body figure로도 둔다.
+외부 발행본을 이관하면서 thumbnail/대표 이미지가 확인되면, 본문 첫 figure로 중복하기보다 `cover` 후보로 먼저 본다. 같은 이미지가 상세 페이지 hero와 본문 첫 figure에 바로 중복되면 body figure는 제거한다. 이미지 자체가 본문 판단 근거이거나 캡션과 함께 읽혀야 할 때만 body figure로도 둔다.
 
 홈의 `Featured` section은 `featured: true`인 글이 있을 때만 보여준다. 강조 글이 없으면 `Recent`가 최신 글 목록을 바로 보여준다.
 
