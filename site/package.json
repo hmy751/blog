@@ -7,6 +7,8 @@
     "build": "next build",
     "preview": "node scripts/preview.mjs",
     "deploy": "node scripts/deploy.mjs",
+    "clarity:export": "node scripts/clarity-export.mjs",
+    "clarity:import": "node scripts/clarity-import-downloads.mjs",
     "dev:next": "next dev",
     "build:next": "next build",
     "check": "tsc --noEmit && tsc -p system-preview/tsconfig.json --noEmit",

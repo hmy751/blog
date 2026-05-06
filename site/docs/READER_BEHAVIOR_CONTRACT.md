@@ -131,6 +131,79 @@ runtime hook은 `site/src/components/analytics/ReaderAnalytics.tsx`가 소유한
 4. build output에서 `reader-analytics-clarity`, `clarity.ms/tag`, `data-clarity-mask="true"`가 있는지 확인한다.
 5. custom identifier, email, user id, 원고 본문 텍스트를 Clarity API로 보내지 않는다.
 
+## Local Data Export
+
+Clarity 데이터를 로컬에 저장할 때는 공식 Data Export API의 dashboard aggregate를 기본 경로로 사용한다. 이 경로는 세션 녹화 원본, DOM playback payload, heatmap PNG/CSV, 개별 독자 재현 데이터를 자동 수집하는 파이프라인이 아니다.
+
+로컬 export 소유 파일:
+
+- `site/scripts/clarity-export.mjs`
+- `site/scripts/clarity-import-downloads.mjs`
+- `site/data/clarity/raw/{run-id}/{query}.json`
+- `site/data/clarity/normalized/clarity-daily.jsonl`
+- `site/data/clarity/normalized/YYYY-MM-DD.jsonl`
+- `site/data/clarity/manual/{import-id}/heatmaps/*`
+- `site/data/clarity/manual/{import-id}/recordings/*`
+
+`site/data/clarity/`는 git에 커밋하지 않는다. raw 응답은 Clarity API 응답과 요청 메타데이터를 함께 저장하고, normalized JSONL은 metric 단위 분석을 위해 아래 형태로 append한다.
+
+```json
+{
+  "capturedAt": "2026-05-06T13:00:00.000Z",
+  "windowDays": 1,
+  "queryName": "device-url",
+  "metricName": "Traffic",
+  "dimensions": {
+    "Device": "Mobile",
+    "URL": "https://hmy751-blog.pages.dev/articles/..."
+  },
+  "values": {
+    "totalSessionCount": 12,
+    "totalBotSessionCount": 0,
+    "distantUserCount": 8
+  }
+}
+```
+
+기본 query preset:
+
+| preset | dimensions | 목적 |
+| --- | --- | --- |
+| `url` | `URL` | 글/페이지별 traffic, scroll, engagement, error 계열 집계 |
+| `device-url` | `Device`, `URL` | 모바일/데스크톱별 읽힘 차이와 화면 문제 후보 확인 |
+
+보조 preset은 `source-url`, `channel-url`, `country-url`, `browser-url`만 허용한다. Clarity API 제한 때문에 하루 10요청 이하, 최근 1-3일 범위, 최대 3 dimensions, 1000 rows 제한을 전제로 한다. 자동 수집은 하루 1회 이하를 기본으로 둔다.
+
+환경 변수:
+
+```text
+CLARITY_API_TOKEN={data export api token}
+CLARITY_EXPORT_NUM_DAYS=1
+CLARITY_EXPORT_QUERIES=url,device-url
+```
+
+토큰은 `NEXT_PUBLIC_*`로 만들지 않는다. `site/.env.local`이나 shell 환경에서만 읽고, 배포 산출물과 git에 남기지 않는다.
+
+### Manual Heatmap and Recording Import
+
+Clarity UI에서 직접 내려받은 파일은 로컬 archive로 가져올 수 있다.
+
+- Heatmap: Clarity UI의 Download CSV/PNG 결과만 import한다.
+- Recordings: Clarity UI의 recording CSV만 import한다. 이 CSV는 recording 요약과 link를 담으며, 실제 replay 영상 파일이나 DOM playback 원본이 아니다.
+- Import script는 `~/Downloads` 또는 지정한 폴더에서 `Clarity_*Heatmap*.csv`, `Clarity_*Heatmap*.png`, `Clarity_*Recordings*.csv` 계열 파일을 찾아 `site/data/clarity/manual/{import-id}/`로 복사한다.
+- `--move`를 명시하지 않으면 원본 다운로드 파일은 이동하지 않고 복사한다.
+
+실행:
+
+```bash
+npm run clarity:import -- --dry-run
+npm run clarity:import
+npm run clarity:import -- --type heatmap
+npm run clarity:import -- --file ~/Downloads/Clarity_Project_Recordings_2026-05-06.csv
+```
+
+Manual import는 UI download의 로컬 정리일 뿐이다. Clarity 로그인 세션 자동화, 비공개 endpoint 호출, replay 원본 추출을 하네스 목표로 두지 않는다.
+
 ## Public Notice
 
 `/privacy/`는 최소 공개 문장만 설명한다. 기본 화면, footer, About에는 노출하지 않는다.

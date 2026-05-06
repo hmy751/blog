@@ -19,7 +19,7 @@
 ## 책임 경계
 
 - `site/`는 앱 코드, 라우팅, UI 컴포넌트, Markdown renderer, RSS/sitemap, metadata, 배포/검증 스크립트를 소유한다.
-- reader behavior analytics, heatmap hook, privacy page, SEO metadata, sitemap/robots, article structured data는 `site/`가 소유한다.
+- reader behavior analytics, heatmap hook, Clarity 로컬 집계 export, privacy page, SEO metadata, sitemap/robots, article structured data는 `site/`가 소유한다.
 - `content/` 원고를 직접 rewrite하지 않는다. 글 수정은 root의 글쓰기 하네스를 통해 처리한다.
 - `editorial/`은 글쓰기 판단 기준이며, 사이트 디자인 토큰이나 구현 계약을 저장하지 않는다.
 - 현재 UI/스타일 구현 기준은 `src/`, `src/styles/`, component CSS Modules, `src/stories/`, `.storybook/`이 소유한다.

@@ -33,6 +33,7 @@
 | `src/` | Next App Router app, components, content adapter, Markdown renderer |
 | `src/styles/` | production token/base/prose CSS source |
 | `src/stories/` | Storybook 디자인 시스템 stories와 browser-safe fixture data |
+| `data/clarity/` | Clarity Data Export API 결과가 저장되는 local-only ignored data bucket |
 | `.storybook/` | Storybook 설정. production CSS contract와 local-only fixture assets를 연결한다. |
 | `system-preview/` | 배포 앱과 분리된 local-only Next system preview app |
 | `archive/` | 현재 구현 기준과 분리해 보존하는 site archive root |
@@ -102,6 +103,35 @@ NEXT_PUBLIC_CLARITY_PROJECT_ID={project-id}
 ```
 
 연결 확인은 실제 id나 더미 id로 production build를 만든 뒤 `out/index.html`에 `reader-analytics-clarity`와 `clarity.ms/tag`가 들어갔는지 보면 된다. Clarity dashboard에서는 masking을 강하게 두고, cookie/consent, retention, 광고 연결 여부를 따로 확인한다.
+
+Clarity 집계 데이터를 로컬에 저장하려면 Clarity dashboard의 `Settings -> Data Export`에서 API token을 만들고 `site/.env.local`에 아래 값을 추가한다.
+
+```bash
+CLARITY_API_TOKEN={data-export-api-token}
+```
+
+실행 전 계획 확인:
+
+```bash
+npm run clarity:export -- --dry-run
+```
+
+실제 저장:
+
+```bash
+npm run clarity:export
+```
+
+기본 수집은 `url`, `device-url` 두 query만 실행한다. 원본 응답은 `data/clarity/raw/`, 분석용 JSONL은 `data/clarity/normalized/`에 저장되며 이 디렉토리는 git에 커밋하지 않는다. 수집 경계와 저장 schema는 `docs/READER_BEHAVIOR_CONTRACT.md`를 따른다.
+
+히트맵과 녹화 목록은 Clarity UI에서 직접 다운로드한 뒤 로컬 archive로 가져온다. 히트맵은 CSV/PNG, 녹화는 요약과 링크가 들어 있는 CSV다.
+
+```bash
+npm run clarity:import -- --dry-run
+npm run clarity:import
+```
+
+기본 입력 폴더는 `~/Downloads`이고, 결과는 `data/clarity/manual/`에 저장된다. 실제 replay 영상 파일이나 DOM playback 원본을 내려받는 자동화는 지원하지 않는다.
 
 수동 배포는 아래 한 줄로 한다.
 
