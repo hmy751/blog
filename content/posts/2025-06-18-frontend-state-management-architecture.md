@@ -132,9 +132,12 @@ class CelebArtworkTabStore extends ListStore<CelebArtworkModel> {
 
 ### React-Query와 SWR
 
-![React Query와 SWR 비교 표](/images/posts/frontend-state-management/02-react-query-swr-comparison.png)
-
-Caption: React-Query, SWR 비교
+| 구분 | SWR (by Vercel) | React Query (by TanStack) |
+| --- | --- | --- |
+| 핵심 철학 | Stale-While-Revalidate 패턴의 구현체. 가볍고 간결한 데이터 패칭에 집중 | 서버 상태(Server State) 관리 그 자체에 집중. 클라이언트 상태와 서버 상태의 분리를 지향 |
+| 데이터 식별 | 문자열 기반의 키(Key). 주로 API 엔드포인트 URL. | 배열 기반의 쿼리 키(Query Key). 계층적이고 상세한 쿼리 관리가 가능. |
+| 캐시 관리 | 전역 캐시. `mutate` 함수를 통한 직접 조작. | `QueryClient` 인스턴스를 통한 중앙 집중식 캐시 관리. `invalidateQueries`, `setQueryData` 등 강력한 API 제공. |
+| 핵심 추상화 | `useSWR` 훅 | `QueryClient` 인스턴스. `useQuery`, `useMutation`은 클라이언트와 상호작용하는 인터페이스. |
 
 두 라이브러리 모두 대부분의 메서드나 관리 방식이 비슷한 면이 많았습니다.
 
@@ -142,9 +145,9 @@ Caption: React-Query, SWR 비교
 
 SWR, React-Query 둘 다 동일한 문제를 해결할 수 있는 라이브러리였지만 저희 팀은 두 라이브러리를 비교하고 검토한 후, 상대적으로 API가 더 간결하고 학습 곡선이 낮다고 판단한 SWR을 채택했습니다. 오라운드는 서비스 초기 단계로 빠른 검증이 중요했기 때문에 SWR이 더 실용적일 거라고 판단해 선택했습니다.
 
-> 참고: [Overview | TanStack Query React Docs](https://tanstack.com/query/latest/docs/framework/react/overview)
->
-> 참고: [SWR 이해하기](https://swr.vercel.app/ko)
+참고: [Overview | TanStack Query React Docs](https://tanstack.com/query/latest/docs/framework/react/overview)
+
+참고: [SWR 이해하기](https://swr.vercel.app/ko)
 
 ### 새로운 아키텍처: 명확한 아키텍처와 역할 분리
 
@@ -284,7 +287,7 @@ Caption: dedupingInterval 적용 전
 
 Caption: dedupingInterval 옵션 적용 전 후
 
-> 참고: [성능 - SWR](https://swr.vercel.app/ko/docs/advanced/performance.ko#deduplication)
+참고: [성능 - SWR](https://swr.vercel.app/ko/docs/advanced/performance.ko#deduplication)
 
 ### 사용자 경험(UX) 개선: 비동기 UI 제공
 
