@@ -6,6 +6,7 @@ readTime: "15 min read"
 platform: Blog
 project: Noline
 cover: /images/posts/2026-01-29-noline-offline-first-architecture/01-thumbnail.png
+featured: true
 tags:
   - Offline-First
   - Local-First

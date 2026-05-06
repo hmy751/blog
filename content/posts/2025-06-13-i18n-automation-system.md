@@ -5,6 +5,7 @@ date: 2025-06-13
 readTime: "14 min read"
 platform: Blog
 cover: /images/posts/2025-06-13-i18n-automation-system/01-thumbnail.png
+featured: true
 company: 위블링 (Weebling)
 service: 오라운드 (Oround)
 tags:
