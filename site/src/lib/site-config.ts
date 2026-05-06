@@ -1,5 +1,5 @@
 export const siteConfig = {
-  title: "myeongyeon.ham",
+  title: "hmy751.dev",
   description: "기술을 만들며 바뀐 생각을 기록합니다.",
   author: "myeongyeon ham",
   keywords: [

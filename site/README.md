@@ -103,6 +103,14 @@ NEXT_PUBLIC_CLARITY_PROJECT_ID={project-id}
 
 연결 확인은 실제 id나 더미 id로 production build를 만든 뒤 `out/index.html`에 `reader-analytics-clarity`와 `clarity.ms/tag`가 들어갔는지 보면 된다. Clarity dashboard에서는 masking을 강하게 두고, cookie/consent, retention, 광고 연결 여부를 따로 확인한다.
 
+수동 배포는 아래 한 줄로 한다.
+
+```bash
+npm run deploy
+```
+
+기본값은 `NEXT_PUBLIC_SITE_URL=https://hmy751-blog.pages.dev`, `CLOUDFLARE_PAGES_PROJECT=hmy751-blog`, `CLOUDFLARE_PAGES_BRANCH=main`이다. 다른 대상에 배포해야 하면 환경변수로 덮어쓴다.
+
 `npm run preview`는 이미 만들어진 `out/`을 로컬에서 서빙한다. 없는 route는 404로 응답하므로 배포 산출물의 route 상태를 확인할 때 쓴다.
 
 server-only Next 기능은 쓰지 않는다. Markdown body 이미지는 우선 plain `<img>`로 렌더링한다. 디자인 시스템 fixture asset은 production `public/`에 두지 않고 `dev:system`/`build:system` 실행 시 local-only preview public folder로 동기화한다.
