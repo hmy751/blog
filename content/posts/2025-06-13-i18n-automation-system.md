@@ -4,7 +4,7 @@ author: "myeongyeon ham"
 date: 2025-06-13
 readTime: "14 min read"
 platform: Blog
-cover: /images/posts/i18n-automation-system/01-thumbnail.png
+cover: /images/posts/2025-06-13-i18n-automation-system/01-thumbnail.png
 company: 위블링 (Weebling)
 service: 오라운드 (Oround)
 tags:
@@ -31,11 +31,11 @@ tags:
 
 문제는 번역 리소스가 단일 JSON 파일로 관리되고 있었으며, 대부분의 키(key)가 번역문 원본(한글)이었고 번역 값 또한 불일치하는 경우가 많았습니다.
 
-![locales 디렉토리 안에서 언어별 common.json만 분리된 기존 네임스페이스 구조](/images/posts/i18n-automation-system/02-existing-namespace-structure.png)
+![locales 디렉토리 안에서 언어별 common.json만 분리된 기존 네임스페이스 구조](/images/posts/2025-06-13-i18n-automation-system/02-existing-namespace-structure.png)
 
 Caption: 기존 네임스페이스 구성
 
-![한 파일 안에 여러 번역 키와 문장이 길게 모여 있는 번역 리소스 예시](/images/posts/i18n-automation-system/03-single-translation-resource-file.png)
+![한 파일 안에 여러 번역 키와 문장이 길게 모여 있는 번역 리소스 예시](/images/posts/2025-06-13-i18n-automation-system/03-single-translation-resource-file.png)
 
 Caption: 번역 리소스 단일 파일
 
@@ -264,7 +264,7 @@ updateJsonFromSheet();
 
 모든 팀 구성원이 구글 시트를 단일 공급원으로 삼고 현황을 공유했기 때문에 이를 바탕으로 소모적인 커뮤니케이션이 사라졌습니다.
 
-![번역 키, 한글, 영어, 일본어 컬럼이 함께 정리된 구글 시트 화면](/images/posts/i18n-automation-system/04-google-sheet.png)
+![번역 키, 한글, 영어, 일본어 컬럼이 함께 정리된 구글 시트 화면](/images/posts/2025-06-13-i18n-automation-system/04-google-sheet.png)
 
 Caption: 구글 시트
 

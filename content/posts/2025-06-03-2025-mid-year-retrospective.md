@@ -5,7 +5,7 @@ date: 2025-06-03
 readTime: "4 min read"
 platform: Blog
 category: Retrospective
-cover: /images/posts/2025-mid-year-retrospective/01-barcelona.jpeg
+cover: /images/posts/2025-06-03-2025-mid-year-retrospective/01-barcelona.jpeg
 tags:
   - 회고
   - 커리어
@@ -27,7 +27,7 @@ tags:
 
 그렇게 번아웃이 오는 과정에서 업무를 보면서 내 자신의 부족함을 깨닫고, 더 깊이있는 지식들과 스킬들을 더 채우고 싶다는 마음에 예전처럼 한 번 더 용기를 내어 퇴사를 결정했고 휴식과 재정비하는 시간을 가지게 되었다.
 
-![바르셀로나 여행 사진](/images/posts/2025-mid-year-retrospective/01-barcelona.jpeg)
+![바르셀로나 여행 사진](/images/posts/2025-06-03-2025-mid-year-retrospective/01-barcelona.jpeg)
 
 Caption: 바르셀로나 여행중 사진
 

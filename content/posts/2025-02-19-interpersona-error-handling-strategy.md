@@ -5,7 +5,7 @@ date: 2025-02-19
 readTime: "12 min read"
 platform: Blog
 project: InterPersona
-cover: /images/posts/interpersona-error-handling-strategy/01-retry-cancel-ui.png
+cover: /images/posts/2025-02-19-interpersona-error-handling-strategy/01-retry-cancel-ui.png
 tags:
   - Error Handling
   - UX
@@ -180,7 +180,7 @@ AI 응답 생성이 실패하는 경우, 단순히 에러 메시지를 전달하
 
 에러 상황에서 사용자에게 "다시 시도하기"와 "취소하기" 두 가지 옵션을 통해 답변 재녹음과 기존 메시지 재전송이라는 선택지를 제시하고 자연스러운 흐름을 유도하려고 했습니다.
 
-![AI 응답 생성 실패 시 다시 시도하기와 취소하기를 보여주는 UI](/images/posts/interpersona-error-handling-strategy/01-retry-cancel-ui.png)
+![AI 응답 생성 실패 시 다시 시도하기와 취소하기를 보여주는 UI](/images/posts/2025-02-19-interpersona-error-handling-strategy/01-retry-cancel-ui.png)
 
 ```tsx
 // ChatArticle.RetryCancelSelector

@@ -5,7 +5,7 @@ date: 2025-04-30
 readTime: "8 min read"
 platform: Blog
 project: InterPersona
-cover: /images/posts/turborepo-monorepo/01-thumbnail.png
+cover: /images/posts/2025-04-30-turborepo-monorepo/01-thumbnail.png
 tags:
   - Turborepo
   - Monorepo
@@ -106,11 +106,11 @@ Turborepo를 통해 모노레포를 구성했고 증분 빌드, 병렬 실행등
 
 Vercel에서는 리모트 캐싱 기능을 지원하여 CI/CD 환경에서도 빌드 작업을 캐싱하여 시간을 줄일수 있었습니다.
 
-![CI/CD 환경에서 리모트 캐싱 적용 전](/images/posts/turborepo-monorepo/02-remote-cache-before.png)
+![CI/CD 환경에서 리모트 캐싱 적용 전](/images/posts/2025-04-30-turborepo-monorepo/02-remote-cache-before.png)
 
 Caption: CI/CD 환경에서 리모트 캐싱 적용 전
 
-![CI/CD 환경에서 리모트 캐싱 적용 후](/images/posts/turborepo-monorepo/03-remote-cache-after.png)
+![CI/CD 환경에서 리모트 캐싱 적용 후](/images/posts/2025-04-30-turborepo-monorepo/03-remote-cache-after.png)
 
 Caption: CI/CD 환경에서 리모트 캐싱 적용 후
 

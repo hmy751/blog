@@ -5,7 +5,7 @@ date: 2025-02-21
 readTime: "10 min read"
 platform: Blog
 project: InterPersona
-cover: /images/posts/component-architecture-turborepo-storybook/01-thumbnail.png
+cover: /images/posts/2025-02-21-component-architecture-turborepo-storybook/01-thumbnail.png
 tags:
   - Component Architecture
   - Turborepo
