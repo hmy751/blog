@@ -149,9 +149,9 @@ NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
 
 provider 값이 없으면 off다. `NEXT_PUBLIC_READER_ANALYTICS_PROVIDER`는 기존 단일 provider 호환용이고, 새 설정은 `NEXT_PUBLIC_READER_ANALYTICS_PROVIDERS`의 comma-separated 값을 우선한다. 허용 provider는 `clarity`, `posthog`뿐이다. `clarity`는 project id가 영문/숫자 allowlist를 통과해야 켜지고, `posthog`는 project API key와 host가 통과해야 켜진다.
 
-`NEXT_PUBLIC_READER_ANALYTICS_MODE` 기본값은 `production`이다. 이 모드에서는 runtime hostname이 `localhost`, `127.0.0.1`, `::1`, `*.local`이면 provider env가 있어도 analytics script와 PostHog tracker를 켜지 않는다. 로컬에서 일부러 수집을 테스트해야 할 때만 `all`로 둔다. `off`는 provider env가 있어도 강제로 끈다.
+`NEXT_PUBLIC_READER_ANALYTICS_MODE` 기본값은 `production`이다. 이 모드에서는 runtime hostname이 `localhost`, `127.0.0.1`, `::1`, `*.local`이면 provider env가 있어도 analytics script와 PostHog tracker를 켜지 않는다. 로컬에서 일부러 수집을 테스트해야 할 때만 `all`로 둔다. 이 경우 event와 Clarity custom tag에는 `traffic_type=local_test`, `test_actor=local`, `is_internal_test=true`가 붙는다. `off`는 provider env가 있어도 강제로 끈다.
 
-운영 사이트에서 내부 테스트 방문을 구분해야 할 때는 URL에 `?reader_analytics_test=codex`를 붙인다. 이 값은 localStorage에 저장되어 이후 이벤트에 `traffic_type=internal_test`, `test_actor=codex`, `is_internal_test=true`가 붙는다. 예전 호환용으로 `?analytics_test=codex`도 허용한다. PostHog/Clarity dashboard와 local JSONL 분석에서는 이 property를 필터링해 실제 독자 데이터와 분리한다.
+운영 사이트에서 내부 테스트 방문을 구분해야 할 때는 URL에 `?reader_analytics_test=codex`를 붙인다. 이 값은 localStorage에 저장되어 이후 이벤트에 `traffic_type=internal_test`, `test_actor=codex`, `is_internal_test=true`가 붙는다. 예전 호환용으로 `?analytics_test=codex`도 허용한다. PostHog/Clarity dashboard와 local JSONL 분석에서는 `traffic_type IN (internal_test, local_test)`를 필터링해 실제 독자 데이터와 분리한다.
 
 runtime hook은 `site/src/components/analytics/ReaderAnalytics.tsx`와 `site/src/components/analytics/ReaderBehaviorTracker.tsx`가 소유한다. provider 판단과 event/property allowlist는 `site/src/lib/analytics.ts`가 소유한다.
 

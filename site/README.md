@@ -113,7 +113,7 @@ NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
 
 Clarity와 PostHog를 같이 쓸 때는 `NEXT_PUBLIC_READER_ANALYTICS_PROVIDERS=clarity,posthog`를 둔다. Clarity 연결 확인은 배포된 production host에서 browser runtime으로 확인한다. 로컬 host에서는 기본적으로 analytics가 꺼지므로 `out/index.html`에 Clarity script가 직접 들어가는 것을 기대하지 않는다. 공개 블로그 본문 replay 문맥을 보기 위해 body 전체 마스킹은 두지 않는다. Clarity dashboard에서는 Balanced 또는 필요 시 Relaxed masking, cookie/consent, retention, 광고 연결 여부를 따로 확인한다. PostHog는 repo 기본값에서 autocapture/pageview/pageleave/session recording을 끄고, allowlisted reader event만 직접 보낸다. 상세 reader flow는 viewport 위치와 pointer 위치를 5% 단위 bucket으로 샘플링해서 남기며, raw cursor path나 입력 영역 이벤트는 저장하지 않는다.
 
-`NEXT_PUBLIC_READER_ANALYTICS_MODE` 기본값은 `production`이다. 로컬 주소(`localhost`, `127.0.0.1`, `::1`, `*.local`)에서는 provider env가 있어도 analytics를 켜지 않는다. 운영 URL에서 내가 직접 테스트하거나 Codex가 확인해야 할 때는 `?reader_analytics_test=codex`를 붙여 들어간다. 그러면 PostHog event와 Clarity custom tag에 `traffic_type=internal_test`, `test_actor=codex`가 붙어 실제 독자 데이터에서 필터링할 수 있다.
+`NEXT_PUBLIC_READER_ANALYTICS_MODE` 기본값은 `production`이다. 로컬 주소(`localhost`, `127.0.0.1`, `::1`, `*.local`)에서는 provider env가 있어도 analytics를 켜지 않는다. 로컬에서 일부러 수집 모양을 테스트해야 할 때만 `NEXT_PUBLIC_READER_ANALYTICS_MODE=all`로 켠다. 이 경우 PostHog event와 Clarity custom tag에 자동으로 `traffic_type=local_test`, `test_actor=local`이 붙는다. 운영 URL에서 내가 직접 테스트하거나 Codex가 확인해야 할 때는 `?reader_analytics_test=codex`를 붙여 들어간다. 그러면 `traffic_type=internal_test`, `test_actor=codex`가 붙어 실제 독자 데이터에서 필터링할 수 있다.
 
 Clarity 집계 데이터를 로컬에 저장하려면 Clarity dashboard의 `Settings -> Data Export`에서 API token을 만들고 `site/.env.local`에 아래 값을 추가한다.
 

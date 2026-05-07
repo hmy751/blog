@@ -31,7 +31,7 @@ metadata:
 - Clarity Data Export API 제한을 따른다: 최근 1-3일, 하루 10요청 이하.
 - PostHog export는 personal API key와 numeric project id를 사용하고, runtime용 project API key와 혼동하지 않는다.
 - `viewport_sample`, `pointer_heat_sample`, `area_click`은 상세 reader flow용 event다. 실제 시선 추적이 아니라 viewport/pointer 근사치이며, raw cursor path나 입력 영역 이벤트를 분석 대상으로 삼지 않는다.
-- 로컬 개발/AI 테스트 트래픽은 기본 분석에서 제외한다. 운영 URL을 직접 테스트한 경우 `traffic_type=internal_test` 또는 `test_actor` property를 먼저 필터링한다.
+- 로컬 개발/AI 테스트 트래픽은 기본 분석에서 제외한다. 운영 URL을 직접 테스트한 경우 `traffic_type=internal_test`, 로컬 수집 테스트를 켠 경우 `traffic_type=local_test` 또는 `test_actor` property를 먼저 필터링한다.
 
 ## 실행
 

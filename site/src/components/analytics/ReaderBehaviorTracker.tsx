@@ -8,7 +8,8 @@ import { readerAnalyticsEvents, readerAnalyticsProperties } from "@/lib/analytic
 
 type ReaderBehaviorTrackerProps = Readonly<{
   posthog: PostHogReaderAnalyticsConfig;
-  internalTestLabel?: string;
+  testTrafficType?: "internal_test" | "local_test";
+  testActor?: string;
 }>;
 
 type ReaderAnalyticsEvent = (typeof readerAnalyticsEvents)[number];
@@ -47,7 +48,7 @@ const coordinateBucketStep = 5;
 const pointerSampleIntervalMs = 3000;
 const viewportSampleIntervalMs = 5000;
 
-export function ReaderBehaviorTracker({ posthog, internalTestLabel }: ReaderBehaviorTrackerProps) {
+export function ReaderBehaviorTracker({ posthog, testTrafficType, testActor }: ReaderBehaviorTrackerProps) {
   const pathname = usePathname();
   const captureRef = useRef<Capture | null>(null);
   const queueRef = useRef<QueuedEvent[]>([]);
@@ -67,7 +68,7 @@ export function ReaderBehaviorTracker({ posthog, internalTestLabel }: ReaderBeha
 
     const payload = sanitizeProperties({
       ...getBaseProperties(routeRef.current),
-      ...getInternalTestProperties(internalTestLabel),
+      ...getTestTrafficProperties(testTrafficType, testActor),
       ...properties
     });
 
@@ -78,7 +79,7 @@ export function ReaderBehaviorTracker({ posthog, internalTestLabel }: ReaderBeha
     }
 
     queueRef.current = [...queueRef.current.slice(-24), { event, properties: payload }];
-  }, [internalTestLabel]);
+  }, [testActor, testTrafficType]);
 
   useEffect(() => {
     let active = true;
@@ -333,12 +334,15 @@ function getBaseProperties(route: string): ReaderAnalyticsPayload {
   };
 }
 
-function getInternalTestProperties(internalTestLabel: string | undefined): ReaderAnalyticsPayload {
-  if (!internalTestLabel) return {};
+function getTestTrafficProperties(
+  trafficType: "internal_test" | "local_test" | undefined,
+  testActor: string | undefined
+): ReaderAnalyticsPayload {
+  if (!trafficType || !testActor) return {};
 
   return {
-    traffic_type: "internal_test",
-    test_actor: internalTestLabel,
+    traffic_type: trafficType,
+    test_actor: testActor,
     is_internal_test: true
   };
 }
