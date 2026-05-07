@@ -46,7 +46,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   return (
     <Shell current="articles">
       <main className="view">
-        <article>
+        <article data-reader-post data-post-slug={post.slug} data-post-year={post.year} data-post-tag={post.primaryTag}>
           {jsonLd ? (
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
           ) : null}

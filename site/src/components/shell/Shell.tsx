@@ -29,6 +29,7 @@ export function Shell({ children, current = "home", footerExtra, shellClassName 
 
         return (
           <a
+            data-reader-surface="footer"
             href={link.href}
             key={link.label}
             rel={isExternal ? "noreferrer" : undefined}
@@ -44,13 +45,25 @@ export function Shell({ children, current = "home", footerExtra, shellClassName 
   return (
     <div className={`shell${shellClassName ? ` ${shellClassName}` : ""}`}>
       <header className="top">
-        <Link className="brand" href="/" aria-label={`${siteConfig.title} home`}>
+        <Link
+          className="brand"
+          data-reader-event="nav_click"
+          data-reader-surface="brand"
+          href="/"
+          aria-label={`${siteConfig.title} home`}
+        >
           <span className="dot" aria-hidden="true" />
           <span>{siteConfig.title}</span>
         </Link>
         <nav className="nav" aria-label="Primary navigation">
           {navItems.map((item) => (
-            <Link key={item.key} href={item.href} aria-current={current === item.key ? "page" : undefined}>
+            <Link
+              key={item.key}
+              data-reader-event="nav_click"
+              data-reader-surface={`primary-nav-${item.key}`}
+              href={item.href}
+              aria-current={current === item.key ? "page" : undefined}
+            >
               {item.label}
             </Link>
           ))}

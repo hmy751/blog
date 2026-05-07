@@ -12,7 +12,15 @@ export function ArticleRow({ post, compact = false, dateFormat = "full" }: Artic
   const dateText = dateFormat === "mmdd" ? post.dateShort : post.dateText.slice(2);
 
   return (
-    <Link className={`row${post.cover ? "" : " no-thumb"}`} href={`/articles/${post.slug}/`}>
+    <Link
+      className={`row${post.cover ? "" : " no-thumb"}`}
+      data-post-slug={post.slug}
+      data-post-year={post.year}
+      data-post-tag={post.primaryTag}
+      data-reader-event="article_row_click"
+      data-reader-surface={compact ? "compact-article-row" : "article-row"}
+      href={`/articles/${post.slug}/`}
+    >
       <div>
         <div className="article-title">{post.title}</div>
         {!compact ? <span className="article-desc">{post.description}</span> : null}

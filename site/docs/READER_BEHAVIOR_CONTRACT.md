@@ -43,16 +43,22 @@ allowlist로 시작한다.
 | 종류 | 예시 | 메모 |
 | --- | --- | --- |
 | page view | route, referrer domain, device category | 세션/사용자 식별자는 provider 기본값을 최소화한다. |
-| reading progress | 25/50/75/100 scroll depth, reading time bucket | raw scroll stream 대신 bucket 이벤트를 선호한다. |
-| click heatmap | 좌표 또는 element area aggregate | 개별 독자 재현보다 집계 heatmap을 우선한다. |
+| reading progress | 25/50/75/100 scroll depth, reading time bucket | raw scroll stream 대신 milestone과 interval sample을 쓴다. |
+| viewport sample | viewport top/bottom bucket, active heading | 실제 시선 추적이 아니라 화면에 걸린 영역의 근사치다. |
+| pointer sample | 5% 단위 x/y bucket, pointer type | raw cursor stream이나 DOM snapshot은 저장하지 않는다. |
+| click heatmap | 5% 단위 좌표 bucket 또는 element area aggregate | 개별 독자 재현보다 집계 heatmap을 우선한다. |
 | area interaction | article row, code block, heading, footer link | selector는 안정적인 공용 UI 단위만 쓴다. |
 | custom event | code copy, external link click, next article click | event name과 property는 아래 allowlist에 둔다. |
 
 허용 custom event:
 
+- `reader_page_view`
 - `post_scroll_depth`
 - `post_reading_time`
 - `heading_reached`
+- `viewport_sample`
+- `pointer_heat_sample`
+- `area_click`
 - `code_copy`
 - `external_link_click`
 - `article_row_click`
@@ -61,15 +67,27 @@ allowlist로 시작한다.
 
 허용 property:
 
+- `route`
+- `referrer_domain`
 - `post_slug`
 - `post_year`
 - `tag`
 - `depth`
+- `scroll_depth`
+- `viewport_top`
+- `viewport_bottom`
+- `viewport_width_bucket`
+- `viewport_height_bucket`
 - `time_bucket`
 - `heading_id`
+- `active_heading_id`
 - `heading_level`
 - `link_domain`
 - `code_block_index`
+- `x_bucket`
+- `y_bucket`
+- `pointer_type`
+- `sample_interval`
 - `surface`
 
 ## Disallowed Data
@@ -79,6 +97,7 @@ allowlist로 시작한다.
 - 이름, 이메일, 전화번호, 계정 ID 같은 개인 식별자.
 - 입력값, 검색어, form value.
 - 원고 본문 전체 텍스트를 analytics event property로 보내는 것.
+- raw mouse/cursor coordinate stream이나 pointer path를 장기 보관하는 것.
 - raw DOM/text snapshot을 장기 보관하거나 분석 원천으로 삼는 것.
 - IP 주소를 운영자가 직접 내려받아 식별하는 것.
 - 광고 네트워크, UTM audience, retargeting destination 연결.
@@ -118,24 +137,35 @@ Microsoft Clarity를 임시 provider로 쓸 경우 body 전체에 `data-clarity-
 
 ```text
 NEXT_PUBLIC_READER_ANALYTICS_PROVIDER=clarity
+NEXT_PUBLIC_READER_ANALYTICS_PROVIDERS=clarity,posthog
 NEXT_PUBLIC_CLARITY_PROJECT_ID={clarity project id}
+NEXT_PUBLIC_POSTHOG_PROJECT_API_KEY={posthog project api key}
+NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
 ```
 
-provider 값이 없거나 `clarity`가 아니면 off다. project id가 영문/숫자 allowlist를 통과하지 못해도 off다.
+provider 값이 없으면 off다. `NEXT_PUBLIC_READER_ANALYTICS_PROVIDER`는 기존 단일 provider 호환용이고, 새 설정은 `NEXT_PUBLIC_READER_ANALYTICS_PROVIDERS`의 comma-separated 값을 우선한다. 허용 provider는 `clarity`, `posthog`뿐이다. `clarity`는 project id가 영문/숫자 allowlist를 통과해야 켜지고, `posthog`는 project API key와 host가 통과해야 켜진다.
 
-runtime hook은 `site/src/components/analytics/ReaderAnalytics.tsx`가 소유한다. provider 판단과 event allowlist는 `site/src/lib/analytics.ts`가 소유한다.
+runtime hook은 `site/src/components/analytics/ReaderAnalytics.tsx`와 `site/src/components/analytics/ReaderBehaviorTracker.tsx`가 소유한다. provider 판단과 event/property allowlist는 `site/src/lib/analytics.ts`가 소유한다.
 
 실제 연결 절차:
 
-1. Clarity project를 만든다.
-2. 배포 환경변수에 `NEXT_PUBLIC_READER_ANALYTICS_PROVIDER=clarity`, `NEXT_PUBLIC_CLARITY_PROJECT_ID={project id}`를 넣는다.
-3. Clarity dashboard에서 Balanced 또는 Relaxed masking, cookie/consent mode, retention, 광고 연결 여부를 확인한다.
-4. build output에서 `reader-analytics-clarity`, `clarity.ms/tag`가 있고 body-level `data-clarity-mask="true"`가 없는지 확인한다.
-5. custom identifier, email, user id, 원고 본문 텍스트를 custom event/tag/identify property로 보내지 않는다.
+1. Clarity 또는 PostHog project를 만든다.
+2. Clarity만 쓰면 배포 환경변수에 `NEXT_PUBLIC_READER_ANALYTICS_PROVIDER=clarity`, `NEXT_PUBLIC_CLARITY_PROJECT_ID={project id}`를 넣는다.
+3. PostHog만 쓰면 `NEXT_PUBLIC_READER_ANALYTICS_PROVIDER=posthog`, `NEXT_PUBLIC_POSTHOG_PROJECT_API_KEY={project api key}`, `NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com`를 넣는다.
+4. 둘 다 쓰면 `NEXT_PUBLIC_READER_ANALYTICS_PROVIDERS=clarity,posthog`와 각 provider key를 넣는다.
+5. Clarity dashboard에서 Balanced 또는 Relaxed masking, cookie/consent mode, retention, 광고 연결 여부를 확인한다.
+6. PostHog는 SDK의 autocapture/pageview/pageleave/session recording을 repo 기본값에서 끄고, `ReaderBehaviorTracker`의 allowlisted event만 capture한다. 로그인 없는 공개 블로그이므로 `identify`를 호출하지 않는다.
+7. viewport/pointer sample은 reader flow의 근사치로만 쓴다. 좌표는 5% 단위 bucket으로 낮추고, input/form/contenteditable 영역은 보내지 않는다.
+8. build output에서 Clarity를 켰다면 `reader-analytics-clarity`, `clarity.ms/tag`가 있고 body-level `data-clarity-mask="true"`가 없는지 확인한다.
+9. custom identifier, email, user id, 원고 본문 텍스트를 custom event/tag/identify property로 보내지 않는다.
 
 ## Local Data Export
 
-Clarity 데이터를 로컬에 저장할 때는 공식 Data Export API의 dashboard aggregate를 기본 경로로 사용한다. 이 경로는 세션 녹화 원본, DOM playback payload, heatmap PNG/CSV, 개별 독자 재현 데이터를 자동 수집하는 파이프라인이 아니다.
+로컬 저장은 provider별로 역할을 나눈다. Clarity는 dashboard aggregate와 수동 heatmap/recording download 정리용이고, PostHog는 allowlisted custom event를 HogQL Query API로 내려받아 장기 JSONL 분석 원천으로 둔다. 어느 쪽도 세션 녹화 원본, DOM playback payload, raw DOM/text snapshot, 개별 독자 식별 데이터를 자동 수집하지 않는다.
+
+### Clarity Aggregate Export
+
+Clarity 데이터를 로컬에 저장할 때는 공식 Data Export API의 dashboard aggregate를 기본 경로로 사용한다.
 
 로컬 export 소유 파일:
 
@@ -205,6 +235,59 @@ npm run clarity:import -- --file ~/Downloads/Clarity_Project_Recordings_2026-05-
 ```
 
 Manual import는 UI download의 로컬 정리일 뿐이다. Clarity 로그인 세션 자동화, 비공개 endpoint 호출, replay 원본 추출을 하네스 목표로 두지 않는다.
+
+### PostHog Event Export
+
+PostHog는 structured reader event를 로컬 JSONL로 남기는 provider다. 로컬 export는 PostHog Query API의 HogQL query를 사용하고, export 대상 event와 column은 이 문서의 allowlist에 맞춘다.
+
+로컬 export 소유 파일:
+
+- `site/scripts/posthog-export.mjs`
+- `site/data/posthog/raw/{run-id}/events.json`
+- `site/data/posthog/normalized/posthog-events.jsonl`
+- `site/data/posthog/normalized/YYYY-MM-DD.jsonl`
+
+`site/data/posthog/`는 git에 커밋하지 않는다. raw 응답은 쿼리와 응답 메타데이터를 보존하고, normalized JSONL은 event 단위 분석을 위해 아래 형태로 append한다.
+
+```json
+{
+  "capturedAt": "2026-05-06T13:00:00.000Z",
+  "windowDays": 1,
+  "source": "posthog",
+  "timestamp": "2026-05-06T12:30:00.000Z",
+  "event": "post_scroll_depth",
+  "route": "/articles/example/",
+  "url": "https://example.com/articles/example/",
+  "properties": {
+    "post_slug": "example",
+    "post_year": "2026",
+    "depth": 50,
+    "surface": "article"
+  }
+}
+```
+
+환경 변수:
+
+```text
+POSTHOG_PERSONAL_API_KEY={personal api key}
+POSTHOG_PROJECT_ID={numeric project id}
+POSTHOG_API_HOST=https://us.posthog.com
+POSTHOG_EXPORT_NUM_DAYS=1
+POSTHOG_EXPORT_EVENTS=reader_page_view,post_scroll_depth,post_reading_time,heading_reached,viewport_sample,pointer_heat_sample,area_click,code_copy,external_link_click,article_row_click,next_article_click,nav_click
+```
+
+`POSTHOG_PERSONAL_API_KEY`는 `NEXT_PUBLIC_*`로 만들지 않는다. 공개 runtime에는 project API key만 두고, export용 personal API key는 `site/.env.local`이나 shell 환경에서만 읽는다.
+
+실행:
+
+```bash
+npm run posthog:export -- --dry-run
+npm run posthog:export -- --num-days 1
+npm run posthog:export -- --num-days 7 --events reader_page_view,post_scroll_depth,external_link_click
+```
+
+PostHog export는 raw event stream을 무제한 내려받는 도구가 아니다. 기본 기간은 1일, 기본 limit은 5000 rows이며, 허용 event 밖의 쿼리는 스크립트에서 거부한다. `viewport_sample`과 `pointer_heat_sample`은 상세 분석용이라 행 수가 빠르게 늘 수 있으므로 오래된 구간을 볼 때는 `--events`로 필요한 event만 좁힌다.
 
 ## Public Notice
 

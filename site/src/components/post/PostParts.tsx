@@ -33,11 +33,19 @@ type PostFooterProps = Readonly<{
 export function PostFooter({ backHref, backLabel, next }: PostFooterProps) {
   return (
     <footer className="post-footer">
-      <Link className="link" href={backHref}>
+      <Link className="link" data-reader-event="nav_click" data-reader-surface="post-footer-back" href={backHref}>
         {backLabel}
       </Link>
       {next ? (
-        <Link className="next" href={`/articles/${next.slug}/`}>
+        <Link
+          className="next"
+          data-post-slug={next.slug}
+          data-post-year={next.year}
+          data-post-tag={next.primaryTag}
+          data-reader-event="next_article_click"
+          data-reader-surface="post-footer-next"
+          href={`/articles/${next.slug}/`}
+        >
           <span>{next.title}</span>
           <span aria-hidden="true">→</span>
         </Link>

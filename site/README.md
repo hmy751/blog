@@ -34,6 +34,7 @@
 | `src/styles/` | production token/base/prose CSS source |
 | `src/stories/` | Storybook 디자인 시스템 stories와 browser-safe fixture data |
 | `data/clarity/` | Clarity Data Export API 결과가 저장되는 local-only ignored data bucket |
+| `data/posthog/` | PostHog Query API event export가 저장되는 local-only ignored data bucket |
 | `.storybook/` | Storybook 설정. production CSS contract와 local-only fixture assets를 연결한다. |
 | `system-preview/` | 배포 앱과 분리된 local-only Next system preview app |
 | `archive/` | 현재 구현 기준과 분리해 보존하는 site archive root |
@@ -95,14 +96,20 @@ Cloudflare Pages 기준:
 
 canonical, sitemap, robots, article JSON-LD는 `docs/SEO_CONTRACT.md`를 따른다. 실제 배포 도메인은 `NEXT_PUBLIC_SITE_URL=https://{actual-domain}`로 주입한다.
 
-Clarity를 실제로 켤 때는 배포 환경변수에만 아래 값을 둔다. 코드에 project id를 하드코딩하지 않는다.
+reader analytics를 실제로 켤 때는 배포 환경변수에만 아래 값을 둔다. 코드에 project id나 key를 하드코딩하지 않는다.
 
 ```bash
 NEXT_PUBLIC_READER_ANALYTICS_PROVIDER=clarity
 NEXT_PUBLIC_CLARITY_PROJECT_ID={project-id}
 ```
 
-연결 확인은 실제 id나 더미 id로 production build를 만든 뒤 `out/index.html`에 `reader-analytics-clarity`와 `clarity.ms/tag`가 들어갔는지 보면 된다. 공개 블로그 본문 replay 문맥을 보기 위해 body 전체 마스킹은 두지 않는다. Clarity dashboard에서는 Balanced 또는 필요 시 Relaxed masking, cookie/consent, retention, 광고 연결 여부를 따로 확인한다.
+```bash
+NEXT_PUBLIC_READER_ANALYTICS_PROVIDER=posthog
+NEXT_PUBLIC_POSTHOG_PROJECT_API_KEY={project-api-key}
+NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
+```
+
+Clarity와 PostHog를 같이 쓸 때는 `NEXT_PUBLIC_READER_ANALYTICS_PROVIDERS=clarity,posthog`를 둔다. Clarity 연결 확인은 실제 id나 더미 id로 production build를 만든 뒤 `out/index.html`에 `reader-analytics-clarity`와 `clarity.ms/tag`가 들어갔는지 보면 된다. 공개 블로그 본문 replay 문맥을 보기 위해 body 전체 마스킹은 두지 않는다. Clarity dashboard에서는 Balanced 또는 필요 시 Relaxed masking, cookie/consent, retention, 광고 연결 여부를 따로 확인한다. PostHog는 repo 기본값에서 autocapture/pageview/pageleave/session recording을 끄고, allowlisted reader event만 직접 보낸다. 상세 reader flow는 viewport 위치와 pointer 위치를 5% 단위 bucket으로 샘플링해서 남기며, raw cursor path나 입력 영역 이벤트는 저장하지 않는다.
 
 Clarity 집계 데이터를 로컬에 저장하려면 Clarity dashboard의 `Settings -> Data Export`에서 API token을 만들고 `site/.env.local`에 아래 값을 추가한다.
 
@@ -132,6 +139,28 @@ npm run clarity:import
 ```
 
 기본 입력 폴더는 `~/Downloads`이고, 결과는 `data/clarity/manual/`에 저장된다. 실제 replay 영상 파일이나 DOM playback 원본을 내려받는 자동화는 지원하지 않는다.
+
+PostHog 이벤트를 로컬에 저장하려면 PostHog personal API key와 numeric project id를 `site/.env.local`에 추가한다.
+
+```bash
+POSTHOG_PERSONAL_API_KEY={personal-api-key}
+POSTHOG_PROJECT_ID={numeric-project-id}
+POSTHOG_API_HOST=https://us.posthog.com
+```
+
+실행 전 계획 확인:
+
+```bash
+npm run posthog:export -- --dry-run
+```
+
+실제 저장:
+
+```bash
+npm run posthog:export -- --num-days 1
+```
+
+기본 수집은 `reader_page_view`, `post_scroll_depth`, `post_reading_time`, `heading_reached`, `viewport_sample`, `pointer_heat_sample`, `area_click`, `code_copy`, `external_link_click`, `article_row_click`, `next_article_click`, `nav_click`만 실행한다. `viewport_sample`은 글에서 현재 화면에 걸린 위치와 active heading을 5초마다 저장하고, `pointer_heat_sample`은 마지막 pointer 위치를 3초마다 5% bucket으로 저장한다. 원본 응답은 `data/posthog/raw/`, 분석용 JSONL은 `data/posthog/normalized/`에 저장되며 이 디렉토리는 git에 커밋하지 않는다.
 
 수동 배포는 아래 한 줄로 한다.
 

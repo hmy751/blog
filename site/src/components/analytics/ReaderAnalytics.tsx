@@ -1,5 +1,6 @@
 import Script from "next/script";
 import { getReaderAnalyticsConfig } from "@/lib/analytics";
+import { ReaderBehaviorTracker } from "./ReaderBehaviorTracker";
 
 export function ReaderAnalytics() {
   const config = getReaderAnalyticsConfig();
@@ -8,17 +9,18 @@ export function ReaderAnalytics() {
     return null;
   }
 
-  if (config.provider === "clarity") {
-    return (
-      <Script
-        id="reader-analytics-clarity"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: claritySnippet(config.projectId) }}
-      />
-    );
-  }
-
-  return null;
+  return (
+    <>
+      {config.clarity ? (
+        <Script
+          id="reader-analytics-clarity"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: claritySnippet(config.clarity.projectId) }}
+        />
+      ) : null}
+      {config.posthog ? <ReaderBehaviorTracker posthog={config.posthog} /> : null}
+    </>
+  );
 }
 
 function claritySnippet(projectId: string): string {
