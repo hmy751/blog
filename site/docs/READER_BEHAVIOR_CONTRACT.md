@@ -88,6 +88,9 @@ allowlist로 시작한다.
 - `y_bucket`
 - `pointer_type`
 - `sample_interval`
+- `traffic_type`
+- `test_actor`
+- `is_internal_test`
 - `surface`
 
 ## Disallowed Data
@@ -138,12 +141,17 @@ Microsoft Clarity를 임시 provider로 쓸 경우 body 전체에 `data-clarity-
 ```text
 NEXT_PUBLIC_READER_ANALYTICS_PROVIDER=clarity
 NEXT_PUBLIC_READER_ANALYTICS_PROVIDERS=clarity,posthog
+NEXT_PUBLIC_READER_ANALYTICS_MODE=production
 NEXT_PUBLIC_CLARITY_PROJECT_ID={clarity project id}
 NEXT_PUBLIC_POSTHOG_PROJECT_API_KEY={posthog project api key}
 NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
 ```
 
 provider 값이 없으면 off다. `NEXT_PUBLIC_READER_ANALYTICS_PROVIDER`는 기존 단일 provider 호환용이고, 새 설정은 `NEXT_PUBLIC_READER_ANALYTICS_PROVIDERS`의 comma-separated 값을 우선한다. 허용 provider는 `clarity`, `posthog`뿐이다. `clarity`는 project id가 영문/숫자 allowlist를 통과해야 켜지고, `posthog`는 project API key와 host가 통과해야 켜진다.
+
+`NEXT_PUBLIC_READER_ANALYTICS_MODE` 기본값은 `production`이다. 이 모드에서는 runtime hostname이 `localhost`, `127.0.0.1`, `::1`, `*.local`이면 provider env가 있어도 analytics script와 PostHog tracker를 켜지 않는다. 로컬에서 일부러 수집을 테스트해야 할 때만 `all`로 둔다. `off`는 provider env가 있어도 강제로 끈다.
+
+운영 사이트에서 내부 테스트 방문을 구분해야 할 때는 URL에 `?reader_analytics_test=codex`를 붙인다. 이 값은 localStorage에 저장되어 이후 이벤트에 `traffic_type=internal_test`, `test_actor=codex`, `is_internal_test=true`가 붙는다. 예전 호환용으로 `?analytics_test=codex`도 허용한다. PostHog/Clarity dashboard와 local JSONL 분석에서는 이 property를 필터링해 실제 독자 데이터와 분리한다.
 
 runtime hook은 `site/src/components/analytics/ReaderAnalytics.tsx`와 `site/src/components/analytics/ReaderBehaviorTracker.tsx`가 소유한다. provider 판단과 event/property allowlist는 `site/src/lib/analytics.ts`가 소유한다.
 
@@ -156,8 +164,9 @@ runtime hook은 `site/src/components/analytics/ReaderAnalytics.tsx`와 `site/src
 5. Clarity dashboard에서 Balanced 또는 Relaxed masking, cookie/consent mode, retention, 광고 연결 여부를 확인한다.
 6. PostHog는 SDK의 autocapture/pageview/pageleave/session recording을 repo 기본값에서 끄고, `ReaderBehaviorTracker`의 allowlisted event만 capture한다. 로그인 없는 공개 블로그이므로 `identify`를 호출하지 않는다.
 7. viewport/pointer sample은 reader flow의 근사치로만 쓴다. 좌표는 5% 단위 bucket으로 낮추고, input/form/contenteditable 영역은 보내지 않는다.
-8. build output에서 Clarity를 켰다면 `reader-analytics-clarity`, `clarity.ms/tag`가 있고 body-level `data-clarity-mask="true"`가 없는지 확인한다.
-9. custom identifier, email, user id, 원고 본문 텍스트를 custom event/tag/identify property로 보내지 않는다.
+8. 로컬 개발과 AI/Codex 작업 테스트는 기본적으로 수집하지 않는다. 운영 URL을 직접 테스트해야 하면 `reader_analytics_test` query로 internal label을 남긴다.
+9. Clarity를 켰다면 배포된 production host에서 browser runtime으로 `reader-analytics-clarity`, `clarity.ms/tag`가 실행되는지 확인한다. 로컬 host와 static HTML 원문에서는 analytics가 기본적으로 꺼져 있을 수 있다.
+10. custom identifier, email, user id, 원고 본문 텍스트를 custom event/tag/identify property로 보내지 않는다.
 
 ## Local Data Export
 

@@ -8,6 +8,7 @@ import { readerAnalyticsEvents, readerAnalyticsProperties } from "@/lib/analytic
 
 type ReaderBehaviorTrackerProps = Readonly<{
   posthog: PostHogReaderAnalyticsConfig;
+  internalTestLabel?: string;
 }>;
 
 type ReaderAnalyticsEvent = (typeof readerAnalyticsEvents)[number];
@@ -46,7 +47,7 @@ const coordinateBucketStep = 5;
 const pointerSampleIntervalMs = 3000;
 const viewportSampleIntervalMs = 5000;
 
-export function ReaderBehaviorTracker({ posthog }: ReaderBehaviorTrackerProps) {
+export function ReaderBehaviorTracker({ posthog, internalTestLabel }: ReaderBehaviorTrackerProps) {
   const pathname = usePathname();
   const captureRef = useRef<Capture | null>(null);
   const queueRef = useRef<QueuedEvent[]>([]);
@@ -66,6 +67,7 @@ export function ReaderBehaviorTracker({ posthog }: ReaderBehaviorTrackerProps) {
 
     const payload = sanitizeProperties({
       ...getBaseProperties(routeRef.current),
+      ...getInternalTestProperties(internalTestLabel),
       ...properties
     });
 
@@ -76,7 +78,7 @@ export function ReaderBehaviorTracker({ posthog }: ReaderBehaviorTrackerProps) {
     }
 
     queueRef.current = [...queueRef.current.slice(-24), { event, properties: payload }];
-  }, []);
+  }, [internalTestLabel]);
 
   useEffect(() => {
     let active = true;
@@ -328,6 +330,16 @@ function getBaseProperties(route: string): ReaderAnalyticsPayload {
     post_slug: article?.dataset.postSlug,
     post_year: article?.dataset.postYear,
     tag: article?.dataset.postTag
+  };
+}
+
+function getInternalTestProperties(internalTestLabel: string | undefined): ReaderAnalyticsPayload {
+  if (!internalTestLabel) return {};
+
+  return {
+    traffic_type: "internal_test",
+    test_actor: internalTestLabel,
+    is_internal_test: true
   };
 }
 

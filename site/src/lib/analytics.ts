@@ -5,9 +5,12 @@ export type ReaderAnalyticsConfig =
   | {
       enabled: true;
       providers: ReaderAnalyticsProvider[];
+      mode: ReaderAnalyticsMode;
       clarity?: ClarityReaderAnalyticsConfig;
       posthog?: PostHogReaderAnalyticsConfig;
     };
+
+export type ReaderAnalyticsMode = "production" | "all" | "off";
 
 export type ClarityReaderAnalyticsConfig = {
   projectId: string;
@@ -55,12 +58,16 @@ export const readerAnalyticsProperties = [
   "y_bucket",
   "pointer_type",
   "sample_interval",
+  "traffic_type",
+  "test_actor",
+  "is_internal_test",
   "surface"
 ] as const;
 
 const defaultPostHogHost = "https://us.i.posthog.com";
 
 export function getReaderAnalyticsConfig(): ReaderAnalyticsConfig {
+  const mode = normalizeMode(process.env.NEXT_PUBLIC_READER_ANALYTICS_MODE);
   const providers = normalizeProviders(
     process.env.NEXT_PUBLIC_READER_ANALYTICS_PROVIDERS ?? process.env.NEXT_PUBLIC_READER_ANALYTICS_PROVIDER
   );
@@ -75,16 +82,23 @@ export function getReaderAnalyticsConfig(): ReaderAnalyticsConfig {
     posthog ? "posthog" : undefined
   ].filter(Boolean) as ReaderAnalyticsProvider[];
 
-  if (!enabledProviders.length) {
+  if (mode === "off" || !enabledProviders.length) {
     return { enabled: false, providers: [] };
   }
 
   return {
     enabled: true,
     providers: enabledProviders,
+    mode,
     clarity,
     posthog
   };
+}
+
+function normalizeMode(value: string | undefined): ReaderAnalyticsMode {
+  const mode = value?.trim().toLowerCase();
+  if (mode === "all" || mode === "off") return mode;
+  return "production";
 }
 
 function getClarityConfig(): ClarityReaderAnalyticsConfig | undefined {

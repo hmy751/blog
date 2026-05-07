@@ -46,6 +46,9 @@ const exportedColumns = [
   "y_bucket",
   "pointer_type",
   "sample_interval",
+  "traffic_type",
+  "test_actor",
+  "is_internal_test",
   "surface"
 ];
 
@@ -276,6 +279,9 @@ SELECT
   properties.y_bucket AS y_bucket,
   properties.pointer_type AS pointer_type,
   properties.sample_interval AS sample_interval,
+  properties.traffic_type AS traffic_type,
+  properties.test_actor AS test_actor,
+  properties.is_internal_test AS is_internal_test,
   properties.surface AS surface
 FROM events
 WHERE timestamp >= now() - INTERVAL ${numOfDays} DAY
