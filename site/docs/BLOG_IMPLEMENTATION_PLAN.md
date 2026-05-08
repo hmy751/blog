@@ -88,7 +88,7 @@ If the chosen framework has a font loader, move the font loading from `archive/d
 
 1. Read `../content/posts/*.md`.
 2. Validate required frontmatter from `CONTENT_CONTRACT.md`.
-3. Derive `slug`, `year`, `primaryTag`, `displayTags`, `description`, `hasCover`, `isFeatured`.
+3. Derive `slug`, `year`, `primaryTag`, `displayTags`, `description`, `hasCover`, `hasThumbnail`, `isFeatured`.
 4. Sort posts by date desc.
 5. Build route data:
    - home featured/recent
@@ -103,7 +103,8 @@ Adapter rules:
 - `description`: frontmatter `description`, fallback first normal paragraph excerpt.
 - `featured`: frontmatter `featured`; if no featured posts exist, home hides the featured section instead of inventing one.
 - future-dated posts: hidden from production lists/routes until the build cutoff date reaches the post date. Use `SITE_PUBLISH_CUTOFF_DATE=YYYY-MM-DD` for deterministic verification.
-- `cover`: frontmatter `cover`; no-cover state is valid.
+- `cover`: frontmatter `cover`; used for post detail hero and article metadata image candidate. No-cover state is valid.
+- `thumbnail`: frontmatter `thumbnail`; used for home/articles rows only. It can point at the same file as `cover`, a body figure, or a separate asset. No-thumbnail state is valid.
 - `readTime`: use existing frontmatter string first. Later, a check can compare computed reading time.
 
 ## Route Plan
@@ -232,7 +233,7 @@ Desktop checks:
 Mobile checks:
 
 - 390px width home
-- article rows with no-cover fallback
+- article rows with no-thumbnail fallback
 - post detail code/table horizontal scroll
 - note grid collapse and about grid/copy collapse
 

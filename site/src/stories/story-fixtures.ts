@@ -24,6 +24,7 @@ export function makePost(input: FixturePostInput): Post {
     platform: "Blog",
     primaryTag,
     displayTags,
+    thumbnail: input.thumbnail,
     readTime: "6 min read",
     tags,
     year: input.date.slice(0, 4),
@@ -38,6 +39,7 @@ export const fixturePosts: Post[] = [
     slug: "rag-judge-evaluation",
     tags: ["AI", "RAG"],
     cover: fixtureCover,
+    thumbnail: fixtureCover,
     featured: true
   }),
   makePost({
@@ -60,6 +62,7 @@ export const fixturePosts: Post[] = [
     slug: "noline-offline-first-architecture",
     tags: ["Architecture", "Product"],
     cover: fixtureDiagram,
+    thumbnail: fixtureDiagram,
     descriptionSource: "excerpt"
   })
 ];
@@ -91,8 +94,8 @@ export const markdownFixture = [
   "2. 컴포넌트를 본다.",
   "3. 페이지 흐름을 본다.",
   "",
-  "- [x] no-cover row",
-  "- [ ] cover row",
+  "- [x] no-thumbnail row",
+  "- [ ] thumbnail row",
   "",
   "## 코드",
   "",

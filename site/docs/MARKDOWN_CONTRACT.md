@@ -192,7 +192,7 @@ Renderer QA must render:
 - Storybook `Design System/Screens/PostDetail`
 - local-only `/system/` and `/system/example-article/` preview
 - shared local-only assets in `../archive/design-system/fixtures`
-- at least one real post without `description`, `cover`, or `featured`
+- at least one real post without `description`, `cover`, `thumbnail`, or `featured`
 - at least one long technical post with code/table/list sections
 
 Before shipping, compare Storybook, system-preview, and at least one real article route. Use `../archive/design-system/reference/blog-design/source/*.html` only when the original design intent needs to be recovered.

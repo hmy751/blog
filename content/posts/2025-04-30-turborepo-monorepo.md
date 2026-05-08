@@ -7,6 +7,7 @@ platform: Blog
 topic: "Monorepo"
 project: InterPersona
 cover: /images/posts/2025-04-30-turborepo-monorepo/01-thumbnail.png
+thumbnail: /images/posts/2025-04-30-turborepo-monorepo/01-thumbnail.png
 tags:
   - Turborepo
   - Monorepo

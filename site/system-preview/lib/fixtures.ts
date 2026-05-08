@@ -34,6 +34,7 @@ export async function getExampleArticle(): Promise<Post> {
     description,
     descriptionSource: description ? "frontmatter" : "excerpt",
     cover: stringValue(data.cover) || undefined,
+    thumbnail: stringValue(data.thumbnail) || undefined,
     featured: false,
     platform: stringValue(data.platform) || "Blog",
     slug: "example-article",

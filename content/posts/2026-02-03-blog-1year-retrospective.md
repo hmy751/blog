@@ -6,7 +6,7 @@ readTime: "5 min read"
 platform: Blog
 topic: "블로그 회고"
 category: Retrospective
-cover: /images/posts/2026-02-03-blog-1year-retrospective/01-netflix-season2.png
+thumbnail: /images/posts/2026-02-03-blog-1year-retrospective/01-netflix-season2.png
 tags:
   - 회고
   - 블로그

@@ -10,10 +10,11 @@ type ArticleRowProps = Readonly<{
 
 export function ArticleRow({ post, compact = false, dateFormat = "full" }: ArticleRowProps) {
   const dateText = dateFormat === "mmdd" ? post.dateShort : post.dateText.slice(2);
+  const thumbnail = post.thumbnail;
 
   return (
     <Link
-      className={`row${post.cover ? "" : " no-thumb"}`}
+      className={`row${thumbnail ? "" : " no-thumb"}`}
       data-post-slug={post.slug}
       data-post-year={post.year}
       data-post-tag={post.primaryTag}
@@ -28,10 +29,10 @@ export function ArticleRow({ post, compact = false, dateFormat = "full" }: Artic
       <time className="meta" dateTime={post.date}>
         {dateText}
       </time>
-      {post.cover ? (
+      {thumbnail ? (
         <div
           className="cv has-img"
-          style={{ backgroundImage: `url(${post.cover})` }}
+          style={{ backgroundImage: `url(${thumbnail})` }}
           aria-hidden="true"
         />
       ) : (

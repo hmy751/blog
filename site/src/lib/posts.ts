@@ -24,6 +24,7 @@ export type Post = {
   description: string;
   descriptionSource: DescriptionSource;
   cover?: string;
+  thumbnail?: string;
   featured: boolean;
   platform: string;
   slug: string;
@@ -117,6 +118,7 @@ function postFromRaw(raw: string, file: string): Post {
     description,
     descriptionSource,
     cover: stringValue(data.cover) || undefined,
+    thumbnail: stringValue(data.thumbnail) || undefined,
     featured: data.featured === true,
     platform: stringValue(data.platform) || "Blog",
     slug: slugFromFilename(file),

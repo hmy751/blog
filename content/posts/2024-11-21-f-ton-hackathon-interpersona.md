@@ -6,6 +6,7 @@ readTime: "12 min read"
 platform: Blog
 topic: "Hackathon"
 cover: /images/posts/2024-11-21-f-ton-hackathon-interpersona/01-thumbnail.jpeg
+thumbnail: /images/posts/2024-11-21-f-ton-hackathon-interpersona/01-thumbnail.jpeg
 tags:
   - Hackathon
   - Next.js

@@ -60,6 +60,7 @@ async function readPostFile(file) {
     description,
     descriptionSource,
     cover: data.cover,
+    thumbnail: data.thumbnail,
     featured: data.featured === true,
     platform: data.platform || "Blog",
     slug: slugFromFilename(file),

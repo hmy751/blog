@@ -28,12 +28,13 @@
 
 - `description`: 목록/OG 설명. 없으면 첫 본문 paragraph를 요약 후보로 쓴다.
 - `topic`: 상세 상단 태그 묶음의 첫 항목. 있으면 `topic`을 먼저 보여주고, 그 뒤에 frontmatter `tags` 전체를 이어 붙인다. SEO keyword source는 계속 `tags` 전체다.
-- `cover`: 상세/OG 이미지. 없으면 기본 OG 이미지를 쓴다.
+- `cover`: 상세 글 상단 hero와 OG 이미지 후보. 목록 썸네일로 자동 사용하지 않는다.
+- `thumbnail`: 홈/목록 row에 보이는 썸네일. `cover` 이미지, 본문 이미지, 별도 썸네일 asset 중 하나를 명시적으로 골라 넣는다. 없으면 목록은 no-thumbnail 상태로 둔다.
 - `featured`: 홈 강조 여부. 없으면 `false`로 본다.
 
 optional 필드를 필요로 한다는 이유로 기존 원고를 대량 수정하지 않는다. 필요하면 root `content/`에서 별도 editorial 작업으로 고친다.
 
-외부 발행본을 이관하면서 thumbnail/대표 이미지가 확인되면, 본문 첫 figure로 중복하기보다 `cover` 후보로 먼저 본다. 같은 이미지가 상세 페이지 hero와 본문 첫 figure에 바로 중복되면 body figure는 제거한다. 이미지 자체가 본문 판단 근거이거나 캡션과 함께 읽혀야 할 때만 body figure로도 둔다.
+이미지는 역할별로 분리한다. 상세 상단에 크게 놓을 이미지는 `cover`, 본문 판단을 돕는 이미지는 Markdown figure, 목록에서 독자가 글을 구분하도록 돕는 이미지는 `thumbnail`이다. 같은 파일을 세 역할에 모두 쓸 수 있지만, 사이트가 본문 첫 이미지나 `cover`를 목록 썸네일로 자동 승격하지는 않는다.
 
 홈의 `Featured` section은 `featured: true`인 글이 있을 때만 보여준다. `Recent`는 `featured` 여부와 관계없이 오늘 기준 공개된 최신 글을 날짜순으로 보여준다.
 

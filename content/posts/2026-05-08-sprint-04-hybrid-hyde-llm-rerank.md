@@ -6,6 +6,7 @@ readTime: "11 min read"
 platform: Blog
 topic: "Retrieval"
 cover: /images/posts/sprint-04-hybrid-hyde-llm-rerank/01-retrieval-failure-map.svg
+thumbnail: /images/posts/sprint-04-hybrid-hyde-llm-rerank/01-retrieval-failure-map.svg
 project: PI Lab
 sprint: 4
 tags:

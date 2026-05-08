@@ -8,6 +8,7 @@ topic: "State Management"
 company: 위블링 (Weebling)
 service: 오라운드 (Oround)
 cover: /images/posts/2025-06-18-frontend-state-management-architecture/01-thumbnail.png
+thumbnail: /images/posts/2025-06-18-frontend-state-management-architecture/01-thumbnail.png
 tags:
   - State Management
   - SWR

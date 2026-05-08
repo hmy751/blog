@@ -65,7 +65,7 @@ content source -> editorial writing harness
 사이트 앱에는 최소한 아래 계약을 둔다.
 
 - `DESIGN_CONTRACT.md`: current production CSS/component/Storybook 기준으로 확정한 token, layout, prose, article row, post page, mobile exception.
-- `CONTENT_CONTRACT.md`: `content/posts/*.md`를 어떻게 읽는지, slug/date/tag/readTime/description/cover/featured fallback.
+- `CONTENT_CONTRACT.md`: `content/posts/*.md`를 어떻게 읽는지, slug/date/tag/readTime/description/cover/thumbnail/featured fallback.
 - `MARKDOWN_CONTRACT.md`: 상세 글 Markdown AST를 prose DOM으로 변환하는 규칙.
 - `READER_BEHAVIOR_CONTRACT.md`: 독서 행동 분석, 히트맵, session replay 보류 조건, privacy page, provider hook의 수집 경계.
 - `SEO_CONTRACT.md`: Next metadata, canonical URL, sitemap/robots, article JSON-LD, 배포 도메인 설정 규칙.
@@ -84,7 +84,7 @@ content source -> editorial writing harness
 앱이 처리할 것:
 
 - frontmatter에서 `title`, `date`, `author`, `readTime`, `platform`, `tags`를 읽는다.
-- `description`, `cover`, `featured` 같은 사이트 표시 필드는 optional로 시작하고 fallback을 둔다.
+- `description`, `cover`, `thumbnail`, `featured` 같은 사이트 표시 필드는 optional로 시작하고 fallback을 둔다.
 - frontmatter `title`로 post title을 만들 때, 본문 첫 `# 제목`이 같은 값이면 렌더링에서 제거한다.
 - 첫 본문 paragraph를 lead로 처리할 수 있다. 원고에 별도 class를 강제하지 않는다.
 - GitHub Flavored Markdown 수준의 table, code fence, list, blockquote, link를 안정적으로 렌더링한다.

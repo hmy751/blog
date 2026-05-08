@@ -7,6 +7,7 @@ platform: Blog
 topic: "Component Architecture"
 project: InterPersona
 cover: /images/posts/2025-02-21-component-architecture-turborepo-storybook/01-thumbnail.png
+thumbnail: /images/posts/2025-02-21-component-architecture-turborepo-storybook/01-thumbnail.png
 tags:
   - Component Architecture
   - Turborepo

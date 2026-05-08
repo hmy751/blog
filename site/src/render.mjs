@@ -192,17 +192,17 @@ function notePage() {
 function articleRow(post, options = {}) {
   const dateText = options.dateFormat === "mmdd" ? post.dateShort : post.dateText.slice(2);
   const description = options.compact ? "" : `<span class="article-desc">${escapeHtml(post.description)}</span>`;
-  const cover = post.cover
-    ? `<div class="cv has-img" style="background-image:url('${escapeAttribute(post.cover)}')" aria-hidden="true"></div>`
+  const thumbnail = post.thumbnail
+    ? `<div class="cv has-img" style="background-image:url('${escapeAttribute(post.thumbnail)}')" aria-hidden="true"></div>`
     : `<div class="cv-spacer" aria-hidden="true"></div>`;
 
-  return `<a class="row${post.cover ? "" : " no-thumb"}" href="/articles/${escapeAttribute(post.slug)}/">
+  return `<a class="row${post.thumbnail ? "" : " no-thumb"}" href="/articles/${escapeAttribute(post.slug)}/">
     <div>
       <div class="article-title">${escapeHtml(post.title)}</div>
       ${description}
     </div>
     <time class="meta" datetime="${escapeHtml(post.date)}">${escapeHtml(dateText)}</time>
-    ${cover}
+    ${thumbnail}
   </a>`;
 }
 

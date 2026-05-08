@@ -18,7 +18,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const noCoverPosts = fixturePosts.map((post) => ({ ...post, cover: undefined }));
+const noThumbnailPosts = fixturePosts.map((post) => ({ ...post, thumbnail: undefined }));
 
 export const ShellFrame: Story = {
   render: () => (
@@ -35,20 +35,20 @@ export const ArticleRows: Story = {
   render: () => (
     <main className="story-canvas">
       <h1 className="story-heading">Article Row</h1>
-      <p className="story-sub">Aside thumbnail variant with cover, no-cover spacer, compact rows, and long-title wrapping.</p>
+      <p className="story-sub">Aside thumbnail variant with explicit thumbnail, no-thumbnail spacer, compact rows, and long-title wrapping.</p>
       <section className="story-section">
         <div className="story-section-head">
           <h2 className="story-section-title">Default</h2>
-          <span className="story-section-kicker">with covers</span>
+          <span className="story-section-kicker">with thumbnails</span>
         </div>
         <ArticleList posts={fixturePosts} />
       </section>
       <section className="story-section">
         <div className="story-section-head">
-          <h2 className="story-section-title">No Cover</h2>
+          <h2 className="story-section-title">No Thumbnail</h2>
           <span className="story-section-kicker">spacer alignment</span>
         </div>
-        <ArticleList posts={noCoverPosts} />
+        <ArticleList posts={noThumbnailPosts} />
       </section>
       <section className="story-section">
         <div className="story-section-head">

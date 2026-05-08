@@ -6,7 +6,7 @@ readTime: "4 min read"
 platform: Blog
 topic: "커리어 회고"
 category: Retrospective
-cover: /images/posts/2025-06-03-2025-mid-year-retrospective/01-barcelona.jpeg
+thumbnail: /images/posts/2025-06-03-2025-mid-year-retrospective/01-barcelona.jpeg
 tags:
   - 회고
   - 커리어

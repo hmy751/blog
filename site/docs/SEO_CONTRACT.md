@@ -72,6 +72,8 @@ Article description 우선순위는 `CONTENT_CONTRACT.md`를 따른다.
 frontmatter description -> first body paragraph excerpt
 ```
 
+`thumbnail` is a list/display field and does not change article Open Graph or JSON-LD image selection. Use `cover` when the article needs a metadata image.
+
 ## Structured Data
 
 article route에만 `BlogPosting` JSON-LD를 둔다.

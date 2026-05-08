@@ -8,6 +8,7 @@ topic: "XState"
 project: InterPersona
 description: "useState와 useEffect로 시작했던 녹음 기능을 XState 상태 머신으로 리팩토링하며 얻은 예측 가능성과 한계를 정리합니다."
 cover: /images/posts/2025-09-19-xstate-state-machine/01-xstate.png
+thumbnail: /images/posts/2025-09-19-xstate-state-machine/01-xstate.png
 tags:
   - XState
   - State Machine
