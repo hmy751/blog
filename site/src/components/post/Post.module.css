@@ -1,3 +1,7 @@
+:global([data-reader-post]) {
+  position: relative;
+}
+
 :global(.post-meta) {
   display: flex;
   align-items: flex-start;

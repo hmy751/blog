@@ -1,0 +1,100 @@
+.rail {
+  --toc-width: 208px;
+  --toc-gap: 56px;
+
+  position: absolute;
+  top: 48px;
+  left: calc(100% + var(--toc-gap));
+  z-index: 20;
+  width: min(var(--toc-width), 100%);
+  height: calc(100% - 48px);
+  pointer-events: none;
+}
+
+.toc {
+  position: sticky;
+  top: 96px;
+  color: var(--ink-4);
+  pointer-events: auto;
+}
+
+.label {
+  margin: 0 0 12px;
+  color: var(--ink-4);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.list {
+  display: grid;
+  gap: 3px;
+  margin: 0;
+  padding: 0 0 0 12px;
+  border-left: .5px solid var(--rule);
+  list-style: none;
+}
+
+.list a {
+  display: block;
+  color: var(--ink-4);
+  font-family: var(--sans);
+  font-size: 12.5px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  padding: 5px 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  text-wrap: pretty;
+  transition: background-color .15s, color .15s;
+}
+
+.list a:hover,
+.list a:focus-visible {
+  background: var(--surface);
+  color: var(--accent-ink);
+}
+
+.list a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.list a.active {
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.subItem {
+  padding-left: 14px;
+}
+
+.subItem a {
+  font-size: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .list a {
+    transition: none;
+  }
+}
+
+:global([data-motion="off"]) .list a {
+  transition: none;
+}
+
+@media (max-width: 1263px) {
+  .rail {
+    display: none;
+  }
+}
+
+@media print {
+  .rail {
+    display: none;
+  }
+}

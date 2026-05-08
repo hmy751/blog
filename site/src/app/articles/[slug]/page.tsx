@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PostFooter, PostHero, PostMeta } from "@/components/post/PostParts";
+import { PostTableOfContents } from "@/components/post/PostTableOfContents";
 import { Prose } from "@/components/prose/Prose";
 import { Shell } from "@/components/shell/Shell";
 import { getNextPost, getPostBySlug, getPosts } from "@/lib/posts";
@@ -54,6 +55,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <PostHero cover={post.cover} />
           <h1 className="post-title">{post.title}</h1>
           {subtitle ? <p className="post-sub">{subtitle}</p> : null}
+          <PostTableOfContents />
           <Prose html={html} />
           <PostFooter backHref="/articles/" backLabel="← Articles" next={next} />
         </article>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { siteConfig } from "@/lib/site-config";
+import { ScrollToTopButton } from "./ScrollToTopButton";
 import "./Shell.module.css";
 
 export type NavKey = "home" | "articles" | "note" | "about";
@@ -74,6 +75,7 @@ export function Shell({ children, current = "home", footerExtra, shellClassName 
         <span>Blog / {year}</span>
         <span className="links">{footerContent}</span>
       </footer>
+      <ScrollToTopButton />
     </div>
   );
 }
