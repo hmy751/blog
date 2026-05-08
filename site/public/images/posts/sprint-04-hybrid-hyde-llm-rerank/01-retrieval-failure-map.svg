@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">검색 실패 위치 지도</title>
+  <desc id="desc">정답 chunk가 vector 검색에서는 후보 pool 밖에 있다가 HyDE로 후보 pool 안으로 들어오고, LLM rerank에서 유지되는 흐름을 보여주는 도식.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fbfbf7"/>
+      <stop offset="100%" stop-color="#eef7ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.11"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="680" rx="28" fill="url(#bg)"/>
+  <text x="70" y="76" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="34" font-weight="700" fill="#111827">검색 실패 위치 지도</text>
+  <text x="70" y="112" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="18" fill="#4b5563">검색이 실패했는지가 아니라, 정답 chunk가 어느 단계에서 사라졌는지를 본다.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="90" y="176" width="210" height="310" rx="18" fill="#ffffff"/>
+    <text x="122" y="224" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="21" font-weight="700" fill="#111827">Vector only</text>
+    <circle cx="195" cy="316" r="52" fill="#fee2e2"/>
+    <text x="195" y="309" text-anchor="middle" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="18" font-weight="700" fill="#991b1b">19위</text>
+    <text x="195" y="334" text-anchor="middle" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="14" fill="#991b1b">pool 밖</text>
+    <text x="122" y="424" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="15" fill="#4b5563">보지 못한 후보는</text>
+    <text x="122" y="448" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="15" fill="#4b5563">rerank가 살릴 수 없다.</text>
+  </g>
+
+  <line x1="318" y1="326" x2="334" y2="326" stroke="#475569" stroke-width="3" stroke-linecap="round"/>
+  <path d="M346 326 L332 318 L332 334 Z" fill="#475569"/>
+
+  <g filter="url(#shadow)">
+    <rect x="360" y="176" width="210" height="310" rx="18" fill="#ffffff"/>
+    <text x="392" y="224" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="21" font-weight="700" fill="#111827">Hybrid + RRF</text>
+    <circle cx="465" cy="316" r="52" fill="#fef3c7"/>
+    <text x="465" y="309" text-anchor="middle" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="18" font-weight="700" fill="#92400e">17위</text>
+    <text x="465" y="334" text-anchor="middle" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="14" fill="#92400e">아직 약함</text>
+    <text x="392" y="424" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="15" fill="#4b5563">lexical 경로는 생겼지만</text>
+    <text x="392" y="448" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="15" fill="#4b5563">충분하지 않았다.</text>
+  </g>
+
+  <line x1="588" y1="326" x2="604" y2="326" stroke="#475569" stroke-width="3" stroke-linecap="round"/>
+  <path d="M616 326 L602 318 L602 334 Z" fill="#475569"/>
+
+  <g filter="url(#shadow)">
+    <rect x="630" y="176" width="210" height="310" rx="18" fill="#ffffff"/>
+    <text x="662" y="224" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="21" font-weight="700" fill="#111827">HyDE</text>
+    <circle cx="735" cy="316" r="52" fill="#dbeafe"/>
+    <text x="735" y="309" text-anchor="middle" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8">2위</text>
+    <text x="735" y="334" text-anchor="middle" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="14" fill="#1d4ed8">pool 안</text>
+    <text x="662" y="424" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="15" fill="#4b5563">recall은 복구됐다.</text>
+    <text x="662" y="448" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="15" fill="#4b5563">다음 병목은 rerank.</text>
+  </g>
+
+  <line x1="858" y1="326" x2="874" y2="326" stroke="#475569" stroke-width="3" stroke-linecap="round"/>
+  <path d="M886 326 L872 318 L872 334 Z" fill="#475569"/>
+
+  <g filter="url(#shadow)">
+    <rect x="900" y="176" width="210" height="310" rx="18" fill="#111827"/>
+    <text x="932" y="224" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="21" font-weight="700" fill="#f9fafb">LLM rerank</text>
+    <circle cx="1005" cy="316" r="52" fill="#dcfce7"/>
+    <text x="1005" y="323" text-anchor="middle" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="18" font-weight="700" fill="#166534">유지</text>
+    <text x="932" y="424" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="15" fill="#d1d5db">최종 후보에</text>
+    <text x="932" y="448" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="15" fill="#d1d5db">남아 성공</text>
+  </g>
+
+  <text x="90" y="580" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="16" fill="#64748b">각 실패는 다음 조치를 알려줬다. 병목은 vector recall에서 rerank 판단으로 이동했다.</text>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">AI 실험의 실행 계약</title>
+  <desc id="desc">Stage Config, 프롬프트 버전, 모델과 provider, trace id, 평가 결과가 하나의 실행 계약으로 묶여야 함을 보여주는 도식.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#eef6f3"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="680" rx="28" fill="url(#bg)"/>
+  <text x="70" y="76" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="34" font-weight="700" fill="#0f172a">AI 실험의 실행 계약</text>
+  <text x="70" y="112" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="18" fill="#475569">결과는 실행 조건을 함께 복원할 수 있을 때 다음 판단의 근거가 된다.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="72" y="178" width="270" height="320" rx="18" fill="#ffffff"/>
+    <text x="102" y="226" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="21" font-weight="700" fill="#0f172a">실행 입력</text>
+    <text x="102" y="268" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="16" fill="#334155">질문 세트</text>
+    <text x="102" y="306" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="16" fill="#334155">영상 / 전사</text>
+    <text x="102" y="344" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="16" fill="#334155">파이프라인 단계</text>
+    <text x="102" y="382" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="16" fill="#334155">실험 오버라이드</text>
+    <rect x="102" y="424" width="190" height="34" rx="17" fill="#e0f2fe"/>
+    <text x="127" y="446" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="14" font-weight="700" fill="#0369a1">이것만으론 부족</text>
+  </g>
+
+  <line x1="372" y1="338" x2="444" y2="338" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="458" y="150" width="306" height="374" rx="22" fill="#0f172a"/>
+    <text x="500" y="204" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="24" font-weight="700" fill="#f8fafc">실행 계약</text>
+    <g font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="16">
+      <rect x="500" y="244" width="220" height="42" rx="10" fill="#1e293b"/>
+      <text x="522" y="271" fill="#e2e8f0">Stage Config</text>
+      <rect x="500" y="300" width="220" height="42" rx="10" fill="#1e293b"/>
+      <text x="522" y="327" fill="#e2e8f0">프롬프트 버전</text>
+      <rect x="500" y="356" width="220" height="42" rx="10" fill="#1e293b"/>
+      <text x="522" y="383" fill="#e2e8f0">Model / Provider</text>
+      <rect x="500" y="412" width="220" height="42" rx="10" fill="#1e293b"/>
+      <text x="522" y="439" fill="#e2e8f0">Trace ID</text>
+      <rect x="500" y="468" width="220" height="42" rx="10" fill="#1e293b"/>
+      <text x="522" y="495" fill="#e2e8f0">평가 결과</text>
+    </g>
+  </g>
+
+  <line x1="790" y1="338" x2="862" y2="338" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="884" y="178" width="250" height="320" rx="18" fill="#ffffff"/>
+    <text x="914" y="226" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="21" font-weight="700" fill="#0f172a">다시 읽는 결과</text>
+    <text x="914" y="268" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="16" fill="#334155">나중에 비교</text>
+    <text x="914" y="306" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="16" fill="#334155">요청 1건 디버그</text>
+    <text x="914" y="344" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="16" fill="#334155">조건 복원</text>
+    <text x="914" y="382" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="16" fill="#334155">점수 신뢰</text>
+    <rect x="914" y="424" width="168" height="34" rx="17" fill="#dcfce7"/>
+    <text x="932" y="446" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="14" font-weight="700" fill="#166534">같은 실행, 같은 해석</text>
+  </g>
+
+  <text x="70" y="596" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="16" fill="#64748b">실행 계약은 보고서 양식이 아니라, 결과가 어떻게 만들어졌는지 설명하기 위한 최소 묶음이다.</text>
+</svg>
