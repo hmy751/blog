@@ -54,7 +54,7 @@ export async function getPostBySlug(slug: string): Promise<Post | undefined> {
 }
 
 export function getFeaturedPosts(posts: Post[]): Post[] {
-  return posts.filter((post) => post.featured).slice(0, 3);
+  return posts.filter((post) => post.featured).slice(0, 4);
 }
 
 export function getRecentPosts(posts: Post[]): Post[] {

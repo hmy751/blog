@@ -5,6 +5,7 @@ date: 2026-05-08
 readTime: "12 min read"
 platform: Blog
 topic: "Semantic Chunking"
+cover: /images/posts/sprint-04-semantic-chunking-embedding-limit/01-next-layer-effects.svg
 project: PI Lab
 sprint: 4
 tags:

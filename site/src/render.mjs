@@ -86,7 +86,7 @@ function htmlShell({ title, description = siteConfig.description, current, body 
 }
 
 function homePage(posts) {
-  const featured = posts.filter((post) => post.featured).slice(0, 3);
+  const featured = posts.filter((post) => post.featured).slice(0, 4);
   const recent = posts.slice(0, 6);
   const featuredSection = featured.length
     ? `<section class="featured" aria-labelledby="featured-title">

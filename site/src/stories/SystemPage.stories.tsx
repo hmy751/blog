@@ -174,7 +174,7 @@ function ComponentsSection() {
     <SystemSection id="components" num="04" title="Components">
       <Spec label="Article row">
         <p className={systemStyles.sysDesc}>production row는 Blog v2.html의 live 기본값인 aside variant만 싣는다.</p>
-        <ArticleList posts={fixturePosts.slice(0, 3)} />
+        <ArticleList posts={fixturePosts.slice(0, 4)} />
       </Spec>
       <Spec label="Post hero">
         <PostMeta post={examplePost} />

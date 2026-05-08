@@ -68,7 +68,7 @@ function HomeScreen() {
 
         <section className="featured" aria-labelledby="featured-title">
           <div className="section-label" id="featured-title">Featured</div>
-          <ArticleList posts={fixturePosts.slice(0, 3)} />
+          <ArticleList posts={fixturePosts.slice(0, 4)} />
         </section>
 
         <section aria-labelledby="recent-title">

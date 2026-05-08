@@ -5,8 +5,10 @@ date: 2026-05-08
 readTime: "10 min read"
 platform: Blog
 topic: "실험 재현성"
+cover: /images/posts/sprint-04-execution-contract/01-execution-contract.svg
 project: PI Lab
 sprint: 4
+featured: true
 tags:
   - AI/ML
   - 부트캠프
