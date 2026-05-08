@@ -109,6 +109,8 @@ type ButtonProps = {};
 ```
 ````
 
+`filename="components/Button.tsx"` is also accepted. Use a public-facing filename or short module name, not a private local path.
+
 renders to:
 
 ```html
@@ -125,6 +127,7 @@ Syntax highlight:
 - Code fences with supported language names are highlighted at render time with Shiki.
 - Supported language aliases include `ts`/`typescript`, `tsx`, `js`/`javascript`, `jsx`, `json`, `css`, `scss`, `bash`/`sh`/`zsh`, `html`, `md`, `yaml`, `diff`, `sql`, and `python`.
 - Highlight output uses the site token classes `.tk-c`, `.tk-k`, `.tk-s`, `.tk-n`, `.tk-t`, and `.tk-f` rather than inline colors.
+- For partial code examples in articles, prefer a short first-line comment that says what the snippet represents. Keep implementation paths and private source names out of public code blocks.
 
 Mermaid diagram:
 

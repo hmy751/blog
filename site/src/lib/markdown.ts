@@ -59,8 +59,8 @@ const shikiTheme = {
     { scope: ["comment", "punctuation.definition.comment"], settings: { foreground: "#9A978C", fontStyle: "italic" } },
     { scope: ["string", "constant.character.escape", "markup.inline.raw"], settings: { foreground: "#2F7A32" } },
     { scope: ["constant.numeric", "constant.language.boolean", "constant.language.null", "constant.language.undefined"], settings: { foreground: "#B45309" } },
-    { scope: ["entity.name.function", "support.function", "variable.function"], settings: { foreground: "#A16207" } },
-    { scope: ["entity.name.type", "entity.name.class", "entity.name.tag", "support.type", "support.class"], settings: { foreground: "#2563EB" } },
+    { scope: ["entity.name.function", "support.function", "variable.function", "meta.function-call", "entity.name.function.decorator"], settings: { foreground: "#A16207" } },
+    { scope: ["entity.name.type", "entity.name.class", "entity.name.tag", "support.type", "support.class", "entity.name.exception", "support.type.exception"], settings: { foreground: "#2563EB" } },
     { scope: ["keyword", "storage.type", "storage.modifier"], settings: { foreground: "#7C3AED" } },
     { scope: ["variable.object.property", "meta.object-literal.key", "support.variable.property"], settings: { foreground: "#A16207" } }
   ]
