@@ -1,6 +1,7 @@
 .button {
   --scroll-top-size: 44px;
   --scroll-top-gap: 28px;
+  --scroll-top-rail-gap: 56px;
 
   position: fixed;
   right: max(
@@ -76,8 +77,16 @@
   transition: none;
 }
 
+@media (min-width: 1264px) {
+  .button {
+    right: auto;
+    left: calc(50vw + (var(--measure) / 2) + var(--scroll-top-rail-gap));
+  }
+}
+
 @media (max-width: 720px) {
   .button {
+    left: auto;
     right: max(16px, calc(env(safe-area-inset-right) + 16px));
     bottom: max(18px, calc(env(safe-area-inset-bottom) + 18px));
     width: 46px;
