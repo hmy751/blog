@@ -9,6 +9,7 @@ cover: /images/posts/sprint-04-hybrid-hyde-llm-rerank/01-retrieval-failure-map.s
 thumbnail: /images/posts/sprint-04-hybrid-hyde-llm-rerank/01-retrieval-failure-map.svg
 project: PI Lab
 sprint: 4
+featured: true
 tags:
   - AI/ML
   - 부트캠프
