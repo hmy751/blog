@@ -44,7 +44,8 @@ async function readPostFile(file) {
   const date = normalizeDate(data.date || file.slice(0, 10));
   const descriptionSource = data.description ? "frontmatter" : "excerpt";
   const description = data.description || excerptFromMarkdown(cleanBody);
-  const tags = Array.isArray(data.tags) ? data.tags : [];
+  const tags = Array.isArray(data.tags) ? data.tags.map(String).filter(Boolean) : [];
+  const displayTags = selectDisplayTags(data, tags);
 
   return {
     title,
@@ -54,7 +55,8 @@ async function readPostFile(file) {
     dateShort: date.slice(5).replace("-", "."),
     readTime: data.readTime || "",
     tags,
-    primaryTag: tags[0] || data.project || data.category || "Blog",
+    primaryTag: displayTags[0] || data.project || data.category || "Blog",
+    displayTags,
     description,
     descriptionSource,
     cover: data.cover,
@@ -65,6 +67,38 @@ async function readPostFile(file) {
     body: cleanBody,
     file
   };
+}
+
+function selectDisplayTags(data, tags) {
+  const topic = data.topic ? String(data.topic).trim() : "";
+  const displayTags = topic ? [topic] : [];
+
+  for (const tag of tags) {
+    const normalized = String(tag).trim();
+    if (!normalized) continue;
+    displayTags.push(normalized);
+  }
+
+  const uniqueTags = unique(displayTags);
+  if (uniqueTags.length > 0) return uniqueTags;
+
+  const fallback = tags[0] || data.project || data.category || "Blog";
+  return fallback ? [String(fallback)] : [];
+}
+
+function unique(values) {
+  const seen = new Set();
+  const result = [];
+
+  for (const value of values) {
+    const normalized = String(value).trim();
+    const key = normalized.toLocaleLowerCase();
+    if (!normalized || seen.has(key)) continue;
+    seen.add(key);
+    result.push(normalized);
+  }
+
+  return result;
 }
 
 export function parseFrontmatter(raw) {

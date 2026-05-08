@@ -4,6 +4,7 @@ author: "myeongyeon ham"
 date: 2026-04-18
 readTime: "11 min read"
 platform: Blog
+topic: "RAG 평가"
 project: PI Lab
 sprint: 3
 tags:

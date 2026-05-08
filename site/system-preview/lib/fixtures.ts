@@ -18,6 +18,7 @@ export async function getExampleArticle(): Promise<Post> {
   const title = stringValue(data.title) || "Markdown 요소 확인용 예시 글";
   const date = normalizeDate(data.date ?? "2026-05-05");
   const tags = arrayOfStrings(data.tags);
+  const displayTags = tags.length > 0 ? tags : ["Fixture"];
   const description = stringValue(data.description);
 
   return {
@@ -28,7 +29,8 @@ export async function getExampleArticle(): Promise<Post> {
     dateShort: date.slice(5).replace("-", "."),
     readTime: stringValue(data.readTime),
     tags,
-    primaryTag: tags[0] || "Fixture",
+    primaryTag: displayTags[0] || "Fixture",
+    displayTags,
     description,
     descriptionSource: description ? "frontmatter" : "excerpt",
     cover: stringValue(data.cover) || undefined,

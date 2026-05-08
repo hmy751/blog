@@ -4,6 +4,7 @@ author: "myeongyeon ham"
 date: 2026-05-08
 readTime: "10 min read"
 platform: Blog
+topic: "실험 재현성"
 project: PI Lab
 sprint: 4
 tags:

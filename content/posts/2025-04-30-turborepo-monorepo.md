@@ -4,6 +4,7 @@ author: "myeongyeon ham"
 date: 2025-04-30
 readTime: "8 min read"
 platform: Blog
+topic: "Monorepo"
 project: InterPersona
 cover: /images/posts/2025-04-30-turborepo-monorepo/01-thumbnail.png
 tags:

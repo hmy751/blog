@@ -4,6 +4,7 @@ author: "myeongyeon ham"
 date: 2026-01-29
 readTime: "15 min read"
 platform: Blog
+topic: "Offline-First"
 project: Noline
 cover: /images/posts/2026-01-29-noline-offline-first-architecture/01-thumbnail.png
 featured: true

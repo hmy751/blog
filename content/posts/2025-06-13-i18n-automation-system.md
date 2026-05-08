@@ -4,6 +4,7 @@ author: "myeongyeon ham"
 date: 2025-06-13
 readTime: "14 min read"
 platform: Blog
+topic: "i18n"
 cover: /images/posts/2025-06-13-i18n-automation-system/01-thumbnail.png
 featured: true
 company: 위블링 (Weebling)

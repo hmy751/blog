@@ -4,6 +4,7 @@ author: "myeongyeon ham"
 date: 2026-04-16
 readTime: "8 min read"
 platform: Blog
+topic: "DistilBERT"
 project: PI Lab
 sprint: 1
 featured: true

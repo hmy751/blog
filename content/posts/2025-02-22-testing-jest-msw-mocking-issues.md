@@ -4,6 +4,7 @@ author: "myeongyeon ham"
 date: 2025-02-22
 readTime: "9 min read"
 platform: Blog
+topic: "Testing"
 project: InterPersona
 tags:
   - Jest

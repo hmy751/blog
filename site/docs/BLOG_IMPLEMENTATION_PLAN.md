@@ -88,7 +88,7 @@ If the chosen framework has a font loader, move the font loading from `archive/d
 
 1. Read `../content/posts/*.md`.
 2. Validate required frontmatter from `CONTENT_CONTRACT.md`.
-3. Derive `slug`, `year`, `primaryTag`, `description`, `hasCover`, `isFeatured`.
+3. Derive `slug`, `year`, `primaryTag`, `displayTags`, `description`, `hasCover`, `isFeatured`.
 4. Sort posts by date desc.
 5. Build route data:
    - home featured/recent
@@ -98,7 +98,8 @@ If the chosen framework has a font loader, move the font loading from `archive/d
 
 Adapter rules:
 
-- `primaryTag`: first `tags[]`, fallback `project`, fallback `category`, fallback `Blog`.
+- `primaryTag`: frontmatter `topic`, fallback first `tags[]`, fallback `project`, fallback `category`, fallback `Blog`.
+- `displayTags`: `topic` first, then all frontmatter `tags[]`; duplicates are removed while preserving order.
 - `description`: frontmatter `description`, fallback first normal paragraph excerpt.
 - `featured`: frontmatter `featured`; if no featured posts exist, home hides the featured section instead of inventing one.
 - future-dated posts: hidden from production lists/routes until the build cutoff date reaches the post date. Use `SITE_PUBLISH_CUTOFF_DATE=YYYY-MM-DD` for deterministic verification.

@@ -4,6 +4,7 @@ author: "myeongyeon ham"
 date: 2025-06-03
 readTime: "4 min read"
 platform: Blog
+topic: "커리어 회고"
 category: Retrospective
 cover: /images/posts/2025-06-03-2025-mid-year-retrospective/01-barcelona.jpeg
 tags:

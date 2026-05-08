@@ -17,6 +17,7 @@
 
 - public route마다 title, description, canonical을 안정적으로 제공한다.
 - article route는 frontmatter와 excerpt fallback을 이용해 Open Graph/Twitter metadata를 만든다.
+- 상세 상단의 `topic`/visible tag chips는 표시용이다. SEO keyword source는 계속 frontmatter `tags` 전체다.
 - published posts만 sitemap에 포함한다.
 - `date: TBD`와 미래 날짜 글은 route/list/sitemap에서 제외한다.
 - article JSON-LD는 공개된 글 데이터만 사용한다.

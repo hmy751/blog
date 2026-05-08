@@ -27,6 +27,7 @@
 아래 필드는 사이트 표시를 돕기 위한 optional 필드로 시작한다. 없을 때 fallback을 둔다.
 
 - `description`: 목록/OG 설명. 없으면 첫 본문 paragraph를 요약 후보로 쓴다.
+- `topic`: 상세 상단 태그 묶음의 첫 항목. 있으면 `topic`을 먼저 보여주고, 그 뒤에 frontmatter `tags` 전체를 이어 붙인다. SEO keyword source는 계속 `tags` 전체다.
 - `cover`: 상세/OG 이미지. 없으면 기본 OG 이미지를 쓴다.
 - `featured`: 홈 강조 여부. 없으면 `false`로 본다.
 

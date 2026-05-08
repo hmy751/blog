@@ -20,6 +20,7 @@ export type Post = {
   readTime: string;
   tags: string[];
   primaryTag: string;
+  displayTags: string[];
   description: string;
   descriptionSource: DescriptionSource;
   cover?: string;
@@ -96,6 +97,7 @@ function postFromRaw(raw: string, file: string): Post {
   }
 
   const tags = arrayOfStrings(data.tags);
+  const displayTags = selectDisplayTags(data, tags);
   const descriptionFromFrontmatter = stringValue(data.description);
   const descriptionSource: DescriptionSource = descriptionFromFrontmatter
     ? "frontmatter"
@@ -110,7 +112,8 @@ function postFromRaw(raw: string, file: string): Post {
     dateShort: date === "TBD" ? "TBD" : date.slice(5).replace("-", "."),
     readTime: stringValue(data.readTime),
     tags,
-    primaryTag: tags[0] || stringValue(data.project) || stringValue(data.category) || "Blog",
+    primaryTag: displayTags[0] || stringValue(data.project) || stringValue(data.category) || "Blog",
+    displayTags,
     description,
     descriptionSource,
     cover: stringValue(data.cover) || undefined,
@@ -149,9 +152,41 @@ function stringValue(value: unknown): string {
   return String(value);
 }
 
+function selectDisplayTags(data: Frontmatter, tags: string[]): string[] {
+  const topic = stringValue(data.topic).trim();
+  const displayTags = topic ? [topic] : [];
+
+  for (const tag of tags) {
+    const normalized = tag.trim();
+    if (!normalized) continue;
+    displayTags.push(normalized);
+  }
+
+  const uniqueTags = unique(displayTags);
+  if (uniqueTags.length > 0) return uniqueTags;
+
+  const fallback = tags[0] || stringValue(data.project) || stringValue(data.category) || "Blog";
+  return fallback ? [fallback] : [];
+}
+
 function arrayOfStrings(value: unknown): string[] {
   if (!Array.isArray(value)) return [];
   return value.map((item) => stringValue(item)).filter(Boolean);
+}
+
+function unique(values: string[]): string[] {
+  const seen = new Set<string>();
+  const result: string[] = [];
+
+  for (const value of values) {
+    const normalized = value.trim();
+    const key = normalized.toLocaleLowerCase();
+    if (!normalized || seen.has(key)) continue;
+    seen.add(key);
+    result.push(normalized);
+  }
+
+  return result;
 }
 
 function stripDuplicateTitle(body: string, title: string): string {

@@ -4,6 +4,7 @@ author: "myeongyeon ham"
 date: 2025-02-21
 readTime: "10 min read"
 platform: Blog
+topic: "Component Architecture"
 project: InterPersona
 cover: /images/posts/2025-02-21-component-architecture-turborepo-storybook/01-thumbnail.png
 tags:

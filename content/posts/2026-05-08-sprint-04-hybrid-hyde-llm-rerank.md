@@ -4,6 +4,7 @@ author: "myeongyeon ham"
 date: 2026-05-08
 readTime: "11 min read"
 platform: Blog
+topic: "Retrieval"
 project: PI Lab
 sprint: 4
 tags:

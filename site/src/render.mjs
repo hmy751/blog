@@ -146,10 +146,13 @@ function postPage(post, posts, options = {}) {
   return `<main class="view">
     <article>
       <div class="post-meta">
-        <span class="tag">${escapeHtml(post.primaryTag)}</span>
-        <span class="sep">·</span>
-        <time datetime="${escapeHtml(post.date)}">${escapeHtml(post.dateText)}</time>
-        ${post.readTime ? `<span class="sep">·</span><span>${escapeHtml(post.readTime)}</span>` : ""}
+        <div class="post-meta-line">
+          <span>${escapeHtml(post.platform)}</span>
+          <span class="sep">·</span>
+          <time datetime="${escapeHtml(post.date)}">${escapeHtml(post.dateText)}</time>
+          ${post.readTime ? `<span class="sep">·</span><span>${escapeHtml(post.readTime)}</span>` : ""}
+        </div>
+        ${postTagList(post)}
       </div>
       ${post.cover ? `<div class="post-hero" style="background-image:url('${escapeAttribute(post.cover)}')" aria-hidden="true"></div>` : ""}
       <h1 class="post-title">${escapeHtml(post.title)}</h1>
@@ -163,6 +166,14 @@ function postPage(post, posts, options = {}) {
       </footer>
     </article>
   </main>`;
+}
+
+function postTagList(post) {
+  const displayTags = post.displayTags?.length ? post.displayTags : [post.primaryTag];
+
+  return `<div class="post-tags" aria-label="Tags">
+    ${displayTags.map((tag, index) => `<span class="tag${index === 0 ? " is-primary" : ""}">${escapeHtml(tag)}</span>`).join("\n")}
+  </div>`;
 }
 
 function notePage() {

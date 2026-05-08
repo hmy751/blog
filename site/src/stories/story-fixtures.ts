@@ -8,6 +8,8 @@ export const fixtureDiagram = "/archive/design-system/fixtures/example-article-d
 
 export function makePost(input: FixturePostInput): Post {
   const tags = input.tags ?? ["Design"];
+  const primaryTag = input.primaryTag ?? tags[0] ?? "Blog";
+  const displayTags = input.displayTags ?? [primaryTag, ...tags.filter((tag) => tag !== primaryTag)];
   const dateText = input.date.replaceAll("-", ".");
 
   return {
@@ -20,7 +22,8 @@ export function makePost(input: FixturePostInput): Post {
     featured: false,
     file: `${input.date}-${input.slug}.md`,
     platform: "Blog",
-    primaryTag: tags[0] ?? "Blog",
+    primaryTag,
+    displayTags,
     readTime: "6 min read",
     tags,
     year: input.date.slice(0, 4),

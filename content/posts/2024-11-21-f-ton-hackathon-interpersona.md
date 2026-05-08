@@ -4,6 +4,7 @@ author: "myeongyeon ham"
 date: 2024-11-21
 readTime: "12 min read"
 platform: Blog
+topic: "Hackathon"
 cover: /images/posts/2024-11-21-f-ton-hackathon-interpersona/01-thumbnail.jpeg
 tags:
   - Hackathon

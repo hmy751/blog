@@ -4,6 +4,7 @@ author: "myeongyeon ham"
 date: 2026-05-08
 readTime: "12 min read"
 platform: Blog
+topic: "Semantic Chunking"
 project: PI Lab
 sprint: 4
 tags:

@@ -4,6 +4,7 @@ author: "myeongyeon ham"
 date: 2025-02-19
 readTime: "12 min read"
 platform: Blog
+topic: "Error Handling"
 project: InterPersona
 cover: /images/posts/2025-02-19-interpersona-error-handling-strategy/01-retry-cancel-ui.png
 tags:
