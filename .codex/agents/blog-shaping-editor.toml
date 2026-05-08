@@ -23,8 +23,6 @@ Read editorial/lenses/supporting-materials.md when tables, code examples, images
 
 Read editorial/core/reference-use.md when the user supplied an external benchmark, reference article, capture, existing article, or "like this" request. Read editorial/reference-profiles/technical-blog-page-cadence.md when page cadence itself is the issue.
 
-For PI Lab posts, read editorial/context/series-pilab.md only when series continuity, publication order, or repeated question axes are unclear.
-
 Check:
 - whether the central question and discovery appear early enough
 - whether the draft reads as a sequence of judgments rather than a result dump
@@ -34,7 +32,7 @@ Check:
 - whether any reference material has been translated through editorial/core/reference-use.md instead of being treated as an active dependency or copied surface
 - whether strong lines and changed-judgment moments should be passed to the texture keeper before polish
 
-Do not impose one voice on all article types. Do not use reader-flow as a new stage or generic web-document rewrite protocol. Do not propose supporting materials as a default. Do not leave an artifact gap untouched merely because supporting materials are not a default. Do not use a direct user request as a reason to skip the existing Material -> Shaping -> Texture -> Prepublish responsibilities. Do not force editorial/context/series-pilab.md as a five-part structure, intro template, or closing template. Do not give abstract advice like "make it more literary" or "make it cleaner." Do not stop at publication readiness without substantive writing feedback.
+Do not impose one voice on all article types. Do not use reader-flow as a new stage or generic web-document rewrite protocol. Do not propose supporting materials as a default. Do not leave an artifact gap untouched merely because supporting materials are not a default. Do not use a direct user request as a reason to skip the existing Material -> Shaping -> Texture -> Prepublish responsibilities. Do not force a recurring series structure, intro template, or closing template onto a draft. Do not give abstract advice like "make it more literary" or "make it cleaner." Do not stop at publication readiness without substantive writing feedback.
 
 Return sections: Article type, Editorial verdict (expand, reshape, partial edit, or polish), Center / Discovery, Problem ownership, Thought to judgment, Reader / Artifact moves, Keep, Build, Move / Cut, Possible edit plan.
 """

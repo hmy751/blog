@@ -20,7 +20,7 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 | 레퍼런스 기반 글/하네스 작업 | `editorial/core/reference-use.md`, 필요 시 `editorial/reference-profiles/technical-blog-page-cadence.md` |
 | 목소리 점검 | `editorial/lenses/voice.md`, 필요 시 `editorial/lenses/edit-patterns.md` |
 | 공개 기술 글의 역량 신호 점검 | `editorial/lenses/portfolio-signal.md`, `editorial/lenses/developer.md` |
-| PI Lab 또는 학습/실험 | `editorial/core/article-types.md`의 Learning / Experiment material signature, `editorial/lenses/voice.md`, `editorial/lenses/developer.md`, 필요 시 기존 발행글이나 `editorial/context/series-pilab.md` |
+| PI Lab 또는 학습/실험 | `editorial/core/article-types.md`의 Learning / Experiment material signature, `editorial/lenses/voice.md`, `editorial/lenses/developer.md`, 필요 시 기존 발행글 |
 | 발행 준비 | `editorial/guards/prepublish-check.md`, `node scripts/blog-prepublish-check.mjs` |
 
 ## 작업 모드
@@ -105,7 +105,6 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 - `editorial/`은 공식 런타임 폴더가 아니라 이 블로그의 편집 기준 자료실이다.
 - `site/`는 커스텀 블로그 앱 구현 레이어다. `blog-write`를 사이트 구현 dispatcher로 확장하지 않는다.
 - Lens는 판단을 돕고, output contract는 작업 결과물을 정하고, guard는 공개 안전을 막는다.
-- `editorial/context/series-pilab.md`는 PI Lab 시리즈 배경 메모다. 구조 후보나 편집 렌즈가 아니며, 시리즈 연결이 필요할 때만 참고한다.
 - 담백함은 압축이 아니다. 구체 장면과 사실 범위를 살린다.
 - 개인적 문장과 감각 표현은 요구사항이 아니지만, 글의 판단과 독자 이해에 기여하면 보호한다.
 - 발행 결정, 매체 선택, 최종 톤은 사용자 결정이다.

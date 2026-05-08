@@ -67,7 +67,6 @@
 - [supporting-materials.md](editorial/lenses/supporting-materials.md)는 artifact gap이 확인된 뒤 표, 코드, 이미지, 도식, 그래프, 스크린샷 중 어떤 자료로 풀지 고르는 처방 기준이다.
 - [edit-patterns.md](editorial/lenses/edit-patterns.md)는 반복해서 거부된 수정 방향의 사례집이다.
 - [technical-blog-page-cadence.md](editorial/reference-profiles/technical-blog-page-cadence.md)는 좋은 기술 글의 페이지 리듬 패턴을 특정 레퍼런스에 의존하지 않는 형태로 보존한다.
-- [series-pilab.md](editorial/context/series-pilab.md)는 PI Lab 시리즈의 앞뒤 맥락을 확인하는 느슨한 작업 메모다. PI Lab 글에도 자동 적용하지 않고, 구조·도입·마무리 템플릿으로 쓰지 않는다.
 - 담백함은 압축이 아니다. 호흡, 구체 장면, 사실의 범위를 같이 본다.
 - 회고 글은 했다체와 자기 관찰을 허용한다. 기술 글의 금기를 회고 글에 그대로 적용하지 않는다.
 - 개인적 문장, 감각, 망설임, 장면은 요구사항이 아니라 허용 구역이다. 글의 판단과 독자 이해에 기여하면 보호한다.

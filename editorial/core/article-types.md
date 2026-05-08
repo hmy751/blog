@@ -151,7 +151,6 @@ Material signature:
 PI Lab 글:
 
 - 먼저 `learning-experiment`로 본다.
-- [series-pilab.md](../context/series-pilab.md)는 시리즈 연결, 발행 순서, 반복 질문 축이 헷갈릴 때만 참고한다.
 - PI Lab이라는 이름이 구조, 도입, 마무리, 개인 맥락을 자동으로 정하지 않는다.
 
 ## 단계별 사용

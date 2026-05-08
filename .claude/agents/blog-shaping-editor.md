@@ -24,7 +24,6 @@ tools: Read, Grep, Glob
 - 외부 기준, 참고 글, 캡처, "이런 느낌"이 주어졌을 때 `editorial/core/reference-use.md`
 - 페이지 리듬 자체가 쟁점이면 `editorial/reference-profiles/technical-blog-page-cadence.md`
 - `editorial/lenses/edit-patterns.md`
-- PI Lab 글에서 앞뒤 발행 흐름이나 반복 질문 축이 헷갈릴 때만 `editorial/context/series-pilab.md`
 
 ## 점검 범위
 
@@ -44,7 +43,7 @@ tools: Read, Grep, Glob
 - 자료 장치를 기본값처럼 제안하지 않는다.
 - "자료 장치는 기본값이 아니다"를 이유로 artifact gap을 방치하지 않는다.
 - 사용자 지시를 이유로 기존 하네스의 단계 책임을 건너뛰지 않는다.
-- `editorial/context/series-pilab.md`를 5단 구조, 도입 템플릿, 마무리 템플릿으로 강제하지 않는다.
+- 시리즈라는 이유로 5단 구조, 도입 템플릿, 마무리 템플릿을 강제하지 않는다.
 - evidence checker처럼 출처 검증을 메인 임무로 삼지 않는다.
 - 발행 가능성만 확인하고 본문 개선 없이 끝내지 않는다.
 

@@ -7,7 +7,6 @@
   - [../core/workflow.md](../core/workflow.md) — 글을 키우는 단계
   - [reader-flow.md](reader-flow.md) — 독자 진입성과 스캔 가능한 흐름
   - [edit-patterns.md](edit-patterns.md) — 반복 편집 패턴
-  - [../context/series-pilab.md](../context/series-pilab.md) — PI Lab 시리즈 배경 메모
 ---
 
 # Developer Lens

@@ -33,7 +33,7 @@
 | 회사 프로젝트 글 | `core/article-types.md`, `guards/source-policy.md`, `lenses/voice.md`, `lenses/developer.md` |
 | 제품/아키텍처 글 | `core/article-types.md`, `guards/source-policy.md`, `lenses/voice.md`, `lenses/developer.md` |
 | 개인/블로그 회고 | `core/article-types.md`의 Retrospective material signature, `lenses/voice.md` |
-| PI Lab 또는 학습/실험 글 | `core/article-types.md`의 Learning / Experiment material signature, `lenses/voice.md`, `lenses/developer.md`, 필요 시 기존 발행글이나 `context/series-pilab.md` |
+| PI Lab 또는 학습/실험 글 | `core/article-types.md`의 Learning / Experiment material signature, `lenses/voice.md`, `lenses/developer.md`, 필요 시 기존 발행글 |
 | 발행 전 | `guards/prepublish-check.md`, `core/output-contracts.md`의 candidate slot 기준 |
 
 ## 문서 역할
@@ -51,14 +51,13 @@
 - `guards/source-policy.md`: 원천 자료와 공개 경계.
 - `guards/prepublish-check.md`: 발행 직전 hard guard.
 - `reference-profiles/technical-blog-page-cadence.md`: 좋은 기술 글의 페이지 단위 리듬 패턴.
-- `context/series-pilab.md`: PI Lab 시리즈의 앞뒤 맥락을 확인하는 느슨한 작업 메모. 편집 렌즈나 구조 템플릿이 아니다.
 
 ## 강제 규칙과 참고 기준
 
 - 강제 규칙: `guards/source-policy.md`의 공개 경계, `guards/prepublish-check.md`의 발행 전 필수 항목, `core/output-contracts.md`의 발행 원고 후보 슬롯 제거.
 - 참고 기준: `core/workflow.md`, `core/article-types.md`, `lenses/voice.md`, `lenses/developer.md`, `lenses/portfolio-signal.md`, `lenses/reader-flow.md`, `lenses/supporting-materials.md`, `lenses/edit-patterns.md`.
 
-참고 기준은 글을 틀에 끼우기 위한 것이 아니라, 초안이 의도한 목소리와 구조에서 벗어나는지 확인하기 위한 점검 거울이다. `context/series-pilab.md`는 이 참고 기준 묶음에서 제외한다. 시리즈 연결이나 발행 순서가 필요할 때만 배경 메모로 본다.
+참고 기준은 글을 틀에 끼우기 위한 것이 아니라, 초안이 의도한 목소리와 구조에서 벗어나는지 확인하기 위한 점검 거울이다. 시리즈 연결은 별도 템플릿이 아니라 기존 발행글과 현재 초안의 중심 질문을 비교해 필요한 만큼만 다룬다.
 
 ## 단계별 파트너
 

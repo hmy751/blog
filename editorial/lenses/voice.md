@@ -7,7 +7,6 @@
   - [CLAUDE.md](../../CLAUDE.md) — 블로그 repo 운영 가이드
   - [developer.md](developer.md) — 기술 블로그다운 문제 정의와 판단 기준
   - [edit-patterns.md](edit-patterns.md) — 반복 편집 패턴
-  - [../context/series-pilab.md](../context/series-pilab.md) — PI Lab 시리즈 배경 메모
   - [../guards/source-policy.md](../guards/source-policy.md) — 공개 경계와 원천 사용 기준
 ---
 
@@ -130,8 +129,8 @@
 PI Lab 글:
 
 - PI Lab 글도 먼저 `Learning / Experiment` 기준으로 본다.
-- [series-pilab.md](../context/series-pilab.md)는 앞선 글과의 연결, 발행 순서, 반복되는 질문 축이 헷갈릴 때만 참고한다.
-- 시리즈 메모를 근거로 도입, 결론, 5단 구조, 개인 맥락을 강제하지 않는다.
+- 앞선 글과의 연결, 발행 순서, 반복되는 질문 축이 필요해도 현재 초안의 질문과 원천 자료를 우선한다.
+- 시리즈라는 이유로 도입, 결론, 5단 구조, 개인 맥락을 강제하지 않는다.
 - PI Lab이라는 이름이 글의 페르소나를 자동으로 정하지 않는다. 현재 초안의 질문, 원천 자료, 실제 판단 변화가 우선이다.
 
 ## 4. 점검 질문
