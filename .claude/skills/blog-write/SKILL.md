@@ -78,6 +78,8 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 - 편집 모드에서는 진단 카드로 끝내지 않고 최소 하나의 실제 원고 move를 남긴다.
 - trace UI, 제품 화면, 모델 답변, 그래프처럼 화면성이 강한 재료가 핵심이면 `editorial/lenses/supporting-materials.md`를 열고 visual candidate를 먼저 검토한다.
 - 직접 넣을 수 없는 스크린샷/이미지는 최종 답변에만 제안하지 않고 원고 위치나 review 카드에 `supporting-material candidate` 슬롯을 남긴다.
+- 소제목을 고친 뒤에도 본문이 비슷하게 느껴지면 `본문 cadence` 문제로 본다. 전환어·어미를 전역으로 바꾸지 말고, 반복되는 단락 전개와 섹션 역할을 진단한 뒤 최소 2~3개 본문 move를 실제로 바꾼다.
+- 표어형 판정문이 앞 문단의 설명 호흡을 끊는다면 `판정문 착지 강도` 문제로 본다. 특정 참고 글의 어미나 문체를 가져오지 말고, 현재 문단 안에서 완충 문장, 구체 장면, 낮춘 표현, 결론부 회수 중 하나를 고른다.
 
 ## Reference Use
 
@@ -86,6 +88,7 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 - 레퍼런스는 active rule이 아니라 pattern source다.
 - 파일명, 플랫폼명, 특정 글 제목을 하네스 원칙에 박지 않는다.
 - `observe -> abstract -> adapt -> guard` 순서로 현재 글에 맞는 move를 만든다.
+- 레퍼런스의 어미, 말투, 플랫폼 톤앤매너는 직접 가져오지 않는다. 필요한 것은 독자가 어떤 호흡으로 판단에 도착하는지에 대한 추상 패턴이다.
 - 페이지 리듬 자체가 쟁점이면 `editorial/reference-profiles/technical-blog-page-cadence.md`와 `editorial/core/output-contracts.md`의 reference-guided contract를 따른다.
 
 ## 하네스 변경
