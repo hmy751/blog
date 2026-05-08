@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">DistilBERT fine-tuning accuracy and loss dashboard</title>
+  <desc id="desc">DistilBERT 파인튜닝 실험을 accuracy 하나가 아니라 train loss, eval loss, gap과 함께 읽는 실험 대시보드형 커버 이미지.</desc>
+  <defs>
+    <linearGradient id="surface" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#101820"/>
+      <stop offset="52%" stop-color="#17202a"/>
+      <stop offset="100%" stop-color="#24221e"/>
+    </linearGradient>
+    <linearGradient id="metric" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#8af0b0"/>
+      <stop offset="100%" stop-color="#7dd3fc"/>
+    </linearGradient>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#030712" flood-opacity="0.34"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="680" rx="30" fill="url(#surface)"/>
+
+  <g opacity="0.16" stroke="#f8fafc" stroke-width="1">
+    <line x1="86" y1="148" x2="1114" y2="148"/>
+    <line x1="86" y1="238" x2="1114" y2="238"/>
+    <line x1="86" y1="328" x2="1114" y2="328"/>
+    <line x1="86" y1="418" x2="1114" y2="418"/>
+    <line x1="86" y1="508" x2="1114" y2="508"/>
+    <line x1="180" y1="112" x2="180" y2="560"/>
+    <line x1="330" y1="112" x2="330" y2="560"/>
+    <line x1="480" y1="112" x2="480" y2="560"/>
+    <line x1="630" y1="112" x2="630" y2="560"/>
+    <line x1="780" y1="112" x2="780" y2="560"/>
+    <line x1="930" y1="112" x2="930" y2="560"/>
+  </g>
+
+  <g font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif">
+    <text x="72" y="78" font-size="17" font-weight="700" fill="#8af0b0" letter-spacing="0">DistilBERT fine-tuning</text>
+    <text x="72" y="126" font-size="42" font-weight="800" fill="#f8fafc" letter-spacing="0">accuracy 뒤의 학습 상태</text>
+    <text x="74" y="162" font-size="18" fill="#cbd5e1">정확도 하나로 끝내지 않고, loss와 gap으로 실험을 다시 읽었다.</text>
+  </g>
+
+  <g filter="url(#soft-shadow)">
+    <rect x="72" y="218" width="318" height="286" rx="24" fill="#f8fafc"/>
+    <g font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif">
+      <text x="106" y="266" font-size="15" font-weight="700" fill="#64748b">BEST RUN</text>
+      <text x="106" y="348" font-size="72" font-weight="850" fill="#0f172a">64.15%</text>
+      <text x="110" y="388" font-size="18" fill="#475569">accuracy</text>
+      <rect x="110" y="420" width="214" height="36" rx="18" fill="#dcfce7"/>
+      <text x="135" y="444" font-size="15" font-weight="800" fill="#166534">loss/gap도 같이 통과</text>
+    </g>
+  </g>
+
+  <g filter="url(#soft-shadow)">
+    <rect x="450" y="210" width="420" height="318" rx="24" fill="#0b1220" stroke="#334155" stroke-width="1"/>
+    <g font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif">
+      <text x="486" y="260" font-size="17" font-weight="800" fill="#f8fafc">loss curve</text>
+      <text x="486" y="288" font-size="14" fill="#94a3b8">train / eval이 벌어지는지 먼저 확인</text>
+    </g>
+    <g stroke="#334155" stroke-width="1">
+      <line x1="504" y1="342" x2="818" y2="342"/>
+      <line x1="504" y1="396" x2="818" y2="396"/>
+      <line x1="504" y1="450" x2="818" y2="450"/>
+      <line x1="504" y1="504" x2="818" y2="504"/>
+      <line x1="556" y1="320" x2="556" y2="504"/>
+      <line x1="626" y1="320" x2="626" y2="504"/>
+      <line x1="696" y1="320" x2="696" y2="504"/>
+      <line x1="766" y1="320" x2="766" y2="504"/>
+    </g>
+    <path d="M510 452 C560 418, 590 372, 638 390 S724 472, 812 354" fill="none" stroke="#7dd3fc" stroke-width="5" stroke-linecap="round"/>
+    <path d="M510 432 C560 410, 596 386, 642 402 S722 452, 812 368" fill="none" stroke="#8af0b0" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="812" cy="354" r="7" fill="#7dd3fc"/>
+    <circle cx="812" cy="368" r="7" fill="#8af0b0"/>
+    <g font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif" font-size="14" font-weight="700">
+      <rect x="520" y="314" width="86" height="28" rx="14" fill="#123044"/>
+      <text x="542" y="333" fill="#7dd3fc">eval</text>
+      <rect x="612" y="314" width="90" height="28" rx="14" fill="#143325"/>
+      <text x="632" y="333" fill="#8af0b0">train</text>
+    </g>
+  </g>
+
+  <g filter="url(#soft-shadow)" font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif">
+    <rect x="922" y="218" width="206" height="286" rx="24" fill="#f8fafc"/>
+    <text x="956" y="266" font-size="15" font-weight="800" fill="#64748b">READ TOGETHER</text>
+    <text x="956" y="310" font-size="16" fill="#64748b">eval_loss</text>
+    <text x="956" y="344" font-size="26" font-weight="850" fill="#0f172a">0.8558</text>
+    <line x1="956" y1="366" x2="1094" y2="366" stroke="#cbd5e1"/>
+    <text x="956" y="404" font-size="16" fill="#64748b">train_loss</text>
+    <text x="956" y="438" font-size="26" font-weight="850" fill="#0f172a">0.8673</text>
+    <line x1="956" y1="460" x2="1094" y2="460" stroke="#cbd5e1"/>
+    <text x="956" y="492" font-size="16" fill="#64748b">gap</text>
+    <text x="1008" y="492" font-size="24" font-weight="850" fill="#0369a1">-0.012</text>
+  </g>
+
+  <g font-family="Inter, Apple SD Gothic Neo, Arial, sans-serif">
+    <text x="74" y="590" font-size="17" fill="#cbd5e1">accuracy는 결과이고, loss와 gap은 그 결과가 나온 학습 상태였다.</text>
+    <rect x="944" y="568" width="184" height="42" rx="21" fill="url(#metric)"/>
+    <text x="976" y="595" font-size="15" font-weight="850" fill="#0f172a">next experiment</text>
+  </g>
+</svg>

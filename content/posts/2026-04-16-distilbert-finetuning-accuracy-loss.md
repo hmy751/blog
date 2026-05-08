@@ -5,6 +5,8 @@ date: 2026-04-16
 readTime: "8 min read"
 platform: Blog
 topic: "DistilBERT"
+cover: /images/posts/2026-04-16-distilbert-finetuning-accuracy-loss/01-accuracy-loss-gap.svg
+thumbnail: /images/posts/2026-04-16-distilbert-finetuning-accuracy-loss/01-accuracy-loss-gap.svg
 project: PI Lab
 sprint: 1
 featured: true
