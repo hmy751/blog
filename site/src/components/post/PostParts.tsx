@@ -4,11 +4,14 @@ import "./Post.module.css";
 
 export function PostMeta({ post }: Readonly<{ post: Post }>) {
   const displayTags = post.displayTags.length > 0 ? post.displayTags : [post.primaryTag];
+  const [kicker = post.primaryTag, ...secondaryTags] = displayTags;
+  const visibleTags = secondaryTags.slice(0, 3);
+  const hiddenTagCount = Math.max(0, secondaryTags.length - visibleTags.length);
 
   return (
     <div className="post-meta">
       <div className="post-meta-line">
-        <span>{post.platform}</span>
+        <span className="post-kicker">{kicker}</span>
         <span className="sep">·</span>
         <time dateTime={post.date}>{post.dateText}</time>
         {post.readTime ? (
@@ -18,13 +21,16 @@ export function PostMeta({ post }: Readonly<{ post: Post }>) {
           </>
         ) : null}
       </div>
-      <div className="post-tags" aria-label="Tags">
-        {displayTags.map((tag, index) => (
-          <span className="tag" key={`${tag}-${index}`}>
-            {tag}
-          </span>
-        ))}
-      </div>
+      {visibleTags.length > 0 ? (
+        <div className="post-tags" aria-label="Secondary tags">
+          {visibleTags.map((tag, index) => (
+            <span className="tag" key={`${tag}-${index}`}>
+              {tag}
+            </span>
+          ))}
+          {hiddenTagCount > 0 ? <span className="tag tag-more">+{hiddenTagCount}</span> : null}
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -44,7 +50,7 @@ type PostFooterProps = Readonly<{
 export function PostFooter({ backHref, backLabel, next }: PostFooterProps) {
   return (
     <footer className="post-footer">
-      <Link className="link" data-reader-event="nav_click" data-reader-surface="post-footer-back" href={backHref}>
+      <Link className="post-back" data-reader-event="nav_click" data-reader-surface="post-footer-back" href={backHref}>
         {backLabel}
       </Link>
       {next ? (

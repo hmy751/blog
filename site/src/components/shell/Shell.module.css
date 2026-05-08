@@ -1,14 +1,14 @@
 :global(.shell) {
-  max-width: calc(var(--measure) + 96px);
+  max-width: var(--shell-max-width);
   margin: 0 auto;
-  padding: 56px 48px 160px;
+  padding: var(--shell-pad-top) var(--shell-pad-inline) var(--shell-pad-bottom);
 }
 
 :global(.top) {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 96px;
+  margin-bottom: var(--shell-header-gap);
 }
 
 :global(.brand) {
@@ -61,6 +61,7 @@
 :global(nav.nav a[aria-current="page"]),
 :global(nav.nav button[aria-current="page"]) {
   color: var(--ink);
+  font-weight: 500;
 }
 
 :global(nav.nav a[aria-current="page"]::after),
@@ -80,7 +81,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 120px;
+  margin-top: 112px;
   padding-top: 24px;
   border-top: .5px solid var(--rule-soft);
   color: var(--ink-4);
@@ -201,24 +202,55 @@
 
 @media (max-width: 720px) {
   :global(.shell) {
-    padding: 40px 22px 120px;
+    padding: var(--shell-pad-top) var(--shell-pad-inline) var(--shell-pad-bottom);
   }
 }
 
 @media (max-width: 520px) {
   :global(.top) {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 28px;
+    align-items: center;
+    gap: 20px;
   }
 
   :global(nav.nav) {
-    gap: 18px;
+    flex: 0 0 auto;
+    gap: 16px;
+  }
+
+  :global(nav.nav a),
+  :global(nav.nav button) {
+    font-size: 13.5px;
+  }
+
+  :global(nav.nav a[aria-current="page"]::after),
+  :global(nav.nav button[aria-current="page"]::after) {
+    display: none;
   }
 
   :global(footer.foot) {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 16px;
+    align-items: center;
+    flex-direction: row;
+    gap: 18px;
+    margin-top: 84px;
+    padding-top: 20px;
+  }
+
+  :global(footer.foot .links) {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  :global(.brand) {
+    font-size: 14px;
+  }
+
+  :global(nav.nav) {
+    gap: 12px;
+  }
+
+  :global(nav.nav a),
+  :global(nav.nav button) {
+    font-size: 13px;
   }
 }

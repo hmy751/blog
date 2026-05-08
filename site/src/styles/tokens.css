@@ -20,6 +20,18 @@
   --measure: 680px;
   --fs-body: 17px;
 
+  --shell-max-width: calc(var(--measure) + 96px);
+  --shell-pad-top: 56px;
+  --shell-pad-inline: 48px;
+  --shell-pad-bottom: 160px;
+  --shell-header-gap: 96px;
+
+  --post-meta-gap: 32px;
+  --post-hero-aspect: 16 / 9;
+  --post-hero-gap: 40px;
+  --post-title-size: 36px;
+  --post-title-line: 1.2;
+
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -54,4 +66,18 @@
 
 [data-body-font="serif"] {
   --body-font: var(--serif);
+}
+
+@media (max-width: 720px) {
+  :root {
+    --fs-body: 16.5px;
+    --shell-pad-top: 34px;
+    --shell-pad-inline: 24px;
+    --shell-pad-bottom: 112px;
+    --shell-header-gap: 64px;
+    --post-meta-gap: 28px;
+    --post-hero-gap: 36px;
+    --post-title-size: 30px;
+    --post-title-line: 1.23;
+  }
 }
