@@ -72,10 +72,11 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 
 ## Reader Flow / Artifact Gap
 
-`가독성`, `읽기 좋게`, `스캔하기 쉽게`, `리듬`, `호흡`, `문장 끝`, `가시성` 같은 요청은 `editorial/lenses/reader-flow.md`와 `editorial/core/output-contracts.md`를 함께 적용한다.
+`가독성`, `읽기 좋게`, `스캔하기 쉽게`, `리듬`, `호흡`, `문장 끝`, `가시성`, `층위`, `소제목`, `목차`, `TOC`, `outline` 같은 요청은 `editorial/lenses/reader-flow.md`와 `editorial/core/output-contracts.md`를 함께 적용한다.
 
 - 목표는 문장을 무조건 짧게 만들거나 자료 장치를 넣는 것이 아니라, 좋은 기술 글처럼 읽히는지 보는 것이다.
 - 편집 모드에서는 진단 카드로 끝내지 않고 최소 하나의 실제 원고 move를 남긴다.
+- 글의 heading 목록이나 generated outline이 평문처럼 보이면 `Heading hierarchy pass`로 본다. 제목 문구를 먼저 꾸미지 말고 큰 파트로 남길 `##`와 세부 판단으로 내릴 `###`/lead/micro-break를 구분한다.
 - trace UI, 제품 화면, 모델 답변, 그래프처럼 화면성이 강한 재료가 핵심이면 `editorial/lenses/supporting-materials.md`를 열고 visual candidate를 먼저 검토한다.
 - 직접 넣을 수 없는 스크린샷/이미지는 최종 답변에만 제안하지 않고 원고 위치나 review 카드에 `supporting-material candidate` 슬롯을 남긴다.
 - 소제목을 고친 뒤에도 본문이 비슷하게 느껴지면 `본문 cadence` 문제로 본다. 전환어·어미를 전역으로 바꾸지 말고, 반복되는 단락 전개와 섹션 역할을 진단한 뒤 최소 2~3개 본문 move를 실제로 바꾼다.

@@ -30,6 +30,7 @@
 `가독성`, `읽기 좋게`, `스캔하기 쉽게`, `호흡`, `문장 끝`, `좋은 글처럼` 같은 요청에서 Reader Flow가 실제로 발동하면 아래 중 최소 하나는 남긴다.
 
 - 원고에 직접 들어간 문단 재배치, 소제목 조정, lead sentence, 회수 문장 축소.
+- heading 층위나 generated outline이 쟁점이면 `Heading hierarchy pass`: 큰 파트로 남길 `##`, 세부 판단으로 내릴 `###`/lead/micro-break, 유지할 제목을 구분한 move.
 - 산문에 묻힌 비교 기준을 꺼낸 리스트/표/의사코드/텍스트 도식.
 - 실제 화면이나 공개 경계 확인이 필요한 경우의 `supporting-material candidate` 슬롯.
 - 본문 cadence가 반복될 때의 `Body cadence diagnosis`: 반복되는 전개 패턴, 영향을 받는 섹션, 실제로 역할을 바꿀 단락 move 2~3개.

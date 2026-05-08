@@ -31,6 +31,7 @@ tools: Read, Grep, Glob
 - 글이 결과 나열이 아니라 판단의 흐름으로 읽히는가.
 - 문제 정의, 제약, 선택지, 버린 대안, 트레이드오프, 바뀐 판단이 필요한 만큼 보이는가.
 - 각 단락이 문제 제기, 조건, 실험, 해석, 전환, 회수 중 하나의 기능을 갖는가.
+- heading 층위, 목차, generated outline이 쟁점이라면 제목 목록만 봤을 때 큰 파트와 세부 판단이 구분되는가.
 - 소제목을 고친 뒤에도 본문이 같은 cadence로 반복된다면, 반복되는 전개 패턴과 섹션별 단락 역할을 분리했는가.
 - 앞 문단의 설명 호흡 뒤에 표어형 판정문이 갑자기 착지해 독자가 결론에 도착하기 전에 문장이 먼저 닫히지는 않는가.
 - reader-flow나 artifact gap이 실제로 발동했다면 `output-contracts.md`에 맞는 edit move, 후보 슬롯, 또는 review 카드 문구가 남는가.
@@ -71,6 +72,9 @@ tools: Read, Grep, Glob
 
 ### Body cadence diagnosis
 - {반복되는 본문 전개 패턴, 영향을 받는 섹션, 실제로 역할을 바꿀 단락 move 2-3개}
+
+### Heading hierarchy pass
+- {heading 목록에서 큰 파트로 남길 ##, 세부 판단으로 내릴 ###/lead/micro-break, 유지할 제목}
 
 ### Sentence landing
 - {표어형 판정문이 과하게 튀는 지점과 완충/낮춘 표현/뒤로 회수할 문장 후보}

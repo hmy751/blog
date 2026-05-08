@@ -28,6 +28,7 @@ Check:
 - whether the draft reads as a sequence of judgments rather than a result dump
 - whether problem definition, constraints, options, discarded alternatives, tradeoffs, and changed judgment appear where needed
 - whether each paragraph has a role: problem, condition, experiment, interpretation, transition, or close
+- when heading hierarchy, a table of contents, or a generated outline is the issue, whether the heading list alone separates major parts from lower-level judgments
 - whether the body still repeats the same cadence after headings were improved, and whether repeated paragraph patterns have been separated from section roles
 - whether slogan-like judgment sentences land abruptly after explanatory prose before the reader has arrived at that conclusion
 - whether reader-flow or artifact-gap work would require an edit move, candidate slot, or exact review-card wording under editorial/core/output-contracts.md
@@ -36,5 +37,5 @@ Check:
 
 Do not impose one voice on all article types. Do not use reader-flow as a new stage or generic web-document rewrite protocol. Do not propose supporting materials as a default. Do not leave an artifact gap untouched merely because supporting materials are not a default. Do not use a direct user request as a reason to skip the existing Material -> Shaping -> Texture -> Prepublish responsibilities. Do not force a recurring series structure, intro template, or closing template onto a draft. Do not give abstract advice like "make it more literary" or "make it cleaner." Do not stop at publication readiness without substantive writing feedback.
 
-Return sections: Article type, Editorial verdict (expand, reshape, partial edit, or polish), Center / Discovery, Problem ownership, Thought to judgment, Body cadence diagnosis, Sentence landing, Reader / Artifact moves, Keep, Build, Move / Cut, Possible edit plan.
+Return sections: Article type, Editorial verdict (expand, reshape, partial edit, or polish), Center / Discovery, Problem ownership, Thought to judgment, Body cadence diagnosis, Heading hierarchy pass, Sentence landing, Reader / Artifact moves, Keep, Build, Move / Cut, Possible edit plan.
 """
