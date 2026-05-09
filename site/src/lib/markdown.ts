@@ -388,15 +388,53 @@ function rehypeCodeBlocks() {
 
 function rehypeTableScroll() {
   return (tree: AnyNode) => {
-    visit(tree, "element", (node: AnyNode, index: number | undefined, parent: AnyNode | undefined) => {
-      if (node.tagName !== "table" || !parent?.children || index === undefined) return;
-      parent.children[index] = {
-        type: "element",
-        tagName: "div",
-        properties: { className: ["table-scroll"] },
-        children: [node]
-      };
+    wrapTables(tree);
+  };
+}
+
+function wrapTables(node: AnyNode) {
+  if (!node.children || hasClass(node, "table-scroll")) return;
+
+  for (let index = 0; index < node.children.length; index += 1) {
+    const child = node.children[index];
+    if (child.tagName !== "table") {
+      wrapTables(child);
+      continue;
+    }
+
+    const scroll = tableScroll(child);
+    const captionIndex = nextMeaningfulIndex(node.children, index + 1);
+    const caption = captionIndex === -1 ? undefined : node.children[captionIndex];
+    const isCaption = caption?.tagName === "p" && isTableCaption(textContent(caption));
+
+    if (!isCaption || !caption) {
+      node.children[index] = scroll;
+      continue;
+    }
+
+    node.children.splice(index, captionIndex - index + 1, {
+      type: "element",
+      tagName: "figure",
+      properties: { className: ["table-figure"] },
+      children: [
+        scroll,
+        {
+          type: "element",
+          tagName: "figcaption",
+          properties: {},
+          children: stripTableCaptionMarker(caption.children ?? [])
+        }
+      ]
     });
+  }
+}
+
+function tableScroll(table: AnyNode): AnyNode {
+  return {
+    type: "element",
+    tagName: "div",
+    properties: { className: ["table-scroll"] },
+    children: [table]
   };
 }
 
@@ -634,11 +672,23 @@ function isFigureCaption(value: string): boolean {
   return /^(그림\s*\d*\.|Figure\s*\d*\.|Fig\.\s*\d*\.|Caption:)/i.test(value.trim());
 }
 
+function isTableCaption(value: string): boolean {
+  return /^(표\s*\d*\.|표:|Table\s*\d*\.|Table:|Caption:)/i.test(value.trim());
+}
+
 function stripCaptionMarker(children: AnyNode[]): AnyNode[] {
   const [first, ...rest] = children;
   if (first?.type !== "text" || !first.value) return children;
 
   const value = first.value.replace(/^Caption:\s*/i, "");
+  return [{ ...first, value }, ...rest];
+}
+
+function stripTableCaptionMarker(children: AnyNode[]): AnyNode[] {
+  const [first, ...rest] = children;
+  if (first?.type !== "text" || !first.value) return children;
+
+  const value = first.value.replace(/^(표:|Table:|Caption:)\s*/i, "");
   return [{ ...first, value }, ...rest];
 }
 

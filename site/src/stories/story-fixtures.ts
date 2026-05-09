@@ -127,6 +127,8 @@ export const markdownFixture = [
   "| Storybook | isolated states | fixture drift |",
   "| System preview | route integration | slower iteration |",
   "",
+  "표: QA surface별 역할과 drift risk 비교.",
+  "",
   "![component anatomy](/archive/design-system/fixtures/component-anatomy-placeholder.svg)",
   "",
   "그림 1. 컴포넌트 anatomy placeholder.",

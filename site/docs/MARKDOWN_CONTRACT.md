@@ -52,6 +52,7 @@
 | fenced `mermaid` diagram | `.mermaid-block > .filename + .mermaid-render + .mermaid-source` |
 | image | `figure > img` |
 | image caption | `figcaption` |
+| table caption | `.table-figure figcaption` |
 | footnote | `.footnotes`, `sup.fn-ref` or `sup.footnote-ref` |
 | horizontal rule | `.prose hr` |
 | `<kbd>` | `.prose kbd` |
@@ -168,6 +169,20 @@ Caption: Medium에서 가져온 캡션.
 ```
 
 renders as a figure caption with visible text `Medium에서 가져온 캡션.`.
+
+Table caption:
+
+```md
+| 이전 감각 | 바꾼 뒤의 기준 |
+| --- | --- |
+| 중앙 config에 모든 값을 모은다 | stage별로 자기 설정을 갖는다 |
+
+표: config 책임 위치를 바꾼 뒤 남는 기준 비교.
+```
+
+If a paragraph immediately after a table starts with `표 `, `Table `, `표:`, `Table:`, or `Caption:`, wrap the table and caption in one `.table-figure`.
+
+`표:`, `Table:`, and `Caption:` are source-only markers. The renderer removes the marker from visible `figcaption` text. Numbered forms such as `표 1.` and `Table 1.` remain visible.
 
 Imported table images:
 

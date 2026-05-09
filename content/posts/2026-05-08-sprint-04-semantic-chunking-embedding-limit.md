@@ -83,6 +83,8 @@ vision prompt
 | API 비용 증가 | 긴 vision output을 만드는 비전 모델 호출 |
 | semantic chunking 전환 중 에러 | chunking 전략만이 아니라 context assembly 전체 |
 
+표: 비용 증가와 embedding 한도 에러를 분리해서 본 대응 축.
+
 비용은 vision에서 새고 있었고, 에러는 embedding에서 났습니다. 원인은 서로 얽혀 있었지만 대응은 분리해야 했습니다.
 
 이 수치는 "비용이 많이 들었다"를 말하기 위한 것이 아니었습니다. 같은 긴 vision output이 한쪽에서는 비용으로, 다른 한쪽에서는 embedding 입력 길이로 드러났다는 점이 더 중요했습니다.
@@ -132,6 +134,8 @@ vision prompt
 | 실패 모드 | 모른다고 하는가, 틀린 답을 확신하는가 |
 | rate limit | TPM 제한과 concurrency를 감당할 수 있는가 |
 | 운영 정책 | default로 둘 것인가, fallback으로만 둘 것인가 |
+
+표: 비전 모델을 낮출 때 함께 확인해야 할 가격·품질·운영 조건.
 
 gpt-4o 조건에서는 TPM rate limit도 더 빠듯하게 걸렸고, concurrency를 조정해야 했습니다. 결국 모델 다운그레이드는 가격표만 보고 결정할 수 있는 문제가 아니었습니다.
 
@@ -189,6 +193,8 @@ chunk_embeddings = embed_chunks(chunks)
 | chunk strategy | fixed와 semantic 중 어떤 경로를 탔는지 |
 | rollback | semantic을 끄고 fixed로 다시 실행할 수 있는지 |
 
+표: semantic chunking에서 trace로 따로 남겨야 할 관측 단위.
+
 새 알고리즘을 넣는 일은 코드를 추가하는 일이 아니라 운영 가능한 분기를 추가하는 일이었습니다. default, rollback, trace, snapshot이 같이 있어야 실험으로 다룰 수 있었습니다.
 
 ## 다음 레이어 효과로 다시 보기
@@ -208,6 +214,8 @@ chunk_embeddings = embed_chunks(chunks)
 | 비전 설명을 풍부하게 만든다 | embedding input limit, vision cost | frame description 길이와 context assembly | 프롬프트 축소, 입력 크기 관리 |
 | 더 싼 비전 모델을 쓴다 | 답변 품질, hallucination, rate limit | 실패 모드와 concurrency | default/fallback 정책 분리 |
 | semantic chunking을 넣는다 | embedding 비용/trace/rollback | boundary embedding과 chunk embedding의 목적 차이 | strategy 분기, fixed 기본값, trace 분리 |
+
+표: 세 개선 시도가 다음 레이어에서 만든 실패 조건과 대응.
 
 이 표를 보고 나서야 이번 이슈들을 하나의 기준으로 묶을 수 있었습니다.
 
