@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: 상위 후보 5개 v1~v3 초안 반복 / 내부 process index
 공개상태: 내부 작업 문서
-현재상태: v1 작성 완료 / 첫 독립 review 전
+현재상태: v2 작성 완료 / 두 번째 독립 review 전
 ---
 
 # v1~v3 draft loop
@@ -32,12 +32,17 @@
   - [생성과 판단의 순서를 분리하기](../../../../../drafts/ai-native-topic-research-2026-07-20/v1/judgment-order.md)
   - [AI가 자기 작업 방식을 원인에 넣어 점검하기](../../../../../drafts/ai-native-topic-research-2026-07-20/v1/ai-self-check.md)
 - [v2](../../../../../drafts/ai-native-topic-research-2026-07-20/v2/)
+  - [current를 active state로 운영하기](../../../../../drafts/ai-native-topic-research-2026-07-20/v2/current-active-state-operation.md)
+  - [독립 판별자를 판단 과정에 넣기](../../../../../drafts/ai-native-topic-research-2026-07-20/v2/independent-review-and-recovery.md)
+  - [AI와 일할 때 제품 흐름과 scope 통제](../../../../../drafts/ai-native-topic-research-2026-07-20/v2/product-flow-scope-control.md)
+  - [생성과 판단의 순서를 분리하기](../../../../../drafts/ai-native-topic-research-2026-07-20/v2/judgment-order.md)
+  - [AI가 자기 작업 방식을 원인에 넣어 점검하기](../../../../../drafts/ai-native-topic-research-2026-07-20/v2/ai-self-check.md)
 - [v3](../../../../../drafts/ai-native-topic-research-2026-07-20/v3/)
 
 과정 기록:
 
-- `01-v1-independent-review.md` — 첫 독립 reviewer의 원문
-- `02-v1-to-v2-adjudication.md` — main의 채택·조정·기각·보류와 v2 반영
+- [01-v1-independent-review.md](./01-v1-independent-review.md) — 첫 독립 reviewer의 원문
+- [02-v1-to-v2-adjudication.md](./02-v1-to-v2-adjudication.md) — main의 채택·조정·기각·보류와 v2 반영
 - `03-v2-independent-review.md` — 새 독립 reviewer의 원문
 - `04-v2-to-v3-adjudication.md` — main의 두 번째 판단과 v3 반영
 - [criteria-evolution.md](./criteria-evolution.md) — 버전 사이 기준 변화와 아직 열린 판단
@@ -57,8 +62,9 @@ reviewer는 파일을 수정하지 않고 글 순위, 첫 글, 병합, 발행 �
 ## 현재 상태
 
 - v1: 다섯 편 작성 완료
-- 첫 독립 review: v1 checkpoint 뒤 진행
-- v2: 대기
-- 두 번째 독립 review: 대기
+- 첫 독립 review: 완료 / 원문 보존
+- v1→v2 반영 판단: 완료
+- v2: 다섯 편 작성 완료
+- 두 번째 독립 review: v2 checkpoint 뒤 진행
 - v3: 대기
 - 사용자 검토: v3 뒤

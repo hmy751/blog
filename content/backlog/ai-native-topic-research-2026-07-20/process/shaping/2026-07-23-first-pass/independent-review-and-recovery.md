@@ -14,13 +14,13 @@
 
 ## 1. 첫 장면
 
-첫 장면은 9개 fixture test와 정적 validator가 모두 통과한 상태에서 시작한다.
+첫 장면은 Python `unittest` test method 9개와 별도 정적 validator가 모두 통과한 상태에서 시작한다.
 
-구현은 초록이었다. 그러나 별도 판별은 설치된 자연어 E2E가 없고, 공개 사실과 fixture가 모순되며, 문자열 `"false"`가 boolean처럼 수용되고, 아동 범위와 상반 claim의 순서가 잘못 처리되는 문제를 찾았다.
+구현은 초록이었다. 그러나 별도 판별은 plugin이 설치 목록에 없고 설치된 새 task에서 자연어로 끝까지 실행한 증거가 없으며, 공개 사실과 fixture가 모순되고, 문자열 `"false"`가 boolean처럼 수용되고, 아동 범위와 상반 claim의 순서가 잘못 처리되는 문제를 찾았다.
 
 이 장면의 핵심은 “test가 부족했다”가 아니다. 구현자가 만든 fixture와 validator는 구현자가 예상한 세계 안의 일관성을 확인했다. 빠진 것은 그 세계가 실제 source와 사용자 흐름에 맞는지 다른 입력에서 다시 판별하는 일이었다.
 
-제목의 숫자는 진입점으로 쓸 수 있다. 다만 9개에서 15개로 늘어난 사실을 품질 향상 지표로 사용하지 않는다. 글은 초록 test 뒤에 무엇이 보이지 않았고, 판별 계약이 어떻게 달라졌는지로 이동해야 한다.
+제목의 숫자는 진입점으로 쓸 수 있다. 9와 15는 같은 checkpoint의 `unittest` test method 수이자 해당 runner의 실행 수다. CLI, validator, 설치형 자연어 E2E는 이 숫자 밖의 별도 검증이다. test method가 늘어난 사실을 품질 향상 지표로 사용하지 않고, 글은 초록 test 뒤에 무엇이 보이지 않았고 판별 계약이 어떻게 달라졌는지로 이동해야 한다.
 
 주요 근거:
 
@@ -44,11 +44,11 @@
 
 ## 3. 판단이 바뀐 시간순 사건
 
-1. AX의 첫 구현은 plugin scaffold, Python 엔진, fixture, 9개 test, 정적 validator를 갖췄다.
+1. AX의 첫 구현은 plugin scaffold, Python 엔진, fixture, `unittest` test method 9개, 별도 정적 validator를 갖췄다.
 2. 구현자 관점의 검증에서는 첫 구현 성공으로 보였다.
 3. 별도 판별이 자연어 E2E 부재, source와 fixture의 모순, type·scope·claim 처리 결함을 찾았다.
 4. fixture consistency, source-to-contract 대조, adversarial schema, 설치된 자연어 E2E를 다른 확인 단계로 나눴다.
-5. 해당 checkpoint의 test는 15개로 늘고, 새 task에서 자연어 요청부터 seller 답변 뒤 판단 변화까지 실행했다.
+5. 해당 checkpoint의 `unittest` test method는 15개로 늘고, 이 숫자와 별도로 설치된 새 task에서 자연어 요청부터 seller 답변 뒤 판단 변화까지 실행했다.
 6. Cofathon의 두 fresh review는 같은 후보에 서로 다른 통과·조건부 판정을 냈다. 별도 판별도 자동 정답이 아니라는 한계가 드러났다.
 7. Tripproof에서는 생성기와 judge를 분리했지만 앞단 추출이 오염된 입력을 넘겨 제품 조건이 성립하지 않았다.
 8. 독립성의 범위가 reviewer 호출에서 입력·source 접근·질문 수정·write 및 완료 권한·main 회수 기준으로 넓어졌다.
@@ -60,7 +60,7 @@
 
 우선 준비할 자료:
 
-- **9개에서 15개로 바뀐 test의 역할 비교**
+- **9개에서 15개로 바뀐 `unittest` test method의 역할 비교**
   - 기존 fixture consistency가 보던 범위
   - 새 source contract·schema·설치형 자연어 E2E가 추가로 본 범위
 - **자연어 E2E 흐름**
@@ -84,7 +84,6 @@
 
 추가 확인이 필요한 사실:
 
-- 9개와 15개 test가 같은 AX Loop 01 checkpoint를 가리키는지
 - 각 fresh 판별자가 받은 context와 제외된 context
 - 설치형 E2E의 실제 실행 범위와 전략 평가 제외 범위
 - Tripproof 사건의 6월 25일, 6월 29~30일, 7월 2일 시간순
@@ -116,8 +115,8 @@
 
 ## 7. 이번 자료가 말하지 못하는 한계
 
-- 9개에서 15개로 늘어난 test는 한 checkpoint의 변화이며 프로젝트 전체 품질 지표가 아니다.
-- test 수 증가가 사용자 가치나 제품 품질 향상을 증명하지 않는다.
+- 9개에서 15개로 늘어난 `unittest` test method는 한 checkpoint의 변화이며 프로젝트 전체 품질 지표가 아니다.
+- test method 수 증가가 사용자 가치나 제품 품질 향상을 증명하지 않는다.
 - fresh 또는 blind라는 이름만으로 독립성이 생기지 않는다.
 - 같은 모델이면 비독립이고 다른 모델이면 독립이라는 단순 규칙은 성립하지 않는다.
 - reviewer가 늘어날수록 품질이 오른다고 말할 수 없다.

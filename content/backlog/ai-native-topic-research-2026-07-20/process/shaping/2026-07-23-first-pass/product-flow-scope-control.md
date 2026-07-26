@@ -14,11 +14,11 @@
 
 ## 1. 첫 장면
 
-첫 장면은 “얇은 slice를 요청했더니 화면에 raw `facts[]`가 나타난 순간”이다.
+첫 장면은 “얇은 slice를 요청했더니 raw `facts[]`를 화면에 렌더링하는 경로가 더 작은 구현으로 제안된 순간”이다.
 
 원래 만들려던 것은 숙소 자료에서 근거 있는 답변 후보를 만들고, 사용자가 채팅 화면에서 그 답을 확인하는 흐름이었다. 하지만 `작게`, `얇게`, `acceptance criteria 1~3개`라는 요청을 AI는 가장 빨리 보이는 결과로 해석했다. 그 결과 검색 결과의 raw fact를 화면에 직접 표시하는 경로가 제안됐다.
 
-화면은 생겼지만 제품의 중심 변환은 사라졌다.
+그 안대로 구현했다면 화면은 생길 수 있었지만 제품의 중심 변환은 다음 단계로 밀릴 수 있었다.
 
 - 검색 후보가 근거 수준에 따라 supported 또는 missing으로 판정되는 과정
 - 그 판정이 사용자가 읽는 답변으로 바뀌는 과정
@@ -27,7 +27,7 @@
 
 이 장면은 “구현이 작았다”와 “제품의 최소 흐름이 살아 있었다”가 같은 말이 아님을 바로 보여 준다.
 
-deterministic adapter와 sanitized seed가 실제 LLM product proof처럼 설명된 장면도 강하다. 이 장면은 첫 사례 뒤에 붙여, 위험을 통제한 것이 아니라 제품 밖으로 밀어낸 경우를 보여 주는 편이 현재로서는 더 자연스럽다.
+deterministic adapter와 sanitized seed를 첫 product proof로 삼자는 구현 제안도 강한 장면이다. 이 장면은 첫 사례 뒤에 붙여, 위험을 통제하는 설계와 제품이 다뤄야 할 불확실성을 경로 밖으로 미루는 제안을 구분하는 편이 현재로서는 더 자연스럽다.
 
 주요 근거:
 
@@ -49,9 +49,9 @@ deterministic adapter와 sanitized seed가 실제 LLM product proof처럼 설명
 ## 3. 판단이 바뀐 시간순 사건
 
 1. 실제 숙소 자료에서 근거 있는 답변을 만들고 사용자가 채팅에서 확인하는 세로 slice를 만들려 했다.
-2. AI는 `작게`와 `얇게`를 가장 빨리 화면에 표시할 수 있는 raw `facts[]` 경로로 좁혔다.
+2. AI는 `작게`와 `얇게`를 가장 빨리 화면에 표시할 수 있는 raw `facts[]` 경로로 좁히는 안을 제안했다.
 3. 화면과 debug output은 생길 수 있었지만 검색 후보가 사용자 답변으로 바뀌는 핵심 변환은 다음 단계로 밀렸다.
-4. 별도 demo에서는 sanitized seed와 deterministic adapter가 실제 LLM product proof처럼 설명됐다. 실제 자료의 불확실성은 해결되지 않고 제품 밖으로 빠졌다.
+4. 앞선 별도 장면에서는 sanitized seed와 deterministic adapter를 첫 product proof로 삼는 안이 제안됐다. 이 제안대로라면 실제 자료의 불확실성은 현재 product proof 밖으로 빠질 수 있었다.
 5. 사용자는 scope를 줄이기 전에 입력, 이번 단계가 책임질 변환, 사용자가 읽는 출력, 넘지 말아야 할 선을 먼저 확인해야 한다고 정정했다.
 6. prose 금지문을 더 쓰는 대신 실제 causal actor를 묻는 decision-time question과 metamorphic·grounding·routing test를 추가했다.
 7. 제품행동에 사용되지 않는 fact 추출 경로를 제거했다.
@@ -84,10 +84,13 @@ deterministic adapter와 sanitized seed가 실제 LLM product proof처럼 설명
 
 실제 Tripproof 코드와 내부 source를 복사하지 않고, 숙소 확인과 무관한 작은 예제로 같은 판단 차이를 재현한다.
 
+이번 교차검증에서 확인한 사실:
+
+- June 10의 metamorphic·grounding·routing test와 호출자 없는 fact 추출 경로 제거는 실제 구현이다.
+- 시간순은 June 5 deterministic product-slice 제안, June 9 raw `facts[]` 경로 제안, June 10 제품행동 test와 dead path 제거다.
+
 추가 확인이 필요한 사실:
 
-- 제거한 dead path와 추가 test가 실제로 어떤 product invariant를 강제했는지
-- `facts[]` 장면과 deterministic demo 장면의 정확한 시간순
 - AX 제품 중심 복원 전후의 acceptance 변화
 
 ## 5. 사용자의 판단이 바뀐 지점
