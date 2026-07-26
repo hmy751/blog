@@ -1,12 +1,12 @@
 ---
 작성일: 2026-07-23
-갱신일: 2026-07-23
+갱신일: 2026-07-27
 성격: AI-native 역량 기술 블로그 주제 후보 / 현재 상태
 공개상태: 내부 작업 문서
-현재상태: active 후보 8개 / 상위 후보 5개 / 유지 후보 3개 / 첫 글 미정
+현재상태: active 후보 8개 / 상위 후보 5개 1차 shaping / 유지 후보 3개 / 첫 글 미정
 주요 원천:
-  - ../process/02-topic-candidates.md
-  - ../process/03-source-first-reanalysis.md
+  - ../process/candidates/02-topic-candidates.md
+  - ../process/candidates/03-source-first-reanalysis.md
 ---
 
 # AI-native 글감 후보 — 최신 상태와 다음 판단
@@ -39,7 +39,7 @@
 
 ## 현재 cursor — 상위 후보 shaping
 
-첫 글과 후보의 최종 위상은 아직 확정하지 않는다. 상위 후보를 같은 형식으로 shaping하고, 한 장만으로 중심과 형식이 드러나지 않으면 필요한 범위에서 초기 초안까지 본다.
+첫 글과 후보의 최종 위상은 아직 확정하지 않는다. 상위 후보 다섯 개의 [1차 shaping](../process/shaping/README.md)을 같은 형식으로 만들었다. 이제 이를 함께 비교하고, 한 장만으로 중심과 형식이 드러나지 않는 후보만 필요한 범위에서 초기 초안까지 본다.
 
 각 장에는 같은 항목을 둔다.
 
@@ -49,7 +49,7 @@
 4. 독자가 볼 공개 가능한 artifact
 5. 사용자의 판단이 바뀐 지점
 6. 다른 개발자가 가져갈 기준
-7. 마지막 주장 상한
+7. 이번 자료가 말하지 못하는 한계
 
 비교할 때는 하나의 종합 점수를 만들지 않는다.
 
@@ -61,7 +61,7 @@
 - 공개 가능한 재현 자료를 준비할 수 있는가
 - 지금 첫 글로 무엇을 대표하고 싶은가
 
-후보마다 shaping 순서가 다를 수 있지만 그 순서는 가치 서열이 아니다. 한 후보의 초기 결과를 다른 후보의 탈락 기준으로 사용하지 않고, 비교할 만한 shaping이나 초안이 생긴 뒤 첫 글과 article type을 결정한다.
+후보마다 다음 수정 순서가 다를 수 있지만 그 순서는 가치 서열이 아니다. 한 후보의 초기 결과를 다른 후보의 탈락 기준으로 사용하지 않고, 현재 1차 shaping과 필요할 때 만든 초기 초안을 함께 본 뒤 첫 글과 article type을 결정한다.
 
 ## 작업 주제 — Current와 history의 권위 분리
 
@@ -134,8 +134,8 @@
 
 ### 주요 원천
 
-- [재조사 전 상세 후보 snapshot](../process/02-topic-candidates.md#후보-1-기록을-남겨도-프로젝트는-제어되지-않았다)
-- [source-first 이후 중심과 상한](../process/03-source-first-reanalysis.md#후보-1-current--active-state-operation)
+- [재조사 전 상세 후보 snapshot](../process/candidates/02-topic-candidates.md#후보-1-기록을-남겨도-프로젝트는-제어되지-않았다)
+- [source-first 이후 중심과 상한](../process/candidates/03-source-first-reanalysis.md#후보-1-current--active-state-operation)
 - [AX Loop 01 active contract](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/engineering/01-loop-01-goal.md)
 - [AX current 기반 설문 재작성](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/29-questionnaire-rebuild-from-current.md)
 - [AX current·gate 전수 감사](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/20-작업과정-하네스-분석/02-독립조사/git/08-current-and-gate-audit.md)
@@ -221,8 +221,8 @@
 
 ### 주요 원천
 
-- [재조사 전 상세 후보 snapshot](../process/02-topic-candidates.md#후보-2-테스트-9개가-모두-초록인데-제품은-아직-틀렸다)
-- [source-first 이후 확장된 판별 계약](../process/03-source-first-reanalysis.md#후보-2-독립-판별--제3판별자)
+- [재조사 전 상세 후보 snapshot](../process/candidates/02-topic-candidates.md#후보-2-테스트-9개가-모두-초록인데-제품은-아직-틀렸다)
+- [source-first 이후 확장된 판별 계약](../process/candidates/03-source-first-reanalysis.md#후보-2-독립-판별--제3판별자)
 - [AX 첫 구현과 fresh 미통과](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/26-loop-01-first-implementation-and-operations-retro.md)
 - [AX 교정 cycle과 설치 자연어 E2E](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/27-loop-01-correction-cycle.md)
 - [Tripproof self-certification decision](/Users/hammyeong-yeon/Desktop/10_work/tripproof/docs/decisions/2026-06-25-llm-answer-self-certification-reframe/index.md)
@@ -299,7 +299,7 @@
 
 ### 주요 원천
 
-- [source-first 통합 후보 카드](../process/03-source-first-reanalysis.md#fresh-1-ai에게-작게-만들라고-했더니-제품-흐름이-사라졌다)
+- [source-first 통합 후보 카드](../process/candidates/03-source-first-reanalysis.md#fresh-1-ai에게-작게-만들라고-했더니-제품-흐름이-사라졌다)
 - [Tripproof product-flow drift](/Users/hammyeong-yeon/Desktop/10_work/tripproof/docs/implementation-notes/2026-06-09-spec-driven-product-flow-drift/index.md)
 - [Tripproof 판단·test 강제 decision](/Users/hammyeong-yeon/Desktop/10_work/tripproof/docs/decisions/2026-06-10-spec-driven-judgment-and-test-enforcement/index.md)
 - [Tripproof LLM grounding demo drift](/Users/hammyeong-yeon/Desktop/10_work/ai-note/2026-06-05-llm-grounding-demo-drift/raw.md)
@@ -371,12 +371,12 @@
 
 ### 주요 원천
 
-- [재조사 전 상세 후보 snapshot](../process/02-topic-candidates.md#후보-3-좋은-평가-기준을-먼저-줬더니-ai의-후보가-전부-비슷해졌다)
-- [source-first 이후 중심 변경](../process/03-source-first-reanalysis.md#후보-3-평가-기준을-적용하는-시점)
+- [재조사 전 상세 후보 snapshot](../process/candidates/02-topic-candidates.md#후보-3-좋은-평가-기준을-먼저-줬더니-ai의-후보가-전부-비슷해졌다)
+- [source-first 이후 중심 변경](../process/candidates/03-source-first-reanalysis.md#후보-3-평가-기준을-적용하는-시점)
 - [AX 독립 second pass](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/14-integrated-criteria-and-independent-second-pass.md)
 - [Cofathon 판단 순서 core](/Users/hammyeong-yeon/Desktop/10_work/cofathon/context/core/candidate-exploration-judgment-order.md)
 - [ai-note 분석 value discovery stance](/Users/hammyeong-yeon/Desktop/10_work/ai-note/2026-07-01-analysis-value-discovery-stance/raw.md)
-- [03 이후 후보 상태 교정](../process/04-post-03-candidate-state-correction.md)
+- [03 이후 후보 상태 교정](../process/candidates/04-post-03-candidate-state-correction.md)
 
 ## 작업 주제 — AI self-check의 효용과 행동 변화
 
@@ -413,7 +413,6 @@
 - AI self-check와 principle-calibration이 생긴 원대화
 - AX process 07~09의 두 방향 과교정
 - 전역 기본 태도 before/after
-- 기존 `ai-self-check-fundamental.md` draft
 
 ### 다른 개발자가 가져갈 기준
 
@@ -431,7 +430,7 @@
 
 ### 다음 shaping
 
-- 기존 draft의 살아 있는 장면과 목소리는 보존한다.
+- 기존 draft로 기록된 `ai-self-check-fundamental.md`의 실제 위치부터 확인한다. 현재 workspace와 Git history에서는 파일을 찾지 못했으므로, 원문을 확보하기 전에는 그 장면과 목소리를 확인한 것으로 간주하지 않는다.
 - 실제 효용, 과교정 교정, 과잉 발동, 행동 재발을 한쪽으로 깎지 않고 개발기의 시간축으로 펼친다.
 - 발동 조건뿐 아니라 종료 조건과 과잉 발동 사례를 포함한다.
 - 독립 판별을 일반 원리로 두고 핵심 적용 사례로 포함할지, 연결된 별도 글로 둘지는 두 후보를 shaping한 뒤 결정한다.
@@ -446,12 +445,12 @@
 
 ### 주요 원천
 
-- [재조사 전 상세 후보 snapshot](../process/02-topic-candidates.md#후보-4-ai-self-check는-답을-다시-쓰는-일이-아니다)
-- [source-first 이후 강화된 한계](../process/03-source-first-reanalysis.md#후보-4-ai-self-check)
-- [기존 draft](/Users/hammyeong-yeon/Desktop/10_work/blog/content/drafts/ai-self-check-fundamental.md)
+- [재조사 전 상세 후보 snapshot](../process/candidates/02-topic-candidates.md#후보-4-ai-self-check는-답을-다시-쓰는-일이-아니다)
+- [source-first 이후 강화된 한계](../process/candidates/03-source-first-reanalysis.md#후보-4-ai-self-check)
+- 기존 draft로 기록된 경로 `content/drafts/ai-self-check-fundamental.md` — 현재 workspace와 Git history에서 파일 미확인
 - [self-check와 principle calibration 발단](/Users/hammyeong-yeon/Desktop/10_work/ai-note/2026-05-21-ai-self-check-principle-calibration/raw.md)
 - [forward bias 교정 중 반복 행동](/Users/hammyeong-yeon/Desktop/10_work/ai-note/2026-07-09-harness-forward-bias-impact-axis/raw.md)
-- [03 이후 후보 상태 교정](../process/04-post-03-candidate-state-correction.md)
+- [03 이후 후보 상태 교정](../process/candidates/04-post-03-candidate-state-correction.md)
 
 ## 작업 주제 — 결과물 폐기와 기능 core 보존
 
@@ -517,8 +516,8 @@
 
 ### 주요 원천
 
-- [재조사 전 상세 후보 snapshot](../process/02-topic-candidates.md#후보-5-결과물을-뒤엎고도-기능은-살리는-법)
-- [source-first 재조사의 부분 판정](../process/03-source-first-reanalysis.md#후보-5-결과물-폐기와-기능-core-보존)
+- [재조사 전 상세 후보 snapshot](../process/candidates/02-topic-candidates.md#후보-5-결과물을-뒤엎고도-기능은-살리는-법)
+- [source-first 재조사의 부분 판정](../process/candidates/03-source-first-reanalysis.md#후보-5-결과물-폐기와-기능-core-보존)
 - [Cofathon evidence cycle 폐기와 core 보존](/Users/hammyeong-yeon/Desktop/10_work/cofathon/context/process/36-discard-evidence-cycle-and-preserve-feature-core.md)
 - [Cofathon live 상품 후보 진입](/Users/hammyeong-yeon/Desktop/10_work/cofathon/context/process/37-upgrade-solution-to-live-purchase-entry.md)
 - [Cofathon 사용자 장면별 URL·MCP 진입](/Users/hammyeong-yeon/Desktop/10_work/cofathon/context/process/38-choose-entry-by-user-scene-and-use-mcp-fully.md)
@@ -585,7 +584,7 @@
 
 ### 주요 원천
 
-- [source-first 통합 후보 카드](../process/03-source-first-reanalysis.md#fresh-2-기존-문서를-고치지-않고-원자료에서-다시-뽑은-이유)
+- [source-first 통합 후보 카드](../process/candidates/03-source-first-reanalysis.md#fresh-2-기존-문서를-고치지-않고-원자료에서-다시-뽑은-이유)
 - [AX 독립 second pass process](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/14-integrated-criteria-and-independent-second-pass.md)
 - [AX 첫 후보판](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/problem/01-candidates.md)
 - [AX 원자료 기반 두 번째 후보판](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/problem/02-candidates-second-pass.md)
@@ -653,7 +652,7 @@
 
 ### 주요 원천
 
-- [source-first 통합 후보 카드](../process/03-source-first-reanalysis.md#fresh-3-문제를-고르기-전에-결과를-먼저-만들어-봤다)
+- [source-first 통합 후보 카드](../process/candidates/03-source-first-reanalysis.md#fresh-3-문제를-고르기-전에-결과를-먼저-만들어-봤다)
 - [문제를 닫기 전 솔루션 비교 진입](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/16-solution-comparison-entry.md)
 - [Output-first 비교](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/19-output-first-comparison.md)
 - [대화형 상태 변화 demo](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/20-output-first-interactive-demo.md)
@@ -705,7 +704,7 @@ diagnostic fixture를 모두 보존하는 일과 비싼 live judge를 매번 실
 
 ## 다음 행동
 
-- 상위 후보를 같은 항목의 한 장으로 shaping한다.
+- [상위 후보 1차 shaping](../process/shaping/README.md)을 함께 비교한다.
 - 한 장만으로 중심과 형식이 드러나지 않는 후보는 필요한 범위에서 초기 초안까지 본다.
 - shaping 순서를 후보 가치나 발행 순서로 해석하지 않는다.
 - 독립 판별과 AI self-check의 병합·분리는 두 후보의 shaping 뒤 결정한다.

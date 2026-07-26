@@ -1,20 +1,20 @@
 ---
 작성일: 2026-07-23
-갱신일: 2026-07-23
+갱신일: 2026-07-27
 성격: AI-native 역량 글감 선택 기준 / 현재 적용본
 공개상태: 내부 작업 문서
 현재상태: 03·04 반영 현재 적용본 / 첫 글·후보 최종 위상은 shaping 뒤 판단
 기준원천:
-  - ../process/01-criteria-and-decision-history.md
-  - ../process/03-source-first-reanalysis.md
-  - ../process/04-post-03-candidate-state-correction.md
+  - ../process/candidates/01-criteria-and-decision-history.md
+  - ../process/candidates/03-source-first-reanalysis.md
+  - ../process/candidates/04-post-03-candidate-state-correction.md
 ---
 
 # AI-native 글감 선택 기준 — 지금 적용할 판단
 
 이 문서는 기준이 어떻게 바뀌었는지 설명하지 않는다. 새 사건이나 후보를 발견했을 때 지금 어떤 순서로 무엇을 판단할지 소유한다.
 
-기준의 변화와 초기 사용자 정정은 [01-criteria-and-decision-history.md](../process/01-criteria-and-decision-history.md), 원천 우선 재조사에서 달라진 판단은 [03-source-first-reanalysis.md](../process/03-source-first-reanalysis.md), 재조사 뒤 후보 위상과 기준 적용 시점의 교정은 [04-post-03-candidate-state-correction.md](../process/04-post-03-candidate-state-correction.md)가 보존한다.
+기준의 변화와 초기 사용자 정정은 [01-criteria-and-decision-history.md](../process/candidates/01-criteria-and-decision-history.md), 원천 우선 재조사에서 달라진 판단은 [03-source-first-reanalysis.md](../process/candidates/03-source-first-reanalysis.md), 재조사 뒤 후보 위상과 기준 적용 시점의 교정은 [04-post-03-candidate-state-correction.md](../process/candidates/04-post-03-candidate-state-correction.md)가 보존한다.
 
 ## 이번 글군에서 말하는 AI-native 역량
 

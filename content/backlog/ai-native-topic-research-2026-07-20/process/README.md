@@ -1,63 +1,36 @@
 ---
 작성일: 2026-07-23
-갱신일: 2026-07-23
+갱신일: 2026-07-27
 성격: AI-native 역량 글감 조사 과정 / 내부 index
 공개상태: 내부 작업 문서
-현재상태: 01~04 과정 문서 보존 / active-state와 분리
+현재상태: candidates 01~04 / shaping 1차 / active-state와 역할 분리
 ---
 
-# Process — 기준이 바뀐 과정과 원천 조사 기록
+# Process — candidates와 shaping 작업 과정
 
-이 디렉토리는 무엇이 현재 유효한지를 직접 지시하지 않는다. 기준이 어떻게 바뀌었는지, 당시 후보를 어떻게 평가했는지, 원천을 다시 조사했을 때 무엇이 달라졌는지를 보존한다.
+이 디렉토리는 후보를 만들고 글의 단위로 펼치는 실제 작업 과정을 보여 준다.
 
-현재 유효한 기준과 후보 상태는 [active-state](../active-state/README.md)가 소유한다. 이 디렉토리의 문장과 active-state가 충돌하면 다음처럼 판단한다.
+- [candidates](./candidates/README.md)는 기준 형성, 후보 전개, 원천 재조사, 후보 상태 교정 과정을 담는다.
+- [shaping](./shaping/README.md)은 상위 후보를 첫 장면·중심 질문·사건 배열·공개 자료 후보까지 펼쳐 보는 과정을 담는다.
 
-- 현재 편집 판단과 다음 행동은 active-state를 따른다.
-- 과거에 무엇을 판단했고 왜 바뀌었는지는 process를 따른다.
-- 수치·시각·실제 변경 사실은 연결된 직접 원천을 다시 확인한다.
+process에는 완료된 과정과 현재 진행 중인 과정이 모두 들어갈 수 있다. 과거 이력만 모은 archive가 아니다.
 
-## 문서
+현재 유효한 기준, 후보 위상, 다음 cursor는 [active-state](../active-state/README.md)가 소유한다. process와 active-state가 충돌하면 현재 상태는 active-state를 따르고, 후보와 글이 어떤 작업을 거쳐 그 상태에 도달했는지는 process에서 확인한다. 수치·시각·실제 변경 사실은 연결된 직접 원천을 다시 확인한다.
 
-### [01-criteria-and-decision-history.md](./01-criteria-and-decision-history.md)
+## Candidates
 
-글감을 고르는 기준이 대화에서 어떻게 바뀌고 합의됐는지 소유한다.
+[candidates/README.md](./candidates/README.md)에서 후보 형성 과정을 안내한다.
 
-- 처음부터 유지됐어야 할 목적
-- 잘못 승격된 선택 기준
-- 사용자 정정 전후의 변화
-- 폐기·보존·새로 생긴 판단
-- 재조사 전 시점의 합의와 후보 평가 순서
+- [01 — 기준 형성](./candidates/01-criteria-and-decision-history.md)
+- [02 — 다섯 후보 snapshot](./candidates/02-topic-candidates.md)
+- [03 — 원천 우선 재조사](./candidates/03-source-first-reanalysis.md)
+- [04 — 후보 상태 해석 교정](./candidates/04-post-03-candidate-state-correction.md)
 
-### [02-topic-candidates.md](./02-topic-candidates.md)
+## Shaping
 
-원천 우선 재조사 전 남아 있던 다섯 후보의 상세 snapshot이다.
+[shaping/README.md](./shaping/README.md)에서 상위 후보 다섯 개의 1차 shaping 과정을 안내한다.
 
-- 중심 질문과 통제력
-- 대표 장면과 글의 전개
-- 주장 상한과 제목 후보
-- 당시의 비교 결과와 주요 원천
-
-현재 후보 목록으로 읽지 않는다. 이후 재조사는 [03](./03-source-first-reanalysis.md), 그 결과의 해석 교정은 [04](./04-post-03-candidate-state-correction.md), 현재 상태는 [active-state 후보 문서](../active-state/topic-candidates.md)에서 확인한다.
-
-### [03-source-first-reanalysis.md](./03-source-first-reanalysis.md)
-
-AX 전체-작업본, Tripproof, ai-note를 기존 후보와 분리해 다시 조사한 기록이다.
-
-- 원자료 역할과 조사 순서
-- 실제 확인 범위와 감사 색인
-- 원천별 판단 사건
-- fresh 후보와 기존 다섯 후보의 대조
-- 근거 강도·주장 상한·첫 글 선택에 미친 영향
-
-### [04-post-03-candidate-state-correction.md](./04-post-03-candidate-state-correction.md)
-
-03 완료 뒤 active-state를 만들고 후보 상태를 설명하는 과정에서 생긴 해석 오류와 사용자 교정을 보존한다.
-
-- shaping cursor를 가치 서열로 읽은 과정
-- 주장 상한을 후보 매력도의 감점으로 사용한 오류
-- 독립 판별과 AI self-check의 공통 원리
-- 판단 순서 후보의 현재 위상
-- 상위 후보 5개·유지 후보 3개로 갱신한 이유
+후보를 실제 산문으로 쓰기 전, 같은 항목으로 펼쳐 글의 중심과 필요한 자료를 확인한다. 현재 1차 shaping은 완료됐지만 첫 글과 article type은 아직 선택하지 않았다.
 
 ## 보존 기준점
 
@@ -76,17 +49,19 @@ AX 전체-작업본, Tripproof, ai-note를 기존 후보와 분리해 다시 조
 
 ### 이동 뒤 상대 링크 해석
 
-`01`의 마지막 기준점에 있는 `[README.md](./README.md)`는 작성 당시 부모 디렉토리의 README를 가리켰다. 파일 내용을 보존한 채 `process/`로 이동했기 때문에 지금은 이 process index로 연결된다.
+`01`의 마지막 기준점에 있는 `[README.md](./README.md)`는 작성 당시 부모 디렉토리의 README를 가리켰다. 파일 내용을 보존한 채 `process/candidates/`로 이동했기 때문에 지금은 candidates index로 연결된다.
 
 - 현재 폴더 전체 안내: [부모 README](../README.md)
 - 현재 유효한 판단: [active-state README](../active-state/README.md)
-- 과거 과정 문서 안내: 현재 process README
+- 후보 형성 과정 안내: [candidates README](./candidates/README.md)
+- shaping 과정 안내: [shaping README](./shaping/README.md)
 
 원래 문서의 hash를 보존하기 위해 `01` 안의 과거 상대 링크는 소급 수정하지 않았다.
 
 ## 이후 기록 원칙
 
-- 현재 결론만 달라졌다면 process 문서를 소급 수정하지 않고 active-state를 갱신한다.
-- 새로운 조사나 기준 변화 과정이 생기면 다음 번호의 process 문서로 남긴다.
+- 현재 기준·후보 위상·다음 cursor만 달라졌다면 active-state를 갱신한다.
+- 후보를 새로 발굴·재조사·교정한 과정은 `candidates/`에 남긴다.
+- 후보를 글의 단위로 펼치고 비교한 과정은 `shaping/`에 남긴다.
 - process의 사실 오류를 고칠 때는 현재 판단을 덧씌우지 않고 무엇을 정정했는지 명시한다.
-- active-state에는 process 전체를 복사하지 않고 현재 판단을 지지하는 원천과 변화 지점만 연결한다.
+- active-state에는 process 전체를 복사하지 않고 현재 상태와 필요한 연결만 남긴다.

@@ -1,29 +1,30 @@
 ---
 작성일: 2026-07-23
-갱신일: 2026-07-23
+갱신일: 2026-07-27
 성격: AI-native 역량 글감 조사 권위 지도 / 내부 index
 공개상태: 내부 작업 문서
-현재상태: active-state·process 분리 / 첫 글 shaping 전
+현재상태: process를 candidates·shaping으로 분리 / 첫 글 선택 전
 ---
 
 # AI-native 역량 글감 조사
 
 이 폴더는 AI-native 역량 기술 블로그의 선택 기준, 현재 후보, 조사 과정을 보존한다.
 
-현재 유효한 판단과 그 판단이 만들어진 과정을 같은 문서에 누적하지 않는다.
+현재 유효한 상태와 후보를 만들고 글로 펼치는 과정을 같은 문서에 누적하지 않는다.
 
 - [active-state](./active-state/README.md)는 지금 무엇이 유효하고 다음에 무엇을 할지 소유한다.
-- [process](./process/README.md)는 기준이 변한 과정, 과거 후보 snapshot, 원천 재조사를 보존한다.
+- [process](./process/README.md)는 후보를 만드는 `candidates` 과정과 글의 단위로 펼치는 `shaping` 과정을 보여 준다.
 
-현재 판단이 필요하면 active-state부터 읽는다. 왜 그렇게 판단했는지, 이전에는 무엇이 달랐는지, 어떤 원천을 확인했는지는 process로 내려간다.
+현재 판단이 필요하면 active-state부터 읽는다. 후보가 어떻게 만들어지고 재검토됐는지, 현재 shaping에서 무엇을 시험했는지는 process로 내려간다.
 
 ## 권위 경계
 
 - 현재 후보의 이름·위상·다음 shaping은 [active-state/topic-candidates.md](./active-state/topic-candidates.md)가 소유한다.
 - 새 후보를 고르는 현재 기준과 적용 순서는 [active-state/criteria.md](./active-state/criteria.md)가 소유한다.
-- 과거에 무엇을 판단했고 왜 바뀌었는지는 `process/01~04`가 소유한다.
+- 후보를 발견하고 기준·근거·위상을 재검토한 과정은 [process/candidates](./process/candidates/README.md)가 소유한다.
+- 상위 후보를 첫 장면·중심 질문·사건 배열로 펼친 과정은 [process/shaping](./process/shaping/README.md)이 소유한다.
 - 수치·시각·실제 code·test 변화는 process의 설명보다 연결된 직접 원천을 우선한다.
-- active-state가 바뀌어도 process 문서를 현재 결론에 맞게 소급 수정하지 않는다.
+- process에는 완료된 작업과 현재 진행 중인 작업이 모두 들어갈 수 있다. 최신이라는 이유만으로 process 결과를 active-state에 넣지 않는다.
 
 ## Active state
 
@@ -53,27 +54,30 @@
 
 ### [process/README.md](./process/README.md)
 
-과정 문서의 역할, 보존 commit과 SHA-256, 이후 기록 원칙을 안내한다.
+`candidates`와 `shaping`의 역할, 보존 기준점, 이후 기록 원칙을 안내한다.
 
-### [process/01-criteria-and-decision-history.md](./process/01-criteria-and-decision-history.md)
+### [process/candidates/README.md](./process/candidates/README.md)
 
-글감 선택 기준이 대화에서 어떻게 바뀌고 합의됐는지 보존한다.
+후보를 만들고 다시 판단한 01~04 과정을 안내한다.
 
-### [process/02-topic-candidates.md](./process/02-topic-candidates.md)
+- [01 — 기준 형성](./process/candidates/01-criteria-and-decision-history.md)
+- [02 — 다섯 후보 snapshot](./process/candidates/02-topic-candidates.md)
+- [03 — 원천 우선 재조사](./process/candidates/03-source-first-reanalysis.md)
+- [04 — 후보 상태 해석 교정](./process/candidates/04-post-03-candidate-state-correction.md)
 
-원천 우선 재조사 전 남아 있던 다섯 후보의 상세 snapshot이다.
+### [process/shaping/README.md](./process/shaping/README.md)
 
-### [process/03-source-first-reanalysis.md](./process/03-source-first-reanalysis.md)
+상위 후보 5개의 1차 shaping 과정을 안내한다.
 
-AX 전체-작업본, Tripproof, ai-note를 원천부터 다시 조사하고 기존 다섯 후보와 대조한 기록이다.
-
-### [process/04-post-03-candidate-state-correction.md](./process/04-post-03-candidate-state-correction.md)
-
-03 이후 shaping cursor를 가치 서열로 읽은 오류와 사용자 교정, 독립 판별·self-check의 관계, 현재 후보 위상 결정을 보존한다.
+- 첫 장면과 중심 질문
+- 판단이 바뀐 시간순 사건
+- 공개 가능한 자료와 추가 확인 사항
+- 다른 개발자가 가져갈 기준
+- 이번 자료가 말하지 못하는 한계
 
 ## 현재 cursor
 
-첫 글은 아직 확정하지 않았다. 상위 후보는 다음과 같다.
+첫 글은 아직 확정하지 않았다. 상위 후보의 1차 shaping은 [process/shaping](./process/shaping/README.md)에 만들었다. 상위 후보는 다음과 같다.
 
 - current / active-state operation
 - 독립 판별 / 제3판별자
@@ -81,7 +85,7 @@ AX 전체-작업본, Tripproof, ai-note를 원천부터 다시 조사하고 기�
 - 생성·주장 판정·후보 수렴의 판단 순서
 - AI self-check
 
-목록 안에는 순위가 없다. 후보의 현재 특징은 설명할 수 있지만 이를 위상의 근거·고정된 대표 강점·정렬 기준으로 사용하지 않는다. 같은 형식의 shaping과 필요할 때 초기 초안을 본 뒤 첫 글과 article type을 결정한다. 독립 판별과 AI self-check의 병합·분리도 그때 판단한다. 그 전에는 고정된 시리즈 순서나 전체 구성을 만들지 않는다.
+목록 안에는 순위가 없다. 후보의 현재 특징은 설명할 수 있지만 이를 위상의 근거·고정된 대표 강점·정렬 기준으로 사용하지 않는다. 이제 1차 shaping을 함께 비교하고, 한 장만으로 판단하기 어려운 후보만 필요한 범위에서 초기 초안까지 본 뒤 첫 글과 article type을 결정한다. 독립 판별과 AI self-check의 병합·분리도 그때 판단한다. 그 전에는 고정된 시리즈 순서나 전체 구성을 만들지 않는다.
 
 ## 공개 전 경계
 
