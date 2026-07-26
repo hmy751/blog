@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 글감 조사 권위 지도 / 내부 index
 공개상태: 내부 작업 문서
-현재상태: process를 candidates·shaping으로 분리 / 첫 글 선택 전
+현재상태: 상위 후보 5개 v1→독립 리뷰→v2→독립 리뷰→v3 진행 / 사용자 검토 전
 ---
 
 # AI-native 역량 글감 조사
@@ -67,17 +67,18 @@
 
 ### [process/shaping/README.md](./process/shaping/README.md)
 
-상위 후보 5개의 1차 shaping 과정을 안내한다.
+상위 후보 5개의 1차 shaping과 v1~v3 초안 반복 과정을 안내한다.
 
 - 첫 장면과 중심 질문
 - 판단이 바뀐 시간순 사건
 - 공개 가능한 자료와 추가 확인 사항
 - 다른 개발자가 가져갈 기준
 - 이번 자료가 말하지 못하는 한계
+- 버전별 독립 리뷰 원문과 main의 채택·조정·기각·보류 판단
 
 ## 현재 cursor
 
-첫 글은 아직 확정하지 않았다. 상위 후보의 1차 shaping은 [process/shaping](./process/shaping/README.md)에 만들었다. 상위 후보는 다음과 같다.
+첫 글은 아직 확정하지 않았다. 상위 후보의 1차 shaping을 마쳤고, 현재는 다섯 후보 모두를 같은 깊이의 v1~v3 산문으로 펼치는 [draft loop](./process/shaping/2026-07-27-v1-v3-draft-loop/README.md)를 진행한다. 상위 후보는 다음과 같다.
 
 - current / active-state operation
 - 독립 판별 / 제3판별자
@@ -85,7 +86,7 @@
 - 생성·주장 판정·후보 수렴의 판단 순서
 - AI self-check
 
-목록 안에는 순위가 없다. 후보의 현재 특징은 설명할 수 있지만 이를 위상의 근거·고정된 대표 강점·정렬 기준으로 사용하지 않는다. 이제 1차 shaping을 함께 비교하고, 한 장만으로 판단하기 어려운 후보만 필요한 범위에서 초기 초안까지 본 뒤 첫 글과 article type을 결정한다. 독립 판별과 AI self-check의 병합·분리도 그때 판단한다. 그 전에는 고정된 시리즈 순서나 전체 구성을 만들지 않는다.
+목록 안에는 순위가 없다. 후보의 현재 특징은 설명할 수 있지만 이를 위상의 근거·고정된 대표 강점·정렬 기준으로 사용하지 않는다. v1과 v2 뒤에는 각각 새 독립 reviewer가 backlog·원자료와 해당 버전만 직접 보고 다음 수정 기준을 제시한다. main은 그 결과를 자동 정답으로 쓰지 않고 채택·조정·기각·보류를 기록해 다음 버전에 반영한다. 사용자는 v3와 전체 과정을 함께 본 뒤 첫 글, article type, 독립 판별과 AI self-check의 병합·분리, 발행 순서를 판단한다. 그 전에는 고정된 시리즈 순서나 전체 구성을 만들지 않는다.
 
 ## 공개 전 경계
 
@@ -102,3 +103,5 @@
 - 분리 전 732줄 조사 문서: Git commit `435df83`
 - 기준·후보 문서 분리: Git commit `fb7b461`
 - 원천 우선 재조사 완료: Git commit `843f942`
+- active-state와 process 분리·후보 상태 교정: Git commit `00f1bcd`
+- candidates·shaping 분리와 1차 shaping: Git commit `6e943fc`

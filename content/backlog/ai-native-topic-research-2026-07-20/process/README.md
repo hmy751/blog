@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 글감 조사 과정 / 내부 index
 공개상태: 내부 작업 문서
-현재상태: candidates 01~04 / shaping 1차 / active-state와 역할 분리
+현재상태: candidates 01~04 / shaping 1차 / v1~v3 draft loop / active-state와 역할 분리
 ---
 
 # Process — candidates와 shaping 작업 과정
@@ -11,7 +11,7 @@
 이 디렉토리는 후보를 만들고 글의 단위로 펼치는 실제 작업 과정을 보여 준다.
 
 - [candidates](./candidates/README.md)는 기준 형성, 후보 전개, 원천 재조사, 후보 상태 교정 과정을 담는다.
-- [shaping](./shaping/README.md)은 상위 후보를 첫 장면·중심 질문·사건 배열·공개 자료 후보까지 펼쳐 보는 과정을 담는다.
+- [shaping](./shaping/README.md)은 상위 후보를 첫 장면·중심 질문·사건 배열·공개 자료 후보로 펼치고, 실제 v1~v3 산문과 독립 review를 거쳐 고치는 과정을 담는다.
 
 process에는 완료된 과정과 현재 진행 중인 과정이 모두 들어갈 수 있다. 과거 이력만 모은 archive가 아니다.
 
@@ -30,13 +30,15 @@ process에는 완료된 과정과 현재 진행 중인 과정이 모두 들어�
 
 [shaping/README.md](./shaping/README.md)에서 상위 후보 다섯 개의 1차 shaping 과정을 안내한다.
 
-후보를 실제 산문으로 쓰기 전, 같은 항목으로 펼쳐 글의 중심과 필요한 자료를 확인한다. 현재 1차 shaping은 완료됐지만 첫 글과 article type은 아직 선택하지 않았다.
+후보를 실제 산문으로 쓰기 전, 같은 항목으로 펼쳐 글의 중심과 필요한 자료를 확인했다. 1차 shaping 뒤에는 [2026-07-27 v1~v3 draft loop](./shaping/2026-07-27-v1-v3-draft-loop/README.md)에서 다섯 초안, 두 독립 review, main의 반영 판단, 기준 변화를 버전별로 보존한다. 첫 글과 article type은 아직 선택하지 않았다.
 
 ## 보존 기준점
 
 - 분리 전 단일 조사 문서: Git commit `435df83`
 - 기준·후보 분리 snapshot: Git commit `fb7b461`
 - 원천 우선 재조사 완료 snapshot: Git commit `843f942`
+- active-state와 process 분리·후보 상태 교정: Git commit `00f1bcd`
+- candidates·shaping 분리와 1차 shaping: Git commit `6e943fc`
 
 디렉토리 이동 직전 SHA-256:
 

@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: 상위 후보 1차 shaping / 내부 작업 문서
 공개상태: 내부 작업 문서
-권위: 현재 shaping
+권위: 1차 shaping snapshot
 현재후보:
   - ../../../active-state/topic-candidates.md#작업-주제--current와-history의-권위-분리
 ---

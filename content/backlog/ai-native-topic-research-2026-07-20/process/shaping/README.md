@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 상위 후보 shaping 과정 / 내부 index
 공개상태: 내부 작업 문서
-현재상태: 상위 후보 5개 1차 shaping
+현재상태: 상위 후보 5개 1차 shaping 완료 / v1~v3 draft loop 진행
 ---
 
 # Shaping — 후보를 글의 단위로 펼쳐 보는 과정
@@ -18,9 +18,9 @@
 - [active-state/topic-candidates.md](../../active-state/topic-candidates.md)는 현재 후보 이름·위상·주장 상한·다음 행동을 소유한다.
 - [process/candidates/](../candidates/README.md)는 후보를 발견하고 재검토한 과정을 보여 준다.
 - `process/shaping/`은 후보를 글의 단위로 시험한 과정을 보여 준다.
-- 실제 산문 초안은 사용자와 후보를 정한 뒤 `content/drafts/`에 둔다.
+- 비교용 산문 초안은 다섯 후보 모두 버전별로 `content/drafts/ai-native-topic-research-2026-07-20/`에 둔다.
 
-이번 문서들은 현재 가장 최근의 shaping 결과이지만, 최신이라는 이유로 active-state가 되지는 않는다. 후보 위상이나 적용 기준이 active-state와 충돌하면 active-state를 따른다. shaping 결과로 후보 상태나 다음 cursor가 달라질 때만 active-state에도 그 결과를 반영한다.
+1차 shaping과 이후 draft loop는 작업 과정을 보존하지만, 최신이라는 이유로 active-state가 되지는 않는다. 후보 위상이나 적용 기준이 active-state와 충돌하면 active-state를 따른다. shaping 결과로 후보 상태나 다음 cursor가 달라질 때만 active-state에도 그 결과를 반영한다.
 
 ## 공통 형식
 
@@ -48,6 +48,10 @@
 - [생성·주장 판정·후보 수렴의 판단 순서](./2026-07-23-first-pass/judgment-order.md)
 - [AI self-check의 효용과 행동 변화](./2026-07-23-first-pass/ai-self-check.md)
 
+### [`2026-07-27-v1-v3-draft-loop/`](./2026-07-27-v1-v3-draft-loop/README.md)
+
+다섯 후보를 모두 v1~v3 산문으로 만들고, v1과 v2 뒤의 독립 review 및 main 반영 판단을 보존하는 현재 작업 묶음이다.
+
 ## 이번 1차 shaping의 범위
 
 - 기존 backlog에 정리된 사건과 주장 상한을 글의 시간축으로 다시 배열한다.
@@ -56,9 +60,9 @@
 - article type, 첫 글, 발행 순서, 후보 병합을 확정하지 않는다.
 - 공개 가능한 자료가 필요한 위치와 추가 확인 사항을 드러낸다.
 
-## 다음 판단
+## 1차 shaping 뒤의 판단
 
-다섯 문서를 함께 보고 다음을 결정한다.
+1차 shaping 직후에는 다음을 결정하려 했다.
 
 - 첫 문단에서 문제가 실제로 보이는 후보는 무엇인가.
 - 사용자의 판단 변화가 사건 안에서 가장 자연스럽게 드러나는 후보는 무엇인가.
@@ -66,4 +70,4 @@
 - 한 장만으로 article type과 중심이 드러나지 않아 실제 산문을 써 봐야 하는 후보는 무엇인가.
 - 어떤 후보를 `content/drafts/`의 실제 초안으로 먼저 옮길 것인가.
 
-이 판단 전에는 고정된 시리즈 순서나 후보 병합을 만들지 않는다.
+이 cursor는 이후 논의에서 다섯 후보 모두를 v1~v3까지 써 보고 사용자가 판단하는 방식으로 확장됐다. 당시 질문은 이력으로 보존하며, 현재 실행은 [draft loop](./2026-07-27-v1-v3-draft-loop/README.md)를 따른다. v3 사용자 검토 전에는 고정된 시리즈 순서나 후보 병합을 만들지 않는다.

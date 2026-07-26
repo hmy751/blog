@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: 상위 후보 1차 shaping / 내부 작업 문서
 공개상태: 내부 작업 문서
-권위: 현재 shaping
+권위: 1차 shaping snapshot
 현재후보:
   - ../../../active-state/topic-candidates.md#작업-주제--제품-흐름을-보존하는-scope-control
 ---

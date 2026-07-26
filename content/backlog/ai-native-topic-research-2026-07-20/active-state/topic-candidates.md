@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 기술 블로그 주제 후보 / 현재 상태
 공개상태: 내부 작업 문서
-현재상태: active 후보 8개 / 상위 후보 5개 1차 shaping / 유지 후보 3개 / 첫 글 미정
+현재상태: active 후보 8개 / 상위 후보 5개 v1~v3 진행 / 유지 후보 3개 / 사용자 검토 전
 주요 원천:
   - ../process/candidates/02-topic-candidates.md
   - ../process/candidates/03-source-first-reanalysis.md
@@ -37,9 +37,9 @@
 
 상위 후보와 유지 후보 안에는 순위가 없다. 이름 옆 문장은 현재 각 후보가 다루는 문제를 찾기 위한 설명이지, 그 위상을 정한 강점·평가 점수·고정된 가치 제안이 아니다. 목록을 이 특징에 따라 재배열하거나 다음 후보를 거르는 선행 기준으로 사용하지 않는다. 특징 자체도 상세 카드와 실제 shaping·초안에 따라 바뀔 수 있다.
 
-## 현재 cursor — 상위 후보 shaping
+## 현재 cursor — 상위 후보 v1~v3 draft loop
 
-첫 글과 후보의 최종 위상은 아직 확정하지 않는다. 상위 후보 다섯 개의 [1차 shaping](../process/shaping/README.md)을 같은 형식으로 만들었다. 이제 이를 함께 비교하고, 한 장만으로 중심과 형식이 드러나지 않는 후보만 필요한 범위에서 초기 초안까지 본다.
+첫 글과 후보의 최종 위상은 아직 확정하지 않는다. 상위 후보 다섯 개의 [1차 shaping](../process/shaping/README.md#2026-07-23-first-pass)을 같은 형식으로 만들었다. 현재는 다섯 후보 모두를 v1에서 v3까지 완결된 산문으로 만드는 [draft loop](../process/shaping/2026-07-27-v1-v3-draft-loop/README.md)를 진행한다.
 
 각 장에는 같은 항목을 둔다.
 
@@ -61,7 +61,7 @@
 - 공개 가능한 재현 자료를 준비할 수 있는가
 - 지금 첫 글로 무엇을 대표하고 싶은가
 
-후보마다 다음 수정 순서가 다를 수 있지만 그 순서는 가치 서열이 아니다. 한 후보의 초기 결과를 다른 후보의 탈락 기준으로 사용하지 않고, 현재 1차 shaping과 필요할 때 만든 초기 초안을 함께 본 뒤 첫 글과 article type을 결정한다.
+후보마다 수정 내용은 다를 수 있지만 그 차이는 가치 서열이 아니다. 각 버전은 다섯 편을 모두 보존하고, 이전 버전을 덮어쓰지 않는다. v1과 v2 뒤의 독립 review와 main의 반영 판단도 별도 process 문서로 남긴다. 사용자는 v3와 그 과정을 함께 본 뒤 첫 글과 article type을 결정한다.
 
 ## 작업 주제 — Current와 history의 권위 분리
 
@@ -69,7 +69,7 @@
 
 ### 현재 상태
 
-**상위 후보.** shaping이나 초기 초안을 보기 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
+**상위 후보.** 1차 shaping을 완료했고 v1~v3 draft loop 대상이다. 사용자 검토 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
 
 원천 우선 재조사 뒤 중심은 “문서를 잘 나누는 법”보다 더 구체적으로 바뀌었다.
 
@@ -119,7 +119,7 @@
 - current를 읽었다고 최근성 편향이 자동으로 사라지지 않는다.
 - 줄 수와 byte 감소는 특정 snapshot의 정리 결과이지 품질 지표가 아니다.
 
-### 다음 shaping
+### draft loop에서 확인할 것
 
 - 첫 장면을 “기록은 충분했지만 현재 작업을 제어하지 못했다”로 고정할지, 최근 Loop 하나가 프로젝트 전체가 된 설문 사건으로 시작할지 비교한다.
 - current의 구조를 공개 가능한 작은 예제로 재구성한다.
@@ -147,7 +147,7 @@
 
 ### 현재 상태
 
-**상위 후보.** shaping이나 초기 초안을 보기 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
+**상위 후보.** 1차 shaping을 완료했고 v1~v3 draft loop 대상이다. 사용자 검토 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
 
 재조사 뒤 독립 판별의 범위는 reviewer 호출에서 다음 계약 전체로 넓어졌다.
 
@@ -205,7 +205,7 @@
 - fresh AI가 항상 더 옳거나 reviewer 수가 늘수록 품질이 오른다고 말할 수 없다.
 - Tripproof의 judge 실험은 작은 local dataset과 추가 호출이 있는 제한된 사례다.
 
-### 다음 shaping
+### draft loop에서 확인할 것
 
 - 기술적 spine은 AX의 9→15 test와 설치형 E2E에 둔다.
 - fresh generation, 취합 전 결과 독립성, 회수 권한이 기술 사건과 어떻게 연결되는지 한 장에서 확인한다.
@@ -234,7 +234,7 @@
 
 ### 현재 상태
 
-**상위 후보.** shaping이나 초기 초안을 보기 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
+**상위 후보.** 1차 shaping을 완료했고 v1~v3 draft loop 대상이다. 사용자 검토 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
 
 기존 artifact/core 후보와 다루는 시점이 다르다.
 
@@ -284,7 +284,7 @@
 - decision-time question과 test도 고정 gate로 굳으면 다른 형태의 제품 흐름을 막을 수 있다.
 - 이 contract가 모든 프로젝트의 최적 slicing 방법이라고 말하지 않는다.
 
-### 다음 shaping
+### draft loop에서 확인할 것
 
 - Tripproof의 `facts[]` 장면을 첫 장면으로 쓸지, deterministic demo가 product proof로 바뀐 장면을 쓸지 선택한다.
 - input→transform→output을 보여 줄 공개 가능한 작은 code 예제를 만든다.
@@ -311,7 +311,7 @@
 
 ### 현재 상태
 
-**상위 후보.** shaping이나 초기 초안을 보기 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
+**상위 후보.** 1차 shaping을 완료했고 v1~v3 draft loop 대상이다. 사용자 검토 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
 
 ### 중심 질문
 
@@ -354,7 +354,7 @@
 - 순서를 바꾼 뒤 최종 제품 품질이 높아졌다는 통제 비교는 없다.
 - 확인된 것은 후보 공간을 너무 일찍 없애지 않고 서로 다른 문제 경계를 다시 볼 수 있었다는 점이다.
 
-### 다음 shaping
+### draft loop에서 확인할 것
 
 - 기존 제목의 강한 장면을 유지하되 본문은 세 판단 단계의 권한 분리로 재구성한다.
 - Cofathon의 후보 조기 종료와 이번 active-state 해석 오류 중 무엇을 첫 장면으로 삼을지 각각 펼쳐 본다.
@@ -384,7 +384,7 @@
 
 ### 현재 상태
 
-**상위 후보.** shaping이나 초기 초안을 보기 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
+**상위 후보.** 1차 shaping을 완료했고 v1~v3 draft loop 대상이다. 사용자 검토 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
 
 ### 중심 질문
 
@@ -428,7 +428,7 @@
 - 모든 오해를 self-check·fresh audit로 올리면 meta 작업이 본 작업을 가린다.
 - skill의 존재와 실제 판단 변화는 같은 결과가 아니다.
 
-### 다음 shaping
+### draft loop에서 확인할 것
 
 - 기존 draft로 기록된 `ai-self-check-fundamental.md`의 실제 위치부터 확인한다. 현재 workspace와 Git history에서는 파일을 찾지 못했으므로, 원문을 확보하기 전에는 그 장면과 목소리를 확인한 것으로 간주하지 않는다.
 - 실제 효용, 과교정 교정, 과잉 발동, 행동 재발을 한쪽으로 깎지 않고 개발기의 시간축으로 펼친다.
@@ -704,10 +704,10 @@ diagnostic fixture를 모두 보존하는 일과 비싼 live judge를 매번 실
 
 ## 다음 행동
 
-- [상위 후보 1차 shaping](../process/shaping/README.md)을 함께 비교한다.
-- 한 장만으로 중심과 형식이 드러나지 않는 후보는 필요한 범위에서 초기 초안까지 본다.
-- shaping 순서를 후보 가치나 발행 순서로 해석하지 않는다.
-- 독립 판별과 AI self-check의 병합·분리는 두 후보의 shaping 뒤 결정한다.
-- 비교 가능한 shaping이나 초안이 생긴 뒤 첫 글과 article type을 결정한다.
+- [v1~v3 draft loop](../process/shaping/2026-07-27-v1-v3-draft-loop/README.md)에서 다섯 후보를 모두 같은 버전 단위로 진행한다.
+- v1과 v2 뒤에는 서로 다른 독립 reviewer가 해당 버전과 backlog·원자료를 직접 보고 수정 기준을 도출한다.
+- main은 review를 자동 정답으로 쓰지 않고 채택·조정·기각·보류와 실제 반영을 기록한다.
+- 이전 버전과 review 원문을 덮어쓰지 않는다.
+- v3가 끝난 뒤 사용자가 첫 글, article type, 병합·분리, 발행 순서를 판단한다.
 
 그 전에는 고정된 발행 순서나 전체 시리즈 구성을 확정하지 않는다.

@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 글감 선택 기준 / 현재 적용본
 공개상태: 내부 작업 문서
-현재상태: 03·04 반영 현재 적용본 / 첫 글·후보 최종 위상은 shaping 뒤 판단
+현재상태: 03·04 반영 현재 적용본 / 상위 후보 5개 v1~v3 진행 / 최종 판단은 사용자 검토 뒤
 기준원천:
   - ../process/candidates/01-criteria-and-decision-history.md
   - ../process/candidates/03-source-first-reanalysis.md
