@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 글감 조사 과정 / 내부 index
 공개상태: 내부 작업 문서
-현재상태: candidates 01~04 / shaping 1차 / v1~v3 draft loop / active-state와 역할 분리
+현재상태: candidates 01~04 / shaping 1차 / v1~v3 draft loop 완료 / active-state와 역할 분리
 ---
 
 # Process — candidates와 shaping 작업 과정

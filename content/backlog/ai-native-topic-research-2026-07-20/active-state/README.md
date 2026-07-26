@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 글감 active state / 내부 index
 공개상태: 내부 작업 문서
-현재상태: 기준·후보 최신 상태 / 상위 후보 5개 v1~v3 진행 / 사용자 검토 전
+현재상태: 기준·후보 최신 상태 / 상위 후보 5개 v3 완료 / 사용자 검토 대기
 ---
 
 # Active state — 지금 무엇이 유효한가
@@ -21,7 +21,7 @@
 
 ## 현재 cursor
 
-첫 글은 아직 확정하지 않았다. 다음 상위 후보 다섯 개의 [1차 shaping](../process/shaping/README.md#2026-07-23-first-pass)을 완료했고, 현재는 다섯 후보 모두를 v1에서 v3까지 작성하는 [draft loop](../process/shaping/2026-07-27-v1-v3-draft-loop/README.md)를 진행한다.
+첫 글은 아직 확정하지 않았다. 다음 상위 후보 다섯 개의 [1차 shaping](../process/shaping/README.md#2026-07-23-first-pass)과 v1~v3 [draft loop](../process/shaping/2026-07-27-v1-v3-draft-loop/README.md)를 완료했다. 현재 cursor는 v3 다섯 편과 두 차례 독립 review, main의 반영 판단에 대한 사용자 검토다.
 
 - current / active-state operation
 - 독립 판별 / 제3판별자
@@ -41,9 +41,9 @@
 6. 다른 개발자가 가져갈 기준
 7. 이번 자료가 말하지 못하는 한계
 
-v1과 v2 뒤에는 서로 다른 독립 reviewer가 해당 버전과 backlog·원자료에서 다음 수정 기준을 직접 도출한다. reviewer에게 main의 예상 문제·평가 기준·이전 review 결과를 주지 않는다. main은 결과를 채택·조정·기각·보류해 다음 버전을 만들고 그 판단을 process에 남긴다.
+v1과 v2 뒤에는 서로 다른 독립 reviewer가 해당 버전과 backlog·원자료에서 다음 수정 기준을 직접 도출했다. reviewer에게 main의 예상 문제·평가 기준·이전 review 결과를 주지 않았고, main은 결과를 채택·조정·기각·보류해 다음 버전을 만든 뒤 그 판단을 process에 남겼다.
 
-사용자는 v3와 전체 변화 기록을 함께 본 뒤 첫 글과 article type을 결정한다. 독립 판별과 AI self-check는 연결 가능한 후보로 두되 병합·분리도 그때 판단한다. 그 전에는 고정된 발행 순서나 전체 시리즈 구성을 만들지 않는다.
+다음 판단은 사용자가 v3와 전체 변화 기록을 함께 본 뒤 내린다. 첫 글과 article type, 독립 판별과 AI self-check의 병합·분리, 발행 순서와 시리즈 여부는 아직 열려 있다. 그 전에는 고정된 발행 순서나 전체 시리즈 구성을 만들지 않는다.
 
 ## 갱신 계약
 

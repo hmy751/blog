@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 기술 블로그 주제 후보 / 현재 상태
 공개상태: 내부 작업 문서
-현재상태: active 후보 8개 / 상위 후보 5개 v1~v3 진행 / 유지 후보 3개 / 사용자 검토 전
+현재상태: active 후보 8개 / 상위 후보 5개 v3 완료 / 유지 후보 3개 / 사용자 검토 대기
 주요 원천:
   - ../process/candidates/02-topic-candidates.md
   - ../process/candidates/03-source-first-reanalysis.md
@@ -37,9 +37,9 @@
 
 상위 후보와 유지 후보 안에는 순위가 없다. 이름 옆 문장은 현재 각 후보가 다루는 문제를 찾기 위한 설명이지, 그 위상을 정한 강점·평가 점수·고정된 가치 제안이 아니다. 목록을 이 특징에 따라 재배열하거나 다음 후보를 거르는 선행 기준으로 사용하지 않는다. 특징 자체도 상세 카드와 실제 shaping·초안에 따라 바뀔 수 있다.
 
-## 현재 cursor — 상위 후보 v1~v3 draft loop
+## 현재 cursor — v3 사용자 검토
 
-첫 글과 후보의 최종 위상은 아직 확정하지 않는다. 상위 후보 다섯 개의 [1차 shaping](../process/shaping/README.md#2026-07-23-first-pass)을 같은 형식으로 만들었다. 현재는 다섯 후보 모두를 v1에서 v3까지 완결된 산문으로 만드는 [draft loop](../process/shaping/2026-07-27-v1-v3-draft-loop/README.md)를 진행한다.
+첫 글과 후보의 최종 위상은 아직 확정하지 않는다. 상위 후보 다섯 개의 [1차 shaping](../process/shaping/README.md#2026-07-23-first-pass)과 v1~v3 [draft loop](../process/shaping/2026-07-27-v1-v3-draft-loop/README.md)를 완료했다. 현재 cursor는 다섯 v3와 두 독립 review, main의 반영 판단을 함께 보는 사용자 검토다.
 
 각 장에는 같은 항목을 둔다.
 
@@ -61,7 +61,7 @@
 - 공개 가능한 재현 자료를 준비할 수 있는가
 - 지금 첫 글로 무엇을 대표하고 싶은가
 
-후보마다 수정 내용은 다를 수 있지만 그 차이는 가치 서열이 아니다. 각 버전은 다섯 편을 모두 보존하고, 이전 버전을 덮어쓰지 않는다. v1과 v2 뒤의 독립 review와 main의 반영 판단도 별도 process 문서로 남긴다. 사용자는 v3와 그 과정을 함께 본 뒤 첫 글과 article type을 결정한다.
+후보마다 수정 내용은 다르지만 그 차이는 가치 서열이 아니다. 각 버전은 다섯 편을 모두 보존했고, 이전 버전을 덮어쓰지 않았다. v1과 v2 뒤의 독립 review와 main의 반영 판단도 별도 process 문서로 남겼다. 사용자는 v3와 그 과정을 함께 본 뒤 첫 글과 article type을 결정한다.
 
 ## 작업 주제 — Current와 history의 권위 분리
 
@@ -69,7 +69,7 @@
 
 ### 현재 상태
 
-**상위 후보.** 1차 shaping을 완료했고 v1~v3 draft loop 대상이다. 사용자 검토 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
+**상위 후보.** 1차 shaping과 v1~v3 draft loop를 완료했다. 현재는 사용자 검토 대기 상태이며 첫 글·발행 순서·최종 article type은 확정하지 않았다.
 
 원천 우선 재조사 뒤 중심은 “문서를 잘 나누는 법”보다 더 구체적으로 바뀌었다.
 
@@ -119,11 +119,11 @@
 - current를 읽었다고 최근성 편향이 자동으로 사라지지 않는다.
 - 줄 수와 byte 감소는 특정 snapshot의 정리 결과이지 품질 지표가 아니다.
 
-### draft loop에서 확인할 것
+### 사용자 검토에서 확인할 것
 
-- 첫 장면을 “기록은 충분했지만 현재 작업을 제어하지 못했다”로 고정할지, 최근 Loop 하나가 프로젝트 전체가 된 설문 사건으로 시작할지 비교한다.
-- current의 구조를 공개 가능한 작은 예제로 재구성한다.
-- update ownership과 terminal event 누락을 마지막 한계로 남긴다.
+- [v3](../../../drafts/ai-native-topic-research-2026-07-20/v3/current-active-state-operation.md)가 Q1~Q5 설문 사건으로 시작하는 선택이 이 글의 문제를 충분히 대표하는지 본다.
+- Q1~Q5 시간축만으로 current의 역할이 보이는지, 별도의 공개 가능한 구조 예제가 더 필요한지 판단한다.
+- update ownership과 terminal event 누락을 마지막 한계로 둔 현재 무게가 적절한지 본다.
 
 ### 제목 후보
 
@@ -147,7 +147,7 @@
 
 ### 현재 상태
 
-**상위 후보.** 1차 shaping을 완료했고 v1~v3 draft loop 대상이다. 사용자 검토 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
+**상위 후보.** 1차 shaping과 v1~v3 draft loop를 완료했다. 현재는 사용자 검토 대기 상태이며 첫 글·발행 순서·최종 article type은 확정하지 않았다.
 
 재조사 뒤 독립 판별의 범위는 reviewer 호출에서 다음 계약 전체로 넓어졌다.
 
@@ -205,12 +205,12 @@
 - fresh AI가 항상 더 옳거나 reviewer 수가 늘수록 품질이 오른다고 말할 수 없다.
 - Tripproof의 judge 실험은 작은 local dataset과 추가 호출이 있는 제한된 사례다.
 
-### draft loop에서 확인할 것
+### 사용자 검토에서 확인할 것
 
-- 기술적 spine은 AX의 9→15 test와 설치형 E2E에 둔다.
-- fresh generation, 취합 전 결과 독립성, 회수 권한이 기술 사건과 어떻게 연결되는지 한 장에서 확인한다.
-- Tripproof는 “판별자를 하나 더 붙이면 된다”는 결론을 막는 반례로 제한한다.
-- AI self-check를 핵심 적용 사례로 한 편에 포함할지, 같은 원리를 공유하는 두 편으로 나눌지는 두 후보를 shaping한 뒤 결정한다.
+- [v3](../../../drafts/ai-native-topic-research-2026-07-20/v3/independent-review-and-recovery.md)의 9·15 검증 역할 표와 설치형 E2E가 기술적 중심을 충분히 닫는지 본다.
+- 구현자와 다른 입력·권한을 연 판별자의 역할이 추상적인 review 원칙이 아니라 실제 실패 복구로 읽히는지 확인한다.
+- 별도 판정이 닫힌 입력 밖을 복구하지 못한 반례의 분량이 중심 사건을 흐리지 않는지 본다.
+- [AI self-check v3](../../../drafts/ai-native-topic-research-2026-07-20/v3/ai-self-check.md)와 연결된 두 편으로 둘지, 일부를 병합할지는 두 글을 함께 읽고 결정한다.
 
 ### 제목 후보
 
@@ -234,7 +234,7 @@
 
 ### 현재 상태
 
-**상위 후보.** 1차 shaping을 완료했고 v1~v3 draft loop 대상이다. 사용자 검토 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
+**상위 후보.** 1차 shaping과 v1~v3 draft loop를 완료했다. 현재는 사용자 검토 대기 상태이며 첫 글·발행 순서·최종 article type은 확정하지 않았다.
 
 기존 artifact/core 후보와 다루는 시점이 다르다.
 
@@ -284,12 +284,12 @@
 - decision-time question과 test도 고정 gate로 굳으면 다른 형태의 제품 흐름을 막을 수 있다.
 - 이 contract가 모든 프로젝트의 최적 slicing 방법이라고 말하지 않는다.
 
-### draft loop에서 확인할 것
+### 사용자 검토에서 확인할 것
 
-- Tripproof의 `facts[]` 장면을 첫 장면으로 쓸지, deterministic demo가 product proof로 바뀐 장면을 쓸지 선택한다.
-- input→transform→output을 보여 줄 공개 가능한 작은 code 예제를 만든다.
-- AX는 같은 문제가 다른 프로젝트에서 반복됐다는 보강 장면으로 제한한다.
-- “vertical slice 일반론”과 다른 AI-native 고유성을 AI의 반복적인 surrogate 수렴과 사용자 정정에서 드러낸다.
+- [v3](../../../drafts/ai-native-topic-research-2026-07-20/v3/product-flow-scope-control.md)가 raw `facts[]` 제안과 후속 실제 답변 경로의 대비를 중심 사건으로 둔 선택을 확인한다.
+- 현재 흐름 대비와 세 test 설명만으로 중심 작용이 보이는지, 공개 가능한 작은 code 예제가 더 필요한지 판단한다.
+- deterministic 사례가 반대 경계로만 남아 중심 사건을 흐리지 않는지 본다.
+- 일반적인 vertical slice 설명을 넘어, AI가 작고 빨리 보이는 대체 결과로 수렴한 판단 조건이 충분히 드러나는지 본다.
 
 ### 제목 후보
 
@@ -311,7 +311,7 @@
 
 ### 현재 상태
 
-**상위 후보.** 1차 shaping을 완료했고 v1~v3 draft loop 대상이다. 사용자 검토 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
+**상위 후보.** 1차 shaping과 v1~v3 draft loop를 완료했다. 현재는 사용자 검토 대기 상태이며 첫 글·발행 순서·최종 article type은 확정하지 않았다.
 
 ### 중심 질문
 
@@ -323,7 +323,8 @@
 - AX에서 검색 전의 중립적 분류도 관찰을 그 칸 안으로 좁힐 수 있다는 정정이 있었다.
 - 기존 3후보판에 새 기준을 붙이지 않고 기존 판을 가린 second pass를 별도로 만들었다.
 - 문제를 먼저 닫고 솔루션을 비교하는 순서를 멈추고 문제–솔루션 조합의 출력까지 펼쳤다.
-- Cofathon에서는 평가 rubric이 후보 생성의 씨앗이 되어 15개 추상 후보가 서로 비슷해졌다.
+- Cofathon에서는 평가 rubric과 조직 가치 언어를 발산 재료로 만든 22개 원형을 감사해 업무·문제 후보 15개 계열과 별도 방식·패턴으로 다시 나눴다. 이 15개 계열은 검증된 제품 후보가 아니라 rubric 대응층으로 내려갔다.
+- 별도의 scene-first 재시작에서 actor·workflow·입력·결과·확인 수준을 적은 후보 6개가 1차 연구 초안으로 만들어졌지만 선택·최종 수렴된 후보군은 아니었다.
 - ai-note에서는 생성보다 ROI 심사를 먼저 한 AI가 가능성보다 탈락 사유를 계속 찾았다.
 - 03 이후에는 `첫 shaping 3개`라는 작업 cursor를 가치 서열로 읽고, 주장 상한과 한 편의 중심 질문 기준으로 self-check를 조기 수렴시켰다가 사용자 정정으로 되돌렸다.
 
@@ -339,7 +340,7 @@
 
 - AX 첫·두 번째 후보판
 - research·problem·solution의 순서 변경 process
-- Cofathon scene-first 후보 재시작과 판단 순서 core
+- Cofathon의 15개 업무·문제 계열과 선택되지 않은 scene-first 1차 연구 초안, 판단 순서 core
 - ai-note의 두 prompt pass와 pilot 계약
 
 ### 다른 개발자가 가져갈 기준
@@ -354,13 +355,12 @@
 - 순서를 바꾼 뒤 최종 제품 품질이 높아졌다는 통제 비교는 없다.
 - 확인된 것은 후보 공간을 너무 일찍 없애지 않고 서로 다른 문제 경계를 다시 볼 수 있었다는 점이다.
 
-### draft loop에서 확인할 것
+### 사용자 검토에서 확인할 것
 
-- 기존 제목의 강한 장면을 유지하되 본문은 세 판단 단계의 권한 분리로 재구성한다.
-- Cofathon의 후보 조기 종료와 이번 active-state 해석 오류 중 무엇을 첫 장면으로 삼을지 각각 펼쳐 본다.
-- Cofathon 원본을 다시 조사하기 전에는 AX와 ai-note의 직접 원천을 중심으로 삼는다.
-- 발견과 필터 순서가 실제 후보 차이를 만든 before/after artifact를 공개 가능한 형태로 정리한다.
-- shaping이나 초기 초안에서 technical case study·learning experiment·retrospective 중 맞는 형식을 판단한다.
+- [v3](../../../drafts/ai-native-topic-research-2026-07-20/v3/judgment-order.md)에서 AI의 기준 오적용과 사용자의 정정이 올바른 주체에 귀속됐는지 본다.
+- A1·A2가 별도 비교 단위가 된 artifact가 세 판단 단계의 권한 분리를 충분히 보여 주는지 확인한다.
+- Cofathon이 결과 우월성의 근거가 아니라 rubric-first와 scene-first 산출물의 해상도 차이를 보여 주는 보강 사례로만 읽히는지 본다.
+- 통제 실험이 아니었던 한계를 지키면서 learning experiment 형식이 이 글에 맞는지 판단한다.
 
 ### 제목 후보
 
@@ -384,7 +384,7 @@
 
 ### 현재 상태
 
-**상위 후보.** 1차 shaping을 완료했고 v1~v3 draft loop 대상이다. 사용자 검토 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
+**상위 후보.** 1차 shaping과 v1~v3 draft loop를 완료했다. 현재는 사용자 검토 대기 상태이며 첫 글·발행 순서·최종 article type은 확정하지 않았다.
 
 ### 중심 질문
 
@@ -428,13 +428,12 @@
 - 모든 오해를 self-check·fresh audit로 올리면 meta 작업이 본 작업을 가린다.
 - skill의 존재와 실제 판단 변화는 같은 결과가 아니다.
 
-### draft loop에서 확인할 것
+### 사용자 검토에서 확인할 것
 
-- 기존 draft로 기록된 `ai-self-check-fundamental.md`의 실제 위치부터 확인한다. 현재 workspace와 Git history에서는 파일을 찾지 못했으므로, 원문을 확보하기 전에는 그 장면과 목소리를 확인한 것으로 간주하지 않는다.
-- 실제 효용, 과교정 교정, 과잉 발동, 행동 재발을 한쪽으로 깎지 않고 개발기의 시간축으로 펼친다.
-- 발동 조건뿐 아니라 종료 조건과 과잉 발동 사례를 포함한다.
-- 독립 판별을 일반 원리로 두고 핵심 적용 사례로 포함할지, 연결된 별도 글로 둘지는 두 후보를 shaping한 뒤 결정한다.
-- shaping이나 초기 초안에서 technical case study·learning experiment·retrospective 중 맞는 형식을 판단한다.
+- [v3](../../../drafts/ai-native-topic-research-2026-07-20/v3/ai-self-check.md)의 전진 편향과 세 차례 사용자 제동이 회고의 중심 장면으로 충분한지 본다.
+- `ai-self-check-fundamental.md`를 찾지 못한 상태에서 복원하지 않은 장면과, 현재 자료로 쓸 수 있었던 assignment·해커톤 장면의 경계가 정직한지 확인한다.
+- 진단·다음 행동·재발 방지, 발동·종료·과잉 발동의 차이가 목록보다 경험의 시간축으로 읽히는지 본다.
+- [독립 판별 v3](../../../drafts/ai-native-topic-research-2026-07-20/v3/independent-review-and-recovery.md)와 연결된 별도 글로 둘지 일부를 병합할지, retrospective 형식을 유지할지 함께 판단한다.
 
 ### 제목 후보
 
@@ -704,10 +703,9 @@ diagnostic fixture를 모두 보존하는 일과 비싼 live judge를 매번 실
 
 ## 다음 행동
 
-- [v1~v3 draft loop](../process/shaping/2026-07-27-v1-v3-draft-loop/README.md)에서 다섯 후보를 모두 같은 버전 단위로 진행한다.
-- v1과 v2 뒤에는 서로 다른 독립 reviewer가 해당 버전과 backlog·원자료를 직접 보고 수정 기준을 도출한다.
-- main은 review를 자동 정답으로 쓰지 않고 채택·조정·기각·보류와 실제 반영을 기록한다.
-- 이전 버전과 review 원문을 덮어쓰지 않는다.
-- v3가 끝난 뒤 사용자가 첫 글, article type, 병합·분리, 발행 순서를 판단한다.
+- 완료한 [v1~v3 draft loop](../process/shaping/2026-07-27-v1-v3-draft-loop/README.md)와 다섯 v3를 함께 본다.
+- 두 독립 review 원문과 main의 채택·조정·기각·보류, 실제 버전 변화를 대조한다.
+- 이전 버전과 review 원문은 사용자 판단이 끝날 때까지 그대로 보존한다.
+- 사용자가 v3와 전체 변화 기록을 함께 보고 첫 글, article type, 병합·분리, 발행 순서를 판단한다.
 
-그 전에는 고정된 발행 순서나 전체 시리즈 구성을 확정하지 않는다.
+사용자 판단 전에는 고정된 발행 순서나 전체 시리즈 구성을 확정하지 않는다.

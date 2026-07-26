@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 글감 조사 권위 지도 / 내부 index
 공개상태: 내부 작업 문서
-현재상태: 상위 후보 5개 v1→독립 리뷰→v2→독립 리뷰→v3 진행 / 사용자 검토 전
+현재상태: 상위 후보 5개 v1→독립 리뷰→v2→독립 리뷰→v3 완료 / 사용자 검토 대기
 ---
 
 # AI-native 역량 글감 조사
@@ -78,7 +78,7 @@
 
 ## 현재 cursor
 
-첫 글은 아직 확정하지 않았다. 상위 후보의 1차 shaping을 마쳤고, 현재는 다섯 후보 모두를 같은 깊이의 v1~v3 산문으로 펼치는 [draft loop](./process/shaping/2026-07-27-v1-v3-draft-loop/README.md)를 진행한다. 상위 후보는 다음과 같다.
+첫 글은 아직 확정하지 않았다. 상위 후보의 1차 shaping과 다섯 후보 모두의 v1~v3 산문, 두 차례 독립 review와 main의 반영 판단을 [draft loop](./process/shaping/2026-07-27-v1-v3-draft-loop/README.md)에 완성했다. 현재 cursor는 v3와 전체 변화 기록에 대한 사용자 검토다. 상위 후보는 다음과 같다.
 
 - current / active-state operation
 - 독립 판별 / 제3판별자
