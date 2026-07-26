@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: 상위 후보 5개 v1~v3 초안 반복 / 내부 process index
 공개상태: 내부 작업 문서
-현재상태: 작업면 생성 / v1 작성 전
+현재상태: v1 작성 완료 / 첫 독립 review 전
 ---
 
 # v1~v3 draft loop
@@ -26,6 +26,11 @@
 초안:
 
 - [v1](../../../../../drafts/ai-native-topic-research-2026-07-20/v1/)
+  - [current를 active state로 운영하기](../../../../../drafts/ai-native-topic-research-2026-07-20/v1/current-active-state-operation.md)
+  - [독립 판별자를 판단 과정에 넣기](../../../../../drafts/ai-native-topic-research-2026-07-20/v1/independent-review-and-recovery.md)
+  - [AI와 일할 때 제품 흐름과 scope 통제](../../../../../drafts/ai-native-topic-research-2026-07-20/v1/product-flow-scope-control.md)
+  - [생성과 판단의 순서를 분리하기](../../../../../drafts/ai-native-topic-research-2026-07-20/v1/judgment-order.md)
+  - [AI가 자기 작업 방식을 원인에 넣어 점검하기](../../../../../drafts/ai-native-topic-research-2026-07-20/v1/ai-self-check.md)
 - [v2](../../../../../drafts/ai-native-topic-research-2026-07-20/v2/)
 - [v3](../../../../../drafts/ai-native-topic-research-2026-07-20/v3/)
 
@@ -51,8 +56,8 @@ reviewer는 파일을 수정하지 않고 글 순위, 첫 글, 병합, 발행 �
 
 ## 현재 상태
 
-- v1: 작성 전
-- 첫 독립 review: 대기
+- v1: 다섯 편 작성 완료
+- 첫 독립 review: v1 checkpoint 뒤 진행
 - v2: 대기
 - 두 번째 독립 review: 대기
 - v3: 대기
