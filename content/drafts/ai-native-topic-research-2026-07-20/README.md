@@ -6,13 +6,15 @@ v1, v2, v3는 같은 다섯 파일을 가진다. 이전 버전을 덮어쓰지 �
 
 v3까지 작성과 독립 review 반영을 마친 뒤, 다섯 v3와 변화 기록을 종합 대조하고 사용자와 후보 중심을 다시 맞췄다. 그 결과는 [post-v3 사용자 sync](../../backlog/ai-native-topic-research-2026-07-20/process/shaping/2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md)에 보존한다.
 
-현재 v1~v3는 완료된 비교 snapshot이다. 다음 초안은 이 버전을 고치거나 덮어쓰지 않고, 보정된 [active-state](../../backlog/ai-native-topic-research-2026-07-20/active-state/README.md)를 따르는 새 cycle의 v1로 만든다.
+초기 v1~v3는 완료된 비교 snapshot이다. 이후 버전은 이 폴더들을 고치거나 덮어쓰지 않고, 보정된 [active-state](../../backlog/ai-native-topic-research-2026-07-20/active-state/README.md)를 따르는 별도 cycle로 만든다.
 
-새 cycle은 다섯 후보를 모두 완결된 v1로 만드는 단위로 정했다. [material 종합과 사용자 sync](../../backlog/ai-native-topic-research-2026-07-20/process/shaping/2026-07-27-post-sync-v1/01-material-synthesis-and-user-sync.md) 뒤 [post-sync 새 v1 다섯 편](./2026-07-27-post-sync-v1/README.md)을 만들고 독립 review와 main 판정까지 마쳤다. 사용자가 원고와 판정을 함께 보기 전에는 v2로 넘어가지 않는다.
+[material 종합과 사용자 sync](../../backlog/ai-native-topic-research-2026-07-20/process/shaping/2026-07-27-post-sync-v1/01-material-synthesis-and-user-sync.md) 뒤 [post-sync 새 v1 다섯 편](./2026-07-27-post-sync-v1/README.md)을 만들고 독립 review와 main 판정까지 마쳤다. 사용자가 이 원고를 검토한 뒤에는 거의 최종본 수준까지 먼저 가 보기로 해, 별도 [전면 재작성 v2](./2026-07-27-near-final-v2/README.md)와 [near-final v3](./2026-07-27-near-final-v3/README.md)를 만들었다. 전체 과정은 [near-final cycle](../../backlog/ai-native-topic-research-2026-07-20/process/shaping/2026-07-27-near-final-v2-v3/README.md)에 보존한다.
 
 ## 버전
 
-- `2026-07-27-post-sync-v1/` — 전체 자료를 다시 종합하고 사용자와 중심을 맞춘 뒤 Material → Shaping → Texture와 독립 review를 거친 현재 검토본
+- `2026-07-27-near-final-v3/` — 전면 재작성 v2에 독립 review와 main 판정, regression review를 반영하고 검증한 현재 사용자 검토본
+- `2026-07-27-near-final-v2/` — backlog와 직접 원천, 기존 draft·review를 종합해 전면 재작성한 동결 review 입력
+- `2026-07-27-post-sync-v1/` — 전체 자료를 다시 종합하고 사용자와 중심을 맞춘 뒤 Material → Shaping → Texture와 독립 review를 거친 비교 snapshot
 - `v1/` — 전체 backlog와 연결 원자료를 종합해 만든 첫 완결 초안
 - `v2/` — v1 독립 review와 main의 반영 판단을 거친 초안
 - `v3/` — 새 독립 review와 main의 두 번째 반영 판단을 거친 사용자 검토본

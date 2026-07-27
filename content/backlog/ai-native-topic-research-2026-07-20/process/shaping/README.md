@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 상위 후보 shaping 과정 / 내부 index
 공개상태: 내부 작업 문서
-현재상태: 상위 후보 5개 post-sync 새 v1·독립 review·main 판정 완료 / 사용자 검토 대기
+현재상태: 상위 후보 5개 near-final v3·독립 review·검증 완료 / 사용자 검토 대기
 ---
 
 # Shaping — 후보를 글의 단위로 펼쳐 보는 과정
@@ -54,7 +54,11 @@
 
 ### [`2026-07-27-post-sync-v1/`](./2026-07-27-post-sync-v1/README.md)
 
-기존 loop를 고치는 대신, post-v3 사용자 sync에서 되찾은 중심으로 새 v1 다섯 편을 만든 현재 작업 묶음이다. backlog, 직접 원천, 기존 초안과 review를 다시 대조한 [material 종합](./2026-07-27-post-sync-v1/01-material-synthesis-and-user-sync.md), Material → Shaping → Texture를 거친 [작성 기록](./2026-07-27-post-sync-v1/02-v1-build-record.md), 독립 review와 main 판정을 모두 별도로 남겼다. 현재는 사용자가 원고와 판정을 함께 검토하기 전이므로 v2로 넘어가지 않는다.
+기존 loop를 고치는 대신, post-v3 사용자 sync에서 되찾은 중심으로 새 v1 다섯 편을 만든 완료 작업 묶음이다. backlog, 직접 원천, 기존 초안과 review를 다시 대조한 [material 종합](./2026-07-27-post-sync-v1/01-material-synthesis-and-user-sync.md), Material → Shaping → Texture를 거친 [작성 기록](./2026-07-27-post-sync-v1/02-v1-build-record.md), 독립 review와 main 판정을 모두 별도로 남겼다.
+
+### [`2026-07-27-near-final-v2-v3/`](./2026-07-27-near-final-v2-v3/README.md)
+
+post-sync v1을 사용자가 검토한 뒤, 매력과 풍부함을 판단할 수 있는 거의 최종본을 먼저 만든 작업 묶음이다. 직접 원천과 backlog, 기존 draft·review를 다시 입력으로 사용한 전면 재작성 v2, 독립 shaping·texture·evidence review, main 판정, near-final v3, regression review와 production renderer 검증을 보존한다. v3에서 거꾸로 어떤 재료와 판단이 실제 글을 살렸는지도 [역추적](./2026-07-27-near-final-v2-v3/05-v3-build-and-reverse-trace.md)했다.
 
 ## 이번 1차 shaping의 범위
 
@@ -76,4 +80,4 @@
 
 이 cursor는 이후 논의에서 다섯 후보 모두를 v1~v3까지 써 보고 사용자가 판단하는 방식으로 확장됐다. v3 뒤에는 결과만 고르는 대신 backlog·초안·review·main 판단을 종합 대조하고 사용자와 후보 중심을 다시 맞췄다. 당시 질문은 이력으로 보존하며, 완성된 과정은 [draft loop](./2026-07-27-v1-v3-draft-loop/README.md)를 따른다.
 
-보정된 중심으로 새 cycle의 완결된 v1 다섯 편과 독립 review·main 판정까지 만들었다. material 종합, 사용자 sync, 결정 상태 회수와 작성 판단은 [현재 cycle](./2026-07-27-post-sync-v1/README.md)에 남겼다. 현재는 사용자 검토를 기다리며 독립 판별과 AI self-check를 연결된 두 편으로 두는 방향 외에 첫 글, 최종 article type, 발행 순서와 v2 범위는 확정하지 않는다.
+보정된 중심으로 새 v1을 만든 뒤, 별도 [near-final cycle](./2026-07-27-near-final-v2-v3/README.md)에서 다섯 편 모두 v3와 독립 review·검증까지 완료했다. 현재는 사용자 검토를 기다리며 독립 판별과 AI self-check를 연결된 두 편으로 두는 방향 외에 첫 글, 최종 article type, 발행 순서와 시리즈 여부를 확정하지 않는다.
