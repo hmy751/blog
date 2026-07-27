@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 기술 블로그 주제 후보 / 현재 상태
 공개상태: 내부 작업 문서
-현재상태: active 후보 8개 / 상위 후보 5개 post-v3 중심 보정 / 유지 후보 3개 / 다음 초안 준비
+현재상태: active 후보 8개 / 상위 후보 5개 post-sync v1·독립 review 완료 / 사용자 검토 대기
 주요 원천:
   - ../process/candidates/02-topic-candidates.md
   - ../process/candidates/03-source-first-reanalysis.md
@@ -37,7 +37,7 @@
 
 상위 후보와 유지 후보 안에는 순위가 없다. 이름 옆 문장은 현재 각 후보가 다루는 문제를 찾기 위한 설명이지, 그 위상을 정한 강점·평가 점수·고정된 가치 제안이 아니다. 목록을 이 특징에 따라 재배열하거나 다음 후보를 거르는 선행 기준으로 사용하지 않는다. 특징 자체도 상세 카드와 실제 shaping·초안에 따라 바뀔 수 있다.
 
-## 현재 cursor — post-v3 중심 보정 뒤 새 초안 준비
+## 현재 cursor — post-sync 새 v1과 review 사용자 검토
 
 첫 글과 후보의 최종 위상은 아직 확정하지 않는다. 상위 후보 다섯 개의 [1차 shaping](../process/shaping/README.md#2026-07-23-first-pass)과 v1~v3 [draft loop](../process/shaping/2026-07-27-v1-v3-draft-loop/README.md)를 완료한 뒤, 다섯 v3와 두 독립 review, main의 반영 판단, 기존 backlog와 후보 형성 기록을 종합 대조하고 사용자와 중심을 다시 맞췄다.
 
@@ -63,7 +63,9 @@
 
 후보마다 수정 내용은 다르지만 그 차이는 가치 서열이 아니다. 각 버전은 다섯 편을 모두 보존했고, 이전 버전을 덮어쓰지 않았다. v1과 v2 뒤의 독립 review와 main의 반영 판단도 별도 process 문서로 남겼다.
 
-현재 다음 행동은 기존 v1~v3를 고치는 것이 아니라 보정된 중심으로 새 cycle의 완결된 v1 다섯 편을 쓰는 일이다. 전체 자료 종합과 사용자 sync, material 질문이 닫힌 중심을 다시 연 누수의 판정 회수까지 마쳤다. 새 v1 뒤에는 자동으로 v2나 v3까지 진행하지 않고 사용자와 다음 수정 범위와 버전 진행을 결정한다.
+보정된 중심으로 [새 cycle의 완결된 v1 다섯 편](../../../drafts/ai-native-topic-research-2026-07-20/2026-07-27-post-sync-v1/README.md)을 만들고 Material → Shaping → Texture를 마쳤다. 두 독립 reviewer와 evidence checker의 [review](../process/shaping/2026-07-27-post-sync-v1/03-independent-review.md), main의 [반영 판정](../process/shaping/2026-07-27-post-sync-v1/04-main-adjudication.md)도 별도 기록으로 남겼다. 독립 review 뒤 v1 본문은 수정하지 않았다.
+
+현재 다음 행동은 사용자가 다섯 v1을 직접 읽고 review·main 판정과 함께 다음 수정 범위를 정하는 일이다. v2나 후보 위상 변경은 아직 시작하지 않는다.
 
 ## 작업 주제 — Current와 history의 권위 분리
 
@@ -71,7 +73,7 @@
 
 ### 현재 상태
 
-**상위 후보.** 1차 shaping과 v1~v3 draft loop 뒤 사용자 sync로 중심을 보정했다. 첫 글·발행 순서·최종 article type은 확정하지 않았다.
+**상위 후보.** 1차 shaping과 v1~v3 draft loop 뒤 사용자 sync로 중심을 보정했고, post-sync 새 v1과 독립 review·main 판정까지 완료했다. 사용자 검토 전에는 v2를 만들지 않으며 첫 글·발행 순서·최종 article type은 확정하지 않았다.
 
 원천 우선 재조사 뒤 중심은 “문서를 잘 나누는 법”보다 더 구체적으로 바뀌었다.
 
@@ -153,7 +155,7 @@ post-v3 sync에서는 current가 완벽하지 않아도 실제 작업에 도움�
 
 ### 현재 상태
 
-**상위 후보.** 1차 shaping과 v1~v3 draft loop 뒤 사용자 sync에서 AI self-check와 연결된 별도 글로 두는 방향을 정했다. 첫 글·발행 순서·최종 article type은 확정하지 않았다.
+**상위 후보.** 1차 shaping과 v1~v3 draft loop 뒤 사용자 sync에서 AI self-check와 연결된 별도 글로 두는 방향을 정했고, post-sync 새 v1과 독립 review·main 판정까지 완료했다. 사용자 검토 전에는 v2를 만들지 않으며 첫 글·발행 순서·최종 article type은 확정하지 않았다.
 
 재조사 뒤 독립 판별의 범위는 reviewer 호출에서 다음 계약 전체로 넓어졌다.
 
@@ -242,7 +244,7 @@ post-v3 sync에서는 current가 완벽하지 않아도 실제 작업에 도움�
 
 ### 현재 상태
 
-**상위 후보.** 1차 shaping과 v1~v3 draft loop 뒤 사용자 sync로 AI-native 중심을 보정했다. 첫 글·발행 순서·최종 article type은 확정하지 않았다.
+**상위 후보.** 1차 shaping과 v1~v3 draft loop 뒤 사용자 sync로 AI-native 중심을 보정했고, post-sync 새 v1과 독립 review·main 판정까지 완료했다. 사용자 검토 전에는 v2를 만들지 않으며 첫 글·발행 순서·최종 article type은 확정하지 않았다.
 
 기존 artifact/core 후보와 다루는 시점이 다르다.
 
@@ -324,7 +326,7 @@ post-v3 sync에서는 current가 완벽하지 않아도 실제 작업에 도움�
 
 ### 현재 상태
 
-**상위 후보.** 1차 shaping과 v1~v3 draft loop 뒤 사용자 sync에서 `발산`의 의미와 판단 순서를 보정했다. 첫 글·발행 순서·최종 article type은 확정하지 않았다.
+**상위 후보.** 1차 shaping과 v1~v3 draft loop 뒤 사용자 sync에서 `발산`의 의미와 판단 순서를 보정했고, post-sync 새 v1과 독립 review·main 판정까지 완료했다. AX output-first 재료와 별도 유지 후보의 소유 관계는 사용자 검토 전까지 열어 두며 v2와 후보 위상 변경을 시작하지 않는다.
 
 ### 중심 질문
 
@@ -401,7 +403,7 @@ post-v3 sync에서는 current가 완벽하지 않아도 실제 작업에 도움�
 
 ### 현재 상태
 
-**상위 후보.** 1차 shaping과 v1~v3 draft loop 뒤 사용자 sync에서 AI 자신의 판단을 객관화하는 중심을 복원했다. 독립 판별과 연결된 별도 글로 두며 첫 글·발행 순서·최종 article type은 확정하지 않았다.
+**상위 후보.** 1차 shaping과 v1~v3 draft loop 뒤 사용자 sync에서 AI 자신의 판단을 객관화하는 중심을 복원했고, post-sync 새 v1과 독립 review·main 판정까지 완료했다. 독립 판별과 연결된 별도 글로 두며 사용자 검토 전에는 v2를 만들지 않는다.
 
 ### 중심 질문
 

@@ -8,10 +8,11 @@ v3까지 작성과 독립 review 반영을 마친 뒤, 다섯 v3와 변화 기�
 
 현재 v1~v3는 완료된 비교 snapshot이다. 다음 초안은 이 버전을 고치거나 덮어쓰지 않고, 보정된 [active-state](../../backlog/ai-native-topic-research-2026-07-20/active-state/README.md)를 따르는 새 cycle의 v1로 만든다.
 
-새 cycle은 다섯 후보를 모두 완결된 v1로 만드는 단위로 정했다. [material 종합과 사용자 sync](../../backlog/ai-native-topic-research-2026-07-20/process/shaping/2026-07-27-post-sync-v1/01-material-synthesis-and-user-sync.md)를 완료했고, 다음 단계에서 `2026-07-27-post-sync-v1/`에 새 원고를 만든다. 독립 review와 main 판정 뒤에도 사용자가 결과를 보기 전에는 v2로 넘어가지 않는다.
+새 cycle은 다섯 후보를 모두 완결된 v1로 만드는 단위로 정했다. [material 종합과 사용자 sync](../../backlog/ai-native-topic-research-2026-07-20/process/shaping/2026-07-27-post-sync-v1/01-material-synthesis-and-user-sync.md) 뒤 [post-sync 새 v1 다섯 편](./2026-07-27-post-sync-v1/README.md)을 만들고 독립 review와 main 판정까지 마쳤다. 사용자가 원고와 판정을 함께 보기 전에는 v2로 넘어가지 않는다.
 
 ## 버전
 
+- `2026-07-27-post-sync-v1/` — 전체 자료를 다시 종합하고 사용자와 중심을 맞춘 뒤 Material → Shaping → Texture와 독립 review를 거친 현재 검토본
 - `v1/` — 전체 backlog와 연결 원자료를 종합해 만든 첫 완결 초안
 - `v2/` — v1 독립 review와 main의 반영 판단을 거친 초안
 - `v3/` — 새 독립 review와 main의 두 번째 반영 판단을 거친 사용자 검토본

@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 글감 조사 과정 / 내부 index
 공개상태: 내부 작업 문서
-현재상태: candidates 01~04 / material 종합·사용자 sync 완료 / 새 v1 작성
+현재상태: candidates 01~04 / post-sync 새 v1·독립 review·main 판정 완료 / 사용자 검토 대기
 ---
 
 # Process — candidates와 shaping 작업 과정
@@ -32,7 +32,7 @@ process에는 완료된 과정과 현재 진행 중인 과정이 모두 들어�
 
 후보를 실제 산문으로 쓰기 전, 같은 항목으로 펼쳐 글의 중심과 필요한 자료를 확인했다. 1차 shaping 뒤에는 [2026-07-27 v1~v3 draft loop](./shaping/2026-07-27-v1-v3-draft-loop/README.md)에서 다섯 초안, 두 독립 review, main의 반영 판단, 기준 변화를 버전별로 보존한다. v3 뒤 전체를 다시 대조하고 사용자와 중심을 맞춘 과정은 [05 — post-v3 재검토와 사용자 sync](./shaping/2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md)에 남긴다.
 
-현재는 [post-sync 새 v1 cycle](./shaping/2026-07-27-post-sync-v1/README.md)에서 backlog, 직접 원천, 기존 v1~v3와 review를 다시 대조한 [material 종합과 사용자 sync](./shaping/2026-07-27-post-sync-v1/01-material-synthesis-and-user-sync.md)를 완료했다. 결정 상태 누수까지 회수한 중심으로 완결된 새 v1 다섯 편을 쓰며, 첫 글과 최종 article type은 아직 선택하지 않았다.
+현재 [post-sync 새 v1 cycle](./shaping/2026-07-27-post-sync-v1/README.md)에서 backlog, 직접 원천, 기존 v1~v3와 review를 다시 대조한 [material 종합과 사용자 sync](./shaping/2026-07-27-post-sync-v1/01-material-synthesis-and-user-sync.md), [완결된 새 v1 다섯 편](../../../drafts/ai-native-topic-research-2026-07-20/2026-07-27-post-sync-v1/README.md), 독립 review와 main 판정까지 만들었다. 현재는 사용자 검토를 기다리며 v2, 첫 글, 최종 article type, 후보 위상 변경은 아직 결정하지 않았다.
 
 ## 보존 기준점
 

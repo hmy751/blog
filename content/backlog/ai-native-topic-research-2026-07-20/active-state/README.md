@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 글감 active state / 내부 index
 공개상태: 내부 작업 문서
-현재상태: 새 v1 전 material 종합·사용자 sync 완료 / 초안 작성
+현재상태: post-sync 새 v1·독립 review·main 판정 완료 / 사용자 검토 대기
 ---
 
 # Active state — 지금 무엇이 유효한가
@@ -23,7 +23,9 @@
 
 첫 글은 아직 확정하지 않았다. 다음 상위 후보 다섯 개의 [1차 shaping](../process/shaping/README.md#2026-07-23-first-pass)과 v1~v3 [draft loop](../process/shaping/2026-07-27-v1-v3-draft-loop/README.md)를 완료한 뒤, 전체 버전·review·main 판단을 대조하고 사용자와 중심을 다시 맞췄다. 그 분석과 보정 이유는 [post-v3 사용자 sync](../process/shaping/2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md)에 보존한다.
 
-현재 cursor는 보정된 중심을 바탕으로 새 cycle의 v1 다섯 편을 쓰는 일이다. backlog, 직접 원천, 기존 v1~v3와 review·main 판단을 대조한 [material 종합과 사용자 sync](../process/shaping/2026-07-27-post-sync-v1/01-material-synthesis-and-user-sync.md)를 완료했다. material report의 글감 질문이 닫힌 중심을 다시 여는 누수도 같은 문서에서 판정해 회수했다. 기존 v1~v3를 덮어쓰지 않으며, 새 v1 뒤에는 사용자와 함께 결과를 보고 다음 수정 범위와 버전 진행을 결정한다.
+보정된 중심으로 [새 cycle의 완결된 v1 다섯 편](../../../drafts/ai-native-topic-research-2026-07-20/2026-07-27-post-sync-v1/README.md)을 만들고 Material → Shaping → Texture를 마쳤다. 이어 서로의 결론을 받지 않은 두 독립 reviewer와 evidence checker의 [review](../process/shaping/2026-07-27-post-sync-v1/03-independent-review.md), main의 [반영 판정](../process/shaping/2026-07-27-post-sync-v1/04-main-adjudication.md)까지 별도 기록으로 남겼다. review가 시작된 뒤 v1 본문은 수정하지 않았다.
+
+현재 cursor는 사용자가 다섯 v1과 review·main 판정을 함께 보고 다음 수정 범위와 버전 진행을 결정하는 일이다. v2는 아직 만들지 않는다. `current.md`의 공개 이름, 판단 순서 글과 `Output-informed problem selection`의 재료 소유권, self-check의 retrospective 목소리, 첫 공개 후보의 우선순위가 사용자 검토 항목으로 열려 있다.
 
 - current / active-state operation
 - 독립 판별 / 제3판별자
