@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: 상위 후보 5개 v1~v3 초안 반복 / 내부 process index
 공개상태: 내부 작업 문서
-현재상태: v3 다섯 편 완료 / 사용자 검토 대기
+현재상태: v3 다섯 편 완료 / post-v3 종합 대조와 사용자 중심 보정 완료 / 새 cycle 준비
 ---
 
 # v1~v3 draft loop
@@ -51,6 +51,7 @@
 - [03-v2-independent-review.md](./03-v2-independent-review.md) — 새 독립 reviewer의 원문
 - [04-v2-to-v3-adjudication.md](./04-v2-to-v3-adjudication.md) — main의 두 번째 판단과 v3 반영
 - [criteria-evolution.md](./criteria-evolution.md) — 버전 사이 기준 변화와 아직 열린 판단
+- [05-post-v3-reassessment-and-user-sync.md](./05-post-v3-reassessment-and-user-sync.md) — v1~v3 종합 대조, 사용자와 다시 맞춘 중심, 다음 초안 계약
 
 ## 반복 계약
 
@@ -73,4 +74,7 @@ reviewer는 파일을 수정하지 않고 글 순위, 첫 글, 병합, 발행 �
 - 두 번째 독립 review: 완료 / 원문 보존
 - v2→v3 반영 판단: 완료
 - v3: 다섯 편 작성 완료
-- 사용자 검토: 대기
+- post-v3 종합 대조와 사용자 sync: 완료
+- 다음 초안: 보정된 중심으로 새 cycle의 v1 준비 / 정확한 초안 단위는 미결정
+
+이 loop의 `사용자 검토 대기`는 첫 글을 바로 고르는 대신, 전체 버전과 기준 변화를 다시 대조하고 중심을 보정하는 과정으로 이어졌다. 현재 권위는 [active-state](../../../active-state/README.md)를 따르고, v1~v3와 01~04는 완료된 snapshot으로 보존한다.

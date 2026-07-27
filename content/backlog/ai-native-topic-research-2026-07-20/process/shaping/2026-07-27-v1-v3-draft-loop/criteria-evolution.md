@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: v1~v3 수정 기준 변화 기록 / 내부 process 문서
 공개상태: 내부 작업 문서
-현재상태: v3 반영 완료 / 사용자 검토 대기
+현재상태: v3 반영 완료 snapshot / 후속 사용자 보정은 05에 연결
 ---
 
 # v1~v3 기준 변화
@@ -70,3 +70,11 @@
 - v3 뒤 첫 글과 article type
 - 독립 판별과 AI self-check의 병합·분리
 - 실제 시리즈 여부와 발행 순서
+
+## 후속 사용자 보정
+
+위 목록은 v3 완료 시점의 열린 판단이다. 이후 전체 버전과 기준 변화를 다시 대조하고 사용자와 중심을 맞춘 결과는 [05-post-v3-reassessment-and-user-sync.md](./05-post-v3-reassessment-and-user-sync.md)에 남겼다.
+
+- 독립 판별과 AI self-check는 연결된 두 편으로 두는 방향을 정했다.
+- 판단 순서의 `발산`은 새 평가축을 추가한 것이 아니라, 후보와 가능한 가치·성과를 먼저 펼치되 개별 주장과 안전 경계는 계속 엄격하게 본다는 기존 순서의 의미 보정이다.
+- Current, scope control, AI self-check의 중심 보정은 현재 [topic-candidates.md](../../../active-state/topic-candidates.md)가 소유한다.

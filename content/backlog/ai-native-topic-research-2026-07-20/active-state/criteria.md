@@ -3,18 +3,19 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 글감 선택 기준 / 현재 적용본
 공개상태: 내부 작업 문서
-현재상태: 03·04 반영 현재 적용본 / 상위 후보 5개 v3 완료 / 최종 판단은 사용자 검토 뒤
+현재상태: 03·04와 post-v3 사용자 sync 반영 현재 적용본
 기준원천:
   - ../process/candidates/01-criteria-and-decision-history.md
   - ../process/candidates/03-source-first-reanalysis.md
   - ../process/candidates/04-post-03-candidate-state-correction.md
+  - ../process/shaping/2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md
 ---
 
 # AI-native 글감 선택 기준 — 지금 적용할 판단
 
 이 문서는 기준이 어떻게 바뀌었는지 설명하지 않는다. 새 사건이나 후보를 발견했을 때 지금 어떤 순서로 무엇을 판단할지 소유한다.
 
-기준의 변화와 초기 사용자 정정은 [01-criteria-and-decision-history.md](../process/candidates/01-criteria-and-decision-history.md), 원천 우선 재조사에서 달라진 판단은 [03-source-first-reanalysis.md](../process/candidates/03-source-first-reanalysis.md), 재조사 뒤 후보 위상과 기준 적용 시점의 교정은 [04-post-03-candidate-state-correction.md](../process/candidates/04-post-03-candidate-state-correction.md)가 보존한다.
+기준의 변화와 초기 사용자 정정은 [01-criteria-and-decision-history.md](../process/candidates/01-criteria-and-decision-history.md), 원천 우선 재조사에서 달라진 판단은 [03-source-first-reanalysis.md](../process/candidates/03-source-first-reanalysis.md), 재조사 뒤 후보 위상과 기준 적용 시점의 교정은 [04-post-03-candidate-state-correction.md](../process/candidates/04-post-03-candidate-state-correction.md)가 보존한다. v1~v3 뒤 `발산`, 주장 판정, 후보 수렴의 의미를 다시 맞춘 과정은 [post-v3 사용자 sync](../process/shaping/2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md)에 남긴다.
 
 ## 이번 글군에서 말하는 AI-native 역량
 
@@ -201,9 +202,11 @@ raw를 무조건 최상위에 두지 않는다. 대화 순서가 실제 변화�
 
 ### 사건을 발견할 때
 
-먼저 이번 AI-native 범위인지만 본다. 제목의 세기, 글 준비도, 기존 후보와의 유사성으로 사건을 조기 탈락시키지 않는다.
+먼저 이번 AI-native 범위와 그 사건에서 생길 수 있는 가치·새 통제력을 함께 본다. 제목의 세기, 글 준비도, 기존 후보와의 유사성으로 사건을 조기 탈락시키지 않는다.
 
-관찰과 생성 단계에서는 문제 경계와 후보 공간을 넓힌다. 기존 후보판이나 회사 블로그 패턴을 먼저 주면 그것이 새 후보의 씨앗이 될 수 있으므로 필요하면 가린 second pass를 둔다.
+관찰과 생성 단계에서는 문제 경계, 후보 공간, 가능한 가치·성과를 먼저 충분히 펼친다. `발산`은 사실 검증이나 안전·비용·공식 경계를 느슨하게 본다는 뜻이 아니다. 그 경계와 개별 주장 상한은 계속 엄격하게 보되, 근거 준비도나 한 편의 성립 기준으로 후보 전체를 닫는 판단은 뒤로 보낸다.
+
+기존 후보판이나 회사 블로그 패턴을 먼저 주면 그것이 새 후보의 씨앗이 될 수 있으므로 필요하면 가린 second pass를 둔다.
 
 ### 후보 안의 주장을 판정할 때
 
@@ -312,12 +315,13 @@ shaping이 덜 됐다고 후보 가치가 낮은 것은 아니다. 근거 준비
 - 하나의 중심 질문은 shaping·초안에서 만드는 글의 조건이지, 펼치기 전 후보의 통과 조건이 아니다.
 - 사례가 많거나 다른 후보와 원리가 겹친다는 이유만으로 위상을 낮추거나 병합하지 않는다.
 - 첫 글과 후보의 최종 위상은 후보 요약만으로 닫지 않고 shaping과 필요하면 초기 초안을 본 뒤 결정한다.
+- 독립 판별과 AI self-check는 연결되지만 서로 다른 질문을 맡는 두 편으로 둔다.
 
 열린 것:
 
 - 상위 후보 중 어떤 글을 먼저 쓸지
 - 상위 후보의 최종 article type과 발행 순서
-- 독립 판별과 AI self-check를 한 편으로 연결할지 두 편으로 나눌지
+- 독립 판별과 AI self-check 두 편의 발행 순서와 구체적 연결 방식
 - 판단 순서 후보의 첫 장면과 article type
 - 실제 시리즈로 묶을지 독립 글로 발행할지
 - 공개 가능한 artifact를 어떤 형태로 다시 만들지

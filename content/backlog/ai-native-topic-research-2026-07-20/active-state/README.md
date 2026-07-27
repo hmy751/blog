@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 글감 active state / 내부 index
 공개상태: 내부 작업 문서
-현재상태: 기준·후보 최신 상태 / 상위 후보 5개 v3 완료 / 사용자 검토 대기
+현재상태: post-v3 사용자 sync 반영 / 다음 초안 준비
 ---
 
 # Active state — 지금 무엇이 유효한가
@@ -21,7 +21,9 @@
 
 ## 현재 cursor
 
-첫 글은 아직 확정하지 않았다. 다음 상위 후보 다섯 개의 [1차 shaping](../process/shaping/README.md#2026-07-23-first-pass)과 v1~v3 [draft loop](../process/shaping/2026-07-27-v1-v3-draft-loop/README.md)를 완료했다. 현재 cursor는 v3 다섯 편과 두 차례 독립 review, main의 반영 판단에 대한 사용자 검토다.
+첫 글은 아직 확정하지 않았다. 다음 상위 후보 다섯 개의 [1차 shaping](../process/shaping/README.md#2026-07-23-first-pass)과 v1~v3 [draft loop](../process/shaping/2026-07-27-v1-v3-draft-loop/README.md)를 완료한 뒤, 전체 버전·review·main 판단을 대조하고 사용자와 중심을 다시 맞췄다. 그 분석과 보정 이유는 [post-v3 사용자 sync](../process/shaping/2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md)에 보존한다.
+
+현재 cursor는 보정된 중심을 바탕으로 새 cycle의 v1을 준비하는 일이다. 기존 v1~v3를 덮어쓰지 않으며, 새 v1 뒤에는 사용자와 함께 결과를 보고 다음 수정 범위와 버전 진행을 결정한다.
 
 - current / active-state operation
 - 독립 판별 / 제3판별자
@@ -31,19 +33,23 @@
 
 목록 안에는 순위가 없다. 후보를 찾기 위한 현재 특징은 설명할 수 있지만, 그 특징을 위상의 근거·고정된 대표 강점·정렬 기준으로 사용하지 않는다. 다섯 후보는 v1·v2·v3에서 같은 수의 완결된 산문으로 유지하며, 한 후보의 초안 결과를 다른 후보의 조기 탈락 기준으로 사용하지 않는다.
 
-완료된 1차 shaping의 각 한 장에는 다음을 둔다.
+새 초안의 상세 계약은 [post-v3 사용자 sync의 다음 초안 계약](../process/shaping/2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md#다음-초안-계약)에 남긴다. 이 index에서는 다시 어긋나지 않게 할 세 경계만 유지한다.
 
-1. 첫 장면
-2. 중심 질문
-3. 판단이 바뀐 시간순 사건
-4. 독자가 볼 공개 가능한 artifact
-5. 사용자의 판단이 바뀐 지점
-6. 다른 개발자가 가져갈 기준
-7. 이번 자료가 말하지 못하는 한계
+- backlog와 초기 재료를 실제 입력으로 사용하고 v2·v3의 사실 교정과 함께 본다.
+- 작은 조각이 아니라 완결된 v1을 만든다. `blog-write`의 Material → Shaping → Texture는 그 안의 책임이지 각각의 draft 버전이 아니다.
+- 독립 review와 main의 반영 선택은 판단 재료이며 사용자 합의로 자동 승격하지 않는다.
 
-v1과 v2 뒤에는 서로 다른 독립 reviewer가 해당 버전과 backlog·원자료에서 다음 수정 기준을 직접 도출했다. reviewer에게 main의 예상 문제·평가 기준·이전 review 결과를 주지 않았고, main은 결과를 채택·조정·기각·보류해 다음 버전을 만든 뒤 그 판단을 process에 남겼다.
+독립 판별과 AI self-check는 서로 연결된 두 편으로 두는 방향을 정했다. 첫 글, 최종 article type, 새 cycle에서 만들 v1의 정확한 단위, 발행 순서와 시리즈 여부는 아직 열려 있다.
 
-다음 판단은 사용자가 v3와 전체 변화 기록을 함께 본 뒤 내린다. 첫 글과 article type, 독립 판별과 AI self-check의 병합·분리, 발행 순서와 시리즈 여부는 아직 열려 있다. 그 전에는 고정된 발행 순서나 전체 시리즈 구성을 만들지 않는다.
+## 작업이 어긋났을 때 복구하는 순서
+
+1. 이 README에서 현재 cursor를 확인한다.
+2. [criteria.md](./criteria.md)에서 지금 적용할 판단 순서를 확인한다.
+3. [topic-candidates.md](./topic-candidates.md)에서 후보별 합의된 중심과 다음 초안 경계를 확인한다.
+4. 왜 그 중심으로 돌아왔는지는 [post-v3 사용자 sync](../process/shaping/2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md)에서 확인한다.
+5. actor·수치·구현 여부·인과가 충돌하면 process 요약이나 최신 draft가 아니라 연결된 직접 원천을 다시 확인한다.
+
+버전이 최신이거나 main이 review 제안을 `채택`했다는 사실만으로 active-state를 바꾸지 않는다. 사용자와 다시 맞춘 의미가 바뀔 때 active-state를 갱신한다.
 
 ## 갱신 계약
 

@@ -4,7 +4,9 @@
 
 v1, v2, v3는 같은 다섯 파일을 가진다. 이전 버전을 덮어쓰지 않으며, 폴더 순서와 파일 순서는 후보 가치나 발행 순서가 아니다.
 
-v3까지 작성과 독립 review 반영을 마쳤다. 현재는 사용자가 다섯 v3와 변화 기록을 함께 검토할 차례이며, 첫 글·병합·발행 순서는 정하지 않았다.
+v3까지 작성과 독립 review 반영을 마친 뒤, 다섯 v3와 변화 기록을 종합 대조하고 사용자와 후보 중심을 다시 맞췄다. 그 결과는 [post-v3 사용자 sync](../../backlog/ai-native-topic-research-2026-07-20/process/shaping/2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md)에 보존한다.
+
+현재 v1~v3는 완료된 비교 snapshot이다. 다음 초안은 이 버전을 고치거나 덮어쓰지 않고, 보정된 [active-state](../../backlog/ai-native-topic-research-2026-07-20/active-state/README.md)를 따르는 새 cycle의 v1로 만든다. 새 cycle의 정확한 초안 단위와 첫 글·발행 순서는 아직 정하지 않았다.
 
 ## 버전
 
@@ -24,7 +26,7 @@ v3까지 작성과 독립 review 반영을 마쳤다. 현재는 사용자가 다
 
 - 현재 기준과 후보 상태는 [backlog active-state](../../backlog/ai-native-topic-research-2026-07-20/active-state/README.md)가 소유한다.
 - 버전별 review와 반영 판단은 [draft loop process](../../backlog/ai-native-topic-research-2026-07-20/process/shaping/2026-07-27-v1-v3-draft-loop/README.md)가 소유한다.
-- 각 Markdown은 날짜·순서·병합을 확정하지 않은 공개 후보 초안이다.
+- 각 Markdown은 작성 시점에 날짜·순서·병합을 확정하지 않고 만든 공개 후보 초안 snapshot이다.
 - 로컬 절대 경로, private conversation 원문, 개인 메모 문장, 내부 코드와 파일명을 본문에 넣지 않는다.
 - 수치와 사건은 연결된 직접 원천에서 확인한 범위만 사용한다.
 - `content/drafts/ai-self-check-fundamental.md`는 현재 workspace와 Git history에 없으므로 source로 복원하거나 가정하지 않는다.
