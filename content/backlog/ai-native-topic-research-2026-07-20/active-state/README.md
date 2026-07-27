@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 글감 active state / 내부 index
 공개상태: 내부 작업 문서
-현재상태: post-v3 사용자 sync 반영 / 다음 초안 준비
+현재상태: 새 v1 전 material 종합·사용자 sync 완료 / 초안 작성
 ---
 
 # Active state — 지금 무엇이 유효한가
@@ -23,7 +23,7 @@
 
 첫 글은 아직 확정하지 않았다. 다음 상위 후보 다섯 개의 [1차 shaping](../process/shaping/README.md#2026-07-23-first-pass)과 v1~v3 [draft loop](../process/shaping/2026-07-27-v1-v3-draft-loop/README.md)를 완료한 뒤, 전체 버전·review·main 판단을 대조하고 사용자와 중심을 다시 맞췄다. 그 분석과 보정 이유는 [post-v3 사용자 sync](../process/shaping/2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md)에 보존한다.
 
-현재 cursor는 보정된 중심을 바탕으로 새 cycle의 v1을 준비하는 일이다. 기존 v1~v3를 덮어쓰지 않으며, 새 v1 뒤에는 사용자와 함께 결과를 보고 다음 수정 범위와 버전 진행을 결정한다.
+현재 cursor는 보정된 중심을 바탕으로 새 cycle의 v1 다섯 편을 쓰는 일이다. backlog, 직접 원천, 기존 v1~v3와 review·main 판단을 대조한 [material 종합과 사용자 sync](../process/shaping/2026-07-27-post-sync-v1/01-material-synthesis-and-user-sync.md)를 완료했다. material report의 글감 질문이 닫힌 중심을 다시 여는 누수도 같은 문서에서 판정해 회수했다. 기존 v1~v3를 덮어쓰지 않으며, 새 v1 뒤에는 사용자와 함께 결과를 보고 다음 수정 범위와 버전 진행을 결정한다.
 
 - current / active-state operation
 - 독립 판별 / 제3판별자
@@ -31,7 +31,7 @@
 - 생성·주장 판정·후보 수렴의 판단 순서
 - AI self-check
 
-목록 안에는 순위가 없다. 후보를 찾기 위한 현재 특징은 설명할 수 있지만, 그 특징을 위상의 근거·고정된 대표 강점·정렬 기준으로 사용하지 않는다. 다섯 후보는 v1·v2·v3에서 같은 수의 완결된 산문으로 유지하며, 한 후보의 초안 결과를 다른 후보의 조기 탈락 기준으로 사용하지 않는다.
+목록 안에는 순위가 없다. 후보를 찾기 위한 현재 특징은 설명할 수 있지만, 그 특징을 위상의 근거·고정된 대표 강점·정렬 기준으로 사용하지 않는다. 이번 cycle에서는 다섯 후보 모두 완결된 새 v1로 만들며, 한 후보의 초안 결과를 다른 후보의 조기 탈락 기준으로 사용하지 않는다. 독립 review와 main 판정 뒤에도 자동으로 v2를 만들지 않고 사용자가 새 v1을 함께 본 뒤 다음 버전 진행을 결정한다.
 
 새 초안의 상세 계약은 [post-v3 사용자 sync의 다음 초안 계약](../process/shaping/2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md#다음-초안-계약)에 남긴다. 이 index에서는 다시 어긋나지 않게 할 세 경계만 유지한다.
 
@@ -39,7 +39,7 @@
 - 작은 조각이 아니라 완결된 v1을 만든다. `blog-write`의 Material → Shaping → Texture는 그 안의 책임이지 각각의 draft 버전이 아니다.
 - 독립 review와 main의 반영 선택은 판단 재료이며 사용자 합의로 자동 승격하지 않는다.
 
-독립 판별과 AI self-check는 서로 연결된 두 편으로 두는 방향을 정했다. 첫 글, 최종 article type, 새 cycle에서 만들 v1의 정확한 단위, 발행 순서와 시리즈 여부는 아직 열려 있다.
+독립 판별과 AI self-check는 서로 연결된 두 편으로 두는 방향을 정했다. 새 cycle의 단위는 다섯 편의 완결된 v1이다. 첫 글, 최종 article type, 발행 순서와 시리즈 여부는 아직 열려 있다.
 
 ## 작업이 어긋났을 때 복구하는 순서
 

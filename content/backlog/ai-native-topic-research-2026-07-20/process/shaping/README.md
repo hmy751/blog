@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 상위 후보 shaping 과정 / 내부 index
 공개상태: 내부 작업 문서
-현재상태: 상위 후보 5개 1차 shaping·v1~v3·post-v3 사용자 sync 완료 / 다음 초안 준비
+현재상태: 상위 후보 5개 material 종합·사용자 sync 완료 / 새 v1 작성
 ---
 
 # Shaping — 후보를 글의 단위로 펼쳐 보는 과정
@@ -52,6 +52,10 @@
 
 다섯 후보를 모두 v1~v3 산문으로 만들고, v1과 v2 뒤의 독립 review 및 main 반영 판단을 보존한 완료 작업 묶음이다. v3 뒤에는 전체 자료를 다시 대조하고 사용자와 중심을 맞춘 [post-v3 재검토](./2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md)까지 같은 묶음에 보존한다.
 
+### [`2026-07-27-post-sync-v1/`](./2026-07-27-post-sync-v1/README.md)
+
+기존 loop를 고치는 대신, post-v3 사용자 sync에서 되찾은 중심으로 새 v1 다섯 편을 만드는 현재 작업 묶음이다. backlog, 직접 원천, 기존 초안과 review를 다시 대조한 [material 종합](./2026-07-27-post-sync-v1/01-material-synthesis-and-user-sync.md)을 먼저 남겼다. 사용자와 종합 판단을 맞추고 결정 상태 누수를 회수한 뒤 새 초안 작성 단계로 들어갔다.
+
 ## 이번 1차 shaping의 범위
 
 - 기존 backlog에 정리된 사건과 주장 상한을 글의 시간축으로 다시 배열한다.
@@ -72,4 +76,4 @@
 
 이 cursor는 이후 논의에서 다섯 후보 모두를 v1~v3까지 써 보고 사용자가 판단하는 방식으로 확장됐다. v3 뒤에는 결과만 고르는 대신 backlog·초안·review·main 판단을 종합 대조하고 사용자와 후보 중심을 다시 맞췄다. 당시 질문은 이력으로 보존하며, 완성된 과정은 [draft loop](./2026-07-27-v1-v3-draft-loop/README.md)를 따른다.
 
-현재는 보정된 중심으로 새 cycle의 완결된 v1을 준비한다. 독립 판별과 AI self-check는 연결된 두 편으로 두되 첫 글, 새 cycle의 정확한 초안 단위, article type, 발행 순서는 아직 확정하지 않는다.
+현재는 보정된 중심으로 새 cycle의 완결된 v1 다섯 편을 쓴다. material 종합과 사용자 sync, 결정 상태 회수는 [현재 cycle](./2026-07-27-post-sync-v1/README.md)에 남겼다. 독립 판별과 AI self-check는 연결된 두 편으로 두되 첫 글, 최종 article type, 발행 순서는 아직 확정하지 않는다.

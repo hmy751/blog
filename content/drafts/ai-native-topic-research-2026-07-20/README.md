@@ -6,7 +6,9 @@ v1, v2, v3는 같은 다섯 파일을 가진다. 이전 버전을 덮어쓰지 �
 
 v3까지 작성과 독립 review 반영을 마친 뒤, 다섯 v3와 변화 기록을 종합 대조하고 사용자와 후보 중심을 다시 맞췄다. 그 결과는 [post-v3 사용자 sync](../../backlog/ai-native-topic-research-2026-07-20/process/shaping/2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md)에 보존한다.
 
-현재 v1~v3는 완료된 비교 snapshot이다. 다음 초안은 이 버전을 고치거나 덮어쓰지 않고, 보정된 [active-state](../../backlog/ai-native-topic-research-2026-07-20/active-state/README.md)를 따르는 새 cycle의 v1로 만든다. 새 cycle의 정확한 초안 단위와 첫 글·발행 순서는 아직 정하지 않았다.
+현재 v1~v3는 완료된 비교 snapshot이다. 다음 초안은 이 버전을 고치거나 덮어쓰지 않고, 보정된 [active-state](../../backlog/ai-native-topic-research-2026-07-20/active-state/README.md)를 따르는 새 cycle의 v1로 만든다.
+
+새 cycle은 다섯 후보를 모두 완결된 v1로 만드는 단위로 정했다. [material 종합과 사용자 sync](../../backlog/ai-native-topic-research-2026-07-20/process/shaping/2026-07-27-post-sync-v1/01-material-synthesis-and-user-sync.md)를 완료했고, 다음 단계에서 `2026-07-27-post-sync-v1/`에 새 원고를 만든다. 독립 review와 main 판정 뒤에도 사용자가 결과를 보기 전에는 v2로 넘어가지 않는다.
 
 ## 버전
 

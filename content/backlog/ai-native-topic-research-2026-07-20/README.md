@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 글감 조사 권위 지도 / 내부 index
 공개상태: 내부 작업 문서
-현재상태: 상위 후보 5개 v1~v3 완료 / post-v3 사용자 sync 반영 / 다음 초안 준비
+현재상태: 상위 후보 5개 material 종합·사용자 sync 완료 / 새 v1 작성
 ---
 
 # AI-native 역량 글감 조사
@@ -67,7 +67,7 @@
 
 ### [process/shaping/README.md](./process/shaping/README.md)
 
-상위 후보 5개의 1차 shaping, v1~v3 초안 반복, post-v3 종합 대조와 사용자 sync를 안내한다.
+상위 후보 5개의 1차 shaping, v1~v3 초안 반복, post-v3 종합 대조와 사용자 sync, 보정된 중심으로 시작한 새 v1 cycle을 안내한다.
 
 - 첫 장면과 중심 질문
 - 판단이 바뀐 시간순 사건
@@ -81,7 +81,7 @@
 
 첫 글은 아직 확정하지 않았다. 상위 후보의 1차 shaping과 다섯 후보 모두의 v1~v3 산문, 두 차례 독립 review와 main의 반영 판단을 [draft loop](./process/shaping/2026-07-27-v1-v3-draft-loop/README.md)에 완성했다. 이후 전체 자료를 다시 대조하고 사용자와 중심을 맞춘 결과를 [post-v3 사용자 sync](./process/shaping/2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md)에 보존했다.
 
-현재 cursor는 보정된 중심으로 기존 버전을 덮어쓰지 않는 새 cycle의 완결된 v1을 준비하는 일이다. 상위 후보는 다음과 같다.
+현재 cursor는 보정된 중심으로 기존 버전을 덮어쓰지 않는 새 cycle의 완결된 v1 다섯 편을 쓰는 일이다. backlog, 직접 원천, 기존 v1~v3와 review·main 판단을 다시 대조한 [material 종합과 사용자 sync](./process/shaping/2026-07-27-post-sync-v1/01-material-synthesis-and-user-sync.md)를 완료했고, material 질문이 닫힌 중심을 다시 연 누수까지 판정해 회수했다. 상위 후보는 다음과 같다.
 
 - current / active-state operation
 - 독립 판별 / 제3판별자
@@ -89,9 +89,9 @@
 - 생성·주장 판정·후보 수렴의 판단 순서
 - AI self-check
 
-목록 안에는 순위가 없다. 후보의 현재 특징은 설명할 수 있지만 이를 위상의 근거·고정된 대표 강점·정렬 기준으로 사용하지 않는다. 독립 reviewer의 제안과 main의 반영 판단은 사용자 합의와 구분한다. 다음 초안 전에는 전체 자료를 종합한 뒤 필요한 사실·자료 의미·권위·해석 질문을 사용자와 맞추고, 완결된 v1 뒤 다음 버전 진행을 함께 결정한다.
+목록 안에는 순위가 없다. 후보의 현재 특징은 설명할 수 있지만 이를 위상의 근거·고정된 대표 강점·정렬 기준으로 사용하지 않는다. 독립 reviewer의 제안과 main의 반영 판단은 사용자 합의와 구분한다. 사용자 sync 뒤 다섯 후보 모두 완결된 새 v1로 만들고, 독립 review와 main 판정 뒤 사용자가 결과를 본 다음에만 다음 버전 진행을 결정한다.
 
-독립 판별과 AI self-check는 연결된 두 편으로 두는 방향을 정했다. 첫 글, article type, 새 cycle의 정확한 초안 단위, 발행 순서와 전체 시리즈 구성은 아직 열려 있다.
+독립 판별과 AI self-check는 연결된 두 편으로 두는 방향을 정했다. 새 cycle의 정확한 초안 단위는 다섯 편의 완결된 v1이다. 첫 글, 최종 article type, 발행 순서와 전체 시리즈 구성은 아직 열려 있다.
 
 ## 공개 전 경계
 
