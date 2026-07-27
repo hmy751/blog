@@ -26,6 +26,8 @@
   - cold reader, shaping, texture, portfolio signal, evidence review를 연결하고 verdict와 충돌 지점을 색인한다.
 - [04-main-adjudication.md](./04-main-adjudication.md)
   - source 교정 3건의 반영과 구조 제안의 채택·보류·기각을 구분한다.
+- [05-blind-draft-only-quality-criteria.md](./05-blind-draft-only-quality-criteria.md)
+  - backlog와 이전 판단을 주지 않고 현재 원고 한 편씩만 보여 준 다섯 판별자의 품질 평가, 다음 version 기준, 추가로 확인할 장면을 보존한다.
 
 완결 원고 묶음:
 
