@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 기술 블로그 주제 후보 / 현재 상태
 공개상태: 내부 작업 문서
-현재상태: active 후보 8개 / 상위 후보 5개 near-final v3·독립 review·검증 완료 / 사용자 검토 대기
+현재상태: active 후보 8개 / 상위 후보 5개 public-reshape-v1·독립 review·main 판정 완료 / 사용자 검토 대기
 주요 원천:
   - ../process/candidates/02-topic-candidates.md
   - ../process/candidates/03-source-first-reanalysis.md
@@ -37,35 +37,23 @@
 
 상위 후보와 유지 후보 안에는 순위가 없다. 이름 옆 문장은 현재 각 후보가 다루는 문제를 찾기 위한 설명이지, 그 위상을 정한 강점·평가 점수·고정된 가치 제안이 아니다. 목록을 이 특징에 따라 재배열하거나 다음 후보를 거르는 선행 기준으로 사용하지 않는다. 특징 자체도 상세 카드와 실제 shaping·초안에 따라 바뀔 수 있다.
 
-## 현재 cursor — near-final v3 사용자 검토
+## 현재 cursor — public-reshape-v1 사용자 검토
 
-첫 글과 후보의 최종 위상은 아직 확정하지 않는다. 상위 후보 다섯 개의 [1차 shaping](../process/shaping/README.md#2026-07-23-first-pass)과 v1~v3 [draft loop](../process/shaping/2026-07-27-v1-v3-draft-loop/README.md)를 완료한 뒤, 다섯 v3와 두 독립 review, main의 반영 판단, 기존 backlog와 후보 형성 기록을 종합 대조하고 사용자와 중심을 다시 맞췄다.
+첫 글과 후보의 최종 위상은 아직 확정하지 않는다. 상위 후보 다섯 개의 초기 draft loop 뒤 전체 자료를 대조하고 사용자와 중심을 다시 맞춘 결과는 [post-v3 사용자 sync](../process/shaping/2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md)가 소유한다.
 
-1차 shaping의 각 장에는 같은 항목을 뒀다.
+그 중심으로 post-sync v1과 `near-final`을 목표로 한 v2·v3를 만들고 독립 review·검증까지 마쳤다. 이후 사용자가 다섯 v3를 실제 블로그 글로 읽은 결과, 내부 논리와 사실 교정은 늘었지만 공개 독자의 진입성·구체성·저자성·매력·포트폴리오 신호가 부족하다고 판단했다. main도 다시 검토해 `near-final` 완료 판정을 철회했다.
 
-1. 첫 장면
-2. 중심 질문
-3. 판단이 바뀐 시간순 사건
-4. 독자가 볼 공개 가능한 artifact
-5. 사용자의 판단이 바뀐 지점
-6. 다른 개발자가 가져갈 기준
-7. 이번 자료가 말하지 못하는 한계
+기존 [v3](../../../drafts/ai-native-topic-research-2026-07-20/2026-07-27-near-final-v3/README.md)는 유효한 사실과 material을 가진 snapshot으로 보존했다. [public reshape cycle](../process/shaping/2026-07-27-public-reshape/README.md)에서 [새 v1 다섯 편](../../../drafts/ai-native-topic-research-2026-07-20/2026-07-27-public-reshape-v1/README.md), 독립 review와 [main 판정](../process/shaping/2026-07-27-public-reshape/04-main-adjudication.md)을 완결했다.
 
-비교할 때는 하나의 종합 점수를 만들지 않는다.
+이번 cycle의 글별 작성 범위는 다음과 같았다.
 
-- 첫 문단만으로 문제가 보이는가
-- AI-native 고유성이 일반 문서 관리·code review·vertical slicing과 구분되는가
-- 사용자의 판단 변화가 한 문장으로 닫히는가
-- 독자가 직접 볼 기술 artifact가 있는가
-- 상한을 지켜도 글의 중심 효용이 남는가
-- 공개 가능한 재현 자료를 준비할 수 있는가
-- 지금 첫 글로 무엇을 대표하고 싶은가
+- Current: 구조 재작성
+- 독립 판별: 부분 재작성
+- Scope control: 부분 재작성
+- 판단 순서: 구조 재작성
+- AI self-check: 구조 재작성
 
-후보마다 수정 내용은 다르지만 그 차이는 가치 서열이 아니다. 각 버전은 다섯 편을 모두 보존했고, 이전 버전을 덮어쓰지 않았다. v1과 v2 뒤의 독립 review와 main의 반영 판단도 별도 process 문서로 남겼다.
-
-보정된 중심의 post-sync v1 뒤, 사용자가 실제 글의 매력과 풍부함을 판단할 수 있는 수준까지 먼저 가기로 했다. 직접 원천과 backlog, 기존 draft·review를 함께 입력으로 사용해 전면 재작성 v2를 만들고 동결했다. 이어 독립 shaping·texture·evidence review, main 판정, v3 regression review와 검증을 거친 [near-final v3 다섯 편](../../../drafts/ai-native-topic-research-2026-07-20/2026-07-27-near-final-v3/README.md)을 완성했다. 과정과 글별 역추적은 [near-final cycle](../process/shaping/2026-07-27-near-final-v2-v3/README.md)에 보존한다.
-
-현재 다음 행동은 사용자가 다섯 v3를 직접 읽고 어떤 글이 가장 살아 있는지, 첫 글·제목·발행 관계와 필요한 수정 범위를 정하는 일이다. v3 완성이나 reviewer 판정만으로 후보 위상을 바꾸지 않는다.
+이 차이는 후보 가치 서열이나 발행 순서가 아니다. 현재 cursor는 사용자가 완결본과 review 판정을 보고 다음 수정 범위를 정하는 일이다. 모든 독립 review에서 PASS를 받은 글도 첫 글로 자동 확정하지 않고, PARTIAL 판정도 후보 위상을 낮추는 근거로 사용하지 않는다.
 
 ## 작업 주제 — Current와 history의 권위 분리
 
@@ -73,7 +61,7 @@
 
 ### 현재 상태
 
-**상위 후보.** 사용자 sync로 보정한 중심을 유지한 채 near-final v3와 독립 review·검증까지 완료했다. 사용자 검토 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
+**상위 후보.** 사용자 sync로 보정한 중심을 유지해 public-reshape-v1을 완결했다. 독립 review에서는 통찰과 portfolio signal은 유효하지만 공개 독자가 문서 지도를 역으로 복원해야 한다는 PARTIAL 판정이 겹쳤다. 다음 구조 edit 여부와 첫 글·발행 순서·최종 article type은 사용자 검토 뒤 정한다.
 
 원천 우선 재조사 뒤 중심은 “문서를 잘 나누는 법”보다 더 구체적으로 바뀌었다.
 
@@ -155,7 +143,7 @@ post-v3 sync에서는 current가 완벽하지 않아도 실제 작업에 도움�
 
 ### 현재 상태
 
-**상위 후보.** AI self-check와 연결된 별도 글로 두는 방향을 유지한 채 near-final v3와 독립 review·검증까지 완료했다. 사용자 검토 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
+**상위 후보.** AI self-check와 연결된 별도 글로 두는 방향을 유지해 public-reshape-v1을 완결했다. 독립 cold-reader·shaping·texture·portfolio-signal·evidence review에서 모두 PASS였다. 이 결과만으로 첫 글·발행 순서·최종 article type을 확정하지 않는다.
 
 재조사 뒤 독립 판별의 범위는 reviewer 호출에서 다음 계약 전체로 넓어졌다.
 
@@ -244,7 +232,7 @@ post-v3 sync에서는 current가 완벽하지 않아도 실제 작업에 도움�
 
 ### 현재 상태
 
-**상위 후보.** 사용자 sync로 보정한 AI-native 중심을 유지한 채 near-final v3와 독립 review·검증까지 완료했다. 사용자 검토 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
+**상위 후보.** 사용자 sync로 보정한 AI-native 중심을 유지해 public-reshape-v1을 완결했다. 독립 cold-reader·shaping·texture·portfolio-signal·evidence review에서 모두 PASS였다. 이 결과만으로 첫 글·발행 순서·최종 article type을 확정하지 않는다.
 
 기존 artifact/core 후보와 다루는 시점이 다르다.
 
@@ -326,7 +314,7 @@ post-v3 sync에서는 current가 완벽하지 않아도 실제 작업에 도움�
 
 ### 현재 상태
 
-**상위 후보.** 사용자 sync에서 보정한 `발산`의 의미와 판단 순서를 유지한 채 near-final v3와 독립 review·검증까지 완료했다. Output-first 재료와 별도 유지 후보의 소유 관계는 사용자 검토 전까지 열어 두며 후보 위상을 바꾸지 않는다.
+**상위 후보.** 사용자 sync에서 보정한 `발산`의 의미와 판단 순서를 유지하고 실제 output 비교로 시작하는 public-reshape-v1을 완결했다. 독립 review에서는 portfolio signal은 PASS였지만 숫자·절차명과 후반 blog meta mirror가 중심과 경쟁한다는 PARTIAL 판정이 겹쳤다. Output-first 재료와 별도 유지 후보의 소유 관계는 열어 두며 후보 위상을 바꾸지 않는다.
 
 ### 중심 질문
 
@@ -403,7 +391,7 @@ post-v3 sync에서는 current가 완벽하지 않아도 실제 작업에 도움�
 
 ### 현재 상태
 
-**상위 후보.** AI 자신의 판단을 객관화하는 중심을 유지한 채 near-final v3와 독립 review·검증까지 완료했다. 독립 판별과 연결된 별도 글로 두며 사용자 검토 전에는 첫 글·발행 순서·최종 article type을 확정하지 않는다.
+**상위 후보.** AI 자신의 판단을 객관화하는 중심과 독립 판별에 연결된 별도 글이라는 방향을 유지해 public-reshape-v1을 완결했다. cold-reader와 texture는 PASS였고 shaping·portfolio-signal은 supporting scene과 개발자 신호의 분산을 PARTIAL로 봤다. 어느 장면을 줄일지는 자동 판정하지 않고 사용자 검토 뒤 정한다.
 
 ### 중심 질문
 
@@ -727,11 +715,11 @@ diagnostic fixture를 모두 보존하는 일과 비싼 live judge를 매번 실
 
 ## 다음 행동
 
-- [post-v3 사용자 sync](../process/shaping/2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md)와 이 문서의 후보별 중심을 다음 초안의 복구 기준으로 사용한다.
-- backlog·1차 shaping·v1의 재료와 v2·v3의 사실 교정을 함께 종합한다.
-- 종합 결과에서 필요한 사실·자료 의미·권위·해석 질문을 사용자와 맞춘다.
-- 기존 v1~v3를 덮어쓰지 않는 새 cycle의 완결된 v1을 만든다.
-- 독립 review를 유지하고 결과와 main 판단을 별도로 남긴 뒤, 사용자와 다음 수정 범위와 버전 진행을 결정한다.
+- [public-reshape-v1 다섯 편](../../../drafts/ai-native-topic-research-2026-07-20/2026-07-27-public-reshape-v1/README.md)과 [독립 review index](../process/shaping/2026-07-27-public-reshape/03-independent-reviews.md), [main 판정](../process/shaping/2026-07-27-public-reshape/04-main-adjudication.md)을 사용자가 함께 검토한다.
+- 다음 버전을 열면 main 판정의 채택·보류·기각을 출발점으로 쓰되, 사용자 판단으로 수정 범위를 확정한다.
+- Current·Judgment·Self-check의 구조 제안을 우선 검토하고, Independent·Scope의 중심 artifact는 보호한다.
+- 첫 글, 최종 제목, article type, 발행 순서, 독립 글·연결 글·시리즈 관계를 정한다.
+- 사용자가 발행 후보를 정하기 전에는 `content/posts/`로 옮기지 않는다.
 - 이전 버전과 review 원문은 그대로 보존한다.
 
-독립 판별과 AI self-check는 연결된 두 편으로 두되, 새 cycle의 정확한 초안 단위와 첫 글, article type, 발행 순서, 전체 시리즈 구성은 사용자 판단 전까지 확정하지 않는다.
+독립 판별과 AI self-check는 연결된 두 편으로 두되, 다음 version 여부와 첫 글, article type, 발행 순서, 전체 시리즈 구성은 사용자 판단 전까지 확정하지 않는다.

@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 글감 조사 과정 / 내부 index
 공개상태: 내부 작업 문서
-현재상태: candidates 01~04 / near-final v3·독립 review·검증 완료 / 사용자 검토 대기
+현재상태: candidates 01~04 / public-reshape-v1·독립 review·main 판정 완료 / 사용자 검토 대기
 ---
 
 # Process — candidates와 shaping 작업 과정
@@ -32,7 +32,9 @@ process에는 완료된 과정과 현재 진행 중인 과정이 모두 들어�
 
 후보를 실제 산문으로 쓰기 전, 같은 항목으로 펼쳐 글의 중심과 필요한 자료를 확인했다. 1차 shaping 뒤에는 [2026-07-27 v1~v3 draft loop](./shaping/2026-07-27-v1-v3-draft-loop/README.md)에서 다섯 초안, 두 독립 review, main의 반영 판단, 기준 변화를 버전별로 보존한다. v3 뒤 전체를 다시 대조하고 사용자와 중심을 맞춘 과정은 [05 — post-v3 재검토와 사용자 sync](./shaping/2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md)에 남긴다.
 
-[post-sync 새 v1 cycle](./shaping/2026-07-27-post-sync-v1/README.md)에서 backlog, 직접 원천, 기존 v1~v3와 review를 다시 대조한 material 종합과 완결된 v1, 독립 review와 main 판정까지 만들었다. 이후 [near-final v2~v3 cycle](./shaping/2026-07-27-near-final-v2-v3/README.md)에서 전면 재작성 v2, 독립 shaping·texture·evidence review, main 판정, v3 regression review와 검증을 완료했다. 현재는 사용자가 [near-final v3 다섯 편](../../../drafts/ai-native-topic-research-2026-07-20/2026-07-27-near-final-v3/README.md)을 읽고 첫 글, 최종 제목·article type, 발행 관계와 수정 범위를 판단할 차례다.
+[post-sync 새 v1 cycle](./shaping/2026-07-27-post-sync-v1/README.md)에서 backlog, 직접 원천, 기존 v1~v3와 review를 다시 대조한 material 종합과 완결된 v1, 독립 review와 main 판정까지 만들었다. 이후 [near-final v2~v3 cycle](./shaping/2026-07-27-near-final-v2-v3/README.md)에서 전면 재작성 v2, 독립 shaping·texture·evidence review, main 판정, v3 regression review와 검증을 완료했다.
+
+사용자가 v3를 실제 공개 블로그 글로 읽은 뒤 완료 판정을 되돌렸다. 기존 cycle은 snapshot으로 보존하고 [public reshape cycle](./shaping/2026-07-27-public-reshape/README.md)에서 독자 진입성, public-safe specificity, 저자 agency, 글별 portfolio signal을 중심으로 다섯 완결본과 독립 review, main 판정까지 만들었다. 현재는 사용자가 [public-reshape-v1](../../../drafts/ai-native-topic-research-2026-07-20/2026-07-27-public-reshape-v1/README.md)을 읽고 다음 수정 범위를 정할 차례다.
 
 ## 보존 기준점
 

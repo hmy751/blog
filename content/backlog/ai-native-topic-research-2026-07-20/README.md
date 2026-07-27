@@ -3,7 +3,7 @@
 갱신일: 2026-07-27
 성격: AI-native 역량 글감 조사 권위 지도 / 내부 index
 공개상태: 내부 작업 문서
-현재상태: 상위 후보 5개 near-final v3·독립 review·검증 완료 / 사용자 검토 대기
+현재상태: 상위 후보 5개 public-reshape-v1·독립 review·main 판정 완료 / 사용자 검토 대기
 ---
 
 # AI-native 역량 글감 조사
@@ -81,7 +81,7 @@
 
 첫 글은 아직 확정하지 않았다. 상위 후보의 초기 draft loop 뒤 전체 자료를 다시 대조하고 사용자와 중심을 맞춘 결과는 [post-v3 사용자 sync](./process/shaping/2026-07-27-v1-v3-draft-loop/05-post-v3-reassessment-and-user-sync.md)에 보존했다.
 
-그 중심으로 만든 post-sync v1을 사용자가 검토한 뒤, 글의 매력과 풍부함을 판단할 수 있는 거의 최종본까지 먼저 가기로 했다. 직접 원천과 backlog, 기존 draft·review를 함께 입력으로 사용해 전면 재작성 v2를 만들고 독립 shaping·texture·evidence review, main 판정, regression review를 거친 [near-final v3 다섯 편](../../drafts/ai-native-topic-research-2026-07-20/2026-07-27-near-final-v3/README.md)을 완성했다. 작업과 역추적 기록은 [near-final cycle](./process/shaping/2026-07-27-near-final-v2-v3/README.md)에 있다. 상위 후보는 다음과 같다.
+그 중심으로 post-sync v1과 `near-final`을 목표로 한 v2·v3를 만들고 독립 shaping·texture·evidence review, main 판정, regression review와 검증을 마쳤다. 이후 사용자가 [near-final v3 다섯 편](../../drafts/ai-native-topic-research-2026-07-20/2026-07-27-near-final-v3/README.md)을 실제 블로그 글로 읽은 결과, 공개 독자의 진입성·구체성·저자성·매력·포트폴리오 신호가 부족하다고 판단했다. 기존 [near-final cycle](./process/shaping/2026-07-27-near-final-v2-v3/README.md)은 당시 작업과 사실 교정을 복구하는 snapshot으로 보존한다. 상위 후보는 다음과 같다.
 
 - current / active-state operation
 - 독립 판별 / 제3판별자
@@ -91,7 +91,7 @@
 
 목록 안에는 순위가 없다. 후보의 현재 특징은 설명할 수 있지만 이를 위상의 근거·고정된 대표 강점·정렬 기준으로 사용하지 않는다. 독립 reviewer의 제안과 main의 반영 판단은 사용자 합의와 구분한다.
 
-현재 cursor는 사용자가 기준 문서보다 v3 실제 글을 먼저 읽고 어떤 글이 가장 살아 있는지, 첫 글·최종 제목·발행 관계를 판단하는 일이다. 독립 판별과 AI self-check는 연결된 두 편으로 두는 방향을 유지한다. 첫 글, 발행 순서와 전체 시리즈 구성은 아직 열려 있다.
+기존 v3를 직접 고치지 않고 [public-reshape-v1 다섯 편](../../drafts/ai-native-topic-research-2026-07-20/2026-07-27-public-reshape-v1/README.md)을 완결했다. [public reshape cycle](./process/shaping/2026-07-27-public-reshape/README.md)에는 작성 계약, build record, 다섯 독립 review와 [main 판정](./process/shaping/2026-07-27-public-reshape/04-main-adjudication.md)을 남겼다. 현재 cursor는 사용자가 완결본과 판정을 보고 다음 수정 범위를 정하는 일이다. 독립 판별과 AI self-check를 연결된 두 편으로 두는 방향은 유지하며, 첫 글·최종 제목·발행 순서·전체 시리즈 구성은 아직 열려 있다.
 
 ## 공개 전 경계
 
