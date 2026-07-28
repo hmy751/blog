@@ -1,6 +1,6 @@
 ---
 작성일: 2026-07-28
-갱신일: 2026-07-28
+갱신일: 2026-07-29
 성격: 현재 전체 그림과 단일 cursor
 공개상태: 내부 작업 문서
 ---
@@ -40,9 +40,10 @@
   - [src](../src/README.md)는 지금 수정할 최신 작업본만 소유한다. 이전 결과물은 각 shaping cycle 안에 두되, 현재 판단은 이 지도와 필요한 active-state 상세가 소유한다.
 
 - 다섯 글의 현재 그림
-  - Current / active-state operation
+  - Current / active-state operation `*-> 지금*`
     - 기록이 많아도 지금 무엇이 유효한지 다시 추론해야 했던 경험에서 시작해, 전체 생각지도와 현재 판단점 하나로 사람과 AI의 sync를 돕는 scaffolding을 다룬다.
-    - Q1~Q5 회수는 이 구조의 한계와 복구를 보여 주는 주 장면, 권위 분리는 구조를 작동시키는 설계 원리다. current 단독 효과나 전체 실패로 쓰지 않는다.
+    - 유튜버 Alex가 AX 인재전쟁에서 전체 문제 해결 과정을 외부화한 scaffolding을 보고, 기존 context 문제와 결합해 `전체 지도 + 현재 위치 하나`로 변형한 생성 계보에서 시작한다.
+    - 첫 재진입과 research 수렴은 실제 사용 장면, Q1~Q5의 최근 맥락 편향과 terminal gap은 한계 장면, Cofathon의 문서 축소와 역할별 재진입 분리는 후속 재설계다. current 단독 효과나 전체 실패로 쓰지 않는다.
     - 현재 material, 합의된 중심, 작업본 상태와 열린 판단은 [Current 글 active-state](./current-active-state-operation.md)가 소유한다.
   - Independent review and recovery
     - 독립성은 reviewer 수가 아니라 입력, 원자료 접근, 질문 수정, write·완료 권한, main의 회수 구조에서 만든다.
@@ -62,12 +63,13 @@
   - 2026-07-28 [원고만 본 당시 quality review](../process/shaping/2026-07-27-public-reshape/05-blind-draft-only-quality-criteria.md)는 다섯 편 모두 `partial rewrite`로 판정했다.
   - 위 review는 원고만 읽었지만 다음 version의 평가 기준, 필요한 자료, 구조 move까지 제안했다. 반면 Current 재작성 뒤의 마지막 검토는 원고와 고정 질문만 보고 `light edit`으로 닫혀, 원천에 남은 동기·판단 재료의 누락을 보지 못했다.
   - 다음 개선에는 결과물과 직접 원천을 대조하는 [review workflow](../core/review-workflow.md)를 적용한다. 원고만 처음 읽히는 모습을 보는 검토와 사실 verifier는 다른 역할로 유지한다.
+  - Current는 생성 계보와 직접 원천을 복구한 뒤 focused shaping을 거쳤고, 2026-07-29 [통합 review와 main 회수](../process/shaping/2026-07-28-current-scaffolding-rewrite/04-post-shaping-review-and-recovery.md)에서 Shaping·Texture를 통과했다. Prepublish는 구조 실패와 분리해 발행 선택 뒤의 metadata·공개 링크 blocker만 남겼다.
 
 - 작업 context 구조
   - 2026-07-28 backlog와 drafts를 workspace로 합치고 `core`, `active-state`, `sources`, `process`, `src`의 역할을 나눴다. 첫 결정과 원문 복구 경로는 [layering decision](../process/context-structure/2026-07-28-layering-decision.md)에 있다.
   - 첫 운용에서는 `최신만 유지`를 `현재 단계만 유지`로 좁혀 읽어 완료된 큰 가지와 이미 확보한 material이 지도에서 사라졌고, review도 입력 제한만 남아 개선 기준 갱신 역할이 빠졌다.
   - 전체 생각지도와 source+result 개선 review로 고친 뒤, 여러 live 문서에 반복된 review 계약도 [core/review-workflow.md](../core/review-workflow.md)로 분리했다. 현재 소유권과 보정 이유는 [첫 운용 보정 기록](../process/context-structure/2026-07-28-active-map-and-improvement-review-refinement.md)에 남겼다.
-  - `*-> 지금*` `[열림]` 관심사별 소유권을 정리한 현재 구조가 역할별 재진입과 다음 Current review에서 필요한 그림만 복구하는지 확인한다.
+  - 관심사별 소유권을 정리한 현재 구조가 역할별 재진입과 다음 review에서 필요한 그림만 복구하는지는 Current shaping·review 과정에서 계속 확인한다.
 
 - 발행
   - `[보류: Current의 다음 개선 방향과 첫 글을 정한 뒤]` 첫 글, 최종 제목, article type, 발행 순서, 연결 또는 시리즈 여부를 정한다.

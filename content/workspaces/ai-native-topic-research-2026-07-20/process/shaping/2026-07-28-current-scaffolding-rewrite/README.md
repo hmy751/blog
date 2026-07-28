@@ -2,7 +2,7 @@
 작성일: 2026-07-28
 성격: Current 한 편의 부분 재작성 cycle / 내부 process index
 공개상태: 내부 작업 문서
-현재상태: 새 Current 작업 시도 보존 / 사용자 검토에서 중심 material 누락 확인 / 미수용
+현재상태: focused shaping과 Shaping·Texture·Prepublish 통합 review 완료 / light edit 반영 / 사용자 검토 가능
 ---
 
 # Current scaffolding rewrite
@@ -17,6 +17,12 @@
 
 - [01-current-rewrite-build-record.md](./01-current-rewrite-build-record.md)
   - 합의된 중심 위계, 직접 원천 대조, 구조 move, 독립 review의 채택·조정·기각을 기록한다.
+- [02-stagewise-source-improvement-review.md](./02-stagewise-source-improvement-review.md)
+  - 현재 원고와 직접 원천을 비교해 Material, Shaping, Texture, Prepublish의 상태·개선 기준·완료 조건을 분리한다.
+- [03-main-review-recovery.md](./03-main-review-recovery.md)
+  - 두 독립 review의 입력 경계를 확인하고 제안을 채택·조정·보류한 main의 회수 기록이다. 원고는 수정하지 않았다.
+- [04-post-shaping-review-and-recovery.md](./04-post-shaping-review-and-recovery.md)
+  - 사용자와 정한 focused shaping을 반영한 뒤 Material을 제외하고 Shaping·Texture·Prepublish를 함께 검토했으며, source 정확성과 국소 반복을 light edit로 회수했다.
 - [이전 public-reshape-v1](./drafts/current-active-state-operation-public-reshape-v1.md)
   - 이번 부분 재작성 직전 `src`에 있던 Current 원고를 보존한다.
 - [현재 작업본](../../../src/current-active-state-operation.md)
@@ -25,7 +31,8 @@
 ## 이번 cycle의 경계
 
 - Current 한 편만 수정한다.
-- 다른 네 원고, active-state, core, sources, 기존 process 기록은 수정하지 않는다.
+- 다른 네 원고와 workspace core는 수정하지 않는다.
+- Current의 현재 판단은 `active-state`, 새로 확인한 생성 계보와 운영 원천은 `sources`, 이번 review와 회수는 이 process cycle에 갱신한다.
 - 공개 발행 후보로 승격하지 않으며 `date: TBD`를 유지한다.
 - 첫 답변의 보존되지 않은 문구를 재구성하지 않고, 직접 기록이 지원하는 시간축과 근거 배치만 비교한다.
-- 다음 수정은 이 cycle의 완료 판정을 전제로 하지 않고, 현재 작업본과 직접 원천을 함께 보는 개선 review의 기준 후보부터 다시 확인한다.
+- 현재 작업본은 독립 review와 light edit까지 마쳤지만 사용자 수용이나 발행 승격을 뜻하지 않는다. 다음 판단은 사용자가 현재 중심과 목소리를 검토한 뒤 이어간다.
