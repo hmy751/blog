@@ -118,6 +118,7 @@ description: 블로그 repo에서 새 글 작성, 기존 글 편집, PI Lab/dev-
 - 공개 글 원고: `content/posts/`
 - 공개 전 초안: `content/drafts/`
 - 발행 계획/글감: `content/backlog/`
+- 장기 작업 단위: `content/workspaces/` — 해당 workspace의 로컬 `AGENTS.md`/`CLAUDE.md`와 active-state를 먼저 읽는다. `src/`는 내부 작업 원본이며 선택한 원고를 `content/drafts/`로 승격한다.
 - 편집 기준: `editorial/`
 - 사이트 앱 구현: `site/`
 

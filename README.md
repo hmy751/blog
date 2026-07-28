@@ -11,6 +11,7 @@
 | `content/posts/` | 실제 발행 중인 글 소스와 앞으로 공개할 글 원고 |
 | `content/drafts/` | 공개 전 초안 |
 | `content/backlog/` | 발행 계획, 시리즈 후보, 글감 |
+| `content/workspaces/` | 장기 작업 단위별 현재 그림, 원천, 과정, 최신 작업 원본. 발행 후보는 `content/drafts/`로 승격 |
 | `editorial/core/` | 글쓰기 흐름, 글 유형별 글감 모델, 산출물 계약, 레퍼런스 사용 원칙 |
 | `editorial/lenses/` | voice, developer, reader-flow, supporting-materials 같은 판단 렌즈 |
 | `editorial/guards/` | source-policy, prepublish-check 같은 공개/발행 hard guard |

@@ -10,7 +10,8 @@ tools: Read, Grep, Glob, Bash
 
 ## 검색 영역
 
-- 현재 repo: `content/posts/`, `content/drafts/`, `content/backlog/`, `editorial/`
+- 현재 repo: `content/posts/`, `content/drafts/`, `content/backlog/`, `content/workspaces/`, `editorial/`
+- `content/workspaces/` 안에 `sources/`와 `process/`가 있으면 각각 직접 원천 입구와 파생 과정으로 구분한다.
 - 글 유형이 주어졌다면 `editorial/core/article-types.md`의 material signature
 - 글이 다루는 프로젝트의 코드, 작업 기록, 설계 메모
 - 공식 문서와 외부 레퍼런스

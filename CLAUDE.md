@@ -10,6 +10,7 @@
 | `content/notes/` | 공개할 짧은 노트 source. 없으면 사이트 Note 화면은 빈 상태로 둔다. |
 | `content/drafts/` | 공개 전 초안. 원천 자료에서 가져온 글도 먼저 여기에 둔다. |
 | `content/backlog/` | 발행 계획, 시리즈 후보, 글감 목록. |
+| `content/workspaces/` | 장기간 이어지는 한 작업 단위의 현재 그림, 반복 기준, 직접 원천, 과정, 최신 작업 원본을 분리해 둔다. 각 workspace의 로컬 `AGENTS.md`/`CLAUDE.md`를 먼저 따른다. `src/`는 자동 발행면이 아니며 선택한 원고를 `content/drafts/`로 승격한다. |
 | `editorial/` | 글쓰기 판단 기준. `core/`, `lenses/`, `guards/`, `reference-profiles/`, `context/`, `decisions/`, `audits/`로 책임을 나눈다. |
 | `site/` | 커스텀 블로그 사이트 앱의 격리된 구현 루트. 앱 코드, 라우팅, Markdown renderer, RSS/sitemap, 사이트 검증을 둔다. |
 | `site/docs/` | 사이트 구현 경계, content/design contract. |

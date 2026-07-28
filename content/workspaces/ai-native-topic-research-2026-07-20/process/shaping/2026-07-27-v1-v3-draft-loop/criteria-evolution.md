@@ -1,0 +1,80 @@
+---
+작성일: 2026-07-27
+갱신일: 2026-07-27
+성격: v1~v3 수정 기준 변화 기록 / 내부 process 문서
+공개상태: 내부 작업 문서
+현재상태: v3 반영 완료 snapshot / 후속 사용자 보정은 05에 연결
+---
+
+# v1~v3 기준 변화
+
+이 문서는 reviewer가 제시한 기준을 새 정답이나 active-state 기준으로 자동 승격하지 않는다. 각 기준이 어느 초안의 무엇을 보고 나왔고, main이 왜 채택·조정·기각·보류했으며, 실제 다음 버전에서 무엇이 바뀌었는지를 연결한다.
+
+## v1에서 사용하는 기존 기준
+
+- 다섯 후보의 순위를 정하지 않고 모두 완결된 산문으로 만든다.
+- 후보 가치, shaping 상태, 근거 준비도, 주장 상한을 서로 대신하지 않는다.
+- 구체 장면과 판단 변화가 실제 artifact·workflow 변화로 이어지는지 본다.
+- 사실, 경험, 해석, 미확인을 구분한다.
+- 한계를 성공 서사로 지우지 않는다.
+- private raw와 내부 경로를 공개 후보 초안에 노출하지 않는다.
+- 글마다 주된 article type을 고르되 같은 템플릿을 강제하지 않는다.
+
+원천: [active-state criteria](../../../core/criteria.md)
+
+## 첫 독립 review 뒤
+
+- [review 원문](./01-v1-independent-review.md)은 한 글의 중심 사건과 판단 변화, 작은 before/after artifact, 사실 상태의 현장 구분, 제안·구현·결과·효과 분리, AI-native 장면의 범위 제한, 체크리스트보다 판단 장면 보호, 숫자 단위와 공개 경계 유지를 제안했다.
+- scope의 raw `facts[]` 화면이 실제 구현이 아니라 제안이었다는 사실 오류와, 독립 판별 반례에서 서로 다른 실패를 하나의 과잉강등으로 합친 요약 오류를 찾았다.
+- main은 [반영 판단](./02-v1-to-v2-adjudication.md)에서 위 두 사실 교정과 공개 경계는 채택했다.
+- 사건 하나만 남기는 형식 규칙과 모든 글에 같은 artifact를 넣는 방식은 조정했다. 중심 사건·보조 사례·반례·경계의 역할을 구분하고, 독자의 판단 복구에 필요한 artifact만 넣는다.
+- reviewer의 기준을 새 active-state 축으로 자동 승격하지 않았다.
+
+## v2에서 바뀐 것
+
+- 각 글의 중심 사건을 다시 세우고 후반의 운영 목록을 줄였다.
+- current에는 문항별 시간축 복구와 병렬 terminal event를, 독립 판별에는 test method 단위와 A/B 실패 메커니즘을, 판단 순서에는 A1·A2 경계 변화를 넣었다.
+- scope는 제안과 실제 구현을 분리하고, self-check는 사용자 정정 뒤의 다음 행동과 formal self-check의 인과를 분리했다.
+- first-pass shaping에 남은 같은 사실 오류도 함께 고쳤다.
+- 글별 first scene과 마지막 판단은 보존했다. v2는 더 정확해졌지만 같은 구조로 통일하지 않았다.
+
+## 두 번째 독립 review 뒤
+
+- [두 번째 review 원문](./03-v2-independent-review.md)은 첫 review와 main 판단을 보지 않고도 중심 사건의 무게, 판단 주체, artifact 역할, 사실 상태, AI-native 판단 조건, 방어 문장의 리듬, article type, 독립 판별과 self-check의 경계를 다시 제안했다.
+- 첫 review와 독립적으로 반복된 기준은 중심 사건, 사실·인과 상한, 공개 artifact, 목소리 보호다.
+- 새로 확인된 문제는 판단 순서 글의 actor 오귀속과 Cofathon artifact 계보의 수치 혼동이었다.
+- main은 [두 번째 반영 판단](./04-v2-to-v3-adjudication.md)에서 actor 교정과 계보 재검증을 채택했다.
+- artifact 추가 제안은 조정했다. 글마다 기존의 가장 강한 artifact 하나가 논증을 맡게 하고, 새 표·예시를 모두 더하지 않는다.
+- 한계는 줄이는 것이 아니라 독자의 해석을 실제로 바꾸는 위치에만 남긴다.
+
+## v3에서 바뀐 것
+
+반영을 완료했다.
+
+- 다섯 글 모두 주된 사건을 앞으로 세우고, 보강 사건은 mechanism·반례·적용 경계 중 맡은 역할만 남겼다.
+- current는 Q1~Q5 시간축, 독립 판별은 검증 역할 표, scope는 `facts[]` 제안과 실제 답변 경로, 판단 순서는 A1·A2 경계 변화, self-check는 설명 수정과 자료 재확인의 차이를 중심 artifact로 삼았다.
+- 판단 순서 글에서 AI의 기준 오적용과 사용자의 정정을 올바른 주체에 돌렸다.
+- 15개 업무·문제 계열과 선택되지 않은 scene-first 연구 산출물의 층위를 바로잡고, 후기 별도 후보판과 연결하지 않았다.
+- 반복 방어 문장과 중심에 필요하지 않은 전문 용어를 줄이되, confound·수치 단위·미확인 효과·반례·사용자 정정의 인과 상한은 보존했다.
+- self-check의 `했다`체와 회고 목소리를 유지하고, 다섯 글의 article type과 독자 질문을 서로 다르게 남겼다.
+
+## active-state 기준으로 다시 검토할 후보
+
+새 기준 추가 없음.
+
+- 두 review에서 반복된 중심 사건, 판단 주체, 사실 상태, artifact, article type, 주장 상한은 이미 active-state 기준 안에 있다.
+- 한계 문장의 위치와 artifact 개수는 원고 shaping 판단이지 새 후보 선택 축이 아니다.
+
+## 사용자 판단이 필요한 것
+
+- v3 뒤 첫 글과 article type
+- 독립 판별과 AI self-check의 병합·분리
+- 실제 시리즈 여부와 발행 순서
+
+## 후속 사용자 보정
+
+위 목록은 v3 완료 시점의 열린 판단이다. 이후 전체 버전과 기준 변화를 다시 대조하고 사용자와 중심을 맞춘 결과는 [05-post-v3-reassessment-and-user-sync.md](./05-post-v3-reassessment-and-user-sync.md)에 남겼다.
+
+- 독립 판별과 AI self-check는 연결된 두 편으로 두는 방향을 정했다.
+- 판단 순서의 `발산`은 새 평가축을 추가한 것이 아니라, 후보와 가능한 가치·성과를 먼저 펼치되 개별 주장과 안전 경계는 계속 엄격하게 본다는 기존 순서의 의미 보정이다.
+- Current, scope control, AI self-check의 중심 보정은 현재 [topic-candidates.md](../../context-structure/legacy-active-state/topic-candidates.md)가 소유한다.

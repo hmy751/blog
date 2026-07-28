@@ -1,0 +1,126 @@
+---
+작성일: 2026-07-23
+갱신일: 2026-07-27
+성격: 상위 후보 1차 shaping / 내부 작업 문서
+공개상태: 내부 작업 문서
+권위: 1차 shaping snapshot
+현재후보:
+  - ../../context-structure/legacy-active-state/topic-candidates.md#작업-주제--독립-판별의-판단-상태와-회수-구조
+---
+
+# 독립 판별의 판단 상태와 회수 구조
+
+이 문서는 독립 판별 후보를 실제 글의 단위로 한 번 펼쳐 본 결과다. 첫 글, 제목, article type과 AI self-check와의 병합 여부를 확정하지 않는다.
+
+## 1. 첫 장면
+
+첫 장면은 Python `unittest` test method 9개와 별도 정적 validator가 모두 통과한 상태에서 시작한다.
+
+구현은 초록이었다. 그러나 별도 판별은 plugin이 설치 목록에 없고 설치된 새 task에서 자연어로 끝까지 실행한 증거가 없으며, 공개 사실과 fixture가 모순되고, 문자열 `"false"`가 boolean처럼 수용되고, 아동 범위와 상반 claim의 순서가 잘못 처리되는 문제를 찾았다.
+
+이 장면의 핵심은 “test가 부족했다”가 아니다. 구현자가 만든 fixture와 validator는 구현자가 예상한 세계 안의 일관성을 확인했다. 빠진 것은 그 세계가 실제 source와 사용자 흐름에 맞는지 다른 입력에서 다시 판별하는 일이었다.
+
+제목의 숫자는 진입점으로 쓸 수 있다. 9와 15는 같은 checkpoint의 `unittest` test method 수이자 해당 runner의 실행 수다. CLI, validator, 설치형 자연어 E2E는 이 숫자 밖의 별도 검증이다. test method가 늘어난 사실을 품질 향상 지표로 사용하지 않고, 글은 초록 test 뒤에 무엇이 보이지 않았고 판별 계약이 어떻게 달라졌는지로 이동해야 한다.
+
+주요 근거:
+
+- [AX의 9개 test와 독립 실패 신호](../../candidates/03-source-first-reanalysis.md#ax-7-9개-test의-초록은-구현자가-만든-세계-안의-일관성이었다)
+- [후보의 현재 대표 사건](../../context-structure/legacy-active-state/topic-candidates.md#작업-주제--독립-판별의-판단-상태와-회수-구조)
+
+## 2. 중심 질문
+
+> 별도 AI를 한 번 더 부르는 것과, 구현자와 판별자가 같은 전제에서 같은 오류를 반복하지 않게 만드는 것은 무엇이 다른가?
+
+이 질문은 reviewer의 수보다 판별 계약을 본다.
+
+- 판별자는 구현자와 다른 어떤 입력을 받는가?
+- 결과물뿐 아니라 raw·canonical source와 실제 실행면에 접근하는가?
+- main이 붙인 문제 이름과 원인 가설을 기각할 수 있는가?
+- 판별자는 수정하거나 완료를 선언할 수 있는가?
+- 판별 결과가 사용자에게 보이기 전에 main의 기존 언어로 합쳐지는가?
+- reviewer가 틀렸을 때 main은 어떤 원천과 contract로 결과를 기각하는가?
+
+글의 중심은 “AI review를 더 쓰자”가 아니라 입력, 판단 상태, 권한, 회수 기준을 분리하는 일이다.
+
+## 3. 판단이 바뀐 시간순 사건
+
+1. AX의 첫 구현은 plugin scaffold, Python 엔진, fixture, `unittest` test method 9개, 별도 정적 validator를 갖췄다.
+2. 구현자 관점의 검증에서는 첫 구현 성공으로 보였다.
+3. 별도 판별이 자연어 E2E 부재, source와 fixture의 모순, type·scope·claim 처리 결함을 찾았다.
+4. fixture consistency, source-to-contract 대조, adversarial schema, 설치된 자연어 E2E를 다른 확인 단계로 나눴다.
+5. 해당 checkpoint의 `unittest` test method는 15개로 늘고, 이 숫자와 별도로 설치된 새 task에서 자연어 요청부터 seller 답변 뒤 판단 변화까지 실행했다.
+6. Cofathon의 두 fresh review는 같은 후보에 서로 다른 통과·조건부 판정을 냈다. 별도 판별도 자동 정답이 아니라는 한계가 드러났다.
+7. Tripproof에서는 생성기와 judge를 분리했지만 앞단 추출이 오염된 입력을 넘겨 제품 조건이 성립하지 않았다.
+8. 독립성의 범위가 reviewer 호출에서 입력·source 접근·질문 수정·write 및 완료 권한·main 회수 기준으로 넓어졌다.
+9. 판별 결과를 main의 언어로 바로 취합하지 않고, 사용자가 차이와 충돌을 본 뒤 무엇을 적용할지 판단하는 출력 경계가 추가됐다.
+
+## 4. 독자가 볼 공개 가능한 자료
+
+글의 기술적 중심은 AX 사건에 둔다.
+
+우선 준비할 자료:
+
+- **9개에서 15개로 바뀐 `unittest` test method의 역할 비교**
+  - 기존 fixture consistency가 보던 범위
+  - 새 source contract·schema·설치형 자연어 E2E가 추가로 본 범위
+- **자연어 E2E 흐름**
+  - 사용자의 요청
+  - MCP 입력
+  - 구조화
+  - 사용자 수정
+  - seller 답변 반영
+  - 다음 판단 상태
+- **독립 판별 계약**
+  - 입력
+  - raw source 접근
+  - 질문 수정 권한
+  - write 권한
+  - 완료 선언 권한
+  - 결과를 회수하는 기준
+- **서로 다른 두 reviewer 결과**
+  - 같은 후보에 대한 판정 차이를 익명화해, reviewer도 평가 대상임을 보여 주는 작은 비교
+
+실제 내부 test code와 conversation raw를 그대로 옮기지 않는다. 동일한 결함 범주가 보이는 sanitized fixture와 짧은 의사코드로 다시 만든다.
+
+추가 확인이 필요한 사실:
+
+- 각 fresh 판별자가 받은 context와 제외된 context
+- 설치형 E2E의 실제 실행 범위와 전략 평가 제외 범위
+- Tripproof 사건의 6월 25일, 6월 29~30일, 7월 2일 시간순
+
+## 5. 사용자의 판단이 바뀐 지점
+
+처음에는 별도 AI를 부르면 구현자의 blind spot을 줄일 수 있다고 보기 쉬웠다. 실제 운영에서 바뀐 판단은 모델 수보다 판별 구조에 관한 것이었다.
+
+- 같은 결과물과 같은 설명만 받으면 다른 AI도 같은 frame을 반복할 수 있다.
+- 판별자는 raw source와 외부 contract에 직접 접근해야 한다.
+- main의 예상 결론을 evaluator의 정답처럼 주면 독립성이 약해진다.
+- reviewer는 질문 자체를 기각할 수 있어야 한다.
+- 판정과 수정, 완료 선언을 한 주체가 모두 소유하지 않게 한다.
+- reviewer의 결론도 eval, 반례, revert의 대상이다.
+- main이 결과를 바로 요약하면 충돌이 사라질 수 있으므로, 사용자가 취합 전 차이를 볼 수 있어야 한다.
+
+이 판단 변화는 AI self-check와 원리를 공유한다. 다만 독립 판별은 결과물·계약·실행면을 판별하는 기술 사건이 중심이고, self-check는 main 자신의 문제 정의와 반복 행동이 중심이다.
+
+## 6. 다른 개발자가 가져갈 기준
+
+- 이 reviewer는 구현자와 다른 무엇을 보는가?
+- raw source와 외부 contract에 직접 접근할 수 있는가?
+- fixture 일관성과 실제 실행을 다른 확인 단계로 보는가?
+- main의 질문이나 평가 범위를 판별자가 바꿀 수 있는가?
+- 판별자가 수정하거나 완료를 선언할 수 있는가?
+- 서로 다른 reviewer 결과의 충돌이 사용자에게 보이는가?
+- main은 어떤 최소 증거와 현재 contract로 reviewer 결과를 채택·수정·기각하는가?
+- reviewer 자체의 오류 상관과 성능을 다시 평가할 수 있는가?
+
+## 7. 이번 자료가 말하지 못하는 한계
+
+- 9개에서 15개로 늘어난 `unittest` test method는 한 checkpoint의 변화이며 프로젝트 전체 품질 지표가 아니다.
+- test method 수 증가가 사용자 가치나 제품 품질 향상을 증명하지 않는다.
+- fresh 또는 blind라는 이름만으로 독립성이 생기지 않는다.
+- 같은 모델이면 비독립이고 다른 모델이면 독립이라는 단순 규칙은 성립하지 않는다.
+- reviewer가 늘어날수록 품질이 오른다고 말할 수 없다.
+- final fresh verifier는 ZIP만 받은 완전한 제3자 재현이 아니었다.
+- Tripproof judge 실험은 작은 local dataset과 추가 호출이 있는 제한된 반례다.
+- 입력·판단 상태·회수 권한을 한 편에 같은 비중으로 넣으면 기술 사건이 “독립성의 종합 이론”으로 넓어질 위험이 있다.
+- AI self-check를 핵심 적용 사례로 같은 글에 넣을지 별도 글로 둘지는 양쪽 shaping을 비교한 뒤 판단해야 한다.

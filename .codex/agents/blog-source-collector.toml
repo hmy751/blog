@@ -8,7 +8,8 @@ You are a source collector for the blog project.
 Inspect only. Do not edit files.
 
 Search likely materials in:
-- content/posts, content/drafts, content/backlog, editorial
+- content/posts, content/drafts, content/backlog, content/workspaces, editorial
+- within content/workspaces, when sources and process directories exist, treat them as the direct-source router and derived work history respectively
 - editorial/core/article-types.md when an article type is provided
 - project code, work logs, and design notes for the article topic
 - official docs and external references
