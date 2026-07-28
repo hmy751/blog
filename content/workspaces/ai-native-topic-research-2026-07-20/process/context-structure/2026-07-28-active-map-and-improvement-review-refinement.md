@@ -115,6 +115,22 @@ reviewer가 제안한 기준은 새 관찰이지 새 규칙이 아니다. main�
 
 명백한 사실 오류는 원천으로 확인해 수정하고 사용자에게 보고한다. 대표 장면, 큰 구조, 글의 중심, 사용자의 경험·해석은 사용자와 먼저 상의한다. 여러 cycle에 반복할 기준으로 합의한 경우에만 `core/criteria.md`를 갱신한다.
 
+### Live 운영 문서는 관심사별 소유자를 하나로 둔다
+
+첫 보정에서는 review 계약을 `core/workflow.md`에 확장하면서 같은 내용이 `AGENTS.md`, active-state 유지 원칙, Current 상세에도 반복됐다. 이것은 단순한 문장 중복보다, review 계약 하나를 바꿀 때 여러 live 문서를 함께 고쳐야 하는 소유권 문제였다.
+
+이에 따라 현재 소유 위치를 다음처럼 다시 나눴다.
+
+- `AGENTS.md`: 역할별 진입 경로
+- `core/workflow.md`: 전체 작업 순서와 변경 권한
+- `core/review-workflow.md`: review 목적·입력·산출과 main 회수
+- `core/criteria.md`: 반복 판단축
+- `active-state/index.md`: 현재 전체 지도와 지도 자체의 유지 계약
+- `active-state/<branch>.md`: 해당 가지의 현재 중심·산출물 상태·열린 판단
+- `src/README.md`: 최신 산출물과 이전본·발행 후보의 생애주기
+
+전체 workflow는 없어지지 않는다. 각 관심사의 세부 규칙을 다시 소유하는 대신, 작업 순서 안에서 필요한 소유 문서로 연결한다. 과거 decision record의 규칙 설명은 live 사본이 아니라 당시 판단 기록이므로 소급 삭제하지 않는다.
+
 ## Current 재작성의 현재 판정
 
 `src/current-active-state-operation.md`는 가장 최근 작업 시도지만 사용자에게 수용된 완성본이 아니다. 당시 검증은 정한 구조와 사실·공개 경계를 확인한 기록으로 보존하되, 글의 동기와 전체 맥락까지 충분히 살렸다는 판정으로 사용하지 않는다.
@@ -144,6 +160,7 @@ reviewer가 제안한 기준은 새 관찰이지 새 규칙이 아니다. main�
 - Current 재작성과 판정 정정: [2026-07-28-current-scaffolding-rewrite](../shaping/2026-07-28-current-scaffolding-rewrite/README.md)
 - 현재 전체 지도: [active-state/index.md](../../active-state/index.md)
 - 현재 workflow: [core/workflow.md](../../core/workflow.md)
+- 현재 review 계약: [core/review-workflow.md](../../core/review-workflow.md)
 - 전체 논의 원문: `/Users/hammyeong-yeon/Desktop/2026-07-28-ai-native-topic-research-current-conversation.md`
 - AX 전체 지도 참고: `/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/current.md`
 - AX 개선 loop 참고: `/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/core/loop.md`

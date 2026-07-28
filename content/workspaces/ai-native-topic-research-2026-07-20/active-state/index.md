@@ -18,8 +18,8 @@
 - 현재도 유효한 판단이 커지면 `active-state/` 하위 파일로 나누고, 이 지도에는 그 판단의 역할·현재 결론·링크를 남긴다. `process`는 커진 판단을 접는 곳이 아니라 그 판단이 만들어지고 달라진 과정을 보존하는 곳이다.
 - 반복 기준, 직접 원천, 지난 과정, 현재 작업본의 상세는 각각 `core`, `sources`, `process`, `src`로 연결한다. 링크를 열지 않아도 무엇을 거쳤고 무엇이 현재 유지되는지 알 수 있어야 하며, 자세한 이유가 필요할 때만 링크로 내려간다.
 - 라벨 없는 노드는 현재 함께 작업할 기본 그림이며 영구 불변이라는 뜻은 아니다. 지금 판단하거나 시험할 질문은 `[열림]`, 현재 작업을 막지 않으며 다시 볼 조건이 있는 질문은 `[보류: 다시 볼 조건]`으로 표시한다. 미래 가지는 확정 계획이 아니라 현재 보이는 가설로 다룬다.
-- 진행 cursor는 이 `index.md`에 정확히 하나만 둔다. 하위 active-state 파일에는 별도 cursor를 만들지 않는다. 명백한 사실 오류나 실제 작업과 어긋난 cursor는 고치고 보고할 수 있다. 전체 그림, 대표 장면, 글의 중심, 사용자의 경험·해석처럼 중요한 변화는 먼저 서로 맞춘 뒤 반영한다.
-- 독립 review와 main의 제안은 현재 그림과 대조할 새 관찰이며 사용자 합의로 자동 승격되지 않는다. 회수와 반영 절차는 [core/workflow.md](../core/workflow.md)가 맡는다.
+- 진행 cursor는 이 `index.md`에 정확히 하나만 둔다. 하위 active-state 파일에는 별도 cursor를 만들지 않는다.
+- 독립 review와 main의 제안은 그 자체로 현재 그림이 아니다. [review workflow](../core/review-workflow.md)의 회수 뒤 현재 함께 작업할 판단이 실제로 바뀐 경우에만 지도에 반영한다.
 
 ## 현재 지도
 
@@ -61,14 +61,13 @@
   - 2026-07-27 contextual review와 [main adjudication](../process/shaping/2026-07-27-public-reshape/04-main-adjudication.md)은 당시 입력에서 나온 판정으로 보존한다.
   - 2026-07-28 [원고만 본 당시 quality review](../process/shaping/2026-07-27-public-reshape/05-blind-draft-only-quality-criteria.md)는 다섯 편 모두 `partial rewrite`로 판정했다.
   - 위 review는 원고만 읽었지만 다음 version의 평가 기준, 필요한 자료, 구조 move까지 제안했다. 반면 Current 재작성 뒤의 마지막 검토는 원고와 고정 질문만 보고 `light edit`으로 닫혀, 원천에 남은 동기·판단 재료의 누락을 보지 못했다.
-  - 앞으로의 개선 review는 결과물, 최소 목표, 선택한 직접 원천을 주고 더 나은 결과의 기준과 통과 조건을 먼저 제안받는다. 작성 process, 이전 판정, main의 기대 답은 주지 않으며, 제안된 기준은 main과 사용자가 현재 그림에 대조한 뒤 채택한다.
-  - 사실 verifier, 결과물을 개선하는 review, 원고만 처음 읽히는 모습을 보는 검토의 판정 범위를 섞지 않는다.
+  - 다음 개선에는 결과물과 직접 원천을 대조하는 [review workflow](../core/review-workflow.md)를 적용한다. 원고만 처음 읽히는 모습을 보는 검토와 사실 verifier는 다른 역할로 유지한다.
 
 - 작업 context 구조
   - 2026-07-28 backlog와 drafts를 workspace로 합치고 `core`, `active-state`, `sources`, `process`, `src`의 역할을 나눴다. 첫 결정과 원문 복구 경로는 [layering decision](../process/context-structure/2026-07-28-layering-decision.md)에 있다.
   - 첫 운용에서는 `최신만 유지`를 `현재 단계만 유지`로 좁혀 읽어 완료된 큰 가지와 이미 확보한 material이 지도에서 사라졌고, review도 입력 제한만 남아 개선 기준 갱신 역할이 빠졌다.
-  - 전체 생각지도와 source+result 개선 review로 고친 이유와 현재 계약은 [첫 운용 보정 기록](../process/context-structure/2026-07-28-active-map-and-improvement-review-refinement.md)에 남겼다.
-  - `*-> 지금*` `[열림]` 전체 생각지도, active-state 하위 파일, process 링크, 개선 review 계약을 보정한 현재 구조가 실제 재진입에서 전체 그림과 중심을 복구하는지 사용자와 대조한다.
+  - 전체 생각지도와 source+result 개선 review로 고친 뒤, 여러 live 문서에 반복된 review 계약도 [core/review-workflow.md](../core/review-workflow.md)로 분리했다. 현재 소유권과 보정 이유는 [첫 운용 보정 기록](../process/context-structure/2026-07-28-active-map-and-improvement-review-refinement.md)에 남겼다.
+  - `*-> 지금*` `[열림]` 관심사별 소유권을 정리한 현재 구조가 역할별 재진입과 다음 Current review에서 필요한 그림만 복구하는지 확인한다.
 
 - 발행
   - `[보류: Current의 다음 개선 방향과 첫 글을 정한 뒤]` 첫 글, 최종 제목, article type, 발행 순서, 연결 또는 시리즈 여부를 정한다.
