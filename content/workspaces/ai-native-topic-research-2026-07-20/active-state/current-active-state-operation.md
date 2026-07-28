@@ -42,14 +42,16 @@ Q1~Q5 사건은 `current`의 생성 이유나 글의 중심이 아니다. 이미
 - 첫 재진입과 research 수렴을 실제 사용 장면으로 올리고, research의 `과교정 → 앞선 합의 복귀 → 후보판 보존·재추출 → 수렴`을 단계별 trace로 만들었다.
 - Q1~Q5와 terminal gap을 한계로 낮추고, Cofathon의 문서 축소와 역할별 재진입 분리를 후속 재설계로 연결했다.
 
-이 파일은 최신 작업본이지만 사용자 수용이나 발행 검증이 끝난 원고는 아니다. 작성과 review 과정은 [current scaffolding rewrite](../process/shaping/2026-07-28-current-scaffolding-rewrite/README.md)에 보존한다.
+이 파일은 Texture·Tone·Evidence 전문 review와 main 회수까지 마친 최신 작업본이다. 사용자 수용과 실제 발행 승격은 아직 남아 있다. 작성과 review 과정은 [current scaffolding rewrite](../process/shaping/2026-07-28-current-scaffolding-rewrite/README.md)에 보존한다.
 
-## 다음 review
+## 최종 품질 review
 
-Material은 더 수집하지 않았다. 현재 수정본을 원고와 직접 원천만 보는 독립 reviewer에게 넘겨 Shaping, Texture, Prepublish를 함께 점검했다. Review는 shaping과 texture를 통과시키고 source 정확성을 겸한 light edit를 제안했다. Main은 사실 범위 여섯 곳, 반복, trace 뒤 해석, 후속 재설계 문단의 과밀, private 직접화법을 교정했다. 자세한 입력 경계와 회수는 [post-shaping review](../process/shaping/2026-07-28-current-scaffolding-rewrite/04-post-shaping-review-and-recovery.md)에 있다.
+Material은 더 수집하지 않았다. Post-shaping 통합 review 뒤 Texture Keeper, Tone Critic, Evidence Checker에게 최신 원고와 직접 원천을 주고 서로 다른 실패면을 다시 점검했다. Main은 Alex의 실제 구조를 먼저 보여 주고, `current`의 cursor 이동을 구체화하고, 시간축·출력 형태·작성자·인과 상한을 원천에 맞췄다. 후속 재설계는 내부 보고 대신 문서 비대화와 역할 충돌 장면으로 바꿨다.
+
+사용자의 `뭔가 계속 유지되고 있다`는 체감은 평평한 객관 문장으로 바꾸지 않았다. 성과를 과장하는 문장이 아니라 이 글이 설명할 실제 경험이고, 원천에서도 사용자 평가로 보존하기 때문이다. 자세한 판단과 반영 내역은 [최종 품질 전문 review](../process/shaping/2026-07-28-current-scaffolding-rewrite/05-final-quality-specialist-review-and-recovery.md)에 있다.
 
 ## 열린 판단
 
-- `[열림]` 사용자가 현재 원고의 중심, 목소리, research trace, 후속 재설계를 수용하는지
+- `[열림]` 사용자가 최종 품질 수정본을 수용하는지
 - `[열림]` Alex 특정 영상의 공개 URL을 발행 전에 복구할지
-- `[보류: 사용자 수용과 발행 선택 뒤]` 최종 `readTime`, tags, 발행일
+- `[보류: 사용자 수용과 발행 선택 뒤]` 최종 `readTime`, tags, 발행일, 공개 원고 승격

@@ -63,7 +63,7 @@
   - 2026-07-28 [원고만 본 당시 quality review](../process/shaping/2026-07-27-public-reshape/05-blind-draft-only-quality-criteria.md)는 다섯 편 모두 `partial rewrite`로 판정했다.
   - 위 review는 원고만 읽었지만 다음 version의 평가 기준, 필요한 자료, 구조 move까지 제안했다. 반면 Current 재작성 뒤의 마지막 검토는 원고와 고정 질문만 보고 `light edit`으로 닫혀, 원천에 남은 동기·판단 재료의 누락을 보지 못했다.
   - 다음 개선에는 결과물과 직접 원천을 대조하는 [review workflow](../core/review-workflow.md)를 적용한다. 원고만 처음 읽히는 모습을 보는 검토와 사실 verifier는 다른 역할로 유지한다.
-  - Current는 생성 계보와 직접 원천을 복구한 뒤 focused shaping을 거쳤고, 2026-07-29 [통합 review와 main 회수](../process/shaping/2026-07-28-current-scaffolding-rewrite/04-post-shaping-review-and-recovery.md)에서 Shaping·Texture를 통과했다. Prepublish는 구조 실패와 분리해 발행 선택 뒤의 metadata·공개 링크 blocker만 남겼다.
+  - Current는 생성 계보와 직접 원천을 복구한 뒤 focused shaping을 거쳤고, 2026-07-29 [통합 review와 main 회수](../process/shaping/2026-07-28-current-scaffolding-rewrite/04-post-shaping-review-and-recovery.md) 뒤 [Texture·Tone·Evidence 전문 review](../process/shaping/2026-07-28-current-scaffolding-rewrite/05-final-quality-specialist-review-and-recovery.md)까지 마쳤다. 원고 품질 회수는 끝났고, 발행 선택 뒤 metadata·공개 링크·승격·deterministic check만 남았다.
 
 - 작업 context 구조
   - 2026-07-28 backlog와 drafts를 workspace로 합치고 `core`, `active-state`, `sources`, `process`, `src`의 역할을 나눴다. 첫 결정과 원문 복구 경로는 [layering decision](../process/context-structure/2026-07-28-layering-decision.md)에 있다.

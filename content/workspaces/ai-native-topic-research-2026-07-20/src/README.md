@@ -2,7 +2,7 @@
 
 이 디렉토리에는 지금 수정할 최신 원고만 둔다. 최신이라는 말은 사용자 수용이나 검증 완료를 뜻하지 않는다.
 
-- [current-active-state-operation.md](./current-active-state-operation.md) — 2026-07-29 focused shaping과 Shaping·Texture·Prepublish 통합 review의 light edit까지 반영한 작업본, 아직 사용자 수용 전.
+- [current-active-state-operation.md](./current-active-state-operation.md) — 2026-07-29 focused shaping, 통합 review, Texture·Tone·Evidence 전문 review와 main 회수까지 반영한 작업본. 발행 승격 전.
 - [independent-review-and-recovery.md](./independent-review-and-recovery.md)
 - [product-flow-scope-control.md](./product-flow-scope-control.md)
 - [judgment-order.md](./judgment-order.md)
@@ -21,3 +21,4 @@
 - [원고만 본 당시 quality review](../process/shaping/2026-07-27-public-reshape/05-blind-draft-only-quality-criteria.md)
 - [Current 재작성 시도](../process/shaping/2026-07-28-current-scaffolding-rewrite/README.md)
 - [Current post-shaping 통합 review와 회수](../process/shaping/2026-07-28-current-scaffolding-rewrite/04-post-shaping-review-and-recovery.md)
+- [Current 최종 품질 전문 review와 회수](../process/shaping/2026-07-28-current-scaffolding-rewrite/05-final-quality-specialist-review-and-recovery.md)

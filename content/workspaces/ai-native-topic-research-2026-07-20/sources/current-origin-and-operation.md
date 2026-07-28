@@ -36,7 +36,7 @@
 ## 유튜버 Alex에게서 본 scaffolding
 
 - [AX 인재전쟁 공식 안내](https://hackathon.jocodingax.ai/), [당시 과제 요구사항 보존본](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/sources/과제요구사항/index.md) — 행사 이름, 기업의 실제 문제를 AI로 풀어 결과물을 제출하는 구조, 예선 기간과 참여 기업을 다시 확인하는 공개·로컬 경로. 원고의 `‘AX 인재전쟁’ 해커톤에 참가했다`는 1인칭 사실 자체는 사용자 기억이 원천이다.
-- [커리어해커 알렉스 YouTube 채널](https://www.youtube.com/@careerhackeralex/videos) — 영상 제작자의 공개 정체를 다시 찾는 경로. 분석 자료에 사용한 해당 라이브 영상의 원본 URL은 현재 로컬 archive에서 찾지 못했으므로 아래 전사본을 발화 권위로 사용한다.
+- [커리어해커 알렉스 YouTube 채널](https://www.youtube.com/@careerhackeralex/videos) — 영상 제작자의 공개 정체를 다시 찾는 경로. 2026-07-29 로컬 전체 검색과 공개 웹 검색에서도 분석에 사용한 해당 라이브 영상의 원본 URL을 복구하지 못했다. URL을 추정하지 않고 아래 전사본을 발화 권위로 사용한다.
 - [유튜버 Alex 원본 영상 전사](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/00-alex-analysis/00-원본자료/영상전사/2026-07-04_AX인재전쟁_transcript.md)
   - 1325~1359행: 회사별 작업을 위한 폴더·instruction·placeholder와 research 공간을 포함한 scaffolding 구상.
   - 1627~1651행: 서로 다른 회사 context를 분리하면서 같은 문제 해결 순서를 병렬로 운용하는 구조.
