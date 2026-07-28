@@ -1,14 +1,14 @@
 # Current source
 
-이 디렉토리에는 지금 수정할 최신 원고만 둔다. 현재본은 2026-07-27에 만든 `public-reshape-v1` 다섯 편이며, 2026-07-28 draft-only blind review 이후 아직 새 version을 만들지 않았다.
+이 디렉토리에는 지금 수정할 최신 원고만 둔다. 최신이라는 말은 사용자 수용이나 검증 완료를 뜻하지 않는다.
 
-- [current-active-state-operation.md](./current-active-state-operation.md)
+- [current-active-state-operation.md](./current-active-state-operation.md) — 2026-07-28 재작성 작업본, 아직 수용되지 않음.
 - [independent-review-and-recovery.md](./independent-review-and-recovery.md)
 - [product-flow-scope-control.md](./product-flow-scope-control.md)
 - [judgment-order.md](./judgment-order.md)
 - [ai-self-check.md](./ai-self-check.md)
 
-현재 중심과 열린 판단은 [active-state/index.md](../active-state/index.md), 작업 순서는 [core/workflow.md](../core/workflow.md)를 따른다.
+나머지 네 편은 2026-07-27 `public-reshape-v1`이다. 현재 중심과 열린 판단은 [active-state/index.md](../active-state/index.md), Current 글의 확대된 판단은 [active-state/current-active-state-operation.md](../active-state/current-active-state-operation.md), 작업 순서는 [core/workflow.md](../core/workflow.md)를 따른다.
 
 이전 원고는 관련 [process/shaping](../process/shaping/README.md) 과정의 `drafts/`에 둔다. 새 결과물이 현재본이 되면 기존 결과물을 관련 과정으로 옮기되, 매 편집마다 version을 쌓지는 않는다.
 
@@ -18,4 +18,5 @@
 
 - [public reshape cycle](../process/shaping/2026-07-27-public-reshape/README.md)
 - [main adjudication](../process/shaping/2026-07-27-public-reshape/04-main-adjudication.md)
-- [draft-only blind review](../process/shaping/2026-07-27-public-reshape/05-blind-draft-only-quality-criteria.md)
+- [원고만 본 당시 quality review](../process/shaping/2026-07-27-public-reshape/05-blind-draft-only-quality-criteria.md)
+- [Current 재작성 시도](../process/shaping/2026-07-28-current-scaffolding-rewrite/README.md)
