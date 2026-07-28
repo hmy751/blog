@@ -22,25 +22,26 @@
 
 | 상황 | 먼저 읽을 문서 |
 | --- | --- |
-| 모든 블로그 작업 | `core/workflow.md`, `core/article-types.md`, `guards/source-policy.md`, `lenses/voice.md` |
-| 새 글 작성/초안 다듬기 | `core/workflow.md`, `core/article-types.md`, `core/output-contracts.md`, `lenses/voice.md`, `lenses/developer.md`, 필요 시 `lenses/edit-patterns.md` |
+| 새 글·글감 확장 | `core/workflow.md`, `core/output-contracts.md`, material signature나 voice 차이가 현재 판단에 필요하면 `core/article-types.md`, 관련 lens |
+| 기존 초안 shaping·편집·polish | `core/workflow.md`의 해당 단계, `core/output-contracts.md`, 실제 쟁점과 관련된 lens |
+| review-only | `core/output-contracts.md`, 사용자가 요청한 판단을 소유한 lens 또는 guard |
 | 가독성/독자 흐름 점검 | `lenses/reader-flow.md`, `core/output-contracts.md`, 필요 시 `lenses/developer.md` |
-| 표/코드/이미지/도식/그래프/스크린샷 판단 | `lenses/supporting-materials.md`, `core/output-contracts.md`, `guards/source-policy.md` |
-| 레퍼런스 기반 하네스/글 편집 | `core/reference-use.md`, 필요 시 `reference-profiles/technical-blog-page-cadence.md` |
-| 공개 기술 글의 포트폴리오 신호 점검 | `lenses/portfolio-signal.md`, `lenses/developer.md`, `core/workflow.md` |
+| artifact gap이 확인된 표/코드/이미지/도식/그래프/스크린샷 판단 | `lenses/supporting-materials.md`, `core/output-contracts.md`, 공개 경계가 걸리면 `guards/source-policy.md` |
+| 레퍼런스 기반 글 편집 | `core/reference-use.md`, 필요 시 `reference-profiles/technical-blog-page-cadence.md`와 관련 lens |
+| 공개 기술 글의 포트폴리오 신호 점검 | `lenses/portfolio-signal.md`, `lenses/developer.md` |
 | 톤 점검 | `lenses/voice.md`, 필요 시 `lenses/edit-patterns.md` |
 | 기술 구현/복기 글 | `core/article-types.md`의 Technical Case Study material signature, `lenses/voice.md`, `lenses/developer.md` |
 | 회사 프로젝트 글 | `core/article-types.md`, `guards/source-policy.md`, `lenses/voice.md`, `lenses/developer.md` |
 | 제품/아키텍처 글 | `core/article-types.md`, `guards/source-policy.md`, `lenses/voice.md`, `lenses/developer.md` |
 | 개인/블로그 회고 | `core/article-types.md`의 Retrospective material signature, `lenses/voice.md` |
-| PI Lab 또는 학습/실험 글 | `core/article-types.md`의 Learning / Experiment material signature, `lenses/voice.md`, `lenses/developer.md`, 필요 시 기존 발행글 |
+| 학습/실험 글 | `core/article-types.md`의 Learning / Experiment material signature, `lenses/voice.md`, `lenses/developer.md`, 필요 시 기존 발행글 |
 | 발행 전 | `guards/prepublish-check.md`, `core/output-contracts.md`의 candidate slot 기준 |
 
 ## 문서 역할
 
-- `core/workflow.md`: `Material -> Shaping -> Texture -> Prepublish` 단계와 각 단계 책임.
+- `core/workflow.md`: `Material -> Shaping -> Texture -> Prepublish`의 책임, 현재 산출물에 맞는 시작 단계와 전환.
 - `core/article-types.md`: 글 유형별로 좋은 글감이 어떤 형태를 가져야 하는지 정의하는 material signature.
-- `core/output-contracts.md`: review-only, edit, reader-flow, artifact gap, reference-guided, publish-ready 모드별 산출물 계약.
+- `core/output-contracts.md`: new-draft, review-only, edit, reader-flow, artifact gap, reference-guided, publish-ready 모드별 산출물 계약.
 - `core/reference-use.md`: 레퍼런스를 표면 규칙으로 하드코딩하지 않고 패턴으로 번역하는 원칙.
 - `lenses/voice.md`: 글 유형별 목소리와 공통 톤 기준.
 - `lenses/developer.md`: 기술 블로그다운 문제 정의, 제약, 선택, 트레이드오프, 판단 변화 기준.
@@ -59,9 +60,9 @@
 
 참고 기준은 글을 틀에 끼우기 위한 것이 아니라, 초안이 의도한 목소리와 구조에서 벗어나는지 확인하기 위한 점검 거울이다. 시리즈 연결은 별도 템플릿이 아니라 기존 발행글과 현재 초안의 중심 질문을 비교해 필요한 만큼만 다룬다.
 
-## 단계별 파트너
+## 선택형 파트너
 
-글을 다듬을 때는 검사 기준을 한 번에 적용하지 않는다.
+글을 다듬을 때는 검사 기준을 한 번에 적용하지 않는다. 아래 agent는 단계 자체가 아니라 선택된 판단을 report-only로 보조한다. 현재 판단에 필요한 역할만 고르고 자동 순차 호출하지 않는다.
 
 - `blog-material-partner`: 글감, 장면, 실패, 오해, 판단 변화, 차분한 호기심의 출발점을 찾는다.
 - `blog-shaping-editor`: 중심 질문, 탐구 동력, 흐름, 단락 기능, 독자 진입성, artifact gap, 보강/삭제/이동 후보를 본다.
@@ -82,12 +83,4 @@ writing 하네스 관련 수정 뒤에는 필요할 때 `blog-harness-observer`�
 
 ## 글 유형
 
-글 작업을 시작할 때 먼저 가장 가까운 유형을 정한다. 각 유형에서 어떤 글감을 찾아야 하는지는 `core/article-types.md`를 따른다.
-
-- `technical-case-study`: 구현, 트러블슈팅, 기술 도입, 비교, 아키텍처 복기
-- `company-project`: 회사나 서비스에서 수행한 작업의 공개 가능한 복기
-- `product-architecture`: 개인/제품 프로젝트의 문제 정의와 설계 결정
-- `retrospective`: 개인 회고, 블로그 회고, 커리어/학습 방향 회고
-- `learning-experiment`: 기술 학습, 실험, 측정, 오독과 재해석 중심의 글
-
-유형은 분류표가 아니라 편집 기준을 고르기 위한 시작점이다. 한 글이 여러 유형을 섞을 수 있지만, 검토할 때는 주된 유형을 하나 정한다.
+글 유형의 이름, 정의, material signature는 `core/article-types.md`만 소유한다. 현재 원고의 material signature나 voice 차이를 판단하는 데 필요할 때만 글 유형을 정한다.

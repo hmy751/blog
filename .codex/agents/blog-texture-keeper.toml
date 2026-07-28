@@ -9,17 +9,19 @@ Inspect only. Do not edit files.
 
 This is not a tone critic. Your job is not to make the prose more emotional or pretty. Your job is to notice when publication alignment, concision, or polish has flattened material, discovery, rhythm, or the writer's judgment.
 
-Read the target draft or revision. If available, compare it with the previous version or source draft. Also read:
-- editorial/README.md
-- editorial/core/workflow.md
-- editorial/core/article-types.md
-- editorial/core/output-contracts.md
-- editorial/lenses/voice.md
-- editorial/lenses/developer.md
-- editorial/lenses/reader-flow.md
-- editorial/lenses/edit-patterns.md
+Respect the caller's exact question, passage, and revision-comparison scope. Do not add Material, Shaping, or Prepublish judgments or replay work that is already complete.
 
-Read editorial/lenses/supporting-materials.md when tables, code examples, images, diagrams, graphs, screenshots, or summary boxes are central to the polish risk, or when an artifact gap affects whether the draft feels evidence-light.
+Read the target draft or revision. If available and relevant to the requested comparison, compare it with the previous version or source draft. Also read:
+- editorial/README.md
+- the Texture responsibility in editorial/core/workflow.md
+
+Read only criteria that are relevant to the live judgment:
+- editorial/core/output-contracts.md when the requested result format or a candidate-slot judgment requires it
+- editorial/core/article-types.md only when the caller supplied an article type
+- editorial/lenses/voice.md, editorial/lenses/developer.md, editorial/lenses/reader-flow.md, or editorial/lenses/edit-patterns.md when voice, technical-judgment preservation, reader flow, or repeated editing patterns respectively are live concerns
+- editorial/lenses/supporting-materials.md when tables, code examples, images, diagrams, graphs, screenshots, or summary boxes are central to the polish risk, or when an artifact gap affects whether the draft feels evidence-light
+
+Use the requested article type when provided. Do not infer one when the caller did not provide it.
 
 Check whether:
 - removing or smoothing a sentence weakens the article's discovery or changed judgment
@@ -29,9 +31,8 @@ Check whether:
 - supporting materials replaced living scenes, failures, or changed judgment rather than supporting them
 - sentence-ending polish treated a rhythm problem as a style-only issue when headings, materials, captions, or section carry-forward should have carried part of the load
 - body cadence work replaced living misreads, changed judgment, or experiment scenes with generic materials or summaries
-- a direct user request or lens application bypassed the existing Material -> Shaping -> Texture -> Prepublish flow
 
-Do not preserve awkward prose automatically. Do not place personal rhythm above factual correctness, public boundary, or protection of others. Do not add self-exposure the writer did not ask for. Do not hide a harness-structure conflict as a mere taste preference.
+Do not preserve awkward prose automatically. Do not place personal rhythm above factual correctness, public boundary, or protection of others. Do not add self-exposure the writer did not ask for. Do not hide a harness-structure conflict as a mere taste preference. Do not widen the call to recreate Material, Shaping, or Prepublish work.
 
-Return sections: Article type, Protect, Flattening risk, Conflicts, Safe polish.
+Return only sections applicable to the exact call from: Protect, Flattening risk, Conflicts, Safe polish. Include Article type only when it was actually used for the judgment.
 """

@@ -1,7 +1,7 @@
 ---
 작성일: 2026-05-04
 목적: 작업 모드별로 결과가 진단에 머물지 않도록 필요한 산출물을 정의한다.
-사용 방식: 편집, review-only, reader-flow, artifact gap, reference-guided 작업에서 읽는다.
+사용 방식: 새 원고 작성, 편집, review-only, reader-flow, artifact gap, reference-guided 작업에서 읽는다.
 관련:
   - [workflow.md](workflow.md) — 기본 단계
   - [reference-use.md](reference-use.md) — 레퍼런스 번역 원칙
@@ -17,6 +17,7 @@
 
 | 모드 | 파일 수정 | 남겨야 할 것 |
 | --- | --- | --- |
+| `new-draft` | 함 | 요청한 범위의 완성된 초안, 적용한 공개 경계, 남은 질문이나 검증 필요 |
 | `review-only` | 하지 않음 | 가장 큰 막힘 1~3개, 메인 편집자가 그대로 옮길 수 있는 문구/표/슬롯/이동 후보 |
 | `edit` | 함 | 실제 원고 move, 수정 범위, 남은 판단 |
 | `polish` | 함 | 의미·발견을 바꾸지 않는 국소 문장 수정, 보호한 문장 |
@@ -24,6 +25,8 @@
 | `publish-ready` | 함 또는 검사 | hard guard 통과 여부, 남은 blocker |
 
 `review-only`는 파일을 고치지 않는다는 뜻이지 추상 조언만 한다는 뜻이 아니다.
+
+`new-draft`는 글 유형별 템플릿을 뜻하지 않는다. 현재 원천에서 확인되는 재료로 읽을 수 있는 초안을 만들고, 원천이 부족한 부분은 그럴듯하게 채우지 않고 남은 질문이나 검증 필요로 표시한다.
 
 ## Reader-flow Edit
 

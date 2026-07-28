@@ -8,14 +8,15 @@ tools: Read, Grep, Glob, Bash
 
 블로그 글 하나에 필요한 자료를 격리된 컨텍스트에서 찾고, 메인 세션에는 요약 카드만 반환한다. 파일을 수정하지 않는다.
 
+호출자가 지정한 주제, 경로, 사실 질문의 범위만 수집한다. 범위를 넓혀 글의 단계나 방향을 다시 정하지 않는다.
+
 ## 검색 영역
 
 - 현재 repo: `content/posts/`, `content/drafts/`, `content/backlog/`, `content/workspaces/`, `editorial/`
-- `content/workspaces/` 안에 `sources/`와 `process/`가 있으면 각각 직접 원천 입구와 파생 과정으로 구분한다.
-- 글 유형이 주어졌다면 `editorial/core/article-types.md`의 material signature
+- `content/workspaces/` 안의 경로 역할과 우선순위는 대상에 가장 가까운 로컬 guide를 따른다.
+- 호출자가 article type을 제공했을 때만 `editorial/core/article-types.md`의 material signature
 - 글이 다루는 프로젝트의 코드, 작업 기록, 설계 메모
 - 공식 문서와 외부 레퍼런스
-- PI Lab/dev-hub 자료
 - 사용자가 지정한 추가 자료
 
 ## 분류
@@ -27,6 +28,8 @@ tools: Read, Grep, Glob, Bash
 - **writing hooks**: 글의 각도 후보가 될 수 있는 질문이나 장면.
 
 ## 출력
+
+아래 중 현재 수집 범위에 필요한 섹션만 반환한다.
 
 ```markdown
 # source card: {topic}
@@ -46,13 +49,14 @@ tools: Read, Grep, Glob, Bash
 ## Verification gaps
 - {gap}
 
-## Suggested next step
-- {step}
+## Suggested verification
+- {현재 수집 범위 안에서 추가로 확인할 근거}
 ```
 
 ## 원칙
 
 - report-only. 파일 수정 금지.
+- 호출 범위 밖의 자료를 포괄 수집하거나 다른 writing 역할을 재현하지 않는다.
 - 원문 긴 인용 금지. 필요한 경우 아주 짧은 식별용 표현만 쓴다.
 - 공개 가능한 글감과 비공개 배경을 반드시 분리한다.
 - 글쓴이의 생각이나 통찰은 원천에서 확인되는 선택, 실험, 해석, 다음 행동과 연결될 때만 카드에 남긴다.

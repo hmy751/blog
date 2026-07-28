@@ -1,6 +1,6 @@
 ---
 작성일: 2026-05-01
-수정일: 2026-05-04
+수정일: 2026-07-28
 목적: 블로그 글쓰기의 기본 단계와 각 단계의 책임을 정의한다.
 사용 방식: 새 글 작성, 기존 초안 편집, review-only, 발행 준비 작업을 시작할 때 읽는다.
 관련:
@@ -21,6 +21,8 @@
 ```text
 Material -> Shaping -> Texture -> Prepublish
 ```
+
+이 중심축은 글 하나를 처음부터 발행까지 만들 때의 책임 순서를 보여준다. 모든 요청에서 네 단계를 전부 실행하거나 각 단계의 agent를 차례로 호출하라는 체크리스트가 아니다. 현재 산출물과 사용자가 요청한 결과를 기준으로 필요한 단계부터 시작한다.
 
 ## 1. Material
 
@@ -46,7 +48,7 @@ Material -> Shaping -> Texture -> Prepublish
 
 역할: 꺼낸 재료를 글로 배열하는 단계.
 
-이 단계는 중심 질문, 탐구 동력, 전개 순서, 단락의 기능, 보강/삭제/이동 후보를 본다. tone/structure critic보다 먼저 작동한다.
+이 단계는 중심 질문, 탐구 동력, 전개 순서, 단락의 기능, 보강/삭제/이동 후보를 본다. tone/structure critic은 이 단계를 대신하거나 자동으로 뒤따르는 단계가 아니라, 해당 판단이 따로 필요할 때 쓰는 선택형 점검이다.
 
 확인할 것:
 
@@ -99,27 +101,19 @@ Conflict:
 - AI 생성 흔적이나 과장된 일반화가 남아 있는가.
 - 편집 중 남긴 `supporting-material candidate` 슬롯이 공개 원고에 남아 있지 않은가.
 
-## 기본 사용 흐름
+## 시작 단계와 전환
 
-새 글:
+단계는 현재 필요한 책임을 고르는 기준이다. agent 호출 여부와 같지 않으며, 한 단계를 다룬 뒤 다음 단계로 자동 전환하지 않는다.
 
-```text
-source card -> material partner -> v1 -> shaping editor -> texture keeper -> evidence/prepublish
-```
+- 새 글에서 아직 중심 질문이나 장면이 부족하면 Material부터 시작한다. 재료가 충분한 새 글은 Shaping부터 시작할 수 있다.
+- 기존 초안의 중심 질문, 배열, 단락 기능을 바꾸는 작업은 Shaping부터 시작한다.
+- 기존 문단이나 문장의 리듬·표현을 국소적으로 다듬고 의미와 구조를 유지하는 작업은 Texture 또는 `output-contracts.md`의 `polish`에서 시작한다.
+- review-only는 사용자가 요청한 판단을 소유한 단계·lens·guard에서 시작하고 파일을 수정하지 않는다.
+- 발행 준비만 요청한 경우 Prepublish로 바로 간다.
 
-기존 초안 다듬기:
+현재 단계에서 앞 단계의 재료가 실제로 부족하다는 사실이 드러나면 그 의존성을 구체적으로 알린다. 요청한 결과를 만들기 위해 필요할 때만 해당 책임으로 돌아가며, 완료했거나 무관한 단계를 전체 순서대로 재생하지 않는다.
 
-```text
-material partner(선택) -> shaping editor -> texture keeper -> 필요한 부분 수정 -> evidence/prepublish
-```
-
-발행 준비만 요청한 경우:
-
-```text
-evidence checker -> prepublish script -> manual checklist
-```
-
-사용자가 "그냥 발행 준비만"이라고 말하면 material/shaping/texture 단계는 건너뛴다.
+writing agent는 단계별 의무 절차가 아니라 독립 report가 필요할 때 선택하는 실행자다. agent 없이 메인 작업에서 단계를 수행할 수 있고, 하나의 agent를 호출했다는 이유로 다른 agent를 이어서 호출하지 않는다.
 
 ## 경계
 

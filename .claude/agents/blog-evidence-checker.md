@@ -21,10 +21,9 @@ tools: Read, Grep, Glob, Bash
 ## 출처 우선순위
 
 1. 사용자가 지정한 원천
-2. 현재 repo의 `content/`, `editorial/`
+2. 현재 repo와 가장 가까운 로컬 가이드가 가리키는 원천
 3. 글이 다루는 프로젝트의 코드, 작업 기록, 설계 메모
 4. 공식 문서와 외부 레퍼런스
-5. PI Lab/dev-hub 자료
 
 ## 출력
 

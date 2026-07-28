@@ -1,7 +1,7 @@
 ---
 작성일: 2026-05-04
 목적: 글 유형별로 좋은 글감이 어떤 형태를 가져야 하는지 정의한다.
-사용 방식: 작업 초기에 article type을 정한 뒤, material/shaping/texture 단계에서 해당 유형의 material signature를 참고한다.
+사용 방식: 현재 원고의 material signature나 우선 lens를 고르는 데 글 유형 구분이 필요할 때 참고한다.
 관련:
   - [workflow.md](workflow.md) — 글쓰기 단계
   - [output-contracts.md](output-contracts.md) — 작업 모드별 산출물 계약
@@ -12,7 +12,7 @@
 
 # Article Types
 
-글 유형은 분류표가 아니다. 작업 초기에 어떤 재료를 찾고, 어떤 렌즈를 우선 켤지 정하는 시작점이다.
+글 유형은 분류표가 아니다. 현재 원고에서 어떤 재료를 찾고, 어떤 렌즈를 우선 켤지 구분할 필요가 있을 때 쓰는 기준이다.
 
 이 문서는 톤을 정하지 않는다. 톤은 [voice.md](../lenses/voice.md)가 맡고, 단계는 [workflow.md](workflow.md)가 맡는다. 여기서는 "이 유형의 글이 좋은 글이 되려면 어떤 글감이 살아 있어야 하는가"만 본다.
 

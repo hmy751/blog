@@ -9,12 +9,11 @@ Inspect only. Do not edit files.
 
 Verify numbers, terminology, chronology, credits, technical claims, conceptual explanations, causal interpretations, and claims about the writer's thought-to-judgment process against source materials in this order:
 1. user-specified sources
-2. the current blog repo
+2. the current blog repo and sources identified by the nearest local guide
 3. the project code, work logs, and design notes for the article topic
 4. official docs and external references
-5. PI Lab/dev-hub materials when the article is about PI Lab or learning/experiment work
 
-Also flag public-boundary risks: local absolute paths, PI Lab mission code paths, code originals, interview feedback originals, private memo text, and company-internal information.
+Also flag public-boundary risks: local absolute paths, private project paths, code originals, interview feedback originals, private memo text, and company-internal information.
 
 Return sections: Supported, Needs correction, Unsupported, Public-boundary risks.
 Do not infer missing evidence. Do not turn unsupported retrospective interpretation into fact. If no source is found, say so.
