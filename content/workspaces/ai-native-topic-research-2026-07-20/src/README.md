@@ -2,13 +2,12 @@
 
 이 디렉토리에는 지금 수정할 최신 원고만 둔다. 최신이라는 말은 사용자 수용이나 검증 완료를 뜻하지 않는다.
 
-- [current-active-state-operation.md](./current-active-state-operation.md) — 2026-07-29 focused shaping, 통합 review, Texture·Tone·Evidence 전문 review와 main 회수까지 반영한 작업본. 발행 승격 전.
 - [independent-review-and-recovery.md](./independent-review-and-recovery.md)
 - [product-flow-scope-control.md](./product-flow-scope-control.md)
 - [judgment-order.md](./judgment-order.md)
 - [ai-self-check.md](./ai-self-check.md)
 
-나머지 네 편은 2026-07-27 `public-reshape-v1`이다. 현재 중심과 열린 판단은 [active-state/index.md](../active-state/index.md), Current 글의 확대된 판단은 [active-state/current-active-state-operation.md](../active-state/current-active-state-operation.md), 작업 순서는 [core/workflow.md](../core/workflow.md)를 따른다.
+Current 원고는 최종 품질 review 뒤 [content/drafts](../../../drafts/current-active-state-operation.md)로 승격했다. 이 디렉토리에 남은 네 편은 2026-07-27 `public-reshape-v1`이다. 현재 중심과 열린 판단은 [active-state/index.md](../active-state/index.md), Current 글의 확대된 판단은 [active-state/current-active-state-operation.md](../active-state/current-active-state-operation.md), 작업 순서는 [core/workflow.md](../core/workflow.md)를 따른다.
 
 이전 원고는 관련 [process/shaping](../process/shaping/README.md) 과정의 `drafts/`에 둔다. 새 결과물이 현재본이 되면 기존 결과물을 관련 과정으로 옮기되, 매 편집마다 version을 쌓지는 않는다.
 

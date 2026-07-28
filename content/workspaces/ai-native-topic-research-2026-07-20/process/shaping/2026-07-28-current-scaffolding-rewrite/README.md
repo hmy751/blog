@@ -2,7 +2,7 @@
 작성일: 2026-07-28
 성격: Current 한 편의 부분 재작성 cycle / 내부 process index
 공개상태: 내부 작업 문서
-현재상태: 최종 Texture·Tone·Evidence 전문 review와 회수 완료 / 발행 결정 가능
+현재상태: 최종 Texture·Tone·Evidence 전문 review와 회수 완료 / content/drafts 승격
 ---
 
 # Current scaffolding rewrite
@@ -27,14 +27,14 @@
   - Texture Keeper, Tone Critic, Evidence Checker가 최신 원고와 직접 원천을 독립 점검했고, main이 장면·언어·사실 범위를 최종 회수했다.
 - [이전 public-reshape-v1](./drafts/current-active-state-operation-public-reshape-v1.md)
   - 이번 부분 재작성 직전 `src`에 있던 Current 원고를 보존한다.
-- [현재 작업본](../../../src/current-active-state-operation.md)
-  - 전체 지도와 단일 cursor를 중심으로 Q1~Q5 회수, 권위 분리, terminal gap을 다시 배열한 최신 작업 시도다. 사용자 수용이나 최종 검증을 뜻하지 않는다.
+- [공개 전 후보](../../../../../drafts/current-active-state-operation.md)
+  - 전체 지도와 단일 cursor를 중심으로 Q1~Q5 회수, 권위 분리, terminal gap을 다시 배열하고 최종 품질 review를 거쳐 `content/drafts/`로 승격한 원고다.
 
 ## 이번 cycle의 경계
 
 - Current 한 편만 수정한다.
 - 다른 네 원고와 workspace core는 수정하지 않는다.
 - Current의 현재 판단은 `active-state`, 새로 확인한 생성 계보와 운영 원천은 `sources`, 이번 review와 회수는 이 process cycle에 갱신한다.
-- 공개 발행 후보로 승격하지 않으며 `date: TBD`를 유지한다.
+- 이 cycle을 진행하는 동안에는 공개 전 후보로 승격하지 않고 `date: TBD`를 유지했다. Cycle 종료 뒤 사용자 결정으로 `content/drafts/`에 승격했으며, 실제 발행일은 아직 정하지 않았다.
 - 첫 답변의 보존되지 않은 문구를 재구성하지 않고, 직접 기록이 지원하는 시간축과 근거 배치만 비교한다.
-- 현재 작업본은 최종 품질 전문 review와 회수까지 마쳤지만 발행 승격을 뜻하지 않는다. 다음 판단은 사용자가 원고를 수용하고 발행 여부·날짜를 정한 뒤 이어간다.
+- 최종 품질 전문 review와 회수 뒤 사용자가 공개 전 후보 승격을 결정했다. 다음 판단은 실제 발행 여부와 날짜를 정한 뒤 이어간다.

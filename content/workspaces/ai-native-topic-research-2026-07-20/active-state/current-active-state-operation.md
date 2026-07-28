@@ -32,9 +32,9 @@
 
 Q1~Q5 사건은 `current`의 생성 이유나 글의 중심이 아니다. 이미 운영하던 구조가 어디까지 돕고 어디서 멈추는지를 보여 주는 한계 장면이다. 회수는 사용자 정정, current 지도, 과정 기록과 직접 원천이 함께 작동한 결과이며 current 단독 효과로 쓰지 않는다.
 
-## 현재 작업본
+## 공개 전 후보
 
-[src/current-active-state-operation.md](../src/current-active-state-operation.md)는 생성 계보를 다시 조사해 2026-07-28에 전면 재구성하고, 2026-07-29 focused shaping을 적용한 최신 작업 시도다.
+[content/drafts/current-active-state-operation.md](../../../drafts/current-active-state-operation.md)는 생성 계보를 다시 조사해 2026-07-28에 전면 재구성하고, 2026-07-29 focused shaping과 최종 품질 review를 거쳐 공개 전 후보로 승격한 원고다.
 
 - 해커톤 전부터 있던 context 문제와 AX 인재전쟁 참여를 출발점에 복구했다.
 - Alex 사례를 회사별 병렬 처리만을 위한 구조로 좁히지 않고 전체 문제 해결 과정을 외부화한 scaffolding으로 바로잡았다.
@@ -42,7 +42,7 @@ Q1~Q5 사건은 `current`의 생성 이유나 글의 중심이 아니다. 이미
 - 첫 재진입과 research 수렴을 실제 사용 장면으로 올리고, research의 `과교정 → 앞선 합의 복귀 → 후보판 보존·재추출 → 수렴`을 단계별 trace로 만들었다.
 - Q1~Q5와 terminal gap을 한계로 낮추고, Cofathon의 문서 축소와 역할별 재진입 분리를 후속 재설계로 연결했다.
 
-이 파일은 Texture·Tone·Evidence 전문 review와 main 회수까지 마친 최신 작업본이다. 사용자 수용과 실제 발행 승격은 아직 남아 있다. 작성과 review 과정은 [current scaffolding rewrite](../process/shaping/2026-07-28-current-scaffolding-rewrite/README.md)에 보존한다.
+이 파일은 Texture·Tone·Evidence 전문 review와 main 회수까지 마쳤고, 사용자가 공개 전 후보로의 승격을 결정했다. 실제 발행 여부와 발행일은 아직 정하지 않았다. 작성과 review 과정은 [current scaffolding rewrite](../process/shaping/2026-07-28-current-scaffolding-rewrite/README.md)에 보존한다.
 
 ## 최종 품질 review
 
@@ -52,6 +52,5 @@ Material은 더 수집하지 않았다. Post-shaping 통합 review 뒤 Texture K
 
 ## 열린 판단
 
-- `[열림]` 사용자가 최종 품질 수정본을 수용하는지
 - `[열림]` Alex 특정 영상의 공개 URL을 발행 전에 복구할지
-- `[보류: 사용자 수용과 발행 선택 뒤]` 최종 `readTime`, tags, 발행일, 공개 원고 승격
+- `[보류: 발행 선택 뒤]` 최종 `readTime`, tags, 발행일, `content/posts/` 승격

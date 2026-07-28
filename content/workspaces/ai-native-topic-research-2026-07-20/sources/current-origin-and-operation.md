@@ -6,7 +6,7 @@
 
 # Current 글의 생성 계보와 실제 운영 원천
 
-이 문서는 `src/current-active-state-operation.md`가 사용하는 생성 이유, Alex 사례, `context/current`의 최초 구조, 실제 운용 장면과 한계의 재접근 경로를 모은다. 원고의 구조나 현재 해석을 소유하지 않으며, 원천 하나만으로 `current`의 단독 효과를 주장하지 않는다.
+이 문서는 `content/drafts/current-active-state-operation.md`가 사용하는 생성 이유, Alex 사례, `context/current`의 최초 구조, 실제 운용 장면과 한계의 재접근 경로를 모은다. 원고의 구조나 현재 해석을 소유하지 않으며, 원천 하나만으로 `current`의 단독 효과를 주장하지 않는다.
 
 ## 사용자의 현재 기억과 교정
 
