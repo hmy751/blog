@@ -42,7 +42,7 @@
 1. 현재 중심과 열린 판단을 `active-state`에서 확인한다.
 2. 필요한 판단축을 [criteria.md](./criteria.md)에서 고른다.
 3. 대상 `src`를 수정한다.
-4. 현재본 교체, 이전 결과물 이동, `content/drafts/` 승격은 [src/README.md](../src/README.md)의 생애주기를 따른다.
+4. 현재본 교체, 이전 결과물 이동, `content/drafts/` 승격은 [src/README.md](../src/README.md)의 생애주기를 따른다. `content/drafts/`나 `content/posts/`로 승격하기 직전에는 이번 cycle에서 새로 넣거나 바꾼 문장만 골라 직접 원천과 대조하는 확인을 다시 거친다. deterministic prepublish 검사는 이 확인을 대체하지 않는다.
 5. 작업하며 생긴 조사·시도·판단·이전 결과물은 해당 `process` cycle에 남긴다.
 
 ## 4. Review와 회수
@@ -54,7 +54,7 @@
 
 ## 5. 현재 판단 갱신
 
-현재 함께 작업할 판단이 바뀌면 [active-state/index.md](../active-state/index.md)의 유지 원칙에 따라 현재 결론과 cursor를 갱신한다. 바뀐 이유와 이전 상태는 해당 `process` cycle에 남긴다.
+현재 함께 작업할 판단이 바뀌면 [active-state/index.md](../active-state/index.md)의 유지 원칙에 따라 현재 결론과 cursor를 갱신한다. 바뀐 이유와 이전 상태는 해당 `process` cycle에 남긴다. 사용자의 판정과 전환점 발화는 main의 요약으로 대신하지 않고 원문 그대로 함께 남긴다.
 
 ## 6. 이 workflow를 고칠 때
 
