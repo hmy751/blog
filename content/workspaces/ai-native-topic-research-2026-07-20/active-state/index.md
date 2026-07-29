@@ -73,6 +73,7 @@
   - 전체 생각지도와 source+result 개선 review로 고친 뒤, 여러 live 문서에 반복된 review 계약도 [core/review-workflow.md](../core/review-workflow.md)로 분리했다. 현재 소유권과 보정 이유는 [첫 운용 보정 기록](../process/context-structure/2026-07-28-active-map-and-improvement-review-refinement.md)에 남겼다.
   - 관심사별 소유권을 정리한 현재 구조가 역할별 재진입과 다음 review에서 필요한 그림만 복구하는지는 Current shaping·review 과정에서 계속 확인한다.
   - Current 발행 뒤 트랙 전체를 회고해 [판단 순간의 감각](../core/moments.md)을 신설하고, 새 사실 주장 확인·반영 재확인·기록 규칙·원문 보존을 core 계약 문서에 보강했다. 결정 과정과 근거 사건 매핑은 [보강 기록](../process/context-structure/2026-07-29-current-track-principles-and-core-reinforcement.md)에 있다. 다음 글 cycle에서 실제로 쓰이는지가 이 보강의 검증이다.
+  - 두 글 병렬 개선의 review를 맡기기 전, goal에 main의 진단과 지금 원고의 중심 문장이 섞여 들어가는 구멍을 확인했다. 다른 workspace 판을 참고해 review-workflow에 `Review가 필요한 이유`와 `대상과 최소 목표` frame 절을 세우고 moments에 `주는 순간`을 추가했다. 정정 원문과 반영 범위는 [review goal 보정 기록](../process/context-structure/2026-07-29-review-commission-goal-boundary.md)에 있다.
   - `[열림]` 원칙 층(계속 지켜야 할 계율)을 둘지, 둔다면 어떤 내용과 형태로 둘지는 사용자가 고민 중이다. 시도했던 원칙 3개의 문안은 보강 기록에 보존되어 있다.
 
 - 발행

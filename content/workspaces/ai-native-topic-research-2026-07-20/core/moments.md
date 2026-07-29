@@ -19,6 +19,12 @@
 
 남은 물음: 이 일에 무엇을 안 줬는가?
 
+## 주는 순간
+
+review에 줄 goal을 쓰다 main의 진단과 지금 원고의 중심 문장이 두 번 연속 딸려 들어간 적이 있다. 주지 말라는 파일은 하나도 안 붙였지만, 같은 내용이 goal 문장에 들어가 reviewer가 찾을 것을 먼저 정해 주고 있었다. → [review goal 보정 기록](../process/context-structure/2026-07-29-review-commission-goal-boundary.md)
+
+남은 물음: 방금 준 문장이 reviewer가 찾을 것을 먼저 말해 주고 있지 않은가?
+
 ## 통과를 읽는 순간
 
 test 9개가 모두 초록이었는데 제품은 틀려 있던 적이 있다. 확인된 것은 구현과 fixture와 기대가 공유한 세계 안의 일관성까지였다. → [near-final 재료 대장](../process/shaping/2026-07-27-near-final-v2-v3/01-context-and-material-ledger.md)

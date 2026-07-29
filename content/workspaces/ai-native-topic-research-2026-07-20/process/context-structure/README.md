@@ -6,6 +6,7 @@
 - [첫 운용 보정 기록](./2026-07-28-active-map-and-improvement-review-refinement.md)
 - [판단 원리 신설과 core 보강 기록](./2026-07-29-current-track-principles-and-core-reinforcement.md)
 - [판단 원리 개선 review 보고 원문](./2026-07-29-principles-improvement-reviews.md)
+- [review goal 보정 기록](./2026-07-29-review-commission-goal-boundary.md)
 - [이전 active-state](./legacy-active-state/README.md)
 - [이전 draft index](./legacy-draft-index.md)
 
