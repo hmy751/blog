@@ -42,7 +42,7 @@ Q1~Q5 사건은 `current`의 생성 이유나 글의 중심이 아니다. 이미
 - 첫 재진입과 research 수렴을 실제 사용 장면으로 올리고, research의 `과교정 → 앞선 합의 복귀 → 후보판 보존·재추출 → 수렴`을 단계별 trace로 만들었다.
 - Q1~Q5와 terminal gap을 한계로 낮추고, Cofathon의 문서 축소와 역할별 재진입 분리를 후속 재설계로 연결했다.
 
-이 파일은 Texture·Tone·Evidence 전문 review와 main 회수까지 마쳤고, 사용자가 공개 전 후보로의 승격을 결정했다. 실제 발행 여부와 발행일은 아직 정하지 않았다. 작성과 review 과정은 [current scaffolding rewrite](../process/shaping/2026-07-28-current-scaffolding-rewrite/README.md)에 보존한다.
+이 파일은 Texture·Tone·Evidence 전문 review와 main 회수까지 마쳤고, 사용자가 공개 전 후보로의 승격을 결정했다. 이후 발행 직전 3중 독립 판별과 회수까지 반영했다. 실제 발행 여부와 발행일은 아직 정하지 않았다. 작성과 review 과정은 [current scaffolding rewrite](../process/shaping/2026-07-28-current-scaffolding-rewrite/README.md)에 보존한다.
 
 ## 최종 품질 review
 
@@ -50,7 +50,12 @@ Material은 더 수집하지 않았다. Post-shaping 통합 review 뒤 Texture K
 
 사용자의 `뭔가 계속 유지되고 있다`는 체감은 평평한 객관 문장으로 바꾸지 않았다. 성과를 과장하는 문장이 아니라 이 글이 설명할 실제 경험이고, 원천에서도 사용자 평가로 보존하기 때문이다. 자세한 판단과 반영 내역은 [최종 품질 전문 review](../process/shaping/2026-07-28-current-scaffolding-rewrite/05-final-quality-specialist-review-and-recovery.md)에 있다.
 
+## 발행 직전 판별
+
+2026-07-29 서로 다른 입력 경계를 가진 독립 판별 3종(원고+직접 원천으로 개선 기준을 스스로 세우는 판별, 원고만 읽는 첫 독자, 원고+editorial lens의 장르 거울)을 돌렸다. 셋 다 중심·구성 유지로 판정했고, 원고의 정직성 구조를 공통 보호 대상으로 꼽았다. 세 판별이 독립적으로 수렴한 지점은 제목이 약속한 `지도 위의 커서`를 도식이 보여 주지 않은 것, `current`의 물리적 정체가 소개되지 않은 것, 거의 같은 문장 두 쌍의 반복이었다. 반영 내역과 조정·기각은 [3중 판별 회수](../process/shaping/2026-07-28-current-scaffolding-rewrite/06-final-stage-triple-review-and-recovery.md)에 있다.
+
 ## 열린 판단
 
-- `[열림]` Alex 특정 영상의 공개 URL을 발행 전에 복구할지
-- `[보류: 발행 선택 뒤]` 최종 `readTime`, tags, 발행일, `content/posts/` 승격
+- `[보류: 발행 선택 뒤]` 최종 제목, `readTime`, tags, 발행일, `content/posts/` 승격
+  - Alex 특정 영상의 공개 URL은 2026-07-29 재검색으로 복구해 본문에 연결했다. 이 항목은 닫혔다.
+  - tags는 `product-architecture`를 제거하고 `상태 관리`를 `세션 연속성`으로 바꾼 상태다. 제목과 함께 발행 시점에 다시 본다.
