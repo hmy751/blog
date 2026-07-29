@@ -29,8 +29,8 @@
   - 발행 직전 단계에서 서로 다른 입력 경계를 가진 독립 판별 3종(개선 기준·첫 독자·장르 거울)을 돌리고 회수했다. 보고 원문은 [06a](./06a-improvement-review.md), [06b](./06b-first-reader-review.md), [06c](./06c-genre-mirror-review.md)에 보존한다.
 - [이전 public-reshape-v1](./drafts/current-active-state-operation-public-reshape-v1.md)
   - 이번 부분 재작성 직전 `src`에 있던 Current 원고를 보존한다.
-- [공개 전 후보](../../../../../drafts/current-active-state-operation.md)
-  - 전체 지도와 단일 cursor를 중심으로 Q1~Q5 회수, 권위 분리, terminal gap을 다시 배열하고 최종 품질 review를 거쳐 `content/drafts/`로 승격한 원고다.
+- [발행글](../../../../../posts/2026-07-29-current-active-state-operation.md)
+  - 전체 지도와 단일 cursor를 중심으로 Q1~Q5 회수, 권위 분리, terminal gap을 다시 배열하고, 최종 품질 review와 발행 직전 3중 독립 판별을 거쳐 2026-07-29에 발행한 원고다.
 
 ## 이번 cycle의 경계
 

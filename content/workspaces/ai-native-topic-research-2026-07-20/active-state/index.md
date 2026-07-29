@@ -37,14 +37,14 @@
 - 글감과 원고화
   - 2026-07-23 [첫 shaping 묶음](../process/shaping/README.md#2026-07-23-first-pass)은 각 후보의 첫 장면, 중심 질문, 판단이 바뀐 사건, 사용자 판단, 공개 자료와 한계를 이미 펼쳤다. 이후 작업에서 이 material이 사라졌다고 새로 수집할 단계로 오인하지 않는다.
   - 다섯 후보를 v1~v3로 써 본 뒤 사용자와 중심을 다시 맞췄고, post-sync, near-final, public reshape를 거쳤다. `near-final`이라는 이름도 사용자 검토 뒤 철회될 수 있었으며, 자세한 변화는 [process/shaping](../process/shaping/README.md)에 보존한다.
-  - [src](../src/README.md)는 아직 workspace 안에서 수정할 원고만 소유한다. Current는 최종 품질 review 뒤 [공개 전 후보](../../../drafts/current-active-state-operation.md)로 승격했다. 이전 결과물은 각 shaping cycle 안에 두되, 현재 판단은 이 지도와 필요한 active-state 상세가 소유한다.
+  - [src](../src/README.md)는 아직 workspace 안에서 수정할 원고만 소유한다. Current는 review를 마치고 workspace 밖 [발행글](../../../posts/2026-07-29-current-active-state-operation.md)이 됐으므로 이후 수정은 repo의 발행 원고 기준을 따른다. 이전 결과물은 각 shaping cycle 안에 두되, 현재 판단은 이 지도와 필요한 active-state 상세가 소유한다.
 
 - 다섯 글의 현재 그림
   - Current / active-state operation `*-> 지금*`
     - 기록이 많아도 지금 무엇이 유효한지 다시 추론해야 했던 경험에서 시작해, 전체 생각지도와 현재 판단점 하나로 사람과 AI의 sync를 돕는 scaffolding을 다룬다.
     - 유튜버 Alex가 AX 인재전쟁에서 전체 문제 해결 과정을 외부화한 scaffolding을 보고, 기존 context 문제와 결합해 `전체 지도 + 현재 위치 하나`로 변형한 생성 계보에서 시작한다.
     - 첫 재진입과 research 수렴은 실제 사용 장면, Q1~Q5의 최근 맥락 편향과 terminal gap은 한계 장면, Cofathon의 문서 축소와 역할별 재진입 분리는 후속 재설계다. current 단독 효과나 전체 실패로 쓰지 않는다.
-    - 최종 품질 review와 사용자 확인 뒤 [content/drafts 원고](../../../drafts/current-active-state-operation.md)로 승격했고, 발행 직전 3중 독립 판별의 개선까지 반영했다.
+    - 최종 품질 review와 발행 직전 3중 독립 판별을 거쳐 2026-07-29 [발행글](../../../posts/2026-07-29-current-active-state-operation.md)이 됐다.
     - 현재 material, 합의된 중심, 작업본 상태와 열린 판단은 [Current 글 active-state](./current-active-state-operation.md)가 소유한다.
   - Independent review and recovery
     - 독립성은 reviewer 수가 아니라 입력, 원자료 접근, 질문 수정, write·완료 권한, main의 회수 구조에서 만든다.
@@ -74,6 +74,5 @@
   - 관심사별 소유권을 정리한 현재 구조가 역할별 재진입과 다음 review에서 필요한 그림만 복구하는지는 Current shaping·review 과정에서 계속 확인한다.
 
 - 발행
-  - Current를 첫 공개 전 후보로 정해 [content/drafts](../../../drafts/current-active-state-operation.md)로 승격했다.
-  - `[보류: 실제 발행을 선택한 뒤]` 최종 제목·readTime·tags·발행일을 확정하고 `content/posts/` 승격과 prepublish 검사를 진행한다. 본문에 필요한 공개 링크(Alex 채널과 해당 영상)는 확보했다.
-  - 나머지 네 편의 발행 순서, 연결 또는 시리즈 여부는 아직 정하지 않았다.
+  - Current를 이 workspace의 첫 발행글로 정해 2026-07-29 [content/posts](../../../posts/2026-07-29-current-active-state-operation.md)로 승격했다. 제목 꼬리·tags·발행일 확정과 deterministic prepublish 통과까지 마쳤다.
+  - `[열림]` 나머지 네 편의 발행 순서, 연결 또는 시리즈 여부는 아직 정하지 않았다. Current에 쓴 `AI Native` 태그를 시리즈 우산으로 이어갈지도 그때 함께 본다.

@@ -32,9 +32,9 @@
 
 Q1~Q5 사건은 `current`의 생성 이유나 글의 중심이 아니다. 이미 운영하던 구조가 어디까지 돕고 어디서 멈추는지를 보여 주는 한계 장면이다. 회수는 사용자 정정, current 지도, 과정 기록과 직접 원천이 함께 작동한 결과이며 current 단독 효과로 쓰지 않는다.
 
-## 공개 전 후보
+## 발행
 
-[content/drafts/current-active-state-operation.md](../../../drafts/current-active-state-operation.md)는 생성 계보를 다시 조사해 2026-07-28에 전면 재구성하고, 2026-07-29 focused shaping과 최종 품질 review를 거쳐 공개 전 후보로 승격한 원고다.
+[content/posts/2026-07-29-current-active-state-operation.md](../../../posts/2026-07-29-current-active-state-operation.md)는 생성 계보를 다시 조사해 2026-07-28에 전면 재구성하고, 2026-07-29 focused shaping과 최종 품질 review, 발행 직전 3중 독립 판별을 거쳐 2026-07-29에 발행한 원고다.
 
 - 해커톤 전부터 있던 context 문제와 AX 인재전쟁 참여를 출발점에 복구했다.
 - Alex 사례를 회사별 병렬 처리만을 위한 구조로 좁히지 않고 전체 문제 해결 과정을 외부화한 scaffolding으로 바로잡았다.
@@ -42,7 +42,7 @@ Q1~Q5 사건은 `current`의 생성 이유나 글의 중심이 아니다. 이미
 - 첫 재진입과 research 수렴을 실제 사용 장면으로 올리고, research의 `과교정 → 앞선 합의 복귀 → 후보판 보존·재추출 → 수렴`을 단계별 trace로 만들었다.
 - Q1~Q5와 terminal gap을 한계로 낮추고, Cofathon의 문서 축소와 역할별 재진입 분리를 후속 재설계로 연결했다.
 
-이 파일은 Texture·Tone·Evidence 전문 review와 main 회수까지 마쳤고, 사용자가 공개 전 후보로의 승격을 결정했다. 이후 발행 직전 3중 독립 판별과 회수까지 반영했다. 실제 발행 여부와 발행일은 아직 정하지 않았다. 작성과 review 과정은 [current scaffolding rewrite](../process/shaping/2026-07-28-current-scaffolding-rewrite/README.md)에 보존한다.
+이 파일은 Texture·Tone·Evidence 전문 review와 main 회수, 발행 직전 3중 독립 판별과 회수까지 마쳤다. 사용자가 제목 꼬리와 tags를 확정하고 발행을 결정해 `content/posts/`로 승격했다. 작성과 review 과정은 [current scaffolding rewrite](../process/shaping/2026-07-28-current-scaffolding-rewrite/README.md)에 보존한다.
 
 ## 최종 품질 review
 
@@ -54,8 +54,13 @@ Material은 더 수집하지 않았다. Post-shaping 통합 review 뒤 Texture K
 
 2026-07-29 서로 다른 입력 경계를 가진 독립 판별 3종(원고+직접 원천으로 개선 기준을 스스로 세우는 판별, 원고만 읽는 첫 독자, 원고+editorial lens의 장르 거울)을 돌렸다. 셋 다 중심·구성 유지로 판정했고, 원고의 정직성 구조를 공통 보호 대상으로 꼽았다. 세 판별이 독립적으로 수렴한 지점은 제목이 약속한 `지도 위의 커서`를 도식이 보여 주지 않은 것, `current`의 물리적 정체가 소개되지 않은 것, 거의 같은 문장 두 쌍의 반복이었다. 반영 내역과 조정·기각은 [3중 판별 회수](../process/shaping/2026-07-28-current-scaffolding-rewrite/06-final-stage-triple-review-and-recovery.md)에 있다.
 
+## 발행 시점의 결정
+
+- 제목은 기존 은유형 본제목을 유지하고, 발행글의 `본제목 — 설명 꼬리` 선례에 따라 `전체 지도와 현재 위치 하나로 세션 잇기`를 붙였다. 본문 H1도 같은 값으로 맞춰 사이트 중복 렌더링을 피했다.
+- tags는 발행글의 `넓은 도메인 + 구체 명사` 조합을 따라 `AI Native`, `Context Engineering`, `Scaffolding`, `세션 연속성`, `개발 워크플로`, `해커톤`으로 정했다. `AI Native`는 이 workspace 나머지 네 편의 우산 태그 후보이기도 하다.
+- Alex 특정 영상의 공개 URL은 2026-07-29 재검색으로 복구해 본문에 연결했다.
+- `readTime`은 `10 min read`를 유지했다.
+
 ## 열린 판단
 
-- `[보류: 발행 선택 뒤]` 최종 제목, `readTime`, tags, 발행일, `content/posts/` 승격
-  - Alex 특정 영상의 공개 URL은 2026-07-29 재검색으로 복구해 본문에 연결했다. 이 항목은 닫혔다.
-  - tags는 `product-architecture`를 제거하고 `상태 관리`를 `세션 연속성`으로 바꾼 상태다. 제목과 함께 발행 시점에 다시 본다.
+- 현재 이 글에 열린 판단은 없다. 나머지 네 편의 발행 순서와 시리즈 여부는 [active-state index](./index.md)가 소유한다.

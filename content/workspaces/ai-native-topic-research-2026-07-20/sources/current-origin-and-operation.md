@@ -6,7 +6,7 @@
 
 # Current 글의 생성 계보와 실제 운영 원천
 
-이 문서는 `content/drafts/current-active-state-operation.md`가 사용하는 생성 이유, Alex 사례, `context/current`의 최초 구조, 실제 운용 장면과 한계의 재접근 경로를 모은다. 원고의 구조나 현재 해석을 소유하지 않으며, 원천 하나만으로 `current`의 단독 효과를 주장하지 않는다.
+이 문서는 `content/posts/2026-07-29-current-active-state-operation.md`가 사용하는 생성 이유, Alex 사례, `context/current`의 최초 구조, 실제 운용 장면과 한계의 재접근 경로를 모은다. 원고의 구조나 현재 해석을 소유하지 않으며, 원천 하나만으로 `current`의 단독 효과를 주장하지 않는다.
 
 ## 사용자의 현재 기억과 교정
 
@@ -67,6 +67,8 @@
   - JSONL 17~18번째 event: 사용자는 `current를 보면 과제 요구사항 확인까지 됐다`고 확인하고 research·문제 정의로 이동시켰다.
 - [재진입 교차검증](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/20-작업과정-하네스-분석/03-교차검증/reentry.md) — hook이 `current` 내용을 주입한 것이 아니라 읽기 계약을 주입했고, AI가 파일을 다시 읽어 recap했다는 실행 사슬을 확인한다. 핵심 구간의 primary compaction 9회와 SessionStart 주입 10회를 비교하며, compaction summary와 goal state도 연속성에 함께 기여했음을 분리한다. 같은 규칙이 독립 E2E와 blind second pass에는 오히려 역할 충돌과 정보 누출을 만들었던 장면도 포함한다.
 - [넓은 조사 순서](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/05-broad-research-order.md), [signal map](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/research/02-signal-map.md), [self-check 기록](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/09-discussion-and-ai-self-check.md) — 20개 source를 16개 signal로 다시 펼치고, 회사 방향과 사용자 문제를 양자택일로 만든 과교정을 앞선 합의와 자료로 되돌린 과정.
+  - 이 세 자료의 선후를 원고에서 뒤집지 않는다. 실제 순서는 `넓은 조사 20개 → 과교정 → 복구 → 신호 단위 재배열 16개`다. self-check 기록의 `다음 한 동작`이 복구 뒤 시점에 신호 단위 재배열을 지시하고, commit 시각도 `0d53624` 18:14 → `927f8f4` 18:39 → `b263576` 18:55 순이다. 16개 signal은 과교정 이전 산출물이 아니라 복구된 설계의 결과다.
+  - 과교정의 내용도 `분리한 것`이 아니라 `양자택일로 바꾼 것`이다. 회사 자료가 증명하는 범위와 사용자 문제를 증명하는 범위를 같은 신호에서 나눠 보는 안이 복구 대상이었다.
 - [첫 후보판](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/13-problem-candidates-first-spread.md), [두 번째 후보판](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/14-integrated-criteria-and-independent-second-pass.md), [후보 계보 지도](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/15-refined-candidate-landscape.md) — 첫 판을 덮어쓰지 않고 별도 판을 만든 뒤, 다섯 후보를 세 우선 탐색과 두 조건부 보류로 연결한 수렴 과정. 두 번째 판은 완전 blind가 아니다.
 - [solution pass](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/17-performance-led-solution-passes.md), [output-first 비교](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/19-output-first-comparison.md), [최종 선택](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/21-prioritization-and-final-choice.md) — 세 문제에서 solution 세 개씩 아홉 개를 펼치고, 세 output을 실제 형태로 비교한 뒤 하나를 선택한 순서.
 
@@ -82,6 +84,7 @@
 ## 한계
 
 - [설문 재작성](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/29-questionnaire-rebuild-from-current.md) — `current`를 먼저 읽었어도 최근 구현이 프로젝트 전체를 밀어낸 사건. 사용자 정정 뒤 전체 지도로 돌아가 복구했으며, 다섯 문항은 생성 이유가 아니라 운용 한계 사례다.
+  - 이 시점을 `구현과 검증까지 통과한 뒤`로 쓰지 않는다. [첫 문항 작성 기록](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/28-submission-questionnaire.md)은 당시 Loop 01 교정 세션이 병렬로 진행 중이었고 설치형 자연어 E2E를 아직 완료 사실로 쓰지 않는다고 적었다. Loop 01 gate는 [교정 cycle](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/27-loop-01-correction-cycle.md)에서 닫혔고 재작성은 그 뒤다. AI가 끌린 대상도 `끝낸 구현`이 아니라 직전까지 붙들고 있던 교정과 결함이다.
 - [current·gate 감사](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/20-작업과정-하네스-분석/02-독립조사/git/08-current-and-gate-audit.md) — `current`가 존재하는 committed version 18개, cursor 문장 전환 13회, 마지막 세 commit의 미갱신을 확인한다. 최초 96줄·9,693 bytes에서 마지막 136줄·24,040 bytes로 커진 변화도 있어, `current`가 최신 상태와 함께 상세 맥락을 계속 품을 때 재진입 비용이 늘어나는 문제를 더 다룰 수 있다.
 - [최종 패키징](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/30-final-submission-package.md), [설문 교정과 업로드 실패](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/31-submission-form-correction-and-upload-failure.md) — 마지막 세 commit 동안 지도 밖에 남은 패키지 검증, 설문·로그 정합화, 웹 업로드 실패와 호환 ZIP 준비를 확인한다.
 
