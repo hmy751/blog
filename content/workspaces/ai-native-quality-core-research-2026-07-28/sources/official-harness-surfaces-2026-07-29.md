@@ -358,7 +358,7 @@ Plugin은 하네스의 최고 층위가 아니라 배포·조합 단위다. 내�
 
 ## 이 조사에서 새 형식 후보 디렉토리로 보낼 것
 
-다음 요소군을 `src-reference-forms/`에서 형식 후보로 만든다.
+다음 요소군을 `references/harness-form-catalog/`에서 형식 후보로 만든다.
 
 - task brief, instruction hierarchy, context와 state
 - workflow, plan, playbook, runbook, orchestration

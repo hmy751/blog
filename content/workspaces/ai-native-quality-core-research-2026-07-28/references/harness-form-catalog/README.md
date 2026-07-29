@@ -8,7 +8,7 @@
 
 이 디렉토리는 Codex·Claude 공식 문서나 기존 `ai-native-harness`의 권장 내용을 따르는 곳이 아니다. 그 자료에서 확인되는 `담는 위치`, `발동 방식`, `권한`, `격리`, `검증`, `수명주기`의 형식만 추출한다.
 
-내용 후보는 [../src/](../src/)에 있다. 이 디렉토리는 그 내용을 어느 형식에 배치할 수 있는지 비교하기 위한 별도 카탈로그다.
+이번 사례에서 84개 내용 요소로 확장했던 기록은 [별도 reference](../atomic-element-expansion/)에 있다. 이 디렉토리는 source에서 수거된 내용을 어느 형식에 배치할 수 있는지 나중에 비교하기 위한 별도 카탈로그다.
 
 ## 읽는 순서
 
@@ -40,5 +40,5 @@
 
 ## 근거
 
-- [Codex·Claude 공식 하네스 surface 조사](../sources/official-harness-surfaces-2026-07-29.md)
-- [기존 ai-native-harness 재사용 경계](../sources/local-ai-native-harness-reuse-boundary.md)
+- [Codex·Claude 공식 하네스 surface 조사](../../sources/official-harness-surfaces-2026-07-29.md)
+- [기존 ai-native-harness 재사용 경계](../../sources/local-ai-native-harness-reuse-boundary.md)

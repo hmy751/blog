@@ -19,5 +19,10 @@
 
 - [00 — 필터링 전 확장 계약](./00-expansion-before-filtering.md)
 - [01 — 필터링 전 전체 확장 지도](./01-expanded-landscape.md)
+- [02 — 문제 후보 선별과 실용 후보 수렴 방향](./02-problem-candidate-convergence.md)
 
 `01`은 후보 위치와 교차선을 찾게 하는 지도다. 채택 우선순위나 최소 core 구성을 정하지 않는다.
+
+`02`는 원자 요소를 직접 필터링하지 않고 source 기반 문제 후보 지도를 먼저 만든 뒤, 우선순위가 정해진 문제마다 서로 다른 완결 후보를 비교·재생하는 현재 수렴 방식을 소유한다.
+
+현재 1차 수거 결과는 [src의 source 기반 문제 후보 지도](../src/01-source-grounded-problem-candidate-map.md)에 있다.

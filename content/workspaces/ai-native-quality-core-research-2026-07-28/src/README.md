@@ -1,40 +1,22 @@
 ---
 작성일: 2026-07-29
-성격: 실제 core 형태로 조립한 후보 원본
-현재상태: 미채택 후보
+성격: 현재 수렴 작업의 살아 있는 산출물
+현재상태: source 기반 문제 후보 지도 1차 수거 완료 / 사용자 판단 전
 ---
 
-# Harness Element Candidates
+# Current Working Outputs
 
-이 디렉토리는 `candidates/`의 패턴 문구를 그대로 옮긴 곳이 아니다. 실제 하네스 요소가 되었다고 가정했을 때 어떤 입력을 받고, 무엇을 판단하며, 무엇을 반환하고, 누가 채택하는지를 요소 단위로 조립한 후보군이다.
+이 디렉토리는 과거의 84개 요소 확장 기록이 아니다. 사용자 의도와 실제 실패 장면에서 문제를 다시 수거하고, 문제 사이의 관계와 우선순위를 판단한 뒤, 실제 차이를 낼 후보를 만드는 현재 작업면이다.
 
-아직 원본 `ai-native-topic-research-2026-07-20/core/`에 반영하지 않는다.
+첫 산출물은 해결 형식을 붙이지 않은 source 기반 문제 후보 지도다. 문제 후보에는 관찰 근거, 손실, 인접 문제와의 경계, 해결됐을 때의 변화, 다른 작업으로의 전이 범위, 근거 상태와 관계를 둔다.
 
-Codex·Claude 공식 문서와 기존 일반 하네스 조사는 이 디렉토리의 내용을 정하는 기준으로 쓰지 않았다. 그 자료에서 추출한 형식 후보는 [../src-reference-forms/](../src-reference-forms/)에 분리했다.
+현재 단계에서는 다음 reference를 입력으로 사용하지 않는다.
 
-## 읽는 순서
+- [84개 하네스 요소 계약으로 원자화한 첫 확장 기록](../references/atomic-element-expansion/)
+- [공식 문서와 기존 하네스에서 추출한 구현 형식 카탈로그](../references/harness-form-catalog/)
 
-1. [전체 하네스 요소 목록](./00-harness-element-index.md)에서 후보 범위를 본다.
-2. 관심 있는 요소 유형의 실제 계약 후보를 읽는다.
-3. [조립 구조 후보](./08-assembled-harness-shapes.md)에서 요소를 어떤 하네스로 묶을 수 있는지 비교한다.
+문제 후보의 누락·중복·관계와 우선순위를 먼저 판단한 뒤, 첫 reference는 coverage 점검에, 둘째 reference는 작동 방식과 owner 비교에만 다시 연다.
 
 ## 문서
 
-- [00 — 전체 하네스 요소 목록](./00-harness-element-index.md)
-- [01 — 원칙·criteria 요소](./01-principle-and-criteria-elements.md)
-- [02 — workflow·loop·gate 요소](./02-workflow-loop-and-gate-elements.md)
-- [03 — context·state·provenance 요소](./03-context-state-and-provenance-elements.md)
-- [04 — review·agent·role 요소](./04-review-agent-and-role-elements.md)
-- [05 — skill·dispatcher·trigger 요소](./05-skill-dispatch-and-trigger-elements.md)
-- [06 — artifact·evaluation·observability 요소](./06-artifact-evaluation-and-observability-elements.md)
-- [07 — learning·write-back·maintenance 요소](./07-learning-writeback-and-maintenance-elements.md)
-- [08 — 하네스 조립 구조 후보](./08-assembled-harness-shapes.md)
-
-## 후보 상태
-
-- 각 요소는 사용할 수 있을 정도로 구체화했지만 채택된 하네스는 아니다.
-- 서로 양립하는 후보와 경쟁하는 후보를 모두 포함한다.
-- Current 사례의 판단과 다른 AI-native 작업으로 전이할 판단을 구분한다.
-- `core`, `skill`, `agent`, `active-state`, `process`, `source contract`, `artifact`, `audit` 중 어디가 실제 owner가 될지는 아직 정하지 않는다.
-- 하나의 문서를 채택한다고 그 안의 모든 요소를 함께 채택할 필요는 없다.
-- 이 디렉토리의 다음 작업은 문장 polish가 아니라 사용자 판단에 따른 채택·분리·owner 결정·재조립이다.
+- [01 — source 기반 문제 후보 지도](./01-source-grounded-problem-candidate-map.md)
