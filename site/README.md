@@ -25,6 +25,7 @@
 | `docs/platform-boundary.md` | content/editorial/design/site/harness 책임 경계 |
 | `docs/CONTENT_CONTRACT.md` | `../content/posts/*.md`, optional `../content/notes/*.md`를 사이트가 읽는 방식 |
 | `docs/DESIGN_CONTRACT.md` | 현재 production CSS/component/Storybook 기준의 디자인 계약 |
+| `docs/DEPLOYMENT.md` | production 배포 주체, 설정, 확인·복구 절차 |
 | `docs/MARKDOWN_CONTRACT.md` | 상세 글 Markdown 렌더링 변환 계약 |
 | `docs/READER_BEHAVIOR_CONTRACT.md` | 독서 행동 분석, 히트맵, privacy boundary 구현 계약 |
 | `docs/SEO_CONTRACT.md` | metadata, canonical, sitemap/robots, article JSON-LD 구현 계약 |
@@ -86,8 +87,13 @@ npm run build:storybook
 
 ## Deployment
 
-Cloudflare Pages 기준:
+표준 production 발행은 GitHub `main` push를 Cloudflare Pages Git integration이 감지해 자동 배포하는 방식이다. GitHub Actions와 GitHub Pages/Jekyll은 이 사이트의 production 배포 경로가 아니다. 전체 운영 기준과 장애 점검 순서는 `docs/DEPLOYMENT.md`를 따른다.
 
+Cloudflare Pages 설정:
+
+- project: `hmy751-blog`
+- source repository: `hmy751/blog`
+- production branch: `main`
 - project root: `site`
 - build command: `npm run build`
 - output directory: `out`
@@ -166,13 +172,15 @@ npm run posthog:export -- --num-days 1
 
 기본 수집은 `reader_page_view`, `post_scroll_depth`, `post_reading_time`, `heading_reached`, `viewport_sample`, `pointer_heat_sample`, `area_click`, `code_copy`, `external_link_click`, `article_row_click`, `next_article_click`, `nav_click`만 실행한다. `viewport_sample`은 글에서 현재 화면에 걸린 위치와 active heading을 5초마다 저장하고, `pointer_heat_sample`은 마지막 pointer 위치를 3초마다 5% bucket으로 저장한다. 원본 응답은 `data/posthog/raw/`, 분석용 JSONL은 `data/posthog/normalized/`에 저장되며 이 디렉토리는 git에 커밋하지 않는다.
 
-수동 배포는 아래 한 줄로 한다.
+Git integration을 즉시 복구할 수 없을 때의 수동 fallback은 아래 한 줄로 실행한다.
 
 ```bash
 npm run deploy
 ```
 
 기본값은 `NEXT_PUBLIC_SITE_URL=https://hmy751-blog.pages.dev`, `CLOUDFLARE_PAGES_PROJECT=hmy751-blog`, `CLOUDFLARE_PAGES_BRANCH=main`이다. 다른 대상에 배포해야 하면 환경변수로 덮어쓴다.
+
+평소 발행에는 이 수동 명령을 쓰지 않는다. `main` push 후 Cloudflare deployment의 source commit과 `success` 상태, 공개 URL을 확인한다.
 
 `npm run preview`는 이미 만들어진 `out/`을 로컬에서 서빙한다. 없는 route는 404로 응답하므로 배포 산출물의 route 상태를 확인할 때 쓴다.
 

@@ -5,6 +5,7 @@
 ## 먼저 읽을 문서
 
 - `README.md`
+- `docs/DEPLOYMENT.md`
 - `docs/platform-boundary.md`
 - `docs/CONTENT_CONTRACT.md`
 - `docs/DESIGN_CONTRACT.md`
@@ -19,6 +20,7 @@
 ## 책임 경계
 
 - `site/`는 앱 코드, 라우팅, UI 컴포넌트, Markdown renderer, RSS/sitemap, metadata, 배포/검증 스크립트를 소유한다.
+- production 배포 주체, 자동 trigger, 확인·복구 절차는 `docs/DEPLOYMENT.md`가 소유한다.
 - reader behavior analytics, heatmap hook, Clarity 로컬 집계 export, privacy page, SEO metadata, sitemap/robots, article structured data는 `site/`가 소유한다.
 - `content/` 원고를 직접 rewrite하지 않는다. 글 수정은 root의 글쓰기 하네스를 통해 처리한다.
 - `editorial/`은 글쓰기 판단 기준이며, 사이트 디자인 토큰이나 구현 계약을 저장하지 않는다.
