@@ -14,6 +14,7 @@
 - [shaping](./shaping/README.md)은 상위 후보를 첫 장면·중심 질문·사건 배열·공개 자료 후보로 펼치고, 실제 v1~v3 산문과 독립 review를 거쳐 고치는 과정을 담는다.
 - [context-structure](./context-structure/README.md)는 backlog와 drafts를 한 작업 단위로 합치고 context 층위를 다시 설계한 판단과 이전 active-state를 보존한다.
 - [Source 기반 원고 개선과 Material·Shaping 단계별 review loop](./2026-08-01-material-shaping-loop-discussion.md)는 source에서 장면과 중심으로 너무 빨리 수축한 문제를 돌아보고, 이미 모은 source와 현재 원고로 개선본을 만든 뒤 reviewer에게 Material과 Shaping의 기준·간극·move를 단계별로 요청하고 순서대로 회수하는 AI self-check 첫 시험 논의를 보존한다.
+- [AI self-check Material·Shaping 실행 cycle](./shaping/2026-08-01-ai-self-check-material-shaping-loop/README.md)은 source 기반 v0, 세 번의 fresh review, Main의 Material 우선 회수, 회차별 snapshot과 기준 ledger를 보존한다. Round 02·03의 연속 통과로 최대 5회 중 3회차에서 종료했다.
 
 현재 전체 그림과 다음 cursor는 [active-state](../active-state/index.md), 반복 판단축은 [core/criteria](../core/criteria.md)가 소유한다. process와 active-state가 충돌하면 현재 상태는 active-state를 따르고, 어떤 작업을 거쳐 그 상태에 도달했는지는 process에서 확인한다. 수치·시각·실제 변경 사실은 [sources](../sources/index.md)의 직접 원천을 다시 확인한다.
 

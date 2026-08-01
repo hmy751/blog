@@ -2,7 +2,7 @@
 작성일: 2026-08-01
 성격: source 기반 원고 개선과 Material·Shaping 단계별 review loop 논의
 공개상태: 내부 작업 문서
-현재상태: 논의 반영 / AI self-check 첫 개선 실행 전
+현재상태: 첫 시험 완료 / 실행 cycle로 연결
 ---
 
 # Source 기반 원고 개선과 Material·Shaping 단계별 review loop
@@ -217,6 +217,13 @@ Material 보완으로 중심이나 발견의 순서가 달라졌다면 첫 보�
 - 여러 reviewer에게 같은 종합 개선 질문을 반복하기
 - AI self-check 한 번의 결과만으로 전역 `editorial/`이나 workspace `core`를 수정하기
 
-## 다음 행동
+## 실행 결과
 
-이 문서의 Goal과 입력 경계로 AI self-check의 source 기반 개선 원고를 먼저 만든다. 그 원고가 나온 뒤 reviewer에게 source와 함께 전달하고, `Material 기준·판정·move·통과 조건`과 `Shaping 기준·판정·move·통과 조건`을 분리해 요청한다. Main은 Material부터 회수한 뒤 달라진 원고 위에서 Shaping을 적용한다.
+[AI self-check Material·Shaping 실행 cycle](./shaping/2026-08-01-ai-self-check-material-shaping-loop/README.md)에서 이 문서의 Goal과 입력 경계를 그대로 사용했다. Source 기반 v0를 만든 뒤 서로 이전 회차를 보지 않은 fresh reviewer 3명이 단계별로 판정했다.
+
+- Round 01: 확인되지 않은 과거 1인칭 기대·깨달음을 원고가 채운 문제로 Material `Fail`, Shaping `Pass`
+- Main 회수: 과거 내면을 current source 해석으로 낮추고 Material부터 보완한 뒤 운영 변화 구간을 국소 재배열
+- Round 02: Material·Shaping·Goal 전체 `Pass`
+- Round 03: Material·Shaping·Goal 전체 `Pass`
+
+연속 fresh 통과 2회 조건을 충족해 최대 5회 중 Round 03에서 종료했다. 최신 원고는 `src/ai-self-check.md`, 회차별 report·회수 판단·snapshot과 기준 ledger는 실행 cycle에 보존한다.

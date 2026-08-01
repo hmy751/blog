@@ -64,6 +64,10 @@ post-sync v1을 사용자가 검토한 뒤, 매력과 풍부함을 판단할 수
 
 사용자가 near-final v3를 실제 블로그 글로 읽은 뒤 완료 판정을 되돌리고, 공개 독자 기준으로 구조를 다시 잡은 작업 묶음이다. 기존 v3의 유효한 사실과 material은 입력으로 쓰되 파일은 수정하지 않았다. [상세 handoff](./2026-07-27-public-reshape/00-session-handoff.md)의 자료 권위와 순서에 따라 [public-reshape-v1 다섯 편](../../src/README.md), 독립 review와 [main 판정](./2026-07-27-public-reshape/04-main-adjudication.md)을 완결했다.
 
+### [`2026-08-01-ai-self-check-material-shaping-loop/`](./2026-08-01-ai-self-check-material-shaping-loop/README.md)
+
+AI self-check의 생성 계보 source와 당시 최신 원고만 받은 writer가 source 기반 v0를 만들고, 이전 회차를 보지 않은 fresh reviewer에게 Material과 Shaping을 단계별로 판정하게 한 첫 시험이다. Round 01의 Material blocker를 Main이 먼저 회수한 뒤 Round 02·03이 연속으로 Material·Shaping·Goal을 모두 통과해 최대 5회 중 3회차에서 종료했다. v0, 회차별 review·recovery·원고 snapshot, 기준 ledger를 보존한다.
+
 ## 이번 1차 shaping의 범위
 
 - 기존 backlog에 정리된 사건과 주장 상한을 글의 시간축으로 다시 배열한다.
