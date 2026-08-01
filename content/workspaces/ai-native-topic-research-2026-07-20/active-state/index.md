@@ -40,7 +40,7 @@
   - [src](../src/README.md)는 아직 workspace 안에서 수정할 원고만 소유한다. Current는 review를 마치고 workspace 밖 [발행글](../../../posts/2026-07-29-current-active-state-operation.md)이 됐으므로 이후 수정은 repo의 발행 원고 기준을 따른다. 이전 결과물은 각 shaping cycle 안에 두되, 현재 판단은 이 지도와 필요한 active-state 상세가 소유한다.
 
 - 다섯 글의 현재 그림
-  - Current / active-state operation `*-> 지금*`
+  - Current / active-state operation
     - 기록이 많아도 지금 무엇이 유효한지 다시 추론해야 했던 경험에서 시작해, 전체 생각지도와 현재 판단점 하나로 사람과 AI의 sync를 돕는 scaffolding을 다룬다.
     - 유튜버 Alex가 AX 인재전쟁에서 전체 문제 해결 과정을 외부화한 scaffolding을 보고, 기존 context 문제와 결합해 `전체 지도 + 현재 위치 하나`로 변형한 생성 계보에서 시작한다.
     - 첫 재진입과 research 수렴은 실제 사용 장면, Q1~Q5의 최근 맥락 편향과 terminal gap은 한계 장면, Cofathon의 문서 축소와 역할별 재진입 분리는 후속 재설계다. current 단독 효과나 전체 실패로 쓰지 않는다.
@@ -66,6 +66,7 @@
   - 다음 개선에는 결과물과 직접 원천을 대조하는 [review workflow](../core/review-workflow.md)를 적용한다. 원고만 처음 읽히는 모습을 보는 검토와 사실 verifier는 다른 역할로 유지한다.
   - Current는 생성 계보와 직접 원천을 복구한 뒤 focused shaping을 거쳤고, 2026-07-29 [통합 review와 main 회수](../process/shaping/2026-07-28-current-scaffolding-rewrite/04-post-shaping-review-and-recovery.md) 뒤 [Texture·Tone·Evidence 전문 review](../process/shaping/2026-07-28-current-scaffolding-rewrite/05-final-quality-specialist-review-and-recovery.md)까지 마쳤다.
   - draft 승격 뒤에는 입력 경계를 서로 다르게 자른 [3중 독립 판별](../process/shaping/2026-07-28-current-scaffolding-rewrite/06-final-stage-triple-review-and-recovery.md)로 발행 직전 품질을 다시 봤다. 세 판별 모두 중심·구성 유지로 판정했고, 도식·용어·반복 문장 중심의 개선을 원고에 반영했다. 원고 품질 회수는 끝났고, 발행 선택 뒤 제목·metadata·post 승격·deterministic check만 남았다.
+  - 2026-07-29 Independent review와 AI self-check 두 편의 병렬 개선 round를 시작했다. 대상과 최소 목표 frame을 사용자와 합의해 [review goal 보정 기록](../process/context-structure/2026-07-29-review-commission-goal-boundary.md)에 남겼고, 두 원고 각각에 결과물을 개선하는 review를 맡겼다. `*-> 지금*`
 
 - 작업 context 구조
   - 2026-07-28 backlog와 drafts를 workspace로 합치고 `core`, `active-state`, `sources`, `process`, `src`의 역할을 나눴다. 첫 결정과 원문 복구 경로는 [layering decision](../process/context-structure/2026-07-28-layering-decision.md)에 있다.

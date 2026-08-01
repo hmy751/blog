@@ -13,6 +13,18 @@
 - [Current 글의 생성 계보와 실제 운영 원천](./current-origin-and-operation.md) — 해커톤 전부터 있던 context 문제, 유튜버 Alex의 ‘AX 인재전쟁’ 작업에서 본 scaffolding, 사용자가 `전체 지도 + cursor 하나`로 변형한 최초 artifact, 실제 재진입·합의 복구·후보 수렴 장면, 이후 Cofathon의 재사용·축소, recency·terminal gap을 한곳에서 다시 확인한다. 원고 구간별 재진입 순서와 아직 본문에 쓰지 않은 보강 재료도 이 문서가 안내한다.
 - 사용자의 현재 기억은 이 글의 생성 이유와 실제 사용 경험을 확인하는 1인칭 원천이다. 정확한 발견 시점이 남지 않은 부분은 기억과 artifact가 일치하는 범위까지만 쓰며, AX 해커톤 참여와 Alex 사례를 하나의 현장 장면으로 합치지 않는다.
 
+## AI self-check 생성 계보와 운영
+
+- [AI self-check의 생성 계보와 실제 운영 원천](./ai-self-check-origin-and-operation.md) — 2026-05-21 `더 근본적으로 AI 관점으로`라는 정정을 더 큰 일반론으로 오해한 직접 발단, 최초 inline skill patch, fresh auditor로의 변화, 원문 범위 pull과 호출 문턱 축소, 진단과 행동 변화가 어긋난 후속 사례, 공개 글 후보가 된 이유를 한곳에서 다시 확인한다.
+- 최초 artifact의 권위 원천은 2026-05-21 원본 Codex rollout의 `apply_patch`다. 2026-07-06 Git snapshot과 현재 global skill은 이후 계약이므로 최초 장면에 소급하지 않는다.
+- 사용자의 현재 기억은 inline에서 fresh로 바꾼 정확한 계기와 공개 글로 쓰고 싶었던 개인적 이유를 보강할 1인칭 원천이다. artifact를 보고 과거 동기와 감정을 새로 만들지 않는다.
+
+## 독립 판별 생성 계보와 운영
+
+- [독립 판별의 생성 계보와 실제 운영 원천](./independent-review-origin-and-operation.md) — 기존 artifact가 판단을 고정한 문제, 조사 결과가 새 권위가 된 main 회수 실패, 닫힌 입력을 상속한 judge 반례, 사용자가 제안한 worker–main–fresh verifier–사용자 교정 loop, AX의 실제 구현 판별, Cofathon의 상충 판정과 후속 구현, 전역 reference로 정리된 배경을 연결한다.
+- `9개 test → 15개 test`는 글의 기원이 아니라 앞서 설계한 역할 계약이 실제 구현에서 작동한 장면이다. 독립성은 agent 수나 model 차이가 아니라 입력·원자료 접근·질문 수정권·write 권한·완료 권한과 main 회수 방식으로 판정한다.
+- `제3판별자`라는 표현을 처음 쓴 시점과 AX 이전부터 일반 작업 방식으로 의식했는지는 현재 원천으로 확정하지 않는다. 사용자의 기억을 받은 뒤 글의 기원 문장을 닫는다.
+
 ## AX 인재전쟁 / 마이리얼트립 작업본
 
 원본 저장소: [전체-작업본](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본)
