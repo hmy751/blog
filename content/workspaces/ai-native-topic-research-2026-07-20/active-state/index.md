@@ -60,7 +60,8 @@
     - 최신 [AI self-check 원고](../src/ai-self-check.md)는 `더 근본적으로 보라`는 정정을 받은 AI가 자기 탐색과 분류를 원인에 넣지 않고 더 큰 문서화 일반론으로 이동한 발단에서 시작한다. 최초 inline 규칙, 정확한 진단 뒤 같은 방향으로 돌아간 demo, fresh 판별과 main 회수, 맞는 판정을 적용하며 다른 조사 경로를 지운 장면, 입력 pull과 호출 문턱 축소까지 이어진다.
     - 현재 중심 질문은 `AI가 자신의 오류를 그럴듯하게 설명했을 때 실제로 무엇이 고쳐졌다고 볼 수 있는가`다. 결론보다 문제 정의·전제·입력 범위·작업 순서·직후 행동 중 달라진 위치를 보고, `진단 정확도 / 직후 행동 변화 / 장기 재발 감소`를 다른 결과로 둔다.
     - [AI self-check 생성 계보 source packet](../sources/ai-self-check-origin-and-operation.md)의 주장 상한을 유지한다. 최초 fresh 전환 날짜와 당시 개인 동기는 만들지 않고, fresh 판별의 보편적 우월성이나 장기 재발 감소도 주장하지 않는다.
-    - [Material·Shaping 실행 cycle](../process/shaping/2026-08-01-ai-self-check-material-shaping-loop/README.md)에서 Round 01의 source 밖 1인칭 기대를 회수했고, 서로 다른 fresh reviewer가 Round 02·03에 연속 전체 통과를 냈다. 현재 완료 범위는 Material·Shaping이며 Texture·tone·evidence·발행 준비는 아직 열지 않았다.
+    - [Material·Shaping 실행 cycle](../process/shaping/2026-08-01-ai-self-check-material-shaping-loop/README.md)에서 Round 01의 source 밖 1인칭 기대를 회수했고, 서로 다른 fresh reviewer가 Round 02·03에 연속 전체 통과를 냈다. 이 결과는 현재 src의 기준점으로 유지하되, 후속 사용자 인터뷰에서 저자 판단과 현재 회고가 충분히 살아나지 않은 문제가 확인돼 전체 원고 개선을 다시 열었다.
+    - [저자 판단 인터뷰](../process/2026-08-01-ai-self-check-author-judgment-interview.md)는 사용자가 늘 완성된 정답을 가진 것은 아니며, 어긋남의 감각과 AI의 후보 해석을 대조하며 기준을 더 선명하게 한 경험, fresh 판별에서 본 가치와 한계, 계속 사용하며 뒤늦게 생긴 이해를 구분해 보존한다. 지금의 이해를 최초 설계 의도로 소급하지 않는다.
     - Independent 글과 연결하되 합치지 않는다. Independent는 외부 판단 위치의 계약, Self-check는 main의 판단을 그 위치에 올릴 조건을 맡는다.
 
 - review와 개선 loop
@@ -73,7 +74,8 @@
   - 2026-07-29 Independent review와 AI self-check 두 편의 병렬 개선 round를 시작했다. 대상과 최소 목표 frame을 사용자와 합의해 [review goal 보정 기록](../process/context-structure/2026-07-29-review-commission-goal-boundary.md)에 남겼고, 두 원고 각각에 결과물을 개선하는 review를 맡겼다.
   - 첫 improvement review와 [AI self-check 후보 카드](../process/shaping/2026-07-29-parallel-improvement-round/02-ai-self-check-improvement-candidate-cards.md)는 현재 원고의 장면·전환·개념 문제를 찾았지만 생성 배경과 실제 운영 계보를 입력으로 받지 못했다. 이후 두 글의 origin·operation source packet을 만들고 [material 재평가](../process/shaping/2026-07-29-parallel-improvement-round/03-origin-genealogy-material-reassessment.md)에서 기존 후보의 입력 한계를 표시했다.
   - AI self-check의 첫 재개선은 별도 material 카드 선택을 선행하지 않고 [Source 기반 원고 개선과 단계별 review loop](../process/2026-08-01-material-shaping-loop-discussion.md)를 실제로 시험했다. Source 기반 v0 뒤 fresh reviewer를 매 회차 교체했고, Main은 Material부터 회수한 뒤 Shaping을 다시 판단했다. [실행 cycle](../process/shaping/2026-08-01-ai-self-check-material-shaping-loop/README.md)은 Round 01 `Fail`과 회수, Round 02·03 연속 `Pass`, 회차별 원고와 기준 ledger를 보존한다.
-  - 다음 단일 cursor: 사용자가 최신 AI self-check 원고의 중심·대표 장면·전체 감각을 직접 읽고, 현재 상태를 유지한 채 Texture·tone·evidence로 갈지 Material·Shaping을 다시 열지 판단한다. `*→ 지금*`
+  - 후속 [기존 src 기반 전체 원고 개선 계획](../process/2026-08-01-ai-self-check-integrated-draft-improvement-plan.md)은 Texture 전용 계획을 넓혔다. Main이 인터뷰와 source로 저자·원고 지도를 만들고, 작성 worker가 완결본을 쓴다. 회차마다 fresh reviewer 한 명이 같은 원고를 Material·Shaping·Texture·Reader Flow 책임별로 나눠 보고하며, Main은 그 순서로 회수한다. Reviewer에게 사용자 인터뷰와 지도, 이전 report는 주지 않는다.
+  - 다음 단일 cursor: 사용자 인터뷰와 직접 원천을 대조해 저자·원고 지도를 만들고 사용자와 sync한 뒤, 작성 worker에게 첫 전체 수정본을 맡긴다. `*→ 지금*`
 
 - 작업 context 구조
   - 2026-07-28 backlog와 drafts를 workspace로 합치고 `core`, `active-state`, `sources`, `process`, `src`의 역할을 나눴다. 첫 결정과 원문 복구 경로는 [layering decision](../process/context-structure/2026-07-28-layering-decision.md)에 있다.

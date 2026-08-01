@@ -15,8 +15,8 @@
 - [context-structure](./context-structure/README.md)는 backlog와 drafts를 한 작업 단위로 합치고 context 층위를 다시 설계한 판단과 이전 active-state를 보존한다.
 - [Source 기반 원고 개선과 Material·Shaping 단계별 review loop](./2026-08-01-material-shaping-loop-discussion.md)는 source에서 장면과 중심으로 너무 빨리 수축한 문제를 돌아보고, 이미 모은 source와 현재 원고로 개선본을 만든 뒤 reviewer에게 Material과 Shaping의 기준·간극·move를 단계별로 요청하고 순서대로 회수하는 AI self-check 첫 시험 논의를 보존한다.
 - [AI self-check Material·Shaping 실행 cycle](./shaping/2026-08-01-ai-self-check-material-shaping-loop/README.md)은 source 기반 v0, 세 번의 fresh review, Main의 Material 우선 회수, 회차별 snapshot과 기준 ledger를 보존한다. Round 02·03의 연속 통과로 최대 5회 중 3회차에서 종료했다.
-- [AI self-check Texture·Reader Flow 개선 계획](./2026-08-01-ai-self-check-texture-reader-flow-plan.md)은 Material·Shaping 완료본과 사용자의 `내 얘기 같다`는 판정을 기준점으로 고정하고, 살아 있는 문장과 판단 변화를 보호하면서 본문 cadence·문단 호흡·운영 언어 밀도를 개선할 다음 cycle의 역할, 입력 경계, 회수 순서와 종료 조건을 정리한다.
-- [AI self-check 저자 판단 인터뷰](./2026-08-01-ai-self-check-author-judgment-interview.md)는 Texture 실행 전에 다시 드러난 배경·메타 분석·과교정·fresh auditor·성공 감각에 관한 사용자 판단을 보존하고, 흐릿한 기억과 source 확인 항목을 분리한다. 이 확인이 끝날 때까지 Texture 계획은 실행 전 보류한다.
+- [AI self-check 기존 src 기반 전체 원고 개선 계획](./2026-08-01-ai-self-check-integrated-draft-improvement-plan.md)은 Texture·Reader Flow만 고치려던 범위를 사용자 인터뷰 뒤 Material·Shaping·Texture 전체로 다시 열고, `사용자 인터뷰 → 저자·원고 지도 → 작성 worker의 완결본 → 한 fresh reviewer의 단계별 report → Main 회수` 역할과 최대 5회 loop를 정리한다.
+- [AI self-check 저자 판단 인터뷰](./2026-08-01-ai-self-check-author-judgment-interview.md)는 Texture 실행 전에 다시 드러난 배경·메타 분석·과교정·fresh auditor·성공 감각과 계속 사용하며 뒤늦게 선명해진 이해를 보존하고, 흐릿한 기억·현재 회고·source 확인 결과를 분리한다. 이 인터뷰는 fresh reviewer가 아니라 저자·원고 지도와 작성 worker의 입력으로 사용한다.
 
 현재 전체 그림과 다음 cursor는 [active-state](../active-state/index.md), 반복 판단축은 [core/criteria](../core/criteria.md)가 소유한다. process와 active-state가 충돌하면 현재 상태는 active-state를 따르고, 어떤 작업을 거쳐 그 상태에 도달했는지는 process에서 확인한다. 수치·시각·실제 변경 사실은 [sources](../sources/index.md)의 직접 원천을 다시 확인한다.
 
