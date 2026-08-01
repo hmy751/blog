@@ -1,6 +1,6 @@
 ---
 작성일: 2026-07-23
-갱신일: 2026-07-28
+갱신일: 2026-08-01
 성격: AI-native 역량 글감 조사 과정 / 내부 index
 공개상태: 내부 작업 문서
 현재상태: candidates·shaping·review·이전 결과물 보존
@@ -13,6 +13,7 @@
 - [candidates](./candidates/README.md)는 기준 형성, 후보 전개, 원천 재조사, 후보 상태 교정 과정을 담는다.
 - [shaping](./shaping/README.md)은 상위 후보를 첫 장면·중심 질문·사건 배열·공개 자료 후보로 펼치고, 실제 v1~v3 산문과 독립 review를 거쳐 고치는 과정을 담는다.
 - [context-structure](./context-structure/README.md)는 backlog와 drafts를 한 작업 단위로 합치고 context 층위를 다시 설계한 판단과 이전 active-state를 보존한다.
+- [Source 기반 원고 개선과 Material·Shaping 단계별 review loop](./2026-08-01-material-shaping-loop-discussion.md)는 source에서 장면과 중심으로 너무 빨리 수축한 문제를 돌아보고, 이미 모은 source와 현재 원고로 개선본을 만든 뒤 reviewer에게 Material과 Shaping의 기준·간극·move를 단계별로 요청하고 순서대로 회수하는 AI self-check 첫 시험 논의를 보존한다.
 
 현재 전체 그림과 다음 cursor는 [active-state](../active-state/index.md), 반복 판단축은 [core/criteria](../core/criteria.md)가 소유한다. process와 active-state가 충돌하면 현재 상태는 active-state를 따르고, 어떤 작업을 거쳐 그 상태에 도달했는지는 process에서 확인한다. 수치·시각·실제 변경 사실은 [sources](../sources/index.md)의 직접 원천을 다시 확인한다.
 
