@@ -22,6 +22,7 @@
 - [round-03-draft.md](./round-03-draft.md) — round 2 회수와 결말 리스트화를 반영한 round 3 완결본.
 - [round-03-review.md](./round-03-review.md) — round 3 fresh reviewer report 원문. 첫 시도 agent의 stall 실패와 교체 이력 포함.
 - [round-03-recovery.md](./round-03-recovery.md) — round 3 Main 회수(위임 하 선별 판단)와 loop 종료 판정.
+- [04-hackathon-scene-fact-fix.md](./04-hackathon-scene-fact-fix.md) — loop 종료 뒤 사용자 재독이 잡은 해커톤 관계 정정(‘AX 인재전쟁’ 실명, 출제 기업)과 조사 순서 시제 정비.
 
 ## 준비 1 — 톤 전환 (2026-08-03)
 
