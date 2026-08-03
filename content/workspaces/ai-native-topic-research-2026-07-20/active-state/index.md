@@ -79,7 +79,7 @@
   - 후속 [기존 src 기반 전체 원고 개선 계획](../process/2026-08-01-ai-self-check-integrated-draft-improvement-plan.md)은 Texture 전용 계획을 넓혔다. Main이 인터뷰와 source로 저자·원고 지도를 만들고, 작성 worker가 완결본을 쓴다. 회차마다 fresh reviewer 한 명이 같은 원고를 Material·Shaping·Texture·Reader Flow 책임별로 나눠 보고하며, Main은 그 순서로 회수한다. Reviewer에게 사용자 인터뷰와 지도, 이전 report는 주지 않는다.
   - 위 계획을 [2026-08-02 통합 개선 cycle](../process/shaping/2026-08-02-ai-self-check-integrated-draft-loop/README.md)로 실행해 다섯 회차, Round 05 standalone fresh review, 최종 evidence regression까지 마쳤다. 먼저 받은 non-fresh diff regression은 독립 통과 판정으로 올리지 않고 실행 이력으로만 남겼다.
   - 2026-08-03 checkpoint는 전체 수용 대신 유형 정정(개발 글, 톤 전환)과 언어화되지 않은 잔여 아쉬움을 냈다. checkpoint 전에 별도로 받은 [standalone fresh review](../process/shaping/2026-08-03-ai-self-check-standalone-improvement-review/review.md)와 함께 [개발 글 정합 계획](../process/2026-08-03-ai-self-check-dev-article-refinement-plan.md)으로 이어진다.
-  - 다음 단일 cursor: loop 종료(상한 3회) 뒤 사용자 지시로 goal을 `발행 가능`에서 `기준 글`로 올린 texture 전용 상향 회차를 실행했다([기록](../process/shaping/2026-08-03-ai-self-check-dev-article-refinement/05-texture-elevation-review.md)). 문장 축 10건과 보존 축 2건을 [src](../src/ai-self-check.md)에 반영했고 리스트·도식은 보존 양호 판정을 받았다. 저자 선택 2건(비호출 장면 직접 발화 인용, 결말 세 장면 대응 표면화)과 사용자 재독·수용 판정이 남았다. 이후 발행 승격·metadata는 별도 단계. `*→ 지금*`
+  - 다음 단일 cursor: AI self-check 원고를 2026-08-03 [발행글](../../../posts/2026-08-03-ai-self-check-diagnosis-and-recovery.md)로 승격했다. loop 종료 뒤 goal을 `기준 글`로 올린 texture 상향 회차, 결말 불만에 대한 informed 자문과 두 문단 종결, 격리를 복원한 texture 2차 회수를 거쳤다([cycle 기록](../process/shaping/2026-08-03-ai-self-check-dev-article-refinement/README.md)). 남은 것은 발행 후 확인뿐이다: evidence check 보고 처리와 텍스트 도식의 site render 시각 QA. `*→ 지금*`
 
 - 작업 context 구조
   - 2026-07-28 backlog와 drafts를 workspace로 합치고 `core`, `active-state`, `sources`, `process`, `src`의 역할을 나눴다. 첫 결정과 원문 복구 경로는 [layering decision](../process/context-structure/2026-07-28-layering-decision.md)에 있다.
@@ -92,4 +92,5 @@
 
 - 발행
   - Current를 이 workspace의 첫 발행글로 정해 2026-07-29 [content/posts](../../../posts/2026-07-29-current-active-state-operation.md)로 승격했다. 제목 꼬리·tags·발행일 확정과 deterministic prepublish 통과까지 마쳤다.
-  - `[열림]` 나머지 네 편의 발행 순서, 연결 또는 시리즈 여부는 아직 정하지 않았다. Current에 쓴 `AI Native` 태그를 시리즈 우산으로 이어갈지도 그때 함께 본다.
+  - AI self-check를 두 번째 발행글로 정해 2026-08-03 [content/posts](../../../posts/2026-08-03-ai-self-check-diagnosis-and-recovery.md)로 승격했다. date·readTime·tags 정리(`retrospective` 제거)와 deterministic prepublish 통과를 마쳤고, `AI Native` 태그를 이어 붙여 시리즈 우산 후보를 유지했다.
+  - `[열림]` 나머지 세 편의 발행 순서, 연결 또는 시리즈 여부는 아직 정하지 않았다. `AI Native`를 실제 시리즈로 묶을지도 그때 함께 본다.

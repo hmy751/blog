@@ -5,9 +5,8 @@
 - [independent-review-and-recovery.md](./independent-review-and-recovery.md)
 - [product-flow-scope-control.md](./product-flow-scope-control.md)
 - [judgment-order.md](./judgment-order.md)
-- [ai-self-check.md](./ai-self-check.md)
 
-Current 원고는 review를 마치고 2026-07-29 [발행글](../../../posts/2026-07-29-current-active-state-operation.md)이 됐다. 이 디렉토리에 남은 원고 중 Independent review, Product-flow scope, Judgment order 세 편은 2026-07-27 `public-reshape-v1`이고, AI self-check는 2026-08-02 통합 원고 개선 5회를 마친 뒤, 2026-08-03 checkpoint의 유형 정정(나의 회고가 아니라 개발 글)에 따라 합니다체·`저`로 전환된 판이다. [개발 글 정합 계획](../process/2026-08-03-ai-self-check-dev-article-refinement-plan.md)의 준비(사용자 재독, 확정분 반영)와 최대 3회 개선 loop가 남아 있다. 현재 중심과 열린 판단은 [active-state/index.md](../active-state/index.md), Current 글의 확대된 판단은 [active-state/current-active-state-operation.md](../active-state/current-active-state-operation.md), 작업 순서는 [core/workflow.md](../core/workflow.md)를 따른다.
+Current 원고는 review를 마치고 2026-07-29 [발행글](../../../posts/2026-07-29-current-active-state-operation.md)이, AI self-check 원고는 2026-08-03 [발행글](../../../posts/2026-08-03-ai-self-check-diagnosis-and-recovery.md)이 됐다. 두 편의 이후 수정은 repo의 발행 원고 기준을 따른다. 이 디렉토리에 남은 Independent review, Product-flow scope, Judgment order 세 편은 2026-07-27 `public-reshape-v1`이다. 현재 중심과 열린 판단은 [active-state/index.md](../active-state/index.md), Current 글의 확대된 판단은 [active-state/current-active-state-operation.md](../active-state/current-active-state-operation.md), 작업 순서는 [core/workflow.md](../core/workflow.md)를 따른다.
 
 이전 원고는 관련 [process/shaping](../process/shaping/README.md) 과정의 `drafts/`에 둔다. 새 결과물이 현재본이 되면 기존 결과물을 관련 과정으로 옮기되, 매 편집마다 version을 쌓지는 않는다.
 
