@@ -2,7 +2,7 @@
 작성일: 2026-08-03
 성격: AI self-check 개발 글 정합 실행 cycle / 내부 기록
 공개상태: 내부 작업 문서
-현재상태: texture 상향 회차 회수 완료 / 저자 선택 2건(발화 인용, 결말 대응 표면화)과 사용자 재독 대기
+현재상태: 결말 두 문단 종결 반영, texture 2차 fresh 회수 완료 / 사용자 통독·수용 대기
 ---
 
 # 2026-08-03 AI self-check 개발 글 정합 cycle
@@ -26,6 +26,10 @@
 - [05-texture-elevation-draft.md](./05-texture-elevation-draft.md) — texture 상향 리뷰어가 읽은 판. src byte 복사, SHA-256 `3a52d2c6…d84a`.
 - [05-texture-elevation-review.md](./05-texture-elevation-review.md) — goal을 `기준 글`로 올린 texture 전용 fresh review의 계약, 계약 보강 전달 이력, 문장 축·보존 축 report 원문.
 - [05-texture-elevation-recovery.md](./05-texture-elevation-recovery.md) — 문장 축 10건과 보존 축 2건 회수, 저자 선택 2건 이월, 원천 확인.
+- [06-ending-informed-consultation.md](./06-ending-informed-consultation.md) — 결말 불만 반복에 대해 인터뷰·저자 우려·main 진단까지 준 informed 자문. 두 문단 종결 처방.
+- [07-texture-round2-draft.md](./07-texture-round2-draft.md) — 결말 재작업 반영판. texture 2차 fresh 리뷰어가 읽은 판, SHA `15869c86…7559`.
+- [07-texture-round2-review.md](./07-texture-round2-review.md) — 격리 복원한 새 fresh 리뷰어의 두 축 texture report 원문. 새 결말 문장이 보호 목록에 오름.
+- [07-texture-round2-recovery.md](./07-texture-round2-recovery.md) — 2차 회수 10곳, 진단 귀속 쟁점의 기존 raw 확인 대조, 도식 QA 이월.
 
 ## 준비 1 — 톤 전환 (2026-08-03)
 
