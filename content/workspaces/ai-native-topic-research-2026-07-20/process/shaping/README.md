@@ -72,6 +72,10 @@ AI self-check의 생성 계보 source와 당시 최신 원고만 받은 writer�
 
 후속 사용자 인터뷰와 직접 원천으로 저자·원고 지도를 만든 뒤, 같은 원고를 Material·Shaping·Texture·Reader Flow로 함께 끌어올린 최대 5회 통합 cycle이다. 원고와 사용자 인터뷰를 본 작성 주체, 매 회차 원고와 source만 본 reviewer, 마지막 evidence checker를 분리했다. Round 05는 thread 안 agent 상한 때문에 처음 fresh reviewer를 만들지 못했지만, 완료 감사에서 standalone ephemeral·read-only reviewer를 새 문맥으로 실행해 전체 판정과 Main 회수를 마쳤다. Evidence P0·P1 해소, 최종 src 반영, 사용자 checkpoint 대기 상태를 보존한다.
 
+### [`2026-08-03-ai-self-check-standalone-improvement-review/`](./2026-08-03-ai-self-check-standalone-improvement-review/review.md)
+
+통합 cycle 종료 뒤 사용자 checkpoint에 앞서 받은 단발 fresh improvement review 기록이다. 2026-07-29 합의 goal frame으로 입력을 잘랐고, main의 판단은 report 수신 전에 고정해 함께 보존한다. 고우선 blocker는 없었고 개선 축은 재사용 표면화와 중반 하중으로 모였다. 이 review의 회수는 [개발 글 정합 계획](../2026-08-03-ai-self-check-dev-article-refinement-plan.md)의 준비와 loop 회수에서 처리한다.
+
 ## 이번 1차 shaping의 범위
 
 - 기존 backlog에 정리된 사건과 주장 상한을 글의 시간축으로 다시 배열한다.
