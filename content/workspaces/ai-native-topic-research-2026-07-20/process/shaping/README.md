@@ -1,6 +1,6 @@
 ---
 작성일: 2026-07-23
-갱신일: 2026-07-28
+갱신일: 2026-08-03
 성격: AI-native 상위 후보 shaping 과정 / 내부 index
 공개상태: 내부 작업 문서
 현재상태: 상위 후보 5개의 shaping·이전 원고·review 과정 보존
@@ -75,6 +75,10 @@ AI self-check의 생성 계보 source와 당시 최신 원고만 받은 writer�
 ### [`2026-08-03-ai-self-check-standalone-improvement-review/`](./2026-08-03-ai-self-check-standalone-improvement-review/review.md)
 
 통합 cycle 종료 뒤 사용자 checkpoint에 앞서 받은 단발 fresh improvement review 기록이다. 2026-07-29 합의 goal frame으로 입력을 잘랐고, main의 판단은 report 수신 전에 고정해 함께 보존한다. 고우선 blocker는 없었고 개선 축은 재사용 표면화와 중반 하중으로 모였다. 이 review의 회수는 [개발 글 정합 계획](../2026-08-03-ai-self-check-dev-article-refinement-plan.md)의 준비와 loop 회수에서 처리한다.
+
+### [`2026-08-03-ai-self-check-dev-article-refinement/`](./2026-08-03-ai-self-check-dev-article-refinement/README.md)
+
+[개발 글 정합 계획](../2026-08-03-ai-self-check-dev-article-refinement-plan.md)의 실행 cycle이다. 준비 1에서 전환 전 했다체 판을 보존하고 src 전체를 합니다체·`저`로 전환했으며, 전환 직후 사실 표현 강도의 국소 확인까지 같은 폴더에 남겼다. 사용자 재독과 확정분 반영 뒤 최대 3회 개선 loop의 회차 기록을 여기에 쌓는다.
 
 ## 이번 1차 shaping의 범위
 

@@ -63,7 +63,7 @@
     - [Material·Shaping 실행 cycle](../process/shaping/2026-08-01-ai-self-check-material-shaping-loop/README.md)에서 Round 01의 source 밖 1인칭 기대를 회수했고, 서로 다른 fresh reviewer가 Round 02·03에 연속 전체 통과를 냈다. 이 결과는 현재 src의 기준점으로 유지하되, 후속 사용자 인터뷰에서 저자 판단과 현재 회고가 충분히 살아나지 않은 문제가 확인돼 전체 원고 개선을 다시 열었다.
     - [저자 판단 인터뷰](../process/2026-08-01-ai-self-check-author-judgment-interview.md)는 사용자가 늘 완성된 정답을 가진 것은 아니며, 어긋남의 감각과 AI의 후보 해석을 대조하며 기준을 더 선명하게 한 경험, fresh 판별에서 본 가치와 한계, 계속 사용하며 뒤늦게 생긴 이해를 구분해 보존한다. 지금의 이해를 최초 설계 의도로 소급하지 않는다.
     - [통합 원고 개선 cycle](../process/shaping/2026-08-02-ai-self-check-integrated-draft-loop/README.md)은 인터뷰와 직접 원천을 저자·원고 지도로 만든 뒤 최대 5회 완결본·통합 review·Main 회수를 실행했다. Round 05는 thread 안 agent 상한을 피해 standalone ephemeral·read-only reviewer에게 새 입력 경계의 전체 판정을 받았고, 고우선 blocker 없이 국소 move를 회수했다. 최종본은 evidence P0·P1 없이 현재 src에 반영됐고, 원고만 읽은 [blind reader transfer test](../process/shaping/2026-08-02-ai-self-check-integrated-draft-loop/final-reader-transfer-test.md)에서도 낯선 대화의 다섯 위치를 구분해 다음 요청 하나로 바꾸는 데 성공했다.
-    - 2026-08-03 checkpoint에서 사용자는 이 글을 나의 회고가 아니라 개발 글(개발적 회고)로 정정했다. 했다체와 `나`는 발행 개발 글의 합니다체와 `저`로 바꾸고, 재료와 큰 틀은 유지한 채 언어화되지 않은 잔여 아쉬움을 후보 대조로 좁힌다. checkpoint 전에 받은 [standalone review](../process/shaping/2026-08-03-ai-self-check-standalone-improvement-review/review.md)의 회수를 포함해, 실행은 [개발 글 정합 계획](../process/2026-08-03-ai-self-check-dev-article-refinement-plan.md)이 소유한다.
+    - 2026-08-03 checkpoint에서 사용자는 이 글을 나의 회고가 아니라 개발 글(개발적 회고)로 정정했다. 했다체와 `나`는 발행 개발 글의 합니다체와 `저`로 바꿨고, 재독에서 아쉬움이 장치 나열·도입 진입성·상황 설명 이해도·skill 명칭으로 언어화됐다. 장면 구체화는 익명 수준 유지(최소 변경), 역할 구분 시점 서술은 기록 정합 완화로 확정했다. checkpoint 전에 받은 [standalone review](../process/shaping/2026-08-03-ai-self-check-standalone-improvement-review/review.md)의 회수를 포함해, 실행은 [개발 글 정합 계획](../process/2026-08-03-ai-self-check-dev-article-refinement-plan.md)이 소유한다.
     - Independent 글과 연결하되 합치지 않는다. Independent는 외부 판단 위치의 계약, Self-check는 main의 판단을 그 위치에 올릴 조건을 맡는다.
 
 - review와 개선 loop
@@ -79,7 +79,7 @@
   - 후속 [기존 src 기반 전체 원고 개선 계획](../process/2026-08-01-ai-self-check-integrated-draft-improvement-plan.md)은 Texture 전용 계획을 넓혔다. Main이 인터뷰와 source로 저자·원고 지도를 만들고, 작성 worker가 완결본을 쓴다. 회차마다 fresh reviewer 한 명이 같은 원고를 Material·Shaping·Texture·Reader Flow 책임별로 나눠 보고하며, Main은 그 순서로 회수한다. Reviewer에게 사용자 인터뷰와 지도, 이전 report는 주지 않는다.
   - 위 계획을 [2026-08-02 통합 개선 cycle](../process/shaping/2026-08-02-ai-self-check-integrated-draft-loop/README.md)로 실행해 다섯 회차, Round 05 standalone fresh review, 최종 evidence regression까지 마쳤다. 먼저 받은 non-fresh diff regression은 독립 통과 판정으로 올리지 않고 실행 이력으로만 남겼다.
   - 2026-08-03 checkpoint는 전체 수용 대신 유형 정정(개발 글, 톤 전환)과 언어화되지 않은 잔여 아쉬움을 냈다. checkpoint 전에 별도로 받은 [standalone fresh review](../process/shaping/2026-08-03-ai-self-check-standalone-improvement-review/review.md)와 함께 [개발 글 정합 계획](../process/2026-08-03-ai-self-check-dev-article-refinement-plan.md)으로 이어진다.
-  - 다음 단일 cursor: [개발 글 정합 계획](../process/2026-08-03-ai-self-check-dev-article-refinement-plan.md)의 준비(톤 전환 → 재독으로 잔여 아쉬움과 보류 결정 3건 확정 → 반영)를 실행하고, 최대 3회 개선 loop로 넘어간다. `*→ 지금*`
+  - 다음 단일 cursor: 개선 loop가 상한 3회로 끝났다(round 2 사실 충돌 해소, round 3 blocker 없음, [round 3 기록](../process/shaping/2026-08-03-ai-self-check-dev-article-refinement/round-03-recovery.md)). 사용자가 [최종 src](../src/ai-self-check.md)를 재독해 아쉬움 없는 수용을 판정하면 이 process를 닫고, 발행 승격·metadata는 별도 단계로 넘긴다. `*→ 지금*`
 
 - 작업 context 구조
   - 2026-07-28 backlog와 drafts를 workspace로 합치고 `core`, `active-state`, `sources`, `process`, `src`의 역할을 나눴다. 첫 결정과 원문 복구 경로는 [layering decision](../process/context-structure/2026-07-28-layering-decision.md)에 있다.

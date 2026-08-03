@@ -1,5 +1,6 @@
 ---
 작성일: 2026-08-01
+갱신일: 2026-08-03
 성격: AI self-check 글의 생성 계보, 역할 변화, 글 후보화 배경을 확인하는 직접 원천 묶음
 공개상태: 내부 작업 문서
 ---
@@ -109,6 +110,8 @@ fresh 판별자가 더 나은 원인을 찾는 것과 main이 그것을 사용�
 - [회사 방향과 두 번째 조사 기준의 종합 복구](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/08-second-research-synthesis.md) — 사라진 흐름과 복구한 두 증명 범위·다음 행동을 짧게 정리한 최신 판단.
 - [논의와 self-check](/Users/hammyeong-yeon/Desktop/10_work/AX인재전쟁-해커톤/10-마이리얼트립-제출/전체-작업본/context/process/09-discussion-and-ai-self-check.md) — 첫 판정, main의 반영, 사용자 정정, 두 번째 self-check, 최종 채택의 순서를 보존한 과정 원천. 특히 8~10절을 함께 본다.
 
+같은 09 파일의 61~65행은 비호출 장면 하나를 더 지원한다. 첫 조사 직후 사용자가 `기준을 정하고 조사한 건 아니지?`라고 묻자 main은 이를 방향 정정 신호로 읽어 `ai-self-check`를 발동하려 했고, 사용자의 `아냐 그냥 물어본거야`로 점검을 중단한 뒤 `문제 선정 기준을 먼저 정한 것이 아니라 조사 방법만 고정하고 넓게 봤다`고 평범하게 설명했다. 이해 확인 질문에 별도 점검이 필요 없었다는 원고의 비호출 장면은 이 기록 범위 안에 있다. 2026-08-03 개선 loop round 1 review의 원천 미등재 쟁점을 이 등재로 닫는다.
+
 ## 계약이 바뀐 과정
 
 ### 2026-07-06 snapshot — fresh report-only 구조는 이미 들어와 있었다
@@ -165,6 +168,7 @@ git -C /Users/hammyeong-yeon/Desktop/10_work/ai-harness-history show 9f04631:cla
 - fresh 방식의 확인 가능한 실사용: 2026-06-12 fresh auditor raw.
 - 판별과 회수의 분리: 2026-06-17 문서 자기정당화 raw.
 - 진단 뒤 행동 재발: 2026-06-05 demo drift → 2026-07-09 forward bias.
+- 비호출 장면(이해 확인 질문에는 점검 중단): 7월 마이리얼트립 조사 기록 09 파일 61~65행.
 - 현재 계약으로 변한 이유: `ai-harness-history`의 `9f04631` → `6af78e6` → `0f930e7` → `e8c2bc2`.
 - 공개 글 후보가 된 이유: 7월 candidate decision history → topic candidate card → 7월 23일 first-pass와 이후 draft 계보.
 
