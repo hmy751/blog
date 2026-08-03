@@ -2,7 +2,7 @@
 작성일: 2026-08-03
 성격: AI self-check 개발 글 정합 실행 cycle / 내부 기록
 공개상태: 내부 작업 문서
-현재상태: loop 종료(상한 3회, round 3 blocker 없음) / 사용자 최종 수용 대기
+현재상태: texture 상향 회차 회수 완료 / 저자 선택 2건(발화 인용, 결말 대응 표면화)과 사용자 재독 대기
 ---
 
 # 2026-08-03 AI self-check 개발 글 정합 cycle
@@ -23,6 +23,9 @@
 - [round-03-review.md](./round-03-review.md) — round 3 fresh reviewer report 원문. 첫 시도 agent의 stall 실패와 교체 이력 포함.
 - [round-03-recovery.md](./round-03-recovery.md) — round 3 Main 회수(위임 하 선별 판단)와 loop 종료 판정.
 - [04-hackathon-scene-fact-fix.md](./04-hackathon-scene-fact-fix.md) — loop 종료 뒤 사용자 재독이 잡은 해커톤 관계 정정(‘AX 인재전쟁’ 실명, 출제 기업)과 조사 순서 시제 정비.
+- [05-texture-elevation-draft.md](./05-texture-elevation-draft.md) — texture 상향 리뷰어가 읽은 판. src byte 복사, SHA-256 `3a52d2c6…d84a`.
+- [05-texture-elevation-review.md](./05-texture-elevation-review.md) — goal을 `기준 글`로 올린 texture 전용 fresh review의 계약, 계약 보강 전달 이력, 문장 축·보존 축 report 원문.
+- [05-texture-elevation-recovery.md](./05-texture-elevation-recovery.md) — 문장 축 10건과 보존 축 2건 회수, 저자 선택 2건 이월, 원천 확인.
 
 ## 준비 1 — 톤 전환 (2026-08-03)
 
@@ -47,6 +50,7 @@
 
 ## 다음
 
-- loop는 상한 3회로 닫혔다(round 1 blocker 없음 → round 2 사실 충돌 해소 → round 3 blocker 없음). 남은 종료 조건은 사용자의 아쉬움 없는 수용 하나다.
-- 재독에서 유보·기각 항목(56행 aside, 문턱 기준 리스트화, 70~72행 위치)이 아쉬움으로 돌아오면 그 지점만 다시 연다.
+- loop는 상한 3회로 닫혔고, 이후 사용자 지시로 goal을 `발행 가능`에서 `기준 글`로 올린 texture 상향 회차를 실행했다. 문장 축 10건과 보존 축 2건은 src에 반영됐고, 리스트 3곳·도식은 보존 양호 판정을 받았다.
+- 저자 선택 2건이 열려 있다: 109행 비호출 장면의 직접 발화 한 줄 인용(원고 유일의 사람 발화 후보), 129행 결말 선택지의 세 장면 대응 표면화.
+- 재독에서 유보·기각 항목(문턱 기준 리스트화, 70~72행 위치, 82·97행 `다시 열었습니다` 반복)이 아쉬움으로 돌아오면 그 지점만 다시 연다.
 - 발행 승격·date·readTime·tags 정리·prepublish 검사는 별도 단계.
