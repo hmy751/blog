@@ -1,6 +1,6 @@
 ---
 작성일: 2026-07-23
-갱신일: 2026-08-01
+갱신일: 2026-08-02
 성격: AI-native 역량 글감 조사 과정 / 내부 index
 공개상태: 내부 작업 문서
 현재상태: candidates·shaping·review·이전 결과물 보존
@@ -17,6 +17,7 @@
 - [AI self-check Material·Shaping 실행 cycle](./shaping/2026-08-01-ai-self-check-material-shaping-loop/README.md)은 source 기반 v0, 세 번의 fresh review, Main의 Material 우선 회수, 회차별 snapshot과 기준 ledger를 보존한다. Round 02·03의 연속 통과로 최대 5회 중 3회차에서 종료했다.
 - [AI self-check 기존 src 기반 전체 원고 개선 계획](./2026-08-01-ai-self-check-integrated-draft-improvement-plan.md)은 Texture·Reader Flow만 고치려던 범위를 사용자 인터뷰 뒤 Material·Shaping·Texture 전체로 다시 열고, `사용자 인터뷰 → 저자·원고 지도 → 작성 worker의 완결본 → 한 fresh reviewer의 단계별 report → Main 회수` 역할과 최대 5회 loop를 정리한다.
 - [AI self-check 저자 판단 인터뷰](./2026-08-01-ai-self-check-author-judgment-interview.md)는 Texture 실행 전에 다시 드러난 배경·메타 분석·과교정·fresh auditor·성공 감각과 계속 사용하며 뒤늦게 선명해진 이해를 보존하고, 흐릿한 기억·현재 회고·source 확인 결과를 분리한다. 이 인터뷰는 fresh reviewer가 아니라 저자·원고 지도와 작성 worker의 입력으로 사용한다.
+- [AI self-check 통합 원고 개선 cycle](./shaping/2026-08-02-ai-self-check-integrated-draft-loop/README.md)은 저자·원고 지도와 완결본 다섯 회차, 회차별 통합 review와 Main 회수, 최종 evidence check를 보존한다. Round 05의 thread 내 reviewer 생성 실패, 이를 대체하지 못한 non-fresh regression, 완료 감사에서 standalone fresh reviewer로 간극을 회수한 과정도 구분해 기록한다.
 
 현재 전체 그림과 다음 cursor는 [active-state](../active-state/index.md), 반복 판단축은 [core/criteria](../core/criteria.md)가 소유한다. process와 active-state가 충돌하면 현재 상태는 active-state를 따르고, 어떤 작업을 거쳐 그 상태에 도달했는지는 process에서 확인한다. 수치·시각·실제 변경 사실은 [sources](../sources/index.md)의 직접 원천을 다시 확인한다.
 

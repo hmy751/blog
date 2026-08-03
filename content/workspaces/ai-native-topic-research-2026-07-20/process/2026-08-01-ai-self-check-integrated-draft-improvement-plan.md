@@ -2,10 +2,16 @@
 작성일: 2026-08-01
 성격: AI self-check 기존 src 기반 전체 원고 개선 cycle 계획
 공개상태: 내부 작업 문서
-현재상태: 1차 사용자 인터뷰 보존 / 저자·원고 지도 작성 전 / 원고 미수정
+현재상태: 실행 완료 / 최대 5회 cycle과 evidence pass / 사용자 checkpoint 대기
 ---
 
 # AI self-check 기존 src 기반 전체 원고 개선 계획
+
+## 실행 결과
+
+이 계획은 [2026-08-02 통합 원고 개선 cycle](./shaping/2026-08-02-ai-self-check-integrated-draft-loop/README.md)에서 실행했다. Round 0의 저자·원고 지도 뒤 완결본을 다섯 회차까지 개선했고, 최종 evidence check와 국소 regression에서 P0·P1이 남지 않은 후보를 현재 `src/ai-self-check.md`에 반영했다.
+
+실행 중 같은 writing worker는 Round 04 뒤 agent turn 상한에 도달해 Round 05의 합의된 두 국소 move를 Main이 직접 적용했다. 현재 thread의 agent 상한으로 Round 05용 collaboration reviewer도 처음에는 만들지 못했지만, 완료 감사에서 이전 작업 맥락이 없는 standalone ephemeral·read-only Codex를 단독 reviewer로 실행해 fresh 전체 판정을 회수했다. Material은 Pass, Shaping·Texture·Reader Flow는 국소 Partial, 고우선 blocker는 없었다. Main의 최종 회수 뒤 evidence regression도 P0·P1 없이 끝났다. 현재 남은 종료 조건은 사용자의 원고 checkpoint다.
 
 ## 계획을 넓힌 이유
 
@@ -124,6 +130,10 @@ Main은 reviewer의 보고를 그대로 작성 지시로 전달하지 않는다.
 
 각 회차에는 이전 회차를 보지 않은 fresh reviewer 한 명을 둔다. Material reviewer, Shaping reviewer, Texture reviewer를 순서대로 따로 호출하지 않는다. reviewer는 해당 회차의 완결된 원고 하나를 한 번 읽고, 결과를 책임별로 나눠 보고한다.
 
+이 reviewer의 제1 역할은 사실 감사가 아니라 원고 개선이다. 먼저 현재 원고를 가장 크게 끌어올릴 개선 축과 그 축을 실제로 바꿀 move를 찾아야 한다. Source 대조는 살아 있는 material을 더 찾고, 근거 없는 과거 사실·인과가 개선안을 왜곡하지 않게 하는 guardrail로 사용한다. 사실 표현을 빠짐없이 감사하는 역할은 마지막 evidence checker에게 남긴다.
+
+독자의 최소 결과가 행동이라고 해서 Retrospective를 worksheet나 사용법 문서로 자동 전환하지 않는다. 표·체크리스트·빈칸 실습은 산문과 기존 장면으로 같은 판별을 만들 수 없는지 먼저 확인한 뒤 후보로만 제안한다. Reviewer는 독자 행동뿐 아니라 저자 경험, 발견의 순서, 살아 있는 문장을 함께 개선해야 한다.
+
 이 reviewer 역시 기존 specialist agent 하나의 역할을 넓혀 쓰지 않는다. 매 회차 일회성 generic integrated reviewer를 report-only로 두고, Material·Shaping·Texture의 판단면과 Reader Flow lens를 한 report 안에서 구분하게 한다. 새 repo·global agent를 만들지는 않는다.
 
 입력:
@@ -131,8 +141,10 @@ Main은 reviewer의 보고를 그대로 작성 지시로 전달하지 않는다.
 - 해당 회차의 완결된 후보 원고
 - 이번 대상과 독자가 얻어야 할 최소 결과로 제한한 Goal
 - 생성 계보 source packet과 source index
-- 필요하면 reviewer가 직접 넓혀 볼 수 있는 직접 원천 접근점
+- 이번 개선 move와 직접 연결된 쟁점이 이미 확인됐을 때만 Main이 지정한 직접 원천 접근점
 - Material, Shaping, Texture에 필요한 editorial 기준과 Reader Flow lens
+
+Improvement reviewer는 source index를 따라 전면 조사를 다시 펼치지 않는다. Packet만으로 판단할 수 없는 특정 사실·인과가 원고 개선을 막으면 그 쟁점을 보고하고, Main이 회수 단계에서 직접 원천을 열거나 다음 회차 입력으로 지정한다. Reviewer가 직접 원천을 보는 경우에도 현재 move를 판정하는 데 필요한 구간에서 멈춘다.
 
 주지 않을 것:
 
@@ -156,6 +168,13 @@ Reviewer는 한 회차의 원고 하나만 보므로 이전 고정본보다 무�
 ## Fresh review의 반환 계약
 
 한 번의 report 안에서 다음 순서를 지킨다. 단계별로 별도 agent를 호출한다는 뜻이 아니라, 같은 완결본의 간극을 책임별로 섞지 않고 돌려준다는 뜻이다.
+
+### 0. 이번 원고의 가장 큰 개선 축
+
+- 한 번에 가장 크게 좋아질 중심 간극
+- 그 간극이 독자의 이해·저자 판단·장면의 생동감 가운데 무엇을 막는지
+- 이번 회차에서 실제로 시도할 1~3개 원고 move
+- source 확인은 이 개선 축을 보강하거나 막는 경계만 기록하고, 사실 감사 전체로 확장하지 않는다.
 
 ### 1. 실제 입력 경계
 

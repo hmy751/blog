@@ -68,6 +68,10 @@ post-sync v1을 사용자가 검토한 뒤, 매력과 풍부함을 판단할 수
 
 AI self-check의 생성 계보 source와 당시 최신 원고만 받은 writer가 source 기반 v0를 만들고, 이전 회차를 보지 않은 fresh reviewer에게 Material과 Shaping을 단계별로 판정하게 한 첫 시험이다. Round 01의 Material blocker를 Main이 먼저 회수한 뒤 Round 02·03이 연속으로 Material·Shaping·Goal을 모두 통과해 최대 5회 중 3회차에서 종료했다. v0, 회차별 review·recovery·원고 snapshot, 기준 ledger를 보존한다.
 
+### [`2026-08-02-ai-self-check-integrated-draft-loop/`](./2026-08-02-ai-self-check-integrated-draft-loop/README.md)
+
+후속 사용자 인터뷰와 직접 원천으로 저자·원고 지도를 만든 뒤, 같은 원고를 Material·Shaping·Texture·Reader Flow로 함께 끌어올린 최대 5회 통합 cycle이다. 원고와 사용자 인터뷰를 본 작성 주체, 매 회차 원고와 source만 본 reviewer, 마지막 evidence checker를 분리했다. Round 05는 thread 안 agent 상한 때문에 처음 fresh reviewer를 만들지 못했지만, 완료 감사에서 standalone ephemeral·read-only reviewer를 새 문맥으로 실행해 전체 판정과 Main 회수를 마쳤다. Evidence P0·P1 해소, 최종 src 반영, 사용자 checkpoint 대기 상태를 보존한다.
+
 ## 이번 1차 shaping의 범위
 
 - 기존 backlog에 정리된 사건과 주장 상한을 글의 시간축으로 다시 배열한다.
